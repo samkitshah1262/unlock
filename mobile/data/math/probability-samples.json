@@ -1,0 +1,165 @@
+[
+  {
+    "id": "prob_con_bayes_theorem_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "foundations",
+    "topic": "bayes_theorem",
+    "title": "Bayes' Theorem: Updating Beliefs",
+    "subtitle": "How to reverse conditional probabilities",
+    "contentHtml": "<p>Bayes' Theorem is the mathematical foundation for <em>updating beliefs based on evidence</em>. If you know how likely evidence is given a hypothesis, Bayes tells you how likely the hypothesis is given the evidence.</p><p>In machine learning, this is everywhere: spam filters update their belief that an email is spam based on words; medical diagnosis systems update disease probability based on symptoms; neural networks can be viewed as doing approximate Bayesian inference.</p><p>The key insight: <strong>your final belief depends on both the evidence AND your prior belief</strong>.</p>",
+    "formula": {
+      "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}",
+      "name": "Bayes' Theorem",
+      "variants": [
+        {
+          "latex": "P(H|E) = \\frac{P(E|H) \\cdot P(H)}{P(E)}",
+          "description": "Hypothesis-Evidence notation (common in ML)"
+        },
+        {
+          "latex": "\\text{posterior} = \\frac{\\text{likelihood} \\times \\text{prior}}{\\text{evidence}}",
+          "description": "Intuitive names for each term"
+        },
+        {
+          "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B|A)P(A) + P(B|A^c)P(A^c)}",
+          "description": "Expanded form using law of total probability"
+        }
+      ]
+    },
+    "intuition": "Imagine you're a doctor. A patient tests positive for a rare disease. The test is 99% accurate, but the disease affects only 1 in 10,000 people. Is the patient likely sick? Bayes says: probably not! The false positive rate among healthy people dominates because there are so many more healthy people.",
+    "commonMistakes": [
+      "Confusing P(A|B) with P(B|A) — these are generally NOT equal!",
+      "Ignoring the prior probability P(A)",
+      "Forgetting that P(B) in the denominator normalizes everything"
+    ],
+    "realWorldApplications": [
+      "Spam filters: P(spam|words) from P(words|spam) and P(spam)",
+      "Medical diagnosis: P(disease|symptoms) from test accuracy and prevalence",
+      "A/B testing: Bayesian inference for conversion rates",
+      "Language models: Next-word prediction is Bayesian at its core"
+    ],
+    "tags": ["bayes", "conditional probability", "prior", "posterior", "inference"],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["prob_con_conditional_probability_001"],
+    "relatedCards": ["prob_for_bayes_theorem_001", "prob_wex_bayes_theorem_001"],
+    "nextCards": ["prob_con_bayesian_inference_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_theorem_001",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "foundations",
+    "topic": "bayes_theorem",
+    "title": "The Medical Test Problem",
+    "subtitle": "Why accurate tests can still be wrong",
+    "contentHtml": "<p>This classic problem shows why base rates matter—even with an accurate test.</p>",
+    "workedExample": {
+      "problemHtml": "<p>A disease affects 1% of the population. A test for the disease is 95% accurate (it correctly identifies 95% of sick people and 95% of healthy people). If a person tests positive, what's the probability they actually have the disease?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the known probabilities",
+          "mathHtml": "\\[P(D) = 0.01 \\quad \\text{(prior: disease prevalence)}\\]\\[P(D^c) = 0.99 \\quad \\text{(probability of being healthy)}\\]\\[P(+|D) = 0.95 \\quad \\text{(sensitivity: true positive rate)}\\]\\[P(+|D^c) = 0.05 \\quad \\text{(false positive rate)}\\]",
+          "explanation": "We know the test accuracy and disease prevalence. We want P(D|+)."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Write Bayes' Theorem",
+          "mathHtml": "\\[P(D|+) = \\frac{P(+|D) \\cdot P(D)}{P(+)}\\]",
+          "explanation": "This is what we're solving for"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate P(+) using law of total probability",
+          "mathHtml": "\\[P(+) = P(+|D)P(D) + P(+|D^c)P(D^c)\\]\\[= (0.95)(0.01) + (0.05)(0.99)\\]\\[= 0.0095 + 0.0495 = 0.059\\]",
+          "explanation": "Only 5.9% of all people test positive"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Apply Bayes' Theorem",
+          "mathHtml": "\\[P(D|+) = \\frac{(0.95)(0.01)}{0.059} = \\frac{0.0095}{0.059} \\approx 0.161\\]",
+          "explanation": "Substitute all values into Bayes' formula"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the result",
+          "mathHtml": "\\[P(D|+) \\approx 16.1\\%\\]",
+          "explanation": "Despite a 95% accurate test, a positive result only means ~16% chance of disease! This is because most positive tests come from the large pool of healthy people."
+        }
+      ],
+      "finalAnswer": "Only about 16% of people who test positive actually have the disease."
+    },
+    "visualDescription": "A tree diagram or 2x2 contingency table showing the population split into disease/healthy, then positive/negative tests, with counts for 10,000 people.",
+    "intuition": "Out of 10,000 people: 100 have the disease (95 test positive). 9,900 are healthy (495 test positive). So 95 true positives vs 495 false positives: only 95/590 ≈ 16% of positives have the disease.",
+    "commonMistakes": [
+      "Thinking a 95% accurate test means 95% of positives are true",
+      "Ignoring how rare the disease is (the base rate fallacy)",
+      "Confusing sensitivity with positive predictive value"
+    ],
+    "tags": ["bayes", "medical testing", "base rate", "worked example"],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "estimatedMinutes": 3,
+    "prerequisites": ["prob_con_bayes_theorem_001"],
+    "relatedCards": ["prob_prb_bayes_theorem_001"],
+    "nextCards": ["prob_con_bayesian_inference_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "prob_con_normal_distribution_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_rv",
+    "topic": "normal",
+    "title": "The Normal Distribution",
+    "subtitle": "The bell curve that's everywhere",
+    "contentHtml": "<p>The <strong>normal distribution</strong> (or Gaussian) is the most important continuous distribution in statistics and ML. Its bell-shaped curve appears whenever you add up many small, independent random effects.</p><p>The distribution is completely determined by two parameters:</p><ul><li><strong>Mean μ</strong>: The center of the bell</li><li><strong>Variance σ²</strong>: The spread (σ is standard deviation)</li></ul><p>The 68-95-99.7 rule: About 68% of data falls within 1σ of the mean, 95% within 2σ, and 99.7% within 3σ.</p>",
+    "formula": {
+      "latex": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+      "name": "Normal PDF",
+      "variants": [
+        {
+          "latex": "f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}",
+          "description": "Standard normal (μ=0, σ=1)"
+        },
+        {
+          "latex": "X \\sim \\mathcal{N}(\\mu, \\sigma^2)",
+          "description": "Notation for normal distribution"
+        }
+      ]
+    },
+    "intuition": "Why does this specific formula appear so often? The Central Limit Theorem! When you average many independent random things, the result approaches a normal distribution regardless of what the original distribution was.",
+    "commonMistakes": [
+      "Confusing σ² (variance) with σ (standard deviation) in the notation N(μ, ?)",
+      "Thinking all bell-shaped curves are normal",
+      "Forgetting that the normal extends to ±∞ (even if probability is tiny)"
+    ],
+    "realWorldApplications": [
+      "Measurement errors in experiments",
+      "Gaussian noise in signal processing and ML",
+      "Prior distributions in Bayesian neural networks",
+      "Latent spaces in VAEs are designed to be standard normal"
+    ],
+    "tags": ["normal", "gaussian", "bell curve", "continuous distribution"],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["prob_con_pdf_cdf_001"],
+    "relatedCards": ["prob_thm_clt_001", "prob_con_multivariate_normal_001"],
+    "nextCards": ["prob_for_normal_001", "prob_wex_normal_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  }
+]
+
