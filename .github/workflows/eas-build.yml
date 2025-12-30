@@ -47,11 +47,6 @@ jobs:
       - name: 🏗 Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Git
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-
       - name: 🏗 Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -71,8 +66,6 @@ jobs:
           PROFILE="${{ github.event.inputs.profile || 'preview' }}"
           echo "Building ${{ matrix.platform }} with profile: $PROFILE"
           eas build --platform ${{ matrix.platform }} --profile $PROFILE --non-interactive --no-wait
-        env:
-          EAS_NO_VCS: 1
 
   build-simulator:
     name: Build iOS Simulator
@@ -85,11 +78,6 @@ jobs:
     steps:
       - name: 🏗 Checkout repository
         uses: actions/checkout@v4
-
-      - name: 🔧 Setup Git
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
 
       - name: 🏗 Setup Node.js
         uses: actions/setup-node@v4
@@ -107,5 +95,3 @@ jobs:
 
       - name: 🍏 Build iOS Simulator
         run: eas build --platform ios --profile simulator --non-interactive --no-wait
-        env:
-          EAS_NO_VCS: 1
