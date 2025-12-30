@@ -36,6 +36,9 @@ jobs:
   build:
     name: Build ${{ matrix.platform }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
     strategy:
       matrix:
         platform: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.platform == 'all' && fromJSON('["android", "ios"]') || fromJSON(format('["{0}"]', github.event.inputs.platform))) || fromJSON('["android"]') }}
@@ -44,13 +47,17 @@ jobs:
       - name: 🏗 Checkout repository
         uses: actions/checkout@v4
 
+      - name: 🔧 Setup Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
       - name: 🏗 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: 📦 Install dependencies
-        working-directory: mobile
         run: npm ci
 
       - name: 🏗 Setup EAS
@@ -60,21 +67,29 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 🚀 Build app
-        working-directory: mobile
         run: |
           PROFILE="${{ github.event.inputs.profile || 'preview' }}"
           echo "Building ${{ matrix.platform }} with profile: $PROFILE"
-          eas build --platform ${{ matrix.platform }} --profile $PROFILE --non-interactive
+          eas build --platform ${{ matrix.platform }} --profile $PROFILE --non-interactive --no-wait
+        env:
+          EAS_NO_VCS: 1
 
-  # Optional: Run on simulator build for iOS (no Apple account needed)
   build-simulator:
     name: Build iOS Simulator
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    defaults:
+      run:
+        working-directory: mobile
     
     steps:
       - name: 🏗 Checkout repository
         uses: actions/checkout@v4
+
+      - name: 🔧 Setup Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: 🏗 Setup Node.js
         uses: actions/setup-node@v4
@@ -82,7 +97,6 @@ jobs:
           node-version: 20
 
       - name: 📦 Install dependencies
-        working-directory: mobile
         run: npm ci
 
       - name: 🏗 Setup EAS
@@ -92,6 +106,6 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 🍏 Build iOS Simulator
-        working-directory: mobile
-        run: eas build --platform ios --profile simulator --non-interactive
-
+        run: eas build --platform ios --profile simulator --non-interactive --no-wait
+        env:
+          EAS_NO_VCS: 1

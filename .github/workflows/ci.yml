@@ -12,6 +12,9 @@ jobs:
   lint-and-typecheck:
     name: Lint & Type Check
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
     
     steps:
       - name: 🏗 Checkout repository
@@ -23,15 +26,11 @@ jobs:
           node-version: 20
 
       - name: 📦 Install dependencies
-        working-directory: mobile
         run: npm ci
 
       - name: 🔍 Type check
-        working-directory: mobile
         run: npx tsc --noEmit
         continue-on-error: true
 
       - name: 📱 Verify Expo config
-        working-directory: mobile
         run: npx expo config --type introspect
-
