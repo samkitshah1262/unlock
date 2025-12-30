@@ -1,0 +1,70 @@
+[
+  {
+    "id": "stat_thm_learning_theory_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand the complexity of a hypothesis class.</p><p>In this theorem, we'll explore the connection between VC dimension and PAC learnability.</p>",
+    "formula": "{",
+    "latex": "\\[VCdim(H) = \\max_{S\\subseteq [n]} |\\{f \\in H : f(x) = y \\\\forall x \\in S, y \\in {0,1} \\}\\]",
+    "name": "VC Dimension",
+    "variants": "[] },",
+    "theorem": "{",
+    "statement": "\\\\[\\\\textbf{Theorem: } For any hypothesis class $H$ and $\\epsilon > 0$, if $VCdim(H) \\leq \\\\frac{1}{\\\\epsilon}$, then there exists a learning algorithm that learns $H$ with probability at least $1-\\\\delta$.\",",
+    "proofSketch": "The proof involves showing that the number of possible hypotheses is bounded by the VC dimension. Then, we use this bound to construct a learning algorithm that achieves the desired error rate.\" },",
+    "intuition": "In simple terms, the theorem states that if the VC dimension of a hypothesis class is small enough, then we can learn it with high probability using a polynomial number of examples.",
+    "realWorldApplications": [
+      "This theorem has implications for designing efficient machine learning algorithms and understanding their limitations."
+    ],
+    "tags": [
+      "VC Dimension",
+      "PAC Learning"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:38:52.819Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_learning_theory_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Vapnik-Chervonenkis (VC) Dimension",
+    "contentHtml": "<p>The Vapnik-Chervonenkis (VC) dimension is a fundamental concept in statistical learning theory that measures the complexity of a hypothesis space.</p><p>It was introduced by Vladimir Vapnik and Alexey Chervonenkis in the 1970s as a way to bound the generalization error of a learning algorithm.</p>",
+    "formula": {
+      "latex": "\\[VC_dim(H) = \\max_{S \\subseteq X, |S| = d} |\\{f \\in H : f(x) = f(y), \\forall x,y \\in S\\}\\]",
+      "name": "Vapnik-Chervonenkis Dimension"
+    },
+    "theorem": {
+      "statement": "\\[For any hypothesis space H and any distribution D, if VC_dim(H) ≤ d then the probability of error is bounded by O(1/d) for any learning algorithm.",
+      "proofSketch": "The proof involves showing that the number of possible hypotheses in H is at most 2^d, and then using this bound to derive the desired generalization error bound."
+    },
+    "intuition": "The VC dimension measures how complex a hypothesis space is by counting the maximum number of ways it can shatter a set of d points. This complexity measure has important implications for learning algorithms, as high VC dimensions often require more training data to generalize well.",
+    "realWorldApplications": [
+      "In machine learning, understanding the VC dimension helps us choose suitable algorithms and hyperparameters for our problem."
+    ],
+    "tags": [
+      "statistical-learning-theory",
+      "VC-dimension"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:39:13.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

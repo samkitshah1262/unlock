@@ -1,0 +1,73 @@
+[
+  {
+    "id": "la_prb_cayley_hamilton_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "cayley_hamilton",
+    "problem": "{",
+    "statementHtml": "Let <i>A</i> be an <i>n</i>&times;<i>n</i> matrix and let <span class=\\\"math\\\">p(\\lambda) = \\det(A - \\lambda I)</span> be its characteristic polynomial. Prove that <span class=\\\"math\\\">A</span> satisfies its own characteristic polynomial, i.e., <span class=\\\"math\\\">p(A) = 0</span>.\",",
+    "hints": "[ \"Consider the matrix equation <span class=\\\"math\\\">(A - \\lambda I)x = 0</span>\", \"Use the fact that <span class=\\\"math\\\">A</span> is a root of its characteristic polynomial\", \"Expand the determinant in terms of the trace and Frobenius norm\" ],",
+    "solutionHtml": "<p>To prove this, we can use the matrix equation <span class=\\\"math\\\">(A - \\lambda I)x = 0</span>. Since <span class=\\\"math\\\">x</span> is a non-zero vector, we know that <span class=\\\"math\\\">\\det(A - \\lambda I) = 0</span>, which implies that <span class=\\\"math\\\">p(\\lambda) = 0</span>.</p><p>This shows that <span class=\\\"math\\\">A</span> satisfies its own characteristic polynomial.</p>\",",
+    "answerShort": "<span class=\\\"math\\\">p(A) = 0</span>\" },",
+    "difficulty": 4,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:55:42.903Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cayley_hamilton_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "cayley_hamilton",
+    "problem": "{",
+    "statementHtml": "<p>Given a square matrix A, prove that it satisfies its characteristic polynomial.</p>",
+    "hints": [
+      "Start by considering the determinant of (A - λI) for some scalar λ.",
+      "Use the fact that det(A - λI) = 0 to relate the characteristic polynomial to the eigenvalues.",
+      "Think about how you can use the Cayley-Hamilton theorem to simplify your expression."
+    ],
+    "solutionHtml": "<p>To begin, we have:</p>\\n\\n\\[ (A - λI)^n = 0 \\]\\n<p>We know that the characteristic polynomial is given by:</p>\\n\\n\\[\\det(A - λI) = 0 \\]\\n<p>Using the Cayley-Hamilton theorem, we can write:</p>\\n\\n\\[(A - λI)^n = A^n - λ^n I \\]\\n<p>This allows us to relate the characteristic polynomial to the eigenvalues:</p>\\n\\n\\[ \\det(A - λI) = 0 \\] \\[ \\Rightarrow \\] \\[ A^n - λ^n I = 0 \\]\\n<p>Since this is true for any scalar λ, we can conclude that:</p>\\n\\n\\[\\det(A) = 0 \\]\\n<p>This shows that the matrix satisfies its characteristic polynomial.</p>\",",
+    "answerShort": "The given square matrix A satisfies its characteristic polynomial.\" },",
+    "difficulty": 4,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:56:03.751Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cayley_hamilton_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "cayley_hamilton",
+    "problem": "{",
+    "statementHtml": "<p>Prove that a matrix satisfies its characteristic polynomial.</p>",
+    "hints": [
+      "Start by considering the characteristic polynomial of the given matrix.",
+      "Think about how you can use this polynomial to find the eigenvalues and eigenvectors.",
+      "Recall the definition of an eigenvalue and how it relates to the matrix's behavior."
+    ],
+    "solutionHtml": "<p>Let A be a square matrix. The characteristic polynomial of A is given by <i>p</i>(λ) = det(λI - A), where I is the identity matrix.</p><p>We want to show that p(A) = 0, which means that A satisfies its characteristic polynomial.</p><p>Using the determinant properties, we can rewrite p(A) as:</p>\\[ \\det(p(A)) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} (A_{i,\\sigma(i)} - λ)^{\\sigma(i)} \\]\\[ = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} A_{i,\\sigma(i)}^{\\sigma(i)} (-1)^{\\sigma(i)} λ^{|\\sigma|} + ... \\]\\[ = 0, \\]where the last equality holds because p(A) is a polynomial in λ and its degree is equal to the dimension of the matrix.</p><p>This shows that A satisfies its characteristic polynomial.</p>\",",
+    "answerShort": "A satisfies its characteristic polynomial.\" },",
+    "difficulty": 4,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:56:24.936Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

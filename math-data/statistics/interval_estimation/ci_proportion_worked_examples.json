@@ -1,0 +1,198 @@
+[
+  {
+    "id": "stat_wex_ci_proportion_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a confidence interval (CI) for a population proportion using both normal approximation and exact methods.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{p} = \\frac{X}{n}\\]",
+    "name": "Population Proportion\" },",
+    "problem": "{",
+    "statementHtml": "<p>A survey of 100 students at a university finds that 35 students have used an online learning platform. Construct a 95% CI for the proportion of all students who have used this platform.</p>",
+    "hints": [
+      "Hint: Use the normal approximation method first, then compare to exact results."
+    ],
+    "solutionHtml": "<p>We'll use both methods and compare the results.</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A survey of 100 students at a university finds that 35 students have used an online learning platform. Construct a 95% CI for the proportion of all students who have used this platform.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample proportion\", \"mathHtml\": \"\\\\[\\\\hat{p} = \\\\frac{35}{100}\\\\]\", \"explanation\": \"We start by calculating the sample proportion.\"}, {\"stepNumber\": 2, \"description\": \"Use normal approximation method\", \"mathHtml\": \"\\\\[\\\\text{CI}_{\\text{normal}} = \\\\hat{p} \\pm Z_{0.975}\\\\*\\\\sqrt{\\\\frac{\\\\hat{p}(1-\\\\hat{p})}{n}}\\\\]\", \"explanation\": \"We'll use the normal approximation method to construct a CI.\"}, {\"stepNumber\": 3, \"description\": \"Use exact method (Wilson interval)\", \"mathHtml\": \"\\\\[\\\\text{CI}_{\\text{exact}} = \\\\frac{1}{1+\\\\frac{(n-1)z^2}{x(1-x)}}\\\\*\\\\left[x + \\\\frac{z^2}{2n}, x - \\\\frac{z^2}{2n}\\\\right]\\\\]\", \"explanation\": \"We'll also use the exact method (Wilson interval) to construct a CI.\"}, {\"stepNumber\": 4, \"description\": \"Compare and choose the best method\", \"mathHtml\": \"\", \"explanation\": \"Now we compare the results from both methods and choose the best one.\"} ],",
+    "finalAnswer": "The answer is [0.21, 0.49]\" },",
+    "intuition": "The key insight here is that both normal approximation and exact methods can be used to construct a CI for a population proportion.",
+    "visualDescription": "A diagram showing the two methods and their results would help illustrate the process.",
+    "commonMistakes": [
+      "Forgetting to check the sample size condition for normal approximation."
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding how to construct CIs for proportions is crucial in evaluating the performance of classification models."
+    ],
+    "tags": [
+      "interval estimation",
+      "proportions"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:22:58.357Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_proportion_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a confidence interval (CI) for a proportion using both normal approximation and exact methods.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{p} = \\frac{x}{n} \\]",
+      "name": "Proportion Formula",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of 100 students is taken from a university, and 35 of them report using a popular learning app. Construct a 95% CI for the proportion of all students who use this app.</p>",
+      "hints": [
+        "Hint: Use the normal approximation method first"
+      ],
+      "solutionHtml": "<p>To construct the CI, we'll follow these steps:</p>",
+      "answerShort": "CI: (0.245, 0.395)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of 100 students is taken from a university, and 35 of them report using a popular learning app.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the proportion",
+          "mathHtml": "\\[ \\mathbf{p} = \\frac{x}{n} = \\frac{35}{100} \\]",
+          "explanation": "We start by calculating the sample proportion."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the desired level of confidence",
+          "mathHtml": "",
+          "explanation": "Next, we determine the desired level of confidence for our CI."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the normal approximation method",
+          "mathHtml": "\\[ \\text{CI} = \\mathbf{p} + Z\\sqrt{\\frac{\\mathbf{p}(1-\\mathbf{p})}{n}} \\]",
+          "explanation": "We'll use the normal approximation method to construct our CI."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the exact method (Wilson interval)",
+          "mathHtml": "\\[ \\text{CI} = \\frac{x + Z^2/2}{n+Z^2} \\]",
+          "explanation": "As an alternative, we can use the Wilson interval for a more accurate CI."
+        }
+      ],
+      "finalAnswer": "CI: (0.245, 0.395)"
+    },
+    "intuition": "The key insight is that both methods provide a way to construct a CI for a proportion, with the normal approximation method offering a simpler but less accurate approach.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to adjust for continuity in the normal approximation"
+    ],
+    "realWorldApplications": [
+      "Estimating the effectiveness of marketing campaigns"
+    ],
+    "tags": [
+      "interval estimation",
+      "proportions",
+      "confidence intervals"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:23:30.124Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_proportion_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions: A Worked Example",
+    "contentHtml": "<p>In this example, we'll use the normal approximation to construct a confidence interval (CI) for a proportion.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the proportion of users who prefer a new product feature. We have a sample of size 100 with 60 respondents preferring the feature. Construct a 95% CI using the normal approximation.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample proportion\", \"mathHtml\": \"\\(p = \\frac{60}{100} = 0.6\\)\", \"explanation\": \"We start by calculating the sample proportion, which is simply the number of respondents preferring the feature divided by the total sample size.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the standard error\", \"mathHtml\": \"\\(SE(p) = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{0.6(1-0.6)}{100}} \\approx 0.048\\)\", \"explanation\": \"Next, we calculate the standard error of the proportion using the formula for the standard error of a proportion.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the z-score\", \"mathHtml\": \"\\(z = \\frac{p - p_0}{SE(p)} = \\frac{0.6 - 0.5}{0.048} \\approx 2.08\\)\", \"explanation\": \"We then calculate the z-score by subtracting the population proportion from our sample proportion and dividing by the standard error.\"}, {\"stepNumber\": 4, \"description\": \"Find the critical value\", \"mathHtml\": \"\\(z_{0.975} = 1.96\\) (from a standard normal distribution table)\", \"explanation\": \"Next, we find the critical value from a standard normal distribution table that corresponds to our desired confidence level.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the margin of error\", \"mathHtml\": \"\\(ME = z_{0.975} \\cdot SE(p) = 1.96 \\cdot 0.048 \\approx 0.094\\)\", \"explanation\": \"Finally, we calculate the margin of error by multiplying the critical value by the standard error.\"}, {\"stepNumber\": 6, \"description\": \"Construct the CI\", \"mathHtml\": \"\\[CI = (p - ME, p + ME) = (0.506, 0.694)\\]\", \"explanation\": \"We can now construct our confidence interval by subtracting and adding the margin of error to our sample proportion.\"} ],",
+    "finalAnswer": "(0.506, 0.694)\" },",
+    "intuition": "The normal approximation allows us to use a standard normal distribution table to find the critical value, making it easier to construct the CI.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:24:02.650Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_proportion_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions: A Step-by-Step Guide",
+    "problem": {
+      "statementHtml": "Suppose we want to estimate the proportion of customers who prefer a new product feature. We have a sample of size <i>n</i> and observe <i>x</i> customers who prefer the feature.",
+      "hints": [],
+      "solutionHtml": "To construct a confidence interval (CI) for this proportion, we can use either the normal approximation or exact methods like the Wilson interval.",
+      "answerShort": "The CI will provide an estimate of the true proportion with a specified level of confidence."
+    },
+    "workedExample": {
+      "problemHtml": "Let's say our sample size is <i>n = 100</i>, and we observe <i>x = 55</i> customers who prefer the feature.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample proportion",
+          "mathHtml": "\\[\\hat{p} = \\frac{x}{n}\\]",
+          "explanation": "This is our best estimate of the true proportion."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a confidence level",
+          "mathHtml": "",
+          "explanation": "A common choice is 95%."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[\\text{SE} = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]",
+          "explanation": "This measures the spread of our sample proportion."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the critical value",
+          "mathHtml": "\\[z = \\text{invNorm}(0.975)\\approx 1.96\\]",
+          "explanation": "We use this to determine the margin of error."
+        }
+      ],
+      "finalAnswer": "The CI for the true proportion is approximately (0.395, 0.645)."
+    },
+    "intuition": "Interval estimation provides a range of plausible values for an unknown population proportion.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:24:27.046Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

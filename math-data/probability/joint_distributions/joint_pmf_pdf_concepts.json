@@ -1,0 +1,101 @@
+[
+  {
+    "id": "prob_con_joint_pmf_pdf_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>In probability theory, joint distributions describe the behavior of multiple random variables. The joint PMF (probability mass function) and PDF (probability density function) provide a way to quantify the co-occurrence of events.</p><p>Given two discrete random variables X and Y with finite support, the joint PMF is defined as:</p>\\(P(x,y) = P(X=x \\wedge Y=y)\\)<p>The joint PDF for continuous random variables X and Y is defined as:</p>\\[f_{X,Y}(x,y) = f_X(x)f_Y(y)\\] when X and Y are independent, and \\(f_{X,Y}(x,y) = f_X(x|y)\\cdot f_Y(y)\\) otherwise.",
+    "formula": "{",
+    "latex": "\\(P(x,y) = P(X=x \\wedge Y=y)\\)\",",
+    "name": "Joint PMF",
+    "variants": "[] },",
+    "intuition": "Understanding joint distributions is crucial in machine learning, where we often deal with multiple features or variables.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "commonMistakes": [
+      "Confusing independence with conditional independence"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:11.883Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_joint_pmf_pdf_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>In probability theory, joint distributions describe the simultaneous behavior of multiple random variables.</p><p>A joint probability mass function (PMF) assigns a probability to each possible combination of values for all variables. A joint probability density function (PDF) does the same, but for continuous variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X_1, X_2, \\ldots, X_n) = \\sum_{x_1} \\sum_{x_2} \\cdots \\sum_{x_n} p(x_1, x_2, \\ldots, x_n) \\]",
+      "name": "Joint PMF",
+      "variants": [
+        {
+          "latex": "\\[ f(X_1, X_2, \\ldots, X_n) = \\frac{p(x_1, x_2, \\ldots, x_n)}{P(X_1, X_2, \\ldots, X_n)} \\]",
+          "description": "Joint PDF"
+        }
+      ]
+    },
+    "intuition": "Think of a joint distribution as the 'recipe' for generating all possible combinations of values for multiple variables. This concept is crucial in machine learning and AI, where we often work with complex relationships between multiple features.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "commonMistakes": [
+      "Confusing joint distributions with marginal distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:34.027Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_joint_pmf_pdf_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>When dealing with multiple random variables, we often need to consider their joint behavior. This is where joint probability mass functions (PMFs) and density functions (PDFs) come in.</p><p>A joint PMF defines the probability of each possible combination of values for the variables, while a joint PDF describes the relative frequency of these combinations.</p>",
+    "formula": "{",
+    "latex": "\\(P(X,Y) = \\sum_{x,y} p(x,y)\\)\",",
+    "name": "Joint PMF",
+    "variants": "[ {\"latex\": \"\\(f(x,y) = \\frac{1}{\\sigma^2}\\exp(-((x-\\mu_x)^2 + (y-\\mu_y)^2)/2\\sigma^2)\\)\", \"description\": \"Bivariate normal distribution\"} ] },",
+    "intuition": "Think of a joint PMF as a table that lists the probability of each possible combination of values for two variables. The joint PDF is like a continuous version of this table, giving us the relative frequency of these combinations.",
+    "visualDescription": "A scatter plot showing the relationship between the variables, with contours or heatmap representing the joint density",
+    "commonMistakes": [
+      "Forgetting to normalize the joint PMF",
+      "Not considering the support of the joint PDF"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks in machine learning",
+      "Modeling financial transactions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:55.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "prob_for_gamma_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that is often used to model waiting times between events in a Poisson process.</p>",
+    "formula": {
+      "latex": "\\[ X \\sim \\text{Gamma}(k, \\theta) \\]",
+      "name": "Gamma Distribution",
+      "variants": [
+        {
+          "latex": "\\[ X \\sim \\chi^2(k) \\]",
+          "description": "Chi-squared distribution with k degrees of freedom"
+        },
+        {
+          "latex": "\\[ X \\sim \\text{Exponential}(\\theta) \\]",
+          "description": "Exponential distribution with rate parameter \\theta"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Poisson process with an average arrival rate of 2 per minute. What is the probability that the first arrival occurs within 5 minutes?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that the waiting time follows a Gamma distribution",
+          "mathHtml": "",
+          "explanation": "The waiting time between events in a Poisson process follows a Gamma distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the Gamma distribution to calculate the probability",
+          "mathHtml": "\\[ P(X \\leq 5) = \\int_0^5 \\frac{1}{\\theta^k} x^{k-1} e^{-x/\\theta} dx \\]",
+          "explanation": "We can use the formula for the Gamma distribution to calculate the probability that the waiting time is less than or equal to 5 minutes."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The Gamma distribution is often used to model waiting times between events in a Poisson process because it has a shape parameter k that controls the spread of the distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:21:17.978Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_gamma_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises naturally in many applications, including machine learning and signal processing.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Density Function",
+      "variants": [
+        {
+          "latex": "\\[F(x | \\alpha, \\beta) = \\int_0^x f(t | \\alpha, \\beta) dt\\]",
+          "description": "Cumulative Distribution Function"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X with a Gamma distribution with parameters α=3 and β=2. Find the probability that X is greater than 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Evaluate the cumulative distribution function at x=1",
+          "mathHtml": "\\[F(1 | \\alpha=3, \\beta=2) = ...\\]",
+          "explanation": "We use the CDF to find the probability that X is less than or equal to 1"
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process, and its parameters control the mean and variance of this distribution.",
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a call center"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "gamma distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:21:42.317Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_gamma_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises from modeling the time it takes for a random process to occur.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Density"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we model the time it takes for a customer to make a purchase in an online store. The average time is 30 minutes, and the standard deviation is 10 minutes.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the parameters",
+          "mathHtml": "\\[\\alpha = \\frac{30}{10} = 3, \\beta = \\frac{1}{10}\\]",
+          "explanation": "We use the mean and standard deviation to estimate the shape and rate parameters."
+        }
+      ],
+      "finalAnswer": "The probability density function (PDF) of the Gamma distribution is used to model this process."
+    },
+    "intuition": "The Gamma distribution is useful for modeling waiting times or the time until an event occurs.",
+    "realWorldApplications": [
+      "Modeling customer behavior in e-commerce"
+    ],
+    "tags": [
+      "continuous random variables",
+      "probability theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:03.153Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

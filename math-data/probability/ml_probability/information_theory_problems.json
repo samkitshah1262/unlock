@@ -1,0 +1,135 @@
+[
+  {
+    "id": "prob_prb_information_theory_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "problem": "{",
+    "statementHtml": "<p>Compute the cross-entropy between two discrete probability distributions <code>P</code> and <code>Q</code>.</p>",
+    "hints": [
+      "Start by recalling the definition of cross-entropy.",
+      "Think about how you would compute the entropy of a single distribution.",
+      "Use the chain rule to relate the cross-entropy to the entropies of each individual distribution."
+    ],
+    "solutionHtml": "<p>To begin, recall that the cross-entropy between <code>P</code> and <code>Q</code> is given by:</p>\\[\\mathcal{H}(P,Q) = -\\sum_{i} P(i) \\log Q(i).\\]<p>Next, consider how you would compute the entropy of a single distribution <code>P</code>:</p>\\[\\mathcal{H}(P) = -\\sum_{i} P(i) \\log P(i).\\]<p>Now, use the chain rule to relate the cross-entropy to the entropies of each individual distribution:</p>\\[\\mathcal{H}(P,Q) = -\\sum_{i} P(i) \\log Q(i) = -\\sum_{i} P(i) (\\log P(i) + \\log (Q(i)/P(i))) = \\mathcal{H}(P) + \\KL(P || Q).\\]",
+    "answerShort": "The cross-entropy is given by the formula above.\" },",
+    "commonMistakes": [
+      "Forgetting to use the chain rule",
+      "Not recognizing that <code>Q</code> is a probability distribution"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:09:11.854Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_information_theory_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "problem": "{",
+    "statementHtml": "<p>Consider a binary classification problem where we have two classes: positive and negative.</p>",
+    "hints": [
+      "Start by calculating the entropy of each class.",
+      "Use the fact that entropy is additive for independent events.",
+      "Think about how you can use this to define cross-entropy."
+    ],
+    "solutionHtml": "<p>To calculate the entropy of each class, we need to sum the probabilities of each outcome multiplied by their logarithms.</p>\\n\\[H(Y) = -\\sum_{i=1}^2 p_i \\log_2 p_i\\]\\n<p>Now, let's say we have two classes with probabilities 0.7 and 0.3 for positive and negative respectively.</p>\\n<p>We can calculate the entropy of each class:</p>\\n\\[H(Positive) = -0.7 \\log_2 0.7 - 0.3 \\log_2 0.3\\]\\n<p>Next, we'll use the fact that entropy is additive for independent events to define cross-entropy.</p>\\n\\[CE = H(Y) + H(\\neg Y)\\]\",",
+    "answerShort": "The answer\" },",
+    "commonMistakes": [
+      "Forgetting to normalize probabilities",
+      "Not accounting for logarithmic base"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:09:32.498Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_information_theory_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the cross-entropy between two discrete distributions P and Q.</p>",
+    "hints": [
+      "Start by recalling the definition of cross-entropy.",
+      "Use the logarithmic identity to simplify the expression.",
+      "Compare your answer with the KL-divergence formula."
+    ],
+    "solutionHtml": "<p>Let's denote the probability mass functions as <i>P</i>(x) and <i>Q</i>(x). The cross-entropy is:</p>\\n\\[H(P, Q) = -\\sum_x P(x) \\log \\frac{Q(x)}{P(x)}.\\]\\n<p>To simplify this expression, we can use the logarithmic identity:</p>\\n\\[0 \\leq x \\log \\frac{x}{y} + (1-x) \\log \\frac{1-x}{1-y}\\]\\n<p>Substituting <i>P</i>(x) and <i>Q</i>(x), we get:</p>\\n\\[\\sum_x P(x) \\log \\frac{P(x)}{Q(x)} + \\sum_x (1-P(x)) \\log \\frac{1-P(x)}{1-Q(x)}.\\]\\n<p>This is the cross-entropy formula.</p>\",",
+    "answerShort": "-\\sum_x P(x) \\log \\frac{Q(x)}{P(x)}\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:09:54.366Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_information_theory_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "problem": "{",
+    "statementHtml": "<p>Compute the cross-entropy between two discrete distributions <code>P</code> and <code>Q</code>.</p>",
+    "hints": [
+      "Start by recalling the definition of cross-entropy.",
+      "Think about how to relate this concept to KL divergence.",
+      "Use the fact that cross-entropy is a measure of the difference between two distributions."
+    ],
+    "solutionHtml": "<p>Let <code>H(P)</code> and <code>H(Q)</code> be the entropies of <code>P</code> and <code>Q</code>, respectively. Then, the cross-entropy between <code>P</code> and <code>Q</code> is:</p>\\[H(P,Q) = \\sum_{i} P(i) \\log \\frac{P(i)}{Q(i)}.\\]<p>To compute this quantity, we can use the definition of entropy:</p>\\[H(P) = -\\sum_{i} P(i) \\log P(i).\\]\\[H(Q) = -\\sum_{i} Q(i) \\log Q(i).\\]Substituting these expressions into the cross-entropy formula, we get:</p>\\[H(P,Q) = -\\sum_{i} P(i) \\log \\frac{P(i)}{Q(i)}.\\]<p>This is the final answer.</p>\",",
+    "answerShort": "The cross-entropy between two discrete distributions <code>P</code> and <code>Q</code> is given by the formula above.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:10:18.975Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_information_theory_014",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "problem": "{",
+    "statementHtml": "<p>Compute the cross-entropy between two discrete distributions <code>P</code> and <code>Q</code>.</p>",
+    "hints": [
+      "Recall that cross-entropy is related to KL divergence.",
+      "Think about how you can use the definition of entropy to simplify the problem.",
+      "Use the fact that <code>P</code> and <code>Q</code> are discrete distributions."
+    ],
+    "solutionHtml": "<p>To compute the cross-entropy, we need to sum over all possible outcomes:</p>\\n\\ \\[ H(P,Q) = -\\sum_{i} P(i) \\log Q(i) + P(i) \\log P(i) \\]\\n\\ <p>We can simplify this expression by combining like terms:</p>\\n\\ \\[ H(P,Q) = -\\sum_{i} P(i) \\log \\frac{Q(i)}{P(i)} \\]\\n\\ <p>This is equal to the KL divergence between <code>P</code> and <code>Q</code>, up to a constant factor.</p>\",",
+    "answerShort": "H(P,Q)\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:10:38.531Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

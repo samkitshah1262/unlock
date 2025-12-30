@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_delta_method_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Recall that X̄ is the sample mean.",
+      "The Delta Method is used to find the asymptotic distribution of a function of a statistic.",
+      "Start by finding the first two moments of g(X̄)"
+    ],
+    "solutionHtml": "<p>To apply the Delta Method, we need to find the first two moments of g(X̄). Since X̄ is normally distributed with mean μ and variance σ²/n, we have:</p>\\n\\ \\[E[g(X̄)] = E[g(μ + (X̄ - μ)/\\sqrt{n})] = g(μ) + \\frac{1}{2}g''(μ) Var[(X̄ - μ)/\\sqrt{n}] = g(μ)\\]\\n\\ \\[Var[g(X̄)] = E[(g(X̄) - E[g(X̄)])²] = (g'(μ))² Var[(X̄ - μ)/\\sqrt{n}] = \\frac{(g'(μ))² σ²}{n}\\]\\n\\ <p>Now we can apply the Delta Method to find the asymptotic distribution of g(X̄). The result is a normal distribution with mean g(μ) and variance (g'(μ))² σ²/n.</p>\",",
+    "answerShort": "Normal distribution with mean g(μ) and variance (g'(μ))² σ²/n\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:28.579Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_delta_method_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Start by recognizing that g(X̄) is a function of the sample mean.",
+      "Use the Taylor series expansion to linearize g(X̄).",
+      "Apply the Delta Method formula."
+    ],
+    "solutionHtml": "<p>Let's denote the true population mean as μ. We can write g(X̄) as:</p>\\n\\ \\[g(\\overline{X}) = g(μ + \\frac{\\sqrt{n}}{\\sigma} Z)\\]\\n\\ <p>where Z is a standard normal variable.</p>\\n\\ <p>We'll use the Taylor series expansion to linearize g(X̄) around μ:</p>\\n\\ \\[\\left.\\frac{dg}{dX}\\right|_{X=μ} (X - μ) + O((X - μ)^2)\\]\\n\\ <p>Now, we can apply the Delta Method formula:</p>\\n\\ \\[g(\\overline{X}) \\overset{D}{\\to} N\\left(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2\\right)\\]\\n\\ <p>The final answer is:</p>\\n\\ \\[g(\\overline{X}) \\overset{D}{\\to} N(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2).\\]\",",
+    "answerShort": "N(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2)\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:55.335Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_delta_method_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Start by recognizing that g(X̄) is a function of X̄.",
+      "Use the Taylor series expansion to approximate g(X̄) around its mean.",
+      "Apply the Delta Method formula."
+    ],
+    "solutionHtml": "<p>Let's start by expanding g(X̄) using the Taylor series:</p>\\(\\mathbf{g}(\\mathbf{\\bar{x}}) \\approx \\mathbf{g}(\\mathbf{\\mu}) + (\\mathbf{x}-\\mathbf{\\mu})^T \\mathbf{J}\\)<br><p>where J is the Jacobian matrix.</p><p>Now, apply the Delta Method:</p>\\[\\sqrt{n}(\\mathbf{g}(\\mathbf{\\bar{x}}) - \\mathbf{g}(\\mathbf{\\mu})) \\xrightarrow{d} N(0, (\\mathbf{J}\\Sigma\\mathbf{J})^{-1})\\]<br><p>where Σ is the variance-covariance matrix.</p>\",",
+    "answerShort": "N(0, (JΣJ)^(-1))\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:04:17.170Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

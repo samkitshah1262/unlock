@@ -1,0 +1,97 @@
+[
+  {
+    "id": "la_con_cofactor_expansion_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>Cofactor expansion is a powerful technique in linear algebra that allows us to compute determinants of matrices by expanding along any row or column.</p><p>Given a square matrix A, the minor M_{ij} is the determinant of the submatrix obtained by removing the i^{th} row and j^{th} column. The cofactor C_{ij} is then defined as the signed minor: C_{ij} = (-1)^{i+j}M_{ij}. Finally, we can compute the determinant det(A) using cofactor expansion:</p>\\[ \\det(A) = \\sum_{j=1}^n a_{ij}C_{ij}.\\]",
+    "formula": "{",
+    "latex": "\\\\[ \\\\det(A) = \\\\sum_{j=1}^n a_{ij}C_{ij}.\\\\]\" },",
+    "intuition": "Think of cofactor expansion as a way to 'undo' the matrix multiplication process. When we multiply two matrices, we're essentially computing the determinant of the resulting matrix. Cofactor expansion gives us a direct route to that determinant.",
+    "commonMistakes": [
+      "Forgetting to apply the sign change in the cofactors",
+      "Expanding along the wrong row or column"
+    ],
+    "realWorldApplications": [
+      "In machine learning, determinants are used in algorithms like PCA and LLE for dimensionality reduction."
+    ],
+    "tags": [
+      "linear algebra",
+      "determinants",
+      "cofactors"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:57:45.471Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_cofactor_expansion_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>In linear algebra, cofactor expansion is a powerful technique to compute determinants of matrices. Given a square matrix A, we can expand its determinant along any row or column using minors and cofactors.</p><p>Imagine a matrix as a grid of numbers. To expand the determinant along a row or column, we 'open up' that row or column like a book, revealing a set of smaller matrices (minors) inside. We then multiply each minor by its corresponding cofactor – a value that depends on the position and sign of the elements in the original matrix.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Expansion Formula"
+    },
+    "intuition": "Cofactor expansion helps us simplify complex determinants by breaking them down into smaller, more manageable pieces. This insight is crucial in many applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "In ML/AI, cofactor expansion can be used to compute the determinant of a covariance matrix, which is essential for tasks like principal component analysis."
+    ],
+    "commonMistakes": [
+      "Don't confuse cofactors with minors – they're related but distinct concepts."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:58:04.556Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_cofactor_expansion_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>In linear algebra, cofactor expansion is a powerful technique to calculate the determinant of a matrix. It's based on the idea that we can expand the determinant along any row or column, and then use minors and cofactors to simplify the calculation.</p><p>Imagine a matrix as a grid of numbers. When we expand along a row or column, we're essentially 'unraveling' this grid into a series of smaller grids, each with its own determinant. The key insight is that these smaller determinants are related to the original determinant through the cofactors.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Cofactor Expansion Formula"
+    },
+    "intuition": "The key insight is that cofactor expansion allows us to break down the calculation of a determinant into smaller, more manageable pieces. This makes it easier to understand and work with determinants in practice.",
+    "realWorldApplications": [
+      "In machine learning, determinants are used in techniques like principal component analysis (PCA) to reduce dimensionality and improve model performance."
+    ],
+    "tags": [
+      "determinant",
+      "cofactor expansion",
+      "linear algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:58:23.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

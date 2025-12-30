@@ -1,0 +1,123 @@
+[
+  {
+    "id": "la_wex_matrix_of_transformation_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "matrix_of_transformation",
+    "title": "Matrix Representation of Linear Transformations",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the matrix representation of a linear transformation.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}\\vec{x} = \\vec{y}\\]",
+      "name": "Linear Transformation"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the standard matrix representation for the linear transformation T: ℝ² → ℝ³, where T(x, y) = (3x + 2y, x - y, 4x).</p>",
+      "hints": [
+        "Check if the transformation is invertible",
+        "Use the definition of a linear transformation"
+      ],
+      "solutionHtml": "<p>Step 1: Identify the basis vectors for ℝ² and ℝ³. Let's use (1, 0) and (0, 1) as our basis vectors.</p><p>Step 2: Apply T to each basis vector and write the resulting vectors in terms of the standard basis vectors for ℝ³.</p><p>Step 3: Write the transformation matrix by stacking the transformed basis vectors.</p>",
+      "answerShort": "The transformation matrix is \\[\\begin{bmatrix} 3 & 2 \\\\ 1 & -1 \\\\ 4 & 0 \\end{bmatrix}]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the standard matrix representation for the linear transformation T: ℝ² → ℝ³, where T(x, y) = (3x + 2y, x - y, 4x).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify basis vectors",
+          "mathHtml": "\\[\\vec{e}_1 = (1, 0), \\vec{e}_2 = (0, 1)\\]",
+          "explanation": "We need a clear understanding of the input and output spaces."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply T to basis vectors",
+          "mathHtml": "\\[T(\\vec{e}_1) = (3, 1, 4), T(\\vec{e}_2) = (2, -1, 0)\\]",
+          "explanation": "This step demonstrates the linearity of the transformation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Write the transformation matrix",
+          "mathHtml": "\\[\\begin{bmatrix} 3 & 2 \\\\ 1 & -1 \\\\ 4 & 0 \\end{bmatrix}]\\]",
+          "explanation": "The resulting matrix represents the linear transformation."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the result",
+          "mathHtml": "\\[\\begin{bmatrix} 3 & 2 \\\\ 1 & -1 \\\\ 4 & 0 \\end{bmatrix}\\vec{x} = T(\\vec{x})\\]",
+          "explanation": "This step ensures our calculation is correct."
+        }
+      ],
+      "finalAnswer": "\\[\\begin{bmatrix} 3 & 2 \\\\ 1 & -1 \\\\ 4 & 0 \\end{bmatrix}]"
+    },
+    "intuition": "The key insight here is that the transformation matrix represents the linear transformation, allowing us to perform transformations on vectors.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:45:41.672Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_of_transformation_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "matrix_of_transformation",
+    "title": "Matrix Representation of Linear Transformations",
+    "contentHtml": "<p>In linear algebra, we often encounter linear transformations between vector spaces.</p><p>To represent these transformations as matrices, we can use the standard matrix representation.</p>",
+    "formula": "{",
+    "latex": "\\\\[T\\\\mathbf{x} = \\\\begin{bmatrix} a & b \\\\\\\\ c & d \\\\end{bmatrix}\\\\mathbf{x}\\]\",",
+    "name": "Standard Matrix Representation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the standard matrix representation of the linear transformation T: ℝ² → ℝ², which maps (x, y) to (2x + 3y, x - 2y).</p>",
+    "hints": [
+      "Check the transformation's effect on the basis vectors"
+    ],
+    "solutionHtml": "<p>To find the standard matrix representation, we need to determine how T affects each basis vector.</p><p>Let's start with the first basis vector (1, 0).</p><p>T maps this to (2(1) + 3(0), 1 - 2(0)) = (2, 1).</p><p>Now, let's consider the second basis vector (0, 1). T maps this to (3(0) + 2(1), 0 - 2(1)) = (-2, -2).</p><p>The standard matrix representation is obtained by stacking these transformed vectors:</p>",
+    "answerShort": "The standard matrix representation is \\\\begin{bmatrix} 2 & -2 \\\\\\\\ 1 & -2 \\\\end{bmatrix}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the standard matrix representation of T: ℝ³ → ℝ³, which maps (x, y, z) to (x + 2y - 3z, 2x + 5y, x - 4z).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the effect of T on each basis vector\", \"mathHtml\": \"\\\\[T\\\\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 0 \\\\end{bmatrix} = \\\\begin{bmatrix} 1 + 2(0) - 3(0) \\\\\\\\ 2(1) + 5(0) \\\\\\\\ 1 - 4(0) \\\\end{bmatrix}\\]\", \"explanation\": \"We start by considering the first basis vector.\"}, {\"stepNumber\": 2, \"description\": \"Find the transformed vectors\", \"mathHtml\": \"\\\\[T\\\\begin{bmatrix} 0 \\\\\\\\ 1 \\\\\\\\ 0 \\\\end{bmatrix} = \\\\begin{bmatrix} 2(0) + 5(1) \\\\\\\\ 1 - 4(0) \\\\\\\\ 0 - 4(1) \\\\end{bmatrix}\\]\", \"explanation\": \"Next, we consider the second basis vector.\"}, {\"stepNumber\": 3, \"description\": \"Stack the transformed vectors\", \"mathHtml\": \"\\\\[T = \\\\begin{bmatrix} 1 & 2 & -3 \\\\\\\\ 2 & 5 & 0 \\\\\\\\ 1 & 0 & -4 \\\\end{bmatrix}\\]\", \"explanation\": \"Finally, we obtain the standard matrix representation by stacking these transformed vectors.\"}, {\"stepNumber\": 4, \"description\": \"Check the result\", \"mathHtml\": \"\\\\[T\\\\begin{bmatrix} x \\\\\\\\ y \\\\\\\\ z \\\\end{bmatrix} = \\\\begin{bmatrix} x + 2y - 3z \\\\\\\\ 2x + 5y \\\\\\\\ x - 4z \\\\end{bmatrix}\\]\", \"explanation\": \"The resulting matrix representation indeed captures the transformation's effect on each vector.\"} ],",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:46:29.834Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_of_transformation_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "matrix_of_transformation",
+    "title": "Matrix Representation of Linear Transformations",
+    "contentHtml": "<p>In linear algebra, we often encounter linear transformations between vector spaces.</p><p>To represent these transformations as matrices, we'll follow a step-by-step process.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the matrix representation of the transformation <i>T</i>: ℝ<sup>2</sup> → ℝ<sup>2</sup>, defined by T(<i>x</i>, <i>y</i>) = (<i>2x</i> + <i>y</i>, <i>x</i> + <i>3y</i>).",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Verify that the matrix multiplication matches the transformation's action.",
+    "mathHtml": "\\[\\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = T(x, y)\\]\",",
+    "explanation": "This step ensures that the matrix accurately represents the transformation.\" } ],",
+    "finalAnswer": "\\[\\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix}\\]\" },",
+    "intuition": "Matrix representation allows us to compactly describe complex transformations and perform efficient computations using linear algebra techniques.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:47:02.843Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

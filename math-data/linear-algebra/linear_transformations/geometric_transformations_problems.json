@@ -1,0 +1,134 @@
+[
+  {
+    "id": "la_prb_geometric_transformations_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "problem": "{",
+    "statementHtml": "<p>Consider a 2D rotation matrix <code>R(θ)</code> that rotates points counterclockwise by an angle <code>θ</code>. Find the image of point <code>(x, y)</code> under this transformation.</p>",
+    "hints": [
+      "Think about the standard basis vectors and how they are affected.",
+      "Use the fact that rotations preserve lengths and orientations.",
+      "Write down the matrix product explicitly."
+    ],
+    "solutionHtml": "<p>To find the image of <code>(x, y)</code>, we need to compute the product <code>R(θ) \\* [x, y]^{T}</code>. We can write this as:</p>\\n\\[R(θ) \\* [x, y]^{T} = [x', y']^{T}\\]\\n<p>Now, we can use the fact that rotations preserve lengths to simplify the expression:</p>\\n\\[\\begin{aligned} x' &= x \\cos θ + y \\sin θ \\\\ y' &= -x \\sin θ + y \\cos θ \\end{aligned}\\]\",",
+    "answerShort": "The image of <code>(x, y)</code> is <code>(x', y')</code>\" },",
+    "commonMistakes": [
+      "Forgetting to use the standard basis vectors",
+      "Not recognizing that rotations preserve lengths and orientations"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:49:41.877Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_geometric_transformations_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "problem": "{",
+    "statementHtml": "Find the matrix representation of a rotation by <i>θ</i> in 3D space.",
+    "hints": [
+      "Think about the standard basis vectors and how they change under rotation.",
+      "Use the fact that rotations preserve lengths and dot products.",
+      "Consider the axis of rotation as a unit vector."
+    ],
+    "solutionHtml": "<p>To find the matrix representation of a rotation by <i>θ</i>, we can use the following steps:</p><ol><li><p>We start with the standard basis vectors <code>\\(\\mathbf{i}\\)</code>, <code>\\(\\mathbf{j}\\)</code>, and <code>\\(\\mathbf{k}\\)</code>.</p></li><li><p>After rotation, these vectors become:</p><ul><li><code>\\(\\mathbf{i}' = \\cos(θ) \\mathbf{i} + \\sin(θ) \\mathbf{j}\\)</code>,</li><li><code>\\(\\mathbf{j}' = -\\sin(θ) \\mathbf{i} + \\cos(θ) \\mathbf{j}\\)</code>,</li><li><code>\\(\\mathbf{k}' = \\mathbf{k}\\)</code></li></ul></li><li><p>We can write these new vectors as a matrix:</p><code>\\[\\begin{bmatrix} \\cos(θ) & -\\sin(θ) & 0 \\\\ \\sin(θ) & \\cos(θ) & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]</code></li></ol>\",",
+    "answerShort": "<i>R</i> = <code>\\[\\begin{bmatrix} \\cos(θ) & -\\sin(θ) & 0 \\\\ \\sin(θ) & \\cos(θ) & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:50:08.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_geometric_transformations_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "problem": "{",
+    "statementHtml": "<p>Consider a 3D object undergoing a rotation around its center of mass.</p>",
+    "hints": [
+      "Think about how the coordinates change.",
+      "Use the dot product to find the new direction.",
+      "Visualize what happens when you rotate an object."
+    ],
+    "solutionHtml": "<p>To perform this rotation, we can use a linear transformation represented by a 3x3 matrix <code>R</code>. The transformed coordinates are given by <code>x' = Rx</code>.</p><p>We can find the new direction of the object by computing the dot product between the original and transformed vectors:</p>\\[ \\mathbf{v}' \\cdot \\mathbf{v} = (\\mathbf{R}\\mathbf{v}) \\cdot \\mathbf{v} = \\mathbf{v}^T\\mathbf{R}^T\\mathbf{v}.\\] <p>This shows that the rotation matrix <code>R</code> must satisfy:</p>\\[ \\mathbf{R}^T\\mathbf{R} = I,\\] <p>where <code>I</code> is the 3x3 identity matrix.</p>\",",
+    "answerShort": "The rotation matrix satisfies its transpose times itself equals the identity matrix.\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:50:28.425Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_geometric_transformations_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "problem": "{",
+    "statementHtml": "<p>Find the matrix representation of a rotation by <i>\\(45^\\circ\\)</i> in the plane.</p>\",",
+    "hints": [
+      "Think about the standard basis vectors and how they are transformed.",
+      "Use the fact that rotations preserve lengths and angles.",
+      "You can use trigonometry to find the sine and cosine of the rotation angle."
+    ],
+    "solutionHtml": "<p>To represent a rotation by <i>\\(45^\\circ\\)</i>, we need to find the matrix that takes the standard basis vectors \\(\\mathbf{i} = (1, 0)\\) and \\(\\mathbf{j} = (0, 1)\\) to their rotated versions.</p><p>We can use trigonometry to find the sine and cosine of the rotation angle:</p>\\[c = \\cos(45^\\circ) = \\frac{\\sqrt{2}}{2},\\quad s = \\sin(45^\\circ) = \\frac{\\sqrt{2}}{2}.\\]<p>The rotated basis vectors are then given by:</p>\\[\\mathbf{i}' = c \\mathbf{i} + s \\mathbf{j} = \\left(\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right),\\quad \\mathbf{j}' = -s \\mathbf{i} + c \\mathbf{j} = \\left(-\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right).\\]<p>The matrix representation of the rotation is then given by:</p>\\[\\begin{bmatrix} c & -s \\\\ s & c \\end{bmatrix} = \\begin{bmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{bmatrix}.\\]",
+    "answerShort": "<i>\\(\\begin{bmatrix}\\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2}\\end{bmatrix}\\)</i>\" },",
+    "commonMistakes": [
+      "Forgetting to use trigonometry",
+      "Not considering the standard basis vectors"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:50:58.140Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_geometric_transformations_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "problem": "{",
+    "statementHtml": "Find the matrix representation of a rotation in 3D space by <90°> around the y-axis.",
+    "hints": [
+      "Consider the standard basis vectors for 3D space.",
+      "Think about how each vector is transformed under this rotation."
+    ],
+    "solutionHtml": "<p>To find the matrix representation, we need to determine how each standard basis vector is affected by the rotation.</p><p>The x-axis stays in place, so <math>\\begin{bmatrix}1 & 0 & 0\\end{bmatrix}</math>.</p><p>The z-axis is rotated onto the new x'-axis, so <math>\\begin{bmatrix}0 & -1 & 0\\end{bmatrix}</math>.</p><p>The y-axis stays in place, so <math>\\begin{bmatrix}0 & 0 & 1\\end{bmatrix}</math>.</p><p>Now we combine these vectors into a single matrix:</p><p><math>\\begin{bmatrix}\\cos(\\theta) & 0 & -\\sin(\\theta)\\\\ 0 & 1 & 0 \\\\ \\sin(\\theta) & 0 & \\cos(\\theta)\\end{bmatrix}</math></p>\",",
+    "answerShort": "<math>\\begin{bmatrix}\\cos(\\theta) & 0 & -\\sin(\\theta)\\\\ 0 & 1 & 0 \\\\ \\sin(\\theta) & 0 & \\cos(\\theta)\\end{bmatrix}</math>\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:51:20.174Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

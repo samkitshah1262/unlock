@@ -1,0 +1,76 @@
+[
+  {
+    "id": "prob_thm_variational_inference_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference Theorem",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions by optimizing a lower bound on the log-likelihood.</p>",
+    "formula": {
+      "latex": "\\[ ELBO = \\mathbb{E}_{q}\\left[\\log p(x) - KL\\left(q || p\\right)\\right] \\]",
+      "name": "Evidence Lower Bound"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{ELBO} = \\int q(z) \\log p(x, z) dz + H[q] \\]",
+      "proofSketch": "The proof involves showing that the ELBO is a lower bound on the log-likelihood and that it can be optimized by minimizing the KL divergence between the variational distribution and the true posterior."
+    },
+    "intuition": "In variational inference, we use a tractable distribution to approximate the true posterior. The ELBO provides a lower bound on the log-likelihood, which allows us to optimize the variational parameters.",
+    "realWorldApplications": [
+      "Generative models",
+      "Bayesian neural networks"
+    ],
+    "tags": [
+      "variational inference",
+      "ELBO",
+      "KL divergence"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:30:43.767Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_variational_inference_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference Theorem",
+    "contentHtml": "<p>Variational inference is a powerful technique in probabilistic machine learning that allows us to approximate complex posterior distributions.</p><p>The key idea is to find a simpler distribution (the variational distribution) that is close to the true posterior, and then use this approximation to make predictions or perform inference.</p>",
+    "formula": {
+      "latex": "\\[ ELBO = \\mathbb{E}_{q}\\left[\\log p(x) - \\log q(z|x) + \\log p(z)\\right] \\]",
+      "name": "ELBO"
+    },
+    "theorem": {
+      "statement": "\\[ \\max_{q} \\mathbb{E}_{p}\\left[\\log p(x, z) - \\log q(z|x)\\right] \\]",
+      "proofSketch": "The proof involves showing that the ELBO is a lower bound on the log likelihood and that the mean-field approximation is a good initialization for the variational distribution."
+    },
+    "intuition": "The key insight is that by finding a simpler distribution that is close to the true posterior, we can perform efficient inference and make predictions.",
+    "realWorldApplications": [
+      "Variational autoencoders",
+      "Generative models"
+    ],
+    "tags": [
+      "variational inference",
+      "ELBO",
+      "mean-field approximation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:31:04.630Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

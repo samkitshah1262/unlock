@@ -1,0 +1,107 @@
+[
+  {
+    "id": "prob_prb_conditional_expectation_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "problem": "{",
+    "statementHtml": "Find E\\[Y|X] = ∫y(x)P(Y=y|X=x)dx, given joint distribution P(X,Y).\",",
+    "hints": "[ \"Start by recalling the law of iterated expectations.\", \"Think about how to apply this law to get E\\[Y|X].\", \"Use regression function intuition to guide your solution.\" ],",
+    "solutionHtml": "<p>Step 1: Recall the law of iterated expectations.</p><p>\\[E[Y] = ∫y(x)P(Y=y|X=x)dx\\]</p><p>Step 2: Apply this law to get E\\[Y|X].</p><p>\\[E[Y|X] = ∫y(x)P(Y=y|X=x)dx\\]</p>\",",
+    "answerShort": "E\\[Y|X]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:00:42.576Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_expectation_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "problem": "{",
+    "statementHtml": "<p>Find E[Y|X] when Y and X are jointly distributed.</p>",
+    "hints": [
+      "Start by recalling the law of iterated expectations.",
+      "Think about how to express E[Y|X] in terms of E[Y|X=x].",
+      "Use regression function properties to simplify your answer."
+    ],
+    "solutionHtml": "<p>To find E[Y|X], we'll use the law of iterated expectations:</p>\\(\\mathbb{E}[Y|X] = \\int y f(y|x) dy\\)<p>Now, recall that the regression function is the conditional expectation:</p>\\(m(x) = \\mathbb{E}[Y|X=x]\\)<p>We can express E[Y|X] in terms of m(x):</p>\\(\\mathbb{E}[Y|X] = \\int y f(y|x) dy = \\int y f(y|m^{-1}(x)) dy\\)<p>Since the regression function is linear, we can write:</p>\\(m(x) = a + bx\\)<p>This allows us to simplify our answer:</p>\\(\\mathbb{E}[Y|X] = a + bX\\)<p>The final answer is:</p>\\(a + bX\\)\",",
+    "answerShort": "a + bX\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:01:04.751Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_expectation_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be random variables with joint distribution P(X,Y). Find E[Y|X=x], where x is a given value.</p>",
+    "hints": [
+      "Start by recalling the definition of conditional expectation.",
+      "Use the law of iterated expectations to relate E[Y|X] to the marginal distribution of X.",
+      "Think about how you would estimate Y given X=x in practice."
+    ],
+    "solutionHtml": "<p>To find E[Y|X=x], we can use the law of iterated expectations:</p>\\(\\mathbb{E}[Y|X=x] = \\int_{-\\infty}^{\\infty} y P(Y=y | X=x) dy\\)<p>Since this is a conditional distribution, we only need to consider values of Y that satisfy P(Y=y | X=x) > 0. We can then use the marginal distribution of X to find:</p>\\(\\mathbb{E}[Y|X=x] = \\int_{-\\infty}^{\\infty} y P(Y=y) P(X=x | Y=y) dy\\)<p>Now we can recognize this as a regression function, which is often used in machine learning.</p>\",",
+    "answerShort": "\\(\\mathbb{E}[Y|X=x]\\)\" },",
+    "commonMistakes": [
+      "Forgetting to consider only values of Y that satisfy P(Y=y | X=x) > 0."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:01:27.722Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_expectation_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "problem": {
+      "statementHtml": "Find the conditional expectation E[Y|X] = ∫y(x)g(x)dx, where y(x) is a random variable and g(x) is a probability density function.",
+      "hints": [
+        "Start by recalling the definition of conditional expectation as an integral with respect to the conditional probability distribution.",
+        "Use the law of iterated expectations to relate E[Y|X] to the unconditional expectation E[Y].",
+        "Think about how the regression function can be used to find the expected value of Y given X."
+      ],
+      "solutionHtml": "To solve this problem, we first recall that conditional expectation is an integral with respect to the conditional probability distribution. This means that we need to integrate y(x)g(x)dx with respect to g(x). We then use the law of iterated expectations to relate E[Y|X] to the unconditional expectation E[Y]. Finally, we can use the regression function to find the expected value of Y given X.\n\nE[Y|X] = ∫y(x)g(x)dx = ∫(Ey|x)g(x)dx = Ey,\nwhere Ey is the unconditional expectation.",
+      "answerShort": "E[Y|X] = Ey"
+    },
+    "commonMistakes": [
+      "Forgetting to use the law of iterated expectations",
+      "Not recognizing that the regression function can be used to find the expected value"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:01:48.259Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

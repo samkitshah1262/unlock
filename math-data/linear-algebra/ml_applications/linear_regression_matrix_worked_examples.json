@@ -1,0 +1,211 @@
+[
+  {
+    "id": "la_wex_linear_regression_matrix_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "title": "Linear Regression via Linear Algebra",
+    "contentHtml": "<p>In this example, we'll solve a linear regression problem using normal equations and matrix formulation.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{X}^T \\\\mathbf{X} \\\\beta = \\\\mathbf{X}^T \\\\mathbf{y}\\]\",",
+    "name": "Normal Equation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset of features and labels, find the best-fitting linear model using normal equations.</p>",
+    "hints": [
+      "Hint: Use matrix operations to simplify the calculation.",
+      "Think about the dot product."
+    ],
+    "solutionHtml": "<p>Solution goes here...</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores and corresponding student ages. We want to find the best-fitting linear model that predicts scores based on age.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the normal equation\", \"mathHtml\": \"\\\\[\\\\mathbf{X}^T \\\\mathbf{X} \\\\beta = \\\\mathbf{X}^T \\\\mathbf{y}\\]\", \"explanation\": \"This is the key step in solving the linear regression problem.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the dot product\", \"mathHtml\": \"\\\\[\\\\mathbf{X}^T \\\\mathbf{X} = \\\\sum_{i=1}^{n} (x_i - \\\\bar{x})(x_i - \\\\bar{x})^T\\]\", \"explanation\": \"We're using the dot product to simplify the calculation.\"}, {\"stepNumber\": 3, \"description\": \"Solve for beta\", \"mathHtml\": \"\\\\[\\\\beta = (\\\\mathbf{X}^T \\\\mathbf{X})^{-1} \\\\mathbf{X}^T \\\\mathbf{y}\\]\", \"explanation\": \"Now we have the solution to our linear regression problem.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the predicted values\", \"mathHtml\": \"\\\\[\\\\hat{y} = \\\\mathbf{X}\\\\beta\\]\", \"explanation\": \"This is how we use our model to make predictions.\"} ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Linear regression is a fundamental concept in machine learning, and understanding the normal equation is crucial for building accurate models.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:23:37.285Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_regression_matrix_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "title": "Linear Regression via Linear Algebra",
+    "contentHtml": "<p>In this example, we'll derive the normal equations and matrix formulation of linear regression using linear algebra.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{w} = (\\\\mathbf{X}^T \\\\mathbf{X})^{-1} \\\\mathbf{X}^T \\\\mathbf{y}\\]\",",
+    "name": "Linear Regression Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset of features and labels, find the best-fitting linear model using the normal equations.</p>",
+    "hints": [
+      "Hint: Start by defining the cost function.",
+      "Think about how to minimize it."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll first define the cost function as half the mean squared error:</p><ul><li>\\[J(\\mathbf{w}) = \\frac{1}{2} ||\\mathbf{y} - \\mathbf{X}\\mathbf{w}||^2</li></ul><p>Next, we'll take the derivative of J with respect to \\mathbf{w} and set it equal to zero:</p><ul><li>\\[\\frac{dJ}{d\\mathbf{w}} = -\\mathbf{X}^T (\\mathbf{y} - \\mathbf{X}\\mathbf{w})</li></ul><p>Solving for \\mathbf{w}, we get:</p>",
+    "answerShort": "The normal equations\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of features (\\mathbf{x}_1, \\mathbf{x}_2) and labels (y_1, y_2). Find the best-fitting linear model using the normal equations.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the cost function\", \"mathHtml\": \"\\\\[J(\\\\mathbf{w}) = \\\\frac{1}{2} ||\\\\mathbf{y} - \\\\mathbf{X}\\\\mathbf{w}||^2\\]\", \"explanation\": \"This is the standard mean squared error.\"}, {\"stepNumber\": 2, \"description\": \"Take the derivative of J with respect to \\\\mathbf{w}\", \"mathHtml\": \"\\\\[\\\\frac{dJ}{d\\\\mathbf{w}} = -\\\\mathbf{X}^T (\\\\mathbf{y} - \\\\mathbf{X}\\\\mathbf{w})\\]\", \"explanation\": \"This is the gradient of our cost function.\"}, {\"stepNumber\": 3, \"description\": \"Set the derivative equal to zero and solve for \\\\mathbf{w}\", \"mathHtml\": \"\\\\[\\\\frac{dJ}{d\\\\mathbf{w}} = 0\\]\", \"explanation\": \"Now we can find the optimal weights by solving this equation.\"}, {\"stepNumber\": 4, \"description\": \"Use matrix operations to simplify the solution\", \"mathHtml\": \"\\\\[\\\\mathbf{w} = (\\\\mathbf{X}^T \\\\mathbf{X})^{-1} \\\\mathbf{X}^T \\\\mathbf{y}\\]\", \"explanation\": \"This is the final formula for our linear regression model.\"} ],",
+    "finalAnswer": "The normal equations give us the optimal weights: \\\\mathbf{w}\" },",
+    "intuition": "Linear regression is a fundamental concept in machine learning, and understanding its mathematical underpinnings can help you build more robust models.",
+    "visualDescription": "A diagram showing the linear relationship between features and labels would be helpful for visualizing the problem.",
+    "commonMistakes": [
+      "Forgetting to add an intercept term",
+      "Not recognizing that \\mathbf{X}^T \\mathbf{X} is a square matrix"
+    ],
+    "realWorldApplications": [
+      "Predicting house prices based on features like number of bedrooms and square footage."
+    ],
+    "tags": [
+      "linear regression",
+      "normal equations",
+      "ridge regression"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:24:24.993Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_regression_matrix_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "title": "Linear Regression via Linear Algebra",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a linear regression problem using linear algebra.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{X}^T \\mathbf{X} \\beta = \\mathbf{X}^T \\mathbf{y}\\]",
+      "name": "Normal Equation"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset of input-output pairs, find the best-fitting linear model using the normal equations.</p>",
+      "hints": [
+        "Hint: Use the matrix formulation"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of input-output pairs, where each input is a feature vector \\mathbf{x} and each output is a target value y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Form the design matrix",
+          "mathHtml": "\\[\\mathbf{X} = [\\mathbf{x}_1, \\mathbf{x}_2, ..., \\mathbf{x}_n]^T\\]",
+          "explanation": "We stack all input vectors into a single matrix."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the dot product",
+          "mathHtml": "\\[\\mathbf{X}^T \\mathbf{X} = [\\mathbf{x}_1^T, \\mathbf{x}_2^T, ..., \\mathbf{x}_n^T]^T [\\mathbf{x}_1, \\mathbf{x}_2, ..., \\mathbf{x}_n]\\]",
+          "explanation": "This is the covariance matrix of the input features."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the cross-product",
+          "mathHtml": "\\[\\mathbf{X}^T \\mathbf{y} = [\\mathbf{x}_1^T, \\mathbf{x}_2^T, ..., \\mathbf{x}_n^T]^T y\\]",
+          "explanation": "This is the vector of dot products between each input feature and the target values."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Solve for the coefficients",
+          "mathHtml": "\\[\\beta = (\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{y}\\]",
+          "explanation": "We use the normal equations to find the optimal coefficients."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Compute the predicted values",
+          "mathHtml": "\\[\\hat{y} = \\mathbf{x}^T \\beta\\]",
+          "explanation": "This is the predicted output value for a given input vector."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "<p>The key insight here is that linear regression can be formulated as a matrix equation, which allows us to leverage the power of linear algebra to find the optimal coefficients.</p>",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to include the bias term"
+    ],
+    "realWorldApplications": [
+      "Predicting housing prices based on features like number of bedrooms and square footage"
+    ],
+    "tags": [
+      "linear regression",
+      "normal equations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:25:03.542Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_regression_matrix_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "title": "Linear Regression via Linear Algebra",
+    "contentHtml": "<p>In this worked example, we'll use linear algebra to solve a linear regression problem.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{X} \\beta = \\mathbf{y}\\]",
+      "name": "Linear Regression Equation"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset of input features X and output labels y, find the coefficients β that minimize the mean squared error (MSE) between the predicted values and actual values.</p>",
+      "hints": [
+        "Hint: Use the normal equations to solve for β"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Step 1: Calculate the covariance matrix Σ = X^T * X</li><li>Step 2: Calculate the cross-covariance vector μ = X^T * y</li><li>Step 3: Solve for β using Σ * β = μ</li></ul>",
+      "answerShort": "β = (Σ^(-1) * μ)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores X and corresponding student grades y. We want to find the linear regression coefficients β that best predict the grade given the score.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the covariance matrix Σ",
+          "mathHtml": "\\[\\Sigma = \\frac{1}{n} X^T * X\\]",
+          "explanation": "We're calculating the variance of the input features."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the cross-covariance vector μ",
+          "mathHtml": "\\[\\mu = \\frac{1}{n} X^T * y\\]",
+          "explanation": "We're calculating the expected value of the output given the input."
+        }
+      ],
+      "finalAnswer": "β = (Σ^(-1) * μ)"
+    },
+    "intuition": "Linear regression can be seen as finding the best linear approximation to a set of data points.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:25:30.194Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

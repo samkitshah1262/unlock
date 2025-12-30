@@ -1,0 +1,633 @@
+[
+  {
+    "id": "prob_con_multivariate_normal_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to multiple variables.</p><p>Given a random vector $\\mathbf{X} = (X_1, \\ldots, X_n)$ with mean vector $\\boldsymbol{\\mu}$ and covariance matrix $\\Sigma$, we say that $\\mathbf{X}$ follows a multivariate normal distribution if its probability density function is given by</p>\\[f(\\mathbf{x}) = \\frac{1}{\\sqrt{(2\\pi)^n |\\Sigma|}} \\exp\\left(-\\frac{1}{2} (\\mathbf{x}-\\boldsymbol{\\mu})^T \\Sigma^{-1} (\\mathbf{x}-\\boldsymbol{\\mu})\\right).\\]",
+    "formula": "{",
+    "latex": "\\[f(\\mathbf{x}) = \\frac{1}{\\sqrt{(2\\pi)^n |\\Sigma|}} \\exp\\left(-\\frac{1}{2} (\\mathbf{x}-\\boldsymbol{\\mu})^T \\Sigma^{-1} (\\mathbf{x}-\\boldsymbol{\\mu})\\right).\\]\",",
+    "name": "Multivariate Normal PDF\" },",
+    "intuition": "The multivariate normal distribution is a powerful tool for modeling complex relationships between multiple variables. It's widely used in machine learning and statistics to model high-dimensional data.",
+    "realWorldApplications": [
+      "In natural language processing, the multivariate normal distribution can be used to model the joint probability of word frequencies in a document."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:15:25.140Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multivariate_normal_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>A multivariate normal distribution is a probability distribution over a set of correlated variables that are normally distributed.</p><p>Formally, it's defined by its mean vector μ and covariance matrix Σ.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\mu, \\Sigma) \\]",
+      "name": "Multivariate Normal Distribution"
+    },
+    "intuition": "Think of it like a high-dimensional Gaussian distribution. Each variable is normally distributed, but they're correlated with each other.",
+    "realWorldApplications": [
+      "In machine learning, multivariate normal distributions are used in Bayesian networks and Gaussian mixture models."
+    ],
+    "commonMistakes": [
+      "Don't confuse this with the univariate normal distribution; here, we have multiple variables that are correlated."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:15:39.563Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multivariate_normal_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to higher dimensions.</p><p>Given a random vector <strong>X</strong> with mean vector <strong>μ</strong> and covariance matrix <strong>Σ</strong>, we can define the joint density function as:</p>\\[\\frac{1}{\\sqrt{(2π)^k |\\Sigma|}} \\exp\\left(-\\frac{1}{2} (X - μ)^T Σ^{-1} (X - μ)\\right)\\]",
+    "formula": "{",
+    "latex": "\\[Σ = E[(X - μ)(X - μ)^T]\\]\",",
+    "name": "Covariance Matrix",
+    "variants": "[] },",
+    "intuition": "The multivariate normal distribution provides a way to model complex relationships between multiple variables, which is crucial in many real-world applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "In Gaussian mixture models, the multivariate normal distribution is used to represent the underlying structure of the data."
+    ],
+    "commonMistakes": [
+      "Failing to account for correlations between variables can lead to inaccurate results."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:15:58.038Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multivariate_normal_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory, allowing us to model and analyze complex systems with multiple variables.</p><p>Given a random vector \\(\\mathbf{X} = (X_1, X_2, ..., X_n)\\) with mean vector \\(\\mu\\) and covariance matrix \\(\\Sigma\\), the multivariate normal distribution is defined as:</p>\\[\\mathcal{N}(\\mathbf{X}; \\mu, \\Sigma) = \\frac{1}{(2\\pi)^{n/2} |\\Sigma|^{1/2}} \\exp\\left(-\\frac{1}{2} (\\mathbf{X}-\\mu)^T \\Sigma^{-1} (\\mathbf{X}-\\mu)\\right)\\]",
+    "formula": "{",
+    "latex": "\\[\\mathcal{N}(\\mathbf{X}; \\mu, \\Sigma) = \\frac{1}{(2\\pi)^{n/2} |\\Sigma|^{1/2}} \\exp\\left(-\\frac{1}{2} (\\mathbf{X}-\\mu)^T \\Sigma^{-1} (\\mathbf{X}-\\mu)\\right)\\]\",",
+    "name": "\" },",
+    "intuition": "<p>The multivariate normal distribution is a powerful tool for modeling complex systems, as it allows us to capture the relationships between multiple variables.</p>",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:16:20.109Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multivariate_normal_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to multiple dimensions.</p><p>It's used extensively in machine learning and artificial intelligence to model complex relationships between variables.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\boldsymbol{\\mu}, \\Sigma) \\]\",",
+    "name": "Multivariate Normal Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of student grades in math and science. We want to model the relationship between these two variables.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the mean vector\", \"mathHtml\": \"\\[ \\boldsymbol{\\mu} = (\\mu_1, \\mu_2) \\]\", \"explanation\": \"The mean vector represents the average grade in each subject.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The multivariate normal distribution provides a way to model complex relationships between variables while still being tractable for statistical inference.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:16:38.620Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multivariate_normal_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to multiple variables.</p><p>It's a powerful tool for modeling complex relationships between variables and has numerous applications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathcal{N}(\\boldsymbol{x};\\boldsymbol{\\mu},\\boldsymbol{\\Sigma}) = \\frac{1}{(2\\pi)^{k/2}|\\boldsymbol{\\Sigma}|^{1/2}} \\exp\\left(-\\frac{1}{2} (\\boldsymbol{x}-\\boldsymbol{\\mu})^T \\boldsymbol{\\Sigma}^{-1} (\\boldsymbol{x}-\\boldsymbol{\\mu}) \\right) \\]\",",
+    "name": "Multivariate Normal Density",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two variables, height and weight, that follow a multivariate normal distribution with mean vector <code>\\boldsymbol{\\mu} = [170, 70]</code> and covariance matrix <code>\\boldsymbol{\\Sigma} = \\begin{bmatrix} 10 & 0.5 \\\\ 0.5 & 20 \\end{bmatrix}</code>. Find the probability that a person has height greater than 175 cm and weight less than 65 kg.</p>\",",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Find the probability of the standardized variables",
+    "mathHtml": "\\[ P(Z_1 > 2.5, Z_2 < -1) = \\int_{-\\infty}^{2.5} \\int_{-1}^{\\infty} \\frac{1}{2\\pi} \\exp\\left(-\\frac{z_1^2 + z_2^2}{2}\\right) dz_1 dz_2 \\]\",",
+    "explanation": "We use the standardized variables and the multivariate normal density to find the probability.\" } ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "The multivariate normal distribution provides a way to model complex relationships between multiple variables, allowing us to make predictions and statements about the joint behavior of these variables.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:17:14.526Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multivariate_normal_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory, allowing us to model complex relationships between multiple variables.</p><p>It's essential for many machine learning and artificial intelligence applications, such as clustering, dimensionality reduction, and statistical modeling.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\boldsymbol{\\mu}, \\Sigma) \\]\",",
+    "name": "Multivariate Normal Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of students' scores in math and science. We can model this data using the multivariate normal distribution.</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the covariance matrix",
+    "mathHtml": "\\[ \\Sigma = \\begin{bmatrix} \\sigma_{11} & \\sigma_{12} \\\\ \\sigma_{21} & \\sigma_{22} \\end{bmatrix} \\]\",",
+    "explanation": "The covariance matrix represents the relationships between our variables.\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "The multivariate normal distribution provides a way to model complex relationships between multiple variables, allowing us to make predictions and draw conclusions about the data.",
+    "realWorldApplications": [
+      "Dimensionality reduction in computer vision"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:17:40.017Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_multivariate_normal_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to multiple dimensions.</p><p>In this theorem, we'll explore the properties of this distribution and its applications.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{x} \\sim N(\\mu, \\Sigma) \\]",
+      "name": "Multivariate Normal Distribution"
+    },
+    "theorem": {
+      "statement": "\\[ f(\\mathbf{x}) = \\frac{1}{(2\\pi)^{k/2} |\\Sigma|^{1/2}} e^{-\\frac{1}{2} (\\mathbf{x}-\\mu)^T \\Sigma^{-1} (\\mathbf{x}-\\mu)} \\]",
+      "proofSketch": "The proof involves showing that the multivariate normal distribution satisfies the characteristic function and moment properties of a probability distribution."
+    },
+    "intuition": "The multivariate normal distribution is a way to model complex relationships between multiple variables, which is crucial in many real-world applications such as machine learning and data analysis.",
+    "realWorldApplications": [
+      "In Gaussian mixture models, the multivariate normal distribution is used to represent the probability of each cluster."
+    ],
+    "tags": [
+      "Multivariate Normal Distribution",
+      "Probability Theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:18:00.602Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_multivariate_normal_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that extends the univariate normal distribution to higher dimensions.</p><p>It is used to model correlated random variables and has numerous applications in machine learning, statistics, and data analysis.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\mu, \\Sigma) \\]",
+      "name": "Multivariate Normal Distribution"
+    },
+    "theorem": {
+      "statement": "\\[ \\mathbb{E}[g(\\mathbf{x})] = \\int_{-\\infty}^{\\infty} g(\\mathbf{x}) \\frac{1}{(2\\pi)^{p/2} |\\Sigma|^{1/2}} e^{-\\frac{1}{2}(\\mathbf{x}-\\mu)^T \\Sigma^{-1} (\\mathbf{x}-\\mu)} d\\mathbf{x} \\]",
+      "proofSketch": "The proof involves using the definition of the multivariate normal distribution and applying the change of variables formula to evaluate the integral."
+    },
+    "intuition": "The multivariate normal distribution provides a way to model complex relationships between multiple random variables, allowing us to make predictions and draw conclusions about these variables.",
+    "realWorldApplications": [
+      "In machine learning, the multivariate normal distribution is used in Gaussian mixture models and Bayesian networks."
+    ],
+    "tags": [
+      "probability",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:18:23.690Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be jointly normally distributed with mean vector μ = (μ<sub>X</sub>, μ<sub>Y</sub>) and covariance matrix Σ. Find the marginal distribution of X.</p>",
+    "hints": [
+      "<p>The marginal distribution of X is a univariate normal distribution.</p>",
+      "<p>Use the fact that Σ<sub>XX</sub> = V(X) to find the variance of X.</p>",
+      "<p>Apply the formula for the probability density function (PDF) of a univariate normal distribution.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of X, we first need to find its mean and variance. The mean is simply μ<sub>X</sub>.</p><p>The variance can be found using Σ<sub>XX</sub>, which is the (1, 1)th element of Σ.</p><p>The PDF of a univariate normal distribution with mean μ and variance σ<sup>2</sup> is given by:</p>\\[\\frac{1}{\\sqrt{2πσ^2}}e^{(-(\\mathbf{x}-μ)^2/(2σ^2))}\\]<p>Substituting our values, we get the marginal distribution of X:</p>\",",
+    "answerShort": "The marginal distribution of X is N(μ<sub>X</sub>, Σ<sub>XX</sub>).\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:18:47.115Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "Let $X = (X_1, X_2) \\sim N(\\mu, \\Sigma)$ be a bivariate normal random variable. Find the marginal distribution of $X_1$.\",",
+    "hints": "[ \"Recall that the marginal distribution of $X_1$ is given by integrating out $X_2$. Think about how to apply the multivariate normal density function in this case.\", \"You may need to use the fact that $\\int_{-\\infty}^{\\infty} \\phi(x; \\mu, \\sigma) dx = 1$, where $\\phi$ is the standard normal density.\", \"Consider using the formula for the bivariate normal density and simplifying it to get the marginal distribution of $X_1$. You may need to use properties of the multivariate normal distribution.\" ],",
+    "solutionHtml": "<p>To find the marginal distribution of $X_1$, we integrate out $X_2$ from the joint density:</p>\\[f(x_1) = \\int_{-\\infty}^{\\infty} f(x_1, x_2) dx_2.\\]Using the bivariate normal density function, we have:</p>\\[f(x_1) = \\frac{1}{2\\pi \\sigma_x \\sigma_y \\sqrt{1 - \\rho^2}} \\exp\\left(-\\frac{(x_1 - \\mu_1)^2}{2\\sigma_x^2} - \\frac{(x_2 - \\mu_2)^2}{2\\sigma_y^2} + \\frac{\\rho (x_1 - \\mu_1)(x_2 - \\mu_2)}{\\sigma_x \\sigma_y}\\right).\\]Integrating out $x_2$, we get:</p>\\[f(x_1) = \\frac{1}{\\sqrt{2\\pi} \\sigma_x} \\exp\\left(-\\frac{(x_1 - \\mu_1)^2}{2\\sigma_x^2}\\right).\\]This is the standard normal density, so $X_1$ has a marginal distribution that is also standard normal.</p>\",",
+    "answerShort": "Standard Normal\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:18.415Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": {
+      "statementHtml": "<p>Consider a multivariate normal distribution <i>N</i>(μ, Σ) with mean vector μ and covariance matrix Σ.</p>",
+      "hints": [
+        "Think about how to compute the marginal distributions.",
+        "Recall that Σ is symmetric.",
+        "Use the fact that the conditional distribution given x<sub>i</sub> is also multivariate normal."
+      ],
+      "solutionHtml": "<p>To find the marginal distribution of the <i>i</i>-th variable, we can integrate out all other variables.</p>\n<p><i>N</i>(μ, Σ) = ∫... d<i>j</i>...</i></p>",
+      "answerShort": "The marginal distribution is also multivariate normal with mean μ<sub>i</sub> and covariance Σ<sub>ii</sub>"
+    },
+    "commonMistakes": [
+      "Forgetting that the conditional distribution given x<sub>i</sub> is still multivariate normal."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:34.555Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "problem": "{",
+    "statementHtml": "<p>Let X = (X<sub>1</sub>, ..., X<sub>n</sub>) be a random vector following a multivariate normal distribution with mean vector μ and covariance matrix Σ. Find the joint density function f(x) of X.</p>",
+    "hints": [
+      "<p>The marginal distributions are univariate normals.</p>",
+      "<p>Conditioning on one variable gives another multivariate normal distribution.</p>",
+      "<p>Use the formula for the determinant of a covariance matrix to simplify your answer.</p>"
+    ],
+    "solutionHtml": "<p>To find the joint density function, we can use the following formula:</p>\\n\\[f(x) = \\frac{1}{\\sqrt{(2π)^n |\\Sigma|}} e^{\\left(-\\frac{1}{2} (x-μ)^T Σ^{-1} (x-μ)\\right)}.\\]\\n<p>Here, |Σ| is the determinant of the covariance matrix.</p>\",",
+    "answerShort": "f(x) = ... \" },",
+    "commonMistakes": [
+      "Forgetting to include the normalizing constant",
+      "Not simplifying the expression correctly"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:53.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_014",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "<p>Let X = (X1, ..., XM) and Y = (Y1, ..., YN) be jointly normally distributed with mean vectors μX and μY, respectively, and covariance matrices ΣXX, ΣYY, and ΣXY. Find the marginal distribution of X.</p>",
+    "hints": [
+      "<p>Start by recalling the definition of a multivariate normal distribution.</p>",
+      "<p>Use the fact that the marginal distribution of X is also normally distributed to simplify your answer.</p>",
+      "<p>Don't forget to include the correct covariance matrix for the marginal distribution.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of X, we can use the formula:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\\n\\ <p>Substituting the given values, we get:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\\n\\ <p>The final answer is:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\",",
+    "answerShort": "The marginal distribution of X is a multivariate normal distribution with mean vector μX and covariance matrix ΣXX.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:20:21.201Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multivariate_normal_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>In probability theory, a multivariate normal distribution is a joint distribution of multiple random variables that are normally distributed.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{x} \\sim N(\\mu, \\Sigma)\\]",
+      "name": "Multivariate Normal Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a multivariate normal distribution with mean vector \\(\\mu\\) and covariance matrix \\(\\Sigma\\), find the marginal distribution of each variable.</p>",
+      "hints": [
+        "Hint: Use the properties of the multivariate normal distribution.",
+        "Hint: Consider the conditional distributions."
+      ],
+      "solutionHtml": "<p>To find the marginal distribution, we can integrate out the other variables using the property that the marginal distribution is a normal distribution with mean and variance given by the corresponding elements of \\(\\mu\\) and \\(\\Sigma\\), respectively.</p>",
+      "answerShort": "The marginal distribution is also normal"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have two normally distributed random variables, \\(x_1\\) and \\(x_2\\), with mean vector \\((\\mu_1, \\mu_2)\\) and covariance matrix \\([[\\sigma_{11}, \\sigma_{12}], [\\sigma_{21}, \\sigma_{22}]]\\). Find the marginal distribution of each variable.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the mean vector",
+          "mathHtml": "\\(\\mu_1, \\mu_2\\)",
+          "explanation": "The mean vector is given by the input parameters."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the covariance matrix",
+          "mathHtml": "\\([[\\sigma_{11}, \\sigma_{12}], [\\sigma_{21}, \\sigma_{22}]]\\)",
+          "explanation": "The covariance matrix is also given by the input parameters."
+        }
+      ],
+      "finalAnswer": "The marginal distribution of each variable is normal with mean and variance given by the corresponding elements of \\(\\mu\\) and \\(\\Sigma\\), respectively."
+    },
+    "intuition": "The multivariate normal distribution is a powerful tool for modeling complex systems, as it allows us to capture correlations between variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:20:53.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multivariate_normal_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory, allowing us to model and analyze complex systems.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\mu, \\Sigma) \\]",
+      "name": "Multivariate Normal Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a multivariate normal distribution with mean vector <i>μ</i> and covariance matrix <i>Σ</i>, find the marginal distribution of the <i>i</i>-th component.</p>",
+      "hints": [
+        "Hint: Use the properties of the multivariate normal distribution"
+      ],
+      "solutionHtml": "<p>To find the marginal distribution, we can use the fact that each component is normally distributed with mean <i>μ_i</i> and variance <i>Σ_{ii}</i>. Then, we can apply the univariate normal distribution formula.</p>",
+      "answerShort": "The marginal distribution is a univariate normal distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a multivariate normal distribution with mean vector <i>(2, 3)</i> and covariance matrix \\[\\left( \\begin{array}{cc} 1 & 0.5 \\\\ 0.5 & 2 \\end{array} \\right) \\]. Find the marginal distribution of the first component.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that each component is normally distributed",
+          "mathHtml": "\\[ x_1 \\sim \\mathcal{N}(\\mu_1, \\Sigma_{11}) \\]",
+          "explanation": "This allows us to apply the univariate normal distribution formula"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the mean and variance of the first component",
+          "mathHtml": "\\[ \\mu_1 = 2, \\\\ \\sigma^2_{11} = 1 + (0.5)^2 = 1.25 \\]",
+          "explanation": "The mean is simply the corresponding element in the mean vector, while the variance can be found by looking at the covariance matrix"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the univariate normal distribution formula",
+          "mathHtml": "\\[ f(x_1) = \\frac{1}{\\sqrt{2\\pi}\\sigma_{11}} e^{\\frac{(x_1-\\mu_1)^2}{2\\sigma^2_{11}}} \\]",
+          "explanation": "This gives us the marginal distribution of the first component"
+        }
+      ],
+      "finalAnswer": "The marginal distribution is a univariate normal distribution with mean 2 and variance 1.25"
+    },
+    "intuition": "The multivariate normal distribution allows us to model complex systems by specifying the relationships between multiple variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:21:32.932Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multivariate_normal_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>In this worked example, we'll explore the multivariate normal distribution and its properties.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the mean vector and covariance matrix of a bivariate normal distribution with density \\(\\frac{1}{2\\pi} e^{-(x^2+y^2)}\\).\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the given information\", \"mathHtml\": \"\\(x^2+y^2\\)\", \"explanation\": \"We're told that this is a bivariate normal distribution.\"}, {\"stepNumber\": 2, \"description\": \"Recognize the density as a multivariate Gaussian\", \"mathHtml\": \"\\(\\frac{1}{2\\pi} e^{-(x^2+y^2)}\\)\", \"explanation\": \"The given density matches the form of a multivariate normal distribution.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the mean vector\", \"mathHtml\": \"\\(E[x] = E[y] = 0\\)\", \"explanation\": \"Since this is a zero-mean Gaussian, the mean vector is \\((0,0)\\).\"}, {\"stepNumber\": 4, \"description\": \"Find the covariance matrix\", \"mathHtml\": \"\\(\\begin{bmatrix}1 & 0\\\\ 0 & 1\\end{bmatrix}\\)\", \"explanation\": \"The covariance matrix is simply the identity matrix, since the variables are independent and have equal variances.\"} ],",
+    "finalAnswer": "(0,0), \\(\\begin{bmatrix}1 & 0\\\\ 0 & 1\\end{bmatrix}\\)\" },",
+    "intuition": "The multivariate normal distribution is a powerful tool for modeling correlated variables in machine learning and statistics.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:21:58.751Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multivariate_normal_018",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>In this example, we'll explore a multivariate normal distribution and its properties.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{x} \\sim N(\\mu, \\Sigma) \\]",
+    "name": "Multivariate Normal Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the mean vector and covariance matrix of a multivariate normal distribution.</p>",
+    "hints": [
+      "Hint: Start with the definition.",
+      "Think about the marginal distributions."
+    ],
+    "solutionHtml": "<p>We can start by defining the multivariate normal distribution:</p><p>\\[ \\\\mathbf{x} \\\\sim N(\\\\mu, \\\\Sigma) \\\\]</p><p>Next, we'll find the mean vector:</p><p>\\[ E[\\\\mathbf{x}] = \\\\mu \\\\]</p><p>And then the covariance matrix:</p><p>\\[ Cov(\\\\mathbf{x}) = \\\\Sigma \\\\]</p>\",",
+    "answerShort": "Mean vector: \\\\mu, Covariance matrix: \\\\Sigma\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a multivariate normal distribution with mean vector \\\\mathbf{\\\\mu} = [1, 2] and covariance matrix:</p><p>\\[ \\\\Sigma = \\\\begin{bmatrix} 0.5 & 0.3 \\\\\\\\ 0.3 & 0.7 \\\\end{bmatrix} \\\\]</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the multivariate normal distribution",
+        "mathHtml": "\\[ \\mathbf{x} \\sim N(\\mu, \\Sigma) \\]",
+        "explanation": "We start with the definition of a multivariate normal distribution."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the mean vector",
+        "mathHtml": "\\[ E[\\mathbf{x}] = \\mu \\]",
+        "explanation": "The mean vector is simply the given value."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Find the covariance matrix",
+        "mathHtml": "\\[ Cov(\\mathbf{x}) = \\Sigma \\]",
+        "explanation": "The covariance matrix is also given."
+      }
+    ],
+    "finalAnswer": "Mean vector: [1, 2], Covariance matrix: \\\\begin{bmatrix} 0.5 & 0.3 \\\\\\\\ 0.3 & 0.7 \\\\end{bmatrix}\" },",
+    "intuition": "The multivariate normal distribution is a powerful tool for modeling correlated variables in machine learning and statistics.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:22:35.051Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multivariate_normal_019",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "contentHtml": "<p>The multivariate normal distribution is a fundamental concept in probability theory that generalizes the univariate normal distribution to multiple variables.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{x} \\sim \\mathcal{N}(\\mu, \\Sigma) \\]",
+    "name": "Multivariate Normal Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Let \\(x_1, x_2, x_3\\) be a random vector following the multivariate normal distribution with mean vector \\(\\mu = (2, 3, 4)\\) and covariance matrix \\(\\Sigma = \\begin{bmatrix} 1 & 0.5 & 0.2 \\\\ 0.5 & 2 & 0.8 \\\\ 0.2 & 0.8 & 3 \\end{bmatrix}\\).</p>",
+    "hints": [
+      "Hint: Start by finding the marginal distributions"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of \\\\(x_1\\\\), we can integrate out \\\\(x_2\\\\) and \\\\(x_3\\\\) from the joint density.</p><ul><li>Find the mean vector: \\\\(\\\\mu = (2, 3, 4)\\\\)</li><li>Finding the marginal distribution of \\\\(x_1\\\\): \\\\[ f(x_1) = \\\\frac{1}{\\sqrt{(2\\\\pi)^3 |\\\\Sigma|}} \\exp\\\\left(-\\\\frac{1}{2} (x_1 - \\\\mu_1)^T \\\\Sigma^{-1} (x_1 - \\\\mu_1) \\\\right] \\\\]</li></ul>\",",
+    "answerShort": "The marginal distribution of \\\\(x_1\\\\) is a normal distribution with mean 2 and variance 1.5\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the conditional distribution of \\(x_2| x_3 = 4.5\\)</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the mean vector for the conditional distribution",
+        "mathHtml": "\\[ \\mu_{x_2|x_3=4.5} = \\mu_2 + \\Sigma_{2,3} \\Sigma_{33}^{-1} (4.5 - \\mu_3) \\]",
+        "explanation": "We're using the conditional expectation formula"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the covariance matrix for the conditional distribution",
+        "mathHtml": "\\[ \\Sigma_{x_2|x_3=4.5} = \\Sigma_{22} - \\Sigma_{21} \\Sigma_{33}^{-1} \\Sigma_{32} \\]",
+        "explanation": "We're using the conditional variance-covariance formula"
+      }
+    ],
+    "finalAnswer": "The conditional distribution of \\\\(x_2| x_3 = 4.5\\\\) is a normal distribution with mean 3.75 and variance 1\" },",
+    "intuition": "The multivariate normal distribution provides a powerful framework for modeling complex relationships between multiple variables.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:23:17.675Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

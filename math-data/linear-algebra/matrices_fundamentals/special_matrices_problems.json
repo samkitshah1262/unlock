@@ -1,0 +1,102 @@
+[
+  {
+    "id": "la_prb_special_matrices_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "special_matrices",
+    "problem": "{",
+    "statementHtml": "Determine whether a given matrix is diagonal, triangular, symmetric, skew-symmetric, identity, or zero.",
+    "hints": [
+      "Check if all non-diagonal elements are zero.",
+      "Verify that the matrix is equal to its transpose (for symmetry).",
+      "Look for any off-diagonal elements with different signs."
+    ],
+    "solutionHtml": "<p>Let's consider each type:</p><ul><li><p>Diagonal: All non-diagonal elements are zero.</p>\\(\\begin{bmatrix} a & 0 \\\\ 0 & b \\end{bmatrix}\\)</li><li><p>Triangular (upper or lower): All elements below the diagonal are zero.</p>\\(\\begin{bmatrix} a & 0 & 0 \\\\ c & d & 0 \\\\ 0 & e & f \\end{bmatrix}\\)</li><li><p>Symmetric: The matrix is equal to its transpose.</p>\\(\\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix} = \\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix}\\)</li><li><p>Skew-symmetric: The matrix is the negative of its transpose, with zero diagonal.</p>\\(\\begin{bmatrix} 0 & -a \\\\ a & 0 \\end{bmatrix}\\)</li><li><p>Identity: All elements on the diagonal are ones, and all other elements are zeros.</p>\\(\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)</li><li><p>Zero: All elements are zero.</p>\\(\\begin{bmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}\\)</li></ul>\",",
+    "answerShort": "Check the matrix's structure and properties.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:19:52.435Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_special_matrices_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "special_matrices",
+    "problem": "{",
+    "statementHtml": "Find the product of two special matrices: one diagonal and one triangular.",
+    "hints": [
+      "Check if the diagonal matrix is a scalar multiple of the triangular matrix.",
+      "Consider the structure of the matrices when multiplying elements.",
+      "Recall that the product of two triangular matrices is always triangular."
+    ],
+    "solutionHtml": "Let A be the diagonal matrix and T be the triangular matrix. Since A is diagonal, its elements are only non-zero on the main diagonal. Similarly, since T is triangular, its elements are only non-zero below the main diagonal. When multiplying these two matrices, we see that the product will also be triangular, with zeros above the main diagonal. Therefore, AT = \\[\\left(\\begin{array}{cc} 2 & 0 \\\\ 3 & 4\\end{array}\\right) \\left(\\begin{array}{cc} 1 & 5 \\\\ 0 & 6\\end{array}\\right) = \\left(\\begin{array}{cc} 2 & 10 \\\\ 0 & 24\\end{array}\\right]\\] is triangular.\",",
+    "answerShort": "The product of the two matrices is a triangular matrix.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:20:11.227Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_special_matrices_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "special_matrices",
+    "problem": "{",
+    "statementHtml": "Determine whether a given matrix is diagonal, triangular, symmetric, skew-symmetric, identity, or zero.",
+    "hints": [
+      "Check if all non-diagonal elements are zero.",
+      "If the matrix is not diagonal, check its upper/lower triangular structure.",
+      "For symmetry and skew-symmetry, consider only the main diagonal and off-diagonal elements."
+    ],
+    "solutionHtml": "<p>To determine the type of a given matrix A:</p><ol><li>\\(A\\) is diagonal if all non-diagonal elements are zero.</li><li>If not diagonal, check if it's upper triangular by verifying \\(a_{ij} = 0\\) for \\(i &gt; j\\). Similarly, check for lower triangular structure.</li><li>For symmetry, verify that \\(a_{ij} = a_{ji}\\) for all \\(i,j\\).</li><li>Finally, if the matrix is symmetric and has only zeros on its main diagonal, it's skew-symmetric. Otherwise, it's just symmetric.</li></ol>\",",
+    "answerShort": "Diagonal, triangular, symmetric, or zero\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:20:29.585Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_special_matrices_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "special_matrices",
+    "problem": "{",
+    "statementHtml": "Determine whether the matrix <i>A</i> is symmetric, skew-symmetric, or neither.",
+    "hints": [
+      "Check if <i>A</i><sup>T</sup> equals <i>A</i>. If so, what does that imply?",
+      "If not equal, consider the difference <i>A</i> - (<i>A</i><sup>T</sup>). What can you say about its properties?",
+      "Recall the definition of a skew-symmetric matrix. Can you apply it to this case?"
+    ],
+    "solutionHtml": "<p>To determine if <i>A</i> is symmetric, we compute its transpose and check for equality:</p><p>\\[<i>A</i><sup>T</sup> = \\[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\\] = \\[\\begin{array}{cc} a & c \\\\ b & d \\end{array}\\]</p><p>If <i>A</i> is symmetric, then <i>A</i> = <i>A</i><sup>T</sup>. Otherwise, we can write:</p><p>\\[<i>A</i> - (<i>A</i><sup>T</sup>) = \\[\\begin{array}{cc} 0 & b-c \\\\ -(b-c) & 0 \\end{array}\\]</p><p>This matrix has zero diagonal and alternating signs, so it is skew-symmetric.</p>\",",
+    "answerShort": "Skew-symmetric\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:20:51.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

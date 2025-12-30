@@ -1,0 +1,509 @@
+[
+  {
+    "id": "prob_con_markov_classification_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, state classification is a crucial concept that helps us understand the behavior of random systems over time.</p><p>Imagine you're flipping a coin repeatedly. At each flip, there's a certain probability of getting heads or tails. The sequence of outcomes forms a stochastic process. As you flip more coins, the process can be classified into different states based on its current and past behavior.</p>",
+    "formula": {
+      "latex": "\\[T \text{ is transient } \\iff \\lim_{t \\to \\infty} P(X_t = i) = 0, \\forall i \\in S\\]",
+      "name": "Transient State",
+      "variants": [
+        {
+          "latex": "\\[P(X_t = i) \\leq e^{-ct}, \\forall t > 0, \\forall i \\in S\\]",
+          "description": "Exponential decay"
+        }
+      ]
+    },
+    "intuition": "State classification helps us identify the long-term behavior of stochastic processes. Transient states are those that eventually leave a particular state, while recurrent states keep returning to it.",
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) methods in machine learning"
+    ],
+    "commonMistakes": [
+      "Confusing transient and recurrent states",
+      "Ignoring the importance of initial conditions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:17:51.490Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_markov_classification_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, understanding state classification is crucial to analyze and predict system behavior.</p><p>States can be transient, recurrent, periodic, or irreducible, each with distinct properties and implications for the process.</p>",
+    "formula": {
+      "latex": "\\[T\\] (transient) vs. \\[R\\] (recurrent)"
+    },
+    "intuition": "Think of a random walk on a graph: transient states are like temporary detours, while recurrent states represent revisiting familiar paths.",
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) methods in machine learning"
+    ],
+    "commonMistakes": [
+      "Confusing transient and recurrent states",
+      "Ignoring periodic or irreducible states"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:18:05.173Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_markov_classification_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, we often encounter transient, recurrent, periodic, and irreducible states. These classifications are crucial to understanding the behavior of Markov chains and their applications in machine learning.</p><p>Imagine a random walker on a graph, where each step is determined by the current state. The walker might visit some nodes repeatedly, while others it only passes through once. By classifying these states, we can better comprehend the long-term behavior of the process.</p>",
+    "formula": {
+      "latex": "\\[T = \\frac{1}{2} + \\frac{1}{2}\\cos(x)\\]",
+      "name": "State Transition Matrix"
+    },
+    "intuition": "Understanding state classification allows us to identify patterns and predict the long-term behavior of stochastic processes, which is essential in machine learning applications such as Markov chain Monte Carlo methods.",
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) methods for Bayesian inference"
+    ],
+    "commonMistakes": [
+      "Confusing transient with recurrent states",
+      "Ignoring periodicity"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:18:22.926Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_markov_classification_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification of Markov Chains",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory and stochastic processes.</p><p>In this theorem, we explore the different types of states that can occur in a Markov chain.</p>",
+    "formula": {
+      "latex": "\\[P(X_n = i | X_{n-1} = j) = P(i | j)\\]",
+      "name": "Transition Probability"
+    },
+    "theorem": {
+      "statement": "\\[A Markov chain is said to be transient, recurrent, or periodic depending on the classification of its states. A state is transient if it can be left with probability one, recurrent if it can return with probability one, and periodic if it always returns after a certain number of steps.\\]",
+      "proofSketch": "The proof involves analyzing the long-term behavior of the Markov chain using matrix theory."
+    },
+    "intuition": "Understanding the classification of states in a Markov chain is crucial for modeling real-world systems that exhibit random behavior.",
+    "realWorldApplications": [
+      "In machine learning, understanding the transient and recurrent properties of neural networks can help improve their performance."
+    ],
+    "tags": [
+      "Markov Chains",
+      "Stochastic Processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:18:41.814Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_markov_classification_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification Theorem",
+    "contentHtml": "<p>In probability theory, a stochastic process is said to be irreducible if it cannot remain in any particular state indefinitely.</p><p>Formally, this means that for any two states <i>A</i> and <i>B</i>, there exists a positive integer <i>n</i> such that the transition matrix has a non-zero entry at row <i>A</i> and column <i>B</i> after <i>n</i> steps.</p>",
+    "formula": {
+      "latex": "\\[P(X_n = B | X_0 = A) > 0\\]",
+      "name": "Irreducibility Condition"
+    },
+    "theorem": {
+      "statement": "\\[A stochastic process is irreducible if and only if it is not transient or recurrent.\\]"
+    },
+    "intuition": "In other words, an irreducible process can move from any state to any other state in a finite number of steps.",
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) algorithms rely on irreducible processes for efficient sampling."
+    ],
+    "tags": [
+      "stochastic processes",
+      "irreducibility"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:00.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process with states {1, 2, ..., n}. Classify each state as transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for cycles in the transition matrix.",
+        "If the process is irreducible, it must be either transient or recurrent."
+      ],
+      "solutionHtml": "<p>To classify each state, we need to examine the transition matrix P.</p>\n<p>Let's start with a simple example:</p>\n<p><code>P = \\[\\begin{array}{cc} 0 & 1 \\\\ 1 & 0 \\end{array}\\]</code></p>\n<p>The states are {0, 1}. We can see that state 0 is transient because it only transitions to state 1.</p>\n<p>State 1 is recurrent because it eventually returns to itself. In fact, it's periodic with period 2.</p>",
+      "answerShort": "Transient (state 0), Recurrent/Periodic (state 1)"
+    },
+    "commonMistakes": [
+      "Forgetting that a state can be both transient and recurrent.",
+      "Assuming a state is irreducible just because it has no self-loops."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:20.547Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process X<sub>t</sub>. Determine whether it is transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the expected value of the number of visits to each state is finite.",
+        "If the process returns to a specific state with probability 1, it's likely periodic.",
+        "Recurrence implies that the process will return to some states infinitely often."
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to analyze the behavior of X<sub>t</sub>. Let's start by considering the expected value of the number of visits to each state. If this value is finite, then the process is recurrent.</p>\n<p>Next, let's check if the process returns to a specific state with probability 1. If it does, then the process is periodic.</p>\n<p>If we've determined that the process is not periodic or recurrent, then it must be transient.</p>",
+      "answerShort": "Transient, Recurrent, Periodic, Irreducible"
+    },
+    "commonMistakes": [
+      "Failing to consider the expected value of the number of visits to each state.",
+      "Assuming that a process is periodic just because it returns to some states infinitely often."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:39.605Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process <i>X</i> on a state space <i>S</i>. Determine whether it is transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for a stationary distribution.",
+        "If the process is periodic, find its period."
+      ],
+      "solutionHtml": "<p>To classify the state space <i>S</i>, we need to examine the behavior of the stochastic process <i>X</i>.<br><br>Let's assume that <i>X</i> has a finite number of states. If this is not the case, we can use the fact that the process is irreducible and find its stationary distribution.</p>",
+      "answerShort": "Transient or recurrent"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:53.337Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "problem": {
+      "statementHtml": "Consider a stochastic process <i>X</i> with transition matrix <i>P</i>. Determine whether it is transient, recurrent, periodic, or irreducible.",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for cycles in the state space.",
+        "Use the fact that <i>P^n</i> converges to a limiting distribution."
+      ],
+      "solutionHtml": "<p>To determine the type of stochastic process, we can analyze the transition matrix <i>P</i>. First, we check if the process has a finite number of states. If it does, then the process is recurrent.</p><p>If the process has an infinite number of states, we look for cycles in the state space. If there are no cycles, then the process is transient. Otherwise, it is periodic.</p><p>Finally, if the process is irreducible, then it is either recurrent or transient.</p>",
+      "answerShort": "Transient, Recurrent, Periodic, Irreducible"
+    },
+    "commonMistakes": [
+      "Failing to distinguish between recurrent and transient processes.",
+      "Assuming that a periodic process has a finite number of states."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:20:12.018Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_classification_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, we often encounter transient, recurrent, periodic, and irreducible states. Understanding these classifications is crucial to analyzing and modeling real-world systems.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{P}^n = \\mathbf{A}^n\\]",
+      "name": "State Transition Matrix",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a Markov chain with transition matrix <code>A</code>. Is the state <code>i</code> transient, recurrent, periodic, or irreducible?</p>",
+      "hints": [
+        "Hint: Check the eigenvalues of A",
+        "Hint: Consider the long-term behavior"
+      ],
+      "solutionHtml": "<p>To determine the classification of state <code>i</code>, we can analyze the matrix exponential <code>e^(nA)</code>. For a transient state, all eigenvalues have magnitude less than 1. For a recurrent state, at least one eigenvalue has magnitude equal to 1.</p>",
+      "answerShort": "Transient or Recurrent"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Markov chain with transition matrix</p><p><code>A = \\begin{bmatrix} 0.5 & 0.5 \\\\ 0.3 & 0.7 \\end{bmatrix}</code></p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the matrix exponential",
+          "mathHtml": "\\[e^(nA) = \\begin{bmatrix} 0.5^n & 0.5^n \\\\ 0.3^n & 0.7^n \\end{bmatrix}\\]",
+          "explanation": "We use the fact that <code>e^(nA)</code> is the matrix product of <code>A</code> with itself <code>n</code> times."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the eigenvalues and eigenvectors",
+          "mathHtml": "\\[\\lambda_1 = 0.5, \\lambda_2 = 0.7, \\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}, \\mathbf{v}_2 = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}\\]",
+          "explanation": "We can use standard linear algebra techniques to find the eigenvalues and eigenvectors."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Classify the state",
+          "mathHtml": "\\[\\text{State } i \\text{ is recurrent since } \\lambda_1 = 0.5 < 1, \\lambda_2 = 0.7 > 1\\]",
+          "explanation": "Since at least one eigenvalue has magnitude greater than 1, the state is recurrent."
+        }
+      ],
+      "finalAnswer": "Recurrent"
+    },
+    "intuition": "State classification is crucial in stochastic processes as it determines the long-term behavior of the system.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:20:55.150Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_classification_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, understanding state classification is crucial to analyze and predict system behavior.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a Markov chain with states {0, 1} and transition matrix:</p><ul><li>\\[P = \\begin{bmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{bmatrix}\\]</li></ul>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Check if the chain is irreducible",
+        "mathHtml": "",
+        "explanation": "We need to ensure that it's possible to reach any state from any other state."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Verify that P has a unique stationary distribution",
+        "mathHtml": "",
+        "explanation": "This guarantees the chain converges to a stable state."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Calculate the expected number of visits to each state",
+        "mathHtml": "",
+        "explanation": "This helps us understand the long-term behavior of the system."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Classify states based on their expected visit counts",
+        "mathHtml": "",
+        "explanation": "Transient states have zero expected visits, recurrent states have positive expected visits, and periodic states have non-zero expected visits that repeat over time."
+      }
+    ],
+    "finalAnswer": "State {1} is recurrent, while state {0} is transient.\" },",
+    "intuition": "State classification helps us identify the long-term behavior of a stochastic process, which is essential in many applications, including machine learning and artificial intelligence.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:21:20.293Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_classification_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, we often encounter states that can be classified into different categories.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{P} = \\begin{bmatrix} p_{11} & p_{12} \\\\ p_{21} & p_{22} \\end{bmatrix} \\]",
+      "name": "Transition Matrix",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a Markov chain with the following transition matrix:</p><p>\\[ \\mathbf{P} = \\begin{bmatrix} 0.5 & 0.5 \\\\ 0.3 & 0.7 \\end{bmatrix} \\]</p>",
+      "hints": [
+        "Hint: Think about irreducibility"
+      ],
+      "solutionHtml": "<p>To classify the states, we need to determine whether they are transient, recurrent, or periodic.</p><ul><li>Step 1: Check if the matrix is reducible. If it is, then all states are either transient or recurrent.</li><li>Step 2: Calculate the eigenvalues of the transition matrix. If there's a single eigenvalue with magnitude 1, then the chain is periodic.</li><li>Step 3: Check if any states have a probability of 0. If so, they're transient.</li><li>Step 4: If all states are recurrent and not periodic, then the chain is irreducible.</li></ul>",
+      "answerShort": "Transient"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Classify the following state:</p><p>\\[ \\mathbf{P} = \\begin{bmatrix} 0.5 & 0.5 \\\\ 0.3 & 0.7 \\end{bmatrix} \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check reducibility",
+          "mathHtml": "",
+          "explanation": "If the matrix is reducible, then all states are either transient or recurrent."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate eigenvalues",
+          "mathHtml": "\\[ \\lambda_1 = 0.6, \\lambda_2 = 0.4 \\]",
+          "explanation": "If there's a single eigenvalue with magnitude 1, then the chain is periodic."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check transient states",
+          "mathHtml": "",
+          "explanation": "If any state has a probability of 0, it's transient."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Classify the state",
+          "mathHtml": "",
+          "explanation": "Since all states are recurrent and not periodic, the chain is irreducible."
+        }
+      ],
+      "finalAnswer": "Irreducible"
+    },
+    "intuition": "State classification in stochastic processes is crucial for understanding the long-term behavior of systems.",
+    "visualDescription": "A diagram showing the transition matrix with arrows representing state transitions would be helpful.",
+    "commonMistakes": [
+      "Mistaking a reducible matrix for irreducible"
+    ],
+    "realWorldApplications": [
+      "Modeling population growth and disease spread"
+    ],
+    "tags": [
+      "stochastic processes",
+      "Markov chains",
+      "state classification"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:22:04.847Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_classification_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, we often encounter transient, recurrent, periodic, and irreducible states. Let's dive into each of these categories to understand their properties.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a Markov chain with transition matrix <br/> \\[ P = \\begin{bmatrix} 0.5 & 0.5 \\\\ 0.4 & 0.6 \\end{bmatrix}.<br/> Is this process transient, recurrent, periodic, or irreducible?\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Check for a single recurrent state",
+        "mathHtml": "",
+        "explanation": "If we find one, the chain is recurrent."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the period of the recurrent states",
+        "mathHtml": "",
+        "explanation": "The period tells us how often the chain returns to a state."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Check if all states are reachable from each other",
+        "mathHtml": "",
+        "explanation": "If not, the chain is transient."
+      }
+    ],
+    "finalAnswer": "After checking, we find that this process is recurrent with period 2 and irreducible.\" },",
+    "intuition": "State classification helps us understand the long-term behavior of stochastic processes. By recognizing transient, recurrent, periodic, or irreducible states, we can better analyze and model these systems.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:22:27.382Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "la_prb_svd_geometry_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_geometry",
+    "problem": "{",
+    "statementHtml": "Given a matrix A, find its SVD decomposition and interpret it geometrically.",
+    "hints": [
+      "Start by computing the singular value decomposition (SVD) of A.",
+      "Visualize the matrices U, Σ, and V in your mind or on paper.",
+      "Think about how these matrices relate to each other."
+    ],
+    "solutionHtml": "\\[A = U \\Sigma V^T\\] is the SVD decomposition. Geometrically, this means that A can be thought of as a rotation-scaling-rotation transformation applied to the columns of V. The columns of V are the principal axes of the image of the unit sphere under A. To see why, consider that U and Σ describe the amount of information retained by each principal axis.\",",
+    "answerShort": "\\[A = U \\Sigma V^T\\]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:42:24.113Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_geometry_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_geometry",
+    "problem": "{",
+    "statementHtml": "Find the geometric meaning of the SVD decomposition of a matrix.",
+    "hints": [
+      "Consider the unit sphere and its image under the transformation.",
+      "Think about rotation-scaling-rotation transformations.",
+      "Principal axes are key to understanding this concept."
+    ],
+    "solutionHtml": "The SVD decomposition can be viewed as a series of three transformations: <br/>\\\\[ \\mathbf{U} \\\\] is a rotation, <br/>\\\\[ \\Sigma \\\\] is a scaling, and <br/>\\\\[ \\mathbf{\\Sigma}^{-1} \\\\] is the inverse rotation. This forms an orthonormal basis for the column space of the original matrix.\",",
+    "answerShort": "The SVD decomposition represents a rotation-scaling-rotation transformation.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:42:38.428Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_geometry_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_geometry",
+    "problem": {
+      "statementHtml": "Find the geometric meaning of SVD decomposition for a given matrix <i>A</i>.",
+      "hints": [
+        "Think about rotation-scaling-rotation transformations.",
+        "Consider how this relates to principal axes and image of unit sphere."
+      ],
+      "solutionHtml": "<p>Let's start by recalling that the SVD of <i>A</i> is given as <i>A</i> = <i>UΣV<sup>T</sup></i>. We can rewrite this as <i>A</i> = <i>RΔR<sup>T</sup></i>, where <i>R</i> is an orthogonal matrix, <i>Δ</i> is a diagonal matrix with non-negative entries, and <i>R<sup>T</sup></i> is the transpose of <i>R</i>.</p><p>The geometric meaning of this decomposition becomes clear when we consider that <i>R</i> represents a rotation-scaling-rotation transformation. The columns of <i>R</i> are the principal axes of the image of the unit sphere under this transformation.</p>",
+      "answerShort": "The SVD decomposition provides a way to represent a matrix as a series of rotations, scalings, and reflections."
+    },
+    "commonMistakes": [
+      "Failing to recognize that <i>R</i> represents a rotation-scaling-rotation transformation.",
+      "Not considering the principal axes and image of unit sphere in the context of SVD"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:42:57.567Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_geometry_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_geometry",
+    "problem": "{",
+    "statementHtml": "Find the geometric meaning of SVD decomposition of a matrix <i>A</i>. Consider the image of the unit sphere under the transformation.",
+    "hints": [
+      "Think about rotation-scaling-rotation transformations.",
+      "Principal axes are key to understanding this concept.",
+      "The unit sphere is important for visualizing the results."
+    ],
+    "solutionHtml": "\\[A = U \\Sigma V^T\\] where <i>U</i>, <i>V</i> are orthogonal matrices and <i>\\Sigma</i> is a diagonal matrix. The columns of <i>U</i> represent the principal axes, while the rows of <i>V</i> represent the directions in which the data points are stretched or shrunk.\",",
+    "answerShort": "The geometric meaning of SVD decomposition is that it represents a rotation-scaling-rotation transformation of the unit sphere.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:43:12.370Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

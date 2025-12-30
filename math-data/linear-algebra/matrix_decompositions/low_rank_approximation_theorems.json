@@ -1,0 +1,70 @@
+[
+  {
+    "id": "la_thm_low_rank_approximation_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Eckart-Young Theorem",
+    "contentHtml": "<p>The Eckart-Young theorem is a fundamental result in linear algebra, providing an optimal way to approximate a matrix by a low-rank matrix.</p><p>Given a matrix A and its singular value decomposition (SVD), the theorem states that the best rank-k approximation of A is given by the truncated SVD.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": ""
+    },
+    "theorem": {
+      "statement": "\\[\\|A - U\\Sigma V^T\\|^2_{} = \\min_{\\text{rank}(B)=k} \\|A - B\\|^2_{}\\]",
+      "proofSketch": "The proof involves showing that the truncated SVD minimizes the Frobenius norm of the error matrix."
+    },
+    "intuition": "The Eckart-Young theorem provides a way to efficiently approximate a large matrix by a smaller one, which is crucial in many machine learning and AI applications.",
+    "realWorldApplications": [
+      "Dimensionality reduction in recommender systems"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decomposition",
+      "Optimization"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:02.526Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_low_rank_approximation_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Eckart-Young Theorem",
+    "contentHtml": "<p>The Eckart-Young theorem is a cornerstone of low-rank approximation in linear algebra.</p><p>Given an $m \\times n$ matrix $\\mathbf{A}$, the theorem states that the best rank-$k$ approximation to $\\mathbf{A}$ is obtained by retaining only the top-$k$ singular values and their corresponding right-singular vectors.</p>\",",
+    "formula": "{",
+    "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]\",",
+    "name": "\" },",
+    "theorem": "{",
+    "statement": "\\( \\mathbf{A} \\approx \\sum_{i=1}^k \\sigma_i u_i v_i^\\top, \\text{ where } \\sigma_1 \\geq \\cdots \\geq \\sigma_k > 0 \\) is the best rank-$k$ approximation to $\\mathbf{A}$\",",
+    "proofSketch": "The proof involves showing that the truncated SVD minimizes the Frobenius norm of the error matrix.\" },",
+    "intuition": "In essence, the Eckart-Young theorem says that when you're trying to approximate a large matrix with a smaller one, it's better to keep the most important singular values and their corresponding vectors.",
+    "realWorldApplications": [
+      "This theorem has numerous applications in machine learning, such as dimensionality reduction, feature selection, and recommendation systems."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decompositions"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:23.489Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

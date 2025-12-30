@@ -1,0 +1,180 @@
+[
+  {
+    "id": "la_wex_vector_projections_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_projections",
+    "title": "Vector Projections",
+    "contentHtml": "<p>In this worked example, we'll explore how to find scalar and vector projections of a given vector onto another line or plane.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{proj}_\\mathbf{a} \\mathbf{b} = \\frac{\\mathbf{a}\\cdot\\mathbf{b}}{||\\mathbf{a}||^2} \\mathbf{a} \\]",
+      "name": "Vector Projection Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the scalar projection of vector \\mathbf{u} = (3, -2) onto the line passing through point (1, 0) with direction vector \\mathbf{d} = (2, 3).</p>",
+      "hints": [
+        "Hint: Use the formula for scalar projections"
+      ],
+      "solutionHtml": "<p>We'll follow these steps:</p><ul><li>Find the dot product of \\mathbf{u} and \\mathbf{d}</li><li>Calculate the magnitude of \\mathbf{d}</li><li>Plug in values to find the scalar projection</li></ul>",
+      "answerShort": "The answer is 1/5"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the vector projection of vector \\mathbf{v} = (2, 3) onto the line passing through point (0, 0) with direction vector \\mathbf{a} = (4, -1).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the dot product of \\mathbf{v} and \\mathbf{a}",
+          "mathHtml": "\\[ \\mathbf{v}\\cdot\\mathbf{a} = (2, 3)\\cdot(4, -1) = 8-3 = 5 \\]",
+          "explanation": "We're setting the stage for our calculation"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the magnitude of \\mathbf{a}",
+          "mathHtml": "\\[ ||\\mathbf{a}||^2 = (4)^2 + (-1)^2 = 17 \\]",
+          "explanation": "We need this value to normalize our projection"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug in values to find the vector projection",
+          "mathHtml": "\\[ \\mathbf{proj}_\\mathbf{a} \\mathbf{v} = \\frac{(2, 3)\\cdot(4, -1)}{17}(4, -1) = (8/17)(4, -1) = (32/17, -12/17) \\]",
+          "explanation": "Now we have our vector projection"
+        }
+      ],
+      "finalAnswer": "(32/17, -12/17)"
+    },
+    "intuition": "Vector projections help us find the part of a vector that lies in a specific direction or plane.",
+    "visualDescription": "A diagram showing vectors \\mathbf{v}, \\mathbf{a}, and the projection would be helpful for visualizing this concept",
+    "commonMistakes": [
+      "Forgetting to normalize the projection"
+    ],
+    "realWorldApplications": [
+      "In computer vision, vector projections are used to find the part of an image that corresponds to a specific object or feature"
+    ],
+    "tags": [
+      "vector spaces",
+      "linear algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:31:15.910Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_vector_projections_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_projections",
+    "title": "Vector Projections",
+    "contentHtml": "<p>In this example, we'll learn how to project a vector onto another line or plane.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{proj}_{\\mathbf{v}}(\\mathbf{w}) = \\frac{\\mathbf{v} \\cdot \\mathbf{w}}{||\\mathbf{v}||^2} \\mathbf{v} \\]",
+      "name": "Vector Projection Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given vectors \\mathbf{a} = (1, 2) and \\mathbf{b} = (3, 4), find the projection of \\mathbf{a} onto the line spanned by \\mathbf{b}.</p>",
+      "hints": [
+        "Hint: Use the formula for vector projections"
+      ],
+      "solutionHtml": "<p>We can use the formula to calculate the projection:</p><ul><li>First, we need to find the dot product of \\mathbf{a} and \\mathbf{b}: \\(\\mathbf{a} \\cdot \\mathbf{b} = 1*3 + 2*4 = 11\\)</li><li>Next, we need to calculate the magnitude squared of \\mathbf{b}: \\(||\\mathbf{b}||^2) = (3^2 + 4^2) = 25</li><li>Now, we can plug these values into the formula:</li></ul>",
+      "answerShort": "The projection is \\(\\frac{11}{25}\\mathbf{b})"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given vectors \\mathbf{a} = (1, 2) and \\mathbf{b} = (3, 4), find the projection of \\mathbf{a} onto the line spanned by \\mathbf{b}.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the dot product",
+          "mathHtml": "\\(\\mathbf{a} \\cdot \\mathbf{b} = 11\\)",
+          "explanation": "This gives us the numerator for our projection formula"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the magnitude squared of \\mathbf{b}",
+          "mathHtml": "\\(||\\mathbf{b}||^2) = 25\\)",
+          "explanation": "This gives us the denominator for our projection formula"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug in values and simplify",
+          "mathHtml": "\\(\\frac{11}{25}\\mathbf{b})\\)",
+          "explanation": "And we're done! This is our final answer"
+        }
+      ],
+      "finalAnswer": "\\(\\frac{11}{25}\\mathbf{b})"
+    },
+    "intuition": "Vector projections help us find the part of a vector that lies in a specific direction or plane.",
+    "visualDescription": "A diagram showing the original vector, the projection line/plane, and the projected vector would be helpful for visualizing this concept.",
+    "commonMistakes": [
+      "Forgetting to normalize the projection vector"
+    ],
+    "realWorldApplications": [
+      "In machine learning, projections are used in dimensionality reduction techniques like PCA."
+    ],
+    "tags": [
+      "linear algebra",
+      "vector spaces",
+      "projections"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:31:56.431Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_vector_projections_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_projections",
+    "title": "Vector Projections",
+    "problem": "{",
+    "statementHtml": "Find the scalar projection of vector <math>\\mathbf{a}</math> onto vector <math>\\mathbf{b}</math>\",",
+    "hints": [
+      "Think about the dot product",
+      "Use the definition of a projection"
+    ],
+    "solutionHtml": "<p>To find the scalar projection, we can use the formula:</p><p><math>\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{b}\\|^2}</math></p>\",",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the vector projection of vector <math>\\mathbf{a} = (1, 3)</math> onto vector <math>\\mathbf{b} = (2, 4)</math></p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the dot product\", \"mathHtml\": \"<math>\\mathbf{a} \\cdot \\mathbf{b} = (1, 3) \\cdot (2, 4) = 8</math>\", \"explanation\": \"This gives us the numerator of our projection formula\"}, {\"stepNumber\": 2, \"description\": \"Calculate the magnitude squared\", \"mathHtml\": \"<math>\\|\\mathbf{b}\\|^2 = (2, 4) \\cdot (2, 4) = 20</math>\", \"explanation\": \"This gives us the denominator of our projection formula\"}, {\"stepNumber\": 3, \"description\": \"Calculate the scalar projection\", \"mathHtml\": \"<math>\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{b}\\|^2} = \\frac{8}{20} = \\frac{2}{5}</math>\", \"explanation\": \"This gives us our final answer\"}, {\"stepNumber\": 4, \"description\": \"Find the vector projection\", \"mathHtml\": \"<math>\\text{proj}_{\\mathbf{b}}(\\mathbf{a}) = \\left(\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{b}\\|^2}\\right)\\mathbf{b} = \\left(\\frac{2}{5}\\right)(2, 4) = (0.8, 1.6)</math>\", \"explanation\": \"This gives us our final answer\"} ],",
+    "finalAnswer": "(0.8, 1.6)\" },",
+    "intuition": "Vector projections are a fundamental concept in linear algebra and have many applications in machine learning and computer vision.",
+    "visualDescription": "A diagram showing the vectors <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math>, with an arrow representing the projection\",",
+    "commonMistakes": [
+      "Forgetting to normalize the vector",
+      "Using the wrong formula"
+    ],
+    "realWorldApplications": [
+      "Image classification using neural networks"
+    ],
+    "tags": [
+      "vector projections",
+      "linear algebra",
+      "machine learning"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:32:32.616Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

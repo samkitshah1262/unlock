@@ -1,0 +1,143 @@
+[
+  {
+    "id": "stat_for_estimator_properties_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>Estimators are used to approximate population parameters in statistical inference. Understanding their properties is crucial for making accurate conclusions.</p>",
+    "formula": {
+      "latex": "\\[ \text{Unbiasedness: } E(\\hat{\\theta}) = \\theta, \\\\ \text{Consistency: } P(\\hat{\\theta} \\to \\theta) = 1, \\\\ \text{Efficiency: } V(\\hat{\\theta}) \\leq V(\\hat{\\theta}_0), \\\\ \text{Sufficiency: } T(X) \\independent \\{X | \\theta \\} \\]",
+      "name": "Properties of Estimators"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to estimate the population mean (\\mu) using a sample mean (\\hat{\\mu}) from a normal distribution.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the estimator is unbiased",
+          "mathHtml": "\\[ E(\\hat{\\mu}) = \\frac{1}{n} \\sum_{i=1}^n X_i = \\mu \\]",
+          "explanation": "The expected value of the sample mean equals the population mean."
+        }
+      ],
+      "finalAnswer": "The estimator is unbiased."
+    },
+    "intuition": "Understanding these properties helps us choose the best estimator for a given problem.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:40.931Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>Estimators in mathematical statistics are used to approximate population parameters based on sample data. To ensure that these estimators are reliable and accurate, we need to understand their properties.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Unbiasedness: } E(\\hat{\\theta}) = \\theta \\]\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[ \\text{Consistency: } \\hat{\\theta} \\xrightarrow{p} \\theta \\]\",",
+    "description": "Consistent estimator converges to the true value as the sample size increases\" ] },",
+    "intuition": "Unbiasedness means that the expected value of an estimator is equal to the true parameter. Consistency ensures that the estimator gets closer to the true value as more data becomes available.",
+    "realWorldApplications": [
+      "In machine learning, unbiased estimators are crucial for avoiding bias in model training and evaluation"
+    ],
+    "tags": [
+      "estimation",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:55.766Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>Estimators in mathematical statistics are used to approximate population parameters from sample data. Understanding their properties is crucial for making informed decisions.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbb{E}(\\hat{\\theta}) = \\theta\\] (Unbiasedness)\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[\\text{Consistency: } \\lim_{n \\to \\infty} \\hat{\\theta}_n = \\theta\\]\",",
+    "description": "The estimator converges to the true value as the sample size increases\" ] },",
+    "intuition": "An unbiased estimator is one that, on average, returns the correct value. Consistency ensures that the estimator gets closer to the truth with larger datasets.",
+    "realWorldApplications": [
+      "In machine learning, an unbiased estimator can help prevent overfitting and improve model generalizability"
+    ],
+    "tags": [
+      "estimation",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:09.742Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>In statistical inference, an estimator is a function that takes in data and produces an estimate of a population parameter.</p><p>Three key properties of estimators are unbiasedness, consistency, and efficiency.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Unbiased: } E(\\hat{\\theta}) = \\theta \\]\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[ \\text{Consistent: } \\lim_{n\\to\\infty} \\hat{\\theta}_n = \\theta \\]\", \"description\": \"The estimator converges to the true value as the sample size increases.\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the population mean, μ.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Take a random sample of size n",
+        "mathHtml": "",
+        "explanation": "This is the starting point for our estimation."
+      }
+    ],
+    "finalAnswer": "The sample mean is an unbiased estimator of μ.\" },",
+    "intuition": "An unbiased estimator is one that, on average, produces the correct value. This ensures that our estimate is not systematically different from the true value.",
+    "realWorldApplications": [
+      "In machine learning, we often use unbiased estimators to ensure that our models are fair and do not favor certain groups."
+    ],
+    "tags": [
+      "estimation",
+      "unbiasedness"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:28.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "prob_wex_random_walks_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk Problem",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple random walk problem.</p>",
+    "problem": {
+      "statementHtml": "<p>A particle moves one step to the right with probability 0.5 and one step to the left with probability 0.5. What is the expected number of steps it takes for the particle to reach the origin?</p>",
+      "hints": [
+        "Think about the reflection principle.",
+        "Consider the gambler's ruin problem."
+      ],
+      "solutionHtml": "<p>We can solve this problem by using the reflection principle.</p>",
+      "answerShort": "The answer is 2."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A particle moves one step to the right with probability 0.5 and one step to the left with probability 0.5. What is the expected number of steps it takes for the particle to reach the origin?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the random variable X as the position of the particle after n steps.",
+          "mathHtml": "\\[X_n = \\sum_{i=1}^n Y_i\\]",
+          "explanation": "This represents the cumulative sum of the random variables Yi, which are either +1 or -1."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the reflection principle to find the expected value of X.",
+          "mathHtml": "\\[E[X_n] = E[Y_1 + \\cdots + Y_n]\\]",
+          "explanation": "We can use the reflection principle to find the expected value of each Yi and then sum them up."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the expected value of each Yi.",
+          "mathHtml": "\\[E[Y_i] = 0.5(1) + 0.5(-1) = 0\\]",
+          "explanation": "Each Yi is equally likely to be +1 or -1, so their expected values are both 0."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the expected value of X.",
+          "mathHtml": "\\[E[X_n] = E[Y_1 + \\cdots + Y_n] = n(0) = 0\\]",
+          "explanation": "Since each Yi has an expected value of 0, the expected value of their sum is also 0."
+        },
+        {
+          "stepNumber": 5,
+          "description": "However, we know that the particle will eventually reach the origin.",
+          "mathHtml": "\\[\\]\\]",
+          "explanations": "We can use this information to find the expected number of steps it takes for the particle to reach the origin."
+        }
+      ],
+      "finalAnswer": "The answer is 2."
+    },
+    "intuition": "In a random walk, the particle will eventually return to the starting point due to the reflection principle.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:40:36.463Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_random_walks_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk Problem",
+    "contentHtml": "<p>In this example, we'll walk through solving a simple random walk problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the probability that a simple random walk starting at position 0 reaches 5 in exactly 3 steps.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count the number of possible paths\", \"mathHtml\": \"\\[P(3) = \\sum_{i=0}^2 P(i)\\]\", \"explanation\": \"We need to count the total number of possible paths that reach position 5 in exactly 3 steps.\"}, {\"stepNumber\": 2, \"description\": \"Count the number of paths that don't reach 5\", \"mathHtml\": \"\\[P(0) + P(1) + P(2)\\]\", \"explanation\": \"We subtract the number of paths that don't reach position 5 in exactly 3 steps.\"}, {\"stepNumber\": 3, \"description\": \"Find the probability of a single step\", \"mathHtml\": \"\\[P(\\text{up}) = \\frac{1}{2}, P(\\text{down}) = \\frac{1}{2}\\]\", \"explanation\": \"We need to find the probability of moving up or down by 1 in each step.\"}, {\"stepNumber\": 4, \"description\": \"Combine probabilities\", \"mathHtml\": \"\\[P(3) = \\sum_{i=0}^2 P(i)\\left(\\frac{1}{2}\\right)^3\\]\", \"explanation\": \"We combine the probabilities of moving up or down by 1 in each step to find the total probability.\"} ],",
+    "finalAnswer": "\\[P(3) = \\frac{10}{8}\\]\" },",
+    "intuition": "The key insight is that we can break down the problem into smaller sub-problems and combine their probabilities.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:41:04.293Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_random_walks_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk",
+    "contentHtml": "<p>In this example, we'll walk through solving a simple random walk problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a simple random walk that starts at position 0. At each step, the walker moves either 1 unit to the right or 1 unit to the left with equal probability.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the recursive formula for the probability of being at position k after n steps.\", \"mathHtml\": \"\\[P_k(n) = \\frac{1}{2} P_{k-1}(n-1) + \\frac{1}{2} P_{k+1}(n-1)\\]\", \"explanation\": \"We're using the recursive formula to relate the probability of being at position k after n steps to the probabilities of being at positions k-1 and k+1 after n-1 steps.\"}, {\"stepNumber\": 2, \"description\": \"Find the base case for the recursion.\", \"mathHtml\": \"\\[P_0(0) = 1\\]\", \"explanation\": \"The walker starts at position 0, so the probability of being there is 1.\"}, {\"stepNumber\": 3, \"description\": \"Use induction to prove that the formula holds for all n.\", \"mathHtml\": \"\", \"explanation\": \"We'll assume the formula holds for some arbitrary n and show it also holds for n+1.\"}, {\"stepNumber\": 4, \"description\": \"Solve the recurrence relation using iteration or matrix exponentiation.\", \"mathHtml\": \"\\[P_k(n) = \\frac{1}{2^{n+1}} \\binom{n}{\\frac{k+n}{2}}\\]\", \"explanation\": \"We can solve the recurrence relation using iteration or matrix exponentiation to find a closed-form expression for the probability.\"} ],",
+    "finalAnswer": "The final answer is the probability distribution P_k(n) for all k and n.\" },",
+    "intuition": "The key insight here is that the random walk problem can be solved recursively, with each step building on the previous one.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:41:34.494Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

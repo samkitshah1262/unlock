@@ -1,0 +1,217 @@
+[
+  {
+    "id": "stat_wex_errors_power_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "errors_power",
+    "title": "Type I and Type II Errors",
+    "contentHtml": "<p>In hypothesis testing, we often encounter two types of errors: Type I and Type II.</p>",
+    "formula": {
+      "latex": "\\(\\alpha\\) is the significance level"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose a researcher claims that a new medicine reduces blood pressure in patients. The null hypothesis is that the medicine has no effect, and the alternative hypothesis is that it does have an effect.</p>",
+      "hints": [
+        "Hint: Think about what would happen if we reject the null hypothesis when it's actually true.",
+        "Hint: Consider the consequences of rejecting or failing to reject the null hypothesis."
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to understand Type I and Type II errors.</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we set \\(\\alpha = 0.05\\) and the test statistic is \\(Z = 1.5\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "What we do",
+          "mathHtml": "\\[P(Z > 1.5 | H_0) = P(Z > 1.5 | H_1) = 0.0668\\]",
+          "explanation": "We calculate the probability of observing a value greater than or equal to \\(Z = 1.5\\) under both the null and alternative hypotheses."
+        },
+        {
+          "stepNumber": 2,
+          "description": "What we do",
+          "mathHtml": "\\[P(Z > 1.5 | H_0) < \\alpha\\] => reject H_0\\]",
+          "explanation": "Since the calculated probability is less than the significance level, we reject the null hypothesis."
+        },
+        {
+          "stepNumber": 3,
+          "description": "What we do",
+          "mathHtml": "\\[P(Z > 1.5 | H_1) = 0.0668\\] => Type II error unlikely\\]",
+          "explanation": "The probability of observing a value greater than or equal to \\(Z = 1.5\\) under the alternative hypothesis is relatively low, so we're unlikely to commit a Type II error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "What we do",
+          "mathHtml": "\\[P(Z > 1.5 | H_0) < \\alpha\\] => reject H_0\\]",
+          "explanation": "Since the calculated probability is less than the significance level, we reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis"
+    },
+    "intuition": "Type I errors occur when we reject a true null hypothesis, while Type II errors occur when we fail to reject a false null hypothesis.",
+    "visualDescription": "A diagram showing the regions of rejection and non-rejection for both hypotheses",
+    "commonMistakes": [
+      "Mistake: Confusing Type I and Type II errors."
+    ],
+    "realWorldApplications": [
+      "Application: In machine learning, understanding type I and type II errors is crucial when evaluating model performance."
+    ],
+    "tags": [
+      "hypothesis testing",
+      "type i error",
+      "type ii error"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:48:10.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_errors_power_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "errors_power",
+    "title": "Type I and Type II Errors",
+    "contentHtml": "<p>In hypothesis testing, we're interested in rejecting or failing to reject a null hypothesis. Two types of errors can occur:</p>",
+    "formula": {
+      "latex": "\\(\\alpha\\) is the significance level.",
+      "name": "Significance Level"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test if the average height of a population is greater than 175 cm. We have a sample mean of 178 cm and a standard deviation of 5 cm.</p>",
+      "hints": [
+        "Hint: Define type I and type II errors.",
+        "Hint: Calculate the critical region."
+      ],
+      "solutionHtml": "<p>We'll solve this problem step-by-step:</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the probability of type I error (α) and the power of the test.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define α",
+          "mathHtml": "\\(\\alpha = 0.05\\)",
+          "explanation": "We set a reasonable significance level."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the z-score",
+          "mathHtml": "\\[z = \\frac{178 - 175}{5} = 1.6\\]",
+          "explanation": "The z-score measures how many standard deviations our sample mean is away from the null mean."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the critical region",
+          "mathHtml": "\\[z_{0.05} = 1.645\\]",
+          "explanation": "We look up the critical value for a given significance level and find the corresponding z-score."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the power of the test",
+          "mathHtml": "\\[power = P(Z > 1.6) = \\frac{1}{2} (1 - \\Phi(1.6))\\]",
+          "explanation": "The power is the probability of rejecting the null hypothesis when it's actually false."
+        }
+      ],
+      "finalAnswer": "α ≈ 0.05, Power ≈ 0.68"
+    },
+    "intuition": "Understanding type I and type II errors helps us make informed decisions in statistical inference.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:48:37.488Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_errors_power_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "errors_power",
+    "title": "Type I and Type II Errors",
+    "contentHtml": "<p>In statistical hypothesis testing, two types of errors can occur: Type I and Type II.</p>",
+    "formula": {
+      "latex": "\\(\\alpha\\) is the significance level"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test a claim about the mean of a normal distribution. If we reject the null hypothesis when it's actually true, what type of error have we made?</p>",
+      "hints": [
+        "Think about the consequences of rejecting a true null"
+      ],
+      "solutionHtml": "<p>We've committed a Type I error.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to test whether the average height of students in two different schools is the same. We collect data and find that the p-value is 0.05. What type of error would occur if we reject the null hypothesis?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check the p-value",
+          "mathHtml": "\\(p = 0.05\\)",
+          "explanation": "If the p-value is below our significance level (usually 0.05), we reject the null hypothesis"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the type of error",
+          "mathHtml": "",
+          "explanation": "Since we rejected the true null, this is a Type I error"
+        }
+      ],
+      "finalAnswer": "Type I error"
+    },
+    "intuition": "A Type I error occurs when we reject a true null hypothesis. This can have serious consequences in real-world applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:48:57.746Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_errors_power_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "errors_power",
+    "title": "Type I and Type II Errors",
+    "contentHtml": "<p>In statistical hypothesis testing, two types of errors can occur: Type I and Type II.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to test the mean of a population using a sample of size 30. We set our significance level at 0.05. What are the chances of making a Type I error?</p>",
+    "hints": [
+      "Think about the p-value",
+      "Recall the definition of alpha"
+    ],
+    "solutionHtml": "<p>To find the probability of a Type I error, we need to calculate the p-value and compare it to our significance level.</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test the mean of a population using a sample of size 30. We set our significance level at 0.05. What are the chances of making a Type I error?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Set up the null and alternative hypotheses\", \"mathHtml\": \"\\\\[ H_0: \\\\mu = 0 \\\\\\\\ H_a: \\\\mu > 0 \\\\]\", \"explanation\": \"We need to define our null and alternative hypotheses.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the test statistic and p-value\", \"mathHtml\": \"\\\\[ t = -1.5, p = 0.06 \\\\]\", \"explanation\": \"The test statistic is calculated using the sample mean and standard deviation, and the p-value is obtained from a t-distribution.\"}, {\"stepNumber\": 3, \"description\": \"Compare the p-value to the significance level\", \"mathHtml\": \"\\\\[ p = 0.06 < 0.05 \\\\]\", \"explanation\": \"Since the p-value is less than our significance level, we reject the null hypothesis.\"}, {\"stepNumber\": 4\", \"description\": \"Calculate the power of the test\", \"mathHtml\": \"\\\\[ 1 - \\\\beta = 0.8 \\\\]\", \"explanation\": \"The power of the test is the probability of detecting a true effect (in this case, a mean greater than 0) given our sample size and significance level.\"} ],",
+    "finalAnswer": "The chances of making a Type I error are less than 5%.\" },",
+    "intuition": "Type I errors occur when we reject a true null hypothesis, while Type II errors occur when we fail to reject a false null hypothesis.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:49:26.177Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "la_prb_linear_regression_matrix_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of training data points <span class=\"math\">\\(x_1, y_1\\)</span>, ..., <span class=\"math\">\\(x_n, y_n\\)</span>, find the best-fitting linear regression line using normal equations.</p>",
+    "hints": [
+      "<p>Start by defining the cost function and its derivative.</p>",
+      "<p>Rewrite the derivative in terms of matrix operations.</p>",
+      "<p>Solve for the coefficients using the normal equation.</p>"
+    ],
+    "solutionHtml": "<p>To find the best-fitting linear regression line, we need to minimize the mean squared error (MSE) between our predictions and actual values. The cost function is:</p><span class=\\\"math\\\">\\\\(J(\\theta) = \\frac{1}{2} \\sum_{i=1}^n (h_\\theta(x_i) - y_i)^2\\\\)</span><p>The derivative of the cost function with respect to <span class=\\\"math\\\">\\\\(\\theta_0\\\\)</span> and <span class=\\\"math\\\">\\\\(\\theta_1\\\\)</span> is:</p><span class=\\\"math\\\">\\\\( \\frac{\\partial J}{\\partial \\theta_0} = - \\sum_{i=1}^n (h_\\theta(x_i) - y_i), \\\\frac{\\partial J}{\\partial \\theta_1} = - \\sum_{i=1}^n x_i(h_\\theta(x_i) - y_i)\\\\)</span><p>Rewriting the derivative in terms of matrix operations, we get:</p><span class=\\\"math\\\">\\\\( \\frac{\\partial J}{\\partial \\theta} = X^T (X\\theta - y)\\\\)</span><p>Solving for <span class=\\\"math\\\">\\\\(\\theta\\\\)</span> using the normal equation, we get:</p><span class=\\\"math\\\">\\\\( \\theta = (X^T X)^{-1} X^T y\\\\)</span><p>The final answer is:</p><span class=\\\"math\\\">\\\\( \\hat{y} = \\theta_0 + \\theta_1 x \\\\)</span>\",",
+    "answerShort": "<span class=\\\"math\\\">\\\\( \\theta \\\\)</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:21:49.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_regression_matrix_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "problem": {
+      "statementHtml": "<p>Given a dataset of <i>n</i> samples and <i>d</i> features, find the linear regression coefficients using normal equations.</p>",
+      "hints": [
+        "<p>Start by defining the cost function as the sum of squared errors.</p>",
+        "<p>Write down the partial derivatives for each coefficient.</p>",
+        "<p>Use matrix operations to simplify the expressions.</p>"
+      ],
+      "solutionHtml": "<p>To solve the normal equations, we need to find the values of <i>w</i> that minimize the cost function. We can do this by setting the partial derivatives equal to zero and solving for <i>w</i>.</p>\n<p><i>J = (X^T * X) * w - (X^T * y)</i></p>\n<p>Solve for <i>w</i> using matrix operations:</p>\n<p><i>w = (X^T * X)^{-1} * (X^T * y)</i></p>",
+      "answerShort": "<i>w</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to add an intercept term",
+      "Not using the correct matrix operations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:22:06.136Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_regression_matrix_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "problem": "{",
+    "statementHtml": "Find the coefficients <i>w</i> and <i>b</i> in linear regression using normal equations.",
+    "hints": [
+      "Start by writing down the cost function.",
+      "Use the fact that <i>E[(y - (wx + b))^2]</i> is minimized.",
+      "Think about how to apply the normal equations for a simple case."
+    ],
+    "solutionHtml": "<p>To find the coefficients, we need to minimize the cost function:</p>\\(\\mathcal{L} = \\frac{1}{2}\\sum_{i=1}^n (y_i - (wx_i + b))^2\\)<br><p>Using the normal equations, we can write:</p>\\[\\begin{bmatrix} X^T X & X^T 1 \\\\ 1^T X & 1^T 1 \\end{bmatrix}\\begin{bmatrix} w \\\\ b \\end{bmatrix} = \\begin{bmatrix} X^T y \\\\ 1^T y \\end{bmatrix}\\]<br><p>Solving for <i>w</i> and <i>b</i>, we get:</p>\\[\\begin{bmatrix} w \\\\ b \\end{bmatrix} = \\begin{bmatrix} X^T X & X^T 1 \\\\ 1^T X & 1^T 1 \\end{bmatrix}^{-1}\\begin{bmatrix} X^T y \\\\ 1^T y \\end{bmatrix}\\]<br><p>The final answer is:</p>\\[\\begin{bmatrix} w \\\\ b \\end{bmatrix} = \\left(\\frac{1}{n}X^T X + \\lambda I\\right)^{-1}\\left(\\frac{1}{n}X^T y\\right)\\]",
+    "answerShort": "The coefficients are found by solving the normal equations.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:22:32.945Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_regression_matrix_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "linear_regression_matrix",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of training examples, find the best-fitting linear model using normal equations.</p>",
+    "hints": [
+      "Start by writing down the cost function for linear regression.",
+      "Use the fact that the derivative of the cost function with respect to the weights is zero at the minimum.",
+      "Rearrange the equation to solve for the weights."
+    ],
+    "solutionHtml": "<p>To find the best-fitting linear model, we need to minimize the cost function:</p>\\(\\mathcal{L} = \\frac{1}{2}\\sum_{i=1}^n (y_i - w^T x_i)^2\\)<br><p>First, take the derivative of the cost function with respect to the weights:</p>\\( \\frac{\\partial \\mathcal{L}}{\\partial w} = -\\sum_{i=1}^n (y_i - w^T x_i) x_i \\)<br><p>Set the derivative equal to zero and solve for $w$:</p>\\(\\begin{bmatrix}\\sum_{i=1}^n x_i x_i & -\\sum_{i=1}^n x_i y_i\\\\\\sum_{i=1}^n x_i y_i & \\sum_{i=1}^n y_i y_i\\end{bmatrix} w = \\begin{bmatrix}\\sum_{i=1}^n x_i y_i\\\\\\sum_{i=1}^n y_i y_i\\end{bmatrix}\\)<br><p>Solve for $w$:</p>\\(w = (\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{y}\\)<br><p>Finally, we can add a regularization term to the cost function to prevent overfitting:</p>\\(\\mathcal{L}_{ridge} = \\frac{1}{2}\\sum_{i=1}^n (y_i - w^T x_i)^2 + \\alpha ||w||^2\\)<br><p>Solve for $w$ using the same method as before:</p>\\(w = (\\mathbf{X}^T \\mathbf{X} + \\alpha I)^{-1} \\mathbf{X}^T \\mathbf{y}\\)<br><p>The final answer is:</p>\\(\\boxed{w = (\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{y}}\\),",
+    "answerShort": "The weights that minimize the cost function\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:23:05.967Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

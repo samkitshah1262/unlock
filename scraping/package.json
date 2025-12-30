@@ -1,0 +1,20 @@
+{
+  "name": "aman-ai-scraper",
+  "version": "1.0.0",
+  "description": "Scraper for aman.ai AI primers",
+  "scripts": {
+    "scrape:index": "node scrape-aman-index.js",
+    "scrape:articles": "node scrape-aman-articles.js",
+    "scrape:all": "node scrape-aman-index.js && node scrape-aman-articles.js",
+    "build:graph": "node build-ai-graph.js",
+    "build:cards": "node build-ai-cards.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0",
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0",
+    "cheerio": "^1.0.0",
+    "turndown": "^7.2.0"
+  }
+}
+

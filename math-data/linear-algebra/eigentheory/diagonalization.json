@@ -1,0 +1,573 @@
+[
+  {
+    "id": "la_con_diagonalization_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: When Possible",
+    "contentHtml": "<p>In linear algebra, diagonalization is a powerful technique to simplify matrix computations when possible.</p><p>Given a square matrix A, we can find an orthogonal matrix P and a diagonal matrix D such that P⁻¹AP = D. This allows us to compute matrix powers efficiently.</p>",
+    "formula": "{",
+    "latex": "\\(P^{-1}AP = D\\)\",",
+    "name": "Diagonalization\" },",
+    "intuition": "Think of diagonalization as a change of basis that makes the matrix easier to work with. By finding an orthogonal matrix P, we can transform A into a diagonal matrix D, which is often simpler to manipulate.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in algorithms like PCA (Principal Component Analysis) and LLE (Local Linear Embedding)"
+    ],
+    "commonMistakes": [
+      "Don't confuse diagonalization with Jordan normal form; they're related but distinct concepts."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix theory",
+      "diagonalization"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:34:10.733Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_diagonalization_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: When Possible",
+    "contentHtml": "<p>In linear algebra, diagonalization is a powerful technique to transform matrices into simpler forms. When possible, we can write P⁻¹AP = D, where P is an invertible matrix and D is a diagonal matrix.</p><p>This means that computing matrix powers becomes much easier, as we only need to raise the diagonal elements of D to the desired power.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]",
+      "name": "Diagonalization Formula"
+    },
+    "intuition": "Think of diagonalization as a way to 'straighten out' a matrix, making it easier to work with. When we can write a matrix in this form, we've gained insight into its underlying structure.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in techniques like PCA (Principal Component Analysis) and LLE (Local Linear Embedding)"
+    ],
+    "commonMistakes": [
+      "Don't assume diagonalization is always possible; it's only applicable when the matrix has distinct eigenvalues."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:34:27.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_diagonalization_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: When Possible",
+    "contentHtml": "<p>In linear algebra, diagonalization is a powerful technique to transform matrices into simpler forms. It's crucial in many applications, including machine learning and artificial intelligence.</p><p>When possible, we can write P⁻¹AP = D, where P is an orthogonal matrix, A is the original matrix, and D is a diagonal matrix containing the eigenvalues of A.</p>",
+    "formula": "{",
+    "latex": "\\(P^{-1}AP = D\\)\",",
+    "name": "Diagonalization Formula\" },",
+    "intuition": "Think of diagonalization as a way to 'sort' the information in a matrix, making it easier to analyze and work with.",
+    "realWorldApplications": [
+      "Principal component analysis (PCA) in dimensionality reduction"
+    ],
+    "commonMistakes": [
+      "Assuming diagonalization is always possible",
+      "Not understanding the importance of orthogonal matrices"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:34:41.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_diagonalization_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a matrix can be diagonalized by finding its eigenvalues and eigenvectors.</p><p>This process is useful for computing matrix powers efficiently.</p>",
+    "formula": "{",
+    "latex": "\\[P^{-1}AP = D\\]\",",
+    "name": "Diagonalization Formula",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider the matrix A = [[2, 1], [1, 1]].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the eigenvalues and eigenvectors of A.\", \"mathHtml\": \"\\\\[\\\\lambda_1 = 1.5, \\\\lambda_2 = -0.5\\]\", \"explanation\": \"We use standard linear algebra techniques to find the eigenvalues and eigenvectors.\"}, {\"stepNumber\": 2, \"description\": \"Construct the diagonal matrix D.\", \"mathHtml\": \"\\\\[D = [[1.5, 0], [0, -0.5]]\\]\", \"explanation\": \"The diagonal elements are the eigenvalues.\"} ],",
+    "finalAnswer": "P⁻¹AP = D\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into separate scalar multiplications.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:34:59.957Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_diagonalization_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a matrix can be diagonalized by finding its eigenvalues and eigenvectors.</p><p>This process is useful for computing matrix powers efficiently.</p>",
+    "formula": "{",
+    "latex": "\\[P^{-1}AP = D\\]\",",
+    "name": "Diagonalization Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a matrix A and its eigenvalues λ. How can we use this to compute A^2?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the eigenvectors v of A",
+        "mathHtml": "\\[P = [v_1 | v_2 | ... | v_n]\\]",
+        "explanation": "These are the directions along which the matrix stretches or shrinks"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Compute the eigenvalues λ and eigenvectors v simultaneously",
+        "mathHtml": "\\[AP = PD\\]",
+        "explanation": "This is the key insight: we can decompose A into its eigenvectors and eigenvalues"
+      }
+    ],
+    "finalAnswer": "\\\\[A^2 = PDP^{-1}P\\\\]\" },",
+    "intuition": "Diagonalization helps us simplify complex matrix operations by breaking them down into smaller, more manageable pieces.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in techniques like PCA and LLE for dimensionality reduction"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:35:19.904Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_diagonalization_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a square matrix A can be diagonalized as P⁻¹AP = D, where P is an invertible matrix and D is a diagonal matrix.</p>",
+    "formula": "{",
+    "latex": "\\[P^{-1}AP = D\\]\",",
+    "name": "Diagonalization Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[2, 1], [1, 1]], diagonalize it.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the eigenvalues and eigenvectors of A\", \"mathHtml\": \"\\[A - \\lambda I\\] = 0\", \"explanation\": \"We need to find the values that make A similar to a diagonal matrix.\"}, {\"stepNumber\": 2, \"description\": \"Construct the matrix P from the eigenvectors\", \"mathHtml\": \"P = [eigenvector1, ..., eigenvectork]\", \"explanation\": \"The columns of P are the eigenvectors of A.\"} ],",
+    "finalAnswer": "D = [[3, 0], [0, -1]]\" },",
+    "intuition": "Diagonalization is useful when we need to compute matrix powers or exponentials. By diagonalizing a matrix, we can simplify these computations.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:35:38.848Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_diagonalization_007",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization",
+    "contentHtml": "<p>When a square matrix A is diagonalizable, we can write P⁻¹AP = D, where D is a diagonal matrix and P is an invertible matrix.</p>",
+    "formula": "{",
+    "latex": "\\[P^{-1}AP = D\\]\",",
+    "name": "Diagonalization Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[2, 0], [0, 3]], find its diagonal form.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the eigenvalues and eigenvectors of A\", \"mathHtml\": \"\\[A - \\lambda I\\] = 0\", \"explanation\": \"We need to solve for λ\"}, {\"stepNumber\": 2, \"description\": \"Construct the matrix P from the eigenvectors\", \"mathHtml\": \"\\[P = [v_1 | v_2]\\]\", \"explanation\": \"The columns of P are the eigenvectors\"} ],",
+    "finalAnswer": "D = [[4, 0], [0, 3]]\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into separate diagonalizable components.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in dimensionality reduction techniques like PCA."
+    ],
+    "tags": [
+      "diagonalization",
+      "eigenvalues",
+      "eigenvectors"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:35:59.050Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_diagonalization_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization Theorem",
+    "contentHtml": "<p>When possible, a matrix A can be diagonalized as P⁻¹AP = D, making it easier to compute matrix powers.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]",
+      "name": "Diagonalization"
+    },
+    "theorem": {
+      "statement": "\\[\\text{When }A\\text{ has distinct eigenvalues, there exists an invertible matrix }P\\text{ such that }P^{-1}AP = \\text{diag}(a_1, a_2, \\ldots, a_n)\\]",
+      "proofSketch": "The proof involves showing that the eigenvectors corresponding to distinct eigenvalues are linearly independent and can be used as columns of P."
+    },
+    "intuition": "Diagonalization is useful when we need to compute matrix powers or exponentials. By diagonalizing A, we can simplify these computations by only considering the diagonal elements.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in algorithms like PCA and LLE for dimensionality reduction."
+    ],
+    "tags": [
+      "eigenvalues",
+      "eigenvectors",
+      "diagonalization"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:36:17.339Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_diagonalization_009",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a matrix P can be used to diagonalize another matrix A, resulting in a simpler representation.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]",
+      "name": "Diagonalization Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\text{When }A\\text{ is diagonalizable, there exists an invertible matrix }P\\text{ such that }P^{-1}AP = D.\\]"
+    },
+    "intuition": "Diagonalization helps us understand the behavior of a matrix by transforming it into a simpler form where the matrix's eigenvalues are easily visible.",
+    "realWorldApplications": [
+      "In machine learning, diagonalization is used in techniques like PCA (Principal Component Analysis) to reduce dimensionality and improve model performance."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Eigenvalues"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:36:35.471Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": "{",
+    "statementHtml": "Diagonalize the matrix A = \\( \\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix} \\) and compute Aⁿ, where n is a positive integer.\",",
+    "hints": [
+      "Check if A has distinct eigenvalues",
+      "Use the eigenvectors to construct the diagonal matrix D",
+      "Raise D to the power of n"
+    ],
+    "solutionHtml": "<p>Step 1: Find the eigenvalues and eigenvectors of A.</p><p>\\( \\lambda_1 = 4, \\mathbf{v}_1 = \\( \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\) </p><p>and</p><p>\\( \\lambda_2 = 1, \\mathbf{v}_2 = \\( \\begin{bmatrix} 1 \\\\ -3/4 \\end{bmatrix} \\) </p><p>Step 2: Construct the diagonal matrix D.</p><p>\\[ D = \\( \\begin{bmatrix} 4 & 0 \\\\ 0 & 1 \\end{bmatrix} \\) </p><p>Step 3: Compute Aⁿ.</p><p>\\( Aⁿ = Dⁿ = \\( \\begin{bmatrix} 4^n & 0 \\\\ 0 & 1^n \\end{bmatrix} \\) </p>\",",
+    "answerShort": "Aⁿ = \\( \\begin{bmatrix} 4^n & 0 \\\\ 0 & 1^n \\end{bmatrix} \\)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:00.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": {
+      "statementHtml": "<p>Given a square matrix A, find when possible P⁻¹AP = D, where P is an orthogonal matrix and D is a diagonal matrix.</p>",
+      "hints": [
+        "Check if the matrix has distinct eigenvalues.",
+        "If not, try to find similar matrices.",
+        "Diagonalization only works for matrices with distinct eigenvalues."
+      ],
+      "solutionHtml": "<p>Let A be an n x n square matrix. We want to diagonalize it by finding a matrix P such that P⁻¹AP = D, where D is a diagonal matrix.</p><p>We know that the eigenvectors of A are the columns of P, and the eigenvalues are the entries on the main diagonal of D.</p><p>Since we're looking for distinct eigenvalues, we can assume that the eigenvectors are orthogonal. This means that P is an orthogonal matrix.</p>",
+      "answerShort": "When possible."
+    },
+    "commonMistakes": [
+      "Assuming A has multiple eigenvalues with the same value."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:17.677Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": {
+      "statementHtml": "<p>Diagonalize a matrix A and compute its powers.</p>",
+      "hints": [
+        "Check if A is diagonal.",
+        "If not, find the eigenvalues and eigenvectors of A.",
+        "Use these to construct the diagonal matrix D."
+      ],
+      "solutionHtml": "<p>To diagonalize A, we need to find its eigenvalues λ and eigenvectors v. Then, P⁻¹AP = D, where P is the matrix whose columns are the eigenvectors. To compute powers of A, we can use this formula: Aⁿ = PDⁿP⁻¹.</p>",
+      "answerShort": "The diagonalized form."
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the eigenvectors.",
+      "Not checking if the matrix is already diagonal."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:30.433Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": "{",
+    "statementHtml": "Diagonalize the matrix A = \\[\\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix}\\] and compute <code>P⁻¹AP</code>.\",",
+    "hints": [
+      "Notice that A has a repeated eigenvalue. What does this tell you about diagonalization?",
+      "Use the eigenvectors to find P, then check if P⁻¹AP = D",
+      "Don't forget to normalize the eigenvectors!"
+    ],
+    "solutionHtml": "<p>Step 1: Find the eigenvalues and eigenvectors of A.</p><p>\\[\\lambda_1 = 4,\\ \\mathbf{v}_1 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix},\\ \\lambda_2 = 1,\\ \\mathbf{v}_2 = \\begin{bmatrix} 1 \\\\ -3/4 \\end{bmatrix}\\]</p><p>Step 2: Normalize the eigenvectors.</p><p>\\[\\mathbf{u}_1 = (1/\\sqrt{1})\\mathbf{v}_1,\\ \\mathbf{u}_2 = (1/\\sqrt{13})\\mathbf{v}_2\\]</p><p>Step 3: Form the diagonal matrix D.</p><p>\\[D = \\begin{bmatrix} 4 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]</p><p>Step 4: Compute P⁻¹AP.</p><p>\\[P⁻¹AP = \\begin{bmatrix} 1/√13 & 0 \\\\ 0 & 1/\\sqrt{13} \\end{bmatrix}\\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix}\\begin{bmatrix} √13/1 & 0 \\\\ 0 & √13/4 \\end{bmatrix} = D</p>\",",
+    "answerShort": "D\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:56.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: Solving Matrix Powers",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to diagonalize a matrix and compute its powers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the eigenvalues and eigenvectors of <i>A</i> = [[2, -3], [1, 4]], then use them to diagonalize <i>A</i>. Finally, compute <i>A<sup>3</sup></i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the characteristic polynomial\", \"mathHtml\": \"\\[p(\\lambda) = \\det(A - \\lambda I) = 0\\]\", \"explanation\": \"The characteristic polynomial helps us find the eigenvalues.\" }, {\"stepNumber\": 2, \"description\": \"Compute the eigenvalues and eigenvectors\", \"mathHtml\": \"\\[\\begin{align*} \\lambda_1 &= 3, &v_1 &= [1, -1], \\\\ \\lambda_2 &= 1, &v_2 &= [1, 1]. \\end{align*}\\]\", \"explanation\": \"The eigenvalues and eigenvectors are crucial for diagonalization.\" }, {\"stepNumber\": 3, \"description\": \"Diagonalize the matrix\", \"mathHtml\": \"\\[P^{-1}AP = D\\], where <i>D</i> is a diagonal matrix.\", \"explanation\": \"By diagonalizing the matrix, we can easily compute its powers.\" }, {\"stepNumber\": 4, \"description\": \"Compute the third power of <i>A</i>\", \"mathHtml\": \"\\[A^3 = PDP^{-1}\\], where <i>D^3</i> is a diagonal matrix.\", \"explanation\": \"Computing the power of a diagonalized matrix is straightforward.\" } ],",
+    "finalAnswer": "<i>A<sup>3</sup></i> = [[12, -6], [3, 4]]\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into easier-to-compute diagonalized matrices.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:38:24.791Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of a Matrix",
+    "contentHtml": "<p>In linear algebra, diagonalization is a powerful technique to transform a matrix into its canonical form.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]",
+      "name": "Matrix Diagonalization"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a square matrix A, find the eigenvalues and eigenvectors to diagonalize it.</p>",
+      "hints": [
+        "Hint: Start by finding the characteristic polynomial"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Diagonalize the matrix \\[\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the characteristic polynomial",
+          "mathHtml": "\\[P(x) = |A - xI|\\]",
+          "explanation": "This is the polynomial whose roots are the eigenvalues."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the eigenvalues by solving the characteristic equation",
+          "mathHtml": "\\[P(1) = (2-1)^2 + (-1)(1)(-1) - 2(-1) = 0\\]",
+          "explanation": "The eigenvalue is the value of x that makes P(x) equal to zero."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the eigenvectors by solving (A - λI)v = 0",
+          "mathHtml": "\\[\\begin{bmatrix} 2-1 & 1 \\\\ -1 & 2-1 \\end{bmatrix}\\begin{bmatrix} v_1 \\\\ v_2 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}\\]",
+          "explanation": "The eigenvectors are the non-zero vectors that, when transformed by A, result in a scaled version of themselves."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Diagonalize the matrix using the eigenvalues and eigenvectors",
+          "mathHtml": "\\[P^{-1}AP = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 3 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]",
+          "explanation": "The diagonalized matrix is the product of the eigenvectors and eigenvalues."
+        }
+      ],
+      "finalAnswer": "\\[\\begin{bmatrix} 3 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]"
+    },
+    "intuition": "Diagonalization helps us understand the underlying structure of a matrix, making it easier to compute powers and perform other operations.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:39:00.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a matrix P can be diagonalized by finding its eigenvalues and eigenvectors.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the matrix A = \\[\\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}\\], find its diagonalization.</p>",
+      "hints": [
+        "Find the eigenvalues and eigenvectors of A",
+        "Use these to construct a diagonal matrix D"
+      ],
+      "solutionHtml": "<p>To diagonalize A, we first need to find its eigenvalues and eigenvectors. Let λ be an eigenvalue with corresponding eigenvector v.</p><ul><li>We can write Av = λv</li></ul>",
+      "answerShort": "The diagonalized matrix is D"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the matrix A = \\[\\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}\\], find its diagonalization.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the characteristic polynomial of A",
+          "mathHtml": "\\[|A - λI| = 0\\]",
+          "explanation": "This helps us find the eigenvalues of A"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve for the eigenvalues",
+          "mathHtml": "\\[λ^2 - 5λ + 6 = 0\\]",
+          "explanation": "We can use this to find the eigenvalues λ1 and λ2"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the eigenvectors corresponding to each eigenvalue",
+          "mathHtml": "\\[v_1 = \\begin{bmatrix} 1 \\\\ -2 \\end{bmatrix}, v_2 = \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix}\\]",
+          "explanation": "These eigenvectors are used to construct the diagonal matrix D"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the diagonal matrix D",
+          "mathHtml": "\\[D = \\begin{bmatrix} λ_1 & 0 \\\\ 0 & λ_2 \\end{bmatrix}\\]",
+          "explanation": "This is our final diagonalized matrix"
+        }
+      ],
+      "finalAnswer": "The diagonalized matrix is D"
+    },
+    "intuition": "Diagonalization helps us simplify complex matrices by breaking them down into their constituent parts.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:39:32.546Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: Solving Matrix Powers",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to diagonalize a matrix and compute its powers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Given the matrix A = \\[\\begin{bmatrix} 2 & 1 \\\\ 4 & 3 \\end{bmatrix}\\], find the eigenvalues and eigenvectors, then use them to diagonalize A.\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the characteristic polynomial\", \"mathHtml\": \"\\[p(\\lambda) = \\det(A - \\lambda I)\\]\", \"explanation\": \"We'll use the characteristic polynomial to find the eigenvalues.\"}, {\"stepNumber\": 2, \"description\": \"Compute the eigenvalues\", \"mathHtml\": \"\\[\\begin{aligned} p(1) &= 0 \\\\ p(-1) &= 0 \\end{aligned}\\]\", \"explanation\": \"The eigenvalues are the roots of the characteristic polynomial.\"}, {\"stepNumber\": 3, \"description\": \"Find the eigenvectors\", \"mathHtml\": \"\\[\\begin{bmatrix} -1 & 1 \\\\ 2 & 1 \\end{bmatrix}\\] and \\[\\begin{bmatrix} 1 & 1 \\\\ -2 & 1 \\end{bmatrix}\\]\", \"explanation\": \"The eigenvectors are the non-zero vectors that, when transformed by A, result in scaled versions of themselves.\"}, {\"stepNumber\": 4, \"description\": \"Diagonalize A\", \"mathHtml\": \"\\[P^{-1}AP = D\\]\", \"explanation\": \"We'll use the eigenvalues and eigenvectors to create a diagonal matrix D.\"}, {\"stepNumber\": 5, \"description\": \"Compute the powers of A\", \"mathHtml\": \"\\[A^n = PDP^{-1}\\]\", \"explanation\": \"Now that we have the diagonalized form, computing matrix powers becomes much easier.\"} ],",
+    "finalAnswer": "The eigenvalues are 1 and -1, and the eigenvectors are \\[\\begin{bmatrix} -1 & 1 \\\\ 2 & 1 \\end{bmatrix}\\] and \\[\\begin{bmatrix} 1 & 1 \\\\ -2 & 1 \\end{bmatrix}\\].\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into smaller, more manageable pieces.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:40:02.228Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

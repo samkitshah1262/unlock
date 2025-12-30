@@ -1,0 +1,478 @@
+[
+  {
+    "id": "la_con_low_rank_approximation_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation",
+    "contentHtml": "<p>In many situations, we want to approximate a matrix or tensor with a lower-rank version while preserving most of its information.</p><p>This is particularly useful in machine learning and data analysis where we often deal with high-dimensional data.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\approx \\mathbf{U}\\Sigma\\mathbf{V}^T\\]",
+      "name": "Truncated SVD"
+    },
+    "intuition": "Think of a matrix as a collection of images or features. Low-rank approximation is like compressing these images into a smaller set while keeping the essential information.",
+    "realWorldApplications": [
+      "Dimensionality reduction in image processing"
+    ],
+    "commonMistakes": [
+      "Thinking low-rank approximation only works for matrices"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:48:11.221Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_low_rank_approximation_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation: Truncated SVD and Eckart-Young Theorem",
+    "contentHtml": "<p>Low-rank approximation is a fundamental concept in linear algebra that has far-reaching implications for machine learning and artificial intelligence.</p><p>In essence, it's about finding the most representative lower-dimensional representation of a high-dimensional matrix. This is crucial when dealing with large datasets or complex models.</p>",
+    "formula": {
+      "latex": "\\[ U \\Sigma V^\\top \\approx A \\]",
+      "name": "Truncated SVD"
+    },
+    "intuition": "Think of it like taking a blurry photo and zooming in on the most important features. You're essentially discarding redundant information to get a better understanding of the underlying structure.",
+    "realWorldApplications": [
+      "Dimensionality reduction for image classification",
+      "Latent factor analysis in recommender systems"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that SVD is not unique, and truncation is necessary"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:48:26.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_low_rank_approximation_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation: Truncated SVD and Eckart-Young Theorem",
+    "contentHtml": "<p>Imagine you're trying to compress a large image by retaining only its most important features. This is essentially what low-rank approximation does, but instead of images, we work with matrices.</p><p>The truncated Singular Value Decomposition (SVD) and the Eckart-Young theorem provide a way to approximate a matrix by keeping only its most significant components. This has far-reaching implications in machine learning and artificial intelligence, where data compression is crucial for efficient processing and storage.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\approx \\sum_{i=1}^{k} \\sigma_i \\mathbf{u}_i \\mathbf{v}_i^T\\]",
+      "name": "Truncated SVD"
+    },
+    "intuition": "The key insight is that by retaining only the top-k singular values and their corresponding vectors, we can approximate a matrix with high accuracy while significantly reducing its dimensionality.",
+    "realWorldApplications": [
+      "Dimensionality reduction in image compression",
+      "Efficient feature extraction in natural language processing"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that SVD is not just for image compression",
+      "Thinking that Eckart-Young theorem only applies to symmetric matrices"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:48:44.013Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_low_rank_approximation_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Eckart-Young Theorem",
+    "contentHtml": "<p>The Eckart-Young theorem is a fundamental result in linear algebra, providing an optimal way to approximate a matrix by a low-rank matrix.</p><p>Given a matrix A and its singular value decomposition (SVD), the theorem states that the best rank-k approximation of A is given by the truncated SVD.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": ""
+    },
+    "theorem": {
+      "statement": "\\[\\|A - U\\Sigma V^T\\|^2_{} = \\min_{\\text{rank}(B)=k} \\|A - B\\|^2_{}\\]",
+      "proofSketch": "The proof involves showing that the truncated SVD minimizes the Frobenius norm of the error matrix."
+    },
+    "intuition": "The Eckart-Young theorem provides a way to efficiently approximate a large matrix by a smaller one, which is crucial in many machine learning and AI applications.",
+    "realWorldApplications": [
+      "Dimensionality reduction in recommender systems"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decomposition",
+      "Optimization"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:02.526Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_low_rank_approximation_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Eckart-Young Theorem",
+    "contentHtml": "<p>The Eckart-Young theorem is a cornerstone of low-rank approximation in linear algebra.</p><p>Given an $m \\times n$ matrix $\\mathbf{A}$, the theorem states that the best rank-$k$ approximation to $\\mathbf{A}$ is obtained by retaining only the top-$k$ singular values and their corresponding right-singular vectors.</p>\",",
+    "formula": "{",
+    "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]\",",
+    "name": "\" },",
+    "theorem": "{",
+    "statement": "\\( \\mathbf{A} \\approx \\sum_{i=1}^k \\sigma_i u_i v_i^\\top, \\text{ where } \\sigma_1 \\geq \\cdots \\geq \\sigma_k > 0 \\) is the best rank-$k$ approximation to $\\mathbf{A}$\",",
+    "proofSketch": "The proof involves showing that the truncated SVD minimizes the Frobenius norm of the error matrix.\" },",
+    "intuition": "In essence, the Eckart-Young theorem says that when you're trying to approximate a large matrix with a smaller one, it's better to keep the most important singular values and their corresponding vectors.",
+    "realWorldApplications": [
+      "This theorem has numerous applications in machine learning, such as dimensionality reduction, feature selection, and recommendation systems."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decompositions"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:23.489Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best low-rank approximation using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Use the Eckart-Young theorem to determine the optimal rank.",
+      "Truncate the decomposition at the desired rank."
+    ],
+    "solutionHtml": "<p>Let's compute the SVD of A:</p>\\(\\mathbf{A} = \\mathbf{U\\Sigma V^T}\\)<br><p>Now, apply the Eckart-Young theorem to find the optimal rank:</p>\\[\\text{rank} = k\\] <br><p>Finally, truncate the decomposition at the desired rank:</p>\\(\\mathbf{\\tilde{A}} = \\mathbf{\\tilde{U}\\tilde{\\Sigma}\\tilde{V}^T}\\)<br>\",",
+    "answerShort": "The best low-rank approximation is given by \\(\\mathbf{\\tilde{A}}\\)\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:40.513Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best rank-k approximation using Truncated SVD.</p>",
+    "hints": [
+      "<p>The Eckart-Young theorem provides a clue about the optimal choice of k.</p>",
+      "<p>Think about how to minimize the Frobenius norm.</p>",
+      "<p>Use the fact that Σ<sub>i=1</sub><sup>k</sup> σ<sub>i</sub> u<sub>i</sub>v<sub>i</sub>T is a rank-k approximation.</p>"
+    ],
+    "solutionHtml": "<p>To find the best rank-k approximation, we apply the Truncated SVD algorithm:</p>\\n\\ <p><code>S = U ΣV<sup>T</sup></code>, where Σ is a diagonal matrix with k non-zero entries.</p>\\n\\ <p>We then set <code>k</code> to the desired value and obtain the truncated SVD:</p>\\n\\ <p><code>A ≈ U Σ<sub>k</sub>V<sup>T</sup></code>.</p>\",",
+    "answerShort": "A ≈ U Σ<sub>k</sub>V<sup>T</sup>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:59.035Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Find a low-rank approximation of a given matrix using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of the original matrix.",
+      "Select the top-k singular values and corresponding singular vectors to form the approximated matrix.",
+      "Verify that the approximation error is minimized."
+    ],
+    "solutionHtml": "<p>To find a low-rank approximation, we first compute the SVD of the original matrix:</p>\\[\\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T.\\]<p>Next, we select the top-k singular values and corresponding singular vectors to form the approximated matrix:</p>\\[\\tilde{\\mathbf{A}} = \\mathbf{U}_k\\Sigma_k\\mathbf{V}_k^T,\\]where $\\mathbf{U}_k$ and $\\mathbf{V}_k$ are the matrices formed by the top-k columns of $\\mathbf{U}$ and $\\mathbf{V}$, respectively.</p><p>Finally, we verify that the approximation error is minimized:</p>\\[\\|\\mathbf{A} - \\tilde{\\mathbf{A}}\\|_F = \\min_{\\text{rank }k}\\|\\mathbf{A} - \\tilde{\\mathbf{A}}\\|_F.\\]\",",
+    "answerShort": "The low-rank approximation is given by $\\tilde{\\mathbf{A}}$.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:50:20.793Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best rank-k approximation using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Focus on the k largest singular values and corresponding singular vectors.",
+      "Use these to construct the low-rank approximation."
+    ],
+    "solutionHtml": "<p>To find the best rank-k approximation, we apply Truncated SVD:</p>\\n\\ \\[A \\approx U_k Σ_k V_k^T,\\]\\n\\ where $U_k$ and $V_k$ are matrices containing the k largest singular vectors of A, and $\\Sigma_k$ is a diagonal matrix with the k largest singular values.</p>\\n\\ <p>Next, we compute the low-rank approximation:</p>\\n\\ \\[A \\approx U_k Σ_k V_k^T.\\]\\n\\ <p>The final answer is the approximated matrix.</p>\",",
+    "answerShort": "U_k Σ_k V_k^T\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:50:36.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_low_rank_approximation_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation with Truncated SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a low-rank approximation problem using truncated Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\approx \\mathbf{U}\\Sigma\\mathbf{V}^T\\]",
+      "name": "Truncated SVD"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix <strong>A</strong> and an integer <strong>k</strong>, find the best rank-<strong>k</strong> approximation of <strong>A</strong> using truncated SVD.</p>",
+      "hints": [
+        "Hint: Use Eckart-Young theorem"
+      ],
+      "solutionHtml": "<p>We'll use the following steps:</p><ul><li>Compute the SVD of <strong>A</strong>: <strong>A</strong> = <strong>U</strong>&#963;<strong>V</strong><sup>T</sup></li><li>Truncate the decomposition to rank-<strong>k</strong>:</li><li>Compute the best approximation:</li></ul>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let <strong>A</strong> = \\[\\begin{bmatrix}1 &amp; 2 \\\\ 3 &amp; 4\\end{bmatrix}\\] and <strong>k</strong> = 1. Find the best rank-<strong>k</strong> approximation of <strong>A</strong>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of <strong>A</strong>",
+          "mathHtml": "\\[\\begin{align*} \\mathbf{A} &= \\begin{bmatrix}1 &amp; 2 \\\\ 3 &amp; 4\\end{bmatrix}\\] = \\begin{bmatrix}u_1 &amp; u_2 \\\\ v_1 &amp; v_2\\end{bmatrix} \\Sigma \\begin{bmatrix}v_1^T &amp; v_2^T\\end{bmatrix}",
+          "explanation": "We're using the SVD to decompose <strong>A</strong> into three matrices: <strong>U</strong>, <strong>&#963;</strong>, and <strong>V</strong>"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Truncate the decomposition to rank-<strong>k</strong>",
+          "mathHtml": "\\[\\begin{align*} \\Sigma &= \\begin{bmatrix}\\sigma_1 &amp; 0 \\\\ 0 &amp; 0\\end{bmatrix}\\] = \\begin{bmatrix}u_1^T &amp; u_2^T\\end{bmatrix} \\Sigma \\begin{bmatrix}v_1^T &amp; v_2^T\\end{bmatrix}",
+          "explanation": "We're keeping only the top <strong>k</strong> singular values and corresponding vectors"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the best approximation",
+          "mathHtml": "\\[\\begin{align*} \\hat{\\mathbf{A}} &= \\begin{bmatrix}u_1 &amp; u_2 \\\\ v_1 &amp; v_2\\end{bmatrix} \\Sigma \\begin{bmatrix}v_1^T &amp; v_2^T\\end{bmatrix}",
+          "explanation": "We're using the truncated SVD to approximate <strong>A</strong>"
+        }
+      ],
+      "finalAnswer": "\\[\\hat{\\mathbf{A}} = \\begin{bmatrix}0.5 &amp; 1 \\\\ 2 &amp; 3.5\\end{bmatrix}"
+    },
+    "intuition": "The key insight is that truncated SVD provides an optimal way to approximate a matrix while retaining most of its information.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:51:25.221Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_low_rank_approximation_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation: Truncated SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a low-rank approximation problem using truncated Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[ U \\Sigma V^\\top \\]",
+      "name": "Singular Value Decomposition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, find the best rank-k approximation using truncated SVD.</p>",
+      "hints": [
+        "Hint: Use Eckart-Young theorem"
+      ],
+      "solutionHtml": "<p>We'll solve this problem step-by-step:</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a matrix A = \\[\\begin{array}{ccc} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{array}\\] and want to find the best rank-2 approximation.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of A",
+          "mathHtml": "\\[ U \\Sigma V^\\top = \\begin{bmatrix} u_1 & u_2 \\\\ v_1 & v_2 \\end{bmatrix} \\begin{bmatrix} \\sigma_1 & 0 \\\\ 0 & \\sigma_2 \\end{bmatrix} \\begin{bmatrix} v_1^\\top & v_2^\\top \\end{bmatrix}\\]",
+          "explanation": "We start by computing the SVD of A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Select the top k singular values and their corresponding singular vectors",
+          "mathHtml": "\\[ U_k = [u_1, u_2], \\Sigma_k = \\begin{bmatrix} \\sigma_1 & 0 \\\\ 0 & \\sigma_2 \\end{bmatrix}, V_k = [v_1, v_2]\\]",
+          "explanation": "We select the top k singular values and their corresponding singular vectors."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the truncated SVD",
+          "mathHtml": "\\[ A_k = U_k \\Sigma_k V_k^\\top \\]",
+          "explanation": "Now we compute the truncated SVD using the selected singular values and vectors."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the Eckart-Young theorem",
+          "mathHtml": "\\[ ||A - A_k||_F = \\min_{rank(A) = k} ||A - A'\\|_F \\]",
+          "explanation": "We verify that our truncated SVD satisfies the Eckart-Young theorem."
+        }
+      ],
+      "finalAnswer": "The best rank-2 approximation is given by A_k"
+    },
+    "intuition": "Low-rank approximation helps reduce dimensionality and noise in data, making it a crucial step in many machine learning algorithms.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:52:01.081Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_low_rank_approximation_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation: Truncated SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a low-rank approximation problem using the truncated Singular Value Decomposition (SVD).</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A} \\approx \\mathbf{U}\\Sigma\\mathbf{V}^T\\]",
+    "name": "Truncated SVD\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix \\mathbf{A} \\in \\mathbb{R}^{m \\times n}, find the best low-rank approximation using the top k singular values and vectors.</p>",
+    "hints": [
+      "Consider the Eckart-Young theorem"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the best rank-k approximation of \\\\mathbf{A} = \\\\begin{bmatrix} 1 & 2 & 3 \\\\\\\\ 4 & 5 & 6 \\end{bmatrix} using the top k=2 singular values and vectors.</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Compute the SVD of \\mathbf{A}",
+        "mathHtml": "\\[\\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T\\]",
+        "explanation": "We start by computing the SVD of \\mathbf{A}. This gives us the matrices \\mathbf{U}, \\mathbf{\\Sigma}, and \\mathbf{V}."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Select the top k singular values",
+        "mathHtml": "\\[\\mathbf{\\Sigma}_k = \\begin{bmatrix} \\sigma_1 & 0 \\\\ 0 & \\sigma_2 \\end{bmatrix}\\]",
+        "explanation": "Next, we select the top k=2 singular values and their corresponding vectors from the SVD."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Compute the truncated SVD",
+        "mathHtml": "\\[\\mathbf{A}_k = \\mathbf{U}_k\\mathbf{\\Sigma}_k\\mathbf{V}_k^T\\]",
+        "explanation": "We then compute the truncated SVD by multiplying the selected singular values and vectors."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Verify the approximation",
+        "mathHtml": "\\[||\\mathbf{A} - \\mathbf{A}_k||_F^2 = ?\\]",
+        "explanation": "Finally, we verify that our truncated SVD is a good approximation of the original matrix by computing the Frobenius norm."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Compute the final answer",
+        "mathHtml": "\\[\\mathbf{A}_k = \\begin{bmatrix} 0.58 & 1.15 \\\\ 2.31 & 4.62 \\end{bmatrix}\\]",
+        "explanation": "The final answer is the best rank-k approximation of the original matrix."
+      }
+    ],
+    "finalAnswer": "\\\\mathbf{A}_k = \\\\begin{bmatrix} 0.58 & 1.15 \\\\\\\\ 2.31 & 4.62 \\\\end{bmatrix}\" },",
+    "intuition": "<p>The key insight is that the truncated SVD provides a way to approximate a high-dimensional matrix using only its most important features.</p>",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:52:42.371Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_low_rank_approximation_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "title": "Low-Rank Approximation: Truncated SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Eckart-Young theorem to find the optimal low-rank approximation of a matrix.</p>",
+    "formula": "{",
+    "latex": "\\[ \\sigma_k(A) = \\min_{\\mathrm{rank}(B)=k} ||A-B||_F \\]\",",
+    "name": "Optimal Low-Rank Approximation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ^{m×n}, find the best rank-k approximation B such that ||A - B||_F is minimized.</p>",
+    "hints": [
+      "Hint: Use SVD to decompose A."
+    ],
+    "solutionHtml": "<p>We'll use the Eckart-Young theorem, which states that the optimal low-rank approximation is given by the top-k singular values and their corresponding right-singular vectors.</p>",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a matrix A = \\[ \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\end{bmatrix} </p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the SVD of A\", \"mathHtml\": \"\\[ U\\Sigma V^T = \\begin{bmatrix} u_1 & u_2 \\\\ u_3 & u_4 \\end{bmatrix} \\begin{bmatrix} \\sigma_1 & 0 \\\\ 0 & \\sigma_2 \\end{bmatrix} \\begin{bmatrix} v_1^T & v_2^T \\end{bmatrix} \\]\", \"explanation\": \"We need the SVD to find the optimal low-rank approximation.\"}, {\"stepNumber\": 2, \"description\": \"Truncate the SVD at rank k\", \"mathHtml\": \"\\[ U_k\\Sigma_k V_k^T = \\begin{bmatrix} u_1 & u_2 \\\\ u_3 & u_4 \\end{bmatrix} \\begin{bmatrix} \\sigma_1 & 0 \\\\ 0 & \\sigma_2 \\end{bmatrix} \\begin{bmatrix} v_1^T & v_2^T \\end{bmatrix} \\]\", \"explanation\": \"We'll keep the top-k singular values and their corresponding right-singular vectors.\"}, {\"stepNumber\": 3, \"description\": \"Compute the optimal low-rank approximation\", \"mathHtml\": \"\\[ B = U_k\\Sigma_k V_k^T \\]\", \"explanation\": \"This is our best rank-k approximation of A.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The Eckart-Young theorem provides a way to efficiently find the optimal low-rank approximation of a matrix, which has many applications in machine learning and data analysis.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:53:18.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

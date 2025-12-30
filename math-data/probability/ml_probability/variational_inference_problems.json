@@ -1,0 +1,102 @@
+[
+  {
+    "id": "prob_prb_variational_inference_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic model <i>p(x)</i>, derive the mean-field variational distribution <i>q(z)</i> using the reparameterization trick.</p>",
+    "hints": [
+      "Start by defining the evidence lower bound (ELBO) for the model.",
+      "Introduce the mean-field approximation and its relation to the ELBO.",
+      "Apply the reparameterization trick to the variational distribution."
+    ],
+    "solutionHtml": "<p>To derive the mean-field variational distribution, we first define the ELBO:</p>\\n\\[ \\text{ELBO} = \\mathbb{E}_{q(z)}[\\log p(x)] - KL[q(z) || p(z)] \\]\\n<p>Next, we introduce the mean-field approximation by assuming a factorized form for <i>q(z)</i>:</p>\\n\\[ q(z) = \\prod_{i} q(z_i) \\]\\n<p>We then apply the reparameterization trick to each component of <i>q(z)</i>, obtaining:</p>\\n\\[ z_i = \\tanh(w_i + \\epsilon_i) \\]\\n<p>The resulting mean-field variational distribution is:</p>\\n\\[ q(z) = \\prod_{i} \\mathcal{N}(z_i | 0, 1) \\]\\n<p>Finally, we can compute the ELBO using this variational distribution.</p>\",",
+    "answerShort": "The mean-field variational distribution is <i>q(z)</i>.\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:31:30.013Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variational_inference_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "problem": "{",
+    "statementHtml": "Given a probabilistic model <i>P</i>(<i>Z</i>|<i>X</i>) and an approximate inference method using the reparameterization trick, derive the ELBO (Evidence Lower Bound) for mean-field variational inference.",
+    "hints": [
+      "Start by defining the KL divergence between the true posterior and the variational distribution.",
+      "Use the reparameterization trick to rewrite the expectation term in terms of a random variable.",
+      "Apply the chain rule to expand the ELBO"
+    ],
+    "solutionHtml": "<p>To derive the ELBO, we begin by writing the KL divergence:</p>\\(\\mathcal{K}(Q || P) = \\int Q(z) \\log\\frac{Q(z)}{P(z|x)}dz\\)<p>Next, we apply the reparameterization trick to rewrite the expectation term:</p>\\(E_{z \\sim Q}[\\log P(x|z)] = E_{\\epsilon \\sim N(0,I)}[f(\\epsilon; x)]\\)<p>Finally, we expand the ELBO using the chain rule:</p>\\(\\mathcal{L}(Q) = E_{z \\sim Q}[ \\log P(z|x) ] - \\beta \\cdot \\mathcal{K}(Q || P)\\)<p>The final answer is the ELBO expression.</p>\",",
+    "answerShort": "The ELBO for mean-field variational inference is <i>\\\\(\\\\mathcal{L}(Q) = E_{z \\\\sim Q}[ \\\\log P(z|x) ] - \\\\beta \\\\cdot \\\\mathcal{K}(Q || P)\\\\)</i>\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:31:55.099Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variational_inference_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "problem": "{",
+    "statementHtml": "Given a probabilistic model <i>P</i>(<i>z</i>|<i>x</i>) and an approximate inference algorithm using mean-field approximation and reparameterization trick, derive the ELBO (Evidence Lower Bound) for this model.",
+    "hints": [
+      "Start by defining the log-likelihood of the data given the model",
+      "Use the reparameterization trick to rewrite the integral in terms of a simple function",
+      "Apply the mean-field approximation to simplify the expression"
+    ],
+    "solutionHtml": "<p>Step 1: Define the log-likelihood</p>\\[L = \\log P(x | z) = \\sum_{i} \\log P(x_i | z)\\]</p><p>Step 2: Apply reparameterization trick</p>\\[\\int q(z) \\log P(x | z) dz = \\int q(z) \\log P(x | z) dz\\]</p><p>Step 3: Use mean-field approximation</p>\\[L = \\mathbb{E}_{q(z)}[\\log P(x | z)] - KL(q || P)\\]\",",
+    "answerShort": "The ELBO is the sum of the log-likelihood and the Kullback-Leibler divergence between the approximate posterior and the true posterior.\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:32:16.375Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variational_inference_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic model with latent variables, derive the ELBO (Evidence Lower Bound) using mean-field approximation and reparameterization trick.</p>",
+    "hints": [
+      "Start by writing down the log-likelihood of the observed data.",
+      "Use the mean-field approximation to factorize the posterior distribution.",
+      "Apply the reparameterization trick to make the ELBO differentiable."
+    ],
+    "solutionHtml": "<p>Let's begin with the log-likelihood:</p>\\(\\log p(y | \\mathbf{x}) = \\sum_{i} \\log p(y_i | \\mathbf{x})\\)<br><p>Next, we apply mean-field approximation to factorize the posterior distribution:</p>\\(q(z) = \\prod_{j} q(z_j)\\)<br><p>Now, we reparameterize the ELBO using the reparameterization trick:</p>\\(\\text{ELBO} = \\mathbb{E}_{q(z)}[\\log p(y | z)] - KL[q(z) || p(z)]\\)<br><p>The final expression for the ELBO is:</p>\\(\\text{ELBO} = \\sum_{i} \\mathbb{E}_{q(z_i)}[\\log p(y_i | z_i)] - \\KL{\\prod_{j} q(z_j)}{\\prod_{j} p(z_j)}\\)<br><p>The answer is the final expression for the ELBO.</p>\",",
+    "answerShort": "The ELBO expression\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:32:40.540Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

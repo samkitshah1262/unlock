@@ -1,0 +1,161 @@
+[
+  {
+    "id": "prob_for_exponential_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Exponential Distribution",
+    "contentHtml": "<p>The exponential distribution is a continuous probability distribution that models the time between independent and identically distributed events in a memoryless system.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\lambda e^{-\\lambda x}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a memoryless system where the time between failures is exponentially distributed with rate parameter λ. What is the probability that the system fails within the next 5 units of time?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the problem",
+          "mathHtml": "\\[P(X \\leq 5) = \\int_0^5 f(x) dx\\]",
+          "explanation": "We want to find the probability that the system fails within the next 5 units of time."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[P(X \\leq 5) = -e^{-\\lambda x}|_0^5 + \\frac{1}{\\lambda} (1 - e^{-5\\lambda})\\]",
+          "explanation": "We evaluate the integral using the definition of the exponential distribution."
+        }
+      ],
+      "finalAnswer": "\\[P(X \\leq 5) = 1 - e^{-5\\lambda}\\]"
+    },
+    "intuition": "The exponential distribution is memoryless, meaning that the probability of an event occurring does not depend on any past events. This makes it a useful model for systems where failures are independent and identically distributed.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:59:26.882Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_exponential_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Exponential Distribution",
+    "contentHtml": "<p>The exponential distribution is a fundamental continuous random variable in probability theory.</p><p>It's characterized by its memoryless property and strong connection to the Poisson distribution.</p>",
+    "formula": {
+      "latex": "\\[f(x; \\lambda) = \\lambda e^{-\\lambda x} \\quad \\text{for } x > 0, \\lambda > 0\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a memoryless exponential distribution with rate parameter \\lambda.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the probability that the random variable exceeds some value t.",
+          "mathHtml": "\\[P(X > t) = e^{-\\lambda t} \\quad \\text{for } t > 0\\]",
+          "explanation": "This is because the distribution is memoryless, so the probability of exceeding t only depends on the time elapsed since the last event."
+        }
+      ],
+      "finalAnswer": "e^{-\\lambda t}"
+    },
+    "intuition": "The exponential distribution is often used to model the time between events in a Poisson process. Its memoryless property makes it particularly useful for modeling systems where the probability of an event occurring doesn't depend on when the previous event occurred.",
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:59:47.459Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_exponential_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Exponential Distribution",
+    "contentHtml": "<p>The exponential distribution is a continuous probability distribution that models the time between events in a memoryless system.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\lambda e^{-\\lambda x}\\]",
+      "name": "Probability Density Function (PDF)",
+      "variants": [
+        {
+          "latex": "\\[F(x) = 1 - e^{-\\lambda x}\\]",
+          "description": "Cumulative Distribution Function (CDF)"
+        }
+      ]
+    },
+    "intuition": "The exponential distribution is memoryless because the probability of an event occurring within a given time frame does not depend on when the previous event occurred.",
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a queueing system"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:00:01.619Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_exponential_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Exponential Distribution",
+    "contentHtml": "<p>The exponential distribution is a fundamental probability distribution that models memoryless phenomena.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\lambda e^{-\\lambda x}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we have a memoryless process with rate parameter λ. Find the probability density function (PDF) of this process.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recall the definition of exponential distribution",
+          "mathHtml": "\\[f(x) = \\lambda e^{-\\lambda x}\\]",
+          "explanation": "The memoryless property implies that the probability of an event occurring within a small time interval is proportional to the length of that interval."
+        }
+      ],
+      "finalAnswer": "The PDF is given by f(x) = λe^(-λx)"
+    },
+    "intuition": "The exponential distribution models phenomena where the probability of an event occurring does not depend on when it occurred, only how long ago it occurred.",
+    "realWorldApplications": [
+      "In reliability engineering, the exponential distribution is used to model the time-to-failure of components in a system."
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:00:21.192Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

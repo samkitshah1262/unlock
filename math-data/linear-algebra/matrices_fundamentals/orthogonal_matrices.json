@@ -1,0 +1,476 @@
+[
+  {
+    "id": "la_con_orthogonal_matrices_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>A matrix is said to be orthogonal if its transpose is equal to its inverse.</p><p>This means that an orthogonal matrix preserves the length of any vector and also preserves the angle between two vectors.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]",
+      "name": "Orthogonality Condition"
+    },
+    "intuition": "Think of an orthogonal matrix as a rotation that preserves the shape and size of objects. It's like a camera lens that doesn't distort the image.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal matrices are used in dimensionality reduction techniques such as PCA (Principal Component Analysis)"
+    ],
+    "commonMistakes": [
+      "Don't confuse orthogonality with unitary matrices, which have a different property."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:29:31.211Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_matrices_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>An orthogonal matrix is a square matrix whose columns and rows are orthogonal unit vectors.</p><p>This means that the dot product of any two distinct column vectors (or row vectors) is zero, while each vector has length one.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{Q}^T \\mathbf{Q} = I\\]",
+      "name": "Orthogonality Condition"
+    },
+    "intuition": "Think of orthogonal matrices as rotations in space. When you rotate a vector by an angle, the resulting vector is still a unit vector, but it's pointing in a different direction. The orthogonality condition ensures that these rotated vectors are perpendicular to each other.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal matrices can be used as initialization for neural networks or as a way to regularize the weights"
+    ],
+    "commonMistakes": [
+      "Not realizing that orthogonal matrices preserve lengths and angles",
+      "Thinking that orthogonal matrices are always invertible"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:29:46.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_matrices_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>A matrix is said to be orthogonal if its transpose is equal to its inverse.</p><p>This means that an orthogonal matrix preserves lengths and angles in a way that's similar to rotation matrices.</p>",
+    "formula": {
+      "latex": "\\[ A^\\top = A^{-1} \\]",
+      "name": "Orthogonality Condition"
+    },
+    "intuition": "Think of an orthogonal matrix as a special kind of rotation. It doesn't change the magnitude of any vector, only its direction.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal matrices are used in dimensionality reduction techniques like PCA and LLE."
+    ],
+    "commonMistakes": [
+      "Don't confuse orthogonality with unitarity; not all orthogonal matrices have a magnitude of 1."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:30:00.283Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_matrices_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p><p>A matrix is said to be orthogonal if its transpose is also its inverse.</p>",
+    "formula": "{",
+    "latex": "\\[Q^T Q = I\\]\",",
+    "name": "Orthogonality Condition\" },",
+    "intuition": "Think of an orthogonal matrix as a special kind of rotation that preserves the length and angles of vectors.",
+    "visualDescription": "A diagram showing two vectors being rotated by an orthogonal matrix, with their lengths and angles remaining unchanged.",
+    "realWorldApplications": [
+      "Rotation matrices in computer graphics",
+      "Principal component analysis (PCA)"
+    ],
+    "tags": [
+      "linear-algebra",
+      "machine-learning",
+      "artificial-intelligence"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:30:13.917Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_matrices_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra, with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[Q^\\top Q = I\\]",
+      "name": "Orthogonality Condition"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the rotation matrix",
+          "mathHtml": "\\[\\begin{bmatrix}0 & -1 \\\\ 1 & 0\\end{bmatrix}\\]",
+          "explanation": "The standard basis vectors are rotated by 90 degrees counterclockwise."
+        }
+      ],
+      "finalAnswer": "The answer is the rotation matrix"
+    },
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in many ML/AI applications, such as dimensionality reduction and feature extraction.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:30:29.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_matrices_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra, with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[Q^T Q = I\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "Consider the rotation matrix <code>R</code> that rotates a vector by an angle <code>&theta;</code>. Show that <code>R</code> is orthogonal.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Check if <code>R^T R = I</code>\", \"mathHtml\": \"\\[R^T R = \\left(\\begin{array}{cc} \\cos &amp; -\\sin \\\\ \\sin &amp; \\cos \\end{array}\\right) \\left(\\begin{array}{cc} \\cos &amp; \\sin \\\\ -\\sin &amp; \\cos \\end{array}\\right) = I\\]\", \"explanation\": \"The dot product of any two columns in <code>R</code> is zero, and the magnitude of each column is 1.\"} ],",
+    "finalAnswer": "The rotation matrix <code>R</code> is orthogonal.\" },",
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential for tasks like data normalization and dimensionality reduction.",
+    "realWorldApplications": [
+      "Data preprocessing in machine learning models"
+    ],
+    "tags": [
+      "linear-algebra",
+      "orthogonality"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:30:50.071Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_matrices_007",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Matrices whose columns and rows are orthogonal vectors have numerous applications in machine learning and computer vision.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{Q}^T \\mathbf{Q} = \\mathbf{I}\\]",
+      "name": "Orthogonality Condition"
+    },
+    "theorem": {
+      "statement": "\\[\\text{If } \\mathbf{Q} \\text{ is an orthogonal matrix, then } \\mathbf{Q}^T \\mathbf{Q} = \\mathbf{I}\\]",
+      "proofSketch": "The proof involves showing that the columns of \\mathbf{Q} are orthonormal and then using this property to prove the theorem."
+    },
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them useful for tasks like data normalization and rotation.",
+    "realWorldApplications": [
+      "Data Preprocessing",
+      "Computer Vision"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:31:06.156Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_matrices_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]",
+      "name": "Orthogonality Condition"
+    },
+    "theorem": {
+      "statement": "\\[\\text{If } \\mathbf{A} \\text{ is an orthogonal matrix, then } \\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]",
+      "proofSketch": "The proof involves showing that the columns of \\mathbf{A} are orthonormal and then using this property to derive the desired result."
+    },
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in many machine learning algorithms, such as PCA and K-Means clustering.",
+    "realWorldApplications": [
+      "PCA for dimensionality reduction",
+      "K-Means clustering"
+    ],
+    "tags": [
+      "orthogonal",
+      "matrices",
+      "linear algebra",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:31:23.179Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_matrices_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "Think about what happens to dot products and lengths under rotation.",
+      "Consider the standard basis vectors in ℝ².",
+      "Recall the definition of orthogonality."
+    ],
+    "solutionHtml": "<p>To find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise, we can use the following steps:</p><ol><li>Let <span class=\\\"math\\\">R = \\begin{bmatrix}0 & -1\\\\ 1 & 0\\end{bmatrix}</span>. Then <span class=\\\"math\\\">R</span> is an orthogonal matrix.</li><li>We can verify that <span class=\\\"math\\\">R</span> satisfies the orthogonality condition:</li><ul><li><span class=\\\"math\\\">R^T R = I</span>.</li></ul><li>The determinant of <span class=\\\"math\\\">R</span> is -1, which means it represents a 90-degree counterclockwise rotation.</li></ol>\",",
+    "answerShort": "<span class=\\\"math\\\">R = \\begin{bmatrix}0 & -1\\\\ 1 & 0\\end{bmatrix}</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:31:43.462Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_matrices_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "<p>The key to finding an orthogonal matrix is to preserve the length of the original vector.</p>",
+      "<p>You can use trigonometry to find the sine and cosine values for the rotation.</p>",
+      "<p>Make sure your matrix has a determinant of 1, since it's an orthogonal matrix.</p>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal matrix, we'll start by defining the original vector <math>\\mathbf{v}</math>. We want to rotate it by 90 degrees counterclockwise, so we can use trigonometry to find the sine and cosine values:</p><p><math>\\sin(\\theta) = \\frac{\\sqrt{2}}{2}, \\cos(\\theta) = -\\frac{\\sqrt{2}}{2}</math></p><p>Now we can create our orthogonal matrix <math>A</math>:</p><p><math>A = \\begin{bmatrix} 0 & -1 \\\\ \\sqrt{2}/2 & \\sqrt{2}/2 \\end{bmatrix}</math></p><p>To show that this is indeed an orthogonal matrix, we can calculate its determinant:</p><p><math>\\det(A) = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2} = 1</math></p>\",",
+    "answerShort": "<math>A</math>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:32:05.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_matrices_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "Think about how to preserve the length of the vector.",
+      "Consider what happens when you multiply a vector by its transpose.",
+      "Recall the definition of orthogonality."
+    ],
+    "solutionHtml": "<p>To find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise, we can start with the standard basis vectors:</p>\\n\\[ \\mathbf{e}_1 = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}, \\quad \\mathbf{e}_2 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\]\\n<p>We want to find an orthogonal matrix <strong>R</strong> such that:</p>\\n\\[ R^T R = I, \\quad R \\mathbf{e}_1 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}, \\quad R \\mathbf{e}_2 = \\begin{bmatrix} -1 \\\\ 0 \\end{bmatrix}. \\]\\n<p>We can construct <strong>R</strong> as:</p>\\n\\[ R = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}, \\]\\n<p>This matrix satisfies the desired properties and is an example of an orthogonal rotation matrix.</p>\",",
+    "answerShort": "<code>R = [[0, -1], [1, 0]]</code>\" },",
+    "commonMistakes": [
+      "Forgetting to preserve the length of the vector",
+      "Not considering the transpose of the matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:32:28.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_matrices_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices: Definition and Properties",
+    "contentHtml": "<p>In linear algebra, an orthogonal matrix is a square matrix whose columns are pairwise orthogonal unit vectors.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{Q}^T \\mathbf{Q} = \\mathbf{I}\\]",
+    "name": "Orthogonality Condition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix \\mathbf{Q}, determine if it is orthogonal.</p>",
+    "hints": [
+      "Check the dot product of each column with itself",
+      "Verify that the columns have unit length"
+    ],
+    "solutionHtml": "<p>To check orthogonality, compute the matrix product \\mathbf{Q}^T \\mathbf{Q}. If this equals the identity matrix, then \\mathbf{Q} is orthogonal.</p>",
+    "answerShort": "Check if \\\\mathbf{Q}^T \\\\mathbf{Q} = \\\\mathbf{I}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider the matrix \\[\\mathbf{Q} = \\begin{bmatrix} 1/\\sqrt{2}, -1/\\sqrt{2}, 0 \\\\ 1/\\sqrt{2}, 1/\\sqrt{2}, 0 \\\\ 0, 0, 1 \\end{bmatrix}\\]. Is it orthogonal?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the dot product of each column with itself\", \"mathHtml\": \"\\\\[ (1/\\\\sqrt{2})^2 + (-1/\\\\sqrt{2})^2 = 1 \\\\]\", \"explanation\": \"This shows that each column has unit length.\"}, {\"stepNumber\": 2, \"description\": \"Verify the orthogonality of each pair of columns\", \"mathHtml\": \"\\\\[ (1/\\\\sqrt{2}, -1/\\\\sqrt{2}) \\cdot (1/\\\\sqrt{2}, 1/\\\\sqrt{2}) = 0 \\\\]\", \"explanation\": \"This shows that any two columns are orthogonal.\"}, {\"stepNumber\": 3, \"description\": \"Compute the matrix product \\\\mathbf{Q}^T \\\\mathbf{Q}\", \"mathHtml\": \"\\\\[ \\\\begin{bmatrix} 1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ -1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ 0, 0, 1 \\\\end{bmatrix} \\\\begin{bmatrix} 1/\\\\sqrt{2}, -1/\\\\sqrt{2}, 0 \\\\\\\\ 1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ 0, 0, 1 \\\\end{bmatrix} = \\\\mathbf{I} \\\\]\", \"explanation\": \"This shows that the matrix product equals the identity matrix, confirming orthogonality.\"}, {\"stepNumber\": 4, \"description\": \"Conclude that \\\\mathbf{Q} is an orthogonal matrix\", \"mathHtml\": \"\", \"explanation\": \"Since we have verified all conditions, we can conclude that \\\\mathbf{Q} is indeed an orthogonal matrix.\"} ],",
+    "finalAnswer": "Yes, the given matrix is orthogonal\" },",
+    "intuition": "Orthogonal matrices preserve lengths and angles of vectors.",
+    "visualDescription": "A diagram showing two vectors with their projections onto a third vector, demonstrating preservation of angle",
+    "commonMistakes": [
+      "Forgetting to check unit length",
+      "Not verifying orthogonality between all pairs of columns"
+    ],
+    "realWorldApplications": [
+      "Rotation matrices in computer graphics and game development"
+    ],
+    "tags": [
+      "orthogonal matrix",
+      "rotation matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:33:15.165Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_matrices_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]",
+      "name": "Orthogonality Condition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given an orthogonal matrix <code>A</code>, show that its transpose is also its inverse.</p>",
+      "hints": [
+        "Hint: Use the orthogonality condition",
+        "Think about the properties of the dot product"
+      ],
+      "solutionHtml": "<p>To prove this, we can start by computing the product <code>\\mathbf{A}^T \\mathbf{A}</code>. Using the orthogonality condition, we get:</p><p><code>\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]</code></p>",
+      "answerShort": "The transpose is also the inverse"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the orthogonal matrix <code>A = \\begin{bmatrix}0.6 & 0.7 \\\\ -0.7 & 0.6\\end{bmatrix}</code>. Show that its transpose is also its inverse.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the product <code>\\mathbf{A}^T \\mathbf{A}</code>",
+          "mathHtml": "<code>\\[\\begin{bmatrix}0.6 & -0.7 \\\\ 0.7 & 0.6\\end{bmatrix}\\begin{bmatrix}0.6 & 0.7 \\\\ -0.7 & 0.6\\end{bmatrix} = \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}\\]</code>",
+          "explanation": "This shows that the product is the identity matrix"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Show that <code>\\mathbf{A}^T \\mathbf{x}</code> is a scalar multiple of <code>\\mathbf{x}</code>",
+          "mathHtml": "<code>\\[\\begin{bmatrix}0.6 & -0.7 \\\\ 0.7 & 0.6\\end{bmatrix}\\begin{bmatrix}x_1\\\\ x_2\\end{bmatrix} = \\lambda \\begin{bmatrix}x_1\\\\ x_2\\end{bmatrix}\\]</code>",
+          "explanation": "This shows that the matrix transforms vectors to their scaled versions"
+        }
+      ],
+      "finalAnswer": "The transpose is also the inverse"
+    },
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in machine learning for tasks like dimensionality reduction and feature extraction.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:33:51.783Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_matrices_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices: Definition and Properties",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A}^T\\mathbf{A} = \\mathbf{I}\\]",
+    "name": "Orthogonality Condition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Consider a matrix \\mathbf{R} that represents a rotation in the plane. Show that \\mathbf{R} is an orthogonal matrix.</p>",
+    "hints": [
+      "Hint: Use the fact that rotations preserve lengths and angles."
+    ],
+    "solutionHtml": "<p>To show that \\mathbf{R} is orthogonal, we need to demonstrate that \\mathbf{R}^T\\mathbf{R} = \\mathbf{I}. Let's compute this product:</p><ul><li>\\[\\mathbf{R}^T\\mathbf{R} = \\begin{bmatrix} r_{11} &amp; r_{12} \\\\ r_{21} &amp; r_{22}\\end{bmatrix}\\begin{bmatrix} r_{11} &amp; r_{12} \\\\ r_{21} &amp; r_{22}\\end{bmatrix} = \\begin{bmatrix} r_{11}^2 + r_{12}^2 &amp; 0 \\\\ 0 &amp; r_{21}^2 + r_{22}^2\\end{bmatrix}\\]</li><li>Since rotations preserve lengths, we know that the sum of the squares of each column is equal to 1:</li></ul>",
+    "answerShort": "The matrix \\\\mathbf{R} is orthogonal.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a rotation matrix \\mathbf{R} = \\begin{bmatrix} \\cos(\\theta) &amp; -\\sin(\\theta) \\\\ \\sin(\\theta) &amp; \\cos(\\theta)\\end{bmatrix}. Show that \\mathbf{R} is orthogonal.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the product \\\\mathbf{R}^T\\\\mathbf{R}\", \"mathHtml\": \"\\\\[\\\\mathbf{R}^T\\\\mathbf{R} = \\\\begin{bmatrix} \\\\cos(\\\\theta) &amp; -\\\\sin(\\\\theta) \\\\\\\\ \\\\sin(\\\\theta) &amp; \\\\cos(\\\\theta)\\\\end{bmatrix}\\\\begin{bmatrix} \\\\cos(\\\\theta) &amp; -\\\\sin(\\\\theta) \\\\\\\\ \\\\sin(\\\\theta) &amp; \\\\cos(\\\\theta)\\\\end{bmatrix}\\]\", \"explanation\": \"We're computing the product of the transpose and original matrix to show that it's equal to the identity.\"}, {\"stepNumber\": 2, \"description\": \"Simplify the product\", \"mathHtml\": \"\\\\[\\\\mathbf{R}^T\\\\mathbf{R} = \\\\begin{bmatrix} \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta) &amp; 0 \\\\\\\\ 0 &amp; \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta)\\\\end{bmatrix}\\]\", \"explanation\": \"We can simplify the product by using the fact that \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta) = 1.\"}, {\"stepNumber\": 3, \"description\": \"Conclude that \\\\mathbf{R} is orthogonal\", \"mathHtml\": \"\", \"explanation\": \"Since the product is equal to the identity, we can conclude that \\\\mathbf{R} is an orthogonal matrix.\"} ],",
+    "finalAnswer": "The matrix \\\\mathbf{R} is orthogonal.\" },",
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in machine learning for tasks like dimensionality reduction and feature extraction.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:34:41.214Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

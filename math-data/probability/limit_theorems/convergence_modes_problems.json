@@ -1,0 +1,135 @@
+[
+  {
+    "id": "prob_prb_convergence_modes_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "convergence_modes",
+    "problem": "{",
+    "statementHtml": "<p>Consider a sequence of random variables <i>X</i><sub><i>n</i></sub>, <i>n</i>&ge;1, that converges in one of the following modes:</p><ul><li>In probability (w.p.): <i>P</i>(<i>X</i><sub><i>n</i></sub> &isin; A) &rarr; 0 as <i>n</i>&rarr;&infin;</li><li>In distribution: <i>X</i><sub><i>n</i></sub> &dagger; <i>Z</i> &rarr; <i>Z</i> as <i>n</i>&rarr;&infin;</li><li>In mean: <i>E</i>[<i>X</i><sub><i>n</i></sub>] &rarr; <i>c</i> as <i>n</i>&rarr;&infin;</li></ul>",
+    "hints": [
+      "Check if the sequence is monotonic",
+      "Consider the definition of convergence in probability"
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to identify the mode of convergence and then prove it.</p><ol><li><p>Suppose <i>X</i><sub><i>n</i></sub> converges in probability. Then, for any &epsilon; > 0:</p><p>\\(P(|X_n - L| \\geq \\epsilon) \\leq P(|X_n - X_{n-1}| \\geq \\frac{\\epsilon}{2}) + P(|X_{n-1} - L| \\geq \\frac{\\epsilon}{2})\\)</p><p>...</p></li>\",",
+    "answerShort": "The sequence converges in probability\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:37:32.375Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_convergence_modes_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "convergence_modes",
+    "problem": {
+      "statementHtml": "Consider a sequence of random variables <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>, …, <i>X</i><sub>n</sub> that converges almost surely to a constant <i>c</i>. Show that the sequence also converges in probability to <i>c</i>.",
+      "hints": [
+        "Think about what it means for a sequence of random variables to converge almost surely.",
+        "Recall the definition of convergence in probability and how it relates to the concept of 'closeness'.",
+        "Use the fact that almost sure convergence implies convergence in probability."
+      ],
+      "solutionHtml": "<p>To show that the sequence converges in probability, we need to prove that for any ε > 0, the probability that |X<sub>n</sub> - c| ≥ ε approaches 0 as n → ∞.</p><p>We know that almost sure convergence implies convergence in probability, so it suffices to show that the sequence converges almost surely.</p><p>This is true because we are given that X<sub>n</sub> → c almost surely.</p>",
+      "answerShort": "The sequence converges in probability to <i>c</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the definition of convergence in probability",
+      "Not recognizing that almost sure convergence implies convergence in probability"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:37:52.720Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_convergence_modes_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "convergence_modes",
+    "problem": {
+      "statementHtml": "<p>Let $X_n$ be a sequence of random variables and $X$ be a random variable. Determine whether <i>X_n</i> converges almost surely (a.s.), in probability, in distribution, or in mean to <i>X</i>. Provide the modes of convergence.</p>",
+      "hints": [
+        "<p>The key is to recognize that each mode of convergence has its own set of sufficient conditions.</p>",
+        "<p>For a.s. convergence, consider the fact that almost sure convergence implies convergence in probability.</p>",
+        "<p>In distribution convergence, think about the relationship between cumulative distribution functions (CDFs).</p>"
+      ],
+      "solutionHtml": "<p>To determine the modes of convergence, we need to check each condition separately:</p><ul><li><p>a.s. convergence: <i>X_n</i> converges a.s. if and only if it converges in probability.</p></li><li><p>In probability convergence: <i>X_n</i> converges in probability if the probability of the event that <i>|X_n-X| &gt; ε</i> tends to 0 as <i>n → ∞</i>.</p></li><li><p>In distribution convergence: <i>X_n</i> converges in distribution if the CDFs of <i>X_n</i> converge pointwise to the CDF of <i>X</i>.</p></li><li><p>In mean convergence: <i>X_n</i> converges in mean if the expected value of <i>|X_n-X|</i> tends to 0 as <i>n → ∞</i>.</p></li></ul>",
+      "answerShort": "<i>X_n</i> converges a.s., in probability, and in distribution to <i>X</i>, but not necessarily in mean."
+    },
+    "commonMistakes": [
+      "Failing to recognize the different modes of convergence",
+      "Not checking each condition separately"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:38:20.884Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_convergence_modes_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "convergence_modes",
+    "problem": "{",
+    "statementHtml": "<p>Let $X_n$ be a sequence of random variables and $X$ be a random variable. Determine whether $X_n \to X$ in each of the following modes:</p><ul><li>Almost sure (a.s.)</li><li>In probability (in P)</li><li>In distribution (in D)</li><li>In mean (L<sup>1</sup>)</li></ul>",
+    "hints": "[ \"<p>For a.s. convergence, recall that $X_n \\to X$ a.s. if and only if $\\mathbb{P}(\\lim_{n\\to\\infty} X_n = X) = 1$.</p>\", \"<p>In probability convergence is equivalent to saying that the probability of the event where the sequence does not converge to $X$ goes to zero as $n \\to \\infty$.</p>\", \"<p>For in distribution and in mean convergence, recall the definitions and use the fact that convergence in distribution implies convergence in law.</p>\" ],",
+    "solutionHtml": "<p>To determine whether $X_n \\to X$ a.s., we can use the fact that $X_n \\to X$ a.s. if and only if $\\mathbb{P}(\\lim_{n\\to\\infty} X_n = X) = 1$. Since this is true, we have convergence in the almost sure sense.</p><p>To determine whether $X_n \\to X$ in probability, we can use the fact that $X_n \\to X$ in P if and only if $\\lim_{n\\to\\infty} \\mathbb{P}(|X_n - X| > \\epsilon) = 0$. Since this is true, we have convergence in the sense of probability.</p><p>To determine whether $X_n \\to X$ in distribution, we can use the fact that $X_n \\to X$ in D if and only if $\\lim_{n\\to\\infty} F_{X_n}(x) = F_X(x)$ for all continuity points $x$. Since this is true, we have convergence in the sense of distribution.</p><p>To determine whether $X_n \\to X$ in mean, we can use the fact that $X_n \\to X$ in L<sup>1</sup> if and only if $\\lim_{n\\to\\infty} \\mathbb{E}[|X_n - X|] = 0$. Since this is true, we have convergence in the sense of mean.</p>\",",
+    "answerShort": "<p>$X_n \\to X$ a.s., in P, in D, and in L<sup>1</sup>.</p>\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:38:59.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_convergence_modes_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "convergence_modes",
+    "problem": "{",
+    "statementHtml": "Let $X_n$ be a sequence of random variables converging to a limit <i>R</i>. Which mode(s) of convergence does it converge in?",
+    "hints": [
+      "Check if the sequence is almost surely convergent.",
+      "Consider the probability that the sequence converges.",
+      "Think about whether the sequence converges in distribution."
+    ],
+    "solutionHtml": "<p>To determine the mode of convergence, we need to check each condition.</p><p>First, let's check for almost sure convergence:</p>\\(\\lim_{n\\to\\infty}P(|X_n-R|>\\epsilon)=0\\) for any \\(\\epsilon>0\\). Since this is true, $X_n$ converges almost surely.</p><p>Next, we can check the probability of convergence:</p>\\(\\lim_{n\\to\\infty}P(X_n<R)=1\\), which also holds. Therefore, $X_n$ converges in probability.</p><p>Finally, let's check for convergence in distribution:</p>\\(\\lim_{n\\to\\infty}\\int_{-\\infty}^{\\infty}(x-R) dF_n(x)=0\\). Since this is true, $X_n$ converges in distribution.</p>\",",
+    "answerShort": "Almost sure, in probability, and in distribution\" },",
+    "commonMistakes": [
+      "Forgetting to check for convergence in all three modes."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:39:21.209Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

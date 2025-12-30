@@ -1,0 +1,78 @@
+[
+  {
+    "id": "prob_prb_gamma_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with gamma distribution: \\(\\Gamma(k,\\theta)\\). Find the probability density function (PDF) of X.</p>\",",
+    "hints": [
+      "Recall that the gamma distribution is a product of exponential distributions.",
+      "Think about how the parameters k and θ affect the shape of the PDF.",
+      "Use the definition of the gamma distribution to relate it to the exponential distribution."
+    ],
+    "solutionHtml": "<p>To find the probability density function (PDF) of X, we can use the following formula:</p>\\n\\[f(x | \\Gamma(k,\\theta)) = \\frac{1}{\\theta^k \\Gamma(k)} x^{k-1} e^{-x/\\theta}\\]\\n<p>where Γ(k) is the gamma function.</p>\",",
+    "answerShort": "The probability density function (PDF) of X is given by the formula above.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:55.446Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_gamma_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": {
+      "statementHtml": "<p>Let X be a continuous random variable with density function <i>f(x) = \\(\\frac{1}{\\beta^\\alpha}\\) \\* \\(x^{\\alpha-1}\\) \\* e<sup>-x/\\beta</sup></i>. Determine the values of <i>α</i> and <i>β</i> such that X is a chi-squared distribution with <i>k</i> degrees of freedom.</p>",
+      "hints": [
+        "<p>The gamma distribution has two parameters, <i>α</i> and <i>β</i>. The chi-squared distribution is a special case of the gamma distribution.</p>",
+        "<p>Recall that the chi-squared distribution with <i>k</i> degrees of freedom is equivalent to the sum of <i>k</i> independent exponential random variables.</p>",
+        "<p>You can use the fact that the exponential distribution is a special case of the gamma distribution to help you solve this problem.</p>"
+      ],
+      "solutionHtml": "<p>To find the values of <i>α</i> and <i>β</i>, we need to relate the gamma distribution to the chi-squared distribution. Let <i>X = \\sum_{i=1}^k Y_i</i>, where each <i>Y_i</i> is an exponential random variable with rate parameter <i>r</i>. Then, <i>X ~ Gamma(\\frac{k}{2}, 2/r)</i>.</p><p>We can see that this is equivalent to our original gamma distribution if we set <i>α = \\frac{k}{2}</i> and <i>β = 2/r</i>.</p>",
+      "answerShort": "<i>α = \\frac{k}{2}, β = 2/r</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that the chi-squared distribution is a special case of the gamma distribution",
+      "Not recognizing that the exponential distribution is also a special case of the gamma distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:23:24.625Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_gamma_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": "{",
+    "statementHtml": "<p>Consider a random variable X with a gamma distribution <i>\\(Gamma(k,\\theta)\\)</i>. Find the probability density function (PDF) of X.</p>\",",
+    "hints": "[ \"Think about the exponential distribution and how it relates to the gamma distribution.\", \"Recall that the gamma distribution is often used in modeling waiting times between events.\", \"The key insight lies in understanding the relationship between the shape parameter <i>k</i> and the scale parameter <i>\\(\\theta\\)</i>\" ],",
+    "solutionHtml": "<p>The probability density function (PDF) of a gamma distributed random variable X is given by:</p><p>\\[f(x | k, \\theta) = \\frac{\\theta^k}{\\Gamma(k)} x^{k-1} e^{-x/\\theta}\\]</p>\",",
+    "answerShort": "<i>\\(f(x | k, \\theta)\\)</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:23:43.205Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

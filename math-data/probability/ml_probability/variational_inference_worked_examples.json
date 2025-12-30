@@ -1,0 +1,163 @@
+[
+  {
+    "id": "prob_wex_variational_inference_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem using variational inference.</p>",
+    "formula": {
+      "latex": "\\[ELBO = \\mathcal{L}(q) + D_{KL}[q \\parallel p]\\]",
+      "name": "Evidence Lower Bound"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a probabilistic model <i>p(z|x)</i>, use mean-field approximation to approximate the intractable posterior <i>q(z|x)</i>.</p>",
+      "hints": [
+        "Hint: Use ELBO as a lower bound"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a simple Bayesian linear regression model with Gaussian priors. We want to infer the posterior distribution of the weights given some observed data.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the ELBO",
+          "mathHtml": "\\[ELBO = \\int q(z) log \\frac{p(x,z)}{q(z)} dz\\]",
+          "explanation": "We're using the ELBO as a lower bound to approximate the intractable posterior."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply mean-field approximation",
+          "mathHtml": "\\[ELBO = \\int q(z) log \\frac{p(x,z)}{q(z)} dz\\approx \\int \\prod_i q(z_i) log \\frac{p(x,z)}{\\prod_i q(z_i)} dz\\]",
+          "explanation": "We're approximating the posterior with a product of independent distributions."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Reparameterize the variational distribution",
+          "mathHtml": "\\[z = \\mu + \\sigma \\epsilon, \\quad \\epsilon \\sim N(0,I)\\]",
+          "explanation": "We're reparameterizing the variational distribution to make it easier to optimize."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Optimize the ELBO",
+          "mathHtml": "\\[\\nabla_\\theta ELBO = \\int q(z) \\nabla_\\theta log \\frac{p(x,z)}{q(z)} dz\\]",
+          "explanation": "We're optimizing the ELBO with respect to the model parameters."
+        }
+      ],
+      "finalAnswer": "The optimized ELBO provides a tractable lower bound for the intractable posterior."
+    },
+    "intuition": "Variational inference allows us to approximate complex posteriors by reparameterizing the variational distribution and optimizing the ELBO.",
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:33:17.779Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variational_inference_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>In variational inference, we use the Evidence Lower Bound (ELBO) to approximate complex distributions.</p>",
+    "formula": "{",
+    "latex": "\\(Q(z) = \\int p(z | x) q(z) dz\\)\",",
+    "name": "Variational Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic model with latent variables, find the mean-field approximation of the ELBO.</p>",
+    "hints": [
+      "Hint: Start by rewriting the ELBO as a function of the variational distribution"
+    ],
+    "solutionHtml": "<p>Solution steps:</p><ul><li>Step 1: Rewrite the ELBO as \\(ELBO = \\mathbb{E}_{q(z)}[log p(x, z)] - KL(q(z) || p(z))\\)</li><li>Step 2: Apply mean-field approximation to the ELBO</li><li>Step 3: Simplify the expression using the properties of the KL divergence</li></ul>\",",
+    "answerShort": "The ELBO is approximately equal to...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a probabilistic model with latent variables \\(z\\). Find the mean-field approximation of the ELBO.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Rewrite the ELBO\", \"mathHtml\": \"\\(ELBO = \\mathbb{E}_{q(z)}[log p(x, z)] - KL(q(z) || p(z))\\)\", \"explanation\": \"We start by rewriting the ELBO in terms of the variational distribution\"}, {\"stepNumber\": 2, \"description\": \"Apply mean-field approximation\", \"mathHtml\": \"\\(ELBO \\approx \\int q(z) log p(x, z) dz - D_{KL}(q(z) || p(z))\\)\", \"explanation\": \"We apply the mean-field approximation to the ELBO\"}, {\"stepNumber\": 3, \"description\": \"Simplify the expression\", \"mathHtml\": \"\\(ELBO \\approx \\int q(z) log p(x, z) dz - D_{KL}(q(z) || p(z))\\)\", \"explanation\": \"We simplify the expression using the properties of the KL divergence\"} ],",
+    "finalAnswer": "The ELBO is approximately equal to...\" },",
+    "intuition": "Variational inference provides a way to approximate complex distributions by finding a lower bound on the log likelihood.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:33:53.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variational_inference_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>In variational inference, we use the Evidence Lower Bound (ELBO) to approximate complex distributions.</p>",
+    "formula": "{",
+    "latex": "\\(Q(z | x) = \\frac{1}{Z} e^{E[log p(x, z)]}\\)\",",
+    "name": "Variational Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic model \\(p(x, z)\\), find the mean-field approximation of the posterior distribution \\(Q(z | x)\\) using the ELBO.</p>\",",
+    "hints": [
+      "Hint: Use the reparameterization trick to avoid backpropagation"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ul><li>Step 1: Define the ELBO as the expected log likelihood minus the KL divergence between \\(Q(z | x)\\) and \\(p(z)\\). \\\\[ \\] \\(ELBO = E[log p(x, z)] - D_{KL}(Q(z | x) || p(z)) \\\\[ ]</li><li>Step 2: Use the mean-field approximation to factorize \\(Q(z | x)\\) into a product of conditional distributions. \\\\[ ] \\(Q(z | x) = \\prod_i Q(z_i | x) \\\\[ ]</li><li>Step 3: Apply the reparameterization trick to avoid backpropagation through the complex distribution \\(p(x, z)\\). \\\\[ ] \\(z = f(\\epsilon; \\phi) \\\\[ ]</li><li>Step 4: Compute the ELBO using the reparameterized variables. \\\\[ ] \\(ELBO = E[log p(x, z)] - D_{KL}(Q(z | x) || p(z)) \\\\[ ]</li></ul>\",",
+    "answerShort": "The mean-field approximation of the posterior distribution is a product of conditional distributions.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a probabilistic model \\(p(x, z)\\) where \\(x\\) is an input and \\(z\\) is a latent variable. Find the mean-field approximation of the posterior distribution \\(Q(z | x)\\) using the ELBO.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the ELBO\", \"mathHtml\": \"\\(ELBO = E[log p(x, z)] - D_{KL}(Q(z | x) || p(z))\\)\", \"explanation\": \"The ELBO is a lower bound on the log likelihood.\"}, {\"stepNumber\": 2, \"description\": \"Factorize the mean-field approximation\", \"mathHtml\": \"\\(Q(z | x) = \\prod_i Q(z_i | x)\\)\", \"explanation\": \"We factorize the distribution into conditional distributions for each latent variable.\"}, {\"stepNumber\": 3, \"description\": \"Apply the reparameterization trick\", \"mathHtml\": \"\\(z = f(\\epsilon; \\phi)\\)\", \"explanation\": \"The reparameterization trick allows us to avoid backpropagation through the complex distribution \\(p(x, z)\\).\"}, {\"stepNumber\": 4, \"description\": \"Compute the ELBO\", \"mathHtml\": \"\\(ELBO = E[log p(x, z)] - D_{KL}(Q(z | x) || p(z))\\)\", \"explanation\": \"We compute the ELBO using the reparameterized variables.\"} ],",
+    "finalAnswer": "The mean-field approximation of the posterior distribution is a product of conditional distributions.\" },",
+    "intuition": "Variational inference provides an efficient way to approximate complex distributions by finding a lower bound on the log likelihood.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:34:42.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variational_inference_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem using variational inference.</p>",
+    "formula": "{",
+    "latex": "\\(ELBO = \\mathcal{L}(q) - KL(q||p)\\)\",",
+    "name": "Evidence Lower Bound\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic model \\(p(x, z)\\), find the mean-field approximation of the ELBO.</p>\",",
+    "hints": [
+      "Hint: Start with the ELBO formula"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a probabilistic model \\(p(x, z)\\) with variables \\(x\\) and \\(z\\). Find the mean-field approximation of the ELBO.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Start by rewriting the ELBO formula\", \"mathHtml\": \"\\(ELBO = \\mathcal{L}(q) - KL(q||p)\\)\", \"explanation\": \"We want to simplify the ELBO expression.\"}, {\"stepNumber\": 2, \"description\": \"Apply the mean-field approximation to \\(q\\)\", \"mathHtml\": \"\\(q(z) = \\prod_{i} q_i(z_i)\\)\", \"explanation\": \"This simplifies the ELBO calculation.\"} ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Variational inference helps us approximate complex distributions by finding a simpler distribution that's close in KL-divergence.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:35:07.761Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

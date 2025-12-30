@@ -1,0 +1,80 @@
+[
+  {
+    "id": "prob_prb_counting_basic_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "problem": "{",
+    "statementHtml": "<p>Find the number of ways to choose exactly <i>k</i> items from a set of <i>n</i> distinct objects.</p>",
+    "hints": [
+      "Think about the order in which you select the items.",
+      "Consider using the multiplication principle for this problem."
+    ],
+    "solutionHtml": "<p>To count the number of ways to choose exactly <i>k</i> items, we use the multiplication principle:</p>\\[ P = \\prod_{i=1}^k \\binom{n-i+1}{1}.\\] <p>We can simplify this expression using the fact that <i>\\(\\binom{m}{1}\\) = m</i>:</p>\\[ P = \\prod_{i=1}^k (n-i+1).\\] <p>This is equal to:</p>\\[ P = n(n-1)\\cdots(n-k+1).\\] <p>The final answer is:</p>\\[ P = \\frac{n!}{(n-k)!}.\",",
+    "answerShort": "\\(\\frac{n!}{(n-k)!}\\)\" },",
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:37:46.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_counting_basic_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "problem": "{",
+    "statementHtml": "Find the number of ways to choose exactly <i>k</i> items from a set of <i>n</i> distinct objects.",
+    "hints": [
+      "Think about the multiplication principle!",
+      "Count the number of ways to choose the first item, then the second, and so on.",
+      "Use the inclusion-exclusion principle to account for double-counting."
+    ],
+    "solutionHtml": "<p>The number of ways to choose exactly <i>k</i> items is given by the binomial coefficient \\(\\binom{n}{k}\\).</p><p>This can be calculated using the formula:</p>\\[\\binom{n}{k} = \\frac{n!}{(n-k)!k!}\\]",
+    "answerShort": "\\(\\binom{n}{k}\\)\" },",
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:38:00.722Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_counting_basic_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "problem": "{",
+    "statementHtml": "<p>Find the number of ways to choose exactly two books from a shelf with 5 math books and 3 computer science books.</p>",
+    "hints": [
+      "Think about the multiplication principle.",
+      "Count the number of ways to choose one book first, then another.",
+      "Use the inclusion-exclusion principle if you get stuck."
+    ],
+    "solutionHtml": "<p>To count the number of ways to choose exactly two books, we can use the multiplication principle:</p>\\n\\[P = (5 \\choose 2) \\cdot (3 \\choose 0) + (5 \\choose 1) \\cdot (3 \\choose 1) + (5 \\choose 0) \\cdot (3 \\choose 2).\\]\\n<p>Now, simplify the expression:</p>\\n\\[P = \\frac{10 \\cdot 9}{2} + 15 + 1 = 55.\\]\",",
+    "answerShort": "The answer is 55.\" },",
+    "commonMistakes": [
+      "Forgetting to use the multiplication principle",
+      "Not considering all possible combinations of books"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:38:19.047Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

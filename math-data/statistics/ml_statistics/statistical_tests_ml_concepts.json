@@ -1,0 +1,96 @@
+[
+  {
+    "id": "stat_con_statistical_tests_ml_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests for Machine Learning: McNemar and Paired t-test",
+    "contentHtml": "<p>In machine learning, it's crucial to evaluate the performance of classifiers on paired data, such as before-and-after scenarios or comparisons between different models.</p><p>Two essential statistical tests for this purpose are the McNemar test and the paired t-test. The McNemar test is used when we have binary outcomes (e.g., 0/1 or yes/no), while the paired t-test is more versatile, applicable to continuous or categorical data.</p>",
+    "formula": {
+      "latex": "\\[ \\text{McNemar Test}: \\frac{|a+b-c-d|}{\\sqrt{(a+c)(b+d)}} \\\\ \\text{Paired t-test}: \\bar{x} - \\bar{y} = \\frac{1}{n} \\sum_{i=1}^n (x_i-y_i) \\]",
+      "name": "McNemar and Paired t-test Formulas",
+      "variants": []
+    },
+    "intuition": "These tests help us determine whether the differences between paired data are statistically significant, which is vital in machine learning to avoid overfitting or misinterpreting results.",
+    "realWorldApplications": [
+      "Comparing model performance on different datasets",
+      "Evaluating the effectiveness of a new feature"
+    ],
+    "tags": [
+      "statistical-tests",
+      "machine-learning",
+      "paired-data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:14:53.759Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_statistical_tests_ml_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests in Machine Learning",
+    "contentHtml": "<p>In machine learning, statistical tests help evaluate the performance of models and make informed decisions about their use. This concept is crucial because it enables us to quantify uncertainty and make data-driven choices.</p><p>Imagine you're building a classifier that separates dogs from cats based on images. You want to know if your model is truly accurate or just lucky. Statistical tests, like the McNemar test, help you determine whether the difference between your model's predictions and actual labels is statistically significant.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\text{McNemar Test}: \\sum_{i=1}^n (a_i+b_i) = 0 \\\\]\",",
+    "name": "McNemar Test Formula\" },",
+    "intuition": "Statistical tests provide a way to quantify the uncertainty in your model's predictions, helping you make informed decisions about its use.",
+    "realWorldApplications": [
+      "Evaluating the performance of image classification models"
+    ],
+    "commonMistakes": [
+      "Failing to account for chance when evaluating model performance"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:09.126Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_statistical_tests_ml_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests for Machine Learning",
+    "contentHtml": "<p>In machine learning, statistical tests are crucial for evaluating model performance and making informed decisions.</p><p>Three fundamental tests are McNemar's test, paired t-test for classifiers, and Wilcoxon rank-sum test. These tests help us determine whether there's a statistically significant difference between two datasets or models.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{McNemar's test: } p = \\frac{\\abs{a+b-c-d}}{n} \\]\",",
+    "name": "McNemar's Test",
+    "variants": "[ {\"latex\": \"\\[ \\text{Paired t-test for classifiers: } t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p/\\sqrt{n}} \\]\",",
+    "description": "For non-parametric tests\" } ] },",
+    "intuition": "These statistical tests provide a way to quantify the uncertainty in our results, ensuring that we don't overfit or misinterpret our data.",
+    "realWorldApplications": [
+      "Comparing model performance on different datasets",
+      "Evaluating the effectiveness of feature engineering"
+    ],
+    "commonMistakes": [
+      "Failing to account for confounding variables",
+      "Not considering the distribution of the data"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:28.521Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

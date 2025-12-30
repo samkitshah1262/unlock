@@ -1,0 +1,478 @@
+[
+  {
+    "id": "prob_con_order_statistics_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Min, Max, and kth",
+    "contentHtml": "<p>When dealing with multiple random variables, it's essential to understand how their order affects our understanding of their joint distribution.</p><p>Order statistics refer to the minimum (min), maximum (max), or kth-order statistic (kth) values among a set of random variables. These values are crucial in many real-world applications, including machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\(X_{(1)}, X_{(2)}, \\ldots, X_{(n)}\\)",
+      "name": "Order Statistics",
+      "variants": []
+    },
+    "intuition": "The key insight is that order statistics can be used to describe the joint distribution of multiple random variables. By analyzing these values, we can gain insights into the relationships between the variables and make more informed decisions.",
+    "realWorldApplications": [
+      "In machine learning, order statistics are used in algorithms like k-nearest neighbors (k-NN) and support vector machines (SVM)."
+    ],
+    "commonMistakes": [
+      "Don't confuse order statistics with marginal distributions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:23:36.905Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_order_statistics_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of Min, Max, kth Order Statistic",
+    "contentHtml": "<p>When dealing with joint distributions, it's crucial to understand the distribution of order statistics, such as the minimum, maximum, or kth order statistic.</p><p>Intuitively, think of a set of random variables as a set of sticks in a jar. When you draw one stick at random, its value is an order statistic. The distribution of these order statistics reveals important information about the joint distribution.</p>",
+    "formula": {
+      "latex": "\\[F_{k}(x) = P(X_1 \\leq x, X_2 \\leq x, \\ldots, X_k \\leq x)\\]",
+      "name": "Order Statistic Distribution"
+    },
+    "intuition": "The distribution of order statistics provides a way to analyze the joint distribution by focusing on specific values or ranges.",
+    "realWorldApplications": [
+      "In machine learning, understanding the distribution of order statistics can help in tasks like anomaly detection and outlier analysis."
+    ],
+    "commonMistakes": [
+      "Failing to account for the dependence between variables when calculating order statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:23:55.083Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_order_statistics_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Understanding Joint Distributions",
+    "contentHtml": "<p>When dealing with joint distributions, it's essential to understand how order statistics work. Order statistics refer to the distribution of minimum, maximum, or kth-order statistic values.</p><p>In a nutshell, order statistics help us analyze the behavior of random variables when their order matters.</p>",
+    "formula": {
+      "latex": "\\[F_{k}(x) = P(X_1 \\leq x, X_2 \\leq x, ..., X_k \\leq x)\\]",
+      "name": "Order Statistic Distribution"
+    },
+    "intuition": "Think of order statistics like ranking a set of exam scores. You want to know the distribution of the lowest score, highest score, or a specific percentile.",
+    "realWorldApplications": [
+      "In machine learning, understanding order statistics is crucial for tasks like anomaly detection and outlier analysis."
+    ],
+    "commonMistakes": [
+      "Don't confuse order statistics with marginal distributions; they're not the same thing."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:24:11.753Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_order_statistics_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>The distribution of order statistics is a fundamental concept in probability theory.</p><p>Given a random sample from a continuous distribution, we can define the <i>k</i>th order statistic as the <i>k</i>th smallest value. This card explores the distribution of min, max, and kth order statistic.</p>",
+    "formula": "{",
+    "latex": "\\\\[F_{k}(x) = \\\\frac{1}{(n-k+1)!} \\\\sum_{j=0}^{k-1} (-1)^j \\\\binom{k-1}{j} (F(x))^{k-j-1} (1-F(x))^{j}\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we draw a random sample of size 5 from a uniform distribution on the interval [0,1]. Find the distribution of the maximum value.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Identify the underlying distribution",
+        "mathHtml": "",
+        "explanation": "The uniform distribution is continuous and increasing."
+      }
+    ],
+    "finalAnswer": "The maximum value follows a beta distribution with parameters (4,1)\" },",
+    "intuition": "Understanding the distribution of order statistics is crucial in many applications, including statistical inference and machine learning. This concept is particularly useful when dealing with outliers or extreme values.",
+    "realWorldApplications": [
+      "Identifying anomalies in financial data"
+    ],
+    "tags": [
+      "probability",
+      "order statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:24:36.484Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_order_statistics_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>Understanding the distribution of order statistics is crucial in probability theory and has numerous applications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[F_k(x) = \\sum_{i=0}^k {k \\choose i} F^{(i)}(x) (1-F(x))^k\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the distribution of the kth order statistic for a sample from the uniform distribution U[0,1].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize that the problem is equivalent to finding the cumulative distribution function (CDF) of the kth order statistic.\", \"mathHtml\": \"\", \"explanation\": \"\"}, {\"stepNumber\": 2, \"description\": \"Use the formula for the CDF of the kth order statistic and substitute the uniform distribution.\", \"mathHtml\": \"\\[F_k(x) = \\sum_{i=0}^k {k \\choose i} x^i (1-x)^{k-i}\\]\", \"explanation\": \"This step requires applying the formula for the CDF of the kth order statistic and substituting the uniform distribution.\"} ],",
+    "finalAnswer": "The final answer is the calculated CDF.\" },",
+    "intuition": "Order statistics are a fundamental concept in probability theory, allowing us to analyze and understand the behavior of random variables.",
+    "realWorldApplications": [
+      "Estimating the median of a dataset",
+      "Identifying outliers"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:00.365Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_order_statistics_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>The distribution of order statistics is a fundamental concept in probability theory.</p><p>Given a random sample from a continuous distribution, we can define the <i>k</i>th order statistic as the <i>k</i>th smallest (or largest) value. Understanding the distribution of these order statistics is crucial in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[F_{k:n}(x) = \\sum_{i=k}^{n} {n \\choose i} F(x)^{i} (1-F(x))^{n-i}\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of size 10 from a uniform distribution on the interval [0,1]. Find the probability that the 5th order statistic is less than 0.7.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the event\", \"mathHtml\": \"\", \"explanation\": \"We want to find P(X_{(5)} < 0.7)\"}, {\"stepNumber\": 2, \"description\": \"Use the formula for order statistic distribution\", \"mathHtml\": \"\\[F_{k:n}(x) = ... \\]\", \"explanation\": \"Plug in k=5 and n=10\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Understanding the distribution of order statistics helps us make informed decisions in machine learning, such as selecting the most informative features or identifying outliers.",
+    "realWorldApplications": [
+      "Identifying anomalies in financial transactions"
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:27.607Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_order_statistics_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>Understanding the distribution of order statistics is crucial in probability theory and has numerous applications in machine learning.</p>",
+    "formula": "{",
+    "latex": "\\\\[F(x) = \\\\frac{1}{n} \\sum_{i=1}^n I\\\\left(x \\\\leq X_{(k)}^{(i)}\\\\right)\\\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "theorem": "{",
+    "statement": "\\[P(X_{(1)} \\leq x, X_{(2)} \\leq x, \\ldots, X_{(n)} \\leq x) = F(x)^n\\]",
+    "proofSketch": "The proof involves showing that the order statistics are independent and identically distributed random variables.\" },",
+    "intuition": "Order statistics represent the ranked values of a sample from a population. The distribution of these statistics is essential in understanding the behavior of extreme values, such as the minimum or maximum.",
+    "realWorldApplications": [
+      "In machine learning, order statistics are used to model outliers and anomalies."
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:46.671Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_order_statistics_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>In probability theory, order statistics refer to the distribution of the minimum, maximum, or kth order statistic from a random sample.</p>",
+    "formula": "{",
+    "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]",
+    "name": "Cumulative Distribution Function\" },",
+    "theorem": "{",
+    "statement": "\\[P(X_{(1)} \\leq x, X_{(n)} \\geq x) = F(x) - F(x_{(1)}) + P(X=x_{(1)})\\\\]\",",
+    "proofSketch": "The proof involves showing that the event {X_{(1)} \\\\leq x, X_{(n)} \\\\geq x} is equivalent to the event {X \\\\leq x}, and then applying the cumulative distribution function.\" },",
+    "intuition": "Order statistics provide a way to analyze the distribution of extreme values in a random sample. This theorem helps us understand how these extremes are related to the underlying distribution.",
+    "realWorldApplications": [
+      "In machine learning, order statistics can be used to model outliers and anomalies."
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:26:05.925Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_order_statistics_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "Find the distribution of the <i>k</i>th order statistic from a joint distribution of two random variables X and Y.",
+    "hints": [
+      "Consider the cumulative distribution function (CDF) of X.",
+      "Think about the probability that the <i>k</i>th order statistic is less than or equal to some value.",
+      "Use the fact that the CDF of the joint distribution can be written as the product of the marginal CDFs."
+    ],
+    "solutionHtml": "\\[F(x) = P(X \\leq x, Y \\leq y) = F_X(x)F_Y(y)\\] for some constant <i>y</i>. Now, find the probability that the <i>k</i>th order statistic is less than or equal to <i>x</i>, which is equivalent to finding P(X \\leq x, Y \\leq y). This can be done by integrating F(x) with respect to <i>y</i> from 0 to ∞. The final answer is the derivative of this integral with respect to <i>x</i>.\",",
+    "answerShort": "The distribution of the <i>k</i>th order statistic is the same as the distribution of X.\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:26:27.358Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_order_statistics_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Find the distribution of the <i>k</i>th order statistic from a joint distribution of two random variables.</p>",
+    "hints": [
+      "Start by considering the case where <i>k</i> is equal to one.",
+      "Think about how you would find the probability that the minimum value is less than some constant.",
+      "Use the fact that the joint density is symmetric around its median."
+    ],
+    "solutionHtml": "<p>To find the distribution of the <i>k</i>th order statistic, we can use the following steps:</p><ol><li><p>Let <span class=\\\"math inline\\\">\\(X_{(k)}\\)</span> be the <i>k</i>th order statistic. We want to find the probability density function (PDF) of <span class=\\\"math inline\\\">\\(X_{(k)}\\)</span>.</p></li><li><p>We can start by finding the PDF of the minimum value, which is given by:</p><span class=\\\"math display\\\"><equation>\\[f_{\\min}(x) = F(x) \\cdot f_X(x)\\]</equation></span><p>where <span class=\\\"math inline\\\">\\(F(x)\\)</span> is the cumulative distribution function (CDF) of the joint distribution and <span class=\\\"math inline\\\">\\(f_X(x)\\)</span> is the PDF of the marginal distribution.</p></li><li><p>To find the PDF of the maximum value, we can use the fact that the joint density is symmetric around its median:</p><span class=\\\"math display\\\"><equation>\\[f_{\\max}(x) = F(x) \\cdot f_X(x)\\]</equation></span><p>This PDF represents the probability that the maximum value is less than or equal to <span class=\\\"math inline\\\">\\(x\\)</span>.</p></li><li><p>Finally, we can find the distribution of the <i>k</i>th order statistic by taking the derivative of the CDF:</p><span class=\\\"math display\\\"><equation>\\[f_{X_{(k)}}(x) = \\frac{d}{dx} F(x)\\]</equation></span><p>This represents the probability density function of the <i>k</i>th order statistic.</p></li></ol>\",",
+    "answerShort": "<span class=\\\"math inline\\\">\\(f_{X_{(k)}}(x) = \\frac{d}{dx} F(x)\\)</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:27:02.682Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_order_statistics_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Find the distribution of the kth order statistic from a joint distribution <code>F(x,y)</code>.</p>",
+    "hints": [
+      "Recall that the cdf of the kth order statistic is the integral of the joint pdf.",
+      "Use the fact that the joint pdf can be written as the product of the marginal pdfs.",
+      "The key insight is to recognize that the kth order statistic is a function of the <code>x</code> variable only."
+    ],
+    "solutionHtml": "<p>To find the distribution of the kth order statistic, we need to integrate the joint pdf with respect to all variables except for <code>x</code>. This gives us:</p>\\n\\[P(X_{(k)} \\leq x) = \\int\\limits_{-\\infty}^{x} \\int\\limits_{-\\infty}^{\\infty} f(x,y) dy dx.\\]\\n<p>Now, we can use the fact that the joint pdf is equal to the product of the marginal pdfs:</p>\\n\\[P(X_{(k)} \\leq x) = \\int\\limits_{-\\infty}^{x} f_X(x) dx.\\]\\n<p>This shows that the distribution of the kth order statistic is simply the cdf of the <code>x</code> variable.</p>\",",
+    "answerShort": "The distribution of the kth order statistic is the cdf of the x variable.\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:27:26.755Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_order_statistics_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: min, max, kth",
+    "contentHtml": "<p>Understanding order statistics is crucial in probability theory and has numerous applications in machine learning.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the distribution of the <i>k</i>th order statistic from a joint distribution.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Let's start by considering the cumulative distribution function (CDF) of the joint distribution.\", \"mathHtml\": \"\\[F(x_1, x_2, \\ldots, x_n) = P(X_1 \\leq x_1, X_2 \\leq x_2, \\ldots, X_n \\leq x_n)\\]\", \"explanation\": \"We'll use the CDF to find the distribution of the order statistic.\"}, {\"stepNumber\": 2, \"description\": \"Now, let's focus on the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[F_k(x) = P(X_{(k)} \\leq x)\\]\", \"explanation\": \"We'll find the CDF of the <i>k</i>th order statistic by considering the event that all but the <i>k</i>th smallest values are less than or equal to <i>x</i>.\"}, {\"stepNumber\": 3, \"description\": \"To simplify the calculation, let's consider a specific example.\", \"mathHtml\": \"\\[F_k(x) = P(X_{(k)} \\leq x | X_1 > x, X_2 > x, \\ldots, X_{k-1} > x)\\]\", \"explanation\": \"We'll use the given joint distribution to find the conditional CDF.\"}, {\"stepNumber\": 4, \"description\": \"Finally, we can find the density function of the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[f_k(x) = F_k^\\prime(x)\\]\", \"explanation\": \"The density function is the derivative of the CDF.\"}, {\"stepNumber\": 5, \"description\": \"Putting it all together, we get the distribution of the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[f_k(x) = \\ldots\\]\", \"explanation\": \"The final answer is a function that depends on the joint distribution and the value of <i>k</i>.\"} ],",
+    "finalAnswer": "The density function of the <i>k</i>th order statistic.\" },",
+    "intuition": "Order statistics provide a way to analyze the behavior of extreme values in a dataset.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:28:02.203Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_order_statistics_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of Min, Max, and kth Order Statistic",
+    "problem": {
+      "statementHtml": "<p>Let X1, ..., Xn be i.i.d. random variables with cumulative distribution function F(x). Find the distribution of the minimum (Xmin), maximum (Xmax), and kth order statistic (Xk).</p>",
+      "hints": [
+        "Hint: Use the fact that each Xi has the same distribution"
+      ],
+      "solutionHtml": "<p>Let's start by finding the distribution of Xmin. Since F(x) is non-decreasing, we have:</p>\n<p>F(Xmin &lt;= x) = P(Xi &lt;= x for all i) = ∏[P(Xi &lt;= x)]</p>\n<p>Now, take the derivative with respect to x:</p>\n<p>F'(Xmin &lt;= x) = f(x)</p>\n<p>This is the cumulative distribution function of Xmin. Similarly, we can find the distribution of Xmax by taking the derivative of 1 - F(x).</p>",
+      "answerShort": "The distributions are given by F(Xmin &lt;= x) and 1 - F(Xmax &gt;= x)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have three i.i.d. random variables X1, X2, X3 with uniform distribution on [0, 1]. Find the distribution of Xmin and Xmax.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find F(Xmin &lt;= x)",
+          "mathHtml": "\\[F(X_{\\text{min}} &lt;= x) = \\prod[P(X_i &lt;= x)] = x^3\\]",
+          "explanation": "We use the fact that each Xi has the same distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find F'(Xmin &lt;= x)",
+          "mathHtml": "\\[F'(X_{\\text{min}} &lt;= x) = f(x) = 3x^2\\]",
+          "explanation": "We take the derivative of the cumulative distribution function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find F(Xmax &gt;= x)",
+          "mathHtml": "\\[F(X_{\\text{max}} &gt;= x) = 1 - \\prod[1-P(X_i &lt;= x)] = 1-(1-x)^3\\]",
+          "explanation": "We use the fact that each Xi has the same distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find F'(Xmax &gt;= x)",
+          "mathHtml": "\\[F'(X_{\\text{max}} &gt;= x) = f(x) = 3(1-x)^2\\]",
+          "explanation": "We take the derivative of the cumulative distribution function."
+        }
+      ],
+      "finalAnswer": "The distributions are given by F(Xmin &lt;= x) and 1 - F(Xmax &gt;= x)"
+    },
+    "intuition": "Order statistics provide a way to quantify extreme values in a dataset, which is crucial in many real-world applications, such as finance and quality control.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:28:45.389Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_order_statistics_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Min, Max, and kth",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the distribution of order statistics in a joint distribution.</p>",
+    "formula": {
+      "latex": "\\[F_{k}(x) = F(x)^{k} \\cdot (1-F(x))^{n-k}\\]",
+      "name": "Order Statistic Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution of two random variables X and Y, find the distribution of the kth order statistic.</p>",
+      "hints": [
+        "Consider the cumulative distribution function (CDF)"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution of X and Y, with CDF F(x,y). Find the distribution of the kth order statistic.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the event A as {X ≤ x, Y ≤ y}",
+          "mathHtml": "\\[P(A) = F(x,y)\\]",
+          "explanation": "We're defining the event A to be the set of points where X is less than or equal to x and Y is less than or equal to y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the probability that the kth order statistic is less than or equal to x",
+          "mathHtml": "\\[P(X_{k} ≤ x) = P(A)\\]",
+          "explanation": "We're finding the probability that the kth order statistic is less than or equal to x, which is equivalent to finding the probability of event A."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Differentiate with respect to x",
+          "mathHtml": "\\[f_{k}(x) = F'(x)^{k} \\cdot (1-F(x))^{n-k}\\]",
+          "explanation": "We're differentiating the CDF with respect to x to find the PDF of the kth order statistic."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Integrate to find the cumulative distribution function",
+          "mathHtml": "\\[F_{k}(x) = \\int_{-∞}^{x} f_{k}(t) dt\\]",
+          "explanation": "We're integrating the PDF with respect to x to find the CDF of the kth order statistic."
+        }
+      ],
+      "finalAnswer": "The distribution of the kth order statistic is F_{k}(x)"
+    },
+    "intuition": "Order statistics are a fundamental concept in probability theory, and understanding their distribution is crucial for many applications, including machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:29:21.346Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

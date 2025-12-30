@@ -1,0 +1,568 @@
+[
+  {
+    "id": "stat_con_mle_examples_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In statistics, we often encounter unknown parameters in probability distributions. Maximum Likelihood Estimation (MLE) is a widely used method to estimate these parameters based on observed data.</p><p>The MLE approach finds the value of the parameter that makes the observed data most likely. This concept is crucial in many fields, including machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[\\hat{\\theta} = \\arg\\max_{\\theta} P(X | \\theta)\\]",
+      "name": "MLE Formula"
+    },
+    "intuition": "The MLE approach is like finding the best fit for a puzzle piece. We try to find the value of the parameter that makes the observed data most likely, given the underlying distribution.",
+    "realWorldApplications": [
+      "Estimating population means in survey sampling",
+      "Inferring parameters in Bayesian networks"
+    ],
+    "commonMistakes": [
+      "Assuming MLE always exists or is unique",
+      "Ignoring the fact that MLE can be sensitive to initial values"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:34:29.176Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_mle_examples_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In statistics, we often face the problem of estimating population parameters from a sample. Maximum Likelihood Estimation (MLE) is a popular method that finds the most likely value of an unknown parameter given the observed data.</p><p>MLE works by finding the value of the parameter that maximizes the likelihood function, which represents the probability of observing the data given the parameter.</p>",
+    "formula": {
+      "latex": "\\[\\theta_{\\text{MLE}} = \\argmax_{\\theta} \\prod_{i=1}^n f(x_i | \\theta)\\]",
+      "name": "Likelihood Function"
+    },
+    "intuition": "The key insight is that MLE finds the parameter value that makes the observed data most likely. This is useful in many real-world applications, especially in machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "Estimating population means in recommender systems"
+    ],
+    "commonMistakes": [
+      "Confusing MLE with Bayesian estimation",
+      "Not understanding the difference between likelihood and probability"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:34:44.089Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_mle_examples_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In statistics, we often encounter scenarios where we need to estimate parameters of a probability distribution based on observed data. Maximum Likelihood Estimation (MLE) is a widely used technique that finds the most likely value of these parameters given the data.</p><p>The idea behind MLE is simple: find the values that make the observed data the most probable. This is achieved by maximizing the likelihood function, which represents the probability of observing the data given the parameter values.</p>",
+    "formula": {
+      "latex": "\\[ \\text{MLE} = \\arg\\max_{\\theta} P(X | \\theta) \\]",
+      "name": "Maximum Likelihood Estimation"
+    },
+    "intuition": "The key insight is that MLE finds the parameter values that make the observed data most likely. This is useful in many real-world applications, such as Bayesian inference and machine learning.",
+    "realWorldApplications": [
+      "Bayesian inference",
+      "Machine Learning"
+    ],
+    "commonMistakes": [
+      "Confusing MLE with other estimation techniques",
+      "Not considering the likelihood function correctly"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:34:59.278Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In statistics and machine learning, Maximum Likelihood Estimation (MLE) is a widely used method to estimate parameters of probability distributions.</p><p>MLE finds the values that make the observed data most likely. This card covers MLE formulas for normal, exponential, Poisson, and Bernoulli distributions.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{\\sigma} \\sum_{i=1}^n (x_i - \\mu)^2 = 0 \\]\",",
+    "name": "Normal Distribution MLE\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset of exam scores with mean 80 and standard deviation 5, use MLE to estimate the population mean.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\[ \bar{x} = \\frac{\\sum x_i}{n} \\]",
+        "explanation": "This is the starting point for our MLE calculation."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Plug in the values and solve for μ",
+        "mathHtml": "\\[ \\frac{n(80 - \\mu)^2}{5^2} = 0 \\]",
+        "explanation": "We set the derivative to zero and solve for μ."
+      }
+    ],
+    "finalAnswer": "μ ≈ 80\" },",
+    "intuition": "MLE finds the values that make the observed data most likely. In this case, we're using MLE to estimate the population mean from a sample of exam scores.",
+    "realWorldApplications": [
+      "Estimating parameters in natural language processing"
+    ],
+    "tags": [
+      "statistics",
+      "machine learning",
+      "parameter estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:35:21.456Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>MLE is a fundamental concept in statistical inference, allowing us to estimate population parameters from sample data.</p><p>In this card, we'll explore MLEs for common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{n} \\sum_{i=1}^n x_i \\] (Normal MLE)\",",
+    "name": "Normal MLE",
+    "variants": "[ {\"latex\": \"\\[ \\lambda = \\bar{x} \\]\", \"description\": \"Exponential MLE\"}, {\"latex\": \"\\[ \\lambda = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"description\": \"Poisson MLE\"}, {\"latex\": \"\\[ p = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"description\": \"Bernoulli MLE\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a sample of size n from a normal distribution with unknown mean μ and variance σ^2, find the MLE for μ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample mean\", \"mathHtml\": \"\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"explanation\": \"The MLE for μ is simply the sample mean.\"} ],",
+    "finalAnswer": "The MLE for μ is the sample mean\" },",
+    "intuition": "MLEs are often used in machine learning to estimate parameters of probability distributions. This card provides a foundation for understanding these concepts.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:35:43.330Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this card, we'll explore how to apply Maximum Likelihood Estimation (MLE) to common distributions such as Normal, Exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{N} \\sum_{i=1}^N x_i \\] for Normal distribution\",",
+    "name": "",
+    "variants": "[ {\"latex\": \"\\\\lambda = \\\\bar{x}\", \"description\": \"Exponential\"}, {\"latex\": \"\\\\lambda = \\\\frac{\\\\sum_{i=1}^N x_i}{N}\", \"description\": \"Poisson\"}, {\"latex\": \"p = \\\\frac{1}{2} + \\\\frac{1}{N} \\* \\\\sum_{i=1}^N x_i\", \"description\": \"Bernoulli\"} ] },",
+    "intuition": "<p>MLE is a widely used method for estimating parameters in statistical models. It's based on the idea that the best estimate of a parameter is the one that maximizes the likelihood of observing the data.</p>",
+    "realWorldApplications": [
+      "Estimating population means in machine learning"
+    ],
+    "tags": [
+      "Maximum Likelihood Estimation",
+      "MLE",
+      "Point Estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:00.435Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this card, we'll explore the maximum likelihood estimation (MLE) method for common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{n} \\sum_{i=1}^n x_i = E[X] \\]\",",
+    "name": "Normal Distribution MLE\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean μ and variance σ^2. We want to estimate the population mean using the MLE method.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]",
+        "explanation": "The MLE for a normal distribution is simply the sample mean."
+      }
+    ],
+    "finalAnswer": "μ\" },",
+    "intuition": "MLE finds the value that maximizes the likelihood of observing our data, given the assumed distribution. This makes it a powerful tool in machine learning and statistics.",
+    "realWorldApplications": [
+      "Estimating population means in natural language processing"
+    ],
+    "tags": [
+      "maximum likelihood estimation",
+      "normal distribution",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:18.226Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimator (MLE) for a given distribution.</p>",
+    "hints": [
+      "<p>The MLE is the value that maximizes the probability of observing the data.</p>",
+      "<p>Start by finding the log-likelihood function and then take its derivative with respect to the parameter.</p>",
+      "<p>Equate the derivative to zero and solve for the parameter.</p>"
+    ],
+    "solutionHtml": "<p>To find the MLE for a normal distribution, we can start by writing down the probability density function (PDF):</p>\\[ f(x | \\mu, \\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}.\\] <p>The log-likelihood function is then:</p>\\[ l(\\mu, \\sigma) = \\sum_{i=1}^n \\log f(x_i | \\mu, \\sigma).\\] <p>Taking the derivative with respect to $\\mu$ and setting it equal to zero gives us:</p>\\[ \\frac{\\partial l}{\\partial \\mu} = 0.\\] <p>Solving for $\\mu$, we get:</p>\\[ \\hat{\\mu} = \\bar{x}.\\] <p>Similarly, taking the derivative with respect to $\\sigma$ and setting it equal to zero gives us:</p>\\[ \\frac{\\partial l}{\\partial \\sigma} = 0.\\] <p>Solving for $\\sigma$, we get:</p>\\[ \\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2.\\]",
+    "answerShort": "The MLEs are $\\hat{\\mu} = \\bar{x}$ and $\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2$.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:43.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the MLE of a normal distribution with mean $\\mu$ and variance $\\sigma^2$, given i.i.d. samples $x_1, \\ldots, x_n$.</p>\",",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how to find the maximum of this function.",
+      "Use the fact that the MLE is the value that maximizes the likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p>\\n\\[L(\\mu, \\sigma^2 | x_1, \\ldots, x_n) = \\frac{1}{\\sqrt{(2\\pi)^n \\sigma^{2n}}} e^{-\\frac{1}{2} \\sum_{i=1}^n (x_i - \\mu)^2 / \\sigma^2}\\]\\n<p>We can do this by taking the logarithm of both sides:</p>\\n\\[l(\\mu, \\sigma^2 | x_1, \\ldots, x_n) = -\\frac{n}{2} \\log(2\\pi) - n \\log(\\sigma) - \\frac{1}{2} \\sum_{i=1}^n (x_i - \\mu)^2 / \\sigma^2\\]\\n<p>Now we can find the partial derivatives:</p>\\n\\[l_\\mu = \\frac{\\partial l}{\\partial \\mu} = \\frac{1}{\\sigma^2} \\sum_{i=1}^n (x_i - \\mu)\\]\\n\\[l_\\sigma^2 = \\frac{\\partial l}{\\partial (\\sigma^2)} = -\\frac{n}{2\\sigma^2} + \\frac{1}{2\\sigma^4} \\sum_{i=1}^n (x_i - \\mu)^2\\]\\n<p>Setting these equal to zero and solving for $\\mu$ and $\\sigma^2$, we find the MLE:</p>\\n\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\\n\\[\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\hat{\\mu})^2\\]\\n<p>The final answer is:</p>\\n<code>$\\boxed{\\left(\\hat{\\mu}, \\hat{\\sigma}^2\\right)}$</code>\",",
+    "answerShort": "<code>$\\left(\\frac{1}{n} \\sum_{i=1}^n x_i, \\frac{1}{n} \\sum_{i=1}^n (x_i - \\frac{1}{n} \\sum_{j=1}^n x_j)^2\\right)$</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:37:17.120Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimate (MLE) of a parameter in each of the following distributions: normal, exponential, Poisson, Bernoulli.</p>",
+    "hints": [
+      "Think about the probability density function (PDF) for each distribution.",
+      "For continuous distributions, find the value that maximizes the PDF. For discrete distributions, find the value with the highest probability.",
+      "Use the given data to plug into your MLE formula."
+    ],
+    "solutionHtml": "<p>To find the MLE of a normal distribution parameter μ, we need to maximize the normal density function <i>p(x | μ) = (1/σ√(2π)) \\* e<sup>-(x-μ)^2/(2σ^2)</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: μ = &sum; x_i / n.</p><p>The MLE of an exponential distribution parameter λ is found by maximizing the exponential density function <i>p(x | λ) = λ \\* e<sup>-λx</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: λ = &sum; x_i / ∑(1).</p><p>The MLE of a Poisson distribution parameter λ is found by maximizing the Poisson density function <i>p(x | λ) = (e<sup>-λ</sup> \\* (λ^x)) / x!</i>. Taking the derivative and setting it equal to 0 gives us the MLE: λ = &sum; x_i.</p><p>The MLE of a Bernoulli distribution parameter p is found by maximizing the Bernoulli density function <i>p(x | p) = p^x \\* (1-p)<sup>1-x</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: p = &sum; x_i / n.</p>\",",
+    "answerShort": "The MLEs are μ, λ, λ, and p respectively.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:37:43.209Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": {
+      "statementHtml": "<p>Find the Maximum Likelihood Estimator (MLE) for a given distribution.</p>",
+      "hints": [
+        "Start by identifying the likelihood function.",
+        "Think about how to find the maximum of this function.",
+        "Use calculus or numerical methods to maximize the likelihood."
+      ],
+      "solutionHtml": "<p>To find the MLE, we need to identify the probability density function (PDF) for each distribution and then find the value that maximizes it.</p>\n<p><i>Normal Distribution:</i> The PDF is \\(\\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x-\\mu)^2/2\\sigma^2}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\mu} = \\bar{x}\\) and \\(\\hat{\\sigma} = s\\), where \\(s^2 = \\frac{1}{n-1}\\sum_{i=1}^n (x_i - \\bar{x})^2\\).</p>\n<p><i>Exponential Distribution:</i> The PDF is \\(\\lambda e^{-\\lambda x}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\lambda} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>\n<p><i>Poisson Distribution:</i> The PDF is \\(\\frac{e^{-\\lambda}\\lambda^x}{x!}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\lambda} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>\n<p><i>Bernoulli Distribution:</i> The PDF is \\((1-p) p^x + (1-(1-p))^{1-x}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{p} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>",
+      "answerShort": "The MLE for each distribution is given by the corresponding formula."
+    },
+    "commonMistakes": [
+      "Forgetting to take the derivative of the likelihood function.",
+      "Not recognizing that the MLE is the value that maximizes the likelihood function."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:38:11.916Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the Maximum Likelihood Estimator (MLE) for a Bernoulli distribution with probability <i>p</i>.</p>",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how to find the value of <i>p</i> that maximizes this function.",
+      "Use the fact that the log-likelihood is equivalent to the likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p>\\(\\mathcal{L}(p) = (y \\cdot \\log(p) + (1-y) \\cdot \\log(1-p))^n\\)<p>where <i>y</i> is the observed value and <i>n</i> is the number of observations.</p><p>We can rewrite this as:</p>\\(\\mathcal{L}(p) = n \\cdot \\log(p) + (n-y) \\cdot \\log(1-p)\\)<p>To find the MLE, we set the derivative of the log-likelihood to zero:</p>\\(\\frac{\\partial}{\\partial p} (\\log(\\mathcal{L}(p))) = 0\\)<p>This gives us:</p>\\(\\frac{n}{p} - \\frac{n-y}{1-p} = 0\\)<p>Solving for <i>p</i>, we get:</p>\\(p = \\frac{y}{n}\\)<p>This is the MLE of the Bernoulli distribution.</p>\",",
+    "answerShort": "<i>y/n</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:38:32.902Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply maximum likelihood estimation (MLE) to common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\mathbf{a} \\cdot \\\\mathbf{b} = \\\\sum_{i=1}^n a_i b_i \\\\]\",",
+    "name": "\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. observations from an exponential distribution with unknown rate parameter λ, find the MLE for λ.</p>",
+    "hints": [
+      "Hint: Start by finding the likelihood function"
+    ],
+    "solutionHtml": "<p>We'll break down the solution into four steps:</p><ul><li>Step 1: Define the likelihood function</li><li>Step 2: Find the derivative of the log-likelihood function</li><li>Step 3: Set the derivative equal to zero and solve for λ</li><li>Step 4: Verify the solution</li></ul>",
+    "answerShort": "The MLE is λ = 1/\\\\bar{x}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have the following observations from an exponential distribution:</p><ul><li>x_1 = 2.5</li><li>x_2 = 3.8</li><li>x_3 = 4.2</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Verify the solution",
+    "mathHtml": "\\[ f(x | \\lambda) = \\frac{\\lambda e^{-\\lambda x}}{x} \\geq 0 \\text{ for } x \\geq 0 \\]",
+    "explanation": "We verify that the MLE is indeed a valid estimate by checking that it satisfies the properties of the exponential distribution.\" } ],",
+    "finalAnswer": "The MLE is λ = 1/\\\\bar{x}\" },",
+    "intuition": "<p>The key insight here is that the MLE is the value of λ that maximizes the likelihood function, which represents our uncertainty about the true value of λ.</p>",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:39:11.141Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply Maximum Likelihood Estimation (MLE) to common distributions.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\mathbf{a} \\cdot \\\\mathbf{b} = \\\\sum_{i=1}^n a_i b_i \\\\]\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a random sample from an exponential distribution with unknown rate parameter λ, find the MLE for λ.</p>",
+    "hints": [
+      "Check if the data is exponentially distributed",
+      "Use the likelihood function"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let x_1, ..., x_n be a random sample from an exponential distribution with unknown rate parameter λ.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the likelihood function",
+        "mathHtml": "\\[ L(\\lambda | x_1, ..., x_n) = \\prod_{i=1}^n (\\frac{1}{\\lambda} e^{-x_i/\\lambda}) \\]",
+        "explanation": "The likelihood function represents the probability of observing the data given the parameter λ."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Take the logarithm of the likelihood function",
+        "mathHtml": "\\[ \\ln L(\\lambda | x_1, ..., x_n) = -n \\ln \\lambda - \\sum_{i=1}^n x_i/\\lambda \\]",
+        "explanation": "Taking the logarithm helps us simplify the calculation."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Find the derivative of the log-likelihood function",
+        "mathHtml": "\\[ \\frac{d}{d\\lambda} \\ln L(\\lambda | x_1, ..., x_n) = n/\\lambda - \\sum_{i=1}^n x_i/\\lambda^2 \\]",
+        "explanation": "The derivative helps us find the MLE."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Set the derivative to zero and solve for λ",
+        "mathHtml": "\\[ n/\\lambda - \\sum_{i=1}^n x_i/\\lambda^2 = 0 \\]",
+        "explanation": "Setting the derivative to zero gives us an equation in λ."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Solve for λ",
+        "mathHtml": "\\[ \\hat{\\lambda} = \\frac{n}{\\sum_{i=1}^n x_i} \\]",
+        "explanation": "Solving the equation gives us the MLE for λ."
+      }
+    ],
+    "finalAnswer": "The MLE for λ is \\\\( \\\\hat{\\\\lambda} = \\\\frac{n}{\\\\sum_{i=1}^n x_i} \\\\)\" },",
+    "intuition": "MLE finds the parameter value that makes the observed data most likely.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:39:45.681Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>Estimating parameters of common distributions is a fundamental task in statistical inference.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the MLE for a normal distribution with mean μ and variance σ^2, given i.i.d. samples x_1, ..., x_n.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\(L(\\mu, \\sigma^2 | x_1, ..., x_n) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x_i-\\mu)^2/(2\\sigma^2)}\\)\", \"explanation\": \"We're defining the likelihood function as the product of individual likelihoods for each data point.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\(l(\\mu, \\sigma^2) = \\log L(\\mu, \\sigma^2 | x_1, ..., x_n)\\)\", \"explanation\": \"Taking the logarithm helps with numerical stability and makes it easier to work with.\"}, {\"stepNumber\": 3, \"description\": \"Find the partial derivatives\", \"mathHtml\": \"\\(l_\\mu = -\\frac{n}{2} + \\sum_{i=1}^n (x_i-\\mu)^2/(2\\sigma^2), l_\\sigma^2 = -n/2 + \\sum_{i=1}^n (x_i-\\mu)^2/\\sigma^4\\)\", \"explanation\": \"We're finding the partial derivatives of the log-likelihood function with respect to μ and σ^2.\"}, {\"stepNumber\": 4, \"description\": \"Set the partial derivatives equal to zero\", \"mathHtml\": \"\\(l_\\mu = 0 \\Rightarrow \\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i, l_\\sigma^2 = 0 \\Rightarrow \\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i-\\hat{\\mu})^2\\)\", \"explanation\": \"We're setting the partial derivatives equal to zero and solving for μ and σ^2.\"}, {\"stepNumber\": 5, \"description\": \"Verify that the estimates are maximum likelihood\", \"mathHtml\": \"\\(L(\\hat{\\mu}, \\hat{\\sigma}^2 | x_1, ..., x_n) = L(\\mu, \\sigma^2 | x_1, ..., x_n)\\)\", \"explanation\": \"We're verifying that our estimates indeed maximize the likelihood function.\"}, ],",
+    "finalAnswer": "The MLEs are \\(\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\) and \\(\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i-\\hat{\\mu})^2\\)\" },",
+    "intuition": "The MLE is the value that makes the observed data most likely. In this case, it's the mean and variance that maximize the likelihood function.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:40:21.446Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this worked example, we will derive the Maximum Likelihood Estimators (MLEs) for common distributions: Normal, Exponential, Poisson, and Bernoulli.</p>",
+    "workedExample": {
+      "problemHtml": "Find the MLE of a Normal distribution with mean μ and variance σ^2 given i.i.d. samples x_1, ..., x_n.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the likelihood function",
+          "mathHtml": "\\[ f(x|μ,σ^2) = \\frac{1}{\\sqrt{2πσ^2}} e^{\\frac{-1}{2σ^2}(x-μ)^2} \\]",
+          "explanation": "We start by defining the probability density function (PDF) of the Normal distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Take the logarithm",
+          "mathHtml": "\\[ l(μ,σ^2) = -\\frac{n}{2}\\ln(2πσ^2) - \\frac{1}{2σ^2} \\sum_{i=1}^{n}(x_i-μ)^2 \\]",
+          "explanation": "Taking the logarithm helps us simplify the calculation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the partial derivatives",
+          "mathHtml": "\\[ \\frac{∂l}{∂μ} = \\frac{1}{σ^2}\\sum_{i=1}^{n}(x_i-μ) \\\\ \\frac{∂l}{∂σ^2} = -\\frac{n}{2σ^4} + \\frac{1}{2σ^6} \\sum_{i=1}^{n}(x_i-μ)^2 \\]",
+          "explanation": "We find the partial derivatives of the log-likelihood function with respect to μ and σ^2."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Set the partial derivatives equal to zero",
+          "mathHtml": "\\[ \\frac{1}{σ^2}\\sum_{i=1}^{n}(x_i-μ) = 0 \\\\ -\\frac{n}{2σ^4} + \\frac{1}{2σ^6} \\sum_{i=1}^{n}(x_i-μ)^2 = 0 \\]",
+          "explanation": "We set the partial derivatives equal to zero and solve for μ and σ^2."
+        }
+      ],
+      "finalAnswer": "\\[ μ = \\bar{x}, σ^2 = \\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^2 \\]"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:40:52.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimate (MLE) for normal, exponential, Poisson, and Bernoulli distributions.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the MLE of a normally distributed random variable X with mean μ and variance σ^2 given n observations x_1, ..., x_n.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the likelihood function\", \"mathHtml\": \"\\[f(x|\\mu,\\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{(-\\frac{(x-\\mu)^2}{2\\sigma^2})}\\]\", \"explanation\": \"We start by writing down the probability density function (PDF) of the normal distribution.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\[l(x|\\mu,\\sigma) = -\\frac{n}{2} \\log(2\\pi) - n \\log(\\sigma) - \\sum_{i=1}^n (\\frac{(x_i-\\mu)^2}{2\\sigma^2})\\]\", \"explanation\": \"Taking the logarithm helps us simplify the expression and avoid dealing with exponentials.\"}, {\"stepNumber\": 3, \"description\": \"Find the partial derivatives\", \"mathHtml\": \"\\[\\frac{\\partial l}{\\partial \\mu} = -\\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}, \\quad \\frac{\\partial l}{\\partial \\sigma} = -\\frac{n}{\\sigma} + \\frac{1}{\\sigma^3} \\sum_{i=1}^n (x_i-\\mu)^2\\]\", \"explanation\": \"We take the partial derivatives of the log-likelihood function with respect to μ and σ.\"}, {\"stepNumber\": 4, \"description\": \"Set the partial derivatives equal to zero\", \"mathHtml\": \"\\[\\sum_{i=1}^n x_i = n \\mu, \\quad \\frac{1}{\\sigma^2} \\sum_{i=1}^n (x_i-\\mu)^2 = n\\]\", \"explanation\": \"We set the partial derivatives equal to zero and solve for μ and σ.\"}, ],",
+    "finalAnswer": "The MLEs are μ = \\(\\frac{1}{n} \\sum_{i=1}^n x_i\\) and σ^2 = \\(\\frac{1}{n} \\sum_{i=1}^n (x_i-\\mu)^2\\)\" },",
+    "intuition": "The MLE is the value that maximizes the likelihood of observing the given data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:41:23.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

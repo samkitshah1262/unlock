@@ -1,0 +1,106 @@
+[
+  {
+    "id": "prob_prb_beta_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with beta distribution Beta(&alpha;, &beta;). Find the probability density function (PDF) of X.</p>",
+    "hints": [
+      "<p>The PDF is proportional to the power of the numerator and denominator.</p>",
+      "<p>Use the definition of the beta distribution and the fact that the integral of the PDF over its support must equal 1.</p>",
+      "<p>Compare your answer with the standard form of the beta distribution's PDF.</p>"
+    ],
+    "solutionHtml": "<p>The PDF of X is given by</p>\\[f(x) \\propto x^{\\alpha - 1} (1-x)^{\\beta - 1}\\]<p>for <i>x &in; [0, 1]</i>.</p>\",",
+    "answerShort": "x^α-1(1-x)β-1\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:00.862Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": {
+      "statementHtml": "Find the expected value of a random variable X~Beta(α, β) on [0,1].",
+      "hints": [
+        "Recall that E[X] = ∫[0,1] x f(x) dx.",
+        "The Beta distribution has a density function f(x) = (x^(α-1)(1-x)^(β-1))/B(α, β).",
+        "Use the fact that B(α, β) is the beta function."
+      ],
+      "solutionHtml": "\nTo find the expected value, we integrate x times the Beta density function:\n\n\\[ E[X] = \\int_0^1 x \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)} dx \\]\n\nWe can rewrite this as:\n\n\\[ E[X] = \\frac{1}{B(\\alpha, \\beta)} \\int_0^1 x^{\\alpha} (1-x)^{\\beta-1} dx \\]\n\nThis is a beta function! So we have:\n\n\\[ E[X] = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)} \\]\n\nThe final answer is: <i>E[X]</i> = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)}.\n",
+      "answerShort": "<i>E[X]</i> = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)}"
+    },
+    "commonMistakes": [
+      "Forgetting to use the beta function property.",
+      "Not recognizing the integral as a beta function."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:25.191Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "<p>Find the probability density function (PDF) of a beta distribution with parameters $α$ and $β$, denoted as <i>Beta(α, β)</i>.</p>",
+    "hints": [
+      "Remember that the beta distribution is defined on the interval [0, 1].",
+      "Think about how you can use the gamma function to simplify the expression.",
+      "Don't forget to normalize the PDF."
+    ],
+    "solutionHtml": "<p>To find the PDF of <i>Beta(α, β)</i>, we can use the following formula:</p><br />\\[\\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]<br /><p>where $B(\\alpha, \\beta)$ is the beta function.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:40.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "Find the expected value of a random variable X following a beta distribution <i>Beta(α, β)</i>.",
+    "hints": [
+      "Start by recalling the definition of the beta distribution and its parameters α and β.",
+      "Think about how to apply the expectation operator E[•] to the given density function.",
+      "Use the fact that the expected value is a weighted average of all possible values."
+    ],
+    "solutionHtml": "<p>To find the expected value, we integrate the product of the beta distribution density and its possible values:</p><p>\\(E[X] = \\int_0^1 x \\cdot f(x | α, β) dx\\)</p><p>where <i>f(x | α, β)</i> is the probability density function of the beta distribution.</p><p>Now, we can evaluate this integral using the definition of the beta distribution:</p><p>\\(E[X] = \\int_0^1 x \\cdot \\frac{x^(α-1) (1-x)^(β-1)}{B(α, β)} dx\\)</p>\",",
+    "answerShort": "The expected value is <i>E[X] = α / (α + β)</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:29:00.988Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

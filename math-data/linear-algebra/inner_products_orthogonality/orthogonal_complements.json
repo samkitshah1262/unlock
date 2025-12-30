@@ -1,0 +1,272 @@
+[
+  {
+    "id": "la_con_orthogonal_complements_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "title": "Orthogonal Complements",
+    "contentHtml": "<p>In linear algebra, orthogonal complements are a fundamental concept that helps us understand how to find the best possible approximation of a given vector.</p><p>Given a subspace W and a vector v, the orthogonal complement W^⊥ is the set of all vectors u such that <u, w> = 0 for all w in W.</p>",
+    "formula": "{",
+    "latex": "\\\\[W^\\perp = \\\\{ u : \\\\langle u, w \\\\rangle = 0 \\\\\\\\text{ for all } w \\\\in W \\\\}\\]\",",
+    "name": "Orthogonal Complement\" },",
+    "intuition": "Think of orthogonal complements as the 'perpendicular' space to your original subspace. It's like finding the direction that is perpendicular to a plane, allowing you to find the best possible approximation.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal complements are used in dimensionality reduction techniques, such as PCA and LLE"
+    ],
+    "commonMistakes": [
+      "Don't confuse orthogonal complements with orthogonal projections. They're related but distinct concepts."
+    ],
+    "tags": [
+      "linear-algebra",
+      "orthogonal-complements"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:32:34.728Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_complements_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "title": "Orthogonal Complements",
+    "contentHtml": "<p>In linear algebra, orthogonal complements are a fundamental concept that helps us understand how to find the best approximation of a vector in a subspace.</p><p>Given a subspace W and a vector v, we want to find the closest vector w in W such that the dot product \\(\\mathbf{v} \\cdot (\\mathbf{w}-\\mathbf{w})\\) is minimized.</p>\",",
+    "formula": "{",
+    "latex": "\\[\\text{Orth}(W) = \\{\\mathbf{w} \\in V : \\mathbf{w} \\perp W\\}\\]\",",
+    "name": "Orthogonal Complement\" },",
+    "intuition": "Think of it like finding the best 'approximate' vector in a subspace that is closest to our original vector.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal complements are used in dimensionality reduction techniques like PCA (Principal Component Analysis)"
+    ],
+    "commonMistakes": [
+      "Don't confuse orthogonal complements with orthogonal projections."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:32:50.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_complements_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "title": "Orthogonal Complements",
+    "contentHtml": "<p>In linear algebra, we often encounter situations where we need to find a subspace that is 'perpendicular' or 'orthogonal' to another subspace. This concept of orthogonal complements plays a crucial role in many applications, including machine learning and artificial intelligence.</p><p>Given a subspace <i>V</i> and its orthogonal complement <i>W</i>, we can think of it as finding the 'best' way to project a vector from <i>V</i> onto <i>W</i>. This is essential in many ML/AI algorithms, such as principal component analysis (PCA) and singular value decomposition (SVD).</p>",
+    "formula": "{",
+    "latex": "\\\\[ W = \\\\{\\\\mathbf{x} : \\\\mathbf{x} \\perp V \\\\}\\\\]\",",
+    "name": "Orthogonal Complement\" },",
+    "intuition": "Think of orthogonal complements as finding the 'shadow' or 'projection' of a subspace onto another. This concept is vital in many ML/AI applications, such as dimensionality reduction and feature extraction.",
+    "realWorldApplications": [
+      "PCA",
+      "SVD"
+    ],
+    "commonMistakes": [
+      "Confusing orthogonal complements with simply taking the transpose of a matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:33:09.637Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_complements_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "title": "Orthogonal Complements Theorem",
+    "contentHtml": "<p>The Orthogonal Complements Theorem states that given a subspace W of a vector space V, there exists an orthogonal complement W⊥ such that any vector in V can be uniquely written as the sum of a vector in W and a vector in W⊥.</p>",
+    "formula": {
+      "latex": "\\[W ⊥ = \\{\\mathbf{x} ∈ V : \\langle \\mathbf{w}, \\mathbf{x}\\rangle = 0, ∀ \\mathbf{w} ∈ W\\]",
+      "name": "Orthogonal Complement"
+    },
+    "theorem": {
+      "statement": "\\[W ⊥ = \\{\\mathbf{x} ∈ V : \\langle \\mathbf{w}, \\mathbf{x}\\rangle = 0, ∀ \\mathbf{w} ∈ W\\]",
+      "proofSketch": "The proof involves showing that W⊥ is a subspace and that any vector in V can be written as the sum of a vector in W and a vector in W⊥."
+    },
+    "intuition": "This theorem provides a fundamental way to decompose vectors into components, which has important implications for many areas of mathematics and machine learning.",
+    "realWorldApplications": [
+      "Dimensionality reduction",
+      "Principal component analysis"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Orthogonality"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:33:29.389Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_complements_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "title": "Orthogonal Complements",
+    "contentHtml": "<p>In linear algebra, orthogonal complements are fundamental subspaces that play a crucial role in many applications.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{W} = \\text{span}\\left(\\mathbf{x}_1, \\ldots, \\mathbf{x}_k\\right)\\]",
+    "name": "Span\" },",
+    "theorem": "{",
+    "statement": "\\\\[\\\\mathbf{V}^\\perp = \\\\left\\\\{\\\\mathbf{v} \\in \\\\mathbb{R}^n : \\\\mathbf{v} \\\\cdot \\\\mathbf{x}_i = 0, i = 1, \\\\ldots, k\\\\right\\\\}\\\\]\",",
+    "proofSketch": "The proof involves showing that the set of all vectors orthogonal to a given subspace is indeed a subspace.\" },",
+    "intuition": "Orthogonal complements provide a way to find the 'perpendicular' space to a given subspace. This has important implications in many areas, including machine learning and computer graphics.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal complements are used to find the optimal hyperplane for classification tasks."
+    ],
+    "tags": [
+      "orthogonal",
+      "complements"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:33:46.987Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal complement of a given subspace.</p>",
+      "hints": [
+        "Start by recalling the definition of an orthogonal complement.",
+        "Think about how you can use the properties of inner products to find the desired subspace.",
+        "Don't forget to check your answer for orthogonality."
+      ],
+      "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are orthogonal to every vector in the given subspace. Let's call this subspace <code>S</code>. We can do this by finding the set of all vectors <code>v</code> such that <code>&#956;(v, w) = 0</code> for all <code>w &#x2208 S</code>.</p><p>We can use the properties of inner products to find this subspace. Specifically, we know that if <code>&#956;(v, w) = 0</code>, then <code>v</code> is orthogonal to every vector in <code>S</code>. Therefore, the orthogonal complement of <code>S</code> is given by:</p><p><code>W^&#x2208 = { v | &#956;(v, w) = 0 for all w &#x2208 S }</code></p>",
+      "answerShort": "The orthogonal complement is the set of all vectors that are orthogonal to every vector in the given subspace."
+    },
+    "commonMistakes": [
+      "Forgetting to check orthogonality between the desired subspace and the original subspace.",
+      "Not recognizing that the orthogonal complement is a subspace itself, rather than just a set of vectors."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:09.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal complement of a given subspace.</p>",
+    "hints": [
+      "Start by considering a basis for the subspace.",
+      "Use the fact that the dot product between an element in the subspace and an element not in the subspace is zero to find the orthogonal complement.",
+      "Think about how you can use this concept to find the projection of a vector onto the subspace."
+    ],
+    "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are perpendicular to every vector in the given subspace.</p><p>Let's start by considering a basis for the subspace. Let's say it has $n$ elements: $\\mathbf{v}_1, \\ldots, \\mathbf{v}_n$.</p><p>We want to find all vectors that are perpendicular to every vector in this subspace. We can do this by finding all vectors that satisfy the following condition:</p><p>\\[\\sum_{i=1}^n c_i (\\mathbf{v}_i \\cdot \\mathbf{w}) = 0\\]</p><p>where $\\mathbf{w}$ is any vector not in the subspace. We can rewrite this as:</p><p>\\[c_1 (\\mathbf{v}_1 \\cdot \\mathbf{w}) + c_2 (\\mathbf{v}_2 \\cdot \\mathbf{w}) + \\cdots + c_n (\\mathbf{v}_n \\cdot \\mathbf{w}) = 0\\]</p><p>This is a system of $n$ linear equations with $n$ variables. Solving this system, we get the orthogonal complement.</p>\",",
+    "answerShort": "The orthogonal complement is all vectors that satisfy the above condition.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:35.474Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": "{",
+    "statementHtml": "Find the orthogonal complement of a given subspace <code>W</code> in <code>R^n</code>.",
+    "hints": [
+      "Recall that two subspaces are orthogonal if their intersection is trivial.",
+      "Think about how to find the orthogonal projection of any vector onto <code>W</code>'s orthogonal complement.",
+      "Use the fact that the orthogonal projection matrix is symmetric and idempotent."
+    ],
+    "solutionHtml": "<p>To find the orthogonal complement, we can use the following steps:</p><ol><li>\\(P_W^\\perp = I - P_W\\), where \\(I\\) is the identity matrix.</li><li>Since \\(P_W\\) is symmetric and idempotent, so is \\(P_W^\\perp\\).</li><li>The orthogonal complement of <code>W</code> is therefore the column space of \\(P_W^\\perp\\).</li></ol>\",",
+    "answerShort": "The orthogonal complement\" },",
+    "commonMistakes": [
+      "Forgetting that the orthogonal projection matrix is symmetric and idempotent."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:51.481Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal complement of a subspace W in R^n.</p>",
+      "hints": [
+        "<p>Recall that two vectors are orthogonal if their dot product is zero.</p>",
+        "<p>The orthogonal complement of W contains all vectors that are orthogonal to every vector in W.</p>",
+        "<p>You can use the Gram-Schmidt process to find an orthonormal basis for the orthogonal complement.</p>"
+      ],
+      "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are orthogonal to every vector in W. Let's call this subspace V.</p><p>We know that V contains all vectors that satisfy the equation <i>u</i>·<i>v</i> = 0 for all <i>v</i> in W.</p><p>To find a basis for V, we can use the Gram-Schmidt process. Let's start with an arbitrary vector <i>w</i> that is not in W.</p><p>We can normalize <i>w</i> to get a unit vector <i>u</i>. Then, we can subtract the projection of <i>w</i> onto W from <i>w</i> to get a new vector <i>v</i> that is orthogonal to every vector in W.</p><p>We can repeat this process until we have found a basis for V.</p>",
+      "answerShort": "The orthogonal complement of W is the set of all vectors that satisfy the equation u·v = 0 for all v in W."
+    },
+    "commonMistakes": [
+      "Assuming that the orthogonal complement is always one-dimensional.",
+      "Not normalizing the basis vectors to get an orthonormal basis."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:35:13.352Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

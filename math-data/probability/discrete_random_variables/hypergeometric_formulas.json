@@ -1,0 +1,109 @@
+[
+  {
+    "id": "prob_for_hypergeometric_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution is a discrete probability distribution that describes the number of successes in a sample of size <i>n</i> drawn from a population of size <i>N</i> without replacement, where each item in the population has a binary outcome (success or failure).</p>",
+    "formula": "{",
+    "latex": "\\[H(x|n,N) = \\frac{\\binom{x}{k} \\binom{n-x}{N-k}}{\\binom{N}{n}}\\]\",",
+    "name": "Hypergeometric Distribution Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a deck of <i>N</i> = 52 cards, and we draw a sample of size <i>n</i> = 5 without replacement. What is the probability that exactly <i>x</i> = 3 of the drawn cards are hearts?</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Determine the total number of ways to choose the non-hearts in the sample",
+    "mathHtml": "\\[ \\binom{n-x}{N-k} = \\frac{(n-x)!}{((n-x)-(N-k))!(N-k)!}\\]\",",
+    "explanation": "This is the number of ways to select <i>N-k</i> non-hearts from a sample of size <i>n-x</i>\" } ],",
+    "finalAnswer": "The probability is then calculated by plugging in the values and simplifying\" },",
+    "intuition": "The hypergeometric distribution helps us understand the uncertainty in sampling without replacement, which is crucial in many real-world applications such as quality control or survey research.",
+    "realWorldApplications": [
+      "Quality Control",
+      "Survey Research"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:29:10.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_hypergeometric_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution models sampling without replacement from a finite population.</p><p>Given a population of size N with K items of interest and M items not of interest, the probability of drawing k items of interest is given by:</p>\\(P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{M-k}}{\\binom{N}{M)}\\)<p>This formula is useful in scenarios where you need to estimate the proportion of a specific type in a sample, but you can't replace items.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{M-k}}{\\binom{N}{M)}\\)\",",
+    "name": "Hypergeometric Distribution Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A box of assorted donuts contains 15 chocolate, 10 strawberry, and 25 other flavors. If you randomly select 5 donuts without replacement, what's the probability that exactly 3 are chocolate?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the total number of donuts\", \"mathHtml\": \"\\(N=15+10+25=50\\)\", \"explanation\": \"We need to know the total population size.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of chocolate donuts in the sample\", \"mathHtml\": \"\\(k=3\\)\", \"explanation\": \"We want to find the probability of exactly 3 chocolate donuts.\"}, {\"stepNumber\": 3, \"description\": \"Apply the hypergeometric distribution formula\", \"mathHtml\": \"\\(P(X=k) = \\frac{\\binom{15}{3} \\binom{50-15}{5-3}}{\\binom{50}{5)}\\)\", \"explanation\": \"Plug in the values and simplify the expression.\"} ],",
+    "finalAnswer": "The probability is approximately 0.145\" },",
+    "intuition": "The hypergeometric distribution helps you understand how to account for the lack of replacement when sampling from a finite population.",
+    "realWorldApplications": [
+      "Estimating the proportion of a specific type in a sample, without replacement"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "sampling"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:29:43.486Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_hypergeometric_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution Formula",
+    "contentHtml": "<p>The hypergeometric distribution formula is used to calculate the probability of drawing a certain number of successes from a finite population without replacement.</p>",
+    "formula": "{",
+    "latex": "\\[P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{n-k}}{\\binom{N}{n}}\\]\",",
+    "name": "Hypergeometric Probability Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a deck of 52 cards, and we want to draw 5 cards without replacement. What is the probability that exactly 3 of them are hearts?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Determine the number of hearts in the deck",
+        "mathHtml": "\\(K=13\\)",
+        "explanation": "We know there are 13 hearts in a standard deck."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the number of non-hearts",
+        "mathHtml": "\\(N-K=39\\)",
+        "explanation": "There are 52-13=39 non-heart cards."
+      }
+    ],
+    "finalAnswer": "The final answer is the probability calculated using the formula.\" },",
+    "intuition": "This formula is useful when you need to calculate the probability of drawing a certain number of successes from a finite population without replacement.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:04.742Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "la_prb_rank_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix A = <br>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \\\\ 7 &amp; 8 &amp; 9 \\end{bmatrix} \\] and show that it is equal to the rank of its transpose.\",",
+    "hints": [
+      "Think about the relationship between row operations and matrix transformations.",
+      "Consider using Gaussian elimination to find the row echelon form of A.",
+      "The rank of a matrix is the maximum number of linearly independent rows (or columns)."
+    ],
+    "solutionHtml": "<p>Step 1: Use Gaussian elimination to transform A into its row echelon form.</p>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 0 &amp; 1 &amp; 1.5 \\\\ 0 &amp; 0 &amp; 4.5 \\end{bmatrix} \\]<p>Step 2: Count the number of linearly independent rows.</p>\\[ \\text{Rank}(A) = 2, since the first two rows are linearly independent. \\]</p>\",",
+    "answerShort": "The rank is 2.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:38.135Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_rank_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix <code>\\[ A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\]</code>.\",",
+    "hints": [
+      "Check if any row or column is a multiple of another.",
+      "Try to find the maximum number of linearly independent rows (or columns).",
+      "Use the fact that rank(A) = rank(AT)"
+    ],
+    "solutionHtml": "<p>To find the rank, we can use the fact that <code>\\[ \\text{rank}(A) = \\text{rank}(\\mathbf{a}_1, \\ldots, \\mathbf{a}_n)\\]</code> where <code>\\[\\mathbf{a}_i\\]</code> are the rows of A. In this case, we can see that the first two rows are linearly dependent, but the third row is not a multiple of any of the previous ones. Therefore, the rank is 2.</p>\",",
+    "answerShort": "Rank = 2\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:56.762Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_rank_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix <br/> \\[A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\] and determine if it has a unique solution, no solution, or infinitely many solutions.\",",
+    "hints": [
+      "Check the row echelon form of A",
+      "Look for linearly independent rows in A",
+      "Consider the number of pivot elements in A"
+    ],
+    "solutionHtml": "<p>To find the rank of A, we can perform Gaussian elimination:</p><br/> \\[A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\] becomes <br/> \\[\\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 2 \\\\ 0 &amp; 0 \\end{bmatrix}\\]</p><br/><p>The rank of A is the number of pivot elements, which is 1.</p>\",",
+    "answerShort": "The rank of A is 1\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:43:15.448Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

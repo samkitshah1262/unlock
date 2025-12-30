@@ -1,0 +1,131 @@
+[
+  {
+    "id": "prob_wex_naive_bayes_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "title": "Naive Bayes Classifier: Training and Prediction",
+    "problem": {
+      "statementHtml": "Given a dataset of features X and labels Y, train a Naive Bayes classifier to predict the label for a new instance.",
+      "hints": [
+        "Assume independence between features",
+        "Use Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To train the classifier, we calculate the prior probability P(Y) and the likelihoods P(X|Y).</p><p>For prediction, we calculate the posterior probabilities P(Y|X) for each class and choose the one with the highest probability.</p>",
+      "answerShort": "The trained classifier can be used to make predictions."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of handwritten digits (0-9) with features like width, height, and curvature. Train a Naive Bayes classifier to predict the digit for a new instance.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the prior probability P(Y)",
+          "mathHtml": "\\[P(Y) = \\frac{\\sum_{i=0}^9 n_i}{N}\\]",
+          "explanation": "The prior probability is the proportion of instances in each class."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the likelihoods P(X|Y)",
+          "mathHtml": "\\[P(X|Y) = \\prod_{i=1}^m P(x_i|Y)\\]",
+          "explanation": "The likelihood is the probability of the features given the class."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the posterior probabilities P(Y|X)",
+          "mathHtml": "\\[P(Y|X) = \\frac{P(X|Y)P(Y)}{P(X)}\\]",
+          "explanation": "The posterior probability is the updated probability of the class given the features."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Make predictions by choosing the class with the highest posterior probability",
+          "mathHtml": "\\[\\hat{Y} = \\arg\\max_{y \\in Y} P(Y|X)\\]",
+          "explanation": "The predicted label is the one with the highest posterior probability."
+        }
+      ],
+      "finalAnswer": "The trained classifier can be used to make predictions."
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:57:31.928Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_naive_bayes_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "title": "Naive Bayes Classifier Worked Example",
+    "problem": "{",
+    "statementHtml": "<p>A company wants to classify emails as either spam or not spam using a Naive Bayes classifier. Given the following training data:</p><ul><li>Spam: 100 emails with words 'buy', 'offer', and 'discount'</li><li>Not Spam: 200 emails without these words</li></ul>",
+    "hints": [],
+    "solutionHtml": "<p>To train the classifier, we calculate the probability of each word given spam or not spam. Then, for a new email with words 'buy' and 'offer', we predict the class based on the product of probabilities.</p><ul><li>What is the probability of 'buy' given Spam?</li><li>How do we handle zero-frequency events in this classifier?</li></ul>",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>We have a new email with words 'buy', 'offer', and 'discount'. Predict the class using the trained Naive Bayes classifier.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the probability of each word given spam or not spam\", \"mathHtml\": \"\\[P(\\text{buy}|\\text{Spam}) = \\frac{\\text{# buy in Spam}}{\\text{# emails in Spam}},\\]\", \"explanation\": \"We calculate the probability by dividing the number of times 'buy' appears in spam emails by the total number of spam emails.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the product of probabilities for each word\", \"mathHtml\": \"\\[P(\\text{Spam}|\\text{buy},\\text{offer}) = P(\\text{buy}|\\text{Spam}) \\cdot P(\\text{offer}|\\text{Spam}),\\]\", \"explanation\": \"We multiply the probabilities of each word given spam to get the probability of the email being spam.\"}, {\"stepNumber\": 3, \"description\": \"Handle zero-frequency events by adding a smoothing term\", \"mathHtml\": \"\\[P(\\text{buy}|\\text{Spam}) = \\frac{\\text{# buy in Spam} + 1}{\\text{# emails in Spam} + 2},\\]\", \"explanation\": \"We add a small value to the numerator and denominator to avoid division by zero.\"}, {\"stepNumber\": 4, \"description\": \"Compare the product of probabilities for each class\", \"mathHtml\": \"\", \"explanation\": \"We compare the product of probabilities for spam and not spam classes to determine the predicted class.\"} ],",
+    "finalAnswer": "Spam\" },",
+    "intuition": "The Naive Bayes classifier assumes independence between features, which simplifies calculations but may not always be accurate.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:58:09.308Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_naive_bayes_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "title": "Naive Bayes Classifier: Independence Assumption",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply the Naive Bayes classifier with an independence assumption.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of handwritten digits (0-9) and want to classify new, unseen images. We can use the Naive Bayes classifier with an independence assumption.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the class-conditional probability distributions\", \"mathHtml\": \"\\[P(y | x) = \\prod_{i=1}^n P(x_i | y)\\]\", \"explanation\": \"We assume that each feature is independent given the class label.\"}, {\"stepNumber\": 2, \"description\": \"Train the model using maximum likelihood estimation\", \"mathHtml\": \"\\[P(y) = \\frac{1}{N} \\sum_{i=1}^N I[y_i=y]\\]\", \"explanation\": \"We calculate the probability of each class given the training data.\"}, {\"stepNumber\": 3, \"description\": \"Make predictions using Bayes' theorem\", \"mathHtml\": \"\\[P(y | x) = \\frac{P(x | y) P(y)}{\\sum_{k=1}^K P(x | k) P(k)}\\]\", \"explanation\": \"We apply Bayes' theorem to calculate the probability of each class given the new, unseen image.\"}, {\"stepNumber\": 4, \"description\": \"Smoothing: handle zero-frequency classes\", \"mathHtml\": \"\\[P(y) = \\frac{1}{N} \\sum_{i=1}^N I[y_i=y] + \\epsilon\\]\", \"explanation\": \"We add a small value to the class probability to avoid division by zero when making predictions.\"}, {\"stepNumber\": 5, \"description\": \"Classify the new image\", \"mathHtml\": \"\", \"explanation\": \"We choose the class with the highest posterior probability as our prediction.\"} ],",
+    "finalAnswer": "The predicted class label\" },",
+    "intuition": "The Naive Bayes classifier assumes independence between features, making it a simple yet effective approach for classification tasks.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:58:40.605Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_naive_bayes_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "title": "Naive Bayes Classifier Worked Example",
+    "contentHtml": "<p>In this example, we'll walk through a step-by-step solution of a Naive Bayes classifier problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of emails labeled as either spam or not spam. We want to train a Naive Bayes classifier to predict the likelihood of an email being spam based on its features (e.g., subject, sender, content).",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Assume independence between features\", \"mathHtml\": \"\\(P(\\text{spam}|\\mathbf{x}) = P(\\text{subject}|\\mathbf{x}) \\cdot P(\\text{sender}|\\mathbf{x}) \\cdots\\)\", \"explanation\": \"We're making the independence assumption, which simplifies our calculations.\"}, {\"stepNumber\": 2, \"description\": \"Calculate class probabilities\", \"mathHtml\": \"\\(P(\\text{spam}) = \\frac{\\text{# spam emails}}{\\text{total emails}}, P(\\text{not spam}) = 1 - P(\\text{spam})\\)\", \"explanation\": \"We need the prior probabilities of each class.\"}, {\"stepNumber\": 3, \"description\": \"Calculate feature conditional probabilities\", \"mathHtml\": \"\\(P(\\text{subject}|\\text{spam}) = \\frac{\\text{# spam emails with subject}}{\\text{# spam emails}}, P(\\text{sender}|\\text{not spam}) = \\frac{\\text{# not spam emails from sender}}{\\text{# not spam emails}}\\)\", \"explanation\": \"We're calculating the likelihood of each feature given a class.\"}, {\"stepNumber\": 4, \"description\": \"Calculate posterior probabilities\", \"mathHtml\": \"\\(P(\\text{spam}|\\mathbf{x}) = P(\\text{spam}) \\cdot \\prod_{i} P(f_i|\\text{spam}), P(\\text{not spam}|\\mathbf{x}) = P(\\text{not spam}) \\cdot \\prod_{i} P(f_i|\\text{not spam})\\)\", \"explanation\": \"We're combining the class probabilities with the feature conditional probabilities to get our final predictions.\"}, {\"stepNumber\": 5, \"description\": \"Make predictions\", \"mathHtml\": \"\", \"explanation\": \"Now we can use our trained model to predict the likelihood of an email being spam based on its features.\"} ],",
+    "finalAnswer": "We've successfully trained and used a Naive Bayes classifier to classify emails as either spam or not spam.\" },",
+    "intuition": "The key insight is that by assuming independence between features, we can simplify our calculations and make the training process more efficient.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:59:17.319Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

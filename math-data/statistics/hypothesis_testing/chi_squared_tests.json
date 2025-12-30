@@ -1,0 +1,595 @@
+[
+  {
+    "id": "stat_con_chi_squared_tests_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Tests: Goodness of Fit and Independence",
+    "contentHtml": "<p>Chi-squared tests are a fundamental tool in statistical hypothesis testing. They help us determine whether observed frequencies or counts align with expected frequencies based on a given model.</p><p>In this context, the chi-squared test is used to assess goodness of fit (how well data fits a hypothesized distribution) and independence (whether variables are unrelated). We'll explore these applications in more detail below.</p>",
+    "formula": "{",
+    "latex": "\\\\[χ^2 = \\\\sum_{i} \\\\frac{(O_i - E_i)^2}{E_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "intuition": "The chi-squared test is like a quality control check for our data. We're asking whether the observed frequencies are significantly different from what we'd expect if our model were correct.",
+    "realWorldApplications": [
+      "Identifying patterns in customer purchasing behavior (ML/AI application)"
+    ],
+    "commonMistakes": [
+      "Failing to verify assumptions before applying the test",
+      "Ignoring the degrees of freedom when interpreting results"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:05:27.654Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_chi_squared_tests_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Tests: Goodness of Fit and Independence",
+    "contentHtml": "<p>A chi-squared test is a statistical technique used to determine whether there's a significant association between two categorical variables or if a set of observed frequencies follows a expected distribution.</p><p>In other words, it helps us answer questions like 'Is there a relationship between the type of coffee and the time of day?' or 'Do the observed exam scores follow a normal distribution?'</p>",
+    "formula": {
+      "latex": "\\[\\chi^2 = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}\\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "intuition": "The chi-squared test is a powerful tool for detecting deviations from expected distributions. It's commonly used in machine learning to evaluate the quality of clustering algorithms or to identify patterns in large datasets.",
+    "realWorldApplications": [
+      "Evaluating the effectiveness of marketing campaigns",
+      "Identifying trends in customer behavior"
+    ],
+    "commonMistakes": [
+      "Failing to check for independence between variables",
+      "Ignoring the assumption of expected frequencies being equal"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "statistical inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:05:43.549Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_chi_squared_tests_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Tests: Goodness of Fit, Independence, and Homogeneity",
+    "contentHtml": "<p>A chi-squared test is a statistical method used to determine whether there's a significant association between two categorical variables.</p><p>It's commonly used in machine learning to evaluate the goodness of fit of a model, check for independence between features, or verify homogeneity across different groups.</p>",
+    "formula": "{",
+    "latex": "\\\\[χ^2 = \\\\sum_{i} \\\\frac{(O_i - E_i)^2}{E_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "intuition": "The chi-squared test is like a statistical 'eyeball test' that helps us determine if there's a meaningful relationship between two categorical variables.",
+    "realWorldApplications": [
+      "Checking the independence of features in a dataset",
+      "Evaluating the performance of a classification model"
+    ],
+    "commonMistakes": [
+      "Failing to check for normality before applying the chi-squared test",
+      "Ignoring the degrees of freedom when interpreting the p-value"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:05:58.256Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_tests_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>The Chi-squared goodness of fit test is a statistical technique used to determine whether observed frequencies match expected frequencies under a certain distribution.</p><ul><li>This test is commonly used in quality control, social sciences, and other fields where the goal is to verify that data follows a specific pattern.</li></ul>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}\\]\",",
+    "name": "Chi-squared statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose a company wants to verify that their new marketing strategy is effective. They collect data on the number of customers who purchased their product after being exposed to the campaign.</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the chi-squared statistic using the formula above",
+    "mathHtml": "\\chi^2 = \\sum_{i=1}^k \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}",
+    "explanation": "This step helps us determine whether our observed frequencies are significantly different from the expected frequencies\" } ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The Chi-squared goodness of fit test provides a way to quantify how well data matches an expected distribution, allowing us to make informed decisions about the effectiveness of marketing strategies or quality control processes.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:06:22.040Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_tests_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>The chi-squared goodness of fit test is a statistical technique used to determine whether a given distribution or pattern in data is consistent with a specified hypothesis.</p><p>This test is particularly useful when dealing with categorical data, and it's widely applied in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test whether the observed frequencies of different car colors are consistent with a uniform distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the expected frequencies under the null hypothesis\", \"mathHtml\": \"\\\\[\\\\text{expected}_i = \\\\frac{\\\\text{total}}{k}\\\\]\", \"explanation\": \"We assume that all colors are equally likely\"}, {\"stepNumber\": 2, \"description\": \"Calculate the chi-squared statistic\", \"mathHtml\": \"\\\\[\\chi^2 = \\\\sum_{i=1}^k \\\\frac{(\\\\text{observed}_i - \\\\text{expected}_i)^2}{\\\\text{expected}_i}\\\\]\", \"explanation\": \"This measures the difference between observed and expected frequencies\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The chi-squared test helps us determine whether our data deviates significantly from a specified distribution.",
+    "realWorldApplications": [
+      "Testing the uniformity of user ratings in recommendation systems"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:06:43.432Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_tests_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>The Chi-Squared Goodness of Fit test is a statistical technique used to determine whether observed frequencies match expected frequencies based on a theoretical distribution.</p>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a coin flip experiment with 10 heads and 20 tails. We want to test if the observed frequencies match a theoretical binomial distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the expected frequencies under the binomial model\", \"mathHtml\": \"\\[E_i = \\frac{n}{2} p\\]\", \"explanation\": \"We use the formula for expected frequencies in a binomial distribution.\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "This test helps us determine if our observed data is significantly different from what we would expect under a certain theoretical distribution.",
+    "realWorldApplications": [
+      "In natural language processing, the Chi-Squared test can be used to evaluate the goodness of fit between a model's predictions and actual outcomes."
+    ],
+    "tags": [
+      "goodness of fit",
+      "chi-squared"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:07:01.296Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_tests_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>The Chi-Squared test is a statistical technique used to determine whether there's a significant association between two categorical variables.</p><p>It's commonly used in machine learning and data analysis to evaluate the goodness of fit for a given model or hypothesis.</p>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i} \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test whether the number of students who prefer different programming languages follows a certain distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the observed and expected frequencies for each language\", \"mathHtml\": \"\", \"explanation\": \"We need these values to compute the Chi-Squared statistic\"}, {\"stepNumber\": 2, \"description\": \"Compute the Chi-Squared statistic using the formula above\", \"mathHtml\": \"\\[\\chi^2 = \\sum_{i} \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}\\]\", \"explanation\": \"This gives us a measure of how well our observed data fits the expected distribution\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "The Chi-Squared test helps us determine whether our observations are significantly different from what we'd expect by chance.",
+    "realWorldApplications": [
+      "Evaluating the performance of a recommendation system"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "goodness of fit"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:07:22.425Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_tests_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Test: Goodness of Fit",
+    "problem": "{",
+    "statementHtml": "A random sample of 100 students from a university yields 25 males and 75 females. We want to test whether the proportion of male students is equal to 0.2, which is the expected proportion based on national data. Use a chi-squared test for goodness of fit.",
+    "hints": [
+      "Start by calculating the expected frequencies under the null hypothesis.",
+      "Use a contingency table to organize your calculations.",
+      "The degrees of freedom are not the same as in a normal chi-squared distribution."
+    ],
+    "solutionHtml": "\\[ \\chi^2 = \\sum_{i=1}^{2} \\frac{(O_i - E_i)^2}{E_i} = 5.67 \\] where \\( O_1 = 25, O_2 = 75, E_1 = 20, E_2 = 80 \\) and the degrees of freedom is 1. The p-value is approximately 0.017.\",",
+    "answerShort": "Reject the null hypothesis\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:07:38.574Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_tests_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "problem": "{",
+    "statementHtml": "<p>Test whether the observed frequencies in a contingency table are consistent with a specified hypothesis.</p>",
+    "hints": [
+      "Start by defining the expected frequencies under the null hypothesis.",
+      "Use the chi-squared statistic to measure the distance between the observed and expected frequencies.",
+      "Compare the calculated chi-squared value to the critical value from the chi-squared distribution."
+    ],
+    "solutionHtml": "<p>To perform a chi-squared test of independence, first calculate the chi-squared statistic:</p>\\(\\chi^2 = \\sum_{i=1}^{k} \\sum_{j=1}^{l} \\frac{(O_{ij}-E_{ij})^2}{E_{ij}}\\)<p>where O<sub>ij</sub> is the observed frequency, E<sub>ij</sub> is the expected frequency under the null hypothesis, k is the number of rows in the contingency table, and l is the number of columns.</p><p>Next, compare the calculated chi-squared value to the critical value from the chi-squared distribution with (k-1) × (l-1) degrees of freedom. If the calculated value exceeds the critical value, reject the null hypothesis.</p>\",",
+    "answerShort": "Reject the null hypothesis if χ² > χ²<sub>crit</sub>\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:07:57.298Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_tests_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "problem": "{",
+    "statementHtml": "<p>Test whether the observed frequencies in a contingency table are consistent with the expected frequencies under a given null hypothesis.</p>",
+    "hints": [
+      "Consider using the Pearson chi-squared statistic.",
+      "Check if the expected frequencies are all greater than or equal to 5.",
+      "Think about how to calculate the degrees of freedom."
+    ],
+    "solutionHtml": "<p>To perform a chi-squared test for goodness of fit, independence, or homogeneity, we need to follow these steps:</p><ol><li>\\(H_0\\) states that the observed frequencies are consistent with the expected frequencies.</li><li>Calculate the Pearson chi-squared statistic: \\(\\chi^2 = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}\\)</li><li>Determine the degrees of freedom:</li><ul><li>\\(k-1\\) for goodness of fit, where \\(k\\) is the number of categories.</li><li>\\((r-1)(c-1)\\) for independence, where \\(r\\) and \\(c\\) are the number of rows and columns in the contingency table.</li><li>\\((r-1)(c-1)\\) for homogeneity, where \\(r\\) and \\(c\\) are the number of rows and columns in the contingency table.</li></ul><li>Compare \\(\\chi^2\\) to the critical value from a chi-squared distribution with the calculated degrees of freedom.</li><li>If the p-value is below a certain significance level (e.g., 0.05), reject \\(H_0\\); otherwise, fail to reject \\(H_0\\).</li></ol>\",",
+    "answerShort": "Reject or fail to reject the null hypothesis based on the calculated chi-squared statistic and degrees of freedom.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:08:20.265Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_tests_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "problem": "{",
+    "statementHtml": "<p>Consider a chi-squared test to determine whether the observed frequencies in a contingency table are statistically significant.</p>",
+    "hints": [
+      "Start by calculating the expected frequencies under the null hypothesis.",
+      "Use the chi-squared statistic to measure the distance between the observed and expected frequencies.",
+      "Compare the calculated chi-squared value to the critical value from the chi-squared distribution."
+    ],
+    "solutionHtml": "<p>To solve, we first calculate the expected frequencies:</p>\\(\\begin{aligned} E_{11} &= \\frac{(R_1 \\cdot C_1) (n_1)}{n}, \\\\ &\\vdots \\\\ E_{21} &= \\frac{(R_2 \\cdot C_1) (n_1)}{n}, \\\\ &\\vdots \\\\ E_{31} &= \\frac{(R_3 \\cdot C_1) (n_1)}{n}. \\end{aligned}\\)<p>Then, we calculate the chi-squared statistic:</p>\\(\\chi^2 = \\sum_{i=1}^{k} \\frac{(O_i - E_i)^2}{E_i},\\)<p>where \\(O_i\\) is the observed frequency and \\(E_i\\) is the expected frequency.</p>\",",
+    "answerShort": "Reject the null hypothesis if the calculated chi-squared value exceeds the critical value.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:08:40.210Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_tests_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "problem": "{",
+    "statementHtml": "<p>Consider a chi-squared test to determine whether there is a statistically significant association between the categorical variables 'color' and 'shape'.</p>",
+    "hints": [
+      "<p>Start by calculating the expected frequencies under the null hypothesis of independence.</p>",
+      "<p>Use the observed frequencies to calculate the chi-squared statistic.</p>",
+      "<p>Compare the calculated chi-squared value to the critical value from a chi-squared distribution table.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we first need to calculate the expected frequencies under the null hypothesis of independence:</p>\\n\\ \\[ \\begin{array}{c|ccc} & \\text{Circle} & \\text{Square} & \\\\ \\hline \\text{Red} & 10 & 5 & \\\\ \\text{Green} & 15 & 20 & \\\\ \\end{array}\\]\\n\\ <p>Next, we calculate the chi-squared statistic:</p>\\n\\ \\[ \\chi^2 = \\sum_{i=1}^{k} \\frac{(O_i - E_i)^2}{E_i} = 12.5.\\]\\n\\ <p>Finally, we compare the calculated chi-squared value to the critical value from a chi-squared distribution table:</p>\\n\\ \\[ \\chi^2 > \\chi^2_{0.05}(k-1) = 9.488,\\] where k is the number of categories.\\n\\ <p>If the calculated chi-squared value exceeds the critical value, we reject the null hypothesis and conclude that there is a statistically significant association between 'color' and 'shape'.</p>\",",
+    "answerShort": "Reject the null hypothesis\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:09:08.336Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_tests_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Test: Goodness of Fit Example",
+    "contentHtml": "<p>In this example, we'll apply the chi-squared test to determine if there's a significant association between two categorical variables.</p>",
+    "formula": {
+      "latex": "\\[χ^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>A survey of 100 students found that 30 like coffee, 40 like tea, and 30 like both. Is there a significant association between the type of beverage preferred and whether someone likes both?</p>",
+      "hints": [
+        "Check the expected frequencies",
+        "Use the chi-squared test"
+      ],
+      "solutionHtml": "<p>We'll calculate the expected frequencies under the null hypothesis that the preferences are independent.</p>",
+      "answerShort": "χ^2 = 4.5, p-value < 0.05"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a contingency table:</p><ul><li>Coffee: 30</li><li>Tea: 40</li><li>Both: 30</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected frequencies",
+          "mathHtml": "\\[E_{coffee} = \\frac{100}{2} \\cdot \\frac{30}{50}, E_{tea} = \\frac{100}{2} \\cdot \\frac{40}{50}\\]",
+          "explanation": "We're assuming independence, so we multiply the row total by the column proportion."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the chi-squared statistic",
+          "mathHtml": "\\[χ^2 = \\sum_{i=1}^3 \\frac{(O_i - E_i)^2}{E_i}\\]",
+          "explanation": "We're squaring the differences between observed and expected frequencies, then dividing by the expected frequency."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the degrees of freedom",
+          "mathHtml": "\\[k-1 = 2\\]",
+          "explanation": "We have two categorical variables, so we have 2-1=1 degree of freedom."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Look up the critical value or calculate the p-value",
+          "mathHtml": "\\[p-value < 0.05\\]",
+          "explanation": "If the calculated χ^2 is greater than the critical value or the p-value is less than 0.05, we reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": "χ^2 = 4.5"
+    },
+    "intuition": "The chi-squared test helps us determine if there's a significant association between two categorical variables by comparing the observed frequencies to expected frequencies under independence.",
+    "estimatedMinutes": 1,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:09:50.969Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_tests_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Tests: Goodness of Fit",
+    "contentHtml": "<p>In this worked example, we'll apply a chi-squared test to determine whether there's a significant association between two categorical variables.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we're analyzing the relationship between favorite pizza toppings and preferred sports. We have the following contingency table:<br />\\[\\begin{array}{c|cc} & \\text{Football} & \\text{Basketball} \\\\ \\hline \\text{Topping A} & 30 & 20 \\\\ \\text{Topping B} & 40 & 60 \\\\ \\text{Topping C} & 10 & 20 \\end{array}\\] Is there a significant association between pizza toppings and preferred sports?\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null hypothesis\", \"mathHtml\": \"\", \"explanation\": \"We're testing for independence.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the expected frequencies under the null hypothesis\", \"mathHtml\": \"\\\\[e_{i,j} = \\frac{(R_i)(C_j)}{N}\\]\", \"explanation\": \"We use the formula for expected frequencies in a contingency table.\"}, {\"stepNumber\": 3, \"description\": \"Compute the chi-squared statistic\", \"mathHtml\": \"\\\\[\\chi^2 = \\sum_{i,j} \\frac{(O_{i,j}-e_{i,j})^2}{e_{i,j}}\\]\", \"explanation\": \"The chi-squared statistic measures the difference between observed and expected frequencies.\"}, {\"stepNumber\": 4, \"description\": \"Determine the degrees of freedom\", \"mathHtml\": \"\", \"explanation\": \"For a contingency table with r rows and c columns, the degrees of freedom are (r-1)(c-1).\"} ],",
+    "finalAnswer": "\\\\[\\chi^2 = 8.25\\]\" },",
+    "intuition": "The chi-squared test is useful when we want to determine whether there's an association between two categorical variables.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:10:21.553Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_tests_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>The Chi-Squared test is a statistical method used to determine whether there's a significant association between two categorical variables.</p>",
+    "formula": {
+      "latex": "\\[χ^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>A company claims that 80% of its customers prefer product A, while the remaining 20% prefer product B. To test this claim, a random sample of 100 customers is taken and the results are:</p><ul><li>Product A: 72 customers</li><li>Product B: 28 customers</li></ul>",
+      "hints": [
+        "Check if the expected frequencies are equal"
+      ],
+      "solutionHtml": "<p>The null hypothesis is that the proportion of customers preferring product A is indeed 80%. We can use a Chi-Squared test to determine whether this claim is supported.</p>",
+      "answerShort": "χ^2 = 1.44, p-value ≈ 0.23"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Using the data from above, perform the Chi-Squared test and interpret the results.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected frequencies under the null hypothesis",
+          "mathHtml": "\\[E_A = 80/100 \\cdot 100 = 80, E_B = 20/100 \\cdot 100 = 20\\]",
+          "explanation": "We assume that the true proportion of customers preferring product A is indeed 80%."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the observed and expected frequencies",
+          "mathHtml": "\\[O_A = 72, O_B = 28, E_A = 80, E_B = 20\\]",
+          "explanation": "We compare the observed frequencies with the expected frequencies under the null hypothesis."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the Chi-Squared statistic",
+          "mathHtml": "\\[χ^2 = \\frac{(72-80)^2}{80} + \\frac{(28-20)^2}{20} = 1.44\\]",
+          "explanation": "We calculate the squared difference between observed and expected frequencies, divided by the expected frequency."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[p-value ≈ 0.23\\]",
+          "explanation": "We look up the Chi-Squared distribution with k-1 degrees of freedom (k=2 in this case) and find the corresponding p-value."
+        }
+      ],
+      "finalAnswer": "χ^2 = 1.44, p-value ≈ 0.23"
+    },
+    "intuition": "The Chi-Squared test is a powerful tool for detecting associations between categorical variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:11:04.026Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_tests_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Goodness of Fit Test",
+    "contentHtml": "<p>In this worked example, we'll apply the chi-squared test to determine whether a given dataset follows a specific distribution.</p>",
+    "problem": "{",
+    "statementHtml": "A random sample of 100 students is taken from a university. The data shows that <span>\\(30\\) students like programming, \\(25\\) students like mathematics, and \\(45\\) students like both</span>. Is this distribution significantly different from the expected distribution where <span>\\(50\\)% of students like programming, \\(20\\)% like mathematics, and \\(30\\)% like both</span>?\",",
+    "hints": [
+      "Check if the expected frequencies are equal"
+    ],
+    "solutionHtml": "<p>We'll use the chi-squared test to determine whether the observed distribution is significantly different from the expected one.</p>",
+    "answerShort": "We reject the null hypothesis\" },",
+    "workedExample": "{",
+    "problemHtml": "Let's apply the chi-squared test to this problem.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the expected frequencies\", \"mathHtml\": \"\\[E_1 = (100 \\cdot 50) / 100 = 50\\]\", \"explanation\": \"We calculate the expected frequency for each category based on the total sample size and the proportion of students in each category\"}, {\"stepNumber\": 2, \"description\": \"Calculate the observed frequencies\", \"mathHtml\": \"\\[O_1 = 30, O_2 = 25, O_3 = 45\\]\", \"explanation\": \"We calculate the actual number of students in each category from the dataset\"}, {\"stepNumber\": 3, \"description\": \"Calculate the chi-squared statistic\", \"mathHtml\": \"\\[\\chi^2 = \\sum_{i=1}^3 \\frac{(O_i - E_i)^2}{E_i}\\]\", \"explanation\": \"We calculate the chi-squared statistic by summing the squared differences between observed and expected frequencies, divided by the expected frequency for each category\"}, {\"stepNumber\": 4, \"description\": \"Determine the degrees of freedom\", \"mathHtml\": \"\\[k = 3 - 1 = 2\\]\", \"explanation\": \"We determine the degrees of freedom as the number of categories minus one\"}, {\"stepNumber\": 5, \"description\": \"Compare the chi-squared statistic to the critical value\", \"mathHtml\": \"\", \"explanation\": \"We compare the calculated chi-squared statistic to the critical value from a chi-squared distribution table or calculator\"} ],",
+    "finalAnswer": "The p-value is less than \\(0.05\\), so we reject the null hypothesis that the observed distribution follows the expected distribution\" },",
+    "intuition": "The chi-squared test helps us determine whether the observed frequencies are significantly different from the expected frequencies, which is useful in many real-world applications such as quality control and market research.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:11:46.000Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_tests_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "chi_squared_tests",
+    "title": "Chi-Squared Tests: Goodness of Fit",
+    "problem": {
+      "statementHtml": "A manufacturer claims that their new coffee mug has a uniform distribution of colors. We have a random sample of 100 mugs and observe the following frequencies:<br><table><tr><td>Red</td><td>25</td></tr><tr><td>Blue</td><td>30</td></tr><tr><td>Green</td><td>20</td></tr><tr><td>Yellow</td><td>25</td></tr></table>",
+      "hints": [
+        "Check the assumptions",
+        "Use a chi-squared test"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "Do the observed frequencies support the manufacturer's claim?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "",
+          "explanation": "We want to test if the observed frequencies are uniform."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the expected frequencies under the null hypothesis",
+          "mathHtml": "\\[\\text{Expected frequency} = \\frac{\\text{Total}}{4}\\]",
+          "explanation": "Under the null hypothesis, we expect each color to have an equal number of mugs."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the chi-squared statistic",
+          "mathHtml": "\\[χ^2 = Σ \\frac{(O-E)^2}{E}\\]",
+          "explanation": "We calculate the difference between observed and expected frequencies, square it, divide by the expected frequency, and sum them up."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "",
+          "explanation": "The p-value represents the probability of observing our data (or more extreme) under the null hypothesis."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to check assumptions"
+    ],
+    "realWorldApplications": [
+      "Quality control in manufacturing processes"
+    ],
+    "tags": [
+      "goodness of fit",
+      "chi-squared test"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:12:18.466Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "stat_con_credible_intervals_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals are a fundamental concept in Bayesian statistics that provide a range of values within which a parameter is likely to lie.</p><p>In frequentist statistics, confidence intervals are used to estimate population parameters. However, credible intervals offer a more nuanced approach by incorporating prior knowledge and updating it based on the data.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(\\\\theta \\in I) = \\\\int_{I} p(\\\\theta | D) d\\\\theta \\\\approx 0.95\\\\]\",",
+    "name": "Credible Interval Formula\" },",
+    "whyMatters": "<p>Credible intervals matter because they provide a more accurate representation of uncertainty in Bayesian inference.</p>",
+    "intuition": "Think of credible intervals as a range of plausible values for a parameter, based on the data and prior knowledge.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions."
+    ],
+    "commonMistakes": [
+      "Confusing credible intervals with confidence intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:09.078Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_credible_intervals_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, credible intervals provide a way to quantify uncertainty around a parameter estimate. Unlike frequentist confidence intervals, which are based on repeated sampling, credible intervals reflect the posterior distribution of the parameter.</p><p>Given a prior distribution and data likelihood, we can compute the posterior distribution using Bayes' theorem. The credible interval is then defined as the region within which the true value of the parameter has a certain probability (usually 95%) of lying.</p>",
+    "formula": {
+      "latex": "\\[P(\\theta|y) = \\frac{f(y|\\theta) \\pi(\\theta)}{\\int f(y|\\theta) \\pi(\\theta) d\\theta}\\]",
+      "name": "Bayes' theorem"
+    },
+    "whyMatters": "<p>Credible intervals are essential in Bayesian statistics because they provide a more accurate representation of uncertainty than frequentist confidence intervals. This is particularly important in machine learning and AI applications, where the choice of prior distribution can significantly impact the results.</p>",
+    "intuition": "Think of credible intervals as a range within which the true value of the parameter is likely to lie, given the data and our prior beliefs.",
+    "realWorldApplications": [
+      "In Bayesian linear regression, credible intervals for coefficients provide a more nuanced understanding of their uncertainty."
+    ],
+    "commonMistakes": [
+      "Confusing frequentist confidence intervals with Bayesian credible intervals"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:27.746Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_credible_intervals_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, credible intervals provide a way to quantify uncertainty around a posterior distribution. Unlike frequentist confidence intervals, which are based on repeated sampling and population parameters, credible intervals reflect the uncertainty inherent in the data itself.</p><p>Given a posterior distribution <i>p</i>(<i>θ</i>|<i>D</i>) for some parameter <i>θ</i>, a <i>credible interval</i> is an interval [<i>a</i>, <i>b</i>] such that the probability of <i>θ</i> falling within this interval, given the data <i>D</i>, is at least 1-<i>α</i>.</p>",
+    "formula": {
+      "latex": "\\[ [a, b] = \\{ θ : P(θ | D) ≥ 1 - α \\} \\]",
+      "name": "Credible Interval"
+    },
+    "intuition": "Think of credible intervals as a way to summarize the uncertainty in your posterior distribution. They provide a range of values that are plausible given the data, rather than trying to pinpoint a single 'true' value.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions or hyperparameter tuning."
+    ],
+    "commonMistakes": [
+      "Don't confuse credible intervals with frequentist confidence intervals; they have different interpretations and uses."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:46.308Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "stat_prb_fisher_information_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": "{",
+    "statementHtml": "<p>Fisher information is a measure of how much information an observation provides about the parameter being estimated.</p>",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how the observed data affects the posterior distribution.",
+      "Recall that Fisher information is related to the curvature of the log-likelihood function."
+    ],
+    "solutionHtml": "<p>To compute the Fisher information, we need to find the expected value of the second derivative of the log-likelihood function.</p>\\[\\mathcal{I}(\\theta) = \\mathbb{E}_{X\\sim p(x|\\theta)}\\left[-\\frac{\\partial^2}{\\partial\\theta^2}\\log p(X|\\theta)\\right]\\]\",",
+    "answerShort": "\\[\\mathcal{I}(\\theta)\\]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:37.343Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_fisher_information_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": {
+      "statementHtml": "<p>Compute the Fisher information matrix for a given probability distribution.</p>",
+      "hints": [
+        "Start by recalling the definition of the Fisher information matrix.",
+        "Think about how you would compute the expected value of the score function.",
+        "Consider the relationship between the score function and the log-likelihood ratio."
+      ],
+      "solutionHtml": "<p>To compute the Fisher information matrix, we need to find the expected value of the score function.</p>\n<p>The score function is given by <i>s(x) = ∂/∂θ log P(x | θ)</i>.</p>\n<p>Using the definition of the Fisher information matrix, we get:</p>\n<p><i>I(θ) = E[s(x)]</i>.</p>\n<p>To compute this expected value, we can use the probability distribution to find the expected value of each component.</p>\n<p>The final answer is:</p>\n<p><i>I(θ) = ∫[s(x) P(x | θ) dx]</i>.</p>",
+      "answerShort": "<i>I(θ)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to take the expected value of the score function.",
+      "Not considering the relationship between the score function and the log-likelihood ratio."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:54.015Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_fisher_information_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": "{",
+    "statementHtml": "Compute the Fisher information matrix <i>I(θ)</i> for a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by recalling the definition of the Fisher information.",
+      "Use the fact that the normal density is given by <i>e<sup>-((x-μ)<sup>2</sup>/2σ<sup>2</sup>)</sup>/√(2πσ<sup>2</sup>)</i>",
+      "The derivative of the log likelihood with respect to <i>μ</i> will be useful."
+    ],
+    "solutionHtml": "<p>To compute the Fisher information matrix, we need to find the second derivatives of the log likelihood.</p><p>The log likelihood is given by:</p>\\[ \\ln L(\\mu,\\sigma^2|x) = -\\frac{1}{2}\\sum_{i=1}^n \\left( \\frac{x_i-\\mu}{\\sigma} \\right)^2 - \\frac{n}{2}\\ln 2\\pi\\sigma^2.\\]<p>Now, we can compute the second derivative with respect to <i>μ</i>:</p>\\[ I_{\\mu\\mu} = E\\left[ \\left( \\frac{\\partial}{\\partial\\mu} \\ln L(\\mu,\\sigma^2|x) \\right)^2 \\right] = E\\left[ \\left( -\\frac{1}{\\sigma} \\sum_{i=1}^n (x_i-\\mu) \\right)^2 \\right].\\]<p>Similarly, we can compute the second derivative with respect to <i>σ<sup>2</sup></i>:</p>\\[ I_{\\sigma^2\\sigma^2} = E\\left[ \\left( -\\frac{1}{2\\sigma^3} \\sum_{i=1}^n (x_i-\\mu)^2 + \\frac{n}{4\\sigma^2} \\right)^2 \\right].\\]<p>The observed Fisher information is the expected value of these second derivatives:</p>\\[ I(\\theta) = E[I_{\\mu\\mu}] = E[I_{\\sigma^2\\sigma^2}] = \\left( \\frac{1}{\\sigma^2} + \\frac{n}{2\\sigma^4} \\right).\\]",
+    "answerShort": "The Fisher information matrix is <i>I(θ) = (1/σ<sup>2</sup>) + (n/(2σ<sup>4</sup>))</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:48:25.146Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

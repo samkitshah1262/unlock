@@ -1,0 +1,98 @@
+[
+  {
+    "id": "prob_con_negative_binomial_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes occur.</p><p>It's closely related to the Geometric Distribution, but with an added twist: it accounts for overdispersion, where the variance exceeds the mean.</p>",
+    "formula": {
+      "latex": "\\(X \\sim NegBinomial(r,p)\\)",
+      "name": "Negative Binomial Distribution"
+    },
+    "intuition": "Think of flipping a coin until you get k heads. The NBD helps us understand how many tails we'll see before reaching that goal.",
+    "visualDescription": "A diagram showing the probability mass function (PMF) of the NBD, with the x-axis representing the number of failures and the y-axis representing the probability.",
+    "commonMistakes": [
+      "Forgetting to account for overdispersion"
+    ],
+    "realWorldApplications": [
+      "Modeling the number of defects in a manufacturing process",
+      "Analyzing the effectiveness of marketing campaigns"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:16:49.526Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_negative_binomial_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "subtitle": "Understanding k successes and overdispersion",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes are achieved. This concept matters because it's widely used in reliability engineering, quality control, and epidemiology to analyze data.</p><p>Geometrically, the NBD can be visualized as a sequence of Bernoulli trials with varying success probabilities. The distribution is characterized by two parameters: r (the number of successes) and p (the probability of success).</p>",
+    "formula": "{",
+    "latex": "\\\\[P(X=k) = \\\\binom{k+r-1}{k} p^r (1-p)^{k}\\]\",",
+    "name": "Negative Binomial Distribution Formula\" },",
+    "intuition": "The NBD is useful for modeling overdispersion, where the variance of the data exceeds the mean. This can occur in situations where there are underlying dependencies or clustering effects.",
+    "realWorldApplications": [
+      "Analyzing the spread of diseases",
+      "Evaluating the effectiveness of quality control processes"
+    ],
+    "commonMistakes": [
+      "Failing to account for overdispersion",
+      "Assuming a Poisson distribution when data is overdispersed"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:17:09.123Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_negative_binomial_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes occur in independent trials with a constant probability of success.</p><p>For example, imagine flipping a coin until you get <i>k</i> heads. The NBD describes the probability of getting exactly <i>r</i> tails before the <i>k</i>th head appears.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(X=k) = {k+r-1 \\\\choose k} p^r (1-p)^{k-r+1}\\]\",",
+    "name": "Negative Binomial Distribution Formula\" },",
+    "intuition": "The NBD is closely related to the Geometric Distribution, which models the number of trials until a single success occurs. The NBD can be thought of as the 'overdispersed' version of the Geometric Distribution, where the probability of success remains constant but the number of failures before the first success is more variable.",
+    "realWorldApplications": [
+      "In Machine Learning, the NBD is used to model the number of positive reviews a product receives before it reaches a certain threshold of popularity."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the NBD is a discrete distribution and not continuous"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:17:29.612Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

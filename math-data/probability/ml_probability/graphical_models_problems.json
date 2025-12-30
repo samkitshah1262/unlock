@@ -1,0 +1,137 @@
+[
+  {
+    "id": "prob_prb_graphical_models_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian network with nodes A and B, where <i>A</i> has parents <i>C</i> and <i>D</i>, and <i>B</i> has parent <i>E</i>. Is there d-separation between <i>A</i> and <i>B</i>?</p>",
+      "hints": [
+        "<p>If A is conditionally independent of B given E, then...</p>",
+        "<p>Think about the Markov blanket for each node.</p>",
+        "<p>Use the definition of d-separation to simplify the problem.</p>"
+      ],
+      "solutionHtml": "<p>To determine if there's d-separation between <i>A</i> and <i>B</i>, we need to check if all paths from <i>A</i> to <i>B</i> are blocked by the Markov blanket. Since <i>E</i> is a parent of both <i>A</i> and <i>B</i>, it's part of their respective Markov blankets. Therefore, there's no path from <i>A</i> to <i>B</i> that's not blocked by the Markov blanket.</p>",
+      "answerShort": "<i>true</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the Markov blanket",
+      "Not recognizing the importance of conditional independence"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:01:14.804Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": {
+      "statementHtml": "<p>Given a Bayesian network with nodes A, B, and C, determine if there exists a path from node A to node C that does not pass through node B.</p>",
+      "hints": [
+        "Consider the structure of the Bayesian network.",
+        "Think about what it means for a path to not pass through node B.",
+        "Use d-separation to your advantage."
+      ],
+      "solutionHtml": "<p>To solve this problem, we can start by identifying all possible paths from A to C. Since there is no edge directly connecting A and C, the only path must go through some intermediate node.</p><p>Now, let's consider what it means for a path not to pass through B. This means that either:</p><ul><li>A has an edge to some other node X, which then has an edge to C;</li><li>A has an edge to B, but there is no edge from B to C.</li></p><p>In the first case, we can use d-separation to conclude that A and C are conditionally independent given X. This means that there is a path from A to C that does not pass through B.</p><p>In the second case, we can similarly use d-separation to conclude that A and C are conditionally independent given some other node Y. Again, this implies the existence of a path from A to C that does not pass through B.</p>",
+      "answerShort": "Yes, there exists a path from A to C that does not pass through B."
+    },
+    "commonMistakes": [
+      "Failing to consider all possible paths from A to C.",
+      "Not recognizing the implications of d-separation."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:01:39.244Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian network with nodes A, B, and C, where A is the parent of both B and C. If we know that P(A) = 0.5 and P(B|A) = 0.7, what can be inferred about P(C)?</p>",
+    "hints": [
+      "<p>Think about the structure of the Bayesian network.</p>",
+      "<p>Use Bayes' theorem to relate P(C) to P(A) and P(B|A).</p>",
+      "<p>Consider the given probabilities and the conditional independence relationships.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we can start by using Bayes' theorem:</p>\\n\\[P(C|A) = \\frac{P(C,A)}{P(A)}\\]\\n<p>Since A is the parent of both B and C, we know that P(C|A) = P(C,B|A). We can then use the given probability to write:</p>\\n\\[P(C|A) = \\frac{P(C,B|A)}{P(A)} = \\frac{(0.7)(0.5)}{0.5} = 0.7\\]\\n<p>This implies that P(C) is equal to...</p>\",",
+    "answerShort": "<p>P(C) = 0.7</p>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:01.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Given a Bayesian network with variables X and Y, determine if there is a path from X to Y that does not involve any observed variables.</p>",
+    "hints": [
+      "Consider the d-separation criterion.",
+      "Think about the conditional independence between X and Y given all observed variables.",
+      "Use the factor graph representation to help you visualize the problem."
+    ],
+    "solutionHtml": "<p>To solve this, we can start by drawing the factor graph for the Bayesian network. Let's assume that there are no observed variables in the path from X to Y.</p><p>Next, we apply the d-separation criterion:</p>\\[\\text{d-separation}(X,Y) = \\text{no observed variables on the path}\\]\\[= \\text{no edge between }X\\text{ and any observed variable}\\]\\[= \\text{no edge between }Y\\text{ and any observed variable}\\]\"\\[= X \\perp Y | \\text{observed variables} = 0\\]\"<p>This means that there is no path from X to Y that does not involve any observed variables.</p>\",",
+    "answerShort": "No, there is no such path.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:22.858Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian network with variables X, Y, and Z. If P(X|Y) = 0.8, P(Y) = 0.5, and P(Z|X) = 0.3, what is the probability of Z given that Y has occurred?</p>",
+    "hints": [
+      "<p>Start by using Bayes' theorem to find P(Z|Y).</p>",
+      "<p>Then, use the chain rule to factorize P(Z|Y) into a product of conditional probabilities.</p>",
+      "<p>Finally, substitute in the given values and simplify.</p>"
+    ],
+    "solutionHtml": "<p>To apply Bayes' theorem, we need P(Y). We are given P(Y) = 0.5, so:</p>\\n\\[P(Z|Y) = \\frac{P(Z \\cap Y)}{P(Y)} = \\frac{(0.8)(0.3)}{0.5} = 0.48.\\]\\n<p>Now we use the chain rule to factorize P(Z|Y):</p>\\n\\[P(Z|Y) = P(Z|X)P(X|Y).\\]\\n<p>We are given P(Z|X) = 0.3 and P(X|Y) = 0.8, so:</p>\\n\\[P(Z|Y) = (0.3)(0.8) = 0.24.\\]\\n<p>The final answer is:</p>\\n\\[P(Z|Y) = \\boxed{0.24}.</p>\",",
+    "answerShort": "0.24\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:47.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

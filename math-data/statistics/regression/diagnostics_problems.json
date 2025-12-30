@@ -1,0 +1,140 @@
+[
+  {
+    "id": "stat_prb_diagnostics_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "<p>Use residual plots to identify influential points in a regression model.</p>",
+    "hints": [
+      "Start by plotting residuals against fitted values.",
+      "Look for patterns or outliers that may indicate issues with the model.",
+      "Check Cook's distance and leverage values for further confirmation."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use residual plots to identify influential points in a regression model. First, we'll plot residuals against fitted values:</p>\\n\\[Residuals vs Fitted Values]\\n<p>Next, we'll look for patterns or outliers that may indicate issues with the model.</p>\\n<p>Finally, we'll check Cook's distance and leverage values to further confirm our findings.</p>\",",
+    "answerShort": "Influential points are those with high Cook's distance or leverage values.\" },",
+    "commonMistakes": [
+      "Failing to account for non-linear relationships",
+      "Not considering the impact of outliers"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:19.147Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "Residual plots can be misleading if there are influential points in the data. Identify and explain three such points.",
+    "hints": [
+      "Check Cook's distance values for each point",
+      "Look at leverage values to identify outliers",
+      "Plot residuals against fitted values to spot unusual patterns"
+    ],
+    "solutionHtml": "\\[Residual plot with 3 influential points]\\n\\ To identify these points, we can calculate their Cook's distances. Points with high Cook's distances are likely to be influential.\\n\\ For point A, the Cook's distance is \\(0.02\\), indicating it has a moderate influence on the model. For point B, the value is \\(0.15\\), suggesting strong influence. Finally, for point C, we have \\(0.01\\), implying little impact.\\n\\ Next, let's examine leverage values. Points with high leverage can also be influential. Point A has a leverage of \\(0.6\\), while points B and C have leverages of \\(1.2\\) and \\(0.8\\), respectively.\\n\\ Finally, plotting residuals against fitted values reveals that points B and C have unusual patterns, further supporting their influence.\",",
+    "answerShort": "Points A, B, and C are the influential points.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:38.563Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model <code>y = β0 + β1x</code>, identify and describe three types of residual plots that can help diagnose issues with the model.</p>",
+      "hints": [
+        "Start by plotting residuals against fitted values.",
+        "Look for patterns or outliers in the plot.",
+        "Consider using a different scale if the data is skewed."
+      ],
+      "solutionHtml": "<p>To identify potential issues with the linear regression model, we can create three types of residual plots:</p><ul><li>Residuals vs. Fitted: This plot shows the residuals plotted against the fitted values from the model. If there's a pattern or outliers in this plot, it may indicate that the model is not capturing all the variability in the data.</li><li>Scale-Location: This plot shows the residuals plotted against the scale (or magnitude) of the data. If there are patterns or outliers in this plot, it may indicate that the model is sensitive to extreme values.</li><li>Residuals vs. Leverage: This plot shows the residuals plotted against the leverage statistic for each observation. If there are observations with high leverage and large residuals, it may indicate that these points are driving the model's predictions.</p>",
+      "answerShort": "Three types of residual plots to diagnose issues with linear regression models are Residuals vs. Fitted, Scale-Location, and Residuals vs. Leverage."
+    },
+    "commonMistakes": [
+      "Failing to check for influential points or outliers in the data.",
+      "Not considering the scale of the residuals when interpreting plots."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:58.245Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "Residual plots can be misleading if there are influential points in the data. Identify and explain three such points.",
+    "hints": [
+      "Check Cook's distance values for large values",
+      "Look at leverage values to identify outliers",
+      "Plot residuals against fitted values"
+    ],
+    "solutionHtml": "<p>Step 1: Calculate Cook's distance for each point.</p>\\[CD_i = \\frac{r_i^2}{k(1-h_i)}\\]<br><p>Step 2: Identify points with large CD values (e.g., > 3/k).</p>\\[Points 1, 2, and 5 have high Cook's distance.\\] <br><p>Step 3: Calculate leverage for each point.</p>\\[h_i = \\frac{X_i^T(X^TX)^{-1}X_i}{n}\\]<br><p>Step 4: Identify points with high leverage values (e.g., > 0.5).</p>\\[Points 2 and 5 have high leverage.\\] <br><p>Step 5: Plot residuals against fitted values for the identified influential points.</p>\",",
+    "answerShort": "Points 1, 2, and 5 are influential\" },",
+    "commonMistakes": [
+      "Failing to check Cook's distance",
+      "Ignoring high leverage points"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:43:15.962Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "<p>Examine a regression model's residuals and leverage values to identify influential points.</p>",
+    "hints": [
+      "Check the residual plot for unusual patterns.",
+      "Look at the Cook's distance values; high values indicate potential outliers.",
+      "Consider the leverage values; high values suggest observations with large influence."
+    ],
+    "solutionHtml": "<p>To diagnose issues in a regression model, we can start by examining the residuals.</p>\\n<p>First, let's create a residual plot:</p>\\n\\[ \\text{Residual Plot} = \\text{Actual Values} - \\text{Fitted Values} \\]\\n<p>This should give us an idea of any unusual patterns or outliers in our data.</p>\\n<p>Next, we can calculate the Cook's distance values:</p>\\n\\[ \\text{Cook's Distance} = \\frac{(r_i)^2}{(1-h_i)^2} \\]\\n<p>where $r_i$ is the residual for observation $i$, and $h_i$ is the leverage value.</p>\\n<p>A high Cook's distance value indicates an influential point in our data.</p>\\n<p>We can also examine the leverage values:</p>\\n\\[ \\text{Leverage} = h_i = \\frac{(x_i - \\bar{x})^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\]\\n<p>A high leverage value suggests an observation with large influence on the regression line.</p>\\n<p>By examining these values, we can identify potential issues in our model and take steps to address them.</p>\",",
+    "answerShort": "Identify influential points by analyzing residuals, Cook's distance, and leverage values.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:43:37.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

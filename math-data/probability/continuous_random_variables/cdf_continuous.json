@@ -1,0 +1,388 @@
+[
+  {
+    "id": "prob_con_cdf_continuous_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, a continuous random variable (RV) is characterized by its cumulative distribution function (CDF), which describes the probability that the RV takes on a value less than or equal to a given point.</p><p>The CDF of a continuous RV is denoted as F(x) and satisfies two key properties:</p>",
+    "formula": {
+      "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]",
+      "name": "CDF formula"
+    },
+    "whyMatters": "<p>The CDF is crucial in understanding the behavior of continuous RVs, as it allows us to compute probabilities and make predictions.</p>",
+    "geometricIntuition": "",
+    "mlRelevance": "core",
+    "commonMistakes": [
+      "Confusing the CDF with the probability density function (PDF)"
+    ],
+    "realWorldApplications": [
+      "Density estimation for natural language processing",
+      "Classification in computer vision"
+    ],
+    "tags": [
+      "probability theory",
+      "continuous random variables",
+      "cumulative distribution function"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:39:27.724Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_cdf_continuous_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) of a continuous random variable is a fundamental concept in probability theory.</p><p>Given a continuous random variable X, the CDF, denoted by F(x), represents the probability that X takes on a value less than or equal to x. In other words, it's the area under the probability density function (PDF) up to x.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\",",
+    "name": "CDF definition\" },",
+    "whyItMatters": "<p>The CDF is crucial in probability theory as it provides a way to quantify the likelihood of events and make predictions.</p>",
+    "geometricIntuition": "<p>Think of the CDF as the area under the PDF curve up to a given point. As x increases, the area under the curve grows, representing the cumulative probability.</p>",
+    "realWorldApplications": [
+      "In machine learning, the CDF is used in tasks like data preprocessing and anomaly detection."
+    ],
+    "commonMistakes": [
+      "Don't confuse the CDF with the PDF; they're not the same thing."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:39:46.813Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_cdf_continuous_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) is a fundamental concept in probability theory that helps us understand how continuous random variables behave.</p><p>Given a continuous random variable X, the CDF F(x) represents the probability that X takes on a value less than or equal to x. In other words, it's the area under the probability density function (PDF) up to x.</p>",
+    "formula": {
+      "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]",
+      "name": "CDF for Continuous RVs"
+    },
+    "whyMatters": "<p>The CDF is crucial in probability theory because it allows us to quantify the likelihood of events and make predictions.</p>",
+    "geometricIntuition": "",
+    "realWorldApplications": [
+      "In machine learning, we use the CDF to model real-world phenomena like human behavior or stock prices."
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between discrete and continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:40:04.072Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_continuous_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) is a fundamental concept in probability theory that helps us understand the behavior of continuous random variables.</p><p>Given a continuous random variable X, its CDF F(x) represents the probability that X takes on a value less than or equal to x.</p>",
+    "formula": "{",
+    "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]\",",
+    "name": "Cumulative Distribution Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a continuous random variable X that represents the time it takes for a customer to arrive at a store. Find F(5), the probability that the customer arrives within 5 minutes.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the CDF\", \"mathHtml\": \"\\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\", \"explanation\": \"We integrate the probability density function (PDF) from negative infinity to x.\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the integral for F(5)\", \"mathHtml\": \"\\(F(5) = \\int_{-\\infty}^5 f(t) dt\\)\", \"explanation\": \"We evaluate the integral by finding the area under the PDF curve from negative infinity to 5 minutes.\"} ],",
+    "finalAnswer": "The probability that the customer arrives within 5 minutes is F(5)\" },",
+    "intuition": "The CDF helps us understand the cumulative distribution of a continuous random variable, which is crucial in many real-world applications, such as modeling customer behavior or predicting stock prices.",
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:40:30.979Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_continuous_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>The cumulative distribution function (CDF) of a continuous random variable is a fundamental concept in probability theory.</p><p>Given a continuous random variable X, the CDF F(x) represents the probability that X takes on a value less than or equal to x.</p>",
+    "formula": "{",
+    "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]\",",
+    "name": "Cumulative Distribution Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of a continuous random variable X with probability density function (PDF) f(x) = 2x.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Integrate the PDF\", \"mathHtml\": \"\\[F(x) = \\int_{0}^x 2t dt\\]\", \"explanation\": \"We integrate the PDF from 0 to x.\"} ],",
+    "finalAnswer": "The final answer is F(x) = x^2.\" },",
+    "intuition": "The CDF represents the accumulation of probabilities, providing a comprehensive view of the distribution.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:40:49.821Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_continuous_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "Cumulative Distribution Function (CDF) for Continuous Random Variables",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) is a fundamental concept in probability theory that describes the probability of an event occurring within a given range.</p><p>For continuous random variables, the CDF is defined as:</p>\\(\\mathcal{F}(x) = P(X \\leq x)\\)<p>This formula represents the probability that a continuous random variable X takes on a value less than or equal to x.</p>\",",
+    "formula": "{",
+    "latex": "\\mathcal{F}(x) = P(X \\leq x)\",",
+    "name": "CDF for Continuous RVs",
+    "variants": "[] },",
+    "intuition": "The CDF provides a way to quantify the probability of an event occurring within a specific range, which is essential in many real-world applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "Estimating the probability of a continuous random variable falling within a certain range"
+    ],
+    "tags": [
+      "probability",
+      "continuous RVs",
+      "CDF"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:41:07.126Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_continuous_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "problem": "{",
+    "statementHtml": "Find the cumulative distribution function (CDF) of a continuous random variable X with probability density function (PDF) f(x).",
+    "hints": [
+      "Start by recalling the definition of the CDF.",
+      "Focus on the relationship between the PDF and CDF.",
+      "Think about how to integrate the PDF to find the CDF."
+    ],
+    "solutionHtml": "\\[ F_X(x) = \\int_{-\\infty}^x f(t) dt \\] \\n The solution involves integrating the given PDF from negative infinity to x. This is a fundamental property of continuous random variables.\\n Final Answer: The final answer is F_X(x).\",",
+    "answerShort": "F_X(x)\" },",
+    "commonMistakes": [
+      "Forgetting to integrate the PDF",
+      "Not considering the limits of integration"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:41:22.428Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_continuous_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "problem": "{",
+    "statementHtml": "Find the cumulative distribution function (CDF) of a continuous random variable X with probability density function (PDF) f(x).",
+    "hints": [
+      "Recall that the CDF is defined as F(x) = P(X ≤ x).",
+      "Think about how you can use the PDF to find this probability.",
+      "Don't forget to consider the case where x is not in the support of X."
+    ],
+    "solutionHtml": " Let's start by considering a small interval [x, x + dx] within the support of X. The probability that X falls within this interval is f(x) \\* dx.  The CDF F(x) represents the cumulative probability up to x, so we need to find P(X ≤ x). This can be written as:  F(x) = ∫[0,x] f(t) dt  Now, we can use the definition of the PDF to rewrite this integral:  F(x) = ∫[0,x] f(t) dt = ∫[0,x] \\frac{1}{b-a} \\* 1 dx  where [a, b] is the support of X. Evaluating this integral, we get:  F(x) = \\frac{1}{b-a}x  The final answer is: F(x) = \\frac{1}{b-a}x \",",
+    "answerShort": "F(x) = \\frac{1}{b-a}x\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:41:45.216Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_continuous_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "problem": "{",
+    "statementHtml": "<p>Find the cumulative distribution function (CDF) of a continuous random variable X.</p>",
+    "hints": [
+      "Start by recalling the definition of the CDF.",
+      "Think about how the CDF relates to the probability density function (PDF).",
+      "Use the fact that the PDF is non-negative and integrates to 1."
+    ],
+    "solutionHtml": "<p>To find the CDF, we integrate the PDF from negative infinity to x:</p>\\n\\[F(x) = \\\\int_{-\\\\infty}^{x} f(t) dt.\\]\\n<p>Now, we can evaluate this integral by recognizing it as a definite integral.</p>\",",
+    "answerShort": "The CDF is F(x) = \\\\int_{-\\\\infty}^{x} f(t) dt.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:42:00.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_continuous_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often encounter continuous random variables (RVs). The cumulative distribution function (CDF) plays a crucial role in understanding these RVs.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\",",
+    "name": "Continuous CDF",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Find the CDF of a continuous RV X with probability density function (PDF) \\(f(x) = 2x e^{-x^2}\\) for \\(x \\geq 0\\).</p>\",",
+    "hints": [
+      "Hint: Use the definition of the CDF"
+    ],
+    "solutionHtml": "<p>To find the CDF, we integrate the PDF from negative infinity to x:</p><ul><li>Step 1: Integrate the PDF from -∞ to x</li>\\(F(x) = \\int_{-\\infty}^x f(t) dt = \\int_0^x 2t e^{-t^2} dt\\)</li><li>Step 2: Evaluate the integral using substitution or integration by parts</li>\\(F(x) = -e^{-x^2}\\)</li><li>Step 3: Verify that F(x) is a valid CDF (monotonic and approaches 0 as x → -∞, 1 as x → ∞)</li></ul>\",",
+    "answerShort": "-e^{-x^2}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of X with PDF \\(f(x) = 2x e^{-x^2}\\) for \\(x \\geq 0\\).</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Integrate the PDF from -∞ to x\", \"mathHtml\": \"\\(F(x) = \\int_{-\\infty}^x f(t) dt = \\int_0^x 2t e^{-t^2} dt\\)\", \"explanation\": \"We're using the definition of the CDF\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\(F(x) = -e^{-x^2}\\)\", \"explanation\": \"We'll use substitution or integration by parts to evaluate this integral\"}, {\"stepNumber\": 3, \"description\": \"Verify that F(x) is a valid CDF\", \"mathHtml\": \"\", \"explanation\": \"We need to check that the CDF is monotonic and approaches 0 as x → -∞, 1 as x → ∞\"} ],",
+    "finalAnswer": "-e^{-x^2}\" },",
+    "intuition": "The CDF for a continuous RV integrates the PDF over all possible values up to x. This gives us the probability that X takes on a value less than or equal to x.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:42:40.686Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_continuous_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "contentHtml": "<p>In this worked example, we'll derive the cumulative distribution function (CDF) for a continuous random variable.</p>",
+    "formula": {
+      "latex": "\\[F(x) = \\int_{-\\infty}^{x} f(t) dt\\]",
+      "name": "Continuous CDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the CDF of a continuous random variable X with probability density function (PDF) f(x) = 2x.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's find the CDF F(x) for X.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the integral",
+          "mathHtml": "\\[F(x) = \\int_{-\\infty}^{x} f(t) dt\\]",
+          "explanation": "We're integrating the PDF from negative infinity to x."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[F(x) = \\int_{0}^{x} 2t dt = x^2\\]",
+          "explanation": "We're evaluating the definite integral using the fundamental theorem of calculus."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check the limits",
+          "mathHtml": "",
+          "explanation": "The lower limit is 0 because the PDF is 0 for t < 0."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the CDF properties",
+          "mathHtml": "",
+          "explanation": "We can verify that F(x) is non-decreasing and approaches 1 as x approaches infinity."
+        }
+      ],
+      "finalAnswer": "\\[F(x) = x^2\\]"
+    },
+    "intuition": "The CDF for a continuous random variable represents the probability that the value of X falls within a given interval.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:43:08.702Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_continuous_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "problem": "{",
+    "statementHtml": "Find the cumulative distribution function (CDF) for a continuous random variable X with probability density function (PDF) f(x) = 2x.",
+    "hints": [
+      "Hint: Start by finding the CDF's derivative"
+    ],
+    "solutionHtml": "<p>To find the CDF, we integrate the PDF:</p>\\[F_X(x) = \\\\int_{-\\\\infty}^x f(t) dt\\], <p>Then, we evaluate the integral:</p>\\[F_X(x) = \\\\int_{0}^x 2t dt = x^2\\], <p>The CDF is a cumulative function, so it must be non-decreasing. We can verify this by taking the derivative:</p>\\[\\frac{d}{dx} F_X(x) = 2x > 0 \\\\text{ for } x > 0\\], <p>This confirms that the CDF is indeed non-decreasing.</p>\",",
+    "answerShort": "F_X(x) = x^2\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF for X with PDF f(x) = e^{-x}:</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Integrate the PDF\", \"mathHtml\": \"\\\\[F_X(x) = \\\\int_{-\\\\infty}^x e^{-t} dt\\]\", \"explanation\": \"This is the definition of the CDF.\" }, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\\\[F_X(x) = -e^{-x} + C\\]\", \"explanation\": \"We use integration by parts to evaluate the integral.\" }, {\"stepNumber\": 3, \"description\": \"Determine the constant C\", \"mathHtml\": \"\\\\[C = \\\\lim_{x\\\\to\\\\infty} (-e^{-x}) = 0\\]\", \"explanation\": \"The constant C is determined by taking the limit as x approaches infinity.\" }, {\"stepNumber\": 4, \"description\": \"Write the final answer\", \"mathHtml\": \"\\\\[F_X(x) = 1 - e^{-x}\\]\", \"explanation\": \"We substitute the value of C and simplify the expression.\" } ],",
+    "finalAnswer": "F_X(x) = 1 - e^{-x}\" },",
+    "intuition": "The CDF for a continuous random variable is a cumulative function that represents the probability that X takes on a value less than or equal to x.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:43:43.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

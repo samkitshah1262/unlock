@@ -1,0 +1,81 @@
+[
+  {
+    "id": "prob_prb_negative_binomial_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "problem": "{",
+    "statementHtml": "<p>Consider a discrete random variable X that represents the number of successes in k trials, where each trial has a probability p of success.</p>",
+    "hints": [
+      "Think about how this relates to the geometric distribution.",
+      "What happens when k is large?",
+      "How does overdispersion affect the expected value?"
+    ],
+    "solutionHtml": "<p>To find the negative binomial distribution, we can use the formula:</p>\\(\\mathbf{P}(X = r) = \\binom{k+r-1}{r} p^r (1-p)^{k-r}\\)<p>where r is the number of successes.</p>\",",
+    "answerShort": "The negative binomial distribution\" },",
+    "commonMistakes": [
+      "Forgetting to consider overdispersion",
+      "Not recognizing the relation to geometric"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:18:53.724Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_negative_binomial_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "problem": "{",
+    "statementHtml": "<p>Consider a sequence of independent and identically distributed Bernoulli trials with probability <i>p</i> of success. What is the probability distribution of the number of trials until the <i>k</i>-th success?</p>",
+    "hints": [
+      "Think about the relationship to the geometric distribution.",
+      "Recall that the negative binomial distribution counts the number of failures until a certain number of successes are reached.",
+      "Consider using the concept of overdispersion."
+    ],
+    "solutionHtml": "<p>The probability mass function (PMF) of the negative binomial distribution is given by:</p>\\(\\mathbb{P}(X=k) = \\binom{k-1}{k-r} p^r (1-p)^{(k-r)}\\)<p>where <i>r</i> is the number of successes and <i>k</i> is the total number of trials.</p>\",",
+    "answerShort": "The negative binomial distribution\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:19:11.495Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_negative_binomial_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "problem": "{",
+    "statementHtml": "A random variable X follows a negative binomial distribution <i>NB(r, p)</i> if it represents the number of failures until <i>r</i> successes occur, where each trial has a probability <i>p</i> of success. What is the expected value of X?",
+    "hints": [
+      "Think about the geometric distribution and how it relates to this problem.",
+      "Consider what happens when you have multiple trials with a common probability of success.",
+      "Use the formula for the negative binomial distribution to find the expected value."
+    ],
+    "solutionHtml": "<p>To solve this, we can use the formula for the negative binomial distribution:</p>\\n\\[E[X] = \\frac{r(1-p)}{p}\\]\\n<p>This makes sense because when <i>r</i> successes occur, you have effectively had <i>r</i> failures. The expected value is then the product of the number of failures and the probability of failure.</p>\",",
+    "answerShort": "The expected value is \\(\\frac{r(1-p)}{p}\\)\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:19:30.320Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

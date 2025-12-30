@@ -1,0 +1,76 @@
+[
+  {
+    "id": "prob_thm_brownian_motion_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "brownian_motion",
+    "title": "The Central Limit Theorem for Brownian Motion",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a fundamental concept in probability theory that describes the convergence of distributions as the sample size increases.</p><p>For Brownian motion, the CLT states that the distribution of the particle's position after time <i>t</i> approaches a normal distribution with mean <i>μt</i> and variance <i>σ^2t</i>.</p>",
+    "formula": {
+      "latex": "\\[\\frac{(x-\\mu)^2}{\\sigma^2} \\sim \\chi^2_1\\]",
+      "name": "Chi-squared distribution"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P\\left(\\frac{X_n - n\\mu}{\\sqrt{n}\\sigma} \\leq x\\right) = \\Phi(x)\\]",
+      "proofSketch": "The proof involves showing that the distribution of the particle's position after time <i>t</i> is a sum of independent and identically distributed random variables, which satisfies the conditions for the CLT to apply."
+    },
+    "intuition": "The CLT for Brownian motion shows that as the sample size increases, the distribution of the particle's position approaches a normal distribution. This has important implications for modeling and simulating real-world systems.",
+    "realWorldApplications": [
+      "Modeling financial markets",
+      "Simulating chemical reactions"
+    ],
+    "tags": [
+      "Brownian Motion",
+      "Central Limit Theorem",
+      "Probability Theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:43:56.409Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_brownian_motion_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "brownian_motion",
+    "title": "Theorem: Wiener's Chaos",
+    "contentHtml": "<p>The Wiener process, also known as Brownian motion, is a fundamental concept in probability theory.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{dW_t}{dt} = \\sigma B \\]",
+      "name": "Wiener Process",
+      "variants": []
+    },
+    "theorem": {
+      "statement": "\\[ W_t = \\sum_{i=1}^n \\sigma \\sqrt{\\frac{t}{n}} B_i \\]",
+      "proofSketch": "The proof involves showing that the process is a martingale and applying Ito's lemma."
+    },
+    "intuition": "Wiener's chaos theorem provides a mathematical framework for modeling random fluctuations in physical systems, such as the motion of particles suspended in a fluid.",
+    "realWorldApplications": [
+      "Modeling stock prices",
+      "Understanding protein dynamics"
+    ],
+    "tags": [
+      "stochastic processes",
+      "probability theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:44:12.503Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

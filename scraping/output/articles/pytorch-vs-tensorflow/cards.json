@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ai-pytorch-vs-tensorflow-pytorch-1",
+    "domain": "ai_primers",
+    "category": "Miscellaneous",
+    "article": "PyTorch vs. TensorFlow",
+    "articleSlug": "pytorch-vs-tensorflow",
+    "chapter": "PyTorch or TensorFlow?",
+    "title": "PyTorch",
+    "subtitle": "PyTorch or TensorFlow?",
+    "contentHtml": "<h4>(+)</h4>\n<ul>\n  <li>Younger, but also well documented and fast-growing community.</li>\n  <li>Preferred in research/academia.</li>\n  <li>More pythonic and NumPy-like approach, designed for faster prototyping and research.</li>\n  <li>Automatic differentiation using <a href=\"https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html\">Autograd</a> to compute the backward pass given a forward pass of a network (note that TensorFlow v2 has this capability).</li>\n  <li>Uses eager execution mode by default (i.e., dynamic graph), compared to TensorFlow v1’s static graph paradigm.</li>\n  <li>Follows the channel-first (also called spatial-first) convention, i.e., <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-1-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>N</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>W</mi></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-1\" style=\"width: 5.523em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 4.586em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.357em, 1004.59em, 2.503em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-2\"><span class=\"mi\" id=\"MathJax-Span-3\" style=\"font-family: STIXGeneral-Italic;\">N<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-4\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-5\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">C<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-6\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-7\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">H<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-8\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-9\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">W<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.066em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>N</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>W</mi></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-1\">N, C, H, W</script> for images which makes it <a href=\"https://stackoverflow.com/questions/44280335/how-much-faster-is-nchw-compared-to-nhwc-in-tensorflow-cudnn\">faster</a> than TensorFlow’s channel-last convention.</li>\n  <li>Easy to debug and customize.</li>\n</ul>\n<h4 id=\"-\">(-)</h4>\n<ul>\n  <li>Need to manually zero out gradients using <code class=\"language-plaintext highlighter-rouge\">zero_grad()</code> at the start of a new mini-batch.\n    <ul>\n      <li>this is because <code class=\"language-plaintext highlighter-rouge\">loss.backward()</code> accumulates gradients (and doesn’t overwrite them), and you don’t want to mix up gradients between mini-batches.</li>\n    </ul>\n  </li>\n  <li>Using a GPU requires code changes to copy your model’s parameters/tensors over to your GPU.</li>\n</ul>\n<ul>\n      <li>this is because <code class=\"language-plaintext highlighter-rouge\">loss.backward()</code> accumulates gradients (and doesn’t overwrite them), and you don’t want to mix up gradients between mini-batches.</li>\n    </ul>",
+    "contentMarkdown": "#### (+)\n\n*   Younger, but also well documented and fast-growing community.\n*   Preferred in research/academia.\n*   More pythonic and NumPy-like approach, designed for faster prototyping and research.\n*   Automatic differentiation using [Autograd](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html) to compute the backward pass given a forward pass of a network (note that TensorFlow v2 has this capability).\n*   Uses eager execution mode by default (i.e., dynamic graph), compared to TensorFlow v1’s static graph paradigm.\n*   Follows the channel-first (also called spatial-first) convention, i.e., N,C,H,WN,C,H,WN, C, H, W for images which makes it [faster](https://stackoverflow.com/questions/44280335/how-much-faster-is-nchw-compared-to-nhwc-in-tensorflow-cudnn) than TensorFlow’s channel-last convention.\n*   Easy to debug and customize.\n\n#### (-)\n\n*   Need to manually zero out gradients using `zero_grad()` at the start of a new mini-batch.\n    *   this is because `loss.backward()` accumulates gradients (and doesn’t overwrite them), and you don’t want to mix up gradients between mini-batches.\n*   Using a GPU requires code changes to copy your model’s parameters/tensors over to your GPU.\n\n*   this is because `loss.backward()` accumulates gradients (and doesn’t overwrite them), and you don’t want to mix up gradients between mini-batches.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "miscellaneous"
+    ],
+    "metadata": {
+      "hasCode": true,
+      "hasMath": true,
+      "hasImages": false,
+      "wordCount": 173,
+      "contentLength": 3937
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/pytorch-vs-tensorflow/#pytorch",
+    "scrapedAt": "2025-12-28T11:57:21.883Z"
+  },
+  {
+    "id": "ai-pytorch-vs-tensorflow-tensorflow-2",
+    "domain": "ai_primers",
+    "category": "Miscellaneous",
+    "article": "PyTorch vs. TensorFlow",
+    "articleSlug": "pytorch-vs-tensorflow",
+    "chapter": "PyTorch or TensorFlow?",
+    "title": "TensorFlow",
+    "subtitle": "PyTorch or TensorFlow?",
+    "contentHtml": "<h4 id=\"-1\">(+)</h4>\n<ul>\n  <li>Mature, most of the models and layers are already implemented in the library (has <a href=\"https://www.tensorflow.org/api_docs/python/tf/keras\">Keras</a> builtin at <code class=\"language-plaintext highlighter-rouge\">tf.keras</code>).</li>\n  <li>Built for large-scale deployment and is the tool-of-choice in the industry.</li>\n  <li>Has some very useful tools like TensorBoard for visualization (although <a href=\"https://github.com/lanpa/tensorboardX\">TensorBoardX</a> now exists for PyTorch).</li>\n  <li>TensorFlow v2 uses eager execution/dynamic graphs (but TensorFlow v1) just like PyTorch v1.</li>\n  <li>No need to manually zero out gradients for the backward pass.</li>\n  <li>Transparent use of the GPU.</li>\n</ul>\n<h4 id=\"--1\">(-)</h4>\n<ul>\n  <li>Some ramp-up time is needed to understand some of the concepts (session, graph, variable scope, etc.), especially with TensorFlow v1.</li>\n  <li>Follows the channel-last convention, i.e., <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-2-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>N</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>W</mi><mo>,</mo><mi>C</mi></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-10\" style=\"width: 5.523em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 4.586em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.357em, 1004.59em, 2.503em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-11\"><span class=\"mi\" id=\"MathJax-Span-12\" style=\"font-family: STIXGeneral-Italic;\">N<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-13\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-14\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">H<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-15\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-16\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">W<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-17\" style=\"font-family: STIXGeneral-Regular;\">,</span><span class=\"mi\" id=\"MathJax-Span-18\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.211em;\">C<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.066em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>N</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>W</mi><mo>,</mo><mi>C</mi></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-2\">N, H, W, C</script> for images due to legacy reasons, which makes it <a href=\"https://stackoverflow.com/questions/44280335/how-much-faster-is-nchw-compared-to-nhwc-in-tensorflow-cudnn\">slower</a>.</li>\n  <li>Can be harder to debug.</li>\n</ul>",
+    "contentMarkdown": "#### (+)\n\n*   Mature, most of the models and layers are already implemented in the library (has [Keras](https://www.tensorflow.org/api_docs/python/tf/keras) builtin at `tf.keras`).\n*   Built for large-scale deployment and is the tool-of-choice in the industry.\n*   Has some very useful tools like TensorBoard for visualization (although [TensorBoardX](https://github.com/lanpa/tensorboardX) now exists for PyTorch).\n*   TensorFlow v2 uses eager execution/dynamic graphs (but TensorFlow v1) just like PyTorch v1.\n*   No need to manually zero out gradients for the backward pass.\n*   Transparent use of the GPU.\n\n#### (-)\n\n*   Some ramp-up time is needed to understand some of the concepts (session, graph, variable scope, etc.), especially with TensorFlow v1.\n*   Follows the channel-last convention, i.e., N,H,W,CN,H,W,CN, H, W, C for images due to legacy reasons, which makes it [slower](https://stackoverflow.com/questions/44280335/how-much-faster-is-nchw-compared-to-nhwc-in-tensorflow-cudnn).\n*   Can be harder to debug.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "miscellaneous"
+    ],
+    "metadata": {
+      "hasCode": true,
+      "hasMath": true,
+      "hasImages": false,
+      "wordCount": 130,
+      "contentLength": 3457
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/pytorch-vs-tensorflow/#tensorflow",
+    "scrapedAt": "2025-12-28T11:57:21.883Z"
+  }
+]

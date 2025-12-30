@@ -1,0 +1,106 @@
+[
+  {
+    "id": "stat_for_credible_intervals_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals provide a way to quantify uncertainty in Bayesian inference.</p><ul><li>They are often used in place of frequentist confidence intervals, offering a more intuitive and interpretable approach.</li></ul>",
+    "formula": "{",
+    "latex": "\\[P(\\theta \\in I) = P(\\text{data} | \\theta) \\int_{I} p(\\theta) d\\theta\\]\",",
+    "name": "Credible Interval Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model with prior distribution $p(\theta)$ and likelihood function $p(\text{data} | \theta).$ We want to construct a 95% credible interval for $\theta.$</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the quantiles of the sampled values",
+    "mathHtml": "\\[Q_{0.025}(\\theta), Q_{0.975}(\\theta)\\]\",",
+    "explanation": "We calculate the 2.5th and 97.5th percentiles of the sampled values to obtain the credible interval.\" } ],",
+    "finalAnswer": "The resulting interval provides a 95% credible region for $\\theta$\" },",
+    "intuition": "Credible intervals provide a way to quantify uncertainty in Bayesian inference by calculating the range of plausible values for a parameter.",
+    "realWorldApplications": [
+      "Bayesian model selection and comparison"
+    ],
+    "tags": [
+      "bayesian statistics",
+      "credible intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:12.259Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_credible_intervals_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals are a fundamental concept in Bayesian statistics, providing a range of values within which a parameter is expected to lie with a certain level of confidence.</p><p>They differ from frequentist confidence intervals in that they reflect the uncertainty in the parameter itself rather than just the sampling distribution.</p>",
+    "formula": "{",
+    "latex": "\\[P(\\theta \\in I | y) = P(I | y) = 0.95\\]\",",
+    "name": "Credible Interval Definition",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model for the mean of a normal distribution with known variance.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify prior and likelihood\", \"mathHtml\": \"\\(p(\\theta) \\propto \\exp(-\\frac{1}{2} \\theta^2)\\)\", \"explanation\": \"We choose a conjugate prior for the mean.\"} ],",
+    "finalAnswer": "The credible interval is then calculated using the posterior distribution.\" },",
+    "intuition": "Credible intervals provide a more nuanced understanding of uncertainty in Bayesian models, reflecting both the data and our prior beliefs.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Credible Intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:31.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_credible_intervals_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals provide a way to quantify uncertainty in Bayesian inference.</p><ul><li>They're an alternative to frequentist confidence intervals.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\text{HPD Interval}: P(\\theta \\in [a, b]) = 0.95 \\]\",",
+    "name": "Highest Posterior Density (HPD) Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model with prior distribution π(x) and likelihood function f(y|x). We want to construct a 95% credible interval for the parameter θ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Sample from the posterior distribution π(x|y)\", \"mathHtml\": \"\\( \\text{sample} ~ N(\\mu, \\sigma^2) \\)\", \"explanation\": \"We use Markov Chain Monte Carlo (MCMC) methods to draw samples from the posterior.\"} ],",
+    "finalAnswer": "The 95% credible interval is [a, b]\" },",
+    "intuition": "Credible intervals capture the uncertainty in Bayesian inference by providing a range of plausible values for the parameter.",
+    "realWorldApplications": [
+      "In natural language processing, credible intervals can be used to quantify the uncertainty in language models."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Credible Intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:50.102Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

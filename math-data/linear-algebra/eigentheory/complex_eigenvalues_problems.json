@@ -1,0 +1,108 @@
+[
+  {
+    "id": "la_prb_complex_eigenvalues_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "complex_eigenvalues",
+    "problem": "{",
+    "statementHtml": "<p>Find the eigenvalues and eigenvectors of the matrix A = \\(\\begin{bmatrix} 1 & 2 \\\\ -2 & 1 \\end{bmatrix}\\).</p>\",",
+    "hints": [
+      "Hint: The characteristic polynomial has complex roots.",
+      "Hint: Use the fact that the determinant of a product is the product of determinants.",
+      "Hint: The eigenvectors are orthogonal, so you can normalize one and use it to find the other."
+    ],
+    "solutionHtml": "<p>Let's start by finding the characteristic polynomial. We have</p>\\[\\det(A - \\lambda I) = 0.\\]<br><p>We can expand this determinant using the formula for the determinant of a product:</p>\\[\\begin{vmatrix} 1-\\lambda & 2 \\\\ -2 & 1-\\lambda \\end{vmatrix} = 0.\\]<br><p>This gives us</p>\\[(1-\\lambda)^2 + 4 = 0,\\]which has solutions λ = 1 ± i√3. To find the corresponding eigenvectors, we can use the fact that the matrix A is orthogonal.</p>\",",
+    "answerShort": "λ = 1 ± i√3\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:46:15.160Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_complex_eigenvalues_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "complex_eigenvalues",
+    "problem": {
+      "statementHtml": "<p>Find the eigenvalues and eigenvectors of the matrix <span class=\"math\">A = \\begin{bmatrix} 2 & -1 \\\\ 3 & 1 \\end{bmatrix}</span>.</p>",
+      "hints": [
+        "Check if the characteristic polynomial has any complex roots.",
+        "Use the fact that eigenvectors corresponding to distinct eigenvalues are orthogonal.",
+        "If you're stuck, try computing the determinant of <span class=\"math\">A - λI</span> for some value of λ."
+      ],
+      "solutionHtml": "<p>To find the eigenvalues and eigenvectors of A, we first compute its characteristic polynomial:</p><p><span class=\"math\">P(λ) = det(A - λI) = \\begin{vmatrix} 2-λ & -1 \\\\ 3 & 1-λ \\end{vmatrix}</span>.</p><p>Expanding the determinant, we get:</p><p><span class=\"math\">P(λ) = (2-λ)(1-λ)-3 = λ^2 - 3λ + 1.</span></p><p>Solving for λ, we find that <span class=\"math\">λ = \\frac{3 ± \\sqrt{5}}{2}</span> are the eigenvalues of A.</p><p>To find the corresponding eigenvectors, we set up the equation:</p><p><span class=\"math\">(A - λI)v = 0</span>.</p><p>Solving for v, we get:</p><p><span class=\"math\">v = \\begin{bmatrix} 1 \\\\ -\\frac{3}{2}\\end{bmatrix}</span> and <span class=\"math\">v = \\begin{bmatrix} -\\frac{1}{2} \\\\ 1\\end{bmatrix}</span>.</p><p>The eigenvectors corresponding to the eigenvalues <span class=\"math\">λ = \\frac{3 ± \\sqrt{5}}{2}</span> are:</p><p><span class=\"math\">v_1 = \\begin{bmatrix} 1 \\\\ -\\frac{3}{2}\\end{bmatrix}</span> and <span class=\"math\">v_2 = \\begin{bmatrix} -\\frac{1}{2} \\\\ 1\\end{bmatrix}</span>.</p>",
+      "answerShort": "<span class=\"math\">λ = \\frac{3 ± \\sqrt{5}}{2}, v_1, v_2</span>"
+    },
+    "commonMistakes": [
+      "Forgetting to check for complex roots in the characteristic polynomial.",
+      "Not using the fact that eigenvectors corresponding to distinct eigenvalues are orthogonal."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:46:48.080Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_complex_eigenvalues_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "complex_eigenvalues",
+    "problem": {
+      "statementHtml": "<p>Find the eigenvalues and eigenvectors of the matrix <span class=\"math\">\\[A = \\begin{bmatrix} 1 & 2 \\\\ -3 & -4 \\end{bmatrix}\\]</span>, where <span class=\"math\">\\[A^T A = \\begin{bmatrix} 7 & 0 \\\\ 0 & 13 \\end{bmatrix}\\]</span>.</p>",
+      "hints": [
+        "<p>Start by finding the characteristic polynomial of A.</p>",
+        "<p>Use the fact that <span class=\"math\">\\[A^T A = Q \\Lambda Q^{-1}\\]</span>, where <span class=\"math\">\\[Q\\]</span> is an orthogonal matrix and <span class=\"math\">\\[\\Lambda\\]</span> is a diagonal matrix.</p>",
+        "<p>Look for complex roots in the characteristic polynomial.</p>"
+      ],
+      "solutionHtml": "<p>To find the eigenvalues, we need to solve the characteristic equation:</p><p><span class=\"math\">\\[|A - \\lambda I| = 0\\]</span></p><p>We can expand this determinant and equate it to zero:</p><p><span class=\"math\">\\[(-3-2i) + (1+4i)(-4-13\\lambda) + (-4+3i)(7+0) = 0\\]</span></p><p>Simplifying, we get:</p><p><span class=\"math\">\\[(13 \\lambda^2 - 26 \\lambda - 14) + (6 \\lambda - 12)i = 0\\]</span></p><p>This is a quadratic equation in <span class=\"math\">\\[\\lambda\\]</span>, with complex roots:</p><p><span class=\"math\">\\[\\lambda_1 = \\frac{13}{2} + i, \\lambda_2 = \\frac{13}{2} - i\\]</span></p><p>Now we can find the corresponding eigenvectors by solving <span class=\"math\">\\[(A - \\lambda I) v = 0\\]</span>.</p>",
+      "answerShort": "<span class=\"math\">\\[\\lambda_1 = \\frac{13}{2} + i, \\lambda_2 = \\frac{13}{2} - i\\]</span>"
+    },
+    "commonMistakes": [
+      "Forgetting to account for complex roots in the characteristic polynomial",
+      "Not simplifying the quadratic equation correctly"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:47:18.947Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_complex_eigenvalues_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "complex_eigenvalues",
+    "problem": "{",
+    "statementHtml": "Find the eigenvalues and eigenvectors of the matrix <code>A = \\[\\begin{bmatrix} 1 & 2 \\\\ -2 & 1 \\end{bmatrix}\\]</code>.\",",
+    "hints": "[ \"Start by finding the characteristic polynomial, which is a quadratic equation in this case.\", \"Notice that the matrix has complex conjugate eigenvalues. This can be useful for certain applications.\", \"You may need to use the fact that <code>\\det(A - \\lambda I) = 0</code> to find the eigenvalues.\" ],",
+    "solutionHtml": "<p>To find the characteristic polynomial, we calculate:</p><p><code>\\det(A - \\lambda I) = \\[\\begin{vmatrix} 1-\\lambda & 2 \\\\ -2 & 1-\\lambda \\end{vmatrix}\\] = (1-\\lambda)^2 + 4</code></p><p>This is a quadratic equation in <code>\\lambda</code>, which can be factored as:</p><p><code>(\\lambda-1-i) (\\lambda-1+i) = 0</code></p><p>This gives us the eigenvalues <code>\\lambda_1 = 1+i</code> and <code>\\lambda_2 = 1-i</code>.</p><p>To find the eigenvectors, we can use the fact that:</p><p><code>(A - \\lambda I)v = 0</code></p><p>This gives us two systems of linear equations:</p><p><code>\\begin{align*} (1-(1+i))v_1 + (-2)v_2 &= 0 \\\\ (-2)(1-(1-i)) + (1-(1-i))v_2 &= 0 \\end{align*}</code></p><p>Solving these systems, we find the eigenvectors:</p><p><code>v_1 = [1, -i]</code> and <code>v_2 = [1, i]</code>.</p>\",",
+    "answerShort": "<code>\\lambda_1 = 1+i</code>, <code>\\lambda_2 = 1-i</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:47:46.652Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

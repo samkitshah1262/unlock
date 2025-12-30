@@ -1,0 +1,190 @@
+[
+  {
+    "id": "la_wex_positive_definite_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "title": "Positive Definite Matrices: Characterization and Applications",
+    "contentHtml": "<p>In linear algebra, a positive definite matrix is a square matrix that has all positive eigenvalues.</p>",
+    "formula": {
+      "latex": "\\[\\lambda > 0 \\quad \\text{for all } i \\]",
+      "name": "Positive Definiteness Condition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, determine if it is positive definite.</p>",
+      "hints": [
+        "Check the eigenvalues",
+        "Use the fact that A is symmetric"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use the following steps:</p>",
+      "answerShort": "Find the eigenvalues and check if they are all positive."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the matrix A = [[2, 1], [1, 2]]. Is it positive definite?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the characteristic polynomial",
+          "mathHtml": "\\[\\det(A - \\lambda I) =",
+          "explanation": "This will help us find the eigenvalues."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the eigenvalues",
+          "mathHtml": "\\[\\lambda = 1, 3 \\]",
+          "explanation": "These are the solutions to the characteristic polynomial."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check if the eigenvalues are positive",
+          "mathHtml": "\\[\\lambda > 0 \\quad \\text{for all } i \\]",
+          "explanation": "Since both eigenvalues are positive, we conclude that A is positive definite."
+        }
+      ],
+      "finalAnswer": "Yes, A is positive definite."
+    },
+    "intuition": "Positive definiteness is a crucial property in many applications, including machine learning and computer vision.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:02:10.436Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_positive_definite_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "title": "Positive Definite Matrices",
+    "contentHtml": "<p>In linear algebra, a positive definite matrix is a symmetric matrix with only positive eigenvalues.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\succeq 0 \\Rightarrow \\lambda_{i} > 0, \\\\ i = 1, \\dots, n\\]",
+      "name": "Positive Definiteness"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a symmetric matrix A, determine whether it is positive definite.</p>",
+      "hints": [
+        "Check if A is symmetric",
+        "Verify the eigenvalues"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>First, check that A is symmetric: \\[\\mathbf{A}^T = \\mathbf{A}\\]</li><li>If A is symmetric, verify that all its eigenvalues are positive: \\[\\lambda_i > 0, i = 1, \\dots, n\\]</li></ul>",
+      "answerShort": "Positive definite if symmetric and all eigenvalues are positive"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the matrix A = \\[\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix}\\], determine whether it is positive definite.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if A is symmetric",
+          "mathHtml": "\\[\\mathbf{A}^T = \\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix}\\]",
+          "explanation": "We need to verify that the matrix is symmetric."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Verify the eigenvalues",
+          "mathHtml": "\\[\\lambda_1 = 1.5, \\lambda_2 = 4.5\\]",
+          "explanation": "Since both eigenvalues are positive, A is positive definite."
+        }
+      ],
+      "finalAnswer": "Positive definite"
+    },
+    "intuition": "A matrix is positive definite if it represents a valid covariance or Gram matrix.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:02:37.601Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_positive_definite_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "title": "Positive Definite Matrices",
+    "contentHtml": "<p>In linear algebra, a matrix is said to be positive definite if it satisfies certain properties.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\succeq 0 \\Rightarrow \\lambda_{min}(\\mathbf{A}) > 0\\]",
+      "name": "Positive Definiteness"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix \\mathbf{A}, determine if it is positive definite.</p>",
+      "hints": [
+        "Check the eigenvalues",
+        "Use the fact that \\lambda_{min}(\\mathbf{A}) > 0"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Step 1: Compute the eigenvalues of \\mathbf{A}.</li><li>Step 2: Check if all eigenvalues are positive. If not, \\mathbf{A} is not positive definite.</li><li>Step 3: Verify that \\lambda_{min}(\\mathbf{A}) > 0.</li></ul>",
+      "answerShort": "Positive definite if all eigenvalues are positive"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the matrix \\[\\mathbf{A} = \\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix}\\], determine if it is positive definite.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the eigenvalues of \\mathbf{A}",
+          "mathHtml": "\\[\\lambda_1 = 2, \\lambda_2 = 4\\]",
+          "explanation": "We use an eigendecomposition algorithm to find the eigenvalues."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check if all eigenvalues are positive",
+          "mathHtml": "\\[\\lambda_1 > 0, \\lambda_2 > 0\\]",
+          "explanation": "Since both eigenvalues are positive, we can conclude that \\mathbf{A} is positive definite."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify that \\lambda_{min}(\\mathbf{A}) > 0",
+          "mathHtml": "\\[\\lambda_{min}(\\mathbf{A}) = 2 > 0\\]",
+          "explanation": "We can verify this by checking the smallest eigenvalue, which is indeed positive."
+        }
+      ],
+      "finalAnswer": "Positive definite"
+    },
+    "intuition": "Intuitively, a matrix is positive definite if it represents a real-valued quadratic form that is always positive.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:03:10.043Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_positive_definite_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "title": "Positive Definite Matrix Decomposition",
+    "contentHtml": "<p>In linear algebra, a positive definite matrix is a symmetric matrix with all eigenvalues greater than zero.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the decomposition of the following positive definite matrix:<br />\\[\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the eigenvalues and eigenvectors\", \"mathHtml\": \"\\[ \\lambda_1 = 4,\\quad \\lambda_2 = 1 \\]\", \"explanation\": \"We use the characteristic polynomial to find the eigenvalues.\"}, {\"stepNumber\": 2, \"description\": \"Compute the Cholesky decomposition\", \"mathHtml\": \"\\[ L = \\begin{bmatrix} \\sqrt{2} & \\frac{1}{\\sqrt{2}} \\\\ 0 & \\sqrt{1} \\end{bmatrix} \\]\", \"explanation\": \"The Cholesky decomposition is a factorization of the matrix into a lower triangular matrix and its transpose.\"}, {\"stepNumber\": 3, \"description\": \"Verify the decomposition\", \"mathHtml\": \"\\[ LL^T = \\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix} \\]\", \"explanation\": \"We multiply the lower triangular matrix by its transpose to verify that we get the original matrix back.\"}, {\"stepNumber\": 4, \"description\": \"Interpret the decomposition\", \"mathHtml\": \"\", \"explanation\": \"The Cholesky decomposition reveals the underlying structure of the positive definite matrix, which can be useful in machine learning applications such as Gaussian processes and Bayesian inference.\"} ],",
+    "finalAnswer": "The Cholesky decomposition is \\[ L = \\begin{bmatrix} \\sqrt{2} & \\frac{1}{\\sqrt{2}} \\\\ 0 & \\sqrt{1} \\end{bmatrix} \\]\" },",
+    "intuition": "Positive definite matrices are crucial in machine learning, as they represent covariance matrices and can be used to model complex relationships between variables.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:03:37.551Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

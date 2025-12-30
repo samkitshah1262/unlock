@@ -1,0 +1,66 @@
+[
+  {
+    "id": "prob_thm_order_statistics_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>Understanding the distribution of order statistics is crucial in probability theory and has numerous applications in machine learning.</p>",
+    "formula": "{",
+    "latex": "\\\\[F(x) = \\\\frac{1}{n} \\sum_{i=1}^n I\\\\left(x \\\\leq X_{(k)}^{(i)}\\\\right)\\\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "theorem": "{",
+    "statement": "\\[P(X_{(1)} \\leq x, X_{(2)} \\leq x, \\ldots, X_{(n)} \\leq x) = F(x)^n\\]",
+    "proofSketch": "The proof involves showing that the order statistics are independent and identically distributed random variables.\" },",
+    "intuition": "Order statistics represent the ranked values of a sample from a population. The distribution of these statistics is essential in understanding the behavior of extreme values, such as the minimum or maximum.",
+    "realWorldApplications": [
+      "In machine learning, order statistics are used to model outliers and anomalies."
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:46.671Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_order_statistics_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>In probability theory, order statistics refer to the distribution of the minimum, maximum, or kth order statistic from a random sample.</p>",
+    "formula": "{",
+    "latex": "\\[F(x) = \\int_{-\\infty}^x f(t) dt\\]",
+    "name": "Cumulative Distribution Function\" },",
+    "theorem": "{",
+    "statement": "\\[P(X_{(1)} \\leq x, X_{(n)} \\geq x) = F(x) - F(x_{(1)}) + P(X=x_{(1)})\\\\]\",",
+    "proofSketch": "The proof involves showing that the event {X_{(1)} \\\\leq x, X_{(n)} \\\\geq x} is equivalent to the event {X \\\\leq x}, and then applying the cumulative distribution function.\" },",
+    "intuition": "Order statistics provide a way to analyze the distribution of extreme values in a random sample. This theorem helps us understand how these extremes are related to the underlying distribution.",
+    "realWorldApplications": [
+      "In machine learning, order statistics can be used to model outliers and anomalies."
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:26:05.925Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

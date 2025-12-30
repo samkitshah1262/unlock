@@ -1,0 +1,147 @@
+[
+  {
+    "id": "la_wex_rank_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, the rank of a matrix is crucial in understanding the solvability of systems of linear equations.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) = r(A^T)\\)\",",
+    "name": "Matrix Rank Equality\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given the matrix A:</p>\\[A = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\]<p>Finding the rank of A.</p>\",",
+    "hints": [
+      "Hint: Use row operations to transform A into its row-echelon form."
+    ],
+    "solutionHtml": "<p>To find the rank, we'll perform row operations on A:</p><ul><li>Swap rows 1 and 2 to get:</li>\\[A = \\begin{bmatrix}3 & 4 \\\\ 1 & 2\\end{bmatrix}\\]<li>Subtract 3 times row 1 from row 2:</li>\\[A = \\begin{bmatrix}3 & 4 \\\\ 0 & -2\\end{bmatrix}\\]</ul><p>The resulting matrix is in row-echelon form. The leading entries are the ones that have a non-zero value.</p>\",",
+    "answerShort": "The rank of A is 1.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix B:</p>\\[B = \\begin{bmatrix}1 & 0 \\\\ 2 & 3\\end{bmatrix}\\]<p>Finding the column rank of B.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Perform row operations on B to transform it into its row-echelon form.\", \"mathHtml\": \"\\[B = \\begin{bmatrix}1 & 0 \\\\ 2 & 3\\end{bmatrix}\\]\", \"explanation\": \"This helps us identify the leading entries.\"}, {\"stepNumber\": 2, \"description\": \"Subtract twice row 1 from row 2 to get:\", \"mathHtml\": \"\\[B = \\begin{bmatrix}1 & 0 \\\\ 0 & 3\\end{bmatrix}\\]\", \"explanation\": \"Now the leading entries are clear.\"}, {\"stepNumber\": 3, \"description\": \"The column rank is equal to the number of linearly independent columns.\", \"mathHtml\": \"\", \"explanation\": \"In this case, we have two columns, but one is a multiple of the other. So, the column rank is 1.\"} ],",
+    "finalAnswer": "The column rank of B is 1.\" },",
+    "intuition": "Understanding row and column rank helps in determining the solvability of systems of linear equations.",
+    "visualDescription": "A diagram showing the transformation of a matrix into its row-echelon form could be helpful.",
+    "commonMistakes": [
+      "Mistaking the number of rows for the rank."
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding the rank of a matrix is crucial in dimensionality reduction techniques like PCA."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:43:55.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Solving Systems of Linear Equations",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to compute the rank of a matrix and relate it to the number of solutions in a system of linear equations.</p>",
+    "formula": {
+      "latex": "\\[\\text{rank}(A) = \\min\\{\\text{row rank}, \\text{col rank}\\}\\]",
+      "name": "Matrix Rank Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the matrix A = \\[\\begin{array}{cc}1 & 2 \\\\ 3 & 4\\end{array}\\], compute its rank and relate it to the number of solutions in the system Ax = b.</p>",
+      "hints": [
+        "Hint: Use row operations to find the row echelon form"
+      ],
+      "solutionHtml": "<p>We'll use row operations to transform A into its row echelon form:</p><ul><li>Swap rows 1 and 2: \\[\\begin{array}{cc}3 & 4 \\\\ 1 & 2\\end{array}\\]</li><li>Subtract 3 times row 1 from row 2: \\[\\begin{array}{cc}3 & 4 \\\\ 0 & -8\\end{array}\\]</li></ul>",
+      "answerShort": "The rank of A is 1, and there is exactly one solution."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the rank of the matrix B = \\[\\begin{array}{ccc}1 & 0 & 2 \\\\ 0 & 1 & 3 \\\\ 2 & 1 & 4\\end{array}\\] and relate it to the number of solutions in the system Bx = c.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the row echelon form of B",
+          "mathHtml": "\\[\\begin{array}{ccc}1 & 0 & 2 \\\\ 0 & 1 & 3 \\\\ 0 & 1 & -1\\end{array}\\]",
+          "explanation": "We use row operations to transform B into its row echelon form."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Count the number of linearly independent rows",
+          "mathHtml": "\\[\\text{rank}(B) = 2, \\text{since there are two linearly independent rows}",
+          "explanation": "The rank of B is equal to the number of linearly independent rows in its row echelon form."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Relate the rank to the number of solutions",
+          "mathHtml": "\\[\\text{rank}(B) = \\min\\{\\text{row rank}, \\text{col rank}\\} = 2, \\text{so there is exactly one solution}",
+          "explanation": "Since the rank of B is equal to its row rank and column rank, we know that there is exactly one solution."
+        }
+      ],
+      "finalAnswer": "The rank of B is 2, and there is exactly one solution."
+    },
+    "intuition": "Understanding the relationship between matrix rank and the number of solutions in a system of linear equations is crucial for many machine learning and artificial intelligence applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:44:36.842Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, we often encounter matrices that represent systems of equations. The matrix rank is a fundamental concept in understanding these systems.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) = \\min\\{\\text{rank}(A|b): b \\in \\mathbb{R}^n\\}\\)\",",
+    "name": "Matrix Rank Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vectors b, c, determine whether the systems Ax = b and Ax = c have unique solutions.</p>",
+    "hints": [
+      "Hint: Consider the rank of the augmented matrix"
+    ],
+    "solutionHtml": "<p>Solution steps:</p><ul><li>We first find the row echelon form (REF) of A.</li>\\[ \\text{REF}(A) = \\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 3 \\end{bmatrix}\\]</li><li>Next, we compute the rank of the REF.</li>\\(r(\\text{REF}(A)) = 2\\)</li><li>We then augment A with b and c to form the augmented matrix.</li>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 4 \\\\ 0 &amp; 3 &amp; 5 \\end{bmatrix}\\]</li><li>Finally, we check if the rank of the augmented matrix is equal to the number of variables minus one.</li>\\(r(\\text{augmented matrix}) = 2 < 3\\)</li></ul>\",",
+    "answerShort": "No unique solutions\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a matrix A and vectors b, c, determine whether the systems Ax = b and Ax = c have unique solutions.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the REF of A\", \"mathHtml\": \"\\[ \\text{REF}(A) = \\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 3 \\end{bmatrix}\\]\", \"explanation\": \"This step helps us identify the linearly independent rows in A.\"}, {\"stepNumber\": 2, \"description\": \"Compute the rank of the REF\", \"mathHtml\": \"\\(r(\\text{REF}(A)) = 2\\)\", \"explanation\": \"The rank tells us how many linearly independent equations we have.\"} ],",
+    "finalAnswer": "No unique solutions\" },",
+    "intuition": "Matrix rank is crucial in understanding the solvability of systems. A system has a unique solution if and only if its augmented matrix has the same rank as the coefficient matrix.",
+    "visualDescription": "A diagram showing the REF of A, the augmented matrix, and the concept of linear independence would be helpful.",
+    "commonMistakes": [
+      "Forgetting to check the rank of the augmented matrix"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding matrix rank is essential for tasks like dimensionality reduction and feature selection."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations",
+      "system of equations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:45:15.738Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "stat_prb_nonparametric_tests_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "problem": "{",
+    "statementHtml": "Test whether the median scores of two groups are significantly different using the Wilcoxon rank-sum test.<p>Given:</p><ul><li>Scores in Group A: 2, 4, 6, 8</li><li>Scores in Group B: 1, 3, 5, 7</li></ul>",
+    "hints": [
+      "Consider the null and alternative hypotheses.",
+      "Think about how to use ranks instead of actual scores.",
+      "Recall that the Wilcoxon test is a nonparametric test."
+    ],
+    "solutionHtml": "<p>Step 1: Combine the two sets of scores and rank them from lowest to highest.</p><p>\\[Ranks: 1, 2, 3, 4, 5, 6, 7, 8\\]</p><p>Step 2: Calculate the sum of the ranks for each group:</p><ul><li>Group A: 10 + 16 + 22 + 28 = 76</li><li>Group B: 1 + 5 + 9 + 13 = 28</li></ul>\",",
+    "answerShort": "Reject the null hypothesis\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:13:56.255Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_nonparametric_tests_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset of exam scores from two different teaching methods: traditional and modern. We want to determine if there's a significant difference in average scores between these two groups.</p>",
+    "hints": [
+      "<p>Start by assuming the data is not normally distributed, which might be the case with exam scores.</p>",
+      "<p>Think about how you can rank the scores within each group and then compare them.</p>",
+      "<p>Consider using a nonparametric test to avoid making assumptions about the distribution of the data.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use the Wilcoxon rank-sum test. First, let's rank the scores within each group:</p>\\n\\[ \\text{Ranking} = [1, 2, 3, ..., n] \\]\\n<p>Next, calculate the sum of ranks for each group:</p>\\n\\[ S_1 = \\sum_{i=1}^n r_i \\quad\\text{and}\\quad S_2 = \\sum_{i=1}^n r_i \\]\\n<p>Then, compute the test statistic U as:</p>\\n\\[ U = (S_1 + S_2) - n(n+1)/2 \\]\\n<p>The final answer is the p-value associated with this test statistic.</p>\",",
+    "answerShort": "The p-value\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:14:15.344Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_nonparametric_tests_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset of exam scores from two different teaching methods: traditional and online. We want to determine if there's a significant difference in average scores between these two groups.</p>",
+    "hints": [
+      "Start by checking the distribution of scores for each group.",
+      "Think about how you can use ranking information to compare scores.",
+      "Don't forget to account for ties!"
+    ],
+    "solutionHtml": "<p>To perform a nonparametric test, we'll use the Wilcoxon rank-sum test. First, combine the two datasets into one:</p>\\n\\[ \\begin{array}{cc} & \\text{Traditional} & \\text{Online} \\\\ \\hline 7 & 1 & 2 \\\\ 9 & 3 & 4 \\\\ 5 & 5 & 6 \\\\ 8 & 7 & 8 \\\\ 10 & 9 & 10 \\\\ \\end{array} \\]\\n<p>Next, rank the scores from lowest to highest:</p>\\n\\[ \\begin{array}{cc} & \\text{Traditional} & \\text{Online} \\\\ \\hline 5 & 1 & 2 \\\\ 7 & 3 & 4 \\\\ 8 & 5 & 6 \\\\ 9 & 7 & 8 \\\\ 10 & 9 & 10 \\\\ \\end{array} \\]\\n<p>Now, calculate the sum of the ranks for each group:</p>\\n\\[ \\begin{array}{cc} & \\text{Traditional} & \\text{Online} \\\\ \\hline 15 & 26 \\\\ \\end{array} \\]\\n<p>The test statistic is then calculated as half the absolute difference between these sums:</p>\\n\\[ T = |(15-26)/2| = 5.5 \\]\\n<p>Finally, consult a Wilcoxon rank-sum table or use software to determine the p-value associated with this test statistic.</p>\",",
+    "answerShort": "The p-value is less than 0.05, indicating a statistically significant difference in average scores between the two groups.\" },",
+    "commonMistakes": [
+      "Forgetting to account for ties",
+      "Not checking the distribution of scores before performing the test"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:14:43.302Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_nonparametric_tests_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "problem": "{",
+    "statementHtml": "Consider a dataset of exam scores from two different teaching methods. We want to determine if there's a significant difference between the means of these two groups. However, we don't assume normality or equal variances. Which nonparametric test should we use?",
+    "hints": [
+      "Think about the assumptions of each test.",
+      "Consider the distribution of the data.",
+      "Look at the null and alternative hypotheses."
+    ],
+    "solutionHtml": "\\[The Wilcoxon rank-sum test is suitable for this problem.\\] \\[Here's why: The test does not require normality or equal variances, making it a good choice when these assumptions are not met. The test also compares the distributions of the two groups directly, which aligns with our goal of determining if there's a significant difference between the means.\\] \\[The step-by-step solution involves calculating the ranks for each score, then comparing the sums of the ranks from each group.\\]",
+    "answerShort": "Wilcoxon rank-sum test\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:14:59.503Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_nonparametric_tests_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset of exam scores from two different teaching methods: traditional and innovative. We want to test whether there's a significant difference between the two groups.</p>",
+    "hints": [
+      "Start by noting that the data is not normally distributed.",
+      "Think about how you can use ranking information to compare the two groups.",
+      "Remember that permutation tests are useful when dealing with nonparametric data."
+    ],
+    "solutionHtml": "<p>To perform a Wilcoxon rank-sum test, we first need to combine the two datasets into one and then calculate the ranks for each score. Then, we can use these ranks to determine if there's a significant difference between the two groups.</p><p>\\[H_0: W = 0\\]</p>\",",
+    "answerShort": "Reject H_0\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:15:13.367Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

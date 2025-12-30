@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Am I?</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .problem-statement {
+      background: #fff;
+    }
+    .header .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    .time-limit, .memory-limit, .input-file, .output-file {
+      color: #666;
+      font-size: 0.9em;
+      margin: 5px 0;
+    }
+    .property-title {
+      display: inline;
+      font-weight: normal;
+    }
+    .input-specification, .output-specification, .note {
+      margin: 20px 0;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .sample-tests {
+      margin: 20px 0;
+    }
+    .sample-test {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .input, .output {
+      flex: 1;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 0.9em;
+    }
+    .MathJax {
+      font-size: 1.1em;
+    }
+    p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="problem-statement"><div class="header"><div class="title">D. Where Am I?</div><div class="time-limit"><div class="property-title">time limit per test</div>1 second</div><div class="memory-limit"><div class="property-title">memory limit per test</div>256 megabytes</div><div class="input-file input-standard"><div class="property-title">input</div>standard input</div><div class="output-file output-standard"><div class="property-title">output</div>standard output</div></div><div><center> <img class="tex-graphics" src="https://espresso.codeforces.com/619b96136a3d1b4925ce844292b572bc524d5730.png" style="max-width: 100.0%;max-height: 100.0%;"> </center></div><div class="output-specification"><div class="section-title">Output</div><p>Output two real numbers <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 7.903em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.955em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.356em, 1005.9em, 2.492em, -999.997em); top: -2.162em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mo" id="MathJax-Span-3" style="font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-4" style="font-family: MathJax_Main;">90</span><span class="mo" id="MathJax-Span-5" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math-italic; padding-left: 0.273em;">a</span><span class="mo" id="MathJax-Span-7" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mn" id="MathJax-Span-8" style="font-family: MathJax_Main; padding-left: 0.273em;">90</span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><mn>90</mn><mo>≤</mo><mi>a</mi><mo>≤</mo><mn>90</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">-90 \leq a \leq 90</script> and <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;180&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;180&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-9" style="width: 9.094em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.875em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.301em, 1006.82em, 2.492em, -999.997em); top: -2.162em; left: 0em;"><span class="mrow" id="MathJax-Span-10"><span class="mo" id="MathJax-Span-11" style="font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-12" style="font-family: MathJax_Main;">180</span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mi" id="MathJax-Span-14" style="font-family: MathJax_Math-italic; padding-left: 0.273em;">b</span><span class="mo" id="MathJax-Span-15" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mn" id="MathJax-Span-16" style="font-family: MathJax_Main; padding-left: 0.273em;">180</span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><mn>180</mn><mo>≤</mo><mi>b</mi><mo>≤</mo><mn>180</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">-180 \leq b \leq 180</script>, with up to 6 digits after the decimal point.</p></div><div class="sample-tests"><div class="section-title">Example</div><div class="sample-test"><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id009353764125096566" id="id006988120754802197" class="input-output-copier">Copy</div></div><pre id="id009353764125096566">​</pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id00415496375317813" id="id0040685363887907333" class="input-output-copier">Copy</div></div><pre id="id00415496375317813">​</pre></div></div></div></div>
+</body>
+</html>

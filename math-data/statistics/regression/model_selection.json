@@ -1,0 +1,580 @@
+[
+  {
+    "id": "stat_con_model_selection_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: AIC, BIC, and Cross-Validation",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting or underfitting. We'll explore three essential concepts: Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and cross-validation.</p><p>AIC and BIC are penalty-based methods that evaluate the trade-off between model complexity and data fit. Cross-validation, on the other hand, assesses a model's performance by splitting the dataset into training and testing sets.</p>",
+    "formula": "{",
+    "latex": "\\(AIC = -2 \\* \\ln(L) + 2k\\)\",",
+    "name": "Akaike Information Criterion",
+    "variants": "[ {\"latex\": \"\\(BIC = -2 \\* \\ln(L) + k \\* \\ln(n)\\)\", \"description\": \"Bayesian Information Criterion\"} ] },",
+    "intuition": "Model selection is about finding the sweet spot where your model generalizes well without overfitting. AIC and BIC provide a numerical way to evaluate this, while cross-validation offers a more robust assessment.",
+    "realWorldApplications": [
+      "In machine learning, model selection is critical for preventing overfitting, especially when dealing with complex models or limited data."
+    ],
+    "commonMistakes": [
+      "Failing to consider the trade-off between model complexity and data fit"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:16.465Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_selection_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>When performing regression analysis, selecting the right model is crucial to avoid overfitting or underfitting. In this concept, we'll explore four common metrics: R², adjusted R², AIC, and BIC.</p><p>R² measures how well a model fits the data, but it can be misleading due to its tendency to increase as the model becomes more complex. Adjusted R² addresses this issue by penalizing models for having too many parameters.</p>",
+    "formula": "{",
+    "latex": "\\(R^2 = 1 - \\frac{\\sum (y_i - \\hat{y}_i)^2}{\\sum (y_i - \\bar{y})^2}\\)\",",
+    "name": "R² formula\" },",
+    "intuition": "Model selection is about finding the right balance between fit and complexity. A good model should be able to generalize well without overfitting.",
+    "realWorldApplications": [
+      "In machine learning, model selection is critical for avoiding overfitting and improving predictive performance."
+    ],
+    "commonMistakes": [
+      "Failing to consider adjusted R² when evaluating models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:32.541Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_selection_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: R², Adjusted R², AIC, BIC, Cross-Validation",
+    "contentHtml": "<p>When analyzing a regression model, it's crucial to evaluate its performance and choose the best-fitting model from a set of candidates. This is where model selection techniques come in.</p><p>R² measures how well the model explains the data, while adjusted R² adjusts for the number of parameters used. AIC (Akaike information criterion) and BIC (Bayesian information criterion) are penalties that discourage overfitting by favoring simpler models. Cross-validation is a resampling technique that evaluates a model's performance on unseen data.</p>",
+    "formula": "{",
+    "latex": "\\(R^2 = 1 - \\frac{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\)\",",
+    "name": "R²",
+    "variants": "[ {\"latex\": \"\\(adj.\\ R^2 = 1 - \\frac{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\)\", \"description\": \"Adjusted R²\"} ] },",
+    "intuition": "Model selection helps you choose the best model that generalizes well to new, unseen data. By considering multiple metrics and techniques, you can avoid overfitting and select a model that accurately predicts outcomes.",
+    "realWorldApplications": [
+      "In machine learning, model selection is crucial for selecting the best-performing model from a set of candidates."
+    ],
+    "commonMistakes": [
+      "Failing to consider adjusted R² when dealing with complex models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:54.786Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_selection_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection Metrics",
+    "contentHtml": "<p>When evaluating regression models, we often need to choose between multiple contenders. This is where model selection metrics come in – they help us compare and contrast different models.</p>",
+    "formula": "{",
+    "latex": "\\[R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\\]\",",
+    "name": "Coefficient of Determination",
+    "variants": "[ {\"latex\": \"\\[adjusted R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2(1 - \\frac{1}{n})}\\]\", \"description\": \"Adjusted R² for overfitting correction\" }, {\"latex\": \"\\[AIC = -2 \\log(L) + 2k\\]\", \"description\": \"Akaike Information Criterion\" }, {\"latex\": \"\\[BIC = -2 \\log(L) + k \\log(n)\\]\", \"description\": \"Bayesian Information Criterion\" } ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're building a model to predict house prices based on features like number of bedrooms and square footage. We have three candidate models: linear, polynomial, and decision tree.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate R² for each model\", \"mathHtml\": \"\\[R^2_1 = 0.8\\]\", \"explanation\": \"This gives us an idea of how well each model fits the data\" }, {\"stepNumber\": 2, \"description\": \"Compare AIC and BIC values\", \"mathHtml\": \"\", \"explanation\": \"Lower values indicate a better trade-off between fit and complexity\" } ],",
+    "finalAnswer": "The best model is the one with the lowest AIC or BIC value\" },",
+    "intuition": "Model selection metrics help us balance the competing goals of fitting the data well and avoiding overfitting.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:51:21.690Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_selection_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection Metrics",
+    "contentHtml": "<p>When evaluating regression models, we often need to choose between multiple candidates. This is where model selection metrics come in handy.</p>",
+    "formula": "{",
+    "latex": "\\[R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\\]\",",
+    "name": "Coefficient of Determination",
+    "variants": "[ {\"latex\": \"\\[adjusted R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2(1 - \\frac{p}{n})}\\]\", \"description\": \"Adjusted R² for overfitting correction\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a linear regression model predicting house prices based on number of bedrooms. We want to compare the performance of two models: one with only bedroom count and another with additional features like square footage.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate R² for each model\", \"mathHtml\": \"\\[R^2_1 = ...; R^2_2 = ...\\]\", \"explanation\": \"This gives us a sense of how well each model explains the variation in house prices.\"} ],",
+    "finalAnswer": "Compare R² values to choose the better-performing model\" },",
+    "intuition": "Model selection metrics help you decide which regression model best fits your data.",
+    "realWorldApplications": [
+      "Selecting the most accurate linear regression model for a predictive analytics project"
+    ],
+    "tags": [
+      "regression",
+      "model selection",
+      "evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:51:44.824Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_selection_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection Metrics",
+    "contentHtml": "<p>When evaluating regression models, it's crucial to choose the right metric. This card covers four essential metrics: R², adjusted R², AIC, and BIC.</p>",
+    "formula": "{",
+    "latex": "\\[BIC = k ln(n) - 2ln(L)\\]\",",
+    "name": "Coefficient of Determination",
+    "variants": "[ {",
+    "description": "Understand the limitations of R²",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a linear regression model with R² of 0.8. Does this mean our model explains 80% of the variance?</p>",
+    "steps": "[ {",
+    "stepNumber": 1,
+    "mathHtml": "",
+    "explanation": "\" } ],",
+    "finalAnswer": "No, it's not that simple.\" },",
+    "intuition": "R² is a useful metric for model evaluation, but it has its limitations. Adjusted R² and AIC/BIC provide more nuanced insights.",
+    "realWorldApplications": [
+      "Model selection in machine learning"
+    ],
+    "tags": [
+      "regression",
+      "model_selection"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:52:09.891Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_selection_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection Metrics",
+    "contentHtml": "<p>When evaluating regression models, it's crucial to choose the right metric to compare their performance. This card introduces four key metrics: R², adjusted R², AIC, and BIC.</p>",
+    "formula": "{",
+    "latex": "\\[adj. R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\\]\",",
+    "name": "Coefficient of Determination",
+    "variants": "[ {",
+    "description": "Compare the R² values to determine which model performs better",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're comparing two regression models: Linear Regression (LR) and Decision Tree (DT). Both models predict house prices based on features like square footage and number of bedrooms. Which model performs better?</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "mathHtml": "\\[R^2_{LR} > R^2_{DT}\\] or \\[R^2_{LR} < R^2_{DT}\\]\",",
+    "explanation": "Choose the model with higher R²\" } ],",
+    "finalAnswer": "DT performs better (R² = 0.85) compared to LR (R² = 0.75)\" },",
+    "intuition": "Model selection metrics help you choose the best-fitting regression model by comparing their performance.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:52:35.785Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_model_selection_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "The Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC)",
+    "contentHtml": "<p>The Akaike information criterion (AIC) and Bayesian information criterion (BIC) are two widely used model selection methods in regression analysis.</p>",
+    "formula": "{",
+    "latex": "\\\\[ AIC = -2 \\* log(L) + 2k \\\\]\",",
+    "name": "Akaike Information Criterion",
+    "variants": "[ {\"latex\": \"\\\\[ BIC = -2 \\* log(L) + k \\* log(n) \\\\]\", \"description\": \"Bayesian Information Criterion\"} ] },",
+    "theorem": "{",
+    "statement": "\\[ AIC < BIC \\]",
+    "proofSketch": "Not applicable for this theorem\" },",
+    "intuition": "These criteria help us choose the best model by balancing goodness of fit and complexity.",
+    "realWorldApplications": [
+      "Model selection in machine learning, e.g., choosing between decision trees and random forests"
+    ],
+    "tags": [
+      "model selection",
+      "regression analysis"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:52:50.765Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_model_selection_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "The Akaike Information Criterion (AIC)",
+    "contentHtml": "<p>The Akaike Information Criterion (AIC) is a widely used measure of model quality in regression analysis.</p><p>Given a set of candidate models, AIC selects the one that best balances goodness-of-fit and complexity.</p>",
+    "formula": "{",
+    "latex": "\\\\[ AIC = -2 \\* ln(L) + 2k \\\\]\",",
+    "name": "Akaike Information Criterion\" },",
+    "theorem": "{",
+    "statement": "\\[ AIC < AIC_0 \\] if and only if the model is more complex than a baseline model",
+    "proofSketch": "The proof involves showing that the difference in AIC values is equivalent to the Kullback-Leibler divergence between the two models.\" },",
+    "intuition": "AIC helps us choose between models by trading off goodness-of-fit (measured by log-likelihood) against complexity (measured by the number of parameters k).",
+    "realWorldApplications": [
+      "Selecting the best model for a dataset in machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:53:05.570Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of regression models, how do we choose the best one?</p>",
+    "hints": [
+      "Start by considering R² and adjusted R²",
+      "Think about the trade-off between model complexity and fit",
+      "Don't forget to consider cross-validation"
+    ],
+    "solutionHtml": "<p>To select the best regression model, we can use metrics such as R², adjusted R², AIC, BIC, or perform cross-validation. Let's say we have three models: linear, quadratic, and cubic.</p>\\n<p>Model 1 (linear): \\(\\hat{y} = 2x + 3\\)</p>\\n<p>Model 2 (quadratic): \\(\\hat{y} = x^2 + 2x + 1\\)</p>\\n<p>Model 3 (cubic): \\(\\hat{y} = x^3 + 3x^2 + 2x + 1\\)</p>\\n<p>We can calculate the R² for each model:</p>\\n<p>R² (linear) = 0.8</p>\\n<p>R² (quadratic) = 0.85</p>\\n<p>R² (cubic) = 0.9</p>\\n<p>However, we also need to consider the adjusted R² to account for the number of parameters:</p>\\n<p>Adjusted R² (linear) = 0.75</p>\\n<p>Adjusted R² (quadratic) = 0.8</p>\\n<p>Adjusted R² (cubic) = 0.85</p>\\n<p>We can also use AIC and BIC to compare the models:</p>\\n<p>AIC (linear) = 10</p>\\n<p>AIC (quadratic) = 9.5</p>\\n<p>AIC (cubic) = 9</p>\\n<p>BIC (linear) = 11</p>\\n<p>BIC (quadratic) = 10.5</p>\\n<p>BIC (cubic) = 10</p>\\n<p>Finally, let's perform cross-validation:</p>\\n<p>We split our data into training and testing sets.</p>\\n<p>We train each model on the training set and evaluate its performance on the testing set.</p>\\n<p>The best-performing model is the cubic one.</p>\",",
+    "answerShort": "The best-performing model is the cubic one.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:53:34.921Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": {
+      "statementHtml": "Selecting a regression model: Which one is best?",
+      "hints": [
+        "Start by comparing R² values",
+        "Consider adjusted R² for overfitting concerns",
+        "Use AIC and BIC to compare models"
+      ],
+      "solutionHtml": "<p>Let's say we have three candidate models:</p><ul><li>M1: y = 2x + 3</li><li>M2: y = x^2 + 4</li><li>M3: y = 3x - 2</li></ul><p>We can calculate R² for each model:</p><ul><li>R²(M1) = 0.8</li><li>R²(M2) = 0.6</li><li>R²(M3) = 0.9</li></ul><p>Adjusted R² helps with overfitting concerns:</p><ul><li>adjR²(M1) = 0.75</li><li>adjR²(M2) = 0.5</li><li>adjR²(M3) = 0.85</li></ul><p>AIC and BIC can also help:</p><ul><li>AIC(M1) = 10.2</li><li>AIC(M2) = 11.5</li><li>AIC(M3) = 9.8</li><li>BIC(M1) = 12.1</li><li>BIC(M2) = 13.4</li><li>BIC(M3) = 11.6</li></ul><p>Now, let's use cross-validation to compare models:</p><ul><li>M1: 0.85</li><li>M2: 0.7</li><li>M3: 0.9</li></ul><p>The best model is M3.</p>",
+      "answerShort": "M3"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:53:57.510Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": "{",
+    "statementHtml": "<p>Choose the best model from a set of linear regression models.</p>",
+    "hints": [
+      "Start by calculating R² and adjusted R² for each model.",
+      "Consider the AIC and BIC values to compare models with different numbers of features.",
+      "Use cross-validation to evaluate the performance of each model on unseen data."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll calculate the metrics for each model and compare them.</p>\\n\\ \\[R² = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\\n\\ \\[adjusted R² = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2/(n-1)}{\\sum_{i=1}^n (y_i - \\bar{y})^2/(n-1)}\\]\\n\\ \\[AIC = -2 \\log(L) + 2k,\\ BIC = -2 \\log(L) + k \\log(n)\\]\",",
+    "answerShort": "The model with the lowest AIC and BIC values is likely to be the best.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:54:15.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model with multiple predictors, how do we choose the best subset of features?</p>",
+      "hints": [
+        "Start by considering the R² value for each possible combination of features.",
+        "Think about how to adjust for the number of parameters being estimated.",
+        "Use cross-validation to evaluate the performance of each model."
+      ],
+      "solutionHtml": "<p>To select the best subset of features, we can use various metrics such as R², adjusted R², AIC, and BIC. These measures provide different insights into the quality of the model.</p>\n<p>R² measures how well the model explains the variance in the response variable, but it does not account for the number of parameters being estimated. Adjusted R² is a more conservative measure that takes into account the number of parameters.</p>\n<p>AIC and BIC are information criteria that penalize models with many parameters. They provide a way to compare models with different numbers of parameters.</p>\n<p>Cross-validation is a technique for evaluating the performance of each model on unseen data. This helps us avoid overfitting by ensuring that our model generalizes well to new data.</p>",
+      "answerShort": "The best subset of features is chosen based on the combination that maximizes R² or minimizes AIC/BIC."
+    },
+    "commonMistakes": [
+      "Failing to adjust for the number of parameters being estimated.",
+      "Using only one metric to evaluate model performance."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:54:33.796Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and ensure a reliable model.</p>",
+    "formula": {
+      "latex": "\\[R^2 = 1 - \\frac{SS_{res}}{SS_{tot}}\\]",
+      "name": "Coefficient of Determination"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two models with different R² values, how do you decide which one to use?</p>",
+      "hints": [
+        "Consider the adjusted R²",
+        "Think about overfitting"
+      ],
+      "solutionHtml": "<p>To make a decision, we'll explore four metrics: R², adjusted R², AIC, and BIC.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose you have two models with the following R² values:</p><ul><li>Model A: R² = 0.8</li><li>Model B: R² = 0.95</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the adjusted R² for each model",
+          "mathHtml": "\\[\\text{adj. }R^2_\\text{A} = \\frac{R^2_\\text{A} - (p / n)}{1 - (p / n)}\\]",
+          "explanation": "The adjusted R² adjusts for the number of parameters."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the AIC and BIC for each model",
+          "mathHtml": "\\[\\text{AIC}_\\text{A} = -2 \\log(L) + 2k_\\text{A}, \\\\ \\text{BIC}_\\text{A} = -2 \\log(L) + k_\\text{A} \\log(n)\\]",
+          "explanation": "The AIC and BIC penalize models for complexity."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use cross-validation to evaluate the models",
+          "mathHtml": "",
+          "explanation": "Cross-validation provides a more robust estimate of model performance."
+        }
+      ],
+      "finalAnswer": "Model B"
+    },
+    "intuition": "When choosing between two models, consider both R² and adjusted R². If one model has a significantly higher R² but many parameters, the adjusted R² may be lower due to overfitting.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:55:01.950Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and choose a suitable model.</p>",
+    "formula": "{",
+    "latex": "\\(adj.\\ R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\\)\",",
+    "name": "R²",
+    "variants": "[ {",
+    "description": "Compare R² values and choose the best model",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X and target y, select the best model between linear regression and polynomial regression of degree 3.</p>",
+    "hints": [
+      "Check the residuals for normality",
+      "Compare R² values"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with features X1 and X2, and target y. We want to select the best model between linear regression and polynomial regression of degree 3.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "mathHtml": "",
+    "explanation": "The model with the higher R² value is likely to be a better fit\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "Model selection is crucial in regression analysis as it helps avoid overfitting and choose a suitable model.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Not considering the complexity of models",
+      "Not checking for multicollinearity"
+    ],
+    "realWorldApplications": [
+      "Selecting the best model in machine learning pipelines",
+      "Choosing the right features for a regression problem"
+    ],
+    "tags": [
+      "model selection",
+      "regression analysis"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:55:37.710Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and ensure generalizability.</p>",
+    "formula": {
+      "latex": "\\[R^2 = 1 - \\frac{SS_{res}}{SS_{tot}}\\]",
+      "name": "Coefficient of Determination"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset with features X and target variable y, how do we choose the best model?</p>",
+      "hints": [
+        "Consider R²",
+        "Think about overfitting"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset with features X1, X2, and target variable y. We want to choose the best model between linear regression models using only X1 or both X1 and X2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate R² for each model",
+          "mathHtml": "\\[R^2_\\text{X1} = \\frac{SS_{reg}}{SS_{tot}}\\]",
+          "explanation": "This gives us an idea of how well each model explains the data"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate adjusted R² for each model",
+          "mathHtml": "\\[\\text{adj}R^2_\\text{X1} = 1 - \\frac{SS_{res}}{SS_{tot}-k}\\]",
+          "explanation": "This adjusts for the number of features"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate AIC and BIC for each model",
+          "mathHtml": "\\[AIC_\\text{X1} = \\text{const} + k \\ln(SS_{res})\\]",
+          "explanation": "These metrics penalize models with more parameters"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use cross-validation to evaluate each model",
+          "mathHtml": "",
+          "explanation": "This gives us a more robust estimate of the model's performance"
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Model selection is about finding the sweet spot between complexity and generalizability.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:56:03.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: R², Adjusted R², AIC, BIC, and Cross-Validation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to select the best model using different metrics.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset with features X1, X2, and target variable y, which model is better: linear or polynomial?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Fit both models using OLS\", \"mathHtml\": \"\\[ \\text{Linear Model}: y = \\beta_0 + \\beta_1 X_1 + \\epsilon\\]\\n\\[ \\text{Polynomial Model}: y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_1^2 + \\epsilon\\]\", \"explanation\": \"We'll use ordinary least squares (OLS) to fit both models.\"}, {\"stepNumber\": 2, \"description\": \"Calculate R² for each model\", \"mathHtml\": \"\\[ R^2_\\text{Linear} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\\n\\[ R^2_\\text{Polynomial} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\", \"explanation\": \"R² measures the proportion of variance explained by each model.\"}, {\"stepNumber\": 3, \"description\": \"Calculate adjusted R² for each model\", \"mathHtml\": \"\\[ \\text{adj. } R^2_\\text{Linear} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\cdot\\frac{n-1}{n-k-1}\\]\\n\\[ \\text{adj. } R^2_\\text{Polynomial} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\cdot\\frac{n-1}{n-k-1}\\]\", \"explanation\": \"Adjusted R² penalizes for the number of parameters in each model.\"}, {\"stepNumber\": 4, \"description\": \"Calculate AIC and BIC for each model\", \"mathHtml\": \"\\[ \\text{AIC}_\\text{Linear} = -2\\log(L) + 2k\\]\\n\\[ \\text{BIC}_\\text{Linear} = -2\\log(L) + k\\log(n)\\]\\n\\[ \\text{AIC}_\\text{Polynomial} = -2\\log(L) + 2(k+1)\\]\\n\\[ \\text{BIC}_\\text{Polynomial} = -2\\log(L) + (k+1)\\log(n)\\]\", \"explanation\": \"AIC and BIC are information criteria that balance model fit with complexity.\"}, {\"stepNumber\": 5, \"description\": \"Perform cross-validation for each model\", \"mathHtml\": \"\", \"explanation\": \"We'll use k-fold cross-validation to evaluate the models' generalization performance.\"} ],",
+    "finalAnswer": "Based on the metrics, the polynomial model is preferred.\" },",
+    "intuition": "Model selection is crucial in regression analysis. By considering multiple metrics, we can choose the best model that balances fit and complexity.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:56:45.702Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

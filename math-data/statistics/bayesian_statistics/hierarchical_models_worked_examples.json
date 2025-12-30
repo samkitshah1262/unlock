@@ -1,0 +1,149 @@
+[
+  {
+    "id": "stat_wex_hierarchical_models_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "contentHtml": "<p>In hierarchical models, we use multi-level priors to model random effects and partial pooling.</p>",
+    "formula": "{",
+    "latex": "\\\\[y_i | \\mu, \\sigma^2 \\\\sim N(\\\\mu, \\\\sigma^2)\\\\]\",",
+    "name": "Likelihood\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a dataset of exam scores for different students and teachers. We want to model the variation in scores due to both student and teacher effects.</p>",
+    "hints": [
+      "Consider using a hierarchical model with random intercepts"
+    ],
+    "solutionHtml": "<p>We can use a hierarchical model with multi-level priors to capture the variation in scores.</p>",
+    "answerShort": "Use a hierarchical model with random intercepts\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores for different students and teachers. We want to model the variation in scores due to both student and teacher effects.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the likelihood\", \"mathHtml\": \"\\\\[y_i | \\mu, \\sigma^2 \\\\sim N(\\\\mu, \\\\sigma^2)\\\\]\", \"explanation\": \"We assume each score is normally distributed with mean \\\\mu and variance \\\\sigma^2.\"}, {\"stepNumber\": 2, \"description\": \"Specify the prior for the student effects\", \"mathHtml\": \"\\\\[\\\\mu_i | \\gamma, \\tau^2 \\\\sim N(\\\\gamma, \\\\tau^2)\\\\]\", \"explanation\": \"We assume each student has a random intercept \\\\mu_i with mean \\\\gamma and variance \\\\tau^2.\"}, {\"stepNumber\": 3, \"description\": \"Specify the prior for the teacher effects\", \"mathHtml\": \"\\\\[\\\\beta_j | \\alpha, \\eta^2 \\\\sim N(\\\\alpha, \\\\eta^2)\\\\]\", \"explanation\": \"We assume each teacher has a random intercept \\\\beta_j with mean \\\\alpha and variance \\\\eta^2.\"}, {\"stepNumber\": 4, \"description\": \"Specify the prior for the observation-level variance\", \"mathHtml\": \"\\\\[\\\\sigma^2 | \\nu, \\lambda^2 \\\\sim Inv-Gamma(\\\\nu, \\\\lambda)\\\\]\", \"explanation\": \"We assume each score has an observation-level variance \\\\sigma^2 with inverse-gamma distribution.\"}, {\"stepNumber\": 5, \"description\": \"Infer the model parameters\", \"mathHtml\": \"\\\\[\\\\hat{\\\\mu}, \\\\hat{\\\\gamma}, \\\\hat{\\\\alpha} \\\\sim ...\\\\]\", \"explanation\": \"We use Bayesian inference to estimate the model parameters.\"} ],",
+    "finalAnswer": "Use a hierarchical model with random intercepts and observation-level variance\" },",
+    "intuition": "Hierarchical models allow us to capture complex relationships between variables by modeling random effects.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:49:28.139Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_hierarchical_models_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors and Partial Pooling",
+    "contentHtml": "<p>In hierarchical models, we often encounter multi-level priors and partial pooling.</p>",
+    "formula": "{",
+    "latex": "\\[ y_{i,j} | \\mu_{j}, \\sigma^2 = N(\\mu_{j}, \\sigma^2) \\]",
+    "name": "Hierarchical Model Formula",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset of student test scores, where each student is in a different school. We want to model the distribution of test scores within each school.</p>",
+    "hints": [
+      "Hint: Think about how to account for variation between schools."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use a hierarchical model with a multi-level prior on the mean test score for each school. This allows us to share information across schools and account for partial pooling.</p>",
+    "answerShort": "Hierarchical Model\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have data from three schools: School A, School B, and School C. The test scores are:</p><ul><li>School A: 80, 85, 70</li><li>School B: 90, 95, 85</li><li>School C: 75, 80, 70</li></ul>",
+    "steps": "[ {",
+    "stepNumber": "4\",",
+    "description": "Use Markov chain Monte Carlo (MCMC) methods to estimate the posterior distribution of the model parameters.",
+    "mathHtml": "",
+    "explanation": "\" } ],",
+    "finalAnswer": "Hierarchical Model with Multi-level Prior\" },",
+    "intuition": "Hierarchical models allow us to share information across groups and account for partial pooling, which is particularly useful when dealing with complex data structures.",
+    "visualDescription": "A diagram showing the hierarchical structure of the model, with schools nested within a larger group.",
+    "commonMistakes": [
+      "Forgetting to specify the prior distribution for the variance between schools."
+    ],
+    "realWorldApplications": [
+      "Predicting student test scores based on school-level characteristics."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Hierarchical Models"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:50:07.590Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_hierarchical_models_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "contentHtml": "<p>Hierarchical models are a powerful tool in Bayesian statistics, allowing us to model complex relationships between variables.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to model the average exam scores for students in different schools. We have data on individual student scores, but also information about each school (e.g., size, type). How can we use hierarchical models to incorporate this additional structure?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define a prior distribution for the school-level parameters\", \"mathHtml\": \"\\[p(\\theta | \\alpha) = N(\\theta | \\mu_0, \\sigma_0^2)\\]\", \"explanation\": \"We're using a normal distribution with mean μ0 and variance σ0^2 as our prior for each school's parameter.\"}, {\"stepNumber\": 2, \"description\": \"Specify the likelihood function for individual student scores\", \"mathHtml\": \"\\[y_i | \\theta_j = N(y_i | \\mu_j, \\sigma_j^2)\\]\", \"explanation\": \"We're assuming a normal distribution with mean μj and variance σj^2 for each student's score.\"}, {\"stepNumber\": 3, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\[p(\\theta | y) \\propto p(y | \\theta) \\cdot p(\\theta)\\]\", \"explanation\": \"We're updating our prior distribution with the likelihood function and getting a posterior distribution.\"}, {\"stepNumber\": 4, \"description\": \"Use Markov Chain Monte Carlo (MCMC) to sample from the posterior\", \"mathHtml\": \"\", \"explanation\": \"We'll use MCMC to generate samples from the posterior distribution, allowing us to make inferences about the school-level parameters.\"}, ],",
+    "finalAnswer": "By using hierarchical models and incorporating prior information about each school, we can make more accurate predictions and better understand the relationships between variables.\" },",
+    "intuition": "Hierarchical models allow us to borrow strength from related data points, leading to more robust estimates and improved model performance.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:50:33.320Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_hierarchical_models_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "problem": "{",
+    "statementHtml": "Consider a dataset of student test scores from different schools. We want to model the variation in scores between students and schools.",
+    "hints": [
+      "Think about how to account for both individual and group effects"
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use hierarchical models with multi-level priors.</p>",
+    "answerShort": "Bayesian inference\" },",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of exam scores from 5 schools. Each school has 10 students.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior distribution for each student's score\", \"mathHtml\": \"\\[p(\\theta_i) = \\mathcal{N}(0, 1)\\]\", \"explanation\": \"We assume each student has a unique ability, represented by their mean score.\"}, {\"stepNumber\": 2, \"description\": \"Specify the prior distribution for each school's effect\", \"mathHtml\": \"\\[p(\\eta_j) = \\mathcal{N}(0, \\sigma^2)\\]\", \"explanation\": \"We assume each school has a unique effect on student scores.\"}, {\"stepNumber\": 3, \"description\": \"Specify the likelihood function for each student's score\", \"mathHtml\": \"\\[p(y_i | \\theta_i, \\eta_j) = \\mathcal{N}(\\mu_i, \\sigma^2)\\]\", \"explanation\": \"We assume each student's score follows a normal distribution with mean equal to their ability and the school effect.\"}, {\"stepNumber\": 4, \"description\": \"Specify the prior distribution for the variance component\", \"mathHtml\": \"\\[p(\\sigma^2) = \\text{Inverse-Gamma}(a, b)\\]\", \"explanation\": \"We assume the variance component follows an inverse-gamma distribution.\"}, {\"stepNumber\": 5, \"description\": \"Perform Bayesian inference using MCMC or variational inference\", \"mathHtml\": \"\", \"explanation\": \"We can use Markov chain Monte Carlo (MCMC) or variational inference to estimate the posterior distributions of the student and school effects.\"} ],",
+    "finalAnswer": "The hierarchical model with multi-level priors allows us to account for both individual and group effects in the data.\" },",
+    "intuition": "Hierarchical models provide a flexible framework for modeling complex relationships between variables. By specifying prior distributions at multiple levels, we can capture variation at different scales.",
+    "visualDescription": "A diagram showing the hierarchical model structure with multi-level priors could help illustrate the concept.",
+    "commonMistakes": [
+      "Forgetting to account for both individual and group effects"
+    ],
+    "realWorldApplications": [
+      "Analyzing student performance data in educational settings",
+      "Modeling customer behavior in marketing"
+    ],
+    "tags": [
+      "Bayesian inference",
+      "Hierarchical models",
+      "Multi-level priors"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:51:06.547Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

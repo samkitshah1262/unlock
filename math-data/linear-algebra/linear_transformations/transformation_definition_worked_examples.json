@@ -1,0 +1,155 @@
+[
+  {
+    "id": "la_wex_transformation_definition_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "transformation_definition",
+    "title": "Linear Transformations: Definition and Linearity Conditions",
+    "contentHtml": "<p>A linear transformation is a fundamental concept in linear algebra that has far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\\\[ T:\\\\mathbf{V} \\\\to \\\\mathbf{W}, \\quad \\\\text{s.t. } \\\\alpha T(\\\\mathbf{v}) + \\\\beta T(\\\\mathbf{w}) = T(\\\\alpha \\\\mathbf{v} + \\\\beta \\\\mathbf{w}) \\\\] \",",
+    "name": "Linearity Condition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a linear transformation T: ℝ² → ℝ², determine whether the following matrix represents a linear transformation:</p><p>\\[ A = \\begin{bmatrix} 2 & 1 \\\\ -3 & 4 \\end{bmatrix} \\]</p>",
+    "hints": [
+      "Check if the matrix is square",
+      "Verify the linearity condition"
+    ],
+    "solutionHtml": "<p>To verify, we can check if T satisfies the linearity condition:</p><p>\\[ T(2x + y) = 2T(x) + T(y) \\]</p>",
+    "answerShort": "Yes\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the image of the vector (1, 0) under a linear transformation T: ℝ² → ℝ² represented by the matrix:</p><p>\\[ A = \\begin{bmatrix} 3 & 2 \\\\ -1 & 1 \\end{bmatrix} \\]</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Compute the dot product",
+        "mathHtml": "\\[ T(1,0) = A \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix} \\]",
+        "explanation": "We're applying the transformation to the vector (1, 0)"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Expand and simplify",
+        "mathHtml": "\\[ T(1,0) = \\begin{bmatrix} 3 & 2 \\\\ -1 & 1 \\end{bmatrix} \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix} \\]",
+        "explanation": "We're using the definition of matrix multiplication"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Check if the result is a linear combination",
+        "mathHtml": "\\[ T(1,0) = 3\\mathbf{i} - \\mathbf{j} \\]",
+        "explanation": "The result is indeed a linear combination of basis vectors"
+      }
+    ],
+    "finalAnswer": "(3, -1)\" },",
+    "intuition": "Linear transformations preserve the operations of vector addition and scalar multiplication.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:40:40.447Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_transformation_definition_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "transformation_definition",
+    "title": "Linear Transformations: Definition and Linearity Conditions",
+    "contentHtml": "<p>A linear transformation is a fundamental concept in linear algebra that has far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[T:\\mathbf{V} \\to \\mathbf{W}\\]",
+      "name": "Linear Transformation"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a linear transformation T: \\mathbf{R}^2 \\to \\mathbf{R}^3, determine if it is linear.</p>",
+      "hints": [
+        "Hint: Check the linearity conditions"
+      ],
+      "solutionHtml": "<p>To show that T is linear, we need to demonstrate that it satisfies two properties:</p><ul><li>Linearity in the first variable: \\(T(c\\mathbf{x} + d\\mathbf{y}) = cT(\\mathbf{x}) + dT(\\mathbf{y})\\)</li><li>Linearity in the second variable: \\(T(\\mathbf{x} + c\\mathbf{y}) = T(\\mathbf{x}) + cT(\\mathbf{y})\\)</li></ul>",
+      "answerShort": "Yes, T is linear"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the matrix A = \\[\\begin{bmatrix}1 &amp; 2 \\\\ 3 &amp; 4\\end{bmatrix}\\]. Determine if the transformation T(\\mathbf{x}) = A\\mathbf{x} is linear.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check linearity in the first variable",
+          "mathHtml": "\\[T(c\\mathbf{x} + d\\mathbf{y}) = Ac\\mathbf{x} + Ad\\mathbf{y}\\]",
+          "explanation": "We can see that T is linear in the first variable because it only scales and adds vectors."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check linearity in the second variable",
+          "mathHtml": "\\[T(\\mathbf{x} + c\\mathbf{y}) = A(\\mathbf{x} + c\\mathbf{y})\\]",
+          "explanation": "Similarly, T is linear in the second variable because it only scales and adds vectors."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Combine results",
+          "mathHtml": "",
+          "explanation": "Since T satisfies both linearity conditions, we can conclude that it is a linear transformation."
+        }
+      ],
+      "finalAnswer": "Yes, T is linear"
+    },
+    "intuition": "Linear transformations are essential in machine learning as they allow us to map inputs to outputs while preserving the original structure.",
+    "visualDescription": "A diagram showing the mapping of vectors under a linear transformation would be helpful for visualizing the concept.",
+    "commonMistakes": [
+      "Forgetting one of the linearity conditions"
+    ],
+    "realWorldApplications": [
+      "Linear transformations are used in neural networks to map inputs to outputs."
+    ],
+    "tags": [
+      "linear algebra",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:41:18.505Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_transformation_definition_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "transformation_definition",
+    "title": "Linear Transformations: What is a Linear Transformation?",
+    "contentHtml": "<p>In linear algebra, a linear transformation is a way to transform one vector space into another while preserving certain properties.</p>",
+    "formula": "{",
+    "latex": "\\\\[ T:\\\\mathbf{V} \\\\to \\\\mathbf{W} \\]\",",
+    "name": "Linear Transformation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a linear transformation T: \\mathbf{R}^2 \\to \\mathbf{R}^3, determine whether it is linear.</p>",
+    "hints": [
+      "Check if the transformation preserves vector addition and scalar multiplication"
+    ],
+    "solutionHtml": "<p>To check linearity, we need to show that T(\\mathbf{v}_1 + \\mathbf{v}_2) = T(\\mathbf{v}_1) + T(\\mathbf{v}_2) for any two vectors \\mathbf{v}_1 and \\mathbf{v}_2.</p>",
+    "answerShort": "Yes, it is linear\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider the transformation T: \\mathbf{R}^2 \\to \\mathbf{R}^3 defined by</p><ul><li>T(\\mathbf{x}) = (x_1, x_2, 0)</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Check if T preserves vector addition\", \"mathHtml\": \"\\\\[ T(\\\\mathbf{v}_1 + \\\\mathbf{v}_2) = (x_{1,1} + x_{2,1}, x_{1,2} + x_{2,2}, 0) \\]\", \"explanation\": \"We can see that the transformation preserves vector addition since it only adds corresponding components.\"}, {\"stepNumber\": 2, \"description\": \"Check if T preserves scalar multiplication\", \"mathHtml\": \"\\\\[ T(c\\\\mathbf{v}) = (cx_{1,1}, cx_{1,2}, 0) \\]\", \"explanation\": \"The transformation also preserves scalar multiplication since it only scales the components.\"}, {\"stepNumber\": 3, \"description\": \"Combine results\", \"mathHtml\": \"\", \"explanation\": \"Since T preserves both vector addition and scalar multiplication, we conclude that T is a linear transformation.\"} ],",
+    "finalAnswer": "T is a linear transformation\" },",
+    "intuition": "A linear transformation can be thought of as a way to stretch or compress vectors while preserving their direction.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:41:50.260Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

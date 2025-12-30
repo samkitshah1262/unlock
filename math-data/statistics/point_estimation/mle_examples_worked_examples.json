@@ -1,0 +1,197 @@
+[
+  {
+    "id": "stat_wex_mle_examples_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply maximum likelihood estimation (MLE) to common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\mathbf{a} \\cdot \\\\mathbf{b} = \\\\sum_{i=1}^n a_i b_i \\\\]\",",
+    "name": "\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. observations from an exponential distribution with unknown rate parameter λ, find the MLE for λ.</p>",
+    "hints": [
+      "Hint: Start by finding the likelihood function"
+    ],
+    "solutionHtml": "<p>We'll break down the solution into four steps:</p><ul><li>Step 1: Define the likelihood function</li><li>Step 2: Find the derivative of the log-likelihood function</li><li>Step 3: Set the derivative equal to zero and solve for λ</li><li>Step 4: Verify the solution</li></ul>",
+    "answerShort": "The MLE is λ = 1/\\\\bar{x}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have the following observations from an exponential distribution:</p><ul><li>x_1 = 2.5</li><li>x_2 = 3.8</li><li>x_3 = 4.2</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Verify the solution",
+    "mathHtml": "\\[ f(x | \\lambda) = \\frac{\\lambda e^{-\\lambda x}}{x} \\geq 0 \\text{ for } x \\geq 0 \\]",
+    "explanation": "We verify that the MLE is indeed a valid estimate by checking that it satisfies the properties of the exponential distribution.\" } ],",
+    "finalAnswer": "The MLE is λ = 1/\\\\bar{x}\" },",
+    "intuition": "<p>The key insight here is that the MLE is the value of λ that maximizes the likelihood function, which represents our uncertainty about the true value of λ.</p>",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:39:11.141Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply Maximum Likelihood Estimation (MLE) to common distributions.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\mathbf{a} \\cdot \\\\mathbf{b} = \\\\sum_{i=1}^n a_i b_i \\\\]\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a random sample from an exponential distribution with unknown rate parameter λ, find the MLE for λ.</p>",
+    "hints": [
+      "Check if the data is exponentially distributed",
+      "Use the likelihood function"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let x_1, ..., x_n be a random sample from an exponential distribution with unknown rate parameter λ.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the likelihood function",
+        "mathHtml": "\\[ L(\\lambda | x_1, ..., x_n) = \\prod_{i=1}^n (\\frac{1}{\\lambda} e^{-x_i/\\lambda}) \\]",
+        "explanation": "The likelihood function represents the probability of observing the data given the parameter λ."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Take the logarithm of the likelihood function",
+        "mathHtml": "\\[ \\ln L(\\lambda | x_1, ..., x_n) = -n \\ln \\lambda - \\sum_{i=1}^n x_i/\\lambda \\]",
+        "explanation": "Taking the logarithm helps us simplify the calculation."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Find the derivative of the log-likelihood function",
+        "mathHtml": "\\[ \\frac{d}{d\\lambda} \\ln L(\\lambda | x_1, ..., x_n) = n/\\lambda - \\sum_{i=1}^n x_i/\\lambda^2 \\]",
+        "explanation": "The derivative helps us find the MLE."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Set the derivative to zero and solve for λ",
+        "mathHtml": "\\[ n/\\lambda - \\sum_{i=1}^n x_i/\\lambda^2 = 0 \\]",
+        "explanation": "Setting the derivative to zero gives us an equation in λ."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Solve for λ",
+        "mathHtml": "\\[ \\hat{\\lambda} = \\frac{n}{\\sum_{i=1}^n x_i} \\]",
+        "explanation": "Solving the equation gives us the MLE for λ."
+      }
+    ],
+    "finalAnswer": "The MLE for λ is \\\\( \\\\hat{\\\\lambda} = \\\\frac{n}{\\\\sum_{i=1}^n x_i} \\\\)\" },",
+    "intuition": "MLE finds the parameter value that makes the observed data most likely.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:39:45.681Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>Estimating parameters of common distributions is a fundamental task in statistical inference.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the MLE for a normal distribution with mean μ and variance σ^2, given i.i.d. samples x_1, ..., x_n.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\(L(\\mu, \\sigma^2 | x_1, ..., x_n) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x_i-\\mu)^2/(2\\sigma^2)}\\)\", \"explanation\": \"We're defining the likelihood function as the product of individual likelihoods for each data point.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\(l(\\mu, \\sigma^2) = \\log L(\\mu, \\sigma^2 | x_1, ..., x_n)\\)\", \"explanation\": \"Taking the logarithm helps with numerical stability and makes it easier to work with.\"}, {\"stepNumber\": 3, \"description\": \"Find the partial derivatives\", \"mathHtml\": \"\\(l_\\mu = -\\frac{n}{2} + \\sum_{i=1}^n (x_i-\\mu)^2/(2\\sigma^2), l_\\sigma^2 = -n/2 + \\sum_{i=1}^n (x_i-\\mu)^2/\\sigma^4\\)\", \"explanation\": \"We're finding the partial derivatives of the log-likelihood function with respect to μ and σ^2.\"}, {\"stepNumber\": 4, \"description\": \"Set the partial derivatives equal to zero\", \"mathHtml\": \"\\(l_\\mu = 0 \\Rightarrow \\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i, l_\\sigma^2 = 0 \\Rightarrow \\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i-\\hat{\\mu})^2\\)\", \"explanation\": \"We're setting the partial derivatives equal to zero and solving for μ and σ^2.\"}, {\"stepNumber\": 5, \"description\": \"Verify that the estimates are maximum likelihood\", \"mathHtml\": \"\\(L(\\hat{\\mu}, \\hat{\\sigma}^2 | x_1, ..., x_n) = L(\\mu, \\sigma^2 | x_1, ..., x_n)\\)\", \"explanation\": \"We're verifying that our estimates indeed maximize the likelihood function.\"}, ],",
+    "finalAnswer": "The MLEs are \\(\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\) and \\(\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i-\\hat{\\mu})^2\\)\" },",
+    "intuition": "The MLE is the value that makes the observed data most likely. In this case, it's the mean and variance that maximize the likelihood function.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:40:21.446Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this worked example, we will derive the Maximum Likelihood Estimators (MLEs) for common distributions: Normal, Exponential, Poisson, and Bernoulli.</p>",
+    "workedExample": {
+      "problemHtml": "Find the MLE of a Normal distribution with mean μ and variance σ^2 given i.i.d. samples x_1, ..., x_n.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the likelihood function",
+          "mathHtml": "\\[ f(x|μ,σ^2) = \\frac{1}{\\sqrt{2πσ^2}} e^{\\frac{-1}{2σ^2}(x-μ)^2} \\]",
+          "explanation": "We start by defining the probability density function (PDF) of the Normal distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Take the logarithm",
+          "mathHtml": "\\[ l(μ,σ^2) = -\\frac{n}{2}\\ln(2πσ^2) - \\frac{1}{2σ^2} \\sum_{i=1}^{n}(x_i-μ)^2 \\]",
+          "explanation": "Taking the logarithm helps us simplify the calculation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the partial derivatives",
+          "mathHtml": "\\[ \\frac{∂l}{∂μ} = \\frac{1}{σ^2}\\sum_{i=1}^{n}(x_i-μ) \\\\ \\frac{∂l}{∂σ^2} = -\\frac{n}{2σ^4} + \\frac{1}{2σ^6} \\sum_{i=1}^{n}(x_i-μ)^2 \\]",
+          "explanation": "We find the partial derivatives of the log-likelihood function with respect to μ and σ^2."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Set the partial derivatives equal to zero",
+          "mathHtml": "\\[ \\frac{1}{σ^2}\\sum_{i=1}^{n}(x_i-μ) = 0 \\\\ -\\frac{n}{2σ^4} + \\frac{1}{2σ^6} \\sum_{i=1}^{n}(x_i-μ)^2 = 0 \\]",
+          "explanation": "We set the partial derivatives equal to zero and solve for μ and σ^2."
+        }
+      ],
+      "finalAnswer": "\\[ μ = \\bar{x}, σ^2 = \\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^2 \\]"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:40:52.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_examples_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimate (MLE) for normal, exponential, Poisson, and Bernoulli distributions.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the MLE of a normally distributed random variable X with mean μ and variance σ^2 given n observations x_1, ..., x_n.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the likelihood function\", \"mathHtml\": \"\\[f(x|\\mu,\\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{(-\\frac{(x-\\mu)^2}{2\\sigma^2})}\\]\", \"explanation\": \"We start by writing down the probability density function (PDF) of the normal distribution.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\[l(x|\\mu,\\sigma) = -\\frac{n}{2} \\log(2\\pi) - n \\log(\\sigma) - \\sum_{i=1}^n (\\frac{(x_i-\\mu)^2}{2\\sigma^2})\\]\", \"explanation\": \"Taking the logarithm helps us simplify the expression and avoid dealing with exponentials.\"}, {\"stepNumber\": 3, \"description\": \"Find the partial derivatives\", \"mathHtml\": \"\\[\\frac{\\partial l}{\\partial \\mu} = -\\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}, \\quad \\frac{\\partial l}{\\partial \\sigma} = -\\frac{n}{\\sigma} + \\frac{1}{\\sigma^3} \\sum_{i=1}^n (x_i-\\mu)^2\\]\", \"explanation\": \"We take the partial derivatives of the log-likelihood function with respect to μ and σ.\"}, {\"stepNumber\": 4, \"description\": \"Set the partial derivatives equal to zero\", \"mathHtml\": \"\\[\\sum_{i=1}^n x_i = n \\mu, \\quad \\frac{1}{\\sigma^2} \\sum_{i=1}^n (x_i-\\mu)^2 = n\\]\", \"explanation\": \"We set the partial derivatives equal to zero and solve for μ and σ.\"}, ],",
+    "finalAnswer": "The MLEs are μ = \\(\\frac{1}{n} \\sum_{i=1}^n x_i\\) and σ^2 = \\(\\frac{1}{n} \\sum_{i=1}^n (x_i-\\mu)^2\\)\" },",
+    "intuition": "The MLE is the value that maximizes the likelihood of observing the given data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:41:23.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

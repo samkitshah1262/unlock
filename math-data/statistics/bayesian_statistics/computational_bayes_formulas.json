@@ -1,0 +1,143 @@
+[
+  {
+    "id": "stat_for_computational_bayes_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "computational_bayes",
+    "title": "Grid Approximation in Bayesian Inference",
+    "contentHtml": "<p>Bayesian inference relies on approximating complex integrals using grid-based methods or Markov Chain Monte Carlo (MCMC) algorithms. This card focuses on the former, exploring how grids can be used to approximate posterior distributions.</p>",
+    "formula": "{",
+    "latex": "\\[P(\\theta | x) \\approx \\frac{1}{N} \\sum_{i=1}^N P(x | \\theta_i) P(\\theta_i)\\]\",",
+    "name": "Grid Approximation Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores, and we want to estimate the mean score using Bayesian inference. We can use grid approximation to approximate the posterior distribution.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define a grid of possible mean scores",
+        "mathHtml": "",
+        "explanation": "This is done by specifying a range of plausible values for the mean score."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the likelihood and prior distributions on each grid point",
+        "mathHtml": "",
+        "explanation": "The likelihood distribution represents the probability of observing the data given different mean scores. The prior distribution represents our initial beliefs about the mean score."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Grid approximation provides a simple and interpretable way to approximate complex posterior distributions, making it a useful tool in Bayesian inference.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:52:11.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_computational_bayes_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "computational_bayes",
+    "title": "Grid Approximation in Bayesian Computation",
+    "contentHtml": "<p>In Bayesian computation, grid approximation is a technique used to approximate complex integrals and distributions.</p><p>It's particularly useful when working with high-dimensional models or large datasets.</p>",
+    "formula": "{",
+    "latex": "\\[ \\int f(x) dx \\approx \\sum_{i=1}^N w_i f(x_i) \\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a simple Bayesian linear regression model with two features and a target variable.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Discretize the feature space into a grid of points\", \"mathHtml\": \"\\(x_1 \\in [0, 10], x_2 \\in [0, 5]\\)\", \"explanation\": \"This allows us to approximate the integral using a finite sum\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the posterior distribution at each grid point\", \"mathHtml\": \"\\(p(\\theta | D) = \\frac{1}{Z} p(D | \\theta) p(\\theta)\\)\", \"explanation\": \"We can use MCMC or other methods to approximate this distribution\"} ],",
+    "finalAnswer": "The approximated posterior distribution\" },",
+    "intuition": "Grid approximation provides a way to trade off computational efficiency for accuracy in Bayesian computations.",
+    "realWorldApplications": [
+      "Bayesian neural networks",
+      "Variational inference"
+    ],
+    "tags": [
+      "bayes",
+      "computation",
+      "grid"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:52:31.649Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_computational_bayes_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "computational_bayes",
+    "title": "Grid Approximation in Bayesian Inference",
+    "contentHtml": "<p>In Bayesian inference, we often need to approximate complex distributions using grid-based methods.</p><p>This approach is particularly useful when dealing with high-dimensional spaces or computationally expensive likelihood functions.</p>",
+    "formula": "{",
+    "latex": "\\[p(x | y) = \\frac{1}{Z} \\prod_{i=1}^n p(x_i | y, x_{<i})\\]\",",
+    "name": "Grid Approximation Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to approximate the posterior distribution of a Gaussian process given some noisy observations.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Discretize the input space into a grid\", \"mathHtml\": \"\\[x \\in [0, 1] \\rightarrow x \\approx \\{0.1, 0.2, ..., 0.9\\}\\]\", \"explanation\": \"This allows us to approximate the posterior using a product of conditional distributions\"} ],",
+    "finalAnswer": "The approximated posterior distribution\" },",
+    "intuition": "Grid approximation provides a way to trade off computational efficiency for accuracy in Bayesian inference.",
+    "realWorldApplications": [
+      "Bayesian optimization in hyperparameter tuning"
+    ],
+    "tags": [
+      "grid approximation",
+      "Bayesian inference",
+      "MCMC"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:52:49.716Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_computational_bayes_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "computational_bayes",
+    "title": "Grid Approximation in Bayesian Inference",
+    "contentHtml": "<p>In computational Bayes, grid approximation is a powerful technique to approximate complex distributions.</p><p>By discretizing the parameter space into a grid of points, we can efficiently evaluate and sample from the posterior distribution using Markov Chain Monte Carlo (MCMC) methods.</p>",
+    "formula": "{",
+    "latex": "\\[ p(\\theta | x) \\propto p(x | \\theta) \\cdot p(\\theta) \\]\",",
+    "name": "Bayes' theorem\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of coin tosses, and we want to infer the probability of heads.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define a grid of possible values for the coin's bias\", \"mathHtml\": \"\", \"explanation\": \"This represents our prior knowledge about the coin's behavior\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the likelihood function at each grid point\", \"mathHtml\": \"\\[ p(x | \\theta) = \\prod_{i} \\text{Bernoulli}(x_i | \\theta) \\]\", \"explanation\": \"This represents the probability of observing our dataset given the coin's bias\"} ],",
+    "finalAnswer": "The approximate posterior distribution\" },",
+    "intuition": "Grid approximation allows us to trade off computational efficiency for accuracy in complex Bayesian inference problems.",
+    "realWorldApplications": [
+      "Inferring model parameters in machine learning models"
+    ],
+    "tags": [
+      "Bayesian inference",
+      "MCMC",
+      "grid approximation"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:53:10.264Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

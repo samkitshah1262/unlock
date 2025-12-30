@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prob_thm_information_theory_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "title": "KL Divergence Theorem",
+    "contentHtml": "<p>The KL divergence theorem is a fundamental concept in information theory that helps us understand the relationship between two probability distributions.</p>",
+    "formula": {
+      "latex": "\\[ KL(P \\| Q) = \\int P(x) \\log\\frac{P(x)}{Q(x)} dx \\]",
+      "name": "KL Divergence"
+    },
+    "theorem": {
+      "statement": "\\[ \\textbf{Theorem: } KL(P \\| Q) = \\sum_{x} P(x) \\log\\frac{P(x)}{Q(x)} \\leq \\log\\frac{1}{Q(\\text{argmax}_x P(x))} \\]",
+      "proofSketch": "\\[ The proof involves showing that the KL divergence is non-negative and then using the fact that \\log 1 = 0 to prove the inequality. \\]"
+    },
+    "intuition": "<p>The KL divergence theorem tells us that the difference between two probability distributions can be bounded by a term involving the log of the ratio of their maximum probabilities.</p>",
+    "realWorldApplications": [
+      "KL divergence is used in many machine learning algorithms, such as logistic regression and neural networks."
+    ],
+    "tags": [
+      "information theory",
+      "probability theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:08:31.089Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_information_theory_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "information_theory",
+    "title": "Kullback-Leibler Divergence",
+    "contentHtml": "<p>The Kullback-Leibler (KL) divergence measures the difference between two probability distributions.</p>",
+    "formula": {
+      "latex": "\\[ KL(P\\|Q) = \\sum_{i} P(i) \\log \\frac{P(i)}{Q(i)} \\]",
+      "name": "Kullback-Leibler Divergence"
+    },
+    "theorem": {
+      "statement": "\\[ KL(P\\|Q) \\geq 0, with equality if and only if P=Q \\]"
+    },
+    "intuition": "The KL divergence represents the expected change in information when we switch from using Q to use P. It's a measure of how much more 'surprised' we are by P than by Q.",
+    "realWorldApplications": [
+      "Used in many machine learning algorithms, such as maximum likelihood estimation and Bayesian inference"
+    ],
+    "tags": [
+      "information theory",
+      "probability",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:08:47.470Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

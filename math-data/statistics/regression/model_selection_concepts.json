@@ -1,0 +1,88 @@
+[
+  {
+    "id": "stat_con_model_selection_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: AIC, BIC, and Cross-Validation",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting or underfitting. We'll explore three essential concepts: Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and cross-validation.</p><p>AIC and BIC are penalty-based methods that evaluate the trade-off between model complexity and data fit. Cross-validation, on the other hand, assesses a model's performance by splitting the dataset into training and testing sets.</p>",
+    "formula": "{",
+    "latex": "\\(AIC = -2 \\* \\ln(L) + 2k\\)\",",
+    "name": "Akaike Information Criterion",
+    "variants": "[ {\"latex\": \"\\(BIC = -2 \\* \\ln(L) + k \\* \\ln(n)\\)\", \"description\": \"Bayesian Information Criterion\"} ] },",
+    "intuition": "Model selection is about finding the sweet spot where your model generalizes well without overfitting. AIC and BIC provide a numerical way to evaluate this, while cross-validation offers a more robust assessment.",
+    "realWorldApplications": [
+      "In machine learning, model selection is critical for preventing overfitting, especially when dealing with complex models or limited data."
+    ],
+    "commonMistakes": [
+      "Failing to consider the trade-off between model complexity and data fit"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:16.465Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_selection_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>When performing regression analysis, selecting the right model is crucial to avoid overfitting or underfitting. In this concept, we'll explore four common metrics: R², adjusted R², AIC, and BIC.</p><p>R² measures how well a model fits the data, but it can be misleading due to its tendency to increase as the model becomes more complex. Adjusted R² addresses this issue by penalizing models for having too many parameters.</p>",
+    "formula": "{",
+    "latex": "\\(R^2 = 1 - \\frac{\\sum (y_i - \\hat{y}_i)^2}{\\sum (y_i - \\bar{y})^2}\\)\",",
+    "name": "R² formula\" },",
+    "intuition": "Model selection is about finding the right balance between fit and complexity. A good model should be able to generalize well without overfitting.",
+    "realWorldApplications": [
+      "In machine learning, model selection is critical for avoiding overfitting and improving predictive performance."
+    ],
+    "commonMistakes": [
+      "Failing to consider adjusted R² when evaluating models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:32.541Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_selection_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: R², Adjusted R², AIC, BIC, Cross-Validation",
+    "contentHtml": "<p>When analyzing a regression model, it's crucial to evaluate its performance and choose the best-fitting model from a set of candidates. This is where model selection techniques come in.</p><p>R² measures how well the model explains the data, while adjusted R² adjusts for the number of parameters used. AIC (Akaike information criterion) and BIC (Bayesian information criterion) are penalties that discourage overfitting by favoring simpler models. Cross-validation is a resampling technique that evaluates a model's performance on unseen data.</p>",
+    "formula": "{",
+    "latex": "\\(R^2 = 1 - \\frac{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\)\",",
+    "name": "R²",
+    "variants": "[ {\"latex\": \"\\(adj.\\ R^2 = 1 - \\frac{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\)\", \"description\": \"Adjusted R²\"} ] },",
+    "intuition": "Model selection helps you choose the best model that generalizes well to new, unseen data. By considering multiple metrics and techniques, you can avoid overfitting and select a model that accurately predicts outcomes.",
+    "realWorldApplications": [
+      "In machine learning, model selection is crucial for selecting the best-performing model from a set of candidates."
+    ],
+    "commonMistakes": [
+      "Failing to consider adjusted R² when dealing with complex models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:50:54.786Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "prob_wex_negative_binomial_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Solving Negative Binomial Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the negative binomial distribution.</p>",
+    "formula": "{",
+    "latex": "\\[X \\sim NegBin(r,p)\\]",
+    "name": "Negative Binomial Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>A random experiment consists of drawing balls from an urn until <i>k</i> successes are obtained. If the probability of success on a single draw is <i>p</i>, find the probability that exactly <i>r</i> failures occur.</p>",
+    "hints": [
+      "Hint: relate to geometric distribution",
+      "Think about overdispersion"
+    ],
+    "solutionHtml": "<p>We can use the formula for the negative binomial distribution:</p><ul><li>Find the probability of exactly <i>r</i> failures and <i>k-r</i> successes.</li><li>Use the formula: \\\\[P(X=r) = {r+k-1 \\choose r} p^r (1-p)^{k-r}\\\\]</li></ul>\",",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A random experiment consists of drawing balls from an urn until <i>3</i> successes are obtained. If the probability of success on a single draw is <i>0.4</i>, find the probability that exactly <i>2</i> failures occur.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the number of ways to get exactly 2 failures and 3-2=1 success.\", \"mathHtml\": \"\\\\[{2+1-1 \\choose 2} (0.4)^2 (0.6)^{2}\\\\]\", \"explanation\": \"We're using the formula for the negative binomial distribution.\"}, {\"stepNumber\": 2, \"description\": \"Plug in the values and simplify.\", \"mathHtml\": \"\\\\[\\\\frac{2!}{2!} (0.4)^2 (0.6)^{2}\\\\]\", \"explanation\": \"We're simplifying the expression by canceling out common factors.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The negative binomial distribution is useful for modeling situations where we have a fixed number of successes, but the number of failures can vary.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:20:03.503Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_negative_binomial_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution: k successes",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes occur.</p>",
+    "formula": {
+      "latex": "\\[X \\sim NB(r, p)\\]",
+      "name": "Negative Binomial"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a biased coin with probability <i>p</i> of heads. We stop flipping when we get the <i>k</i>-th head. What is the probability that we need to flip at most <i>n</i> times?</p>",
+      "hints": [
+        "Think about the geometric distribution.",
+        "Use the concept of overdispersion."
+      ],
+      "solutionHtml": "<p>We can use the NBD formula: \\[P(X=k) = {k+r-1 \\choose k} p^k (1-p)^r\\]</p><p>For this problem, we need to find P(X ≤ n). We can do this by summing up the probabilities of X taking values from 0 to <i>n</i>.</p>",
+      "answerShort": "P(X ≤ n) = \\sum_{k=0}^n {k+r-1 \\choose k} p^k (1-p)^r"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to know the probability that we need at most 3 flips to get the 2nd head. We can use the NBD formula with <i>k</i>=2, <i>r</i>=1, and <i>n</i>=3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the problem",
+          "mathHtml": "",
+          "explanation": "We want to find P(X ≤ 3) for X ~ NB(1, p)"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the NBD formula",
+          "mathHtml": "\\[P(X=k) = {k+r-1 \\choose k} p^k (1-p)^r\\]",
+          "explanation": "We need to find P(X ≤ 3), so we sum up the probabilities of X taking values from 0 to 3."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the probability",
+          "mathHtml": "\\[P(X ≤ 3) = \\sum_{k=0}^3 {k+r-1 \\choose k} p^k (1-p)^r\\]",
+          "explanation": "We can calculate this sum using the formula."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify and find the answer",
+          "mathHtml": "",
+          "explanation": "After simplifying, we get P(X ≤ 3) = ..."
+        }
+      ],
+      "finalAnswer": "P(X ≤ 3) = \\frac{1}{2} + p - \\frac{p^2}{2}"
+    },
+    "intuition": "The NBD is useful in modeling overdispersion, where the variance of the distribution exceeds the mean.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:20:44.895Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_negative_binomial_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution: k successes",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete random variable that models the number of failures until a specified number of successes occurs.</p>",
+    "formula": {
+      "latex": "\\[X \\sim NegBin(r, p)\\]",
+      "name": "Negative Binomial"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a biased coin with probability p of heads. What is the probability that we see k successes (heads) before the nth trial?</p>",
+      "hints": [
+        "Hint: relate to Geometric Distribution",
+        "Hint: think about overdispersion"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X = 3) for a Negative Binomial distribution with r = 2 and p = 0.5.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize the problem as an NBD",
+          "mathHtml": "\\[P(X = k) = \\binom{k+r-1}{r-1} p^k (1-p)^{r-k}\\]",
+          "explanation": "The formula for NBD is a combination of geometric and binomial distributions."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Plug in the given values",
+          "mathHtml": "\\[P(X = 3) = \\binom{3+2-1}{2-1} (0.5)^3 (1-0.5)^{2-3}\\]",
+          "explanation": "We plug in r = 2, p = 0.5, and k = 3 into the formula."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[P(X = 3) = \\frac{2}{4} (0.125)\\]",
+          "explanation": "We simplify the expression by combining like terms."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the final answer",
+          "mathHtml": "\\[P(X = 3) = 0.0625\\]",
+          "explanation": "The final answer is simply the value of the expression."
+        }
+      ],
+      "finalAnswer": "0.0625"
+    },
+    "intuition": "The NBD models overdispersion, which means that the variance is greater than the mean. This can occur when there are underlying dependencies in the data.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:21:18.988Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

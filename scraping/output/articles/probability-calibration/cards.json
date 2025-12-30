@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ai-probability-calibration-calibrating-a-classifier-1",
+    "domain": "ai_primers",
+    "category": "Miscellaneous",
+    "article": "Probability Calibration",
+    "articleSlug": "probability-calibration",
+    "chapter": "Calibration Curves",
+    "title": "Calibrating a Classifier",
+    "subtitle": "Calibration Curves",
+    "contentHtml": "<ul>\n  <li>Calibrating a classifier consists of fitting a regressor (called a calibrator) that maps the output of the classifier (as given by <a href=\"https://scikit-learn.org/stable/glossary.html#term-decision_function\"><code class=\"language-plaintext highlighter-rouge\">decision_function</code></a> or <a href=\"https://scikit-learn.org/stable/glossary.html#term-predict_proba\"><code class=\"language-plaintext highlighter-rouge\">predict_proba</code></a>) to a calibrated probability in <code class=\"language-plaintext highlighter-rouge\">[0, 1]</code>. Denoting the output of the classifier for a given sample by <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-1-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>f</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi>i</mi></mrow></msub></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-1\" style=\"width: 0.732em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.305em, 1000.58em, 2.503em, -999.997em); top: -2.133em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-2\"><span class=\"msubsup\" id=\"MathJax-Span-3\"><span style=\"display: inline-block; position: relative; width: 0.576em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.18em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-4\" style=\"font-family: STIXGeneral-Italic;\">f<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.159em;\"></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -3.852em; left: 0.263em;\"><span class=\"texatom\" id=\"MathJax-Span-5\"><span class=\"mrow\" id=\"MathJax-Span-6\"><span class=\"mi\" id=\"MathJax-Span-7\" style=\"font-size: 70.7%; font-family: STIXGeneral-Italic;\">i</span></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.138em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mrow class=\"MJX-TeXAtom-ORD\"><mi>i</mi></mrow></msub></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-1\">f_{i}</script>, the calibrator tries to predict <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-2-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>p</mi><mrow><mo>(</mo><mrow><msub><mi>y</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi>i</mi></mrow></msub><mo>=</mo><mn>1</mn><mo>&amp;#x2223;</mo><msub><mi>f</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi>i</mi></mrow></msub></mrow><mo>)</mo></mrow></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-8\" style=\"width: 6.357em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 5.263em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.409em, 1005.21em, 2.607em, -999.997em); top: -2.237em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-9\"><span class=\"mi\" id=\"MathJax-Span-10\" style=\"font-family: STIXGeneral-Italic;\">p</span><span class=\"mrow\" id=\"MathJax-Span-11\" style=\"padding-left: 0.211em;\"><span class=\"mo\" id=\"MathJax-Span-12\" style=\"vertical-align: 0em;\"><span style=\"font-family: STIXGeneral-Regular;\">(</span></span><span class=\"mrow\" id=\"MathJax-Span-13\"><span class=\"msubsup\" id=\"MathJax-Span-14\"><span style=\"display: inline-block; position: relative; width: 0.732em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.44em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-15\" style=\"font-family: STIXGeneral-Italic;\">y</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -3.852em; left: 0.471em;\"><span class=\"texatom\" id=\"MathJax-Span-16\"><span class=\"mrow\" id=\"MathJax-Span-17\"><span class=\"mi\" id=\"MathJax-Span-18\" style=\"font-size: 70.7%; font-family: STIXGeneral-Italic;\">i</span></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span><span class=\"mo\" id=\"MathJax-Span-19\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.315em;\">=</span><span class=\"mn\" id=\"MathJax-Span-20\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.315em;\">1</span><span class=\"mo\" id=\"MathJax-Span-21\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.315em;\">∣</span><span class=\"msubsup\" id=\"MathJax-Span-22\" style=\"padding-left: 0.315em;\"><span style=\"display: inline-block; position: relative; width: 0.576em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.18em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-23\" style=\"font-family: STIXGeneral-Italic;\">f<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.159em;\"></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -3.852em; left: 0.263em;\"><span class=\"texatom\" id=\"MathJax-Span-24\"><span class=\"mrow\" id=\"MathJax-Span-25\"><span class=\"mi\" id=\"MathJax-Span-26\" style=\"font-size: 70.7%; font-family: STIXGeneral-Italic;\">i</span></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span></span><span class=\"mo\" id=\"MathJax-Span-27\" style=\"vertical-align: 0em;\"><span style=\"font-family: STIXGeneral-Regular;\">)</span></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.242em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>p</mi><mrow><mo>(</mo><mrow><msub><mi>y</mi><mrow class=\"MJX-TeXAtom-ORD\"><mi>i</mi></mrow></msub><mo>=</mo><mn>1</mn><mo>∣</mo><msub><mi>f</mi><mrow class=\"MJX-TeXAtom-ORD\"><mi>i</mi></mrow></msub></mrow><mo>)</mo></mrow></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-2\">p\\left(y_{i}=1 \\mid f_{i}\\right)</script>.</li>\n  <li>The samples that are used to fit the calibrator should not be the same samples used to fit the classifier, as this would introduce bias. This is because performance of the classifier on its training data would be better than for novel data. Using the classifier output of training data to fit the calibrator would thus result in a biased calibrator that maps to probabilities closer to 0 and 1 than it should.</li>\n</ul>",
+    "contentMarkdown": "*   Calibrating a classifier consists of fitting a regressor (called a calibrator) that maps the output of the classifier (as given by [`decision_function`](https://scikit-learn.org/stable/glossary.html#term-decision_function) or [`predict_proba`](https://scikit-learn.org/stable/glossary.html#term-predict_proba)) to a calibrated probability in `[0, 1]`. Denoting the output of the classifier for a given sample by fifif\\_{i}, the calibrator tries to predict p(yi\\=1∣fi)p(yi\\=1∣fi)p\\\\left(y\\_{i}=1 \\\\mid f\\_{i}\\\\right).\n*   The samples that are used to fit the calibrator should not be the same samples used to fit the classifier, as this would introduce bias. This is because performance of the classifier on its training data would be better than for novel data. Using the classifier output of training data to fit the calibrator would thus result in a biased calibrator that maps to probabilities closer to 0 and 1 than it should.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "miscellaneous"
+    ],
+    "metadata": {
+      "hasCode": true,
+      "hasMath": true,
+      "hasImages": false,
+      "wordCount": 126,
+      "contentLength": 7197
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/probability-calibration/#calibrating-a-classifier",
+    "scrapedAt": "2025-12-28T11:57:07.018Z"
+  },
+  {
+    "id": "ai-probability-calibration-usage-2",
+    "domain": "ai_primers",
+    "category": "Miscellaneous",
+    "article": "Probability Calibration",
+    "articleSlug": "probability-calibration",
+    "chapter": "Calibration Curves",
+    "title": "Usage",
+    "subtitle": "Calibration Curves",
+    "contentHtml": "<ul>\n  <li>The <a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV\">CalibratedClassifierCV</a> class from scikit-Learn is used to calibrate a classifier.</li>\n</ul>",
+    "contentMarkdown": "*   The [CalibratedClassifierCV](https://scikit-learn.org/stable/modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV) class from scikit-Learn is used to calibrate a classifier.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "miscellaneous"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 12,
+      "contentLength": 262
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/probability-calibration/#usage",
+    "scrapedAt": "2025-12-28T11:57:07.018Z"
+  }
+]

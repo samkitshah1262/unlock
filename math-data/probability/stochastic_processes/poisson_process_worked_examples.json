@@ -1,0 +1,230 @@
+[
+  {
+    "id": "prob_wex_poisson_process_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "title": "Poisson Process Worked Example",
+    "contentHtml": "<p>A Poisson process is a stochastic process that models the arrival of events over time.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a Poisson process with rate λ = 2.0 events per minute. Find the probability that exactly 3 events occur within the next 5 minutes.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the interarrival time\", \"mathHtml\": \"\\[T_i \\sim \\text{Exp}(\\lambda)\\]\", \"explanation\": \"We know the interarrival times are exponentially distributed with rate λ.\"}, {\"stepNumber\": 2, \"description\": \"Find the probability of a single event occurring within the next minute\", \"mathHtml\": \"\\[P(T_i &lt; 1) = 1 - e^{-\\lambda}\\]\", \"explanation\": \"This is the probability that an event occurs within the next minute.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the probability of exactly 3 events occurring within the next 5 minutes\", \"mathHtml\": \"\\[P(X=3) = \\frac{e^{-5\\lambda} (\\lambda t)^3}{3!}\\]\", \"explanation\": \"We use the formula for the Poisson distribution, where X is the number of events and λt is the total rate.\"}, {\"stepNumber\": 4, \"description\": \"Plug in the values\", \"mathHtml\": \"\\[P(X=3) = \\frac{e^{-10} (2)^3}{6}\\]\", \"explanation\": \"We substitute λ = 2.0 and t = 5 minutes.\"} ],",
+    "finalAnswer": "P(X=3) = 0.0427\" },",
+    "intuition": "The key insight is that the Poisson process models the arrival of events over time, and we can use this to calculate probabilities.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:35:09.190Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_poisson_process_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "title": "Poisson Process: Definition and Properties",
+    "contentHtml": "<p>A stochastic process is a sequence of random events occurring over time or space.</p><p>The Poisson process is a fundamental example of such processes.</p>",
+    "formula": {
+      "latex": "\\[\\lambda = \\frac{1}{E[i]}\\]",
+      "name": "Lambda",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a Poisson process with rate parameter λ. Let X(t) be the number of events occurring in the time interval [0, t].</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Poisson process modeling phone calls arriving at a call center. The rate parameter λ is the average number of calls per minute.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the interarrival times",
+          "mathHtml": "\\[t_{i+1} - t_i\\]",
+          "explanation": "These are the time gaps between consecutive events."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Recognize that these intervals are exponentially distributed",
+          "mathHtml": "\\[f(t) = \\lambda e^{-\\lambda t}\\]",
+          "explanation": "This is a key property of Poisson processes."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the thinning algorithm to simulate the process",
+          "mathHtml": "",
+          "explanation": "Thinning helps us efficiently generate samples from the underlying distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify that the simulated process has the desired properties",
+          "mathHtml": "\\[\\lambda = \\frac{1}{E[i]}\\]",
+          "explanation": "We can check that the rate parameter matches our expectations."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "The Poisson process is a powerful tool for modeling random events with a constant arrival rate.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:35:38.255Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_poisson_process_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "title": "Poisson Process: Definition and Properties",
+    "contentHtml": "<p>A stochastic process is a sequence of random variables that are indexed by time or another continuous parameter.</p><p>The Poisson process is a fundamental example of such processes, modeling the arrival times of events in a system.</p>",
+    "formula": {
+      "latex": "\\[\\lambda = \\frac{1}{E[X]}\\]",
+      "name": "Mean Rate",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Let N(t) be the number of events in a Poisson process that occur up to time t. Show that the interarrival times are exponentially distributed.</p>",
+      "hints": [
+        "Hint: Use the memoryless property"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Poisson process with rate λ = 2 events per minute. Find the probability that exactly 3 events occur in the next 5 minutes.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize the problem as a binomial distribution",
+          "mathHtml": "\\[P(X=3) = \\binom{10}{3} (0.2)^3 (0.8)^7\\]",
+          "explanation": "We can model this using a binomial distribution with n=10, p=0.2, and k=3."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the Poisson distribution",
+          "mathHtml": "\\[P(X=3) = \\frac{(e^{-\\lambda} (\\lambda^k))}{k!}\\]",
+          "explanation": "We can use the formula for the Poisson distribution with λ=10*2=20."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify and evaluate",
+          "mathHtml": "\\[P(X=3) = \\frac{(e^{-20} (20^3))}{6}\\]",
+          "explanation": "We can simplify the expression by evaluating the exponential term and then simplifying the remaining fraction."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the results",
+          "mathHtml": "",
+          "explanation": "The result is a probability between 0 and 1, indicating the likelihood of exactly 3 events occurring in the next 5 minutes."
+        }
+      ],
+      "finalAnswer": "P(X=3) = \\frac{(e^{-20} (20^3))}{6}"
+    },
+    "intuition": "The Poisson process is a fundamental concept in stochastic processes, modeling the arrival times of events in a system. Understanding its properties and behavior is crucial for many applications, including machine learning and artificial intelligence.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Not recognizing the problem as a binomial distribution"
+    ],
+    "realWorldApplications": [
+      "Predicting the number of customers arriving at a store within a certain time frame"
+    ],
+    "tags": [
+      "Poisson Process",
+      "Stochastic Processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:36:18.438Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_poisson_process_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "title": "Poisson Process: Definition and Properties",
+    "contentHtml": "<p>A stochastic process is a sequence of random variables that are indexed by time or another parameter.</p><p>The Poisson process is a specific type of stochastic process that models the arrival times of events in a continuous-time setting.</p>",
+    "formula": "{",
+    "latex": "\\\\(\\lambda t\\\\) is the probability density function (PDF) of the interarrival time.\",",
+    "name": "Interarrival Time PDF\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a Poisson process with rate \\\\(\\lambda\\\\). Find the probability that exactly one event occurs in a given interval [0, t].</p>\",",
+    "hints": [
+      "Hint: Use the formula for the interarrival time PDF.",
+      "Hint: Integrate over the interval."
+    ],
+    "solutionHtml": "<p>We can use the formula for the interarrival time PDF to find the probability:</p><ul><li>Integrate \\\\(\\lambda t\\\\) from 0 to t.</li></ul>\",",
+    "answerShort": "The answer is \\\\(1 - e^{-\\\\lambda t}\\\\)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>We have a Poisson process with rate \\\\(\\lambda = 2\\\\). Find the probability that exactly one event occurs in a given interval [0, 3].</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the interarrival time PDF",
+        "mathHtml": "\\(P(T &lt; t) = 1 - e^{-\\lambda t}\\)",
+        "explanation": "This is the probability that an event occurs within the interval [0, t]."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Integrate the interarrival time PDF",
+        "mathHtml": "\\(P(1 \text{ event in } [0, t]) = \\int_0^t \\lambda t e^{-\\lambda t} dt\\)",
+        "explanation": "We integrate the interarrival time PDF over the interval [0, t] to find the probability that exactly one event occurs."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Evaluate the integral",
+        "mathHtml": "\\(P(1 \text{ event in } [0, t]) = \\frac{1 - e^{-\\lambda t}}{\\lambda}\\)",
+        "explanation": "We evaluate the integral to find the probability that exactly one event occurs."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Plug in the value of \\(t\\)",
+        "mathHtml": "\\(P(1 \text{ event in } [0, 3]) = \\frac{1 - e^{-2*3}}{2}\\)",
+        "explanation": "We plug in the value of t=3 to find the probability that exactly one event occurs within the interval [0, 3]."
+      }
+    ],
+    "finalAnswer": "\\\\(P(1 \\text{ event in } [0, 3]) = \\\\frac{1 - e^{-6}}{2}\\\\)\" },",
+    "intuition": "The Poisson process is a powerful tool for modeling the arrival times of events in a continuous-time setting.",
+    "visualDescription": "A diagram showing the interarrival times and the probability density function (PDF) would be helpful to visualize the concept.",
+    "commonMistakes": [
+      "Mistake: Forgetting to integrate over the interval."
+    ],
+    "realWorldApplications": [
+      "Application: Modeling the arrival times of customers in a call center."
+    ],
+    "tags": [
+      "Poisson Process",
+      "Stochastic Processes"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:37:05.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

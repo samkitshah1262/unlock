@@ -1,0 +1,1058 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css" id="nanobarcss">.nanobar{width:100%;height:4px;z-index:9999;top:0}.bar{width:0;height:100%;transition:height .3s;background:#000}</style><style>#back-to-top{background:#fff;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;bottom:20px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);box-shadow:0 2px 5px 0 rgba(0,0,0,.26);color:#333;cursor:pointer;display:block;height:56px;opacity:1;outline:0;position:fixed;right:20px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-transition:bottom .2s,opacity .2s;-o-transition:bottom .2s,opacity .2s;-moz-transition:bottom .2s,opacity .2s;transition:bottom .2s,opacity .2s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:56px;z-index:1}#back-to-top svg{display:block;fill:currentColor;height:24px;margin:16px auto 0;width:24px}#back-to-top.hidden{bottom:-56px;opacity:0}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aman's AI Journal • NLP • LLM Context Length Extension</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Aman's AI Journal | Course notes and learning material for Artificial Intelligence and Deep Learning Stanford classes.">
+  <link rel="canonical" href="https://aman.ai/primers/ai/context-length-extension/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Google fonts -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/atom+xml" title="Aman’s AI Journal" href="/feed.xml">  
+  
+  <link href="https://aman.ai/favicon.jpg" rel="shortcut icon">
+
+  <!-- Google ads -->
+  <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202512100101/show_ads_impl.js"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5905744527956213" crossorigin="anonymous" data-checked-head="true"></script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-5905744527956213?href=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fcontext-length-extension&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXXFu9kEIL0DsxTnXAV_zbjPyq8Ou7ePKR-3ifPJY12L3RTVsKUxdAmCBOT53pjwhADUOdZIs5WWaGfXV-DxkHGKFRYa2IPfmp_Wl_-wB2oWlkOz-y3W-vA-bi0_JRSViv0EqbDTQ==?fccs=W1siQUtzUm9sX1ByMnEzT3p6bUNOcHVPLXk3cHJWaHpmMVdNQ0E0MDIxeFNldDBNaGdPTWV0UFRGdXpMenduNHhMS01MQUZveFh0TmVsajBkdTV4MmlSTm5JODNFVG9KMTVsSi1EU29KUjA2RW9Xdy1maTQtSFpFMERzQUtWZHdkemlCOS1wVjdxaG1rbG1nNVl4Z2ZYWGNhWUgtNHQtMFcySGxBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI4NzEsODkwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3XV0sImh0dHBzOi8vYW1hbi5haS9wcmltZXJzL2FpL2NvbnRleHQtbGVuZ3RoLWV4dGVuc2lvbi8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxX6ySaZAFMz8B3yHCqh8taznS8ExgJ1rOmfDqC1h5beHhGrrjAi2-20g4Lge0c7Tog9eg8cP_o4OqDOWW4PCkIdsQyybHZAl_xVm0nqhN2g_7bJqfP-Si7EYAeyC7lXvMZ27Z5FnQ==?fccs=W1siQUtzUm9sX1ByMnEzT3p6bUNOcHVPLXk3cHJWaHpmMVdNQ0E0MDIxeFNldDBNaGdPTWV0UFRGdXpMenduNHhMS01MQUZveFh0TmVsajBkdTV4MmlSTm5JODNFVG9KMTVsSi1EU29KUjA2RW9Xdy1maTQtSFpFMERzQUtWZHdkemlCOS1wVjdxaG1rbG1nNVl4Z2ZYWGNhWUgtNHQtMFcySGxBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI4NzEsMjI5MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDIsbnVsbCwiZW4iXSwiaHR0cHM6Ly9hbWFuLmFpL3ByaW1lcnMvYWkvY29udGV4dC1sZW5ndGgtZXh0ZW5zaW9uLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXDI1xfYPqeCw2XtU60hx37M_ae6rQ8kgIjuRzUpn2l2Bsn--ljmtlT8QhijSmTEgEQbS3S2kJfLaIbYv5HGid5JJ5Q_2c7EKhqvCs1n-CDMfi0eMfVj5FmZTBSYECLvvA8XdbZcw==?fccs=W1siQUtzUm9sX1ByMnEzT3p6bUNOcHVPLXk3cHJWaHpmMVdNQ0E0MDIxeFNldDBNaGdPTWV0UFRGdXpMenduNHhMS01MQUZveFh0TmVsajBkdTV4MmlSTm5JODNFVG9KMTVsSi1EU29KUjA2RW9Xdy1maTQtSFpFMERzQUtWZHdkemlCOS1wVjdxaG1rbG1nNVl4Z2ZYWGNhWUgtNHQtMFcySGxBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI4NzIsODQwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3LDksNl0sbnVsbCwyLG51bGwsImVuIixudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vYW1hbi5haS9wcmltZXJzL2FpL2NvbnRleHQtbGVuZ3RoLWV4dGVuc2lvbi8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script></head>
+
+
+    <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+      <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+      <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })</script><div id="back-to-top" class="hidden">Back to Top</div>
+      <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-family: sans-serif;
+          font-size: 14px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+      </style>   
+
+    <header class="site-header">
+
+  <a class="site-title" href="../">Distilled AI</a>
+
+  <a class="site-link" href="https://aman.ai">Back to aman.ai</a>
+
+  <!-- Html Elements for Search -->
+  <div id="search-container">
+  <input class="site-search-box" type="text" autocomplete="off" id="search-input" placeholder="search...">
+  <div id="results-container"></div>
+  </div>
+
+  <!-- Script pointing to aman-script.js -->
+  <script src="https://aman.ai/js/aman-search.min.js" type="text/javascript"></script>
+
+  <!-- Configuration -->
+  <script>
+  document.getElementById('search-input').value='';
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    exclude: ["cs231a"],
+    searchResultTemplate: '<div class="site-search-results"><a href="{url}">{title}</a></div>',
+    noResultsText: '<div class="site-search-results"><p>No results found</p></div>',
+    json: 'https://aman.ai/search.json',
+    limit: 5,
+    fuzzy: false,
+  })
+  </script>    
+
+</header>     
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>NLP • LLM Context Length Extension</h1>
+  </header>
+
+  <article class="post-content">
+  <ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#advantages-of-extended-context-length" id="markdown-toc-advantages-of-extended-context-length">Advantages of Extended Context Length</a></li>
+  <li><a href="#background-interpolation-and-how-it-increases-context-length" id="markdown-toc-background-interpolation-and-how-it-increases-context-length">Background: Interpolation and How It Increases Context Length</a>    <ul>
+      <li><a href="#extending-context-window-of-large-language-models-via-position-interpolation" id="markdown-toc-extending-context-window-of-large-language-models-via-position-interpolation">Extending Context Window of Large Language Models Via Position Interpolation</a></li>
+      <li><a href="#deep-dive-into-how-llama-2s-context-window-increased" id="markdown-toc-deep-dive-into-how-llama-2s-context-window-increased">Deep Dive Into How Llama 2’s Context Window Increased</a></li>
+    </ul>
+  </li>
+  <li><a href="#background-ntk-ntk-aware-and-dynamic-ntk" id="markdown-toc-background-ntk-ntk-aware-and-dynamic-ntk">Background: NTK, NTK-Aware, and Dynamic NTK</a>    <ul>
+      <li><a href="#ntk-neural-tangent-kernel" id="markdown-toc-ntk-neural-tangent-kernel">NTK (Neural Tangent Kernel)</a></li>
+      <li><a href="#ntk-aware-method" id="markdown-toc-ntk-aware-method">NTK-Aware Method</a></li>
+      <li><a href="#dynamic-ntk-method" id="markdown-toc-dynamic-ntk-method">Dynamic NTK Method</a></li>
+    </ul>
+  </li>
+  <li><a href="#related-papers" id="markdown-toc-related-papers">Related Papers</a>    <ul>
+      <li><a href="#extending-context-window-of-large-language-models-via-positional-interpolation" id="markdown-toc-extending-context-window-of-large-language-models-via-positional-interpolation">Extending Context Window of Large Language Models Via Positional Interpolation</a></li>
+      <li><a href="#yarn-efficient-context-window-extension-of-large-language-models" id="markdown-toc-yarn-efficient-context-window-extension-of-large-language-models">YaRN: Efficient Context Window Extension of Large Language Models</a></li>
+      <li><a href="#longlora-efficient-fine-tuning-of-long-context-large-language-models" id="markdown-toc-longlora-efficient-fine-tuning-of-long-context-large-language-models">LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models</a></li>
+      <li><a href="#longqlora-efficient-and-effective-method-to-extend-context-length-of-large-language-models" id="markdown-toc-longqlora-efficient-and-effective-method-to-extend-context-length-of-large-language-models">LongQLoRA: Efficient and Effective Method to Extend Context Length of Large Language Models</a></li>
+      <li><a href="#memgpt-towards-llms-as-operating-systems" id="markdown-toc-memgpt-towards-llms-as-operating-systems">MemGPT: Towards LLMs As Operating Systems</a></li>
+      <li><a href="#lm-infinite-simple-on-the-fly-length-generalization-for-large-language-models" id="markdown-toc-lm-infinite-simple-on-the-fly-length-generalization-for-large-language-models">LM-Infinite: Simple On-The-Fly Length Generalization for Large Language Models</a></li>
+      <li><a href="#llm-maybe-longlm-self-extend-llm-context-window-without-tuning" id="markdown-toc-llm-maybe-longlm-self-extend-llm-context-window-without-tuning">LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning</a></li>
+      <li><a href="#in-search-of-needles-in-a-11m-haystack-recurrent-memory-finds-what-llms-miss" id="markdown-toc-in-search-of-needles-in-a-11m-haystack-recurrent-memory-finds-what-llms-miss">In Search of Needles in a 11M Haystack: Recurrent Memory Finds What LLMs Miss</a></li>
+    </ul>
+  </li>
+  <li><a href="#citation" id="markdown-toc-citation">Citation</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+<ul>
+  <li>The increasing application of Large Language Models (LLMs) across sectors has highlighted a significant challenge: their predefined context lengths. This limitation impacts efficiency, especially when applications require the processing of extensive documents or large-scale conversations. While directly training LLMs on longer contexts is a potential solution, it is not always efficient and can be resource-intensive.</li>
+  <li>This article will discuss various methods aimed at enhancing the context length of LLMs.</li>
+  <li>Context length serves as a vital parameter determining the efficacy of LLMs. Achieving a context length of up to 100K is notable. The value of such an achievement, however, might be perceived differently with the progression of time and technology.</li>
+  <li>One primary use-case for LLMs is to analyze a large set of custom data, such as company-specific documents or problem-related texts, and to answer queries specific to this dataset, rather than the generalized training data.</li>
+  <li>Let’s take a look at existing Solutions to Address Context Length Limitations:
+    <ul>
+      <li><strong>Summarization &amp; Chained Prompts:</strong> Current approaches often involve the use of sophisticated summarization methods coupled with chained prompts.</li>
+      <li><strong>Vector Databases:</strong> These are used to store embeddings of custom documents, which can then be queried based on similarity metrics.</li>
+      <li><strong>Fine-Tuning with Custom Data:</strong> This method, while effective, is not universally accessible due to restrictions on certain commercial LLMs and complexities with open-source LLMs.</li>
+      <li><strong>Customized LLMs:</strong> Developing smaller, data-centric LLMs is another solution, though it presents its own set of challenges.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="advantages-of-extended-context-length">Advantages of Extended Context Length</h2>
+
+<ul>
+  <li>An LLM with an expanded context length can offer more tailored and efficient interactions by processing user-specific data without the need for model recalibration. This on-the-fly learning approach, leveraging in-memory processing, has the potential to enhance accuracy, fluency, and creativity.</li>
+  <li><strong>Analogy for Context:</strong> Similar to how computer RAM retains the operational context of software applications, an extended context length allows an LLM to maintain and process a broader scope of user data.</li>
+  <li>In this article, we aim to present a detailed examination of methods focused on increasing the context length, emphasizing their practical implications and benefits.</li>
+</ul>
+
+<h2 id="background-interpolation-and-how-it-increases-context-length">Background: Interpolation and How It Increases Context Length</h2>
+
+<ul>
+  <li><strong>What is interpolation at non-integer positions?</strong>
+    <ul>
+      <li>Interpolation is a mathematical method to determine unknown values between two known values. In the context of the Llama 2 model, “interpolating at non-integer positions” refers to a technique where the positions of tokens (pieces of data or text) are adjusted to fit within the model’s original context window, even if the data extends beyond it.</li>
+      <li>Instead of using whole numbers (integers) for positions, this method utilizes values between whole numbers (non-integers).</li>
+    </ul>
+  </li>
+  <li><strong>Why do they do this?</strong>
+    <ul>
+      <li>By using this interpolation method, Llama 2 can process text inputs that are much larger than its designed capacity or its original window size.</li>
+    </ul>
+  </li>
+  <li><strong>What is the benefit?</strong>
+    <ul>
+      <li>The advantage of this technique is that despite processing larger chunks of data, the model doesn’t suffer in performance. It can handle more data while still operating effectively.</li>
+    </ul>
+  </li>
+  <li>In simpler terms: Meta has used a clever method to let Llama 2 handle more data at once without slowing it down or reducing its effectiveness. They achieve this by adjusting the way data positions are calculated, using values between whole numbers.</li>
+  <li>The image below by <a href="https://www.linkedin.com/in/damienbenveniste">Damien Benveniste</a> illustrates the interpolation concept in detail.
+<img src="/primers/ai/assets/context-length/2.jpeg" alt=""></li>
+</ul>
+
+<h3 id="extending-context-window-of-large-language-models-via-position-interpolation"><a href="https://arxiv.org/pdf/2306.15595.pdf">Extending Context Window of Large Language Models Via Position Interpolation</a></h3>
+
+<ul>
+  <li>This paper introduces a technique called Position Interpolation (PI) to extend the context length of large language models (LLMs) like Llama without compromising their performance.</li>
+  <li>LLMS use positional encodings, such as RoPE, to represent the order of tokens in a sequence. However, naively fine-tuning these models on longer contexts can be slow and ineffective, especially when extending the context length by a large factor (e.g., 8 times).</li>
+  <li>The key insight behind PI is that extrapolating positional encodings beyond the trained range can result in unstable and out-of-distribution attention scores. Instead, PI interpolates between the trained integer steps to create smooth and stable positional encodings.</li>
+  <li>To do this, PI downscales the positional indices before computing the positional encodings. For instance, if the original context length is 4096, PI rescales the indices from [0, 4096] to [0, 2048], matching the original length. This effectively interpolates the positional encodings between the original integer steps, reducing the maximum relative distance and making the attention scores more stable.</li>
+  <li>During fine-tuning, the model adapts quickly to the interpolated positional encodings, which are more stable than extrapolated ones. The authors prove that the interpolated attention score has a much smaller upper bound than the extrapolated attention score, ensuring that the model’s behavior remains consistent and predictable.</li>
+  <li>Experiments demonstrate that PI successfully extends models like Llama-7B to handle context lengths of up to 32768 with only 1000 training steps. Evaluations on various tasks, such as language modeling, question answering, and retrieval, confirm that the extended models effectively leverage long contexts without sacrificing performance on shorter contexts.</li>
+  <li>Thus, Position Interpolation offers a simple yet effective way to extend the context length of LLMs like Llama. By downscaling positional indices and interpolating between trained integer steps, PI creates smooth and stable positional encodings, enabling models to adapt to longer contexts without losing stability or performance.</li>
+  <li>The technique was originally proposed by <a href="https://www.reddit.com/user/emozilla/">u/emozilla on Reddit</a> as <a href="https://www.reddit.com/r/LocalLlama/comments/14mrgpr/dynamically_scaled_rope_further_increases/">“Dynamically Scaled RoPE further increases performance of long context Llama with zero fine-tuning”</a> and allows us to scale out the context length of models without fine-tuning by dynamically interpolating RoPE to represent longer sequences while preserving performance.</li>
+  <li>While it works well out of the box, performance can be further improved by additional fine-tuning. With RoPE scaling, companies can now easily extend open-source LLMs to the context lengths which work for their given use case.</li>
+  <li>From the Reddit <a href="https://www.reddit.com/r/LocalLlama/comments/14mrgpr/dynamically_scaled_rope_further_increases/">post</a>:
+    <ul>
+      <li>“When <a href="https://www.reddit.com/user/kaiokendev/">u/kaiokendev</a> first posted about linearly interpolating RoPE for longer sequences, I (and a few others) had wondered if it was possible to pick the correct scale parameter dynamically based on the sequence length rather than having to settle for the fixed tradeoff of maximum sequence length vs. performance on shorter sequences. My idea was to use the exact position values for the first 2k context (after all, why mess with a good thing?) and then re-calculate the position vector for every new sequence length as the model generates token by token. Essentially, set scale to original model context length / current sequence length. This has the effect of slowly increasing scale as the sequence length increases.</li>
+      <li>I did some experiments and found that this has very strong performance, much better than simple linear interpolation. When <a href="https://www.reddit.com/user/bloc97/">u/bloc97</a> posted his NTK-Aware method, it was much closer to this dynamic linear scaling in terms of performance. Compared to dynamic linear scaling, NTK-Aware has higher perplexity for shorter sequences, but better perplexity at the tail end of the sequence lengths. Unfortunately, it also suffers from catastrophic perplexity blowup, just like regular RoPE and static linear scaling.</li>
+      <li>The main hyperparamter of NTK-Aware is <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B1;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.784em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.63em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: STIXGeneral-Italic;">α</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">\alpha</script>. Like static linear scaling, it represents a tradeoff between short/long sequence performance. So I thought, why not use the same dynamic scaling method with NTK-Aware? For Dynamic NTK, the scaling of <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B1;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 0.784em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.63em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mi" id="MathJax-Span-6" style="font-family: STIXGeneral-Italic;">α</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">\alpha</script> is set to (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B1;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-7" style="width: 0.784em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.63em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mi" id="MathJax-Span-9" style="font-family: STIXGeneral-Italic;">α</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">\alpha</script> * current sequence length / original model context length) - (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B1;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-10" style="width: 0.784em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.63em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mi" id="MathJax-Span-12" style="font-family: STIXGeneral-Italic;">α</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">\alpha</script> - 1). The idea again is to dynamically scale the hyperparameter as the sequence length increases.</li>
+      <li>This uses the same methodology as NTK-Aware (perplexity on GovReport test). You can check out all the code on <a href="https://github.com/jquesnelle/scaled-rope">GitHub</a>.”</li>
+    </ul>
+  </li>
+  <li>Hugging Face <a href="https://huggingface.co/docs/transformers/main/en/model_doc/Llama#transformers.LlamaConfig.rope_scaling">Transformers</a> now supports RoPE-scaling (rotary position embeddings) to extend the context length of large language models like Llama, GPT-NeoX, or Falcon.</li>
+  <li>So in essence, RoPE scaling dynamically rescales relative position differences based on the input length, analogous to a rope stretching and contracting.</li>
+</ul>
+
+<h3 id="deep-dive-into-how-llama-2s-context-window-increased">Deep Dive Into How Llama 2’s Context Window Increased</h3>
+
+<ul>
+  <li>Why Llama 2 is a Preferred Choice for Large Context Windows:
+    <ul>
+      <li>Llama 2, despite initially appearing to have a smaller context window size (4096 tokens or approximately 3000 words) compared to models like ChatGPT, GPT-4, and Claude 2, offers significant advantages due to its open-source nature and the innovative use of Rotary Positional Embeddings (RoPE).</li>
+    </ul>
+  </li>
+  <li>Understanding the Typical Transformer Architecture:</li>
+  <li>Most transformer models, including Llama 2, consist of:
+    <ol>
+      <li><strong>Embeddings:</strong> Used to encode the text input.</li>
+      <li><strong>Transformer Blocks:</strong> Execute the primary processing tasks.</li>
+      <li><strong>Prediction Head:</strong> Tailored to the learning task at hand.</li>
+    </ol>
+  </li>
+  <li>The context size, or the amount of text the model can consider at once, is defined by the size of the positional embedding, which combines with the text embedding matrix to encode text.</li>
+  <li><strong>Rotary Positional Embeddings (RoPE) in Llama 2:</strong>
+    <ul>
+      <li>Llama 2 uses Rotary Positional Embeddings (RoPE), distinguishing it from models that use typical sine function encoding. This method modifies each attention layer in such a way that the computed attention between input tokens is solely dependent on their distance from each other, rather than their absolute positions in the sequence. This relative positioning allows for more flexible handling of context windows.</li>
+    </ul>
+  </li>
+  <li><strong>Extending the Context Window with Interpolation:</strong>
+    <ul>
+      <li>Meta, the developer of Llama 2, employs a technique to extend the context window by interpolating at non-integer positions, allowing the model to process text inputs much larger than its original window size, maintaining its performance level.</li>
+    </ul>
+  </li>
+  <li><strong>Implementation:</strong>
+    <ul>
+      <li>The practical implementation of extending the context window involves rescaling the integer positions, and a minor modification in the model’s code can accomplish this. Despite the model not being initially trained for extended position embedding, it can be fine-tuned to adapt to the new context window and can dynamically adjust to the user’s needs, especially when it’s used to fine-tune on private data.</li>
+    </ul>
+  </li>
+  <li>Llama 2’s approach to positional embeddings and its open-source nature make it a versatile choice for tasks requiring large context windows. With simple modifications and fine-tuning, it can adapt to varying needs while maintaining optimal performance, proving to be a highly flexible and efficient model. The research and methodology involved can be further explored in <a href="https://arxiv.org/pdf/2306.15595.pdf">Chen et al. (2023)</a>.</li>
+</ul>
+
+<h2 id="background-ntk-ntk-aware-and-dynamic-ntk">Background: NTK, NTK-Aware, and Dynamic NTK</h2>
+
+<ul>
+  <li>Let’s go over how NTK and Dynamic NTK are associated with extending the context length in LLMs, enabling them to process and understand longer sequences of text.</li>
+</ul>
+
+<h3 id="ntk-neural-tangent-kernel">NTK (Neural Tangent Kernel)</h3>
+<ul>
+  <li>NTK, or Neural Tangent Kernel, is a fundamental concept in machine learning and neural networks.</li>
+  <li>It describes how neural networks, particularly deep neural networks, evolve during training under specific conditions.</li>
+  <li>In technical terms, NTK is a kernel function that emerges in the infinite-width limit of neural networks, capturing their behavior during training.</li>
+  <li>Researchers use NTK to understand neural network behavior, convergence speed, and the impact of architectural choices.</li>
+</ul>
+
+<h3 id="ntk-aware-method">NTK-Aware Method</h3>
+<ul>
+  <li>Proposed in <a href="https://www.reddit.com/r/LocalLLaMA/comments/14lz7j5/ntkaware_scaled_rope_allows_llama_models_to_have/">NTK-Aware Scaled RoPE allows LLaMA models to have extended (8k+) context size without any fine-tuning and minimal perplexity degradation.</a> by <code class="language-plaintext highlighter-rouge">bloc97</code>.</li>
+  <li>NTK-Aware addresses the challenge of extending the context window by preserving the model’s sensitivity to high-frequency components in the data.</li>
+  <li>High-frequency components are crucial in language processing for capturing fine-grained details and nuances in text.</li>
+  <li>The term “NTK” in “NTK-Aware” relates to the Neural Tangent Kernel, a theoretical framework describing how the output of a neural network changes in response to small changes in its parameters.</li>
+  <li>When extending the context window, NTK-Aware adjusts the model to prevent the loss of sensitivity to high-frequency components. This may involve weight or architecture modifications to compensate for potential detail loss when processing longer sequences.</li>
+</ul>
+
+<h3 id="dynamic-ntk-method">Dynamic NTK Method</h3>
+<ul>
+  <li>Dynamic NTK interpolation, a part of YaRN, dynamically adapts the model’s attention mechanism based on input sequence length.</li>
+  <li>Instead of a fixed setting for extended contexts, the model adjusts its processing according to the actual sequence length.</li>
+  <li>For shorter sequences near the training length, adjustments are minimal, but as sequence length increases, Dynamic NTK scales the adaptations.</li>
+  <li>NTK-Aware focuses on specific adjustments to preserve high-frequency information in extended contexts, while Dynamic NTK offers flexibility and efficiency by tailoring adjustments to varying context sizes. Both methods enable language models to handle longer text sequences beyond their original training limits. Dynamic NTK mechanism thus interpolates frequencies unevenly, keeping high frequencies intact.</li>
+  <li>Dynamic NTK interpolation is a key component of <a href="#yarn-efficient-context-window-extension-of-large-language-models">YaRN</a> that empowers language models to handle extended context windows with improved efficiency and performance.</li>
+</ul>
+
+<h2 id="related-papers">Related Papers</h2>
+
+<h3 id="extending-context-window-of-large-language-models-via-positional-interpolation"><a href="https://arxiv.org/abs//2306.15595">Extending Context Window of Large Language Models Via Positional Interpolation</a></h3>
+
+<ul>
+  <li>This paper by Chen et al. from Meta AI in 2023 presents Position Interpolation (PI) that extends the context window sizes of RoPE-based pretrained LLMs such as LLaMA models to up to 32768 with minimal fine-tuning (within 1000 steps), while demonstrating strong empirical results on various tasks that require long context, including passkey retrieval, language modeling, and long document summarization from LLaMA 7B to 65B.</li>
+  <li>Meanwhile, the extended model by Position Interpolation preserve quality relatively well on tasks within its original context window. To achieve this goal, Position Interpolation linearly down-scales the input position indices to match the original context window size, rather than extrapolating beyond the trained context length which may lead to catastrophically high attention scores that completely ruin the self-attention mechanism.</li>
+  <li>They present a theoretical study which shows that the upper bound of interpolation is at least ∼600x smaller than that of extrapolation, further demonstrating its stability.</li>
+  <li>Models extended via Position Interpolation retain its original architecture and can reuse most pre-existing optimization and infrastructure.</li>
+  <li>The following figure from the paper illustrates the Position Interpolation method. Consider a Llama model pre-trained with a 2048 context window length. Upper left illustrates the normal usage of an LLM model: input position indices (blue dots) are within the pre-trained range. Upper right illustrates length extrapolation where models are required to operate unseen positions (red dots) up to 4096. Lower left illustrates Position Interpolation where we downscale the position indices (blue and green dots) themselves from [0, 4096] to [0, 2048] to force them to reside in the pretrained range.</li>
+</ul>
+
+<p><img src="../../../images/papers/PI.jpg" alt=""></p>
+
+<h3 id="yarn-efficient-context-window-extension-of-large-language-models"><a href="https://arxiv.org/abs/2309.00071">YaRN: Efficient Context Window Extension of Large Language Models</a></h3>
+
+<ul>
+  <li>This paper by Peng et al. from Nous Research, EleutherAI, and the University of Geneva, proposes Yet Another RoPE extensioN method (YaRN) to efficiently extend the context window of transformer-based language models using Rotary Position Embeddings (RoPE).</li>
+  <li>The authors address the limitation of transformer-based language models, specifically their inability to generalize beyond the sequence length they were trained on. YaRN demonstrates a compute-efficient way to extend the context window of such models, requiring significantly fewer tokens and training steps compared to previous methods.</li>
+  <li>YaRN enables Llama models to effectively utilize and extrapolate to context lengths much longer than their original pre-training would allow. This method surpasses previous state-of-the-art approaches in context window extension.</li>
+  <li>The paper details various technical aspects of YaRN, including its capability to extrapolate beyond the limited context of a fine-tuning dataset. The models fine-tuned using YaRN have been reproduced online, supporting context lengths up to 128k.</li>
+  <li>YaRN introduces an innovative technique known as “Dynamic NTK” (Neural Tangents Kernel) interpolation, which modifies the attention mechanism of the model. This dynamic scaling allows the model to handle longer contexts without extensive retraining. By doing so, YaRN surpasses previous approaches in context window extension and significantly reduces the computational resources required. Put simply, Dynamic NTK is designed to address the challenge of extending the context window of transformer-based language models using Rotary Position Embeddings (RoPE). It achieves this by dynamically scaling the attention mechanism of the model, allowing it to efficiently process longer text sequences without requiring extensive retraining.</li>
+  <li>Dynamic NTK interpolation modifies the traditional attention mechanism to adapt to extended contexts, ensuring that the model can effectively utilize and extrapolate to context lengths much longer than its original pre-training would allow. This dynamic scaling approach optimizes the use of available resources and computational power.</li>
+  <li>Dynamic NTK interpolation is a key component of YaRN that empowers language models to handle extended context windows with improved efficiency and performance, making it a valuable advancement in the field of large language models.</li>
+  <li>Additionally, YaRN incorporates a temperature parameter that affects the perplexity across different data samples and token positions within the extended context window. Adjusting this temperature parameter modifies the attention mechanism, enhancing the model’s ability to handle extended context lengths efficiently.</li>
+  <li>Extensive experiments demonstrate YaRN’s efficacy. For instance, it achieves context window extension of language models with RoPE as the position embedding, using only about 0.1% of the original pre-training corpus, a significant reduction in computational resources.</li>
+  <li>The following figure from the paper illustrates that evaluations focus on several aspects, such as perplexity scores of fine-tuned models with extended context windows, the passkey retrieval task, and performance on standardized LLM benchmarks. YaRN models show strong performance across all contexts, effectively extending the context window of Llama 2 models to 128k. The following figure from the paper illustrates the sliding window perplexity (S = 256) of ten 128k Proof-pile documents truncated to evaluation context window size.</li>
+</ul>
+
+<p><img src="../../../images/papers/YaRN.jpg" alt=""></p>
+
+<ul>
+  <li>The paper concludes that YaRN improves upon all existing RoPE interpolation methods and acts as a highly efficient drop-in replacement. It preserves the original abilities of fine-tuned models while attending to very large context sizes and allows for efficient extrapolation and transfer learning under compute-constrained scenarios.</li>
+  <li>The research illustrates YaRN as a significant advancement in extending the context window of large language models, offering a more compute-efficient approach with broad implications for model training and performance.</li>
+  <li><a href="https://github.com/jquesnelle/yarn">Code</a></li>
+</ul>
+
+<h3 id="longlora-efficient-fine-tuning-of-long-context-large-language-models"><a href="https://arxiv.org/abs/2309.12307">LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models</a></h3>
+
+<ul>
+  <li>This paper by Chen et al. from CUHK and MIT presents LongLoRA, an efficient fine-tuning approach that extends the context sizes of pre-trained large language models (LLMs) during fine-tuning, with limited computation cost.</li>
+  <li>Typically, training LLMs with long context sizes is computationally expensive, requiring extensive training hours and GPU resources. For example, training on the context length of 8192 needs 16x computational costs in self-attention layers as that of 2048.</li>
+  <li>LongLoRA speeds up the context extension of LLMs in two aspects. On the one hand, although dense global attention is needed during inference, fine-tuning the model can be effectively and efficiently done by sparse local attention. The proposed shift short attention ($$S^2$-attention) effectively enables context extension, leading to non-trivial computation savings with similar performance to fine-tuning with vanilla attention. Particularly, it can be implemented with only two lines of code in training, while being optional in inference.</li>
+  <li>$$S^2$-attention splits the context into groups and only attends within each group. Tokens are shifted between groups in different heads to enable information flow. This approximates full attention but is much more efficient.</li>
+  <li>On the other hand, they revisit the parameter-efficient fine-tuning regime for context expansion. Notably, they find that LoRA for context extension works well under the premise of trainable embedding and normalization. LongLoRA demonstrates strong empirical results on various tasks on Llama 2 models from 7B/13B to 70B.</li>
+  <li>LongLoRA adopts Llama 2 7B from 4k context to 100k, or Llama 2 70B to 32k on a single 8x A100 machine. LongLoRA extends models’ context while retaining their original architectures, and is compatible with most existing techniques, like FlashAttention-2.</li>
+  <li>In addition, to make LongLoRA practical, they collect a dataset, LongQA, for supervised fine-tuning. It contains more than 3k long context question-answer pairs.</li>
+  <li>In summary, the key ideas are:
+    <ol>
+      <li><strong>Shift Short Attention (S2-Attn):</strong> During fine-tuning, standard full self-attention is very costly for long contexts. S2-Attn approximates the full attention using short sparse attention within groups of tokens. It splits the sequence into groups, computes attention in each group, and shifts the groups in half the heads to allow information flow. This is inspired by Swin Transformers. S2-Attn enables efficient training while allowing full attention at inference.</li>
+      <li><strong>Improved LoRA:</strong> Original LoRA only adapts attention weights. For long contexts, the gap to full fine-tuning is large. LongLoRA shows embedding and normalization layers are key. Though small, making them trainable bridges the gap.</li>
+      <li><strong>Compatibility with optimizations like FlashAttention-2:</strong> As S2-Attn resembles pre-training attention, optimizations like FlashAttention-2 still work at both train and inference. But many efficient attention mechanisms have large gaps to pre-training attention, making fine-tuning infeasible.</li>
+      <li><strong>Evaluation:</strong> LongLoRA extends the context of Llama 2 7B to 100k tokens, 13B to 64k tokens, and 70B to 32k tokens on one 8x A100 machine. It achieves strong perplexity compared to full fine-tuning baselines, while being much more efficient. For example, for Llama 2 7B with 32k context, LongLoRA reduces training time from 52 GPU hours to 24 hours.</li>
+    </ol>
+  </li>
+  <li>The following table from the paper illustrates an overview of LongLoRA designs. LongLoRA introduces shift short attention during finetuning. The trained model can retain its original standard self-attention during inference. In addition to plain LoRA weights, LongLoRA additionally makes embedding and normalization layers trainable, which is essential to long context learning, but takes up only a small proportion of parameters.</li>
+</ul>
+
+<p><img src="../../../images/papers/LongLoRA.jpg" alt=""></p>
+
+<ul>
+  <li>The following table from the paper shows a performance and efficiency comparison between full fine-tuning, plain LoRA, and our LongLoRA. They fine-tune LLaMA2 7B on various context lengths, with FlashAttention-2 and DeepSpeed stage 2. Perplexity is evaluated on the Proof-pile test set. Plain LoRA baseline spends limited GPU memory cost, but its perplexity gets worse as the context length increases. LongLoRA achieves comparable performance to full fine-tuning while the computational cost is much less.</li>
+</ul>
+
+<p><img src="../../../images/papers/LongLoRA2.jpg" alt=""></p>
+
+<ul>
+  <li><a href="https://github.com/dvlab-research/LongLoRA">Code</a>.</li>
+</ul>
+
+<h3 id="longqlora-efficient-and-effective-method-to-extend-context-length-of-large-language-models"><a href="https://arxiv.org/abs/2311.04879">LongQLoRA: Efficient and Effective Method to Extend Context Length of Large Language Models</a></h3>
+
+<ul>
+  <li>This paper by Yang from SYSU China introduces LongQLoRA, a novel method to extend the context length of large language models, particularly focusing on LLaMA2 models. The key innovation of LongQLoRA is its combination of Position Interpolation, QLoRA, and Shift Short Attention from LongLoRA to increase context lengths efficiently with limited resources.</li>
+  <li>LongQLoRA was tested on LLaMA2 7B and 13B models, successfully extending their context length from 4096 to 8192, and even up to 12k tokens, using just a single 32GB V100 GPU and a mere 1000 fine-tuning steps. This performance was compared with other methods like LongLoRA and MPT-7B-8K, showing that LongQLoRA achieves competitive, if not superior, performance.</li>
+  <li>The paper detailed the implementation of LongQLoRA, emphasizing its efficient fine-tuning method, which leverages quantization and low-rank adapter weights. Specifically, it sets the LoRA rank to 64 and adds these weights to all layers without training word embeddings and normalization layers. This approach significantly reduces the GPU memory footprint, enabling performance enhancements on resource-limited settings.</li>
+  <li>The figure below from the original paper shows the evaluation perplexity of 7B models on PG19 validation and Proof-pile test datasets in evaluation context length from 1024 to 8192. All models are quantized to 4-bit in inference. LongQLoRA is finetuned based on LLaMA2-7B for 1000 steps with RedPajama dataset on a single V100 GPU. ‘LongLoRA-Full’ and ‘LongLoRA-LoRA’ mean LLaMA2-7B published by LongLoRA with full finetuning and LoRA finetuning respectively. MPT-7B-8K are better than LLaMA2, LongLoRA and LongQLoRA in context length from 1024 to 4096. LLaMA2-7B has very poor performance beyond the pre-defined context length of 8192. LongQLoRA outperforms LongLoRA-LoRA on both datasets in context length from 1024 to 8192. In context length of 8192, LongQLoRA is extremely close to LongLoRA-Full on Proof-pile test dataset, even better than MPT-7B-8K on PG19 validation dataset.</li>
+</ul>
+
+<p><img src="../../../images/papers/LongQLoRA.jpg" alt=""></p>
+
+<ul>
+  <li>Ablation studies were conducted to analyze the effects of LoRA rank, fine-tuning steps, and attention patterns in inference. These studies demonstrated the robustness and effectiveness of LongQLoRA across various settings and tasks.</li>
+  <li>The authors also collected and built a long instruction dataset of 39k data points, focusing on tasks like book summarization and Natural Questions, to test LongQLoRA’s performance in both long and short context generation tasks.</li>
+  <li>The results showed that LongQLoRA outperforms LongLoRA in several key metrics and closely matches the performance of more resource-intensive models like MPT-7B-8K. The model, training data, and code are publicly available for further research, emphasizing the paper’s contribution to the field of efficient language model training and context length extension.</li>
+</ul>
+
+<h3 id="memgpt-towards-llms-as-operating-systems"><a href="https://arxiv.org/abs/2310.08560">MemGPT: Towards LLMs As Operating Systems</a></h3>
+
+<ul>
+  <li>This paper by Packer et al. from UC Berkeley introduces MemGPT, a groundbreaking system that revolutionizes the capabilities of large language models (LLMs) by enabling them to handle contexts beyond their standard limited windows. Drawing inspiration from traditional operating systems’ hierarchical memory systems, MemGPT manages different memory tiers within LLMs to provide extended context capabilities.</li>
+  <li>The innovative MemGPT system allows LLMs to have virtually unlimited memory, mirroring the functionality of operating systems in managing memory hierarchies. This approach enables the LLMs to handle much larger contexts than their inherent limits would usually permit. The virtual context management technique, similar to virtual memory paging in operating systems, allows for effective data movement between fast and slow memory tiers, giving the appearance of a larger memory resource.</li>
+  <li>MemGPT consists of two primary memory types: main context (analogous to OS main memory/RAM) and external context (similar to OS disk memory). The main context is the standard context window for LLMs, while external context refers to out-of-context storage. The system’s architecture enables intelligent management of data between these contexts. The LLM processor is equipped with function calls, which help manage its own memory, akin to an operating system’s management of physical and virtual memory.</li>
+  <li>The following figure from the paper illustrates that in MemGPT (components shaded), a fixed-context LLM is augmented with a hierarchical memory system and functions that let it manage its own memory. The LLM processor takes main context (analogous to OS main memory/RAM) as input, and outputs text interpreted by a parser, resulting either in a yield or a function call. MemGPT uses functions to move data between main context and external context (analogous to OS disk memory). When the processor generates a function call, it can request control ahead of time to chain together functions. When yielding, the processor is paused until the next external event (e.g., a user message or scheduled interrupt).</li>
+</ul>
+
+<p><img src="../../../images/papers/MemGPT.jpg" alt=""></p>
+
+<ul>
+  <li>One of the key features of MemGPT is its capability to easily connect to external data sources. This feature enhances the system’s flexibility and utility in various applications. Furthermore, MemGPT comes with built-in support for LanceDB (YC W22), providing scalable semantic search via archival storage. This integration significantly boosts MemGPT’s ability to retrieve and process large amounts of data efficiently.</li>
+  <li>The following figure from the paper illustrates the deep memory retrieval task. In the example shown, the user asks a question that can only be answered using information from a prior session (no longer in-context). Even though the answer is not immediately answerable using the in-context information, MemGPT can search through its recall storage containing prior conversations to retrieve the answer.</li>
+</ul>
+
+<p><img src="../../../images/papers/MemGPT2.jpg" alt=""></p>
+
+<ul>
+  <li>The paper evaluates MemGPT’s performance in two critical domains: document analysis and conversational agents. In document analysis, MemGPT exceeds the capabilities of traditional LLMs by analyzing large documents that surpass the underlying LLM’s context window. For conversational agents, MemGPT demonstrates its effectiveness in maintaining long-term interactions with enhanced coherence and personalization, resulting in more natural and engaging dialogues.</li>
+  <li>MemGPT’s versatility is further highlighted by its compatibility with many LLMs out of the box and the option to plug it into a custom LLM server. This feature ensures that MemGPT can be widely adopted and integrated into various existing LLM frameworks, enhancing their capabilities.</li>
+  <li>Despite its pioneering approach and capabilities, the paper also notes limitations, such as reliance on specialized GPT-4 models for function calling and the proprietary nature of these models.</li>
+  <li>Overall, MemGPT’s innovative approach, inspired by operating system techniques, represents a significant advancement in LLM capabilities. It opens new avenues for future research and applications, particularly in domains requiring massive or unbounded contexts and in integrating different memory tier technologies. The system’s ability to manage its own memory and connect to external sources, along with LanceDB support, positions MemGPT as a versatile and powerful tool in the realm of artificial intelligence.</li>
+  <li><a href="https://memgpt.ai/">Code</a>; <a href="https://blog.lancedb.com/memgpt-os-inspired-llms-that-manage-their-own-memory-793d6eed417e">Blog</a></li>
+</ul>
+
+<h3 id="lm-infinite-simple-on-the-fly-length-generalization-for-large-language-models"><a href="https://arxiv.org/abs/2308.16137">LM-Infinite: Simple On-The-Fly Length Generalization for Large Language Models</a></h3>
+
+<ul>
+  <li>This paper by Han et al. from University of Illinois Urbana-Champaign and Meta, presents LM-Infinite, a method for enabling large language models (LLMs) to generate longer texts without retraining or additional parameters.</li>
+  <li>LM-Infinite addresses the issue of LLMs’ length generalization failures, particularly on unseen sequence lengths. The authors identify three out-of-distribution (OOD) factors contributing to this problem: (1) unseen distances, (2) unseen number of tokens, and (3) implicitly encoded absolute position. The figure below from the paper shows a diagnosis of three OOD factors in LLMs.</li>
+</ul>
+
+<p><img src="../../../images/papers/LM-Infinite1.jpg" alt=""></p>
+
+<ul>
+  <li>The proposed solution, LM-Infinite, introduces a <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x039B;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-14"><span class="mi" id="MathJax-Span-15" style="font-family: STIXGeneral-Regular;">Λ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-5">\Lambda</script>-shaped attention mask and a distance limit during attention. This method is computationally efficient, requiring only <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-16" style="width: 2.294em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.878em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1001.83em, 2.503em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-17"><span class="mi" id="MathJax-Span-18" style="font-family: STIXGeneral-Italic;">O</span><span class="mo" id="MathJax-Span-19" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-20" style="font-family: STIXGeneral-Italic;">n</span><span class="mo" id="MathJax-Span-21" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-6">O(n)</script> time and space, and is compatible with various LLMs using relative-position encoding methods.</li>
+  <li>In terms of implementation, LM-Infinite uses a sliding window approach with a <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x039B;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-22" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-23"><span class="mi" id="MathJax-Span-24" style="font-family: STIXGeneral-Regular;">Λ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-7">\Lambda</script>-shaped mask for attention calculation. It allows for longer sequence handling by dynamically adjusting the window size based on token distances. The model also incorporates a novel truncation scheme to handle tokens outside the attention window, which are summarized and reused to maintain context relevance without significant computational overhead. The figure below from the paper shows: (a) LM-Infinite is a plug-and-play solution for various LLMs, consisting of a <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x039B;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-25" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-26"><span class="mi" id="MathJax-Span-27" style="font-family: STIXGeneral-Regular;">Λ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-8">\Lambda</script>-shaped mask and a distance constraint during attention. (b) A conceptual model for understanding how relative position encoding works.</li>
+</ul>
+
+<p><img src="../../../images/papers/LM-Infinite2.jpg" alt=""></p>
+
+<ul>
+  <li>An overview of LM-Infinite is illustrated in the figure above. This simple solution consists of two components: a  <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x039B;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-28" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-29"><span class="mi" id="MathJax-Span-30" style="font-family: STIXGeneral-Regular;">Λ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-9">\Lambda</script>–shaped attention mask and a distance limit. As visualized in the figure, the <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x039B;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-31" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-32"><span class="mi" id="MathJax-Span-33" style="font-family: STIXGeneral-Regular;">Λ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-10">\Lambda</script>-shaped attention mask has two branches: a global branch on the left and a local branch on the right. The global branch allows each token to attend to the starting <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;global&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-34" style="width: 3.023em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.503em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.565em, 1002.5em, 2.607em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-35"><span class="msubsup" id="MathJax-Span-36"><span style="display: inline-block; position: relative; width: 2.503em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-37" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-38"><span class="mrow" id="MathJax-Span-39"><span class="mtext" id="MathJax-Span-40" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">global&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.003em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>global&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-11">n_{\text {global }}</script> tokens if they appear before the current token. The local branch allows each token to attend to preceding tokens within <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;local&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-41" style="width: 2.607em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.138em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.565em, 1002.14em, 2.451em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-42"><span class="msubsup" id="MathJax-Span-43"><span style="display: inline-block; position: relative; width: 2.138em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-45"><span class="mrow" id="MathJax-Span-46"><span class="mtext" id="MathJax-Span-47" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">local&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 0.816em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>local&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-12">n_{\text {local }}</script> distance. Any other tokens outside these two branches are ignored during attention. Here they heuristically set <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;local&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;pretrain&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-48" style="width: 7.659em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.357em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1006.36em, 2.659em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-49"><span class="msubsup" id="MathJax-Span-50"><span style="display: inline-block; position: relative; width: 2.138em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-51" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-52"><span class="mrow" id="MathJax-Span-53"><span class="mtext" id="MathJax-Span-54" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">local&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-55" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="msubsup" id="MathJax-Span-56" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 3.023em; height: 0px;"><span style="position: absolute; clip: rect(3.18em, 1000.58em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-57" style="font-family: STIXGeneral-Italic;">L<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.576em;"><span class="texatom" id="MathJax-Span-58"><span class="mrow" id="MathJax-Span-59"><span class="mtext" id="MathJax-Span-60" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">pretrain&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>local&nbsp;</mtext></mrow></msub><mo>=</mo><msub><mi>L</mi><mrow class="MJX-TeXAtom-ORD"><mtext>pretrain&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-13">n_{\text {local }}=L_{\text {pretrain }}</script> as equal to the training length limit. This choice includes the “comfort zone” of LLMs in attention. The selection of <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;global&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-61" style="width: 3.023em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.503em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.565em, 1002.5em, 2.607em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-62"><span class="msubsup" id="MathJax-Span-63"><span style="display: inline-block; position: relative; width: 2.503em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-64" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-65"><span class="mrow" id="MathJax-Span-66"><span class="mtext" id="MathJax-Span-67" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">global&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.003em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>global&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-14">n_{\text {global }}</script> has less effect on model performance, and they find that the range <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;100&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-68" style="width: 4.378em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.648em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1003.54em, 2.503em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-69"><span class="mo" id="MathJax-Span-70" style="font-family: STIXGeneral-Regular;">[</span><span class="mn" id="MathJax-Span-71" style="font-family: STIXGeneral-Regular;">10</span><span class="mo" id="MathJax-Span-72" style="font-family: STIXGeneral-Regular;">,</span><span class="mn" id="MathJax-Span-73" style="font-family: STIXGeneral-Regular; padding-left: 0.211em;">100</span><span class="mo" id="MathJax-Span-74" style="font-family: STIXGeneral-Regular;">]</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mn>10</mn><mo>,</mo><mn>100</mn><mo stretchy="false">]</mo></math></span></span><script type="math/tex" id="MathJax-Element-15">[10,100]</script> is generally okay. Note that <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;global&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-75" style="width: 5.107em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.221em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1004.22em, 2.659em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-76"><span class="msubsup" id="MathJax-Span-77"><span style="display: inline-block; position: relative; width: 2.503em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-78" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-79"><span class="mrow" id="MathJax-Span-80"><span class="mtext" id="MathJax-Span-81" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">global&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-82" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mn" id="MathJax-Span-83" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.316em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>global&nbsp;</mtext></mrow></msub><mo>=</mo><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-16">n_{\text {global }}=0</script> will lead to immediate quality degradation. This design is based on the OOD factors 2 and 3 above, where they aim to control the number of tokens to be attended to, while also ensuring the inclusion of starting tokens. Theoretically, LM-Infinite can access information from a context as long as <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;layer&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;msub&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;pretrain&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-84" style="width: 6.253em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.211em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1005.21em, 2.607em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-85"><span class="msubsup" id="MathJax-Span-86"><span style="display: inline-block; position: relative; width: 2.19em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-87" style="font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-88"><span class="mrow" id="MathJax-Span-89"><span class="mtext" id="MathJax-Span-90" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">layer&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-91"><span style="display: inline-block; position: relative; width: 3.023em; height: 0px;"><span style="position: absolute; clip: rect(3.18em, 1000.58em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-92" style="font-family: STIXGeneral-Italic;">L<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.576em;"><span class="texatom" id="MathJax-Span-93"><span class="mrow" id="MathJax-Span-94"><span class="mtext" id="MathJax-Span-95" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">pretrain&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mtext>layer&nbsp;</mtext></mrow></msub><msub><mi>L</mi><mrow class="MJX-TeXAtom-ORD"><mtext>pretrain&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-17">n_{\text {layer }} L_{\text {pretrain }}</script>, because each deeper layer allows the attention to span <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;pretrain&amp;#xA0;&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-96" style="width: 3.648em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.023em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1003.02em, 2.607em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-97"><span class="msubsup" id="MathJax-Span-98"><span style="display: inline-block; position: relative; width: 3.023em; height: 0px;"><span style="position: absolute; clip: rect(3.18em, 1000.58em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-99" style="font-family: STIXGeneral-Italic;">L<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.576em;"><span class="texatom" id="MathJax-Span-100"><span class="mrow" id="MathJax-Span-101"><span class="mtext" id="MathJax-Span-102" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">pretrain&nbsp;</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mrow class="MJX-TeXAtom-ORD"><mtext>pretrain&nbsp;</mtext></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-18">L_{\text {pretrain }}</script> farther than the layer above.</li>
+  <li>The distance limit involves bounding the “effective distance” <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;$&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-103" style="width: 4.326em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.596em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1003.6em, 2.451em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-104"><span class="mi" id="MathJax-Span-105" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="texatom" id="MathJax-Span-106"><span class="mrow" id="MathJax-Span-107"><span class="mo" id="MathJax-Span-108" style="font-family: STIXGeneral-Regular;">$</span></span></span><span class="mi" id="MathJax-Span-109" style="font-family: STIXGeneral-Italic;">w</span><span class="mi" id="MathJax-Span-110" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-111" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-112" style="font-family: STIXGeneral-Italic;">h</span><span class="mi" id="MathJax-Span-113" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-114" style="font-family: STIXGeneral-Italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.184em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mrow class="MJX-TeXAtom-ORD"><mo>$</mo></mrow><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">d$ within</script>L_{\text {pretrain }}$. This only affects tokens that are in the global branch. In specific, recall that in relative positional encoding, the attention logit is originally calculated as <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;q&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;$&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-115" style="width: 8.909em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.398em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1007.35em, 2.867em, -999.997em); top: -2.497em; left: 0em;"><span class="mrow" id="MathJax-Span-116"><span class="mi" id="MathJax-Span-117" style="font-family: STIXGeneral-Italic;">w</span><span class="mo" id="MathJax-Span-118" style="font-family: STIXGeneral-Regular;">(</span><span class="texatom" id="MathJax-Span-119"><span class="mrow" id="MathJax-Span-120"><span class="mi" id="MathJax-Span-121" style="font-family: STIXGeneral; font-weight: bold;">q</span></span></span><span class="mo" id="MathJax-Span-122" style="font-family: STIXGeneral-Regular;">,</span><span class="texatom" id="MathJax-Span-123" style="padding-left: 0.211em;"><span class="mrow" id="MathJax-Span-124"><span class="mi" id="MathJax-Span-125" style="font-family: STIXGeneral; font-weight: bold;">k</span></span></span><span class="mo" id="MathJax-Span-126" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-127" style="font-family: STIXGeneral-Italic; padding-left: 0.211em;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mo" id="MathJax-Span-128" style="font-family: STIXGeneral-Regular;">)</span><span class="texatom" id="MathJax-Span-129"><span class="mrow" id="MathJax-Span-130"><span class="mo" id="MathJax-Span-131" style="font-family: STIXGeneral-Regular;">$</span></span></span><span class="mo" id="MathJax-Span-132" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-133" style="font-family: STIXGeneral-Italic; padding-left: 0.211em;">w</span><span class="mi" id="MathJax-Span-134" style="font-family: STIXGeneral-Italic;">h</span><span class="mi" id="MathJax-Span-135" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-136" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-137" style="font-family: STIXGeneral-Italic;">e</span></span><span style="display: inline-block; width: 0px; height: 2.503em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>w</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">q</mi></mrow><mo>,</mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">k</mi></mrow><mo>,</mo><mi>d</mi><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo>$</mo></mrow><mo>,</mo><mi>w</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>e</mi></math></span></span><script type="math/tex" id="MathJax-Element-20">w(\mathbf{q}, \mathbf{k}, d)$, where</script>d$ is the distance between two tokens. Now they modify it as $$w\left(\mathbf{q}, \mathbf{k}, \min \left(d, L_{\text {pretrain }}\right)\right)$. This design is motivated by the OOD factor 1 and ensures that LLMs are not exposed to distances unseen during pre-training.</li>
+  <li>LM-Infinite demonstrates consistent text generation fluency and quality for lengths up to 128k tokens on the ArXiv and OpenWebText2 datasets, achieving 2.72x decoding speedup without parameter updates.</li>
+  <li>Evaluation includes experiments on ArXiv and OpenWebText2 corpora with models like LLaMA, Llama-2, MPT-7B, and GPT-J. LM-Infinite shows comparable or superior performance to LLMs fine-tuned on long sequences in terms of perplexity and BLEU/ROUGE metrics.</li>
+  <li>The paper suggests that LM-Infinite can extend task-solving ability to longer sequences than training samples and offers potential for future work in understanding information in the masked-out attention region.</li>
+</ul>
+
+<h3 id="llm-maybe-longlm-self-extend-llm-context-window-without-tuning"><a href="https://arxiv.org/abs/2401.01325">LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning</a></h3>
+
+<ul>
+  <li>This paper by Jin et al. addresses the limitation of Large Language Models (LLMs) in managing long context sequences, particularly due to their training on fixed-length sequences. This results in unpredictable behavior and performance degradation when LLMs encounter long input sequences during inference. The authors propose that LLMs inherently possess the ability to handle long contexts without requiring fine-tuning.</li>
+  <li>Their core contributions are as follows:
+    <ol>
+      <li><strong>Self-Extend Method:</strong> The paper introduces ‘Self-Extend’, a method aimed at leveraging the intrinsic long context capabilities of LLMs. Self-Extend uses a FLOOR operation to map unseen large relative positions (encountered during inference) to known positions from the training phase. This approach is designed to address the positional out-of-distribution issue, allowing LLMs to process longer texts coherently without additional fine-tuning.</li>
+      <li><strong>Bi-Level Attention Information:</strong> Self-Extend constructs bi-level attention - group level and neighbor level. Group level attention is for tokens with long distances, employing the FLOOR operation on positions. Neighbor level attention targets nearby tokens without any modifications. This design aims to retain the relative ordering of information in extended texts.</li>
+    </ol>
+  </li>
+  <li>The figure below from the paper shows the attention score matrix (the matrix before Softmax operation) of the proposed Self-Extend while a sequence of length 10 is input to a LLM with pretraining context window (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-21-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-138" style="width: 0.784em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.63em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-139"><span class="mi" id="MathJax-Span-140" style="font-family: STIXGeneral-Italic;">L<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi></math></span></span><script type="math/tex" id="MathJax-Element-21">L</script>) of length 7. The number is the relative distance between the corresponding query and key tokens. Self-Extend has two kinds of attention mechanism: for neighbor tokens within the neighbor window (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-22-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-141" style="width: 1.357em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.096em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.565em, 1001.1em, 2.451em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-142"><span class="msubsup" id="MathJax-Span-143"><span style="display: inline-block; position: relative; width: 1.096em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.63em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-144" style="font-family: STIXGeneral-Italic;">w</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.68em;"><span class="mi" id="MathJax-Span-145" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 0.816em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>w</mi><mi>n</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-22">w_n</script>, in this figure, it’s 4), it adapts the normal self-attention in transformers; for tokens out of the window, it adapts the values from the grouped attention. The group size (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-23-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-146" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.73em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-147"><span class="mi" id="MathJax-Span-148" style="font-family: STIXGeneral-Italic;">G</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></span></span><script type="math/tex" id="MathJax-Element-23">G</script>) is set to 2. After the two parts merge, the same as the normal attention, the softmax operation is applied to the attention value matrix and gets the attention weight matrix.</li>
+</ul>
+
+<p><img src="../../../images/papers/LM-Infinite2.jpg" alt=""></p>
+
+<ul>
+  <li>The effectiveness of Self-Extend was evaluated on popular LLMs like Llama-2, Mistral, and SOLAR across a variety of tasks, including language modeling, synthetic long context tasks, and real-world long context tasks. The results showed significant improvements in long context understanding, often surpassing fine-tuning-based methods.</li>
+  <li>Performance was analyzed along the following dimensions:
+    <ol>
+      <li><strong>Language Modeling:</strong> Self-Extend was evaluated for language modeling on the PG19 dataset, which comprises long books. It effectively maintained low perplexity outside the pretraining context window for models like Llama-2-chat and Mistral.</li>
+      <li><strong>Synthetic Long Context Tasks:</strong> The method was assessed using the passkey retrieval task, testing the LLMs’ ability to recognize information throughout the entire length of a long text sequence.</li>
+      <li><strong>Real Long Context Tasks:</strong> The evaluation included benchmarks such as Longbench and L-Eval. Results showed notable performance improvements across different datasets. Self-Extend was found to perform comparably or better than several fine-tuned models, with some exceptions attributed to the specific characteristics of certain datasets.</li>
+    </ol>
+  </li>
+  <li>The paper concludes that Self-Extend, which is effective during inference without needing fine-tuning, can achieve performance on par with or superior to learning-based methods. This represents a significant advancement in enhancing the natural and efficient handling of longer contexts by LLMs.</li>
+</ul>
+
+<h3 id="in-search-of-needles-in-a-11m-haystack-recurrent-memory-finds-what-llms-miss"><a href="https://arxiv.org/abs/2402.10790">In Search of Needles in a 11M Haystack: Recurrent Memory Finds What LLMs Miss</a></h3>
+
+<ul>
+  <li>This paper by Kuratov et al. from AIRI, MIPT, and London Institute for Mathematical Sciences addresses the challenge of processing long documents using generative transformer models. The authors introduce BABILong, a new benchmark designed to assess the capabilities of models in extracting and processing distributed facts within extensive texts. This benchmark aims to simulate real-world scenarios where essential information is interspersed with large amounts of irrelevant data, making it a suitable test for long-context processing.</li>
+  <li>The authors developed BABILong by extending the bAbI tasks to include much longer contexts, using the PG19 dataset as background text. This benchmark allows the evaluation of models on document lengths up to millions of tokens, far exceeding the typical lengths used in existing benchmarks.</li>
+  <li>The paper evaluates GPT-4 and RAG (Retrieval-Augmented Generation) on the BABILong tasks. Results show that these models can effectively handle sequences up to 104 elements but struggle with longer contexts. Specifically, GPT-4 and RAG were unable to maintain accuracy as context length increased, demonstrating a significant drop in performance for longer inputs.</li>
+  <li>The figure below from the paper illustrates the fact that the memory augmented transformer answers questions about facts hidden in very long texts when retrieval augmented
+generation fails. We create a new BABILong dataset by randomly distributing simple episodic facts inside book corpus. Common RAG method fails to answer questions because order of facts matters. GPT-4 LLM effectively uses only fraction of the context and falls short for a full 128K window. Small LM (GPT-2) augmented with recurrent memory and fine-tuned for the task generalise well up to record 11M tokens. The parameter count for GPT-4 is based on public discussions.</li>
+</ul>
+
+<p><img src="../../../images/papers/11MNIAH.jpg" alt=""></p>
+
+<ul>
+  <li>The figure below from the paper illustrates an example generation for BABILong dataset. Statements relevant for the question from a bAbILong sample are hidden inside a larger irrelevant texts from PG19.</li>
+</ul>
+
+<p><img src="../../../images/papers/11MNIAH_1.jpg" alt=""></p>
+
+<ul>
+  <li>To address the limitations of existing models, the authors propose fine-tuning GPT-2 with recurrent memory augmentations. This approach allows the model to handle tasks involving up to 11 million tokens. The recurrent memory transformer (RMT) extends the context size by segmenting sequences and processing them recurrently, resulting in linear scaling with input size.</li>
+  <li>The RMT uses memory tokens processed alongside segment tokens to retain information from previous segments. Each memory state consists of multiple memory tokens, allowing different views of past inputs. The model updates its memory state at each step, enabling it to maintain relevant information over long contexts. Additionally, the authors implemented self-retrieval for RMT, which involves cross-attention between all past states and the current memory state.</li>
+  <li>The figure below from the paper illustrates the Recurrent Memory Transformer with self-retrieval from memory. (a) Recurrent memory transformer encodes information from the current segment to the memory vectors <code class="language-plaintext highlighter-rouge">[mem]</code>. Memory vectors from the previous segment are passed over to the next segment and updated. (b) With self-retrieval it processes each segment sequentially and collects the corresponding memory states. Here, while processing segment 4, the model can retrieve from previous states from segments 1-3. This overcomes the memory bottleneck that can occur in purely recurrent models, similar to attention in RNNs.</li>
+</ul>
+
+<p><img src="../../../images/papers/11MNIAH_3.jpg" alt=""></p>
+
+<ul>
+  <li>The authors used a curriculum training strategy for RMT and RMT-R (RMT with self-retrieval), starting with short sequences and gradually introducing longer ones. The models were trained on sequences up to 16k tokens and evaluated on sequences up to 10 million tokens. The results showed that both RMT and RMT-R significantly outperformed GPT-4 on long-context tasks, maintaining high performance even for extremely long sequences.</li>
+  <li>The paper provides an analysis of memory states and attention patterns, showing that RMT effectively stores and retrieves relevant facts from memory. The visualizations demonstrate how the model updates its memory when encountering new facts and retrieves them when needed to answer questions.</li>
+  <li>Overall, the proposed recurrent memory transformer demonstrates a substantial improvement in processing long sequences, setting a new record for input size handled by a neural network model. The approach highlights the potential of recurrent memory mechanisms to enhance the capabilities of language models in handling extensive contexts, paving the way for future research and development in this area.</li>
+  <li><a href="https://github.com/booydar/babilong">Code</a></li>
+</ul>
+
+<h2 id="citation">Citation</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code0"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code0">@article{Chadha2020DistilledContextLengthExtension,
+  title   = {LLM Context Length Extension},
+  author  = {Chadha, Aman and Jain, Vinija},
+  journal = {Distilled AI},
+  year    = {2020},
+  note    = {\url{https://aman.ai}}
+}
+</code></pre></div></div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+   <div align="center" class="wrap">
+      <div align="center" class="footer-col-1 column">
+         <ul>
+            <li>
+               
+               <span class="icon github">
+                  <a href="https://github.com/amanchadha">
+                     <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                           c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                           c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                           c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                           C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                           c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                           c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                           c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                           c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">amanchadha</span> -->
+                | 
+               <a href="https://citations.amanchadha.com/">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJoAAAVjBAMAAABzrVjQAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAElBMVEX///+xsLCxsLCxsLCx
+                        sLD///+bxiTSAAAABHRSTlMAAKP3FWDuDwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCa
+                        nBgAAAAHdElNRQfkBwQDMic2f+cwAAA03klEQVR42u2dW3IdOZJEu81mAcMqbOCacQMy0wImVNr/
+                        msZKKpVeuHkzEA8PIPx8douAh+MkkmKR1H/+QwghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQ
+                        QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIeQQ/vt2KOMzyeH/GtiE7rgP/3u+TQPdcRukgU3o
+                        jtsgb+fbNNAlt+GtgU3ojtsgDWxCd9yGT2/n2zTQJbfhrYFN6I7bIA1sGuiS2/DWwCZ0x214a2DT
+                        QJfcBelgE7rkNrw1sAndcRukgU0DXXIXvsl0tE3oktvwb+MH2zTQJXdBOtiELrkL32U62KaBbrkL
+                        P3R+rE1/oEvugnSwCV1yF/76sfRTbRrolrvwU+un2oQuuQvSwaaBbrkLP9d+qE3okrvwS+1n2jTQ
+                        LTdBOtj0J7rlLvxa/JE2oUvugnSwaaBbbsJvMh1pE7rlLvze/IE2DXTLTZAWNqFbbsKnSfXn2TTQ
+                        NTdh1v1xNg10y02QFjahW+7CtPzTbBrolpswb/80m9AtN0Fa2DTQNTfhSf2H2YRuuQmPFja9o2vu
+                        gTzr/yibBrrmJjw9gKNsQrfcBGlh00DX3IPnMh1lE7rmJlycwEE2DXTNPZAeNqFrbsLVEZxj00d0
+                        zT24PINjbBromnsgPWxC19yE60M4xaaBrrkHL07hFJvQNfdAetg00D334NUxHGITuuYeSA+b0DU3
+                        oYdNA11zE3rYhG65Cy1sGuiWu9DCJnTJbehg00CX3IYGNg10x31oYBO64kacb9NAV9yI821CN9yJ
+                        420a6IY7cbxN6IJbcbpNA11wKw63ib8YPJXDbULX24yzbRroeptxtk3odrtxtE0D3W43jrYJXW47
+                        TrbpHV1uOw62aaC77cfBNqGrbci5Ng10tQ051yZ0sx051qaBbrYjx9qELrYlp9qE7rUnh9o00L32
+                        5FCb0LU25UybBrrWppxpE7rVrhxp00C32pUjbUKX2pYTbfqILrUtB9o00J325UCb0JW2YEz/1/Ns
+                        GqpWyBIy5v/zcTahi27Bk2f2OJuGqhWyhDSx6Q900R2QtyY2oYtuwVsTm4aqFbKEdLEJXXQLnj+2
+                        Z9k0VK2QJS6aPssmdNEdkC42DVUtZImrqk+yaahaIUtIF5vQRXfgr8sn9yCbhqoWssR12QfZhC66
+                        A//qMq7/7+1tGqpayBIv2j7HJnTRHfhuy3jx/29u01DVQlaQV3WfYtNQ1UKWeNn3KTahi+7Aj66M
+                        l39iY5uGqhayxOvCD7EJXXQHPnSxaahqISvIjcbPsAnddAfuPL9H2PSObroBv4gy7vyhLW0aqlrI
+                        Erc6P8EmdNEdeHSxaahqISvIvdIPsAnddAduPsL72zRUtZAV5Gbr+9uEbroDd5/h7W1CF92BSe1j
+                        +gd3t2moaiEryO3ed7cJ3XQH7j/Fm9s0VLWQFeR+8ZvbhG66AZ8Uj/HeNg1VL2QFTfN724RuugFP
+                        BBmaP7yHTeimO/Ck+jH9wzvbNFS1kBVE1f3ONqGbbsBTPYbuj9e3aah6ISsoy9/YJnTTDXhux1D+
+                        +eo2DVUvZAVt+9vaxF8MHs+FHEP7AbVtQjfdgCs3hvojKts0VL2QFfT972oTuukGXKox9B9S16ah
+                        6oWssHAAm9qEbroBK4/znjYNVS9kAVk5gS1tGqpeyApLR7ClTeimG/DKi7H0URVtGqpeyAJ/rZ3B
+                        jjahq27A4hO9oU1D1QtZ4KUVb3+ufVw9m9BVN8BwBJvZNNBVn49YTuDyg6vZNG71QQy8kOnlx29k
+                        E7rqBpgPYBubBrrq8xHzATxfoZhN6Kob4HAAm9g00FWfj1wewLttjVo2oas+H3E5gC1sekd3fT7X
+                        BzBurvLMyUo23Z2FLCPXJ3B7nQ1sQlfdAK8TqG/TQFd9Pg+vE5DyNqGr/p1fAn5E57EiL05gWFeq
+                        Y9P9UVLYIqTLTN95v71SeZvQVd+tfaDDLSOOR1Dcpo/oru+XPtAJF3l5Bua1qthU5oReulQqrYbX
+                        Y5kXq2ITuur7ldfKe58bj4m5pyI2DXTXVx1N+dO+W7XZhnm1Ijahq/6C6DJ/ROf1Hm6Yl6thk2aO
+                        MPZM7TidZp7KNqGr/nzjR8yK5r7JnWmGYr3CNqGr/qx+yxVK7jfeMC9YwSbNFMi2N9bJ/Rzq2oSu
+                        2iBThfBu8w3zigVs0gyBLHtfnW7ON8xLFrAJ3bVNpgL5X3JzkGHuDG+TZoYQPlknQA/wCrk5xzCv
+                        CbcJ/4vB7TOgJ3AacCjWLGoTumoHmQo8EVfI3TGGeVG0TZoJQjhjigtuy3SATft0vatOMUOUtAl9
+                        Ck4yFf5RQMWEw7ws2CZ01+dM4jDhUCxb0SZNfnDVm+oUdRoFbUJ/x5mYJ1g8i5oTaiYoaBO4avOX
+                        LevrFDZAPZvQ9XvPAx5ngqjyD/PKSJu2qtr5NFJQfgegJn85m9DlnzeRcUJN/HI2gasW8wDlRjJO
+                        OMxr42zSZI/gxJlsE2rSy3QFmE3o4h8hU4GH+gnRhh/mxWE27Vb1HmP9gP7rH8PcH8omTfIITp3L
+                        MqEmu0xXQNkErlrMAxQdzDLhMC8PskkTPIJzJzNMqIku0xVANoGrFvMAZUczTDjM62NsQncdOZvm
+                        TMKQ6OTzDSA2oQtf6vo24OG+EH4s8wohNm3Z9T7jrT4uw7wDwiZN6jpd7zPf6uOiyT3vEGETumsx
+                        T1B8wMda7GHuEGCTJnQIp08oCbHnewBswladcDWhR1xNPcwl5tv0EVt1wtUEvpwkI/V8k3SboEWb
+                        ytaAHDDlaOYtptuE7NlWdtTBlJlPE1qmK2TbBKzZ3LYG2HiynllzNvNtsm2CtezQdtTJuJKUeV5j
+                        sk2wkj3aVgEaTwyRNYcz3yfXJvwvOrK0reIjZj5L5GHuMdcmTMOvWwhAczR+pEWe95hqE6Zhv7pV
+                        IKYTU2LN8cx3SrUJUbBn3WFn40Ve4nmRmTYh+r1VQgzbTac5n/lWmTbl1/sb0SOuHo4Lkhh4vlei
+                        Tent+vetI3u6zAOaN5lnkyZrFGKeovDE5uE0eeeb5dmUW+2c2Aktp1NhOE1ema6QZlNytYoK4kgd
+                        7kPqEc2rTLMptVlVBXFojqfAbJq48+2ybMos9imRA07ZazbNGcl0hSybkr1RNBCJ5nzws2nSzvdL
+                        simv1uDGlaTNln1I8y5zbNLkrN24ko87jaY5JZmukGNTvjkTlv6N+sQDMiDmoNqw8x1TbErqNKVy
+                        JTmj5R/TvMwUmxDuRFUeeELLiDmmOut8ywybUhp9TdR41yQM5vUK15yTTFfIsAlkz635w/kYP5lX
+                        1GFuM8Gmd4w99+YPR3NE4ME0UeebxtsUX+c9YqZ7zT6DaU5KpivE2wTTJ6r0wDNaQcwJV5LOdw23
+                        KbrM/NK1xM7l+I/saY5qXme4TUiDfuQRMh2+AcegQ7GtTFeItkmTcJfWK1Ug5nhrQef7RtsENegH
+                        nP/V1TIdeOYcin1lukKwTViFXk6fg+aUkGNpcs43jrUpsEclD//hCrQg5myrOec7x9qEdug7/rNV
+                        qME35lDsLNMVQm3SxAvGX5ECPYg52XLM+dahNqEVCus98Jg0AGPOC420KarEBcQ8jImYoR7A85oX
+                        GmkTWqEfcPcj7pyMB5qUcr55oE1og37E3Y8CXbiHHIrNZbpCnE2abNGIeRojW8ykObH57nE2oQ2K
+                        bT7woG6CDTlvNMymgP4qNa9lh5E0RybTFcJsQgsUXT24DjEn+p1h3j/KJk2yeAKqB/ch5kS2jPP9
+                        g2zC/2Lw6Oq1eM8UEHGYKw2yCe3PndFz8Z4pIOIwVxpjkyZXAhF2oCsRcyJTxPn2MTah9fmFCDvg
+                        nfgnHIrdZbpCiE2aWBnE6KGk/lCaY5PpCiE2oe25NXk2mrPCTKVJON89wibv3ur1vsKf5afSnNt8
+                        9wCbNKFS8O99Ce+x3ANqDm7eaYBNaHnia48/rPUDTQo439zfJu/S7MQJAi1GzIkMAeeb+9uEdud3
+                        4gTBNuOdbyj2lukK7jZpIuUg5pmceHcezDuf5ujmpbrbhHbn7uAANKeFGEyTb763t03ejRUsfZ3i
+                        g2nObr63s02aQFnEGqKh+GSaw5PpCs42oc1J6DzpuACTaeLJdAVfm7zrqth5oXrEnGg53nxrX5vQ
+                        4kyJdgTXj5gD/cQwb+1qkyZOGs6Vm3h3ns03neb45q262oQWRzE3Bs153QGXbt6qp03vaHEUc4Mo
+                        Pdsw7+xokyZMIr6NGyk9m+YA5zs72oTW5gkZkoQcWPpwmnAyXcHPJu+iShaeeWDpw2nCyXQFP5vQ
+                        1qQUbsZ5ODEH+oFh3tjNJk2UVJI0uYnzcGIOtHiE843dbEJLk9J37ollT6fJNt/Yyya0NDl9557Y
+                        HVDZ5rU62eRdkh9imCoC5/E8o2kOcV6rk01oZ7Rj4yg83jDv62OTJkcyiaIgqhJzoLVo8319bEIr
+                        c0GiKO5HljyfJppMV3Cxybuhom37UHc+zTHKdAUXm9DGJLXtQ935hmJbma7gYRNamKy2889s+VjD
+                        k823dbDJuZ6yZQPOLHdATbL5tg42oYXJKtuLsgMO87Z2mzQZ8nEs2wvnCf2CaU5y3qvdJrQvK1ND
+                        0RzaDTDB5r2abXLuxhtZGioU58Ywwea9Wm2q9YvB706NpeqEw7yr1Sa0La8AyJLcmZjzfGOYdzXa
+                        pAkAAWFLbmlizrOSa76r0Sa0LC9B2OJ5apkjanLJdAWbTc69BIDx5QVFR9ScpkxXsNmEdiWxak+K
+                        jjgUm8p0BZNNmu1BgHy5xndEMedZOM75phabvH+fegCfUMK4HdvqwQbHmm9qsQmtSmbTrmiOLXFG
+                        Taz5pgabfDuJwa1pX3yH9EqlOdB5sQab0KasDw3Hd0ivVMNc7LpNmr1hiG6mLHy7Q6SaF7tuE1oU
+                        w9BwNOf2GkSqebHLNvkWEoWoZkrDtzyvITWp5nuu2uTbRxheRXtTckjNmc73XLUJrUly0d6UHHKY
+                        91y0SbMxkgfUmaT+xBxHH2q+56JNaEvugnXG5+Be4vUFf00oma6wZpNrGZGgrckpEBBKpius2YSW
+                        JLtnfypOORRbynSFJZve0ZJk9+xPxSmHYkuZrrBik2ZXMGhpnlJxSs25ynSFFZvQiuT37I/m5BaP
+                        NjTTfMsFm1yLCAYtTU6JYo6jzjTfcsEmtCEa0NLktCjmNF8Y5i31Nmn2hIN25jmeU4o5jfpk51vq
+                        bUILogLtTE6NYk7zhWHeUm3TR7QgKtDO+BzdK/7KjyTTFbQ2eZaQANqZpCLzI8l0Ba1NaD0gNUeg
+                        ObqkMTWRZLqC0ibXDhJAO3NBvTE1hyvTFZQ2oe3A1BxCvTGHYkeZrqCzSbNfCdDKXFBvTM3pynQF
+                        nU1oOUA1h6A5u7WzjUw031FlE9oNPWhlnM5u7WwjE8131NjkOX8SaGWS2hRzGm2i+Y4am9BqLIBW
+                        5gLP3xgq5jR/M8w7KmzSbFYFtDJXOI4p5jDaA57vqLAJbcYKaGOS+hRzmL8Z5h3v26TZqwxoY65w
+                        HFPMYbQnPN/xtk2areqANiar0fRAMl3htk1oL4AtB6E5vJQ5NYFkusJdmzxHTwRtTFal6YFkusJd
+                        m9BaIFuOotqcQ7GhTFe4aZNmo0qghbmk2pyaQ5bpCjdtQlsBbTmKanMOxYYyXeGeTZp9SoEWxu30
+                        MubU5JHpCrds2uAXg0e2HIXm9F7wyM4j0xVu2YR2Yh20MG6n9wIxh1HmmW94xybHqbNBC+N2ei8Q
+                        cxhlnvmGd2xCK2EALcw1fnOKOctbkk2aTaqB9uUavznFnEV50PMNb9iENsIC2pdr/OYUc5a3HJve
+                        0UZYQPvid3zXiDmLMs58w5c2+U2MAO2L3/FdI+YsyjjzDV/ahPbBBtoXv+O7RsxZlHHmG76yyW9g
+                        CGhf/I7vGjFnUcaZb/jKJrQORtC+vMBtTjFHeUuwSbNBRdC6vKDWoEOxn0xXeGET2oYKJQdSa9Ch
+                        2E+mK1zbhJbBjLyVxm9QjzTDXOylTZrlayJvpfErODvNvNhLm9Au2JG30mjO75rsNPNir2zymxWG
+                        vJXGr+HsNPNir2xCq+CAvJVGc37XZKeZF3thk9+oOOStNm6DeoQZ5mIvbEKb4IG81cZtUI8ww1zs
+                        c5vQIrggrxoE4zaoR5hhLvapTZql60KbatiE9sCH6jZpDvCS2ja5jYmFNpWwCa2BE7Spgk1uU6JB
+                        60KbfH/DJxa0Lq+oNOdQ7KexCe2AH2hbaNM57znaVMAmtAKOoG2hTZpVq4O2hTahDfAEbYvnCUbP
+                        qcly2yavAUuAtqW7TV7z1QBtS3eb0Ofvi9ytkjZF2OQ1XhFoE9Qm9PE7U90mr75r2qRZcQdoE9Im
+                        9Ol7Q5uANmkW3ALahLNJs94e0CacTeiz96e8TZojvKCgTU6TlQJtS1+b0CcfAdqWtjY5DVYLtC1t
+                        bUIffAhoW7ra9D/ogw8BbctL6ow5FPu9tOm/6F5DekYPkTMlbfIcTjt2IWhTCrSJNvlBm2iTH7SJ
+                        NvnRxKZ32pRBE5t8xsxOMq/1eJvKf4mANm1Ucw+bPmUnkekKtAmNy5iSnWS+IW1CQ5v2qZk2xSSZ
+                        b0ib4NCmDJxscik6kjJD0ibaRJvch6NNyYXPN6RNcMoMSZtoE21yH+4K9ByvoE0Z0KbkGWnTATZ5
+                        zJkeRKYr0CY4tGmXlp8PXgfatEvLtCkoyLxU2gSHNu3SMm0KCjIvlTbBoU27tOxXdek5JT3IfEfa
+                        BIc2bdLyFjY5fDFc0guf70ib8NCmBNxs8uk6jioT0ibaRJvch2tu0yO98HmntAmPfcL8wueddrCp
+                        +qfhVQakTbSJNrkPR5uSC5fpCrQJT5UBaZNh9DJUmY820SbalNTyJja9F5mPNp1gk+YUadMqbjYV
+                        /zScNmVAm3LHo020iTbdw8+mD+hRLqFNGfjZJOYskdCmDGhT7nS0iTbRpnv42VT703DalAFtok11
+                        Wu5iEyKHTFdoYpOYwxSeE5FjXihtwkObdmiZNsXlmBfaxCaXf7+t6JyCyDHftIlNpT8Np00btEyb
+                        AnPMN6VNeGhTCo42uVUegNEmSI55n7QJD21KgTbRJj8cbar8iZPNJoHkmO9Km/DQphRoE23y493R
+                        Jr/S3bHZhMkxr7O0TbaaaVNgjnmdtAkPbdqg5rDWS40pmBzzbWkTHtpUv+YmNn3A5JDpCqVtcv0S
+                        gZjTRGGyCZRj3iZtwkObcvC0qe6rzmKTgHLM96VNeGhTDrSJNtXoObT4MlOicszLpE14aFP9nlvY
+                        5DoTbdKAniZgSkHlmG9Mm/DQpiRcbXKt3hGDTbAc8y5pEx7DSK45aFNvm3wnok0q0NO4DymuOY63
+                        STNgQ5twZct0hVY2iTlPCLQpCdpEm/z409Wmoq+6Kk/H8Ta1+DScNpVvesoDPY7vjM45aJMOMecJ
+                        QHOItAlU9fk2eU9Dm5Sgx3EdUYBB5nvTJjjLIyKDyHSF6jb94WuTmAP5Q5vyoE1ps9AmLehxJrzT
+                        pjTOt6nMKA1s0oy43AIU2pQHbUqbhDapQc/zO7SpftnH2+QfhDapEXMgZzRnSJus0KasOTrYtNj2
+                        U9DzOM33AZtEpivQJjSL84GTyHSF+jad/qp7LzMFbapxDvnjRUxBmxZAz+MyXkSSFjZphqRNSUXL
+                        dIWGNok5kSt1ZqBNC3xCD+Qw3Qd0FJmusIFNZ3/itGYTPIpMV+hok5gTObJkU8wEPWxaKpw2hUaZ
+                        J+hoU6lXXaEBaFOhw1hjJf9f+J5lusIONh39iVOh/LRpiUJfI9Cc4L8UyCLTFbawaalywHFkjVYg
+                        i0xX6GmTmCMhR4tK38Smgz9xWrGpQpZ5gz1tqvOqqxS+i03v3jY90BN9YyG7RGXpYpNmTuyJaFnI
+                        XqLleYF72OT8q3kjj0THymNSIoxMV9jDpmM/cVqwSUqEmafoapOYI7mwYFONMPP+NrFpoXXYoWjQ
+                        5w78Oj5tameT1Ch5HmMTm0591ZV6CmjTOuiJ/kZzfvEPQR+b9L2faVOVNDJdoa9NYs5kp9Yz0Mem
+                        M191tR6BRjZpRj3XpjIVy3SFxjaJOVP6TLGRG9l04qtObVOdODJdobNNj+1Gio3TySbNrJZGEikW
+                        mDaZ2G2iQnlkusI+NgW86sScyYTWpui4rWx6P80mbdzoPK1s0j7KBc7nmmrut7LptFed9ukoFWje
+                        XG+boJeT0iYpFWieZiebtA9zcZuUUaVUv/M0O9l02KuunPi0yQpuGM3Z5XjfzCblARQ5JJ9hiiWa
+                        97aVTf4/pBn1a9puUM/6Zjad9KrTHF1SzG42KY9gvZZqo6SkpE12QKMUDNnNpohXnZhDxU+Sk7Gd
+                        TZqB77LBIPUyyXSFzWwK+Fsd5lswVQklJ1M7m4551akSJmXqZ5Nm4mKHtTyGFAw1z7SbTYdcTu8V
+                        badNLtSeQrJCNbRJM3K581oaomSqeWXb2XTE5VRT9Y42fQyw6ZE8Q03TO9qkmdnWTYkREqN1tOmA
+                        V13RZC1t0gxtKyeKosFa2vRHgE2pl5Pm1KrmkukKG9oU8qoTc6qQ/Jmxmtqkmfo2NeOX7VWmK+xo
+                        0+aXk+LQ8kIpg51kk2bs26Slr5hJXatMV9jSpq0vJ8WZZUXSJ6NNr6iXPbnVrjZp5jYW5I3i6xuP
+                        wq3Oy9rTpo0vp/tHJtmltrVJM3it4ysm92qp8642tWnby+n+iUl6p31t0kxe6QBLqW3odF7VrjZt
+                        ejndPzDJr7SxTe8RNok51gsKif07jW3SjF7mDO+HluKVzvNta1PMq07MsZwyIxrtbJNm9iKneD+y
+                        VG90HnBfm2Iup9DfNVdE6me0tkkzvLWm5MCBIZwKnSfc2KaYyynwWiguU3ObNNNbe0qNu0Gf85Z2
+                        tmmzywnv8wua26QZH64Ten/fOmW6wtY2BV1OYs414f5RhWzvG/FMmzTzK4iIit3dvU2ZrrC3TUGX
+                        U8CB3j8pgZXZ3iZNAeauDNz/7a+f9ihz3tDmNu1yOeF2VkCbNA3gdLqfUjbpcp5zd5uiLicxB/sB
+                        xTEhq6RNYZeTmJN9ByRxZJXzoNvbFHU5OR6sYlNok7Qp7nJyO1lFQNmmyXnS/W2K+Q5xP500Z4Qt
+                        kjb9TZRNLoerOaIHtkfapG0hWyfNP1olG/U4z3qCTXGXk/kL06rf0YmukTapa8jVSbOX7FTjPOwR
+                        NsVdTjaddL89GF0ibfqHkF/6bNZJ9w99CrpE2rRShJakTOgKadN3Am1aPGelTIJukDatNZGikzYQ
+                        ukBlZJmucIpNcV8Rf97dFfE7+EObvhNpk/bq0JzLyvox0Ka1LhaQ+0l0f5fTrl6jwXngc2wK+Uc1
+                        V058ZW10d1+gTT8SbNO9Mw8VNRbatNpGjE+rCdDN6dPLdIWTbIr9e91ljV+IWDMT2vQzCTZ9nv/H
+                        Fs1J/Aa6toUZZLrCWTaZznRRAfueYpgY1d4881k2perkBrq0lfJkusJhNiW961wR89BO0KbfQLtB
+                        m06ySVNJDdCNLVUn0xWOs2k7ncQ8MaK5eerzbNrtXYeu6zu0aQbaDxViHtcN2mRtBQ66rMXeZLrC
+                        iTbtpJOYh8XUNs99pE0bvevQTf0IbXoCWpK7hP4jQVpo0zPQmpgOBQRt8mgGCLqm5c5kusKpNu2h
+                        k5jHRFU2T36sTVvohO5ovTGZrnCuTRvoBPxN89bCZLrCwTbV10nMI8L6mkc/2abyOqH7MdQl0xWO
+                        tqm4TmKeD9fWY7rC2TbV1gldjqWs+QqH21RaJ3Q3v0GbXlFXJ0FX8xu06SVldUIX8zu0ybekRIp9
+                        sUlZ1HyBDjbV1EnQrfzOsIZvYVNJndCdTKBN3j1lIeaZkC09Sd/Epno6iXmkAG6nf/LxXWwq97ZD
+                        12Hr6MnH97GpmE7oNkwVPfv7aCObSr3tBF2GqaFn6TvZVOl6Qjcx565NH558fC+b6lxP6CKeYEzf
+                        zKb43wN9D0HX8ARj+nY21XjdiXmKGAZtiqksFHQFT7Gl72hTAZ/QBZiakacf3dMmtE+CHt/Uy+Pp
+                        R3e1aenf1mlg051X3fMP7mvTG/DzcfTgFwzLo9DaJtgLDz32FZbwzW16gwgl6JktfVyFp01/c9uD
+                        Ty6vR0HPaynj6kNp0zdeOvD1j/1xvE3jMvvj6kNp00+8Pv3rru+BnvIFVyPK5UfSJiUNbLq4pl/8
+                        oA1tUuIgU3mb3laT0yYlDjIJeoblKV99GG3SMXrYNNfp5UfRJh1dbJoMeiM2bdLhYRN6hqVR5c6H
+                        0CYdDjLtYtMCtEkHbbqCNqnweNHRJvIVD5sEPUQctEkFbbqENqnweNEJeog4aJMK2nQJbVJBmy6h
+                        TRoGbbqENmlwsQk9RCC0SQNtuoY2afCQiTaRr9Cma2iTBtp0DW1SMGjTNbRJAW16AW1SQJteQJsU
+                        0KYX0CYFLjLRJvIF2vQC2qSANv3nNv9FRy0PbaJNbgzaRJvcoE20yQ8nmwQ9hwHa5AZtok1+0Cba
+                        5IePTLSJ/A1tok1+0Cba5IeTTTt/iYA2uUGbaJMftIk2uTG8bHqgJ1mHNnnhZpOgJ1mHNnlBm2iT
+                        H7SJNvnhZtPGn4bTJi9oE23yw88mQY+yDG3ygjbRJj/cZKJNxPNfKEePsgxt8oI20SY/HG0S9Cyr
+                        0CYvaBNt8sPRpm1fdbTJC9pEm/zwtEnQwyxCm7zwtOmTPQ4E2uSFp027vupokxeuNgl6mjVokxe0
+                        iTb54WrTpq862uSFr02CHmcJ2uQFbaJNfvjatOerjjZ54WyToOdZgTZ5QZtokx/ONm35qqNNXnjb
+                        JOiBFqBNXnjbtOPlRJu8ePe26YGeSA9t8mLwVUeb3HC3acNXHW3ywt8mQY+khjZ54W/TfpcTbfIi
+                        wCZBz6SFNnkRYNN2lxNt8iLCpg/ooZTQJjcCbBL0TEpokxsBNu32qqNNbkTYJOihdNAmNyJs2uxy
+                        ok1uhNgk6KlU0CY3Qmza63KiTW4MXk60yY0Ym7a6nGiTG0E2CXouBbTJjSCbdrqcaJMfQTYJeq77
+                        0CY/gmza6HKiTX5E2STowW5Dm/yIsmmfy4k2+THaX060yY8wm7a5nGiTH3E2CXq0m9AmP+Js2uVy
+                        ok2OxNkk6NHuQZscibNpk8uJNjkSaNMev4+eNjkyAnUS9HB3oE2ORNq0xbuONjkSapOgp7sBbfIk
+                        0qYdLifa5EmoTYKe7jW0yZP35pcTbfJkNL+caJMnsTbV14k2uRJrU/l3HW1yJdgmQc/3Atrkysfe
+                        lxNtcmX0vpxokyvRNhX/lfS0yZdom2q/62iTL+E2CXrCK2iTL6P15USbfIm3SdAjXkCbnAm3qbJO
+                        tMmZeJsKv+tokzPvnS8n2uTMSLicHughn0GbnMmwqey7jjZ5k2GToId8Am3yJsOmqpcTbfJmNNaJ
+                        NnnzR4pNgh5zCm1yJ8WmmpcTbXJn9NWJNrmTZJOg55xAm/zJsani5USb/EmyqaBOtMmfkWSToAf9
+                        DdrkT5ZN9S4n2hRAlk3ldKJNAXzMsknQk/4CbQpgdL2caFMEaTYV04k2RZBnk6BH/QnaFMFoejnR
+                        pggSbRL0rD9Cm0LIs6mUTrQphMTLqdK7jjaFkGmToIf9Dm2KIdGmQj8QRZtiyLyc6rzraFMMqTYJ
+                        etpv0KYgMm0qcznRpiBSL6cqOtGmIHJtEvS4X6FNUaTaVORyok1RdLycaFMUuTbV+KITbQoj16YS
+                        7zraFEby5SToed9oUyDJNlW4nGhTHMk2CXpe2hRJ9uUk6IFpUyTJNuHfdbQpkGybBD0wbQpkdLuc
+                        aFMk3S4n2hRJ+uX0ATsvbYok3Sbwu442hZJuk0DHpU2hNLucaFMsvS4n2hTLe6vLiTaFkfOPGpTS
+                        iTYF8CfIo68IbnDa5AvUI/jlRJu8GGiJ/kVgHdAmB+qI9BVYEbTJRjWRviCoNmjTOiVN+sID1Aht
+                        WqOuSV8AtUKbFkC78hrBFEOblAy0KPfAlEObNGyi0mfU5USbbvMRbYgKSEW06R5oOdQIoiXadAO0
+                        GUsgiqJNr0BbsYoAuqJNlwy0EwYe+XXRpudgv7HETn5jtOkZaBfsSHpntGnKQJvgQnpttGkC2gIv
+                        JLs42vQrqG/njiC7O9r0MwMtgCuS3B5t+pGzXPqcfjnRpu8c51L65USbvnGgS5+zLyfa9JUzXcq+
+                        nGjT35zq0ufky4k2He1S8uVEm452iTblgj7tcDLLbG4T+qgTkMQ6W9s00CedQmKhjW3q4VLq5dTX
+                        JvQh55HXaVebBvqIE5G0VpvahD7gXNJqbWkT+nSzeWQV29Cm3X94QI9kVdvPJvTRIsjqtptNJ32f
+                        7n0kqd1mNg30uYJIqreXTehDhfHI6beTTQN9pjgkp+FGNjWWKetV18em7PP79DTJANgkKR23sSnv
+                        4B638iQr9elWKCtNbEo6u4cmU65OKTX3sClBpoWHP9Umyei5hU1FT2qk6pRRdAebyp5Sqk4ZTTew
+                        KfCEpG4096x3ON6muO8Y8PhrUqZOCWWfbtOofTZh8WhTAEGnJW4BE23yC/2Us22Kkck1YqJO8X0f
+                        bVOETN5fVI7I+IRHeOEn2/TufyDinzJPp4Dwv3CwTbscR5pN8a+6c2366H0Wj6CgI82mqAn+5Vib
+                        vGWSuKhpOgXO8JVTbdrqHLJsCn/VHWrT+0YuJf6EX3TtZ9o0tjqDvHedBM9xpE2uhyMZiZNsin4w
+                        TrTJU6a/ciJnveuCxzjQJk+ZHjuGvkBipzjPJsfHPOdb87+SY1PwVXueTX7VPzJjjxydYoc4zia3
+                        3jMvpr/J0UlCZzjNpk1qD41Om5wYXq0jwqfoFDrBWTZ5ySRbp8eNdpZNOzy/8fFpU6XT2H4A2HQn
+                        2TTqP7wpE9CmMkch0BkSbIoc8BybfH4/KnoK2lSDI2TKeNcFpj/GJo9jEPQQbyE/aEObtJwiU8K7
+                        LnDMU2yq3bIGj+fimrjsh9jk0PEDPcM3wnWKi36GTQ4HgB7hB6JtkrDkR9h0lkzhl5OEJT/CprNk
+                        itcpLPgJNtnLR0/wK7QJxnkyReskUbEPsOlAmYLfdRIVe3+bzMWjB5gSalPYyNvbZJbpgZ5gDm3a
+                        sXVBD/AE81OCGHp3m6ylR/VqhzalY/2mpqhaPaBNmzWe/ROYKkagTkGR97bJWjg6/zW0aau+0fFf
+                        YH1WLpCYxFvbZKw7qNIy89GmxLKDGvUkzKaga3lnm0oW6orxeaFNaVWj49/iPcomCYm7sU0V6yw2
+                        JG26yyjYZrUpadNdbG2i0yeNmVzAtjbZHlpBx0+akzbdo2CXMQTpJBFZd7XJ1jE6vQraFI3tewdC
+                        mgzD9uDQpte8m5pEp1cSYlNICXva1OlqegvSKSLonjbV6zGUEWGTBATd0iZbu+j0C9CmQN6rtRiN
+                        7fGhTVfYPmtCp18iQqeAmDva9F7tkUyANpVsFh1+kUGbChYr6PSr+NsUUMWGNlV7IHMwPUO0KaTW
+                        gAazeKdNAZgaRIeHDZ5TxnY2jWKP4yaT06YpxfrbZnTaNMH0gAo6PXD2lDp2s6nYw7jR8LTpN0yP
+                        p397O01Pm37D1B46PHj8hEL2ssn0cAo6PXh+2uTZJjq8B7SpSJmCDu+B6XGiTX5dosP74GqTeKfb
+                        yiZLc6V/xeV9TA8UbfJq0r05ELSpQpHo8F6YHina9J1SxW3ZQvQjtpFNpqcSHb5IDbTpG5baBB2+
+                        SA+06R9Mz6SAw3vyTpvslKoNiemxin3Ietjk3dq+TdCmL5ieSGz0UlXQpr8xtYaNXqsL2sTPwf3K
+                        oE180f2Ml03ezexiU6XO8NAmE8NSmSCT16uDNlWqrAK0CdYeMngQgzaByhNg8DCcbHLuZg+bKj1/
+                        NTA9X7SJNv2E7Xd/trbJ9CA6F1YF2gRp7oHLHYnpCaNNq+BiFy6lsU2mx9C5rzr4XE6+mXawqdLT
+                        VwjalF8bLHU4LpeTb6QNbLK1hkpdvZeuNpnaElTq6sXQJtr0Ex6Xk2+i+jbZOgOFzoE2qTHZJKDQ
+                        G1QTUVB9mwqVVQ7apMT2/GEyp0GblNCmsHIa2mTq6pBfKBfUDm1CdlUQ8+Xk21B1m2x1+XZVENqU
+                        WBckciq0Ka8tSORUrJeTuKYpbpOtLN+qamK9nFzD0KbNoU1ZXSESZ2N73mgTbXKsqJNNxgcPkDgf
+                        2nQXm00CSLxbR51sshUlgMTbleQahTZtD226xyhUVF1sLblGoU3bQ5vuYZPpr/zAGGhTfE1dPm2i
+                        TfcYtCm+J9cktOkAaFNwSd49laZMS7TpAEaVlmjTAdCm2I4+d/q0yfQrVV2D0KYToE2RFdEm2uRX
+                        UTebBm16gfX3qyfHhUKbAhtqZ5PhHneNQZuOoEhNdW0yykSbaJNLQV84/tej/MSgTdcYbZLkuFho
+                        U1Q/tIk2+fXT0ab1m9w1RVmbjDLRJtrkUU9ES/Wp0RNtOoNRoqeqNv1Jm1TQppB2mtq0/F81XVPQ
+                        pkMo0VNVm95pk44SPVW1ySqTpKYtwOrj5xqCNh3CoE3PoU1KaJN/N7SJNvl109em1dvcNQNtOgXa
+                        9JSPtEkLbfKuprNNgzY9w2xTZtga0Kan0CY1tMm5mdY2LT6BrhFo0zEs9SSuEWjTMdCmJ9CmBd5p
+                        0xyzTB1tWnoExTUCbToG2vQE2rQAbXoCbcpqTVwT0KZzoE1TBm1agTZNoU1L4HuiTefwEd4TbTqH
+                        ldp8E9Cmc6BNUz7SphVo0xS7TLSJNn2DNi1Bm6bQpqzenH9zMW06CH1N4huANh0EbfJphTat9Sa+
+                        ASraNGjTGrRpAm1ahDZNoE2L6Gt6+AagTQehL845AG06CNrkUgptWizOOQBtOgja5FIKbVoszjlA
+                        RZscZKJNtxDnALTpIGjTBNq0CG2aQJsWoU0TPGzy7mkL1DY9nAPQpoNQ2+QdgDYdBG2aQJsWoU0T
+                        aNMitGkCbVpEa5N7SbTpIGjTBNq0CG2a4GFTyy9f0qYJtGkRrU3uAWjTQdCmCbRpEdo0gTYtQpsm
+                        0KZFlDaJe4BjbfKvqj60aQJtWoQ2TaBNiyhtergHoE0HobTJPwBtOgjaNMHFpo5/qaNNE2jTIjqb
+                        xD8AbToI2jSBNi1Cmyb42PRIy1uGj+jH7VybJC1vGXQFBQSgTQdBm8yl0Ka14iL6Odemhp+G0yZr
+                        KbRpsTgJCECbDgJeD206CHg9B9skaYGrQJuspdCmfxnwdmjTOdCmGU42/ZUWuAgqm0ISVLRJ1Up2
+                        YYWhTeZWaNNabyEJTrZJ0hLXQNNbTDe06Rzw3dCmc9B0E5PgZJu6feKEr4Y2nQO+Gtp0DopmJCZB
+                        RZv+9LIpqLOiaB7CoGYq2uT1xXDa9JSgCEfb1OtVR5vm0KYVFDZJUATadAy0aY6bTVGtlaRAL7Tp
+                        GBS9REUoadNw0ykvM54CtdCmY7jfikRFONymsN7qoSgtrBXadAqK0sIyHG5To1cdbbIXQ5u+cb8T
+                        CctQ0ia/LxE0etVV6IQ2ncL9TuIynG5Tn1ddhUpo0yGM241IXIiaNt2vBtldKWiTQzW0SV1ZYIjj
+                        beryqrvdx6fAELTpEG73IYEhatrk9nMGwe3V4f7zF5mipk2ef6nrcTnRpgtok5LbNklkigY2hfZX
+                        hRptFLXpnTbpuN1GaIqiNg3PyykzOIj7f20JjdHBJslMjuF2X7Fd0KYjuN1XbIyiNrl+Gt7gVVek
+                        ihY2SWp0BEWaoE0nMIo0UdWm2/3cIjU6gNttBefoYZOkZs+nSg+06QSq9FDVJt9PnA5/1d1+9KKD
+                        NLFJcsMnc9emyG+U+0ITm86+nMo8U2Vtuvu80ab7NoUH6WKT5KavWVV4krI2eX4z7+GX012bJDxJ
+                        WZu8P3GKrxJGnQeKNu0PbXrNcNYpOX69oiQ+Sh+bEsrEUOhxqmuT96fhx15ON8cP/9LlW2WbvD9x
+                        OvVyGoXGb2TToZfTe6HpC9t096G7zYfsCVIodDW1siml0KotpQxf2Ca+6u7wsdLsrWyS9BHKlJQz
+                        emWbBi8nt45y0vSySdJniKbWc1TZJv9X3XmXU63HqJlNSa2mMWo9RaVteufl9IJiD1Fpm+4+eW0v
+                        p7sFZU1d2qY//G0663KqNnRpmwI+cTrrcqo2c22bBi8nj3rSAvWzSQBzBFFu4to2Rbzqzrmcyl1N
+                        HW0SxCDIcvISFbfp7uOn4oGYBNeN5EXqaNMh77qC0xa3KeRVd8a7ruDV1NOmIy6nirNWt+nuE9ju
+                        crr73wlSR61uU9Dl9MAM48h7waupq03bv+tGyUHL23S7Nh2CmcaNmnOWt8n9B8iPuJxqXk31bYp6
+                        1e2tU82raQObbj+GSpKLxnSSnKuvTTvrVHXE+jaFver2fddVvZp2sCnsctpWp6pXU2+b0tv2oe7T
+                        soFNca+6PXW6/XTlT7eDTXGX05bvusLDNbdpQ51ujyb52XawKfBVt59O9x8tQLgtbLrfoB7BjbVE
+                        6cG2sCn0ckK0ntEEIh1t2kqnUXuqPWy6X+IKD+BkYT1A8u1hU+zltM9n4vdHEki+TWxSPJQH61R+
+                        Itq0j06KEgSTcBObgl91W+ikeaJAEXexSVPloTophhFQxF1sCr+cyuu0wyzb2DSa66SZRFAht7Ep
+                        6mdXNtFpj0G2sSn+VVdZp6EZQ2Ax97FJVegiD/CMPrPjcu5jU8blVPS/2e0i00426To9SCfd4MgJ
+                        NrIp5XIqqJPyKUJG3ckmZa2roMe0TS3IrLSpuE7aoaFhd7Ip51WHPpGf2UqmvWzSVruMoCddnRgc
+                        fCub0i4n9Kl8Q/34gPPuZZO63XXQoy6N+wAH3sumvMupgk4ftZEFnXgzm9RPqwEBz7rhA7CZTZmX
+                        E/h09HEf6MPZzqbRRKeFOQV9NvvZFPHvkBc8oQWZ8O+5DW3KfdeBzmiboL+wn00rj60FyR9xk5i/
+                        s59N2ZfT588fcucbKxk/oU/lCxvatNS2jczx6id8zoY25V9Oie+RsZbvA/pMvrKjTYuN7+BT6XCv
+                        2dGm5K8S5B3ZcjT0gXxjS5sQ77r4QxtFcynY06b14sv6dPdfVp0g6OP4lz1tQl1OcT4ZEgn6ML6z
+                        qU0JP0ee6ZMljqDP4gc2tQn3rgs4wHJyL7OrTcB3ne8ZGj5fKifTvjYNsE4+52gOIehz+IltbSqg
+                        k1UohwkEfQo/s69N6HfdPzwW0797bC7oM/iFjW1C/r3uJ/T//d5rZ/QR/MrGNpV4131Dbqd23BR9
+                        AL+xs01F3nX3jzd3NwBb21RPp3/466eUI2aTB7r939nbpqBz2gJBlz9hb5sa6yTo6mdsblPZd11L
+                        mba3qalOgq59zvY2DfTBUqbvbG9TS53QnT9jf5savuvQjT/lAJva6YTu+zkn2NRMJ3TbFxxh00Af
+                        MGX6yhE2ddIJXfUlZ9jURyd00dccYhPox38p08+cYlOLz8T/stcUyzE2NdCpxu9ouuIcm47XSdAF
+                        v+Ygmw7XSdD13uAkm6w/6FgaQbd7h5NsqvNTLE1lOsumc7/sJOhm73GWTafqhK71LofZdKZO6FJv
+                        c5pNJ+qErvQ+x9l0nk7oQhWcZ9NhOgm6Tg0H2nTUlzEF3aWKI206R6cHukkdZ9p0ik7oGrUcatMZ
+                        OqFLVHOqTQd8Li7oCvUca9P2Ogm6wAXOtWlzndDtLXGwTTt/8iTo6tY42qZtdRJ0cYucbdOmbzt0
+                        a8scbtOOOgm6s3VOt2m/tx26Lwvn27SXToJuy0QDm3Z626GrMtLBpm2uJ0H3ZKWHTXtcT+iS7DSx
+                        aQOdPqArcqCLTdXfdoKux4U+NpX+UWB0N040sqnu607QxXjRyqaarztBl+JHM5sKXk/oRjzpZlO1
+                        6wndhi/9bKrkE7oJbzraVOV19wHdgzstbSrhk6A7CKCpTfDXnaDnD6GtTVCfHujZg2hsE8wn9Nhx
+                        tLYJ8fmToEeOpLlN2b95FT1tMO1test74Ql60HBo098kfHuBoGfMgDb9w6BKdmjTd4KEEvRcedCm
+                        n3AX6gN6olRo02/4qYSeJB3aNIXvtyVo03N4J2mhTS/gjaSANt2DHt3hvk2EEEIIIYQQQgghhBBC
+                        CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCH/8P/T2g3wTNSy
+                        bgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wNy0wNFQwMzo1MDozOSswMzowMFesjGwAAAAldEVY
+                        dGRhdGU6bW9kaWZ5ADIwMjAtMDctMDRUMDM6NTA6MzkrMDM6MDAm8TTQAAAAAElFTkSuQmCC"></image>
+                  </svg>
+               </a>
+               | 
+               
+               <span class="icon twitter">
+                  <a href="https://twitter.com/i_amanchadha">
+                     <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                           c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                           c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                           c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                           C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                           c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                           c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">i_amanchadha</span> -->
+                | 
+               <a href="mailto:hi@aman.ai">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuBAMAAABTjO+8AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEWxsLDGxcW4t7esq6u+
+                        vr7Z2NiqqamxsLCvrq7Ozc2ysrK1tbWenZ2dnZ3////zevNgAAAAAXRSTlMAQObYZgAAAAFiS0dE
+                        Dm+9ME8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkBwQDLRvUSpUpAAALt0lEQVR42u2d
+                        PW8jyRGGR7Lk3XXEyNqQwAVKBewtiHMkwAfQoQ4L3B02ImCs98KVuFZzFfECm3Am4A7YDXmR/sQF
+                        /gHO7+94R6Somarq7qr+mGra/YZifzzsfmc4XdNdappcOvjixZcX2VrPpj+az1r8QxtDqp/MRmfa
+                        IDI93WKbxUgbRaS3D9zmUhtFolfmUUttGL6OOtjm+kIbh61Jl3t/nPLK9LXUBuLpAGDvi1NWkHs/
+                        nPKtwVprQ/l1QGDvg1NWFLf5URvLp28NrbUCy+sfzJB6MUqD/SoeRagkk/M0nkOqFA+Rx2+H5zY3
+                        8dzfK2CncIrGcBtztYfuvtdtJPdHJe7ZXtrEmPdx2MdK2OZ6P+1tzEUU9+/VuMdR3E/UuM/+L7lP
+                        9pR7um3lry+G0iQp93lUKxL9rnJX7spduSt35a7clbtyV+7KXbkrd+Wu3JW7clfuyl25K3flrtyV
+                        u3JX7spduSt35a7c+809Men0rnJX7spduSt35a7clVuiOzXuZQz2QyMK3POLcOzjHd/w3DEnBaa7
+                        xgH3z1+nE2h6xx3u8McmFNYN4U55dIkOd6hTpkaZO8wp3QaUuEOO93ZdosUdchC86xI1bvmvT7+6
+                        GrfUKX2X6HFLndJ3iSK3zCnoWJoet8Qp+EyxHrfEKSemIG6+U4jDi5rcXKdQJ881ublOwS5R5uad
+                        SiePuOpyc5xC5yfQ5eakIaFcos7td4rlILQ2t88ptiwW2tw+p9AuKYDb7RTrcXl9bpdT7LlO9Lld
+                        TrG5pAhuu1McSRVK4LY5xZURpwRu8y+6ht0lhXDTOSOcqTfK4KaSi7jzJpXBTTnF5RLE/eeEiRXO
+                        BNzYKX8wEu6JSad3NPeC5RSLS+ZTNe6XNBFwynPLMOtxnx3SxXtOsbjkjer7tE9k8a5TLC5ZKL8H
+                        pHvpOMWSg22kzH1EV9g55XhFfv6m0X7vSieP3CXL+97+sS63JVnn2jXcm9yFytxkctSHAadza82a
+                        ArgtTtnQ3FEfbRMAanPTcB/aT55Rn8xvC+E+WFF03YI9bWvpc9MuXjb4lUir3Ztafe7mlKjzgWZ4
+                        XMkVwA1fkd0D0j9Ky8bDnVF4vw9l5FvKP51IRQnclJPPmu8cLimEm3jse0fYft1ppQhuYsl+iROW
+                        9lYUZXDjZc0NujX0V3CFcCOnzBv4TcYlcjeHPu6/91sphRvmDUbcoHgx3E8qd+Wu3JW7cv9Pcpf6
+                        ezn1cLdBwQK54ZoHcy9K5EZrTMxtXhbIPTV+7h5jGdx4DUxxz0vjfrZicZuvCuM+NTzuzpqnBG4q
+                        JktzP64xC+C2RDYp7sc1fQHcd4bPvYuh6HPTkXsb90PMSp2bflNi5X6IEapzr4TcW6dYuH/9Tzr9
+                        28Vt+zdydu6NUyzcv5l0eufgPrBVsnNvdl0rc08CuHsvUXS47f8pz8XdOkWV+8heycXdvp1S5Z4E
+                        cn+uq8n9yVHJzT2/UOQ+dFVyc5srRe63Edxmosa9cFZC3H+iyw3P3dfio4f7jN7Zps09e+LjZp2D
+                        GZr7hhFn45w7Gph7MeLEB0+K437DimsyztUN8BzbUbufisFNVQXcGUV0PmJyExsQNLnbfYw8brxV
+                        RZF7E2hlceOAnCL3uYAbhbb0uLfhYSY3DCW+DOaQ6hQCiriRU4YacNjvWMgNw1uR/9+WKzjPu4Af
+                        m/vA1kJWWUeLzY1CLmM5hViwz3UANwxxhSR/EQrOcWdDoIAbBosYh6oj5RgpAbdj1vII9rfsfCbh
+                        hgGMzE6B89tLryDiPnK1lFzO60nEjQJ0Sz6FWK+cJDJuuJszo1Pg3IJkYULuQ3drCQWuJZicTciN
+                        gnRnPAqxfgL9zMDnUm7olJh0hg7Beb2CBcTc8KhgHqeA0VncRnOjPcwzP4VYn7x9yLlhWAKPRbTg
+                        nN7gInJu1OqVl0MoNDKjJNwogPUmMfdzRvsh3JzxiBAMSC6oQiHcqOWbJqFQWI8clSBuFMBK6RSe
+                        C8O4YQAroVPgXM7pYmHcKBqzaBIJueQ8KTcKYDGc8jNMxUsJOtAWYArlRnvhRh6g1+1AXvtKoSyJ
+                        toKh3CiQNG+c2q4C5u4hR4HfcXJutD/LGTLcrRXdKw3oPntwKZwb7YdzDeUdAwXPoeNLhnOjMIHD
+                        KV3bjqyl0DWztrcYwY2cYh3Knm3tt0zoEldgKYYb7XYaWwqe9ErZbplw/pyXQgw37okuBn8CR/Qo
+                        QJcsXV1HcaPdfOTMop9A+jEMus4dVIrjRjue1kShE1iIdAq6yi8ycqOgEuFJIucO8RiGrhVPx5Hc
+                        aK8Wcgq5nwIv7aDjfGGCWG6062kJCtD7V2agFHTJ4sLTbyw3ChkAp1gyM4EgALpOZr5uo7nRwfVL
+                        56e0UybOT/NwoxHtVrHv+euWglc3IyQTz40c3LmDOfb8uUoxFiEJuNEd4/FeYHOJuxQnPJCA2+4U
+                        +/7hVkuLl1iL7BTc6Bdxmw3IsX+41fbOE+KSRNzIKZv7wcTNvbnzoLq80EASbrxXb9bYzyL0nYJ+
+                        lzguScWNwgef72ToieP6G8Ip6Npg7mxJxI0W4jf4xMoaz8CPREKQQbnxNqi/wT+0q7g7+Ef4ddn7
+                        cVJxk2mlep5oC5Fn4uCXG5b7mQdpfF/Kc63ydxEl47ak0YMD6Z6WsQK3E2l3uTmnRbCjJSG3y7zn
+                        nGmRvO1PyO0wb/embJ+WtaCvlNz0UVQDbspUXrh7iXazJOW2Hdcb9UpZMjXL9oQk5bY4BT7gTclS
+                        S1FPabnJ46joAY8MTQj3PCXmJpxCLAOIox7S/SCJuYklDrUMOEGlpP2k5j6GQORiETlFvE04NTcc
+                        SctiET12S984J+ZGPDNLQbjMkb5xTsttWWhGlRyCG43irbUoWsbP2L0k50YsrtoobHLL7CU9N5z7
+                        9wlLZ+SGI+j5LRHNTkZuMQf8jZL8ZibknojnXV4jAzfjFRUUCiAuh+cOYgj4rqm5V6Ai77k0rFZC
+                        btHL9Ueh5971sNzB/Qd+31TccL75kZDAmmm4Q0etIaIu6+G4Ud9jNjZ7M0gO7jtQSXZWMKh2Cm60
+                        nUuEjUOG42G4Ub/nMu6g752A+xRUkZ89Dmghnlu4cZPSs4l4xqK5j+V9YuG0qtm5p6BC2BZ2cSux
+                        3Ik2gqNZG+XlFvdnE+swRjrukyQuCWgpjjvhwRLh4Zoo7qQHeWRjEMXNOdjEl6i1GO7EB9VEB/Yi
+                        uJMfDJSMQwR3+oOYghbDub1HaQPEn8FwbtBHkoPG/OPiwdx5DnazWw3l9hzLD9aEOYuh3KD9ZIkL
+                        uCkoArnzJYpgthzGnTMxB28mw7hXmVzSypn2JI47b+IZVush3LkT/XBmM4T7LqNL7scFgFPjEsCd
+                        Pz0Rowc59xCJw+CMpuD2txkv/9iIuW0J6tLKm1RNyg2DmF+xMOQ6hVyR3L72UsmXqFHIPVz6RE9P
+                        Mm4YnsqZrnLqnFkZN2grWVYISnCM+mEJETcMYo5ycrt7k3DDwEPq/DhQrtmVcJ8M6BLfOAm4QQAv
+                        cVYfSo4e+dxDu6QVmOFOqJPP/dzaRj7Zx4rNDYJ3GbKEUbL2yuWG33w2CDaa5V0wj8v9yVI/t2zj
+                        xeQGgbuBXEL1fCHifkv+dRCBmX4v4abrDiRyzFjcIDyVKTelTYdU7yzuiZ5LWoGQ4SWXm6o3qMC4
+                        LXncIDw1QP5sqCNMwOBe4W87tMDy/pLDDerkz/pNCYzd2s+t75JWiMLLfQe/qY7grPu4/1mCS1qB
+                        8Tv1cIP5UcP2HGH3cI/1uN1H2N3cw/yvCZtOQ7mzBQN5ch1hd3Kf63K7jrC7uIf73zU2nYZwK7uk
+                        lfUIu4v7XJu6sR5hd3FffV2CJmLuslW5K3flLk+Vu3JX7vJUuSt35S5P+8p9vafcc2/y1DJ1RWb8
+                        Kl8fmo/aCEE6sy/1i9bal9S4UDXu3Nelqn2B/Z02RIBmjT1pY8HahC5PtDHE2mxf8mXeLU4PkeKn
+                        8U0Nir2LFL9eabMIdN0JcB//5cW+6JcN8X8B85vetwnigQ8AAAAldEVYdGRhdGU6Y3JlYXRlADIw
+                        MjAtMDctMDRUMDM6NDU6MjcrMDM6MDDsnuMrAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA3LTA0
+                        VDAzOjQ1OjI3KzAzOjAwncNblwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+               | 
+               <a id="theme-toggle" onclick="modeSwitcher()" style="cursor: pointer;">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACYVBMVEU/PzpEREBBQT1CQj4/
+                        PztAQDtHR0NJSUU+PjpISERDQz9AQDw5OTRFRUE8PDhCQj1CQj89PTlKSkY+PjlNTUlLS0hEREBD
+                        Qz9aWleHh4WtrazBwcHCwsLCwsLCwsLAwMCurq2IiIZgYFxXV1Sbm5rFxcXCwsKgoKBkZGFERECX
+                        l5bExMSPj45LS0empqWpqahUVFCnp6axsbFTU09CQj6lpaSpqahISESRkZCNjYtUVFG/v7/FxcW7
+                        u7vExMVhYV6ampmTk5FXV1S3t7eenp1VVVHCwsOYmJd3d3XIyMjCwsJdXVqEhIKrq6uGhoSnp6aX
+                        l5aAgH6srKzAwMBdXVq8vLzCwsOZmZhNTUm3t7bDw8PCwsKYmJexsbCYmJawsK/CwsJOTkq2trXD
+                        w8K9vb1bW1jBwcK9vb2pqaiXl5aCgoCvr66AgH6jo6OGhoNYWFXAwMB9fXvIyMjGxsZeXluamplM
+                        TEi5ubmcnJteXlrCwsLGxsaTk5FDQz+dnZzJycljY2CJiYe+vr5bW1hUVFCcnJuVlZRGRkKmpqW4
+                        uLd8fHl/f33AwMCioqFFRUFQUEyurq6wsLCFhYNkZGBSUk9SUk9hYV6JiYenp6bHx8inp6ZKSkZP
+                        T0unp6bExMS6urm0tLSzs7O4uLjExMSioqGMjIrExMTKysuVlZRFRUFiYl6hoaDExMTIyMicnJtr
+                        a2hhYV6Li4qxsbDDw8O+vr2zs7KHh4VlZWPHx8fGxsbCwsLJycnIyMjDw8PKysvExMTKysrMzMzL
+                        y8vFxcXJycrFxcbGxsfHx8jIyMnExMX///9/oPL/AAAAuHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAA
+                        AAAAAQEYUJzK4+3kzJxYGSKE5+qSIgJe7GoGlqYMprcLAZapAl1uH/H70vMkhWYP1ZoW7G5G/fMb
+                        UbpinWtbrMsd1OVuBtfn7m3IbMnlBNTozhzz1Z5sVq5Yt2YW7zf48iCTD9CiH/DzZwWv9Ctp0QsQ
+                        rnABqNFKO82sAg22uF0fBwUfV7T7uw0Lp/PYycnV8qtu7/JxASeZ7vGgLh5hqebTrWUhilEqqgAA
+                        AAFiS0dEyvO0NuYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkCBYKLR1KuANWAAACD0lE
+                        QVQoz23TZXvUQBAA4CG7R09K4ZANFtwKFHcvTrHi0BZ3d5dCKe4uxd1d7jbZJCQFwr9ik1wud83N
+                        hyRP3uzOk5lZIE6IUK95i5atWktSm7bt2ncQQHTfg3MVUMdOnRNJ6kRS7tK1GxZSXEhIqH53SWE0
+                        HUzp0TMPe6txUS9Vo1nB1N59wi6HivrqNBByv/7Y5gGRgTmU+6DBAufwkF85kCczhoZFwMOGa0Ed
+                        MVKjbNRogOgYOahG8dhxJpXHx2DCxOBiY1I0f/IUykqmwjQllwpig+kJWjsDZiYCWop4yQpm6TQ5
+                        G+bkVhKaW8LYPJhfR9UFUafcaOEik5ZBebbqFa4SlLf4Ny2vw/oS5CqJRpbavCxr5wpPScPlK0y6
+                        ElZlNNJI5bUjtHoNY2th3R9f1/tKCjbINLkRNtWmdy5t5KsY2/yXWltg6zbNqxXylcS376Bs5y7A
+                        u+V0JX2N7dlrUmUfArz/gL384KFMDR8+olBWeTQOJH7M4N2vOp6PPIzi6hN8gIyTSASCTp3mz9qZ
+                        s43jYQEhAZoI587zPqkXLtrDRPClyzy9aV25eu1602Y3bt66fYen0+/WhNw5x/fuq8we/wcPHz1+
+                        8tSyW2w8q8HeKcGR5y8s/gHTTPOffVdevnodyzhE+M3bd7Lp1JeZ1vsPH53/KEwx/xX06fOXqq+S
+                        VPbt+4+fQjx1BP8DniGUSqIRNGsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMjJUMTA6NDU6
+                        MjkrMDM6MDBYVnojAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTIyVDEwOjQ1OjI5KzAzOjAw
+                        KQvCnwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div align="center" class="footer-col-1 column">
+         <a href="https://www.amanchadha.com/">www.amanchadha.com</a>
+      </div>
+      <!-- <div class="footer-col-2 column">
+         </div>
+         
+         <div class="footer-col-3 column">
+         
+         </div> -->
+   </div>
+   <!-- add permalinks to headers in kramdown -->
+   <!-- <script>
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML =
+              '<a href="#' + headings[i].id + '">' +
+                  headings[i].innerText +
+              '</a>';
+      }
+   </script>   -->
+
+   <!-- add title case to section headings -->
+   <script src="https://aman.ai/js/ap-style-title-case.js" type="text/javascript"></script>   
+   <script>
+      var headings = document.querySelectorAll("h1, h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML = titleCase(headings[i].innerHTML);
+      }
+      
+      var toc = document.querySelectorAll("a[id^='markdown-toc-']");
+      
+      for (var i = 0; i < toc.length; i++) {
+          toc[i].innerHTML = titleCase(toc[i].innerHTML);
+      }      
+   </script>        
+</footer>
+
+    <script src="https://aman.ai/js/nanobar.min.js"></script>
+    <script>
+    var options = {
+      classname: 'my-class',
+        id: 'my-id'
+    };
+    var nanobar = new Nanobar( options );
+    nanobar.go(100);
+    </script><div class="nanobar my-class" id="my-id" style="position: fixed;"><div class="bar"></div></div>     
+
+    <!-- Scroll bar -->
+    <div class="progress-bar"></div>
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+    var element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight',
+      progress = document.querySelector('.progress-bar'),
+      scroll;
+
+    document.addEventListener('scroll', function() {
+      scroll = (element[scrollTop]||body[scrollTop]) / ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+    });
+    </script>    
+    <!-- theme switcher -->
+    <script src="https://aman.ai/js/mode-switcher.js"></script>
+    <!-- mathjax -->
+<!--     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" id=""></script>
+    <!-- make mathjax responsive -->
+    <script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+       "HTML-CSS": { linebreaks: { automatic: true } },
+       "SVG": { linebreaks: { automatic: true } },
+      });
+    </script>
+    <!-- Copy button -->
+    <script src="https://aman.ai/js/clipboard.min.js"></script>
+    <script src="https://aman.ai/js/copy.js"></script>      
+    
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5905744527956213&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1766895471&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C8%3A128%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fcontext-length-extension%2F&amp;pra=5&amp;wgl=1&amp;asro=0&amp;aiapm=0.1542&amp;aiapmd=0.1423&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1766922870617&amp;bpp=1&amp;bdt=29&amp;idt=21&amp;shv=r20251211&amp;mjsv=m202512100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=1877110829333&amp;frm=20&amp;pv=2&amp;u_tz=330&amp;u_his=50&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=31093850%2C31095904%2C31096041%2C95376241%2C95376582%2C95378749&amp;oid=2&amp;pvsid=3981098843442233&amp;tmod=112874479&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=22%2C22%2C22%2C22%2C800%2C0%2C756%2C556%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=33792&amp;bc=31&amp;bz=0.95&amp;psd=W251bGwsW251bGwsbnVsbCxudWxsLCJkZXByZWNhdGVkX2thbm9uIl1d&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=25" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: STIXSizeOneSym, sans-serif;"></div></div><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20251211/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>

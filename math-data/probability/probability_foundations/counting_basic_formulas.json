@@ -1,0 +1,110 @@
+[
+  {
+    "id": "prob_for_counting_basic_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "title": "Basic Counting Principles",
+    "contentHtml": "<p>Understanding basic counting principles is crucial in probability theory. The multiplication principle and addition principle help us count outcomes in complex events.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\\\]\",",
+    "name": "Inclusion-Exclusion Principle\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we flip two fair coins. What is the probability that at least one of them shows heads?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "List all possible outcomes",
+        "mathHtml": "\\[HH, HT, TH, TT\\]",
+        "explanation": "We need to count all possibilities"
+      }
+    ],
+    "finalAnswer": "The probability is \\\\frac{3}{4}\" },",
+    "intuition": "These principles help us avoid double-counting or missing certain outcomes when counting complex events.",
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:36:36.783Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_counting_basic_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "title": "Multiplication and Addition Principles",
+    "contentHtml": "<p>The Multiplication Principle states that if an event can occur in <i>m</i> ways and independently another event can occur in <i>n</i> ways, then the total number of outcomes is given by the product <i>m × n</i>. This principle helps us count the number of possible outcomes when multiple events are involved.</p>",
+    "formula": {
+      "latex": "\\(P(A ∩ B) = P(A) \times P(B)\\)",
+      "name": "Multiplication Principle",
+      "variants": [
+        {
+          "latex": "\\(P(A ∪ B) = P(A) + P(B) - P(A) × P(B)\\)",
+          "description": "Addition Principle"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a bag with 5 red balls and 3 blue balls. We randomly draw two balls without replacement. What is the probability that both are red?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Count the number of ways to choose 2 red balls",
+          "mathHtml": "\\(P(R_1 × R_2) = \\frac{5}{8} × \\frac{4}{7}\\)",
+          "explanation": "We use the Multiplication Principle to count the outcomes"
+        }
+      ],
+      "finalAnswer": "\\(P(R_1 × R_2) = \\frac{20}{56}\\)"
+    },
+    "intuition": "The key insight is that when multiple events are involved, we can multiply the probabilities of each event occurring independently.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:36:59.778Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_counting_basic_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "counting_basic",
+    "title": "Multiplication Principle and Addition Principle",
+    "contentHtml": "<p>The multiplication principle states that if we have a sequence of independent events with probabilities p1, p2, ..., pn, then the probability of all these events occurring is equal to the product of their individual probabilities: P(A1 ∩ A2 ∩ ... ∩ An) = p1 × p2 × ... × pn.</p><p>The addition principle states that if we have a sequence of mutually exclusive and independent events with probabilities p1, p2, ..., pn, then the probability of at least one of these events occurring is equal to the sum of their individual probabilities: P(A1 ∪ A2 ∪ ... ∪ An) = p1 + p2 + ... + pn.</p>",
+    "formula": "{",
+    "latex": "\\(P(A_1 \\cap A_2 \\cap \\ldots \\cap A_n) = \\prod_{i=1}^n p_i\\)\",",
+    "name": "Multiplication Principle\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a coin flip with probability 0.5 of getting heads, and then we roll a die with probability 1/6 of getting each number from 1 to 6. What is the probability that we get heads on the coin flip and an even number on the die?</p>",
+    "steps": "[ {",
+    "stepNumber": 1,
+    "description": "Apply the multiplication principle",
+    "mathHtml": "\\(P(\\text{heads}) \\times P(\\text{even number}) = 0.5 \\times 1/2\\)\",",
+    "explanation": "We multiply the probabilities of each event to get the probability of both events occurring\" } ],",
+    "finalAnswer": "0.125\" },",
+    "intuition": "These principles help us calculate complex probabilities by breaking them down into smaller, more manageable pieces.",
+    "realWorldApplications": [
+      "In machine learning, these principles are used in Bayes' theorem to update probabilities based on new data."
+    ],
+    "difficulty": 1,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:37:27.648Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

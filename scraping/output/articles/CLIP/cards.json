@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ai-CLIP-zero-shot-clip-1",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "CLIP",
+    "articleSlug": "CLIP",
+    "chapter": "Learning Process",
+    "title": "Zero-Shot CLIP",
+    "subtitle": "Learning Process",
+    "contentHtml": "<p><img src=\"/primers/ai/assets/clip/7.png\" alt=\"\"></p>\n<ul>\n  <li>Zero shot classification with CLIP seems to perform as well as supervised classifiers.</li>\n  <li>CLIP uses the class names of the image as captions, for example, if the image is of a dog, it will use it’s breed as the caption.</li>\n  <li>Zero shot essentially means CLIP can recognize and classify objects in new images even if it has not seen those objects during its pretraining (with both text and image) on the larger dataset.</li>\n  <li>The above image shows how CLIP works for zero-shot prediction:\n    <ul>\n      <li>Per usual, we provide a text caption and an image that are encoded into text and image embeddings, respectively.</li>\n      <li>CLIP will then compute the pairwise cosine similarities between the image and text embeddings and choose the text with the highest similarity as the prediction.</li>\n      <li>CLIP also caches the input text embeddings as to save on compute for the rest of the input images.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>Per usual, we provide a text caption and an image that are encoded into text and image embeddings, respectively.</li>\n      <li>CLIP will then compute the pairwise cosine similarities between the image and text embeddings and choose the text with the highest similarity as the prediction.</li>\n      <li>CLIP also caches the input text embeddings as to save on compute for the rest of the input images.</li>\n    </ul>",
+    "contentMarkdown": "![](/primers/ai/assets/clip/7.png)\n\n*   Zero shot classification with CLIP seems to perform as well as supervised classifiers.\n*   CLIP uses the class names of the image as captions, for example, if the image is of a dog, it will use it’s breed as the caption.\n*   Zero shot essentially means CLIP can recognize and classify objects in new images even if it has not seen those objects during its pretraining (with both text and image) on the larger dataset.\n*   The above image shows how CLIP works for zero-shot prediction:\n    *   Per usual, we provide a text caption and an image that are encoded into text and image embeddings, respectively.\n    *   CLIP will then compute the pairwise cosine similarities between the image and text embeddings and choose the text with the highest similarity as the prediction.\n    *   CLIP also caches the input text embeddings as to save on compute for the rest of the input images.\n\n*   Per usual, we provide a text caption and an image that are encoded into text and image embeddings, respectively.\n*   CLIP will then compute the pairwise cosine similarities between the image and text embeddings and choose the text with the highest similarity as the prediction.\n*   CLIP also caches the input text embeddings as to save on compute for the rest of the input images.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "models",
+      "embedding"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": true,
+      "wordCount": 220,
+      "contentLength": 1456
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/CLIP/#zero-shot-clip",
+    "scrapedAt": "2025-12-28T11:50:21.759Z"
+  },
+  {
+    "id": "ai-CLIP-few-shot-clip-2",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "CLIP",
+    "articleSlug": "CLIP",
+    "chapter": "Learning Process",
+    "title": "Few-Shot CLIP",
+    "subtitle": "Learning Process",
+    "contentHtml": "<ul>\n  <li>Few-shot learning allows CLIP to classify new objects with only a small number of labeled examples.</li>\n  <li>This is done by fine-tuning the pre-trained model on a small dataset of labeled images which allows it to learn to recognize the new objects with a small amount of data.</li>\n  <li>Few-shot CLIP can be used in situations where there is limited labeled data available for a task or if the model needs to be quickly adapted to new classes.</li>\n</ul>",
+    "contentMarkdown": "*   Few-shot learning allows CLIP to classify new objects with only a small number of labeled examples.\n*   This is done by fine-tuning the pre-trained model on a small dataset of labeled images which allows it to learn to recognize the new objects with a small amount of data.\n*   Few-shot CLIP can be used in situations where there is limited labeled data available for a task or if the model needs to be quickly adapted to new classes.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models",
+      "fine-tuning"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 79,
+      "contentLength": 470
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/CLIP/#few-shot-clip",
+    "scrapedAt": "2025-12-28T11:50:21.759Z"
+  }
+]

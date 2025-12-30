@@ -1,0 +1,338 @@
+[
+  {
+    "id": "la_wex_matrix_multiplication_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_multiplication",
+    "title": "Matrix Multiplication",
+    "contentHtml": "<p>Matrix multiplication is a fundamental operation in linear algebra that combines two matrices to produce another matrix.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{C} = \\mathbf{AB}\\]",
+      "name": "Matrix Product"
+    },
+    "problem": {
+      "statementHtml": "<p>Given matrices A and B, determine the resulting matrix C after multiplication:</p><p>A = [[1, 2], [3, 4]], B = [[5, 6], [7, 8]]</p>",
+      "hints": [],
+      "solutionHtml": "<p>To multiply two matrices, we follow the row-column rule: each element in the resulting matrix is the dot product of a row from A and a column from B.</p><p>Step 1: Multiply the first row of A with the first column of B:</p><p>\\[\\mathbf{C}_{11} = \\mathbf{A}_{11}\\cdot\\mathbf{B}_{11} + \\mathbf{A}_{12}\\cdot\\mathbf{B}_{21}\\]</p><p>Step 2: Multiply the first row of A with the second column of B:</p><p>\\[\\mathbf{C}_{12} = \\mathbf{A}_{11}\\cdot\\mathbf{B}_{12} + \\mathbf{A}_{12}\\cdot\\mathbf{B}_{22}\\]</p><p>Step 3: Multiply the second row of A with the first column of B:</p><p>\\[\\mathbf{C}_{21} = \\mathbf{A}_{21}\\cdot\\mathbf{B}_{11} + \\mathbf{A}_{22}\\cdot\\mathbf{B}_{21}\\]</p><p>Step 4: Multiply the second row of A with the second column of B:</p><p>\\[\\mathbf{C}_{22} = \\mathbf{A}_{21}\\cdot\\mathbf{B}_{12} + \\mathbf{A}_{22}\\cdot\\mathbf{B}_{22}\\]</p><p>The resulting matrix C is:</p><p>C = [[19, 22], [43, 50]]</p>",
+      "answerShort": "C = [[19, 22], [43, 50]]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given matrices A and B, determine the resulting matrix C after multiplication:</p><p>A = [[1, 2], [3, 4]], B = [[5, 6], [7, 8]]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Multiply the first row of A with the first column of B",
+          "mathHtml": "\\[\\mathbf{C}_{11} = \\mathbf{A}_{11}\\cdot\\mathbf{B}_{11} + \\mathbf{A}_{12}\\cdot\\mathbf{B}_{21}\\]",
+          "explanation": "We follow the row-column rule to compute each element in the resulting matrix."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply the first row of A with the second column of B",
+          "mathHtml": "\\[\\mathbf{C}_{12} = \\mathbf{A}_{11}\\cdot\\mathbf{B}_{12} + \\mathbf{A}_{12}\\cdot\\mathbf{B}_{22}\\]",
+          "explanation": "We continue applying the row-column rule to compute each element in the resulting matrix."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply the second row of A with the first column of B",
+          "mathHtml": "\\[\\mathbf{C}_{21} = \\mathbf{A}_{21}\\cdot\\mathbf{B}_{11} + \\mathbf{A}_{22}\\cdot\\mathbf{B}_{21}\\]",
+          "explanation": "We finish applying the row-column rule to compute each element in the resulting matrix."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply the second row of A with the second column of B",
+          "mathHtml": "\\[\\mathbf{C}_{22} = \\mathbf{A}_{21}\\cdot\\mathbf{B}_{12} + \\mathbf{A}_{22}\\cdot\\mathbf{B}_{22}\\]",
+          "explanation": "We now have the complete resulting matrix C."
+        }
+      ],
+      "finalAnswer": "C = [[19, 22], [43, 50]]"
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Not following the row-column rule"
+    ],
+    "realWorldApplications": [
+      "Matrix multiplication is used in neural networks to combine the output of multiple layers."
+    ],
+    "tags": [
+      "matrices",
+      "linear algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:06:33.775Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_multiplication_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_multiplication",
+    "title": "Matrix Multiplication",
+    "contentHtml": "<p>In linear algebra, matrix multiplication is a fundamental operation that combines two matrices to produce another matrix.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{C} = \\mathbf{A} \\cdot \\mathbf{B}\\]",
+      "name": "Matrix Multiplication"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two matrices A and B, find the product C.</p>",
+      "hints": [
+        "Check the dimensions of A, B, and C"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>We need to ensure that the number of columns in A matches the number of rows in B. If this condition is met, we can multiply A by B.</li><li>The resulting matrix C will have the same number of rows as A and the same number of columns as B.</li></ul>",
+      "answerShort": "C = AB"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let A = [1, 2; 3, 4] and B = [5; 6]. Find C = A * B.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check the dimensions",
+          "mathHtml": "\\[\\text{A: } 2 \\times 2, \\text{B: } 2 \\times 1\\]",
+          "explanation": "We need to ensure that A has 2 rows and B has 2 columns."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply corresponding elements",
+          "mathHtml": "\\[c_{11} = a_{11} * b_1 + a_{12} * b_2\\]",
+          "explanation": "We multiply each element of A by the corresponding row in B and sum them up."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Repeat for other elements",
+          "mathHtml": "\\[c_{21} = a_{21} * b_1 + a_{22} * b_2\\]",
+          "explanation": "We repeat this process for the rest of the elements in C."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Combine results",
+          "mathHtml": "\\[C = \\begin{bmatrix} c_{11} & c_{12} \\\\ c_{21} & c_{22} \\end{bmatrix}\\]",
+          "explanation": "We combine the results to get our final matrix C."
+        }
+      ],
+      "finalAnswer": "[7; 8]"
+    },
+    "intuition": "Matrix multiplication is a way to combine information from multiple sources, like combining features in machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:07:07.214Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_multiplication_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_multiplication",
+    "title": "Matrix Multiplication",
+    "contentHtml": "<p>In linear algebra, matrix multiplication is a way to combine two matrices into one new matrix.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{C} = \\mathbf{A} \\cdot \\mathbf{B}\\]",
+      "name": "Matrix Multiplication"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two matrices A and B, find the product C.</p>",
+      "hints": [
+        "Check the dimensions of the matrices"
+      ],
+      "solutionHtml": "<p>To multiply two matrices, we need to follow the row-column rule:</p><ul><li>We take each row of the first matrix (A) and multiply it with each column of the second matrix (B).</li></ul>",
+      "answerShort": "C = AB"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the product C when A = \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\] and B = \\[\\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Take each row of A",
+          "mathHtml": "\\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} \\cdot \\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}\\]",
+          "explanation": "We take the first row of A and multiply it with each column of B."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply the rows by the columns",
+          "mathHtml": "\\[\\begin{bmatrix} 1*5 + 2*7 & 1*6 + 2*8 \\\\ 3*5 + 4*7 & 3*6 + 4*8 \\end{bmatrix}\\]",
+          "explanation": "We multiply each row of A with each column of B."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Combine the results",
+          "mathHtml": "\\[\\begin{bmatrix} 17 & 22 \\\\ 43 & 58 \\end{bmatrix}\\]",
+          "explanation": "We combine the results from step 2 to get the final product C."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check the dimensions",
+          "mathHtml": "",
+          "explanation": "The resulting matrix has the correct dimensions for a valid matrix multiplication."
+        }
+      ],
+      "finalAnswer": "C = \\[\\begin{bmatrix} 17 & 22 \\\\ 43 & 58 \\end{bmatrix}\\]"
+    },
+    "intuition": "Matrix multiplication allows us to combine information from multiple sources in a way that's easy to work with.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:07:43.427Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_multiplication_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_multiplication",
+    "title": "Matrix Multiplication",
+    "contentHtml": "<p>Matrix multiplication is a fundamental operation in linear algebra.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{C} = \\mathbf{AB}\\]",
+      "name": "Matrix Product"
+    },
+    "problem": {
+      "statementHtml": "<p>Given matrices A, B, and C, show that the product AB is defined only when the number of columns in A equals the number of rows in B.</p>",
+      "hints": [
+        "Check the dimensions"
+      ],
+      "solutionHtml": "<p>To multiply two matrices, we need to follow the row-column rule: each element in the resulting matrix comes from the dot product between a row of the first matrix and a column of the second.</p><p>Let's denote the number of rows in A as m, the number of columns in A as n, the number of rows in B as p, and the number of columns in B as q. We can write this rule as:</p><p>\\[\\mathbf{C} = \\begin{bmatrix} c_{11} &amp; \\cdots &amp; c_{1q} \\\\vdots &amp; \\ddots &amp; \\vdots\\\\c_{m1} &amp; \\cdots &amp; c_{mq}\\end{bmatrix}\\]</p><p>Now, we can see that the number of columns in A (n) must equal the number of rows in B (p), because each element in the resulting matrix comes from a dot product between a row of A and a column of B.</p>",
+      "answerShort": "The product AB is defined only when m × n = p × q"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider matrices A, B, and C with dimensions 2 × 3, 3 × 4, and 2 × 4, respectively. Is the product ABC well-defined?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check the number of columns in A",
+          "mathHtml": "\\[\\text{number of columns in A} = 3\\]",
+          "explanation": "We need to check if this matches the number of rows in B"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check the number of rows in B",
+          "mathHtml": "\\[\\text{number of rows in B} = 4\\]",
+          "explanation": "This is what we'll multiply with the columns of A"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compare the dimensions",
+          "mathHtml": "\\[2 \\times 3 = 4 \\times ?\\]",
+          "explanation": "The number of columns in A matches the number of rows in B"
+        }
+      ],
+      "finalAnswer": "Yes, the product ABC is well-defined"
+    },
+    "intuition": "Matrix multiplication is a way to combine information from multiple matrices into a new matrix.",
+    "visualDescription": "A diagram showing the row-column rule for matrix multiplication",
+    "commonMistakes": [
+      "Forgetting that the number of columns in A must match the number of rows in B"
+    ],
+    "realWorldApplications": [
+      "Matrix multiplication is used extensively in machine learning, particularly in neural networks"
+    ],
+    "tags": [
+      "matrix operations",
+      "linear algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:08:23.129Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_multiplication_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_multiplication",
+    "title": "Matrix Multiplication",
+    "contentHtml": "<p>Matrix multiplication is a fundamental operation in linear algebra.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{C} = \\mathbf{A}\\mathbf{B}\\]",
+      "name": "Matrix Product"
+    },
+    "problem": {
+      "statementHtml": "<p>Given matrices A, B, and C, show that the product AB is compatible for multiplication.</p>",
+      "hints": [
+        "Check the dimensions",
+        "Think about the dot product"
+      ],
+      "solutionHtml": "<p>To multiply two matrices, we need to ensure their dimensions are compatible. In particular, the number of columns in the first matrix must match the number of rows in the second matrix.</p><ul><li>We have \\mathbf{A} with dimensions 3x4 and \\mathbf{B} with dimensions 4x2.</li><li>The number of columns in \\mathbf{A} is 4, which matches the number of rows in \\mathbf{B}, allowing us to perform the multiplication.</li></ul>",
+      "answerShort": "The product AB is compatible for multiplication."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given matrices A = [1, 2; 3, 4] and B = [5, 6], find their product C.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the dimensions of A and B",
+          "mathHtml": "\\[\\mathbf{A} = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}, \\quad \\mathbf{B} = \\begin{bmatrix} 5 \\\\ 6 \\end{bmatrix}\\]",
+          "explanation": "We need to find the dimensions of A and B to determine if they are compatible for multiplication."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply the matrices",
+          "mathHtml": "\\[\\mathbf{C} = \\mathbf{A}\\mathbf{B} = \\begin{bmatrix} 5+6 \\\\ 15+24 \\end{bmatrix} = \\begin{bmatrix} 11 \\\\ 39 \\end{bmatrix}\\]",
+          "explanation": "We multiply the elements of A by the corresponding elements of B, following the rules of matrix multiplication."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify the dimensions",
+          "mathHtml": "\\[\\mathbf{C} = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\begin{bmatrix} 5 \\\\ 6 \\end{bmatrix} = \\begin{bmatrix} ? \\\\ ? \\end{bmatrix}\\]",
+          "explanation": "We verify that the dimensions of C are compatible for further manipulation."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the final answer",
+          "mathHtml": "\\[\\mathbf{C} = \\begin{bmatrix} 11 \\\\ 39 \\end{bmatrix}\\]",
+          "explanation": "The product AB is equal to C."
+        }
+      ],
+      "finalAnswer": "C = [11, 39]"
+    },
+    "intuition": "Matrix multiplication allows us to combine information from multiple sources.",
+    "visualDescription": "A diagram showing the matrix product AB = C",
+    "commonMistakes": [
+      "Forgetting the dimension compatibility"
+    ],
+    "realWorldApplications": [
+      "Linear regression in machine learning"
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:09:06.259Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

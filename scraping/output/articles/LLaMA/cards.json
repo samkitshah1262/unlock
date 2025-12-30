@@ -1,0 +1,134 @@
+[
+  {
+    "id": "ai-LLaMA-pre-normalization-1",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "LLaMA",
+    "articleSlug": "LLaMA",
+    "chapter": "Architectural Design Decision",
+    "title": "Pre-normalization",
+    "subtitle": "Architectural Design Decision",
+    "contentHtml": "<ul>\n  <li>To improve the training stability, LLaMA normalizes the input of each transformer sub-layer, instead of normalizing the output. LLaMA use the RMSNorm normalizing function.</li>\n  <li>Pre-normalization is a technique that normalizes the input data before its fed into the neural network.</li>\n  <li>The aim here is to improve the efficiency and stability of the training process by normalizing and reducing variation and correlation of the input features.</li>\n  <li>Pre-normalization can take many forms, but the most common method is to subtract the mean and divide by the standard deviation of each feature across the training dataset.</li>\n  <li>This ensures that the mean of each feature is zero and the standard deviation is one, which can make it easier for the neural network to learn the relationships between the features without being overly affected by their scales or magnitudes.\n-Pre-normalization can be especially important when dealing with features that have vastly different scales or magnitudes, as this can cause the neural network to overemphasize some features and underemphasize others.</li>\n  <li>By pre-normalizing the data, these differences are accounted for, and the neural network can better learn the underlying patterns and relationships in the data</li>\n</ul>",
+    "contentMarkdown": "*   To improve the training stability, LLaMA normalizes the input of each transformer sub-layer, instead of normalizing the output. LLaMA use the RMSNorm normalizing function.\n*   Pre-normalization is a technique that normalizes the input data before its fed into the neural network.\n*   The aim here is to improve the efficiency and stability of the training process by normalizing and reducing variation and correlation of the input features.\n*   Pre-normalization can take many forms, but the most common method is to subtract the mean and divide by the standard deviation of each feature across the training dataset.\n*   This ensures that the mean of each feature is zero and the standard deviation is one, which can make it easier for the neural network to learn the relationships between the features without being overly affected by their scales or magnitudes. -Pre-normalization can be especially important when dealing with features that have vastly different scales or magnitudes, as this can cause the neural network to overemphasize some features and underemphasize others.\n*   By pre-normalizing the data, these differences are accounted for, and the neural network can better learn the underlying patterns and relationships in the data",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models",
+      "neural network",
+      "transformer"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 194,
+      "contentLength": 1302
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/LLaMA/#pre-normalization",
+    "scrapedAt": "2025-12-28T11:50:41.436Z"
+  },
+  {
+    "id": "ai-LLaMA-swiglu-activation-function-swish-gated-linear-unit-2",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "LLaMA",
+    "articleSlug": "LLaMA",
+    "chapter": "Architectural Design Decision",
+    "title": "SwiGLU Activation Function (Swish-Gated Linear Unit)",
+    "subtitle": "Architectural Design Decision",
+    "contentHtml": "<ul>\n  <li>LLaMA replaces the ReLU non-linearity by the SwiGLU activation function, introduced by Shazeer (2020) in <a href=\"https://arxiv.org/abs/1908.08681\">Swish-Gated Linear Units for Neural Network Function Approximation</a> to offer better performance.</li>\n  <li>The SwiGLU activation function is based on the Swish activation function, which is a smooth and non-monotonic function that has been shown to outperform other commonly used activation functions such as ReLU and sigmoid in certain neural network architectures.</li>\n</ul>\n<div class=\"MathJax_Display\" style=\"text-align: center;\"><span class=\"MathJax\" id=\"MathJax-Element-1-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;><mi>S</mi><mi>w</mi><mi>i</mi><mi>G</mi><mi>L</mi><mi>U</mi><mo stretchy=&quot;false&quot;>(</mo><mi>x</mi><mo stretchy=&quot;false&quot;>)</mo><mo>=</mo><mi>x</mi><mo>&amp;#x2217;</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mo stretchy=&quot;false&quot;>(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>a</mi><mo>&amp;#x2217;</mo><mi>x</mi><mo stretchy=&quot;false&quot;>)</mo><mo>+</mo><mo stretchy=&quot;false&quot;>(</mo><mn>1</mn><mo>&amp;#x2212;</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mo stretchy=&quot;false&quot;>(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>a</mi><mo>&amp;#x2217;</mo><mi>x</mi><mo stretchy=&quot;false&quot;>)</mo><mo stretchy=&quot;false&quot;>)</mo><mo>&amp;#x2217;</mo><mi>x</mi></math>\" role=\"presentation\" style=\"text-align: center; position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-1\" style=\"width: 32.19em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 26.826em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.409em, 1026.83em, 2.607em, -999.997em); top: -2.237em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-2\"><span class=\"mi\" id=\"MathJax-Span-3\" style=\"font-family: STIXGeneral-Italic;\">S<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mi\" id=\"MathJax-Span-4\" style=\"font-family: STIXGeneral-Italic;\">w</span><span class=\"mi\" id=\"MathJax-Span-5\" style=\"font-family: STIXGeneral-Italic;\">i</span><span class=\"mi\" id=\"MathJax-Span-6\" style=\"font-family: STIXGeneral-Italic;\">G</span><span class=\"mi\" id=\"MathJax-Span-7\" style=\"font-family: STIXGeneral-Italic;\">L<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mi\" id=\"MathJax-Span-8\" style=\"font-family: STIXGeneral-Italic;\">U<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-9\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"mi\" id=\"MathJax-Span-10\" style=\"font-family: STIXGeneral-Italic;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-11\" style=\"font-family: STIXGeneral-Regular;\">)</span><span class=\"mo\" id=\"MathJax-Span-12\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.315em;\">=</span><span class=\"mi\" id=\"MathJax-Span-13\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.315em;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-14\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">∗</span><span class=\"mi\" id=\"MathJax-Span-15\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.263em;\">s</span><span class=\"mi\" id=\"MathJax-Span-16\" style=\"font-family: STIXGeneral-Italic;\">i</span><span class=\"mi\" id=\"MathJax-Span-17\" style=\"font-family: STIXGeneral-Italic;\">g</span><span class=\"mi\" id=\"MathJax-Span-18\" style=\"font-family: STIXGeneral-Italic;\">m</span><span class=\"mi\" id=\"MathJax-Span-19\" style=\"font-family: STIXGeneral-Italic;\">o</span><span class=\"mi\" id=\"MathJax-Span-20\" style=\"font-family: STIXGeneral-Italic;\">i</span><span class=\"mi\" id=\"MathJax-Span-21\" style=\"font-family: STIXGeneral-Italic;\">d<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-22\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"mi\" id=\"MathJax-Span-23\" style=\"font-family: STIXGeneral-Italic;\">b</span><span class=\"mi\" id=\"MathJax-Span-24\" style=\"font-family: STIXGeneral-Italic;\">e</span><span class=\"mi\" id=\"MathJax-Span-25\" style=\"font-family: STIXGeneral-Italic;\">t<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mi\" id=\"MathJax-Span-26\" style=\"font-family: STIXGeneral-Italic;\">a</span><span class=\"mo\" id=\"MathJax-Span-27\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">∗</span><span class=\"mi\" id=\"MathJax-Span-28\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.263em;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-29\" style=\"font-family: STIXGeneral-Regular;\">)</span><span class=\"mo\" id=\"MathJax-Span-30\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">+</span><span class=\"mo\" id=\"MathJax-Span-31\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">(</span><span class=\"mn\" id=\"MathJax-Span-32\" style=\"font-family: STIXGeneral-Regular;\">1</span><span class=\"mo\" id=\"MathJax-Span-33\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">−</span><span class=\"mi\" id=\"MathJax-Span-34\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.263em;\">s</span><span class=\"mi\" id=\"MathJax-Span-35\" style=\"font-family: STIXGeneral-Italic;\">i</span><span class=\"mi\" id=\"MathJax-Span-36\" style=\"font-family: STIXGeneral-Italic;\">g</span><span class=\"mi\" id=\"MathJax-Span-37\" style=\"font-family: STIXGeneral-Italic;\">m</span><span class=\"mi\" id=\"MathJax-Span-38\" style=\"font-family: STIXGeneral-Italic;\">o</span><span class=\"mi\" id=\"MathJax-Span-39\" style=\"font-family: STIXGeneral-Italic;\">i</span><span class=\"mi\" id=\"MathJax-Span-40\" style=\"font-family: STIXGeneral-Italic;\">d<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.055em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-41\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"mi\" id=\"MathJax-Span-42\" style=\"font-family: STIXGeneral-Italic;\">b</span><span class=\"mi\" id=\"MathJax-Span-43\" style=\"font-family: STIXGeneral-Italic;\">e</span><span class=\"mi\" id=\"MathJax-Span-44\" style=\"font-family: STIXGeneral-Italic;\">t<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mi\" id=\"MathJax-Span-45\" style=\"font-family: STIXGeneral-Italic;\">a</span><span class=\"mo\" id=\"MathJax-Span-46\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">∗</span><span class=\"mi\" id=\"MathJax-Span-47\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.263em;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span class=\"mo\" id=\"MathJax-Span-48\" style=\"font-family: STIXGeneral-Regular;\">)</span><span class=\"mo\" id=\"MathJax-Span-49\" style=\"font-family: STIXGeneral-Regular;\">)</span><span class=\"mo\" id=\"MathJax-Span-50\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">∗</span><span class=\"mi\" id=\"MathJax-Span-51\" style=\"font-family: STIXGeneral-Italic; padding-left: 0.263em;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.242em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML MJX_Assistive_MathML_Block\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mi>S</mi><mi>w</mi><mi>i</mi><mi>G</mi><mi>L</mi><mi>U</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>x</mi><mo>∗</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mo stretchy=\"false\">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>a</mi><mo>∗</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mo stretchy=\"false\">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>a</mi><mo>∗</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>∗</mo><mi>x</mi></math></span></span></div>\n<ul>\n  <li>Experimental results have shown that SwiGLU can outperform other activation functions such as ReLU, Swish, and GELU (Gaussian Error Linear Units) on certain image classification and language modeling tasks.</li>\n  <li>However, the effectiveness of SwiGLU can depend on the specific architecture and dataset used, so it may not always be the best choice for every application.</li>\n</ul>",
+    "contentMarkdown": "*   LLaMA replaces the ReLU non-linearity by the SwiGLU activation function, introduced by Shazeer (2020) in [Swish-Gated Linear Units for Neural Network Function Approximation](https://arxiv.org/abs/1908.08681) to offer better performance.\n*   The SwiGLU activation function is based on the Swish activation function, which is a smooth and non-monotonic function that has been shown to outperform other commonly used activation functions such as ReLU and sigmoid in certain neural network architectures.\n\nSwiGLU(x)\\=x∗sigmoid(beta∗x)+(1−sigmoid(beta∗x))∗xSwiGLU(x)\\=x∗sigmoid(beta∗x)+(1−sigmoid(beta∗x))∗x\n\n*   Experimental results have shown that SwiGLU can outperform other activation functions such as ReLU, Swish, and GELU (Gaussian Error Linear Units) on certain image classification and language modeling tasks.\n*   However, the effectiveness of SwiGLU can depend on the specific architecture and dataset used, so it may not always be the best choice for every application.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models",
+      "neural network",
+      "activation"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": true,
+      "hasImages": false,
+      "wordCount": 126,
+      "contentLength": 9098
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/LLaMA/#swiglu-activation-function-(swish-gated-linear-unit)",
+    "scrapedAt": "2025-12-28T11:50:41.436Z"
+  },
+  {
+    "id": "ai-LLaMA-rotary-positional-embeddings-3",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "LLaMA",
+    "articleSlug": "LLaMA",
+    "chapter": "Architectural Design Decision",
+    "title": "Rotary Positional Embeddings",
+    "subtitle": "Architectural Design Decision",
+    "contentHtml": "<ul>\n  <li>LLaMA does not utilize absolute positional embeddings to embed the notion of sequentiality of information as in the original Transformer, and instead, utilize Rotary Positional Embeddings (RoPE), introduced by Su et al. (2021) in <a href=\"https://arxiv.org/abs/2104.09864\">Rotary Position Embedding</a>, at each layer of the network.</li>\n  <li>The basic idea behind rotary embeddings is to introduce additional structure into the position embeddings used in deep learning models. Position embeddings are used to encode the position of each element in a sequence (such as a word in a sentence) as a vector, which is then combined with the corresponding element embedding to form the input to the model.</li>\n  <li>In traditional position embeddings, the vectors representing different positions are orthogonal to each other. However, this orthogonality can lead to certain symmetries in the model, which can limit its expressive power.</li>\n  <li>Rotary embeddings address this issue by introducing a phase shift between the position embeddings for different dimensions. This phase shift is achieved using a matrix that has a special form based on the properties of rotations in high-dimensional space. The resulting embeddings are no longer orthogonal, but they preserve certain rotational symmetries that can make the model more expressive.</li>\n  <li>Experimental results have shown that rotary embeddings can improve the performance of deep learning models on certain tasks, such as machine translation and language modeling.</li>\n</ul>",
+    "contentMarkdown": "*   LLaMA does not utilize absolute positional embeddings to embed the notion of sequentiality of information as in the original Transformer, and instead, utilize Rotary Positional Embeddings (RoPE), introduced by Su et al. (2021) in [Rotary Position Embedding](https://arxiv.org/abs/2104.09864), at each layer of the network.\n*   The basic idea behind rotary embeddings is to introduce additional structure into the position embeddings used in deep learning models. Position embeddings are used to encode the position of each element in a sequence (such as a word in a sentence) as a vector, which is then combined with the corresponding element embedding to form the input to the model.\n*   In traditional position embeddings, the vectors representing different positions are orthogonal to each other. However, this orthogonality can lead to certain symmetries in the model, which can limit its expressive power.\n*   Rotary embeddings address this issue by introducing a phase shift between the position embeddings for different dimensions. This phase shift is achieved using a matrix that has a special form based on the properties of rotations in high-dimensional space. The resulting embeddings are no longer orthogonal, but they preserve certain rotational symmetries that can make the model more expressive.\n*   Experimental results have shown that rotary embeddings can improve the performance of deep learning models on certain tasks, such as machine translation and language modeling.",
+    "order": 3,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "models",
+      "deep learning",
+      "transformer",
+      "embedding"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 223,
+      "contentLength": 1551
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/LLaMA/#rotary-positional-embeddings",
+    "scrapedAt": "2025-12-28T11:50:41.436Z"
+  },
+  {
+    "id": "ai-LLaMA-attention-optimizations-4",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "LLaMA",
+    "articleSlug": "LLaMA",
+    "chapter": "Architectural Design Decision",
+    "title": "Attention Optimizations",
+    "subtitle": "Architectural Design Decision",
+    "contentHtml": "<ul>\n  <li>LLaMA uses both <a href=\"https://arxiv.org/abs/2112.05682\">memory efficient attention</a> and <a href=\"https://arxiv.org/abs/2205.14135\">FlashAttention</a>, which offer an efficient implementation of the causal multi-head attention to reduce memory usage and runtime. The former present a very simple algorithm for attention that requires <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-2-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi><mo stretchy=&quot;false&quot;>(</mo><mn>1</mn><mo stretchy=&quot;false&quot;>)</mo></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-52\" style=\"width: 2.294em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 1.878em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.357em, 1001.83em, 2.503em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-53\"><span class=\"mi\" id=\"MathJax-Span-54\" style=\"font-family: STIXGeneral-Italic;\">O</span><span class=\"mo\" id=\"MathJax-Span-55\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"mn\" id=\"MathJax-Span-56\" style=\"font-family: STIXGeneral-Regular;\">1</span><span class=\"mo\" id=\"MathJax-Span-57\" style=\"font-family: STIXGeneral-Regular;\">)</span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.128em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>O</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-2\">O(1)</script> memory with respect to sequence length and an extension to self-attention that requires <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-3-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi><mo stretchy=&quot;false&quot;>(</mo><mi>log</mi><mo>&amp;#x2061;</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi>n</mi></mrow><mo stretchy=&quot;false&quot;>)</mo></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-58\" style=\"width: 4.065em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 3.388em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.357em, 1003.34em, 2.555em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-59\"><span class=\"mi\" id=\"MathJax-Span-60\" style=\"font-family: STIXGeneral-Italic;\">O</span><span class=\"mo\" id=\"MathJax-Span-61\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"mi\" id=\"MathJax-Span-62\" style=\"font-family: STIXGeneral-Regular;\">log</span><span class=\"mo\" id=\"MathJax-Span-63\"></span><span class=\"texatom\" id=\"MathJax-Span-64\" style=\"padding-left: 0.211em;\"><span class=\"mrow\" id=\"MathJax-Span-65\"><span class=\"mi\" id=\"MathJax-Span-66\" style=\"font-family: STIXGeneral-Italic;\">n</span></span></span><span class=\"mo\" id=\"MathJax-Span-67\" style=\"font-family: STIXGeneral-Regular;\">)</span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>O</mi><mo stretchy=\"false\">(</mo><mi>log</mi><mo>⁡</mo><mrow class=\"MJX-TeXAtom-ORD\"><mi>n</mi></mrow><mo stretchy=\"false\">)</mo></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-3\">O(\\log{n})</script> memory.</li>\n  <li>This is achieved by not storing the attention weights and not computing the key/query scores that are masked due to the causal nature of the language modeling task. This, in turn, helps improve the training efficiency and time-to-convergence.</li>\n  <li>This also means that it would likely be possible to extend the context length to something much larger.</li>\n</ul>\n<p><img src=\"/primers/ai/assets/llama/attention.png\" alt=\"\"></p>",
+    "contentMarkdown": "*   LLaMA uses both [memory efficient attention](https://arxiv.org/abs/2112.05682) and [FlashAttention](https://arxiv.org/abs/2205.14135), which offer an efficient implementation of the causal multi-head attention to reduce memory usage and runtime. The former present a very simple algorithm for attention that requires O(1)O(1)O(1) memory with respect to sequence length and an extension to self-attention that requires O(logn)O(log⁡n)O(\\\\log{n}) memory.\n*   This is achieved by not storing the attention weights and not computing the key/query scores that are masked due to the causal nature of the language modeling task. This, in turn, helps improve the training efficiency and time-to-convergence.\n*   This also means that it would likely be possible to extend the context length to something much larger.\n\n![](/primers/ai/assets/llama/attention.png)",
+    "order": 4,
+    "orderInChapter": 4,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models",
+      "attention"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": true,
+      "hasImages": true,
+      "wordCount": 111,
+      "contentLength": 4477
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/LLaMA/#attention-optimizations",
+    "scrapedAt": "2025-12-28T11:50:41.436Z"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "la_prb_positive_definite_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "problem": "{",
+    "statementHtml": "Given a positive definite matrix A, determine whether its decomposition into symmetric and positive semi-definite matrices is unique.",
+    "hints": [
+      "Start by recalling that the eigenvalues of a positive definite matrix are all positive.",
+      "Think about how the eigenvectors can be used to decompose the matrix.",
+      "Consider what happens when two different decompositions produce the same matrix A."
+    ],
+    "solutionHtml": "\\[A = Q \\Lambda Q^T,\\] where $\\Lambda$ is a diagonal matrix with positive entries. To show uniqueness, assume that $A = U \\Sigma U^T,$ and use the fact that the eigenvectors of $A$ are orthogonal to show that $Q = U.$ Since $\\Lambda$ and $\\Sigma$ have the same eigenvalues, they must be equal. Therefore, $A$ has a unique decomposition.\",",
+    "answerShort": "Unique\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:00:43.458Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_positive_definite_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "problem": {
+      "statementHtml": "<p>Given a positive definite matrix A, determine whether its eigenvalues are all positive.</p>",
+      "hints": [
+        "Hint: Think about the relationship between eigenvectors and eigenvalues.",
+        "Hint: Consider the quadratic form associated with A.",
+        "Hint: Use the fact that the determinant of A is the product of its eigenvalues."
+      ],
+      "solutionHtml": "<p>To prove this, we can start by noting that <i>A</i> is positive definite implies it has only positive eigenvalues. Then, using the quadratic form associated with <i>A</i>, we can show that any eigenvector corresponding to a negative eigenvalue would lead to a contradiction.</p>",
+      "answerShort": "All eigenvalues are positive."
+    },
+    "commonMistakes": [
+      "Failing to recognize that the determinant of a positive definite matrix is always positive.",
+      "Not considering the implications of the quadratic form on eigenvectors and eigenvalues."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:00:57.902Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_positive_definite_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "problem": {
+      "statementHtml": "Given a positive definite matrix <i>A</i>, determine whether its square root exists and is also positive definite.",
+      "hints": [
+        "Check if <i>A</i> has any zero eigenvalues.",
+        "Think about the relationship between the eigenvalues of <i>A</i> and those of its square root.",
+        "Recall that a matrix is positive definite if all its eigenvalues are positive."
+      ],
+      "solutionHtml": "<p>To show that the square root exists, we can use the fact that every symmetric positive definite matrix has only positive eigenvalues. Since <i>A</i> is positive definite, it must have only positive eigenvalues.</p><p>Now, let <i>S</i> be the matrix whose columns are the eigenvectors of <i>A</i>. Then, we can write <i>A</i> = <i>S</i>&Lambda;<i>S</i><sup>T</sup>, where &Lambda; is a diagonal matrix containing the eigenvalues of <i>A</i>.</p><p>The square root of <i>A</i> is then given by <i>S</i>&radic;&Lambda;<i>S</i><sup>T</sup>. Since all eigenvalues in &Lambda; are positive, so are those in &radic;&Lambda;. Therefore, the matrix <i>S</i>&radic;&Lambda;<i>S</i><sup>T</sup> is also positive definite.</p>",
+      "answerShort": "The square root exists and is positive definite."
+    },
+    "commonMistakes": [
+      "Forgetting that a symmetric matrix must have only real eigenvalues.",
+      "Assuming the square root of <i>A</i> is unique, when it may not be."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:01:20.381Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_positive_definite_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "positive_definite",
+    "title": "Positive Definite Matrices",
+    "problem": "{",
+    "statementHtml": "<p>Given a symmetric matrix <i>A</i>, determine whether it is positive definite.</p>",
+    "hints": [
+      "Check if the matrix has any zero eigenvalues.",
+      "If the matrix has a negative eigenvalue, it cannot be positive definite.",
+      "Use the fact that all eigenvalues of a positive definite matrix are positive."
+    ],
+    "solutionHtml": "<p>To prove this, we can use the following steps:</p><ol><li><p>Let <i>A</i> be a symmetric matrix.</p></li><li><p>If <i>A</i> has any zero eigenvalues, it cannot be positive definite.</p></li><li><p>Now assume that all eigenvalues of <i>A</i> are negative. Then there exists an eigenvector <i>v</i> with corresponding eigenvalue <i>&lambda;</i>. We have:</p><p>\\[A\\mathbf{v} = \\lambda \\mathbf{v}\\]</p><li><p>This implies that:</p><p>\\[\\mathbf{v}^T A \\mathbf{v} = \\lambda \\mathbf{v}^T \\mathbf{v} = \\lambda ||\\mathbf{v}||^2 > 0,\\]</p><p>which is a contradiction since <i>&lambda;</i> is negative.</p></li><li><p>This shows that if all eigenvalues of <i>A</i> are negative, then it cannot be positive definite.</p></li><li><p>Finally, we can conclude that:</p><p>\\[A\\] is positive definite if and only if all its eigenvalues are positive.</p></li>\",",
+    "answerShort": "All eigenvalues of a positive definite matrix are positive.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:01:45.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "prob_prb_naive_bayes_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features \\(\\mathbf{x}_1\\), \\(\\mathbf{x}_2\\), ..., \\(\\mathbf{x}_n\\) and class labels \\(y_1\\), \\(y_2\\), ..., \\(y_m\\), design a Naive Bayes classifier under the assumption of independence between features.</p>\",",
+    "hints": [
+      "<p>Start by modeling each feature using a Gaussian distribution.</p>",
+      "<p>Use Bayes' theorem to calculate the posterior probability of each class given the input features.</p>",
+      "<p>Assume that the class prior probabilities are known and equal.</p>"
+    ],
+    "solutionHtml": "<p>To train the classifier, compute the mean \\(\\mu_i\\) and variance \\(\\sigma_i^2\\) for each feature \\(x_i\\). Then, for a new input \\(\\mathbf{x}\\), calculate the likelihood of each class given the features using the Gaussian distribution.</p><p>For example:</p>\\[\\text{P}(y|\\mathbf{x}) = \\frac{\\prod_{i=1}^n \\mathcal{N}(x_i | \\mu_{iy}, \\sigma_{iy}^2)}{\\sum_{j=1}^m \\prod_{i=1}^n \\mathcal{N}(x_i | \\mu_{ij}, \\sigma_{ij}^2)}\\]",
+    "answerShort": "The trained classifier is a probabilistic model that predicts the class label given the input features.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:55:49.246Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_naive_bayes_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "problem": "{",
+    "statementHtml": "A Naive Bayes classifier is trained on a dataset with features X1, ..., Xn and labels y. Assuming independence between features, derive the predictive distribution P(y|x) for a new input x.",
+    "hints": [
+      "Start by writing down the joint probability density function of the features and labels.",
+      "Use the chain rule to factorize the joint density into a product of conditional densities.",
+      "Apply Bayes' theorem to get the predictive distribution."
+    ],
+    "solutionHtml": " The joint density is given by P(x, y) = ∏i P(xi | yi)P(yi). Applying Bayes' theorem, we get: \\[P(y|x) = \\frac{P(x|y)P(y)}{\\sum_{y'} P(x|y')P(y')}\\] This is the predictive distribution for a new input x. \",",
+    "answerShort": "P(y|x)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:56:05.769Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_naive_bayes_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X1, X2, ..., Xn and labels y, train a Naive Bayes classifier assuming independence between features.</p>",
+    "hints": [
+      "<p>Start by calculating the prior probability P(y).</p>",
+      "<p>Then, for each feature Xi, calculate the likelihood P(Xi|y) using the Gaussian distribution.</p>",
+      "<p>Finally, use Bayes' theorem to obtain the posterior probability P(y|X).</p>"
+    ],
+    "solutionHtml": "<p>To train a Naive Bayes classifier, we first need to calculate the prior probability P(y). This is simply the proportion of instances in each class.</p><p>\\[P(y) = \\frac{\\sum_{i=1}^N I[y_i=y]}{N}\\]</p><p>Next, for each feature Xi, we calculate the likelihood P(Xi|y) using the Gaussian distribution. This is done by calculating the mean and standard deviation of each feature for each class.</p><p>\\[P(Xi|y) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{(-(\\xi_i - \\mu)^2 / (2\\sigma^2))}\\]</p><p>Finally, we use Bayes' theorem to obtain the posterior probability P(y|X). This is done by multiplying the prior probability P(y) with the likelihood P(X|y).</p><p>\\[P(y|X) = \\frac{P(X|y)P(y)}{\\sum_{k=1}^K P(X|y_k)P(y_k)}\\]</p>\",",
+    "answerShort": "The trained Naive Bayes classifier\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:56:32.458Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_naive_bayes_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "naive_bayes",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of features X and their corresponding class labels y, develop a Naive Bayes classifier that assumes independence between the features.</p>",
+    "hints": [
+      "Start by defining the joint probability distribution over X and y.",
+      "Use the chain rule to factorize the joint distribution into a product of conditional distributions.",
+      "Assume each feature is conditionally independent given the class label."
+    ],
+    "solutionHtml": "<p>To develop the Naive Bayes classifier, we first define the joint probability distribution over X and y:</p>\\n\\ \\[P(X, y) = P(y) \\prod_{i=1}^n P(x_i | y).\\]\\n\\ <p>Next, we use the chain rule to factorize the joint distribution into a product of conditional distributions:</p>\\n\\ \\[P(X, y) = P(y) \\prod_{i=1}^n P(x_i | y) = P(y) \\prod_{i=1}^n P(x_i | c).\\]\\n\\ <p>Assuming each feature is conditionally independent given the class label, we can further factorize:</p>\\n\\ \\[P(X, y) = P(y) \\prod_{i=1}^n P(x_i | c) = P(y) \\prod_{i=1}^n \\prod_{c'} P(x_i | c').\\]\\n\\ <p>The final step is to compute the class probabilities and Bayes' theorem:</p>\\n\\ \\[P(c | X) = \\frac{P(X | c) P(c)}{\\sum_{c'} P(X | c') P(c')}.\\]",
+    "answerShort": "The Naive Bayes classifier assumes independence between features.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:56:59.239Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

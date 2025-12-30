@@ -1,0 +1,161 @@
+[
+  {
+    "id": "prob_wex_exponential_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Exponential Distribution: Memoryless Property and Hazard Rate",
+    "contentHtml": "<p>The exponential distribution is a fundamental continuous random variable in probability theory.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\lambda e^{-\\lambda x} \\]",
+      "name": "Exponential Density"
+    },
+    "problem": {
+      "statementHtml": "Find the probability that a memoryless system fails within <i>t</i> units of time, given its failure rate is <i>λ</i>",
+      "hints": [
+        "Hint: Use the exponential distribution's memoryless property"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Step 1: Recognize that the system's failure follows an exponential distribution with parameter λ.</li><li>Step 2: Calculate the probability using the cumulative distribution function (CDF) of the exponential distribution.</li><li>Step 3: Simplify the expression to obtain the desired result.</li></ul>",
+      "answerShort": "P(X &lt; t) = 1 - e<sup>-λt</sup>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A memoryless system has a failure rate of λ = 0.5 failures per hour. What is the probability that it fails within 2 hours?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize the exponential distribution",
+          "mathHtml": "\\[f(x) = \\lambda e^{-\\lambda x} \\]",
+          "explanation": "The system's failure follows an exponential distribution with parameter λ."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the probability using the CDF",
+          "mathHtml": "\\[P(X &lt; t) = \\int_0^t f(x) dx \\]",
+          "explanation": "We integrate the exponential density function over the interval [0, t] to obtain the desired probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[P(X &lt; t) = 1 - e^{-\\lambda t} \\]",
+          "explanation": "After simplifying the integral, we get the final result."
+        }
+      ],
+      "finalAnswer": "P(X &lt; 2) = 1 - e<sup>-λt</sup> = 0.393"
+    },
+    "intuition": "The exponential distribution's memoryless property makes it a natural fit for modeling systems that fail randomly over time.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:02:58.239Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_exponential_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Solving Exponential Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the exponential distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the probability that a memoryless system fails within the first 2 hours given its failure rate is 0.5 failures per hour.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize the problem as an exponential distribution\", \"mathHtml\": \"\\(P(X \\leq 2) = 1 - e^{-0.5 \\cdot 2}\\)\", \"explanation\": \"We recognize that the system's failure is memoryless and follows an exponential distribution.\"}, {\"stepNumber\": 2, \"description\": \"Apply the formula for the cumulative distribution function\", \"mathHtml\": \"\\(P(X \\leq t) = 1 - e^{-\\lambda t}\\)\", \"explanation\": \"We use the formula for the cumulative distribution function of the exponential distribution, where \\(\\lambda\\) is the failure rate.\"}, {\"stepNumber\": 3, \"description\": \"Plug in the given values\", \"mathHtml\": \"\\(P(X \\leq 2) = 1 - e^{-0.5 \\cdot 2}\\)\", \"explanation\": \"We plug in the given value of \\(t=2\\) and the failure rate \\(\\lambda=0.5\\).\"}, {\"stepNumber\": 4, \"description\": \"Simplify and solve\", \"mathHtml\": \"\\(P(X \\leq 2) = 1 - e^{-1} = 0.63212\\)\", \"explanation\": \"We simplify the expression by evaluating the exponential term and then subtracting it from 1.\"} ],",
+    "finalAnswer": "The probability is approximately 0.63212.\" },",
+    "intuition": "The key insight here is that the memoryless property of the exponential distribution allows us to easily calculate the cumulative distribution function.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:03:26.099Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_exponential_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Solving Exponential Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the exponential distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a memoryless continuous random variable X with an exponential distribution parameter λ = 2. Find P(X &lt;= 4).",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize the problem as an exponential distribution\", \"mathHtml\": \"\\(P(X \\leq x) = 1 - e^{-\\lambda x}\\)\", \"explanation\": \"We know that the cumulative distribution function (CDF) of an exponential distribution is given by this formula.\"}, {\"stepNumber\": 2, \"description\": \"Plug in the given value of λ\", \"mathHtml\": \"\\(P(X \\leq 4) = 1 - e^{-2 \\cdot 4}\\)\", \"explanation\": \"We're substituting x = 4 into the CDF formula and simplifying.\"}, {\"stepNumber\": 3, \"description\": \"Simplify the expression\", \"mathHtml\": \"\\(P(X \\leq 4) = 1 - e^{-8}\\)\", \"explanation\": \"We can simplify the exponential term by evaluating it directly.\"}, {\"stepNumber\": 4, \"description\": \"Evaluate the simplified expression\", \"mathHtml\": \"\\(P(X \\leq 4) = 0.0183\\)\", \"explanation\": \"Using a calculator or computer algebra system, we find that the result is approximately 0.0183.\"} ],",
+    "finalAnswer": "P(X &lt;= 4) ≈ 0.0183\" },",
+    "intuition": "The exponential distribution's memoryless property makes it useful for modeling phenomena where the hazard rate remains constant over time.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:03:51.747Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_exponential_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "title": "Solving Exponential Distribution Problems",
+    "contentHtml": "<p>In this example, we'll work through a problem involving the exponential distribution.</p>",
+    "formula": {
+      "latex": "\\[ X \\sim Exp(\\lambda) \\]",
+      "name": "Exponential Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>A random variable X has an exponential distribution with parameter λ = 2. What is the probability that X takes on a value less than or equal to 4?</p>",
+      "hints": [
+        "Hint: Use the memoryless property",
+        "Hint: Relate to Poisson distribution"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the following steps:</p><ul><li>Step 1: Recall the probability density function (PDF) of an exponential distribution.</li><li>Step 2: Use the memoryless property to find the probability that X takes on a value less than or equal to 4.</li><li>Step 3: Calculate the desired probability using the PDF and the given parameter λ = 2.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random variable X has an exponential distribution with parameter λ = 2. What is the probability that X takes on a value less than or equal to 4?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recall the PDF of an exponential distribution",
+          "mathHtml": "\\[ f(x) = \\lambda e^{-\\lambda x} \\]",
+          "explanation": "This is the foundation for our solution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the memoryless property to find the probability that X takes on a value less than or equal to 4",
+          "mathHtml": "\\[ P(X \\leq 4) = \\int_0^4 f(x) dx \\]",
+          "explanation": "This step leverages the memoryless property of exponential distributions."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the desired probability using the PDF and the given parameter λ = 2",
+          "mathHtml": "\\[ P(X \\leq 4) = 1 - e^{-2\\cdot 4} \\]",
+          "explanation": "Now we can plug in the value of λ and calculate the probability."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The exponential distribution's memoryless property makes it a great fit for modeling phenomena where the hazard rate remains constant over time.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:04:26.739Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,484 @@
+[
+  {
+    "id": "prob_con_bayes_applications_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem Applications",
+    "contentHtml": "<p>Bayes' theorem is a powerful tool in probability theory that allows us to update our beliefs based on new information. In this concept, we'll explore how Bayes' theorem applies to real-world scenarios such as medical testing and spam filtering.</p><p>Imagine you're a doctor trying to diagnose a patient with a rare disease. You have a test that can detect the disease, but it's not perfect - it has some false positives and false negatives. Using Bayes' theorem, you can update your probability of the patient having the disease based on the test results.</p>",
+    "formula": {
+      "latex": "\\P(A|B) = \\frac{\\P(B|A) \\P(A)}{\\P(B)}"
+    },
+    "intuition": "Bayes' theorem helps us update our beliefs by combining prior information with new data. It's a fundamental concept in many fields, including medicine, finance, and artificial intelligence.",
+    "realWorldApplications": [
+      "Medical diagnosis",
+      "Spam filtering"
+    ],
+    "commonMistakes": [
+      "Failing to account for the base rate of the disease",
+      "Not considering the test's false positive rate"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:15:57.221Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_bayes_applications_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem Applications",
+    "contentHtml": "<p>Bayes' theorem is a powerful tool for updating probabilities based on new information. In this concept, we'll explore how Bayes' theorem applies to medical testing, spam filtering, and legal reasoning.</p><p>Imagine you're a doctor trying to diagnose a patient with a rare disease. You take a test that has a 95% accuracy rate for the disease, but it also produces false positives (correctly identifying healthy patients as having the disease). How can you update your probability of the patient having the disease given the test result?</p>",
+    "formula": {
+      "latex": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]"
+    },
+    "intuition": "Bayes' theorem helps us combine our prior knowledge with new information to get a more accurate probability. In the medical testing example, we're updating our probability of the patient having the disease given the test result.",
+    "realWorldApplications": [
+      "Medical diagnosis",
+      "Spam filtering"
+    ],
+    "commonMistakes": [
+      "Not accounting for false positives/negatives in Bayes' theorem"
+    ],
+    "tags": [
+      "Bayes', Theorem",
+      "Conditional Probability",
+      "Independence"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:16:15.987Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_bayes_applications_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem Applications",
+    "contentHtml": "<p>Bayes' theorem is a fundamental concept in probability theory that helps us update our beliefs based on new information. In this card, we'll explore its applications in medical testing, spam filtering, and legal reasoning.</p><p>Imagine you're a doctor trying to diagnose a patient with a rare disease. You take a test, but it's not 100% accurate. Bayes' theorem helps you update your probability of the patient having the disease based on the test result.</p>",
+    "formula": {
+      "latex": "\\P(A|B) = \\frac{\\P(B|A) \\P(A)}{\\P(B)}"
+    },
+    "intuition": "Bayes' theorem is all about updating our beliefs in light of new evidence. It's like adjusting the weights of different factors that influence our decision.",
+    "realWorldApplications": [
+      "Medical testing: diagnosing rare diseases",
+      "Spam filtering: identifying spam emails"
+    ],
+    "commonMistakes": [
+      "Failing to account for prior probabilities",
+      "Not considering the conditional probability correctly"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:16:33.496Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_applications_004",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "problem": "{",
+    "statementHtml": "A medical test claims to detect a rare disease with 95% accuracy. Given that a patient tests positive, what is the probability they actually have the disease?",
+    "hints": [
+      "Start by considering the conditional probability of having the disease given the test result.",
+      "Think about how the test's accuracy affects this probability.",
+      "Use Bayes' Theorem to update your prior knowledge"
+    ],
+    "solutionHtml": " Let P(D) be the prior probability of having the disease, and let P(T|D) be the conditional probability of testing positive given you have the disease. We know that P(T|D) = 0.95.  Using Bayes' Theorem, we get:  P(D|T) = \\(\\frac{P(T|D) \\cdot P(D)}{P(T)}\\)  We can simplify this to:  P(D|T) = \\(\\frac{0.95 \\cdot P(D)}{\\int_{0}^{1} 0.95 \\cdot x dx}\\)  Since we don't know the exact value of P(D), we'll assume it's uniform, i.e., P(D) = 0.01.  Plugging this in, we get:  P(D|T) = \\(\\frac{0.95 \\cdot 0.01}{\\int_{0}^{1} 0.95 \\cdot x dx}\\) ≈ 0.322  So the probability of having the disease given a positive test result is approximately 32.2%. \",",
+    "answerShort": "P(D|T) ≈ 0.322\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:16:58.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_applications_005",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "problem": "{",
+    "statementHtml": "<p>A medical test has a false positive rate of 5%. If a patient tests positive, what is the probability that they actually have the disease?</p>",
+    "hints": [
+      "Think about the complement event: what's the probability that the patient doesn't have the disease?",
+      "Use Bayes' Theorem to update your knowledge",
+      "Don't forget to consider the prior probability"
+    ],
+    "solutionHtml": "<p>To solve this, we'll use Bayes' Theorem:</p>\\(\\P(D|T) = \\frac{\\P(T|D)\\P(D)}{\\P(T)}\\)<br><p>We're given that $\\P(FP) = 0.05$, so the probability of a true negative is $1 - 0.05 = 0.95$. The prior probability of having the disease is unknown, but we can use this information to find it:</p>\\[\\P(D) = \\frac{\\P(T|D)\\P(D)}{\\P(T)}\\]\\(= \\frac{0.99\\cdot \\P(D)}{0.95}\\)<br><p>Solving for $\\P(D)$, we get:</p>\\(\\P(D) = \\frac{0.99}{0.95} \\approx 1.04\\)<br><p>Now that we have the prior probability, we can find the desired conditional probability:</p>\\(\\P(D|T) = \\frac{\\P(T|D)\\P(D)}{\\P(T)}\\)\\(= \\frac{0.99\\cdot 1.04}{0.95} \\approx 0.955\\)<br><p>So, the probability that a patient with a positive test actually has the disease is approximately 0.955.</p>\",",
+    "answerShort": "Approximately 0.955\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:17:26.049Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_applications_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "problem": "{",
+    "statementHtml": "A medical test has a false positive rate of 5%. If a patient tests positive, what is the probability that they actually have the disease?",
+    "hints": "[ \"Recall Bayes' Theorem: P(A|B) = P(B|A) \\* P(A) / P(B).\", \"Think about the denominator P(B): it's the sum of P(A) and P(not A), where not A is the event that the patient doesn't have the disease.\", \"Use the given false positive rate to find P(B|A)\" ],",
+    "solutionHtml": "Let's apply Bayes' Theorem. We know P(B|A) = 0.05 (5% false positives). Since we're looking for P(A|B), we need to find P(B).<br><br>P(B) = P(A) + P(not A)<br>P(B) = 0.9 (90% of patients don't have the disease, assuming a low prevalence)<br>Now we can plug in: P(A|B) = P(B|A) \\* P(A) / P(B)<br>P(A|B) = 0.05 \\* 0.1 / 0.9<br>P(A|B) ≈ 0.011\",",
+    "answerShort": "≈ 0.011\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:17:47.306Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_applications_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "problem": "{",
+    "statementHtml": "<p>Given a medical test with sensitivity 0.9 and specificity 0.8, what is the probability that a patient has the disease if they test positive?</p>",
+    "hints": "[ \"Think about the number of true positives.\", \"Consider the complement event: not having the disease.\" \"Bayes' theorem can help you update your prior knowledge.\" ],",
+    "solutionHtml": "<p>To solve this, we'll use Bayes' theorem:</p>\\(\\frac{\\Pr(D|T) \\cdot \\Pr(T)}{\\Pr(T)} = \\frac{0.9 \\cdot 0.2}{0.8}\\)</p><p>Simplify the right-hand side:</p>\\(0.9 \\cdot 0.2 / 0.8\\)</p><p>Find the value of the expression:</p>\\(0.18 / 0.8 = 0.225\\)</p>\",",
+    "answerShort": "The probability is approximately 0.225.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:18:05.048Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_applications_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "problem": "{",
+    "statementHtml": "<p>A medical test has a false positive rate of 5%. If a patient tests positive, what is the probability that they actually have the disease?</p>",
+    "hints": [
+      "Think about the complement event: what's the probability that the patient doesn't have the disease?",
+      "Use Bayes' theorem to update your knowledge",
+      "Don't forget to apply the false positive rate"
+    ],
+    "solutionHtml": "<p>To solve this, we'll use Bayes' theorem:</p>\\(\\P(D|T) = \\frac{\\P(T|D)\\P(D)}{\\P(T|D)\\P(D) + \\P(T|\\neg D)\\P(\\neg D)}\\)<p>Given the false positive rate of 5%, we know that \\(\\P(T|\\neg D) = 0.05\\). We're also told that the patient tests positive, so \\(\\P(T|D) = 1\\).</p>\\(\\P(D|T) = \\frac{1\\cdot \\P(D)}{1\\cdot \\P(D) + 0.05\\cdot (1-\\P(D))}\\)<p>Simplifying this expression gives:</p>\\(\\P(D|T) = \\frac{\\P(D)}{\\P(D) + 0.05(1-\\P(D))}\\),",
+    "answerShort": "The probability is...\" },",
+    "commonMistakes": [
+      "Forgetting to apply the false positive rate",
+      "Not considering the complement event"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:18:27.607Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_applications_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem: Medical Testing Example",
+    "contentHtml": "<p>In this example, we'll apply Bayes' theorem to a medical testing scenario.</p>",
+    "formula": {
+      "latex": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+      "name": "Bayes' Theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>A patient is tested for a rare disease. The test has a false positive rate of 5% and a true negative rate of 95%. If the test result is positive, what's the probability that the patient actually has the disease?</p>",
+      "hints": [
+        "Consider the prior probability of having the disease.",
+        "Think about how the test result affects our confidence in the diagnosis."
+      ],
+      "solutionHtml": "<p>We'll use Bayes' theorem to solve this problem.</p>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A patient tests positive for a rare disease. The prior probability of having the disease is 0.01, and the test has a false positive rate of 5%. What's the updated probability that the patient actually has the disease?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down Bayes' theorem",
+          "mathHtml": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+          "explanation": "We're updating our probability of having the disease given the positive test result."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(B|A)",
+          "mathHtml": "\\[ P(B|A) = 0.95 \\]",
+          "explanation": "The true positive rate is 95%, so the probability of a positive test given that we have the disease is 0.95."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find P(A)",
+          "mathHtml": "\\[ P(A) = 0.01 \\]",
+          "explanation": "The prior probability of having the disease is 1%."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find P(B)",
+          "mathHtml": "\\[ P(B) = P(B|A)P(A) + P(B|\\neg A)P(\\neg A) \\]",
+          "explanation": "We need to find the probability of a positive test result overall."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Plug in values and simplify",
+          "mathHtml": "\\[ P(B) = 0.95 \\* 0.01 + 0.05 \\* 0.99 \\] \\[ P(B) = 0.0945 \\]",
+          "explanation": "Now we can plug in the values and simplify."
+        }
+      ],
+      "finalAnswer": "The updated probability is..."
+    },
+    "intuition": "Bayes' theorem helps us update our probability of having a disease given new information, like a positive test result.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:19:07.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_applications_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem: Medical Testing Example",
+    "contentHtml": "<p>In this example, we'll apply Bayes' theorem to a medical testing scenario.</p>",
+    "formula": "{",
+    "latex": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+    "name": "Bayes' Theorem\" },",
+    "problem": "{",
+    "statementHtml": "<p>A patient is tested for a rare disease. The test has a false positive rate of 5%. If the patient tests positive, what's the probability they actually have the disease?</p>",
+    "hints": [
+      "Hint: Use Bayes' theorem"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A patient is tested for a rare disease. The test has a false positive rate of 5%. If the patient tests positive, what's the probability they actually have the disease?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the events\", \"mathHtml\": \"\\\\[ A: Disease present, B: Test positive \\\\]\", \"explanation\": \"We need to define the events we're working with.\" }, {\"stepNumber\": 2, \"description\": \"Find P(B|A)\", \"mathHtml\": \"\\\\[ P(B|A) = 0.99 \\\\]\", \"explanation\": \"The test is very accurate when the patient has the disease.\" }, {\"stepNumber\": 3\", \"description\": \"Find P(A)\", \"mathHtml\": \"\\\\[ P(A) = 0.001 \\\\]\", \"explanation\": \"The rare disease occurs in only 1 in 1000 people.\" }, {\"stepNumber\": 4\", \"description\": \"Find P(B)\", \"mathHtml\": \"\\\\[ P(B) = 0.095 + 0.005 \\\\]\", \"explanation\": \"We add the true positive rate and false positive rate to get the overall test positive probability.\" }, {\"stepNumber\": 5\", \"description\": \"Apply Bayes' theorem\", \"mathHtml\": \"\\\\[ P(A|B) = \\\\frac{P(B|A)P(A)}{P(B)} \\\\]\", \"explanation\": \"Now we can plug in our values and solve for P(A|B).\" } ],",
+    "finalAnswer": "P(A|B) ≈ 0.091\" },",
+    "intuition": "Bayes' theorem helps us update our probability of the disease given new information (the test result).",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:19:41.922Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_applications_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem: Medical Testing Example",
+    "contentHtml": "<p>In this example, we'll apply Bayes' theorem to a medical testing scenario.</p>",
+    "formula": {
+      "latex": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+      "name": "Bayes' Theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>A patient is tested for a rare disease. The test has a false positive rate of 5%. If the patient tests positive, what's the probability they actually have the disease?</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem",
+        "Hint: Consider the prior probability"
+      ],
+      "solutionHtml": "<p>We'll break down the solution into steps.</p>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A patient tests positive for a rare disease. The test has a false positive rate of 5%. If the prior probability of having the disease is 0.1%, what's the updated probability?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down Bayes' theorem",
+          "mathHtml": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+          "explanation": "We're updating the probability given new information"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the prior probability",
+          "mathHtml": "",
+          "explanation": "This is the initial probability before testing"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the likelihood",
+          "mathHtml": "\\[ P(B|A) = \\frac{1}{0.95} \\]",
+          "explanation": "The test has a false positive rate of 5%, so we multiply by 1/0.95"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply and divide",
+          "mathHtml": "\\[ P(A|B) = \\frac{(0.001)(\\frac{1}{0.95})}{P(B)} \\]",
+          "explanation": "We're updating the probability using Bayes' theorem"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Find the denominator",
+          "mathHtml": "\\[ P(B) = (0.9)(0.001) + (0.1)(0.95) \\]",
+          "explanation": "The denominator is the sum of the prior probability and the false positive rate"
+        }
+      ],
+      "finalAnswer": "The updated probability is..."
+    },
+    "intuition": "Bayes' theorem helps us update our probability given new information, which is crucial in medical testing scenarios.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:20:18.215Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_applications_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem: Medical Testing Example",
+    "contentHtml": "<p>In this example, we'll apply Bayes' theorem to a medical testing scenario.</p>",
+    "formula": {
+      "latex": "\\[ P(A|B) = \\frac{P(B|A) P(A)}{P(B)} \\]",
+      "name": "Bayes' Theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>A patient is tested for a rare disease. The test is 95% accurate when the patient has the disease, and 99% accurate when they don't. If the patient tests positive, what's the probability they actually have the disease?</p>",
+      "hints": [
+        "Consider the prior probability of having the disease"
+      ],
+      "solutionHtml": "<p>We'll use Bayes' theorem to update our probability.</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A patient tests positive for a rare disease. The prior probability of having the disease is 0.01 (1%).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find P(B|A) and P(A)",
+          "mathHtml": "\\[ P(B|A) = 0.95 \\]",
+          "explanation": "This is the test's accuracy when the patient has the disease."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(B)",
+          "mathHtml": "\\[ P(B) = P(B|A)P(A) + P(B|\\neg A)(1-P(A)) \\]",
+          "explanation": "This is the total probability of a positive test result."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Bayes' theorem",
+          "mathHtml": "\\[ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} \\]",
+          "explanation": "Now we update our probability given the positive test result."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the final answer",
+          "mathHtml": "\\[ P(A|B) = \\frac{(0.95)(0.01)}{(0.95)(0.01) + (0.99)(0.99)} \\approx 0.174 \\]",
+          "explanation": "The updated probability is approximately 17.4%."
+        }
+      ],
+      "finalAnswer": "P(A|B) ≈ 0.174"
+    },
+    "intuition": "Bayes' theorem helps us update our probability given new information.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:20:52.354Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_bayes_applications_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "bayes_applications",
+    "title": "Bayes' Theorem: Medical Testing Example",
+    "contentHtml": "<p>In this example, we'll apply Bayes' theorem to a medical testing scenario.</p>",
+    "problem": "{",
+    "statementHtml": "<p>A patient is tested for a rare disease. The test has a false positive rate of 5% and a true positive rate of 90%. If the patient tests positive, what's the probability they actually have the disease?</p>",
+    "hints": [
+      "Consider the prior probability",
+      "Think about the conditional probabilities"
+    ],
+    "solutionHtml": "<p>We'll break this down step by step.</p>",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A patient tests positive for a rare disease. The test has a false positive rate of 5% and a true positive rate of 90%. What's the probability they actually have the disease?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the events\", \"mathHtml\": \"\\[P(D) = 0.01,\\quad P(T|D) = 0.9,\\quad P(F|¬D) = 0.05\\]\", \"explanation\": \"We need to define the prior probability of having the disease, the true positive rate given a positive test result, and the false positive rate given a negative test result.\"}, {\"stepNumber\": 2, \"description\": \"Find the posterior probability\", \"mathHtml\": \"\\[P(D|T) = \\frac{P(T|D) P(D)}{P(T)}\\]\", \"explanation\": \"We'll use Bayes' theorem to find the posterior probability given a positive test result.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the numerator\", \"mathHtml\": \"\\[P(T|D) P(D) = (0.9)(0.01)\\]\", \"explanation\": \"We multiply the true positive rate by the prior probability.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the denominator\", \"mathHtml\": \"\\[P(T) = P(T|D) P(D) + P(F|¬D) P(¬D)\\]\", \"explanation\": \"We'll calculate the total probability of a positive test result.\"}, {\"stepNumber\": 5, \"description\": \"Find the final answer\", \"mathHtml\": \"\\[P(D|T) = \\frac{(0.9)(0.01)}{P(T)}\\]\", \"explanation\": \"Now we can plug in the values and find the posterior probability.\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Bayes' theorem helps us update our prior knowledge with new information, like a positive test result.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:21:29.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

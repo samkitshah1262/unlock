@@ -1,0 +1,172 @@
+[
+  {
+    "id": "la_wex_diagonalization_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: Solving Matrix Powers",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to diagonalize a matrix and compute its powers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the eigenvalues and eigenvectors of <i>A</i> = [[2, -3], [1, 4]], then use them to diagonalize <i>A</i>. Finally, compute <i>A<sup>3</sup></i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the characteristic polynomial\", \"mathHtml\": \"\\[p(\\lambda) = \\det(A - \\lambda I) = 0\\]\", \"explanation\": \"The characteristic polynomial helps us find the eigenvalues.\" }, {\"stepNumber\": 2, \"description\": \"Compute the eigenvalues and eigenvectors\", \"mathHtml\": \"\\[\\begin{align*} \\lambda_1 &= 3, &v_1 &= [1, -1], \\\\ \\lambda_2 &= 1, &v_2 &= [1, 1]. \\end{align*}\\]\", \"explanation\": \"The eigenvalues and eigenvectors are crucial for diagonalization.\" }, {\"stepNumber\": 3, \"description\": \"Diagonalize the matrix\", \"mathHtml\": \"\\[P^{-1}AP = D\\], where <i>D</i> is a diagonal matrix.\", \"explanation\": \"By diagonalizing the matrix, we can easily compute its powers.\" }, {\"stepNumber\": 4, \"description\": \"Compute the third power of <i>A</i>\", \"mathHtml\": \"\\[A^3 = PDP^{-1}\\], where <i>D^3</i> is a diagonal matrix.\", \"explanation\": \"Computing the power of a diagonalized matrix is straightforward.\" } ],",
+    "finalAnswer": "<i>A<sup>3</sup></i> = [[12, -6], [3, 4]]\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into easier-to-compute diagonalized matrices.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:38:24.791Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of a Matrix",
+    "contentHtml": "<p>In linear algebra, diagonalization is a powerful technique to transform a matrix into its canonical form.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]",
+      "name": "Matrix Diagonalization"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a square matrix A, find the eigenvalues and eigenvectors to diagonalize it.</p>",
+      "hints": [
+        "Hint: Start by finding the characteristic polynomial"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Diagonalize the matrix \\[\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the characteristic polynomial",
+          "mathHtml": "\\[P(x) = |A - xI|\\]",
+          "explanation": "This is the polynomial whose roots are the eigenvalues."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the eigenvalues by solving the characteristic equation",
+          "mathHtml": "\\[P(1) = (2-1)^2 + (-1)(1)(-1) - 2(-1) = 0\\]",
+          "explanation": "The eigenvalue is the value of x that makes P(x) equal to zero."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the eigenvectors by solving (A - λI)v = 0",
+          "mathHtml": "\\[\\begin{bmatrix} 2-1 & 1 \\\\ -1 & 2-1 \\end{bmatrix}\\begin{bmatrix} v_1 \\\\ v_2 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}\\]",
+          "explanation": "The eigenvectors are the non-zero vectors that, when transformed by A, result in a scaled version of themselves."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Diagonalize the matrix using the eigenvalues and eigenvectors",
+          "mathHtml": "\\[P^{-1}AP = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 3 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]",
+          "explanation": "The diagonalized matrix is the product of the eigenvectors and eigenvalues."
+        }
+      ],
+      "finalAnswer": "\\[\\begin{bmatrix} 3 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]"
+    },
+    "intuition": "Diagonalization helps us understand the underlying structure of a matrix, making it easier to compute powers and perform other operations.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:39:00.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization of Matrices",
+    "contentHtml": "<p>When possible, a matrix P can be diagonalized by finding its eigenvalues and eigenvectors.</p>",
+    "formula": {
+      "latex": "\\[P^{-1}AP = D\\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the matrix A = \\[\\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}\\], find its diagonalization.</p>",
+      "hints": [
+        "Find the eigenvalues and eigenvectors of A",
+        "Use these to construct a diagonal matrix D"
+      ],
+      "solutionHtml": "<p>To diagonalize A, we first need to find its eigenvalues and eigenvectors. Let λ be an eigenvalue with corresponding eigenvector v.</p><ul><li>We can write Av = λv</li></ul>",
+      "answerShort": "The diagonalized matrix is D"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the matrix A = \\[\\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}\\], find its diagonalization.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the characteristic polynomial of A",
+          "mathHtml": "\\[|A - λI| = 0\\]",
+          "explanation": "This helps us find the eigenvalues of A"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve for the eigenvalues",
+          "mathHtml": "\\[λ^2 - 5λ + 6 = 0\\]",
+          "explanation": "We can use this to find the eigenvalues λ1 and λ2"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the eigenvectors corresponding to each eigenvalue",
+          "mathHtml": "\\[v_1 = \\begin{bmatrix} 1 \\\\ -2 \\end{bmatrix}, v_2 = \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix}\\]",
+          "explanation": "These eigenvectors are used to construct the diagonal matrix D"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the diagonal matrix D",
+          "mathHtml": "\\[D = \\begin{bmatrix} λ_1 & 0 \\\\ 0 & λ_2 \\end{bmatrix}\\]",
+          "explanation": "This is our final diagonalized matrix"
+        }
+      ],
+      "finalAnswer": "The diagonalized matrix is D"
+    },
+    "intuition": "Diagonalization helps us simplify complex matrices by breaking them down into their constituent parts.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:39:32.546Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_diagonalization_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "title": "Diagonalization: Solving Matrix Powers",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to diagonalize a matrix and compute its powers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Given the matrix A = \\[\\begin{bmatrix} 2 & 1 \\\\ 4 & 3 \\end{bmatrix}\\], find the eigenvalues and eigenvectors, then use them to diagonalize A.\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the characteristic polynomial\", \"mathHtml\": \"\\[p(\\lambda) = \\det(A - \\lambda I)\\]\", \"explanation\": \"We'll use the characteristic polynomial to find the eigenvalues.\"}, {\"stepNumber\": 2, \"description\": \"Compute the eigenvalues\", \"mathHtml\": \"\\[\\begin{aligned} p(1) &= 0 \\\\ p(-1) &= 0 \\end{aligned}\\]\", \"explanation\": \"The eigenvalues are the roots of the characteristic polynomial.\"}, {\"stepNumber\": 3, \"description\": \"Find the eigenvectors\", \"mathHtml\": \"\\[\\begin{bmatrix} -1 & 1 \\\\ 2 & 1 \\end{bmatrix}\\] and \\[\\begin{bmatrix} 1 & 1 \\\\ -2 & 1 \\end{bmatrix}\\]\", \"explanation\": \"The eigenvectors are the non-zero vectors that, when transformed by A, result in scaled versions of themselves.\"}, {\"stepNumber\": 4, \"description\": \"Diagonalize A\", \"mathHtml\": \"\\[P^{-1}AP = D\\]\", \"explanation\": \"We'll use the eigenvalues and eigenvectors to create a diagonal matrix D.\"}, {\"stepNumber\": 5, \"description\": \"Compute the powers of A\", \"mathHtml\": \"\\[A^n = PDP^{-1}\\]\", \"explanation\": \"Now that we have the diagonalized form, computing matrix powers becomes much easier.\"} ],",
+    "finalAnswer": "The eigenvalues are 1 and -1, and the eigenvectors are \\[\\begin{bmatrix} -1 & 1 \\\\ 2 & 1 \\end{bmatrix}\\] and \\[\\begin{bmatrix} 1 & 1 \\\\ -2 & 1 \\end{bmatrix}\\].\" },",
+    "intuition": "Diagonalization allows us to simplify complex matrix operations by breaking them down into smaller, more manageable pieces.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:40:02.228Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

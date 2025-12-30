@@ -1,0 +1,118 @@
+[
+  {
+    "id": "prob_for_pdf_definition_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) is a fundamental concept in continuous random variables.</p><p>Given a random variable X with cumulative distribution function F(x), the PDF f(x) represents the relative frequency of X taking on values near x.</p>",
+    "formula": "{",
+    "latex": "\\(f_X(x) = \\frac{d}{dx}F_X(x)\\)\",",
+    "name": "Probability Density Function\" },",
+    "intuition": "The PDF is the derivative of the CDF, making it a measure of how likely X is to take on values near x.",
+    "estimatedMinutes": 2,
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:04.223Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p><p>It describes the likelihood of X taking on any given value within its support.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x \\in [a, b]\\]",
+      "name": "Uniform Distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X representing the height of a person in inches. Assuming the heights are uniformly distributed between 60 and 72 inches.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the support",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{72-60} = \\frac{1}{12}\\]",
+          "explanation": "The support is the range of possible values."
+        }
+      ],
+      "finalAnswer": "The PDF is f_X(x) = 1/12 for x in [60, 72]"
+    },
+    "intuition": "The PDF gives us a sense of how likely we are to observe any given value of X.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:24.189Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) is a fundamental concept in continuous random variables.</p><p>Given a continuous random variable X with cumulative distribution function F(x), the PDF f(x) is defined as:</p>\\(f(x) = \\frac{d}{dx}F(x)\\)<p>This formula represents the rate of change of the probability mass at x. The integral of the PDF over its support equals 1.</p>\",",
+    "formula": "{",
+    "latex": "\\(f(x) = \\frac{d}{dx}F(x)\\)\",",
+    "name": "Probability Density Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the probability density function of a standard normal distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Use the cumulative distribution function\", \"mathHtml\": \"\\(F(x) = \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^x e^{-t^2/2}dt\\)\", \"explanation\": \"The standard normal distribution is a special case of the normal distribution with mean 0 and variance 1.\"}, {\"stepNumber\": 2, \"description\": \"Differentiate the cumulative distribution function\", \"mathHtml\": \"\\(f(x) = \\frac{d}{dx}\\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^x e^{-t^2/2}dt\\)\", \"explanation\": \"Apply the fundamental theorem of calculus to find the derivative.\"} ],",
+    "finalAnswer": "\\(f(x) = \\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}\\)\" },",
+    "intuition": "The PDF represents the likelihood of a value x occurring in a continuous random variable.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:49.912Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p><p>It represents the relative likelihood of X taking on different values within its support.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } a \\leq x \\leq b\\]",
+      "name": "Uniform Distribution"
+    },
+    "intuition": "The PDF gives us the probability of finding X in any particular interval. For continuous variables, this is essential for modeling real-world phenomena.",
+    "realWorldApplications": [
+      "In machine learning, the PDF is used to model complex distributions and make predictions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:35:03.582Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

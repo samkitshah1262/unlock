@@ -1,0 +1,587 @@
+[
+  {
+    "id": "prob_con_mcmc_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo",
+    "contentHtml": "<p>Markov chain Monte Carlo (MCMC) is a powerful probabilistic technique used to sample from complex distributions. It's essential in machine learning for tasks like Bayesian inference and approximate posterior estimation.</p><p>In this context, we'll focus on Metropolis-Hastings and Gibbs sampling, two popular MCMC algorithms.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{\\pi(x)}{q(x | y)} \\]"
+    },
+    "intuition": "MCMC works by iteratively updating a proposal distribution based on the current state. The key insight is that this process converges to the target distribution, allowing us to approximate complex integrals and make predictions.",
+    "visualDescription": "A simple MCMC chain diagram showing the iteration process",
+    "commonMistakes": [
+      "Forgetting to normalize the proposal distribution"
+    ],
+    "realWorldApplications": [
+      "Bayesian neural networks",
+      "Variational inference in deep learning"
+    ],
+    "tags": [
+      "Markov Chain Monte Carlo",
+      "Metropolis-Hastings",
+      "Gibbs Sampling"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:20:35.234Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_mcmc_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>Markov chain Monte Carlo (MCMC) is a powerful tool in Bayesian inference for approximating complex integrals. Two popular algorithms are Metropolis-Hastings and Gibbs sampling.</p><p>In this card, we'll explore the intuition behind these methods and their applications in machine learning.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{f(x) g(y)}{f(y) g(x)} \\]",
+      "name": "Acceptance Ratio",
+      "variants": []
+    },
+    "intuition": "MCMC algorithms work by iteratively proposing new values for a target distribution, then accepting or rejecting them based on the ratio of their probabilities. This allows us to sample from complex distributions that are difficult to compute directly.",
+    "visualDescription": "A diagram showing the iterative process of MCMC: proposal, acceptance ratio calculation, and updating the current state.",
+    "commonMistakes": [
+      "Not understanding the importance of convergence diagnostics"
+    ],
+    "realWorldApplications": [
+      "Bayesian neural networks",
+      "Variational inference in deep learning"
+    ],
+    "tags": [
+      "Markov Chain Monte Carlo",
+      "Metropolis-Hastings",
+      "Gibbs Sampling",
+      "Bayesian Inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:20:54.817Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_mcmc_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In Markov chain Monte Carlo (MCMC) methods, we use random sampling to explore complex probability distributions. Two fundamental techniques are Metropolis-Hastings and Gibbs sampling.</p><p>Metropolis-Hastings is a general-purpose MCMC algorithm that can be used for any target distribution. It works by iteratively proposing new values from a proposal distribution and accepting or rejecting them based on the ratio of the target distribution to the proposal distribution.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{P(x)q(y|x)}{P(y)q(x|y)} \\geq 1 \\]",
+      "name": "Metropolis-Hastings acceptance probability",
+      "variants": []
+    },
+    "intuition": "MCMC methods allow us to sample from complex distributions by iteratively proposing and accepting new values. This is particularly useful in machine learning, where we often need to explore high-dimensional spaces.",
+    "realWorldApplications": [
+      "Bayesian inference in neural networks"
+    ],
+    "commonMistakes": [
+      "Not understanding the acceptance probability",
+      "Ignoring convergence diagnostics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:21:13.090Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_mcmc_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Metropolis-Hastings Algorithm",
+    "contentHtml": "<p>The Metropolis-Hastings algorithm is a widely used Markov Chain Monte Carlo (MCMC) technique for generating samples from complex probability distributions.</p><p>Given a target distribution <i>p(x)</i>, the goal is to construct a proposal distribution <i>q(x|y)</i> that allows efficient exploration of the state space. The Metropolis-Hastings algorithm does this by iteratively updating the current state <i>x</i> based on the ratio of the target density at the new candidate state <i>y</i> to the current state.</p>",
+    "formula": "{",
+    "latex": "\\[ \\pi(x) \\propto p(x) q(y|x) \\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to sample from a target distribution <i>p(x)</i> that is difficult to directly draw from. We can use the Metropolis-Hastings algorithm with a proposal distribution <i>q(x|y)</i> that is easy to sample from.</p>",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Accept the new state with probability <i>a</i>, otherwise stay at the current state",
+    "mathHtml": "",
+    "explanation": "\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "The Metropolis-Hastings algorithm cleverly uses the proposal distribution to explore the state space, while the acceptance probability ensures that the target distribution is preserved.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:21:45.788Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_mcmc_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Metropolis-Hastings Algorithm",
+    "contentHtml": "<p>The Metropolis-Hastings algorithm is a popular Markov Chain Monte Carlo (MCMC) technique used in Bayesian inference and machine learning.</p><p>Given a target distribution π(x), the goal is to generate samples from this distribution. The algorithm works by iteratively updating a proposal distribution q(y|x) and accepting or rejecting new samples based on their likelihood under π(x).</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{q(y|x)}{\\pi(y)} \\]\",",
+    "name": "Acceptance Ratio",
+    "variants": "[ {\"latex\": \"\\[ \\alpha = \\min\\left(1, \\frac{\\pi(y) q(y|x)}{\\pi(x) q(x|y)} \\right) \\]\",",
+    "description": "Generate a new sample y ~ q(y|x)",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to sample from a target distribution π(x) = N(0, 1). We can use a normal proposal distribution q(y|x) = N(y | x, 0.5).</p>",
+    "steps": "[ {\"stepNumber\": 1,",
+    "mathHtml": "\\[ y \\sim N(0, 0.5) \\]\",",
+    "explanation": "This step is the core of the algorithm\"} ],",
+    "finalAnswer": "The accepted sample\" },",
+    "intuition": "The Metropolis-Hastings algorithm cleverly balances exploration and exploitation by accepting new samples that are likely to be in the target distribution.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:22:09.763Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_mcmc_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Metropolis-Hastings Algorithm",
+    "contentHtml": "<p>The Metropolis-Hastings algorithm is a Markov Chain Monte Carlo (MCMC) method used to sample from complex distributions.</p><p>Given a target distribution π(x), the goal is to generate samples that approximate this distribution. The algorithm iteratively updates the current state x_t by proposing a new state x_{t+1} and accepting it with probability min(1, π(x_{t+1}) / π(x_t)).</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{\\pi(x_{t+1})}{\\pi(x_t)} \\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to sample from a target distribution π(x) = N(0, 1).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Propose a new state x_{t+1} ~ N(0, σ^2)\", \"mathHtml\": \"\\(x_{t+1} \\sim \\mathcal{N}(0, \\sigma^2)\\)\", \"explanation\": \"We propose a new state by drawing from a normal distribution with mean 0 and variance σ^2.\"}, {\"stepNumber\": 2, \"description\": \"Compute the acceptance probability\", \"mathHtml\": \"\\(a = \\min(1, \\frac{\\pi(x_{t+1})}{\\pi(x_t)})\\)\"}, {\"stepNumber\": 3, \"description\": \"Accept or reject the proposal\", \"mathHtml\": \"\\(x_{t+1} = x_t\\) with probability \\(a\\)\", \"explanation\": \"We accept the proposal with probability a and set the new state to x_{t+1}. Otherwise, we keep the current state.\"} ],",
+    "finalAnswer": "The final sample is x_{T}\" },",
+    "intuition": "The Metropolis-Hastings algorithm cleverly balances exploration and exploitation by accepting or rejecting proposed states based on their likelihood under the target distribution.",
+    "tags": [
+      "MCMC",
+      "Markov Chains"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:22:39.045Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_mcmc_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Metropolis-Hastings Algorithm",
+    "contentHtml": "<p>The Metropolis-Hastings algorithm is a widely used Markov Chain Monte Carlo (MCMC) method for generating samples from complex probability distributions.</p><p>It's particularly useful when the target distribution is difficult to sample directly, such as in Bayesian inference or machine learning applications.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{\\pi(x)}{q(x|y)} \\]\",",
+    "name": "Acceptance Ratio\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to sample from a target distribution π(x) = N(x | μ, Σ), where x is a multivariate normal random variable with mean μ and covariance matrix Σ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Propose a new candidate sample y ~ q(y|x)\", \"mathHtml\": \"\\(y \\sim \\mathcal{N}(x | 0, I)\\)\", \"explanation\": \"We use a normal distribution with mean x and identity covariance matrix.\"}, {\"stepNumber\": 2, \"description\": \"Compute the acceptance ratio\", \"mathHtml\": \"\\(\\frac{\\pi(y)}{q(y|x)}\\)\", \"explanation\": \"This is where we apply the Metropolis-Hastings formula.\"} ],",
+    "finalAnswer": "The new sample y\" },",
+    "intuition": "The key insight is that the algorithm iteratively updates the current state by proposing a new candidate and accepting it with a probability proportional to the ratio of target densities.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:23:02.234Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Consider a target distribution <i>p(x)</i> and a proposal distribution <i>q(x|x')</i>. Develop a Metropolis-Hastings algorithm to sample from <i>p(x)</i>.</p>",
+      "hints": [
+        "<p>Start by proposing a new state <i>x'</i> from the current state <i>x</i> using <i>q(x'|x)</i>.</p>",
+        "<p>Compute the acceptance probability <i>a = min(1, p(x')/p(x))</i>. If <i>a > U[0, 1]</i>, accept the proposal.</p>",
+        "<p>Otherwise, reject the proposal and stay at the current state <i>x</i>.</p>"
+      ],
+      "solutionHtml": "<p>To develop the Metropolis-Hastings algorithm:</p><ol><li><p>Propose a new state <i>x'</i> from the current state <i>x</i> using <i>q(x'|x)</i>.</p></li><li><p>Compute the acceptance probability <i>a = min(1, p(x')/p(x))</i>. If <i>a > U[0, 1]</i>, accept the proposal.</p></li><li><p>Otherwise, reject the proposal and stay at the current state <i>x</i>.</p></li></ol>",
+      "answerShort": "<i>The Metropolis-Hastings algorithm is a Markov chain Monte Carlo method for sampling from a target distribution <i>p(x)</i>. It uses a proposal distribution <i>q(x|x')</i> to generate new states and an acceptance probability based on the ratio of the target distributions.</i>"
+    },
+    "commonMistakes": [
+      "<i>Failing to properly normalize the proposal distribution</i>",
+      "<i>Not accounting for the possibility of infinite loops in the Markov chain</i>"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:23:30.139Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": "{",
+    "statementHtml": "<p>Given a target distribution <i>p(x)</i>, design a Metropolis-Hastings algorithm to sample from it.</p>",
+    "hints": [
+      "Start by proposing a new candidate sample <i>x'</i> from the proposal distribution <i>q(x|x')</i>",
+      "Calculate the acceptance probability using the target density and the current state",
+      "Update the current state with the proposed sample if the acceptance probability is greater than a random uniform variable"
+    ],
+    "solutionHtml": "<p>To implement Metropolis-Hastings, we need to specify the proposal distribution <i>q(x|x')</i>. For example, we can use a Gaussian distribution centered at the current state. Then, calculate the acceptance probability:</p>\\n\\[ \\alpha = \\min\\left( 1, \\frac{p(x')}{p(x)} \\right) \\]\\n<p>If the random uniform variable is less than <i>α</i>, update the current state to <i>x'</i>. Otherwise, keep the current state.</p>\",",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:23:47.472Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "problem": "{",
+    "statementHtml": "<p>Given a target distribution <i>p(x)</i>, use Markov chain Monte Carlo (MCMC) to sample from it. Implement the Metropolis-Hastings algorithm for this task.</p>",
+    "hints": [
+      "Start by proposing a new state <i>x'</i> based on the current state <i>x</i>.",
+      "Calculate the acceptance probability using the ratio of target densities.",
+      "Update the Markov chain accordingly."
+    ],
+    "solutionHtml": "<p>To implement Metropolis-Hastings, we need to define a proposal distribution <i>q(x|x')</i> and calculate the acceptance probability:</p>\\n\\ <p><i>p(x') / p(x) &gt; 1</i> ? accept <i>x'</i> : reject <i>x'</i></p>\",",
+    "answerShort": "Implement Metropolis-Hastings to sample from a target distribution.\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:05.679Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Given a target distribution <i>p</i>(<i>x</i>) and an initial state <i>x</i><sub>0</sub>, use Metropolis-Hastings to sample from the posterior distribution.</p>",
+      "hints": [
+        "Start by defining the proposal distribution <i>q</i>(<i>x</i>|<i>x</i><sub>0</sub>).",
+        "Use the acceptance probability formula: <i>a</i> = min(1, <i>p</i>(<i>x</i>')/<i>p</i>(<i>x</i>)).",
+        "Show that the Markov chain is ergodic and aperiodic."
+      ],
+      "solutionHtml": "<p>To solve this problem, we first need to define the proposal distribution. Let's assume it's a normal distribution with mean <i>x</i><sub>0</sub> and variance <i>&sigma;</i><sup>2</sup>. Then, we can calculate the acceptance probability using the formula above.</p>",
+      "answerShort": "The sampled state is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:23.599Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Given a target distribution <i>p</i>(<i>x</i>) and an initial state <i>x</i><sub>0</sub>, design a Markov Chain Monte Carlo (MCMC) algorithm to sample from <i>p</i>(<i>x</i>). Use the Metropolis-Hastings algorithm.</p>",
+      "hints": [
+        "<p>Start by proposing a new state <i>x'</i> using a proposal distribution <i>q</i>(<i>x</i>|<i>x</i><sub>0</sub>) and then accept it with probability min(1, <i>p</i>(<i>x'</i>)/<i>p</i>(<i>x</i><sub>0</sub>)).</p>",
+        "<p>If the proposed state is rejected, set <i>x</i><sub>1</sub> = <i>x</i><sub>0</sub>. If accepted, set <i>x</i><sub>1</sub> = <i>x'</i>.</p>",
+        "<p>Repeat this process until convergence. How can you diagnose convergence?</p>"
+      ],
+      "solutionHtml": "<p>To ensure convergence, use a diagnostic tool such as the Gelman-Rubin statistic or the Brooks-Gelman-Rubin statistic.</p><p>Here's an example of how to implement the Metropolis-Hastings algorithm:</p>",
+      "answerShort": "The answer is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:45.037Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_mcmc_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a Markov chain Monte Carlo (MCMC) problem using the Metropolis-Hastings algorithm.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a simple MCMC problem: sample from a target distribution <i>P(x)</i> using the following proposal distribution <i>q(x|x')</i>. We'll use the Metropolis-Hastings algorithm to do this.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Initialize the Markov chain\", \"mathHtml\": \"\\[x_0 \\sim P_0\\]\", \"explanation\": \"We start by drawing an initial value <i>x_0</i> from some prior distribution <i>P_0</i>. This sets the stage for our MCMC simulation.\"}, {\"stepNumber\": 2, \"description\": \"Propose a new state\", \"mathHtml\": \"\\[x' \\sim q(x|x_0)\\]\", \"explanation\": \"Next, we propose a new state <i>x'</i> from the proposal distribution <i>q</i>, conditioned on our current state <i>x_0</i>. This gives us a candidate sample.\"}, {\"stepNumber\": 3, \"description\": \"Compute the acceptance probability\", \"mathHtml\": \"\\[a = \\min\\left(1, \\frac{P(x')}{P(x_0)} \\cdot \\frac{q(x_0|x')} {q(x'|x_0)}\\right)\\]\", \"explanation\": \"Now we compute the acceptance probability <i>a</i> using the target distribution <i>P</i> and the proposal distribution <i>q</i>. This tells us whether to accept or reject our proposed sample.\"}, {\"stepNumber\": 4, \"description\": \"Accept or reject\", \"mathHtml\": \"\", \"explanation\": \"If <i>a > U(0,1)</i>, we accept the proposed sample and set <i>x_1 = x'</i>. Otherwise, we keep the current state <i>x_0</i>.\"}, {\"stepNumber\": 5, \"description\": \"Repeat until convergence\", \"mathHtml\": \"\", \"explanation\": \"We repeat steps 2-4 until our Markov chain converges to the target distribution <i>P</i>. This gives us a sample from the desired distribution.\"} ],",
+    "finalAnswer": "The final answer is a sample from the target distribution <i>P(x)</i>.\" },",
+    "intuition": "MCMC algorithms like Metropolis-Hastings and Gibbs sampling are powerful tools for exploring complex distributions. By cleverly proposing new states and accepting or rejecting them based on their likelihood, we can efficiently generate samples from these distributions.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:25:24.963Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_mcmc_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply Markov chain Monte Carlo (MCMC) methods using Metropolis-Hastings and Gibbs sampling.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to sample from a target distribution <i>p(x)</i> that is difficult to directly sample from. We can use MCMC to generate samples from this distribution.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the proposal distribution <i>q(x)</i>\", \"mathHtml\": \"\\[ q(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2}} \\]\", \"explanation\": \"The proposal distribution defines how we move around in the target space.\"}, {\"stepNumber\": 2, \"description\": \"Compute the acceptance probability <i>a(x)</i>\", \"mathHtml\": \"\\[ a(x) = \\min\\left(1, \\frac{p(x) q(y)}{p(y) q(x)}\\right) \\]\", \"explanation\": \"The acceptance probability determines whether we accept or reject the proposed sample.\"}, {\"stepNumber\": 3, \"description\": \"Generate a new proposal <i>y</i> from <i>q(y)</i>\", \"mathHtml\": \"\", \"explanation\": \"We generate a new proposal using the proposal distribution.\"}, {\"stepNumber\": 4, \"description\": \"Compute the acceptance probability for the new proposal\", \"mathHtml\": \"\\[ a(y) = \\min\\left(1, \\frac{p(y) q(x)}{p(x) q(y)}\\right) \\]\", \"explanation\": \"We compute the acceptance probability for the new proposal using the same formula as before.\"}, {\"stepNumber\": 5, \"description\": \"Accept or reject the new proposal\", \"mathHtml\": \"\", \"explanation\": \"If <i>a(y)</i> > <i>u</i>, we accept the new proposal; otherwise, we keep the current sample.\"} ],",
+    "finalAnswer": "The MCMC algorithm generates a Markov chain that converges to the target distribution <i>p(x)</i>\" },",
+    "intuition": "MCMC methods are powerful tools for generating samples from complex distributions. By carefully designing the proposal distribution and acceptance probability, we can efficiently explore the target space.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:25:58.401Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_mcmc_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a Markov chain Monte Carlo (MCMC) problem using the Metropolis-Hastings algorithm.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a target distribution π(x), sample from it using MCMC. Assume we have a proposal distribution q(y|x) and current state x.</p>",
+      "hints": [
+        "Hint: Use the acceptance probability to decide whether to accept or reject the new state"
+      ],
+      "solutionHtml": "<p>We'll use the Metropolis-Hastings algorithm to sample from π(x). The steps are:</p><ul><li>Propose a new state y ~ q(y|x)</li><li>Calculate the acceptance probability α = min(1, π(y)/π(x) * q(x|y)/q(y|x))</li><li>If α &gt; U[0, 1), accept y as the new state x</li><li>Else, reject y and stay at current state x</li></ul>",
+      "answerShort": "Sample from π(x)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to sample from a target distribution π(x) = N(0, 1). We have a proposal distribution q(y|x) = N(y | x, 0.5).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Propose a new state y ~ q(y|x)",
+          "mathHtml": "\\[y \\sim \\mathcal{N}(x, 0.5)\\]",
+          "explanation": "We start by proposing a new state y from the proposal distribution q(y|x)"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the acceptance probability α",
+          "mathHtml": "\\[α = min(1, π(y)/π(x) * q(x|y)/q(y|x))\\]",
+          "explanation": "We calculate the acceptance probability α using the ratio of target distributions and proposal densities"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Accept or reject the new state y",
+          "mathHtml": "\\[α > U[0, 1) ? y \\gets x : x \\gets y\\]",
+          "explanation": "We decide whether to accept or reject the new state y based on the acceptance probability α"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Repeat steps 1-3 until convergence",
+          "mathHtml": "\\[\\text{repeat}\\]\\]",
+          "explanation": "We repeat the process until we reach convergence"
+        }
+      ],
+      "finalAnswer": "Sample from π(x)"
+    },
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:26:35.547Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_mcmc_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution of a Markov chain Monte Carlo (MCMC) problem using the Metropolis-Hastings algorithm.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to sample from a target distribution <i>P(x)</i> that is difficult to work with directly. We can use MCMC to generate samples from <i>P(x)</i>. Given an initial state <i>x_0</i>, propose a new state <i>x'</i> and accept it with probability <i>min(1, P(x') / P(x_0))</i>.</p>",
+      "hints": [
+        "Hint: Think about the acceptance probability"
+      ],
+      "solutionHtml": "<p>We'll use the Metropolis-Hastings algorithm to sample from a target distribution. The key idea is to propose new states and accept them based on their likelihood ratio.</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to sample from the target distribution <i>P(x)</i> = <i>N(0, 1)</i>. We start with an initial state <i>x_0</i> = 2. Propose a new state <i>x'</i> = 3 and accept it with probability <i>min(1, P(x') / P(x_0))</i>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Propose a new state",
+          "mathHtml": "\\[x' = 3\\]",
+          "explanation": "We propose a new state by adding some noise to the current state."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the likelihood ratio",
+          "mathHtml": "\\[\\frac{P(x')}{P(x_0)} = \\frac{N(3 | 0, 1)}{N(2 | 0, 1)}\\]",
+          "explanation": "We calculate the likelihood ratio by evaluating the target distribution at both states."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Accept or reject the new state",
+          "mathHtml": "\\[min(1, \\frac{P(x')}{P(x_0)}) = min(1, \\frac{N(3 | 0, 1)}{N(2 | 0, 1)})\\]",
+          "explanation": "We accept or reject the new state based on the likelihood ratio."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Repeat steps 1-3",
+          "mathHtml": "\\[x_{i+1} = \\begin{cases} x', & \\text{with probability } min(1, \\frac{P(x')}{P(x_0)}) \\\\ x_0, & \\text{otherwise} \\end{cases}\\]",
+          "explanation": "We repeat steps 1-3 to generate samples from the target distribution."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "MCMC algorithms like Metropolis-Hastings and Gibbs sampling are powerful tools for generating samples from complex distributions.",
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:27:18.768Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_mcmc_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In this worked example, we'll apply Markov Chain Monte Carlo (MCMC) methods to sample from a target distribution.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a target probability density function <i>p(x)</i>, use MCMC to generate samples from it.</p>",
+      "hints": [
+        "Consider the Metropolis-Hastings algorithm",
+        "Think about Gibbs sampling"
+      ],
+      "solutionHtml": "<p>To apply MCMC, we'll use the Metropolis-Hastings algorithm. We start with an initial state <i>x_0</i> and iteratively update it using the following steps:</p>",
+      "answerShort": "Samples from target distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to sample from a standard normal distribution <i>N(0,1)</i>. We'll use the Metropolis-Hastings algorithm with a proposal distribution <i>N(0,2)</i>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Propose a new state",
+          "mathHtml": "\\[x' \\sim N(0,2)\\]",
+          "explanation": "We start by proposing a new state from the proposal distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the acceptance probability",
+          "mathHtml": "\\[\\alpha = min(1, p(x') / p(x_0))\\]",
+          "explanation": "Next, we compute the acceptance probability using the ratio of target densities."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Accept or reject the proposal",
+          "mathHtml": "\\[x_{t+1} = \\begin{cases} x', & \\text{with prob } \\alpha \\\\ x_0, & \\text{otherwise} \\end{cases}\\]",
+          "explanation": "We accept the proposal with probability <i>\\alpha</i>, and reject it otherwise."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Repeat until convergence",
+          "mathHtml": "",
+          "explanation": "We repeat this process until we reach convergence."
+        }
+      ],
+      "finalAnswer": "Samples from standard normal distribution"
+    },
+    "intuition": "MCMC algorithms like Metropolis-Hastings and Gibbs sampling allow us to efficiently sample from complex target distributions by iteratively updating a proposal distribution.",
+    "visualDescription": "A diagram showing the MCMC process, including proposal generation, acceptance probability computation, and state update",
+    "commonMistakes": [
+      "Not properly normalizing the proposal distribution",
+      "Forgetting to update the state"
+    ],
+    "realWorldApplications": [
+      "Bayesian inference in machine learning models"
+    ],
+    "tags": [
+      "Markov Chain Monte Carlo",
+      "Metropolis-Hastings",
+      "Gibbs Sampling"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:27:57.173Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

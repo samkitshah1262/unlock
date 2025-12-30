@@ -1,0 +1,540 @@
+[
+  {
+    "id": "stat_con_sample_correlation_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>When analyzing data, we often want to understand how two variables are related. Sample correlation measures the strength and direction of this relationship.</p><p>In essence, it answers: 'Is there a pattern between these two variables?' or 'Do they tend to move together?'</p>",
+    "formula": {
+      "latex": "\\(r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\)",
+      "name": "Pearson Correlation Coefficient"
+    },
+    "intuition": "Think of it like this: Imagine you're trying to predict the height of someone based on their shoe size. If there's a strong positive correlation, people with larger shoe sizes tend to be taller.",
+    "realWorldApplications": [
+      "In machine learning, understanding correlations between features is crucial for building accurate models."
+    ],
+    "commonMistakes": [
+      "Don't confuse correlation with causation: just because two variables are related doesn't mean one causes the other."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:41:23.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_sample_correlation_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>In statistics, correlation measures the strength and direction of a linear relationship between two continuous variables. There are three primary types: Pearson's r, Spearman's rank correlation coefficient ρ, and Kendall's τ.</p><p>Pearson's r is the most widely used, assuming normally distributed data. It ranges from -1 (perfect negative correlation) to 1 (perfect positive correlation), with 0 indicating no correlation.</p>",
+    "formula": "{",
+    "latex": "\\(r = \\frac{\\sum (x_i-\\bar{x})(y_i-\\bar{y})}{\\sqrt{\\sum(x_i-\\bar{x})^2} \\cdot \\sqrt{\\sum(y_i-\\bar{y})^2}}\\)\",",
+    "name": "Pearson's Correlation Coefficient\" },",
+    "intuition": "Correlation reveals the degree to which two variables move together. A high positive correlation indicates a strong linear relationship, while a negative value suggests an inverse relationship.",
+    "realWorldApplications": [
+      "In machine learning, correlation is used in feature selection and dimensionality reduction"
+    ],
+    "commonMistakes": [
+      "Misinterpreting correlation as causation",
+      "Ignoring non-linear relationships"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:41:43.188Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_sample_correlation_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>In statistics, correlation measures the strength and direction of a linear relationship between two variables. We'll explore three types: Pearson, Spearman, and Kendall.</p><p>The Pearson correlation coefficient (r) is the most widely used, measuring the linear relationship between two continuous variables.</p>",
+    "formula": "{",
+    "latex": "\\( r = \\frac{\\sum{(x_i - \\bar{x})(y_i - \\bar{y})}}{\\sqrt{\\sum{(x_i - \\bar{x})^2} \\cdot \\sum{(y_i - \\bar{y})^2}} \\)\",",
+    "name": "Pearson Correlation Coefficient\" },",
+    "intuition": "Correlation helps identify patterns in data, which is crucial in machine learning and artificial intelligence. A high correlation indicates a strong linear relationship, while a low or negative correlation suggests no or inverse relationships.",
+    "realWorldApplications": [
+      "Identifying customer purchase behavior for targeted marketing"
+    ],
+    "commonMistakes": [
+      "Assuming causality from correlation",
+      "Ignoring non-linear relationships"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:42:02.120Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_sample_correlation_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>The sample correlation coefficient measures the linear relationship between two random variables.</p><p>It's a fundamental concept in descriptive statistics and is used extensively in machine learning and artificial intelligence to understand relationships between features.</p>",
+    "formula": "{",
+    "latex": "\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\",",
+    "name": "Pearson Correlation Coefficient",
+    "variants": "[ {\"latex\": \"\\[r_s = 1 - \\frac{6\\sum d^2}{n(n-1)}\\]\", \"description\": \"Spearman Rank Correlation Coefficient\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two variables, x and y, representing the height and weight of a group of people. Calculate the sample correlation coefficient.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the mean of both variables",
+        "mathHtml": "\\[\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i\\]",
+        "explanation": "This helps us standardize the variables"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the deviations from the mean for both variables",
+        "mathHtml": "\\[x_i - \\bar{x}, y_i - \\bar{y}\\]",
+        "explanation": "This allows us to focus on the linear relationship"
+      }
+    ],
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The sample correlation coefficient provides a measure of how well we can predict one variable based on another. It's a valuable tool in machine learning for feature engineering and understanding relationships between variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:42:32.247Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_sample_correlation_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>The sample correlation coefficient measures the linear relationship between two variables in a dataset.</p><p>It's a fundamental concept in descriptive statistics and is used to understand the strength and direction of the relationship between two variables.</p>",
+    "formula": "{",
+    "latex": "\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\",",
+    "name": "Pearson Correlation Coefficient",
+    "variants": "[ {\"latex\": \"\\[r_s = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\", \"description\": \"Spearman Correlation Coefficient\"} ],",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores and corresponding grades. We want to calculate the sample correlation coefficient between these two variables.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the mean of both variables\", \"mathHtml\": \"\\[ \\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}, \\bar{y} = \\frac{\\sum_{i=1}^n y_i}{n}\\]\", \"explanation\": \"This is necessary to standardize the variables\"}, {\"stepNumber\": 2, \"description\": \"Calculate the deviations from the mean\", \"mathHtml\": \"\\[ x_i - \\bar{x}, y_i - \\bar{y} \\]\", \"explanation\": \"This helps us focus on the linear relationship between the variables\"} ],",
+    "finalAnswer": "The sample correlation coefficient (r) is a measure of the strength and direction of the linear relationship between the two variables.\" },",
+    "intuition": "The sample correlation coefficient provides an estimate of the population correlation coefficient. It's a powerful tool for exploratory data analysis and hypothesis testing.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:43:06.156Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_sample_correlation_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>Measuring the strength and direction of a linear relationship between two variables is crucial in many fields. The sample correlation coefficient helps achieve this.</p>",
+    "formula": "{",
+    "latex": "\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\",",
+    "name": "Pearson Correlation Coefficient",
+    "variants": "[ {\"latex\": \"\\[r_s = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\", \"description\": \"Spearman Correlation Coefficient\"} ],",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the following data, calculate the sample correlation coefficient:</p><ul><li>x: 1, 2, 3, 4, 5</li><li>y: 2, 3, 5, 7, 9</li></ul>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the means of x and y",
+        "mathHtml": "\\bar{x} = \\frac{1+2+3+4+5}{5} = 3",
+        "explanation": "We need to center our data around the mean."
+      }
+    ],
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Understanding the sample correlation coefficient helps you determine if there's a strong linear relationship between two variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:43:32.077Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_sample_correlation_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>The sample correlation coefficient measures the linear relationship between two variables in a dataset.</p><p>It's a fundamental concept in statistical analysis and is used to identify patterns and relationships in data.</p>",
+    "formula": "{",
+    "latex": "\\[r_K = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\",",
+    "name": "Pearson Correlation Coefficient",
+    "variants": "[ {",
+    "description": "Calculate the numerator of the Pearson correlation coefficient",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the following dataset:</p><ul><li>x: [1, 2, 3, 4]</li><li>y: [2, 3, 5, 7]</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "mathHtml": "\\\\[\\\\sum_{i=1}^n (x_i - \\\\bar{x})(y_i - \\\\bar{y}) = (-1.5)(-2.5) + ... + (1.5)(2.5) = 10\\]\",",
+    "explanation": "This is the core of our calculation\" } ],",
+    "finalAnswer": "The sample correlation coefficient is approximately 0.9\" },",
+    "intuition": "The sample correlation coefficient helps us to understand the strength and direction of a linear relationship between two variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:44:12.957Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sample_correlation_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the sample correlation coefficient between two variables X and Y.</p>",
+    "hints": [
+      "Check that both variables have the same number of observations.",
+      "Make sure to standardize your data before calculating the correlation.",
+      "The sample correlation is a measure of linear association, so it's sensitive to outliers."
+    ],
+    "solutionHtml": "<p>To calculate the sample correlation coefficient, we'll use the formula:</p>\\n\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}.\\]\\n<p>Plug in your values and simplify the expression.</p>\",",
+    "answerShort": "The final answer is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:44:28.529Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sample_correlation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the sample correlation coefficient between two variables X and Y.</p>",
+    "hints": [
+      "Start by calculating the means of both variables.",
+      "Use the formula for Pearson's correlation coefficient.",
+      "Check if your answer is sensitive to outliers."
+    ],
+    "solutionHtml": "<p>To calculate the sample correlation coefficient, we first need to standardize both variables:</p>\\(\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad s_x = \\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (x_i - \\bar{x})^2}\\)<br><p>Then, we calculate the covariance:</p>\\(\\text{cov}(X,Y) = \\frac{1}{n-1}\\sum_{i=1}^n (x_i-\\bar{x})(y_i-\\bar{y})\\)<br><p>Finally, we divide by the product of the standard deviations:</p>\\(r = \\frac{\\text{cov}(X,Y)}{s_x s_y}\\)<br><p>The sample correlation coefficient is then:</p>\\(r_{xy} = \\frac{\\sum_{i=1}^n (x_i-\\bar{x})(y_i-\\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i-\\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i-\\bar{y})^2}}\\)<br><p>For example, if we have the following data:</p>\\begin{array}{c|cc} & X & Y \\\\\\hline x_1 & 2 & 3 \\\\\\hline x_2 & 4 & 5 \\\\\\hline x_3 & 6 & 7 \\\\\\hline x_4 & 8 & 9 \\\\\\hline \\end{array}<br><p>We can calculate the sample correlation coefficient as:</p>\\(r_{xy} = \\frac{(2-4)(3-5) + (4-6)(5-7) + ...}{\\sqrt{(2-4)^2+(4-6)^2+...}\\sqrt{(3-5)^2+(5-7)^2+...}}\\)<br><p>The answer is:</p>\",",
+    "answerShort": "The sample correlation coefficient\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:44:59.617Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sample_correlation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the sample correlation coefficient between two variables X and Y.</p>",
+    "hints": [
+      "Check if you have paired data or not.",
+      "Remember that Pearson's r is sensitive to outliers, while Spearman's ρ and Kendall's τ are more robust.",
+      "For Spearman's ρ, you can use the built-in function in your programming language."
+    ],
+    "solutionHtml": "<p>To calculate the sample correlation coefficient, we'll use the following steps:</p><ol><li>\\(r = \\frac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\sum (X_i - \\bar{X})^2} \\sqrt{\\sum (Y_i - \\bar{Y})^2}}\\) for Pearson's r.</li><li>For Spearman's ρ, use the built-in function in your programming language.</li><li>For Kendall's τ, calculate the number of concordant and discordant pairs, then apply the formula.</li></ol>\",",
+    "answerShort": "The sample correlation coefficient is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:45:15.612Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sample_correlation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "problem": "{",
+    "statementHtml": "Calculate the sample correlation coefficient between variables X and Y from a given dataset.",
+    "hints": [
+      "Check if the data is normally distributed or not.",
+      "Consider the relationship between X and Y, is it linear?",
+      "Think about the interpretation of the correlation coefficient."
+    ],
+    "solutionHtml": "To calculate the sample correlation coefficient, we can use the following formula:\\n\\n\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]\\n\\nwhere \\(r\\) is the sample correlation coefficient, \\(x_i\\) and \\(y_i\\) are the values of variables X and Y respectively, and \\(\\bar{x}\\) and \\(\\bar{y}\\) are their means.\\n\\nNow, let's plug in some numbers to get a sense of how this works.\",",
+    "answerShort": "The sample correlation coefficient is 0.7.\" },",
+    "commonMistakes": [
+      "Forgetting to normalize the data",
+      "Not checking for normality or linearity"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:45:33.241Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_correlation_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation: Pearson, Spearman, Kendall",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate and interpret sample correlations using Pearson's r, Spearman's ρ, and Kendall's τ.</p>",
+    "problem": {
+      "statementHtml": "<p>Given two datasets X = [1, 2, 3] and Y = [4, 5, 6], calculate the sample correlation coefficient (Pearson's r) using the following steps:</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Calculate Pearson's r for X and Y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the means of X and Y",
+          "mathHtml": "\\[\\bar{x} = \\frac{1 + 2 + 3}{3} = 2, \\\\bar{y} = \\frac{4 + 5 + 6}{3} = 5\\]",
+          "explanation": "We need the means to calculate the deviations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the deviations from the means",
+          "mathHtml": "\\[x_1 - \\bar{x} = 1 - 2 = -1, \\\\ x_2 - \\bar{x} = 2 - 2 = 0, \\\\ x_3 - \\bar{x} = 3 - 2 = 1, \\\\ y_1 - \\bar{y} = 4 - 5 = -1, \\\\ y_2 - \\bar{y} = 5 - 5 = 0, \\\\ y_3 - \\bar{y} = 6 - 5 = 1\\]",
+          "explanation": "Deviations help us calculate the covariance."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the covariance",
+          "mathHtml": "\\[cov(X, Y) = \\frac{(x_1 - \\bar{x})(y_1 - \\bar{y}) + (x_2 - \\bar{x})(y_2 - \\bar{y}) + (x_3 - \\bar{x})(y_3 - \\bar{y})}{3-1} = \\frac{-1\\cdot(-1) + 0\\cdot0 + 1\\cdot1}{2} = \\frac{2}{2} = 1\\]",
+          "explanation": "Covariance measures the linear relationship between X and Y."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate Pearson's r",
+          "mathHtml": "\\[r = \\frac{cov(X, Y)}{\\sigma_x \\cdot \\sigma_y} = \\frac{1}{2}\\]",
+          "explanation": "Pearson's r is the covariance divided by the product of standard deviations."
+        }
+      ],
+      "finalAnswer": "r = 0.5"
+    },
+    "intuition": "Sample correlation coefficients provide a measure of linear association between two variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:46:07.045Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_correlation_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>In statistics, correlation measures the strength and direction of a linear relationship between two variables.</p>",
+    "formula": "{",
+    "latex": "\\(r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\)",
+    "name": "Pearson Correlation Coefficient\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given two datasets X and Y, calculate the sample correlation coefficient.</p>",
+    "hints": [
+      "Use the formula above.",
+      "Make sure to handle missing values."
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the sample correlation between exam scores (X) and grades (Y):</p><ul><li>X: [80, 70, 85, 90]</li><li>Y: [3.5, 3.2, 4.1, 4.8]</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the means of X and Y\", \"mathHtml\": \"\\\\(\\\\bar{x} = \\\\frac{80 + 70 + 85 + 90}{4} = 82.5\\)\", \"explanation\": \"We need these values to calculate the deviations.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the deviations of X and Y\", \"mathHtml\": \"\\\\(x_i - \\\\bar{x} = [\\\\frac{-2.5}{1}, \\\\frac{-12.5}{1}, \\\\frac{2.5}{1}, \\\\frac{7.5}{1}]\\\\) and \\\\((y_i - \\\\bar{y}) = [\\\\frac{-0.8}{1}, \\\\frac{-1.3}{1}, \\\\frac{1.6}{1}, \\\\frac{2.3}{1}]\\)\", \"explanation\": \"These values will help us calculate the numerator of the Pearson correlation coefficient.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the numerator\", \"mathHtml\": \"\\\\(\\\\sum_{i=1}^n (x_i - \\\\bar{x})(y_i - \\\\bar{y}) = [2.5 + 15.75 + -6.25 + 17.5] = 29\\)\", \"explanation\": \"This is the numerator of the Pearson correlation coefficient.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the denominator\", \"mathHtml\": \"\\\\(\\\\sqrt{\\\\sum_{i=1}^n (x_i - \\\\bar{x})^2}\\\\sqrt{\\\\sum_{i=1}^n (y_i - \\\\bar{y})^2} = [\\\\frac{\\\\sqrt{562.5}}{1}\\\\frac{\\\\sqrt{14.89}}{1}]\\)\", \"explanation\": \"This is the denominator of the Pearson correlation coefficient.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the sample correlation\", \"mathHtml\": \"\\\\(r = \\\\frac{29}{[\\\\frac{562.5}{1}\\\\frac{14.89}{1}]} = 0.73\\)\", \"explanation\": \"This is our final answer, which represents the strength and direction of the linear relationship between exam scores and grades.\"} ],",
+    "finalAnswer": "r ≈ 0.73\" },",
+    "intuition": "The sample correlation coefficient measures how well a linear model can explain the variation in one variable given another.",
+    "visualDescription": "A scatter plot showing the relationship between X and Y would help illustrate the concept of correlation.",
+    "commonMistakes": [
+      "Forgetting to calculate the means",
+      "Incorrectly handling missing values"
+    ],
+    "realWorldApplications": [
+      "Analyzing consumer behavior (e.g., purchase history vs. demographics)"
+    ],
+    "tags": [
+      "correlation",
+      "statistics"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:46:50.959Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_correlation_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation: Pearson, Spearman, Kendall",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate sample correlation coefficients using Pearson's r, Spearman's ρ, and Kendall's τ.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given two datasets X = [1, 2, 3] and Y = [4, 5, 6], calculate the sample correlation coefficient using each of the three methods mentioned above.</p>",
+    "hints": [
+      "Hint: Think about how to measure linear relationships between variables."
+    ],
+    "solutionHtml": "<p>Here's a step-by-step solution:</p><ul><li>Step 1: Calculate Pearson's r</li><li>Step 2: Calculate Spearman's ρ</li><li>Step 3: Calculate Kendall's τ</li></ul>",
+    "answerShort": "Answer: [insert answer here]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Calculate the sample correlation coefficient for X and Y using each of the three methods.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate Pearson's r\", \"mathHtml\": \"\\[r = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum(x_i-\\bar{x})^2}\\sqrt{\\sum(y_i-\\bar{y})^2}}\\]\", \"explanation\": \"We're using the formula for Pearson's correlation coefficient, which measures linear relationships between variables.\"}, {\"stepNumber\": 2, \"description\": \"Calculate Spearman's ρ\", \"mathHtml\": \"\\[\\rho = 1 - \\frac{6\\sum d_i^2}{n(n^2-1)}\\]\", \"explanation\": \"We're using the formula for Spearman's rank correlation coefficient, which measures monotonic relationships between variables.\"}, {\"stepNumber\": 3, \"description\": \"Calculate Kendall's τ\", \"mathHtml\": \"\\[\\tau = \\frac{\\sum_{i<j} sgn(\\sigma_i-\\sigma_j)}{\\frac{n(n-1)}{2}}\\]\", \"explanation\": \"We're using the formula for Kendall's tau coefficient, which measures the strength of ordinal relationships between variables.\"} ],",
+    "finalAnswer": "Final answer: [insert final answer here]\" },",
+    "intuition": "The key insight is that each correlation method provides a unique perspective on measuring relationships between variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:47:18.988Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_correlation_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "sample_correlation",
+    "title": "Sample Correlation",
+    "contentHtml": "<p>In descriptive statistics, correlation measures the strength and direction of a linear relationship between two variables.</p>",
+    "formula": {
+      "latex": "\\[ r = \\frac{\\sum{(x_i - \\bar{x})(y_i - \\bar{y})}}{\\sqrt{\\sum{(x_i - \\bar{x})^2} \\sum{(y_i - \\bar{y})^2}}} \\]",
+      "name": "Pearson Correlation Coefficient"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two datasets X and Y, calculate the sample Pearson correlation coefficient.</p>",
+      "hints": [
+        "Check for outliers",
+        "Verify data types"
+      ],
+      "solutionHtml": "<p>Solution steps:</p><ul><li>Calculate mean of X (\\(\\bar{x}\\)) and Y (\\(\\bar{y}\\)).</li><li>Calculate deviations from the means: \\((x_i - \\bar{x})\\) and \\((y_i - \\bar{y})\\).</li><li>Compute the dot product: \\(\\sum{(x_i - \\bar{x})(y_i - \\bar{y})}\\).</li><li>Calculate the numerator: \\(\\frac{\\sum{(x_i - \\bar{x})(y_i - \\bar{y})}}{n}\\), where n is the number of data points.</li><li>Compute the denominator: \\(\\sqrt{\\sum{(x_i - \\bar{x})^2} \\sum{(y_i - \\bar{y})^2}}\\).</li><li>Calculate the Pearson correlation coefficient: r = \\frac{numerator}{denominator}.</li></ul>",
+      "answerShort": "r"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given datasets X and Y:</p><ul><li>X: [1, 2, 3, 4, 5]</li><li>Y: [2, 3, 5, 7, 11]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate mean of X",
+          "mathHtml": "\\(\\bar{x} = \\frac{1 + 2 + 3 + 4 + 5}{5} = 3\\)",
+          "explanation": "We need the mean to calculate deviations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate deviations from the means",
+          "mathHtml": "\\((x_i - \\bar{x}) = [(-2), (-1), (0), (1), (2)]\\) and \\((y_i - \\bar{y}) = [-1, 0, 2, 4, 8]\\)",
+          "explanation": "Deviations help us find the dot product."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the dot product",
+          "mathHtml": "\\(\\sum{(x_i - \\bar{x})(y_i - \\bar{y})} = (-2)(-1) + (-1)(0) + (0)(2) + (1)(4) + (2)(8) = 26\\)",
+          "explanation": "The dot product measures the covariance."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the numerator",
+          "mathHtml": "\\(\\frac{26}{5} = 5.2\\)",
+          "explanation": "We divide by n to get the sample correlation."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Compute the denominator",
+          "mathHtml": "\\(\\sqrt{(4)(10)} = 8\\)",
+          "explanation": "The denominator is the product of variances."
+        }
+      ],
+      "finalAnswer": "r ≈ 0.98"
+    },
+    "intuition": "Correlation measures how well a linear model fits the data.",
+    "visualDescription": "A scatter plot showing the relationship between X and Y",
+    "commonMistakes": [
+      "Forgetting to check for outliers",
+      "Not verifying data types"
+    ],
+    "realWorldApplications": [
+      "Analyzing customer purchasing habits in e-commerce"
+    ],
+    "tags": [
+      "correlation",
+      "descriptive statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:48:03.479Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

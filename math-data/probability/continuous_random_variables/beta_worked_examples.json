@@ -1,0 +1,227 @@
+[
+  {
+    "id": "prob_wex_beta_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\beta(x|a,b) = \\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}\\]",
+      "name": "Beta Distribution Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5.</p>",
+      "hints": [
+        "Hint: Use the formula for the beta distribution.",
+        "Hint: Find the normalizing constant first."
+      ],
+      "solutionHtml": "<p>Step 1: Define the problem</p><ul><li>We want to find P(X&gt;0.5) given that X follows a beta distribution with parameters a=2 and b=3.</li></ul><p>Step 2: Use the formula for the beta distribution</p><ul><li>\\[P(X&gt;0.5) = \\int_{0.5}^{1} \\frac{1}{B(2,3)}x^{2-1}(1-x)^{3-1} dx\\]</li></ul><p>Step 3: Find the normalizing constant</p><ul><li>B(a,b) = \\frac{\\Gamma(a+1) \\Gamma(b+1)}{\\Gamma(a+b+1)}\\]</li></ul><p>Step 4: Evaluate the integral</p><ul><li>We can evaluate this integral using numerical methods or by recognizing it as a standard distribution.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X&gt;0.5) given that X follows a beta distribution with parameters a=2 and b=3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the problem",
+          "mathHtml": "",
+          "explanation": "We want to find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the beta distribution",
+          "mathHtml": "\\[P(X&gt;0.5) = \\int_{0.5}^{1} \\frac{1}{B(2,3)}x^{2-1}(1-x)^{3-1} dx\\]",
+          "explanation": "We can use the formula for the beta distribution to find the probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the normalizing constant",
+          "mathHtml": "\\[B(a,b) = \\frac{\\Gamma(a+1) \\Gamma(b+1)}{\\Gamma(a+b+1)}\\]",
+          "explanation": "We need to find the normalizing constant B(2,3) before we can evaluate the integral."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the integral",
+          "mathHtml": "",
+          "explanation": "We can evaluate this integral using numerical methods or by recognizing it as a standard distribution."
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "The key insight here is that we can use the formula for the beta distribution to find the probability.",
+    "visualDescription": "A diagram showing the beta distribution and the region where X &gt; 0.5 would be helpful.",
+    "commonMistakes": [
+      "Not recognizing the integral as a standard distribution.",
+      "Forgetting to find the normalizing constant."
+    ],
+    "realWorldApplications": [
+      "Machine learning models often use the beta distribution as a prior for Bayesian inference."
+    ],
+    "tags": [
+      "probability",
+      "beta distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:29:52.643Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\beta(x|a,b) = \\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}\\]",
+      "name": "Beta Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5.</p>",
+      "hints": [
+        "Hint: Use the definition of the beta distribution"
+      ],
+      "solutionHtml": "<p>We can use the definition of the beta distribution to solve this problem:</p><ul><li> Plug in x = 0.5 into the formula for the beta distribution.</li><li>Evaluate the expression and simplify.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X &gt; 0.5 | a=2, b=3).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in x = 0.5 into the formula for the beta distribution",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^{2-1}(1-0.5)^{3-1}\\]",
+          "explanation": "We're substituting x=0.5 into the formula for the beta distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the expression and simplify",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^1(0.5)^2\\]",
+          "explanation": "We're evaluating the expression by plugging in x=0.5 and simplifying."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify further if possible",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^3\\]",
+          "explanation": "We're simplifying the expression as much as possible."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the definition of B(a,b)",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^3 = \\frac{(2-1)! (3-1)!}{B(2,3)}(0.5)^3\\]",
+          "explanation": "We're using the definition of B(a,b) to simplify further."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Mistake: Forgetting to plug in x=0.5 into the formula"
+    ],
+    "realWorldApplications": [
+      "Application: Using the beta distribution to model user engagement in a recommendation system"
+    ],
+    "tags": [
+      "beta distribution",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:30:36.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the beta distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the probability density function (PDF) of X ∼ Beta(α, β), given that E[X] = 0.5 and Var[X] = 1/12.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize the problem as a constrained optimization\", \"mathHtml\": \"\\[P(X) \\propto X^{\\alpha-1} (1-X)^{\\beta-1}\\]\", \"explanation\": \"We're looking for the PDF of a beta distribution, which is proportional to the product of two power functions.\" }, {\"stepNumber\": 2, \"description\": \"Use the constraints to find the normalizing constant\", \"mathHtml\": \"\\[P(X) = \\frac{1}{B(\\alpha, \\beta)} X^{\\alpha-1} (1-X)^{\\beta-1}\\]\", \"explanation\": \"We can use the fact that E[X] = 0.5 and Var[X] = 1/12 to find the normalizing constant B(α, β).\" }, {\"stepNumber\": 3, \"description\": \"Apply the constraints\", \"mathHtml\": \"\\[E[X] = \\int_{0}^{1} x P(X) dx = 0.5\\]\", \"explanation\": \"We can set up an integral equation using the definition of expectation and solve for B(α, β).\" }, {\"stepNumber\": 4, \"description\": \"Solve for the normalizing constant\", \"mathHtml\": \"\\[B(\\alpha, \\beta) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)}\\]\", \"explanation\": \"We can use the definition of the beta function and the gamma function to solve for B(α, β).\" } ],",
+    "finalAnswer": "The final PDF is P(X) = \\frac{1}{B(\\alpha, \\beta)} X^{\\alpha-1} (1-X)^{\\beta-1}\" },",
+    "intuition": "The beta distribution is a conjugate prior for the binomial distribution, making it useful in Bayesian inference.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:31:07.831Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\text{Beta}(x|a,b) = \\frac{x^{a-1} (1-x)^{b-1}}{\\int_0^1 x^{a-1} (1-x)^{b-1} dx}\\]",
+      "name": "beta distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a = 2 and b = 3, given that X &lt; 0.7.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the desired probability",
+          "mathHtml": "\\[P(X&lt;0.7) = \\int_0^{0.7} \\text{Beta}(x|2,3) dx\\]",
+          "explanation": "We want to find the probability that X is less than 0.7."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Substitute the beta distribution formula",
+          "mathHtml": "\\[P(X&lt;0.7) = \\int_0^{0.7} \\frac{x^{2-1} (1-x)^{3-1}}{\\int_0^1 x^{2-1} (1-x)^{3-1} dx} dx\\]",
+          "explanation": "We substitute the beta distribution formula with parameters a = 2 and b = 3."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[P(X&lt;0.7) = \\frac{1}{B(2,3)} \\int_0^{0.7} x^{2-1} (1-x)^{3-1} dx\\]",
+          "explanation": "We evaluate the integral by recognizing it as a beta distribution with different parameters."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify and find the answer",
+          "mathHtml": "\\[P(X&lt;0.7) = \\frac{1}{B(2,3)} \\int_0^{0.7} x^{2-1} (1-x)^{3-1} dx\\] = 0.6",
+          "explanation": "We simplify the expression and find the final answer."
+        }
+      ],
+      "finalAnswer": "P(X&lt;0.7) = 0.6"
+    },
+    "intuition": "The beta distribution is a conjugate prior for binomial distributions, making it useful in Bayesian inference.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:31:44.732Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "la_wex_subspaces_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "title": "Subspaces in Vector Spaces",
+    "contentHtml": "<p>A subspace of a vector space is a subset that contains the zero vector and is closed under addition and scalar multiplication.</p>",
+    "formula": {
+      "latex": "\\[\\text{Span}(S) = \\left\\{ c_1 v_1 + \\cdots + c_k v_k | c_i \\in F, v_j \\in S \\right\\}\\]",
+      "name": "Span of a set"
+    },
+    "problem": {
+      "statementHtml": "<p>Let V be the vector space of all 2x2 matrices with real entries. Is the set W of all 2x2 matrices with determinant 0 a subspace?</p>",
+      "hints": [
+        "Hint: Check if W contains the zero matrix",
+        "Hint: Show that W is closed under addition"
+      ],
+      "solutionHtml": "<p>To show that W is a subspace, we need to check two things:</p><ul><li>We need to show that 0 \\in W (the zero vector).</li><li>We need to show that for any u, v in W and c in F, u + v and cu are also in W.</li></ul>",
+      "answerShort": "Yes"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let V be the vector space of all 2x2 matrices with real entries. Is the set W of all 2x2 matrices with determinant 0 a subspace?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if W contains the zero matrix",
+          "mathHtml": "\\[\\left| \\begin{array}{cc} 0 & 0 \\\\ 0 & 0 \\end{array}\\right| = 0\\]",
+          "explanation": "The determinant of a 2x2 matrix is the sum of the products of its entries along the main diagonal. In this case, all entries are 0."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Show that W is closed under addition",
+          "mathHtml": "\\[\\left| \\begin{array}{cc} a & b \\\\ c & d \\end{array}\\right| = 0\\]\\] and \\[\\left| \\begin{array}{cc} e & f \\\\ g & h \\end{array}\\right| = 0\\]\\]",
+          "explanation": "We can add two matrices with determinant 0 to get another matrix with determinant 0."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Show that W is closed under scalar multiplication",
+          "mathHtml": "\\[c \\left| \\begin{array}{cc} a & b \\\\ c & d \\end{array}\\right| = 0\\]\\]",
+          "explanation": "If we multiply a matrix with determinant 0 by any scalar, the result will still have determinant 0."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Combine the results",
+          "mathHtml": "",
+          "explanation": "Since W contains the zero vector and is closed under addition and scalar multiplication, it is a subspace."
+        }
+      ],
+      "finalAnswer": "Yes"
+    },
+    "intuition": "Think of subspaces as subsets that 'make sense' in terms of linear combinations.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:38:25.741Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_subspaces_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "title": "Subspaces in Vector Spaces",
+    "contentHtml": "<p>A subspace of a vector space is a subset that contains the zero vector and is closed under addition and scalar multiplication.</p>",
+    "formula": "{",
+    "latex": "\\\\[S \\\\subseteq V : S = {\\\\mathbf{0}} + span(\\\\mathcal{B})\\]\" },",
+    "problem": "{",
+    "statementHtml": "<p>Let V be the vector space of all 3x3 matrices. Is the set S of all symmetric matrices a subspace?</p>",
+    "hints": [
+      "Check if S contains the zero matrix",
+      "Verify closure under addition and scalar multiplication"
+    ],
+    "solutionHtml": "<p>To show that S is a subspace, we need to check three conditions:</p><ul><li>Is the zero matrix in S? <math>\\[\\\\mathbf{0} \\\\in S\\]</math></li><li>Is S closed under addition? For any symmetric matrices A and B, their sum is also symmetric.</li><li>Is S closed under scalar multiplication? If a matrix is symmetric, multiplying it by a scalar does not change its symmetry.</li></p>\",",
+    "answerShort": "Yes\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the subspace W of \\mathbb{R}^3 spanned by the vectors (1,0,0), (0,1,0), and (0,0,1).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the spanning set\", \"mathHtml\": \"\\\\[W = span \\\\left\\\\{ \\\\begin{pmatrix} 1 \\\\end{pmatrix}, \\\\begin{pmatrix} 0 \\\\; 1 \\\\end{pmatrix}, \\\\begin{pmatrix} 0 \\\\; 0 \\\\; 1 \\\\end{pmatrix} \\\\right\\\\}\\]\", \"explanation\": \"We start by writing down the vectors that span W.\"}, {\"stepNumber\": 2, \"description\": \"Check if W contains the zero vector\", \"mathHtml\": \"\\\\[\\\\begin{pmatrix} 0 \\\\end{pmatrix} \\\\in W\\]\", \"explanation\": \"The zero vector is always in any subspace.\"}, {\"stepNumber\": 3, \"description\": \"Verify closure under addition\", \"mathHtml\": \"\\\\[\\\\begin{pmatrix} 1 \\\\end{pmatrix} + \\\\begin{pmatrix} 0 \\\\; 1 \\\\end{pmatrix} = \\\\begin{pmatrix} 1 \\\\; 1 \\\\end{pmatrix} \\\\in W\\]\", \"explanation\": \"We can add any two vectors in the spanning set and get another vector in W.\"}, {\"stepNumber\": 4, \"description\": \"Verify closure under scalar multiplication\", \"mathHtml\": \"\\\\[2 \\\\begin{pmatrix} 1 \\\\end{pmatrix} = \\\\begin{pmatrix} 2 \\\\end{pmatrix} \\\\in W\\]\", \"explanation\": \"Multiplying any vector in the spanning set by a scalar also gives us another vector in W.\"}, {\"stepNumber\": 5, \"description\": \"Conclude that W is a subspace\", \"mathHtml\": \"\\\\[W \\\\text{ is a subspace}\\]\", \"explanation\": \"We have shown that W contains the zero vector and is closed under addition and scalar multiplication, so it is indeed a subspace.\"} ],",
+    "finalAnswer": "The subspace W = span {(1,0,0), (0,1,0), (0,0,1)}\" },",
+    "intuition": "Think of subspaces as subsets that preserve the operations of vector addition and scalar multiplication.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:39:09.046Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_subspaces_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "title": "Subspaces: Definition and Test",
+    "contentHtml": "<p>A subspace of a vector space is a subset that contains the zero vector and is closed under addition and scalar multiplication.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{W} \\subseteq \\mathbb{R}^n : \\mathbf{0} \\in \\mathbf{W}, \\alpha \\mathbf{x} + \\beta \\mathbf{y} \\in \\mathbf{W} \\text{ for all } \\mathbf{x}, \\mathbf{y} \\in \\mathbf{W} and \\alpha, \\beta \\in \\mathbb{R}\\]",
+      "name": "Subspace Definition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a vector space V and a subset W, determine if W is a subspace.</p>",
+      "hints": [
+        "Check that W contains the zero vector",
+        "Verify closure under addition and scalar multiplication"
+      ],
+      "solutionHtml": "<p>To check if W is a subspace:</p><ul><li>First, show that W contains the zero vector: \\(\\mathbf{0} \\in \\mathbf{W}\\)</li><li>Next, verify closure under addition: Let \\mathbf{x}, \\mathbf{y} \\in \\mathbf{W}. Then, \\(\\alpha \\mathbf{x} + \\beta \\mathbf{y} \\in \\mathbf{W}\\) for all \\alpha, \\beta \\in \\mathbb{R}\\)</li><li>Finally, verify closure under scalar multiplication: Let \\mathbf{x} \\in \\mathbf{W}. Then, \\(c \\mathbf{x} \\in \\mathbf{W}\\) for all \\(c \\in \\mathbb{R}\\)</li></ul>",
+      "answerShort": "Yes if W contains the zero vector and is closed under addition and scalar multiplication"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the set of vectors in \\mathbb{R}^3 that satisfy the equation x + y + z = 0. Is this a subspace?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the set contains the zero vector",
+          "mathHtml": "\\(\\mathbf{0} = (0, 0, 0) \\in \\{(x, y, z) | x + y + z = 0}\\)",
+          "explanation": "The zero vector is always contained in any subspace"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Verify closure under addition",
+          "mathHtml": "\\(\\alpha (x_1, y_1, z_1) + \\beta (x_2, y_2, z_2) = (\\alpha x_1 + \\beta x_2, \\alpha y_1 + \\beta y_2, \\alpha z_1 + \\beta z_2) \\in \\{(x, y, z) | x + y + z = 0}\\)",
+          "explanation": "Addition of vectors in the set still results in a vector in the set"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify closure under scalar multiplication",
+          "mathHtml": "\\(c (x, y, z) = (cx, cy, cz) \\in \\{(x, y, z) | x + y + z = 0}\\)",
+          "explanation": "Scaling a vector in the set by any constant still results in a vector in the set"
+        }
+      ],
+      "finalAnswer": "Yes"
+    },
+    "intuition": "Think of a subspace as a subset that 'behaves like' the original vector space.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:39:52.758Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

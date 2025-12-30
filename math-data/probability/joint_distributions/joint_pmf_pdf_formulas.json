@@ -1,0 +1,143 @@
+[
+  {
+    "id": "prob_for_joint_pmf_pdf_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, joint distributions describe the relationship between multiple random variables.</p><p>A joint probability mass function (PMF) is a function that assigns a probability to each possible combination of values for the variables. A joint probability density function (PDF) is a continuous version of this concept.</p>",
+    "formula": "{",
+    "latex": "\\[P(X, Y) = \\sum_{x,y} p(x, y) \\delta(x-X)\\delta(y-Y)\\]\",",
+    "name": "Joint PMF",
+    "variants": "[ {\"latex\": \"\\[f(x, y) = f_X(x) f_Y(y)\\]\", \"description\": \"Product of marginal PDFs\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two random variables X and Y representing the number of heads and tails in a coin flip. We want to find the probability that both are even.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the joint PMF\", \"mathHtml\": \"\\[P(X=2, Y=2) = p(2, 2)\\]\", \"explanation\": \"We use the definition of a joint PMF to find the probability.\"}, {\"stepNumber\": 2, \"description\": \"Find the marginal probabilities\", \"mathHtml\": \"p_X(2) = \\(\\frac{1}{4}\\), p_Y(2) = \\(\\frac{1}{4}\\)\", \"explanation\": \"We use the definition of a marginal PMF to find the probability.\"}, {\"stepNumber\": 3, \"description\": \"Use the product rule\", \"mathHtml\": \"\\[P(X=2, Y=2) = p_X(2) p_Y(2) = \\(\\frac{1}{16}\\)\\]\", \"explanation\": \"We use the product rule to find the joint probability.\"} ],",
+    "finalAnswer": "\\(\\frac{1}{16}\\)\" },",
+    "intuition": "Joint distributions help us understand how multiple random variables interact and depend on each other.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Markov chain Monte Carlo"
+    ],
+    "tags": [
+      "probability theory",
+      "joint distribution",
+      "PMF",
+      "PDF"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:40:28.133Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF)",
+    "contentHtml": "<p>A joint probability mass function (PMF) is a discrete distribution that describes the probability of multiple random variables taking on specific values.</p>",
+    "formula": {
+      "latex": "\\[ P(X=x, Y=y) = p(x,y) \\]",
+      "name": "Joint PMF",
+      "variants": [
+        {
+          "latex": "\\[ P(X=x, Y=y | Z=z) = p(x,y|z) \\]",
+          "description": "Conditional joint PMF"
+        }
+      ]
+    },
+    "intuition": "The joint PMF allows us to describe the probability of two or more random variables being in specific states. This is crucial in many applications, such as modeling user behavior in recommender systems.",
+    "visualDescription": "A simple table showing the possible values and their corresponding probabilities would be a helpful visualization.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:40:43.064Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF) and Density Function (PDF)",
+    "contentHtml": "<p>The joint probability mass function (PMF) and density function (PDF) describe the probability distribution of multiple random variables.</p><ul><li>The PMF is a discrete distribution that assigns probabilities to specific outcomes.</li><li>The PDF is a continuous distribution that assigns densities to intervals.</li></ul>",
+    "formula": "{",
+    "latex": "\\[f(x_1, x_2, \\ldots, x_n) = f(x_1) \\cdot f(x_2 | x_1) \\cdots f(x_n | x_{n-1})\\]\",",
+    "name": "Chain Rule for Joint PMF",
+    "variants": "[ {",
+    "description": "Continuous joint PDF\" } ] },",
+    "intuition": "The joint PMF and PDF allow us to model complex systems with multiple variables. By applying the chain rule, we can efficiently compute probabilities and densities.",
+    "visualDescription": "A diagram showing a tree-like structure representing the conditional dependencies between variables would be helpful for visualization.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:03.511Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF)",
+    "contentHtml": "<p>The Joint PMF of two discrete random variables X and Y is a function that describes the probability of each possible combination of values for both variables.</p><p>It's defined as:</p>\\(P(x, y) = P(X = x \\wedge Y = y)\\)<p>This concept is crucial in statistics and machine learning, where we often need to model complex relationships between multiple random variables.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(x, y) = P(X = x \\wedge Y = y)\\)\",",
+    "name": "Joint PMF\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two dice rolls: X for the first die and Y for the second. What's the probability of getting a sum of 7?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "List all possible outcomes",
+        "mathHtml": "",
+        "explanation": "We need to consider all possible combinations of X and Y"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Count the favorable outcomes",
+        "mathHtml": "",
+        "explanation": "In this case, we're looking for sums of 7"
+      }
+    ],
+    "finalAnswer": "1/12\" },",
+    "intuition": "The Joint PMF helps us understand the relationship between two random variables and their possible combinations.",
+    "realWorldApplications": [
+      "Modeling game outcomes in AI",
+      "Analyzing sensor readings in IoT"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:27.159Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

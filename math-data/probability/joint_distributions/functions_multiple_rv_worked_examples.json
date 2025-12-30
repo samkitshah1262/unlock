@@ -1,0 +1,128 @@
+[
+  {
+    "id": "prob_wex_functions_multiple_rv_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to compute functions of multiple random variables (RVs). This card will guide you through the process of summing, differencing, and multiplying independent RVs.</p>",
+    "formula": "{",
+    "latex": "\\(X_1 + X_2 = \\sum_{i=1}^n X_i\\)",
+    "name": "Sum of Independent RVs",
+    "variants": "[ {\"latex\": \"\\\\(X_1 - X_2 = \\\\sum_{i=1}^n (a_i X_i)\\\\)\", \"description\": \"Difference of Independent RVs\"}, {\"latex\": \"\\\\(X_1 \\cdot X_2 = \\\\prod_{i=1}^n X_i\\\\)\", \"description\": \"Product of Independent RVs\"} ] },",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be independent standard normal random variables. Compute the distribution of Z = X + Y.</p>",
+    "hints": [
+      "Hint: Use convolution theorem"
+    ],
+    "solutionHtml": "<p>We can use the convolution theorem to compute the distribution of Z:</p><ul><li>Compute the characteristic function of X and Y separately</li><li>Convolve the two characteristic functions using the formula \\\\(\\\\phi_Z(t) = \\\\phi_X(t) \\* \\\\phi_Y(t)\\\\)</li><li>Take the inverse Fourier transform to get the PDF of Z</li></ul>\",",
+    "answerShort": "Z ~ N(0, 2)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let X and Y be independent exponential random variables with rate parameter λ. Compute the distribution of T = X + Y.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the characteristic function of X\", \"mathHtml\": \"\\\\(\\\\phi_X(t) = \\\\int_{0}^∞ e^{itx} \\\\lambda e^{-λx} dx\\\\)\", \"explanation\": \"We use the definition of the exponential distribution and the characteristic function formula\"}, {\"stepNumber\": 2, \"description\": \"Define the characteristic function of Y\", \"mathHtml\": \"\\\\(\\\\phi_Y(t) = \\\\int_{0}^∞ e^{ity} \\\\lambda e^{-λy} dy\\\\)\", \"explanation\": \"We use the definition of the exponential distribution and the characteristic function formula again\"}, {\"stepNumber\": 3, \"description\": \"Convolve the two characteristic functions\", \"mathHtml\": \"\\\\(\\\\phi_T(t) = \\\\int_{0}^∞ e^{itx} \\\\lambda e^{-λx} dx \\* \\\\int_{0}^∞ e^{ity} \\\\lambda e^{-λy} dy\\\\)\", \"explanation\": \"We use the convolution theorem to combine the two characteristic functions\"}, {\"stepNumber\": 4, \"description\": \"Take the inverse Fourier transform\", \"mathHtml\": \"\\\\(f_T(t) = \\\\frac{1}{2π} \\\\int_{-∞}^∞ e^{-itx} \\\\phi_T(t) dt\\\\)\", \"explanation\": \"We use the inverse Fourier transform formula to get the PDF of T\"} ],",
+    "finalAnswer": "T ~ Exp(2λ)\" },",
+    "intuition": "The key insight is that we can break down complex distributions into simpler components and then combine them using convolution.",
+    "visualDescription": "A diagram showing the convolution process would be helpful to illustrate the steps.",
+    "commonMistakes": [
+      "Forgetting to normalize the PDF after convolution"
+    ],
+    "realWorldApplications": [
+      "Convolution is used in signal processing, image filtering, and audio processing."
+    ],
+    "tags": [
+      "convolution",
+      "independent RVs"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:34:17.574Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_functions_multiple_rv_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the sum, difference, or product of independent random variables (RVs).</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the sum <i>Z = X + Y</i> where <i>X ∼ N(0, 1)</i> and <i>Y ∼ N(0, 2)</i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize that <i>Z</i> is a linear combination of independent normals.\", \"mathHtml\": \"\\[ Z = X + Y \\]\", \"explanation\": \"This allows us to apply the properties of normal distributions.\"}, {\"stepNumber\": 2, \"description\": \"Find the mean and variance of <i>Z</i>\", \"mathHtml\": \"\\[ E[Z] = E[X] + E[Y] = 0 + 0 = 0 \\]\\[ Var(Z) = Var(X) + Var(Y) = 1 + 2 = 3 \\]\", \"explanation\": \"The mean is the sum of means, and the variance is the sum of variances.\"}, {\"stepNumber\": 3, \"description\": \"Standardize <i>Z</i>\", \"mathHtml\": \"\\[ Z' = \\frac{Z - E[Z]}{\\sqrt{Var(Z)}} = \\frac{X + Y}{\\sqrt{3}} \\]\", \"explanation\": \"This puts the distribution of <i>Z</i> on a common scale.\"}, {\"stepNumber\": 4, \"description\": \"Verify that <i>Z'</i> ∼ N(0, 1)\", \"mathHtml\": \"\\[ Z' \\sim N(0, 1) \\]\", \"explanation\": \"The standardized variable has mean 0 and variance 1, characteristic of a standard normal distribution.\"}, {\"stepNumber\": 5, \"description\": \"Find the final answer\", \"mathHtml\": \"\", \"explanation\": \"We've successfully found the sum of independent normals.\"} ],",
+    "finalAnswer": "Z ∼ N(0, 3)\" },",
+    "intuition": "When working with functions of multiple RVs, it's essential to recognize whether they're linear combinations or not. This can greatly simplify the calculation and provide valuable insights.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:34:50.127Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_functions_multiple_rv_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the sum, difference, or product of multiple independent random variables (RVs).</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we have two independent RVs X and Y with distributions P(X) = N(0, 1) and P(Y) = N(0, 2). Find the distribution of Z = X + Y.</p>",
+      "hints": [
+        "Hint: Use the convolution formula",
+        "Hint: Recall the properties of normal distributions"
+      ],
+      "solutionHtml": "<p>To find the distribution of Z, we'll use the convolution formula:</p><ul><li>We convolve the two distributions P(X) and P(Y) to get P(Z).</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the distribution of W = X - Y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the RVs",
+          "mathHtml": "\\[W = X - Y\\]",
+          "explanation": "We're defining a new RV W as the difference between X and Y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the distribution of X-Y",
+          "mathHtml": "\\[P(W) = P(X-Y) = \\int_{-\\infty}^{\\infty} P(X-Y|x)P(x) dx\\]",
+          "explanation": "We're using the definition of a conditional probability to find the distribution of W."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[P(W) = \\int_{-\\infty}^{\\infty} P(X-Y|x)P(x) dx = \\int_{-\\infty}^{\\infty} N(0, 1) * N(0, 2) dx\\]",
+          "explanation": "We're simplifying the expression by recognizing that X and Y are independent."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the distribution of W",
+          "mathHtml": "\\[P(W) = \\int_{-\\infty}^{\\infty} N(0, 1) * N(0, 2) dx = N(0, 3)\\]",
+          "explanation": "We're finding the final distribution of W by convolving the two normal distributions."
+        }
+      ],
+      "finalAnswer": "The distribution of W is N(0, 3)"
+    },
+    "intuition": "When dealing with multiple independent RVs, we can find the distribution of a new RV by convolving the individual distributions.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:35:27.204Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

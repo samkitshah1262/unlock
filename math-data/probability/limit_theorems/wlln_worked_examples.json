@@ -1,0 +1,172 @@
+[
+  {
+    "id": "prob_wex_wlln_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental limit theorem in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\(\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| &lt; \\epsilon) = 1, \\text{ for all } \\epsilon &gt; 0\\)",
+    "name": "WLLN\" },",
+    "problem": "{",
+    "statementHtml": "<p>Prove the WLLN using Chebyshev's inequality.</p>",
+    "hints": [
+      "Start by applying Chebyshev's inequality.",
+      "Use the fact that \\(E(X) = \\mu\\)."
+    ],
+    "solutionHtml": "<p>Let \\\\(X_1, X_2, \\\\ldots, X_n\\\\) be a sequence of independent and identically distributed random variables with mean \\\\(\\\\mu\\\\) and variance \\\\(\\\\sigma^2\\\\).</p><p>We want to show that \\\\(\\lim_{n \\\\to \\\\infty} P(|\\\\bar{X}_n - \\\\mu| &lt; \\\\epsilon) = 1, \\\\text{ for all } \\\\epsilon &gt; 0\\\\)</p>\",",
+    "answerShort": "The proof is omitted for brevity.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a sequence of coin tosses with probability \\(p\\) of heads. Prove that the average number of heads approaches \\(p\\) as the number of tosses increases.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Apply Chebyshev's inequality to the sum of the coin tosses.",
+        "mathHtml": "\\[P(|\\bar{X}_n - p| &lt; \\epsilon) \\ge 1 - \\frac{\\sigma^2}{\\epsilon^2}\\]",
+        "explanation": "We're using Chebyshev's inequality to bound the probability that the average number of heads is within \\(\\epsilon\\) of \\(p\\)."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Show that the variance of the sum of coin tosses decreases as the number of tosses increases.",
+        "mathHtml": "\\[\\sigma^2 = p(1-p)\\]",
+        "explanation": "The variance of a single coin toss is \\(p(1-p)\\), and since the tosses are independent, the variance of the sum of tosses decreases as the number of tosses increases."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Use the fact that \\(E(X) = p\\) to conclude the proof.",
+        "mathHtml": "\\[P(|\\bar{X}_n - p| &lt; \\epsilon) \\to 1\\]",
+        "explanation": "Since the average number of heads approaches \\(p\\), we can use Chebyshev's inequality to show that the probability that the average is within \\(\\epsilon\\) of \\(p\\) approaches 1 as well."
+      }
+    ],
+    "finalAnswer": "The WLLN holds for this example.\" },",
+    "intuition": "The WLLN shows that the average of a sequence of independent and identically distributed random variables will converge to its expected value with probability 1.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:43:03.831Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_wlln_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental result in probability theory that states that the average of a sequence of independent and identically distributed random variables will converge to their expected value with probability 1 as the number of observations increases.</p>",
+    "formula": {
+      "latex": "\\(\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| &lt; \\epsilon) = 1, \\) for any \\epsilon &gt; 0",
+      "name": "WLLN"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a sequence of independent and identically distributed random variables X_1, X_2, ..., X_n with expected value μ. Prove that the average \\bar{X}_n = (X_1 + X_2 + ... + X_n) / n converges to μ almost surely.</p>",
+      "hints": [
+        "Hint: Use Chebyshev's inequality"
+      ],
+      "solutionHtml": "<p>Step 1: Show that the variance of the average \\bar{X}_n is less than or equal to σ^2 / n. This can be done using Chebyshev's inequality.</p><p>Step 2: Use the fact that the variance of a sequence of independent and identically distributed random variables is constant to show that the variance of \\bar{X}_n is also constant.</p><p>Step 3: Apply Chebyshev's inequality again to show that P(|\\bar{X}_n - μ| &gt; ε) ≤ σ^2 / (nε^2).</p><p>Step 4: Take the limit as n → ∞ and use the fact that σ^2 is finite to conclude that P(|\\bar{X}_n - μ| &lt; ε) = 1.</p>",
+      "answerShort": "The average \\bar{X}_n converges to μ almost surely."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a sequence of independent and identically distributed random variables X_1, X_2, ..., X_n with expected value μ = 0. Prove that the average \\bar{X}_n converges to 0 almost surely.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Show that the variance of the average \\bar{X}_n is less than or equal to σ^2 / n.",
+          "mathHtml": "\\(\\sigma^2 = E[(X_1 - μ)^2] = ... \\)",
+          "explanation": "We use Chebyshev's inequality to show that the variance of the average \\bar{X}_n is less than or equal to σ^2 / n."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the fact that the variance of a sequence of independent and identically distributed random variables is constant.",
+          "mathHtml": "\\(E[(\\bar{X}_n - μ)^2] = ... \\)",
+          "explanation": "We use the fact that the variance of a sequence of independent and identically distributed random variables is constant to show that the variance of \\bar{X}_n is also constant."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Chebyshev's inequality again.",
+          "mathHtml": "\\(P(|\\bar{X}_n - μ| &gt; ε) ≤ ... \\)",
+          "explanation": "We apply Chebyshev's inequality again to show that P(|\\bar{X}_n - μ| &gt; ε) ≤ σ^2 / (nε^2)."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Take the limit as n → ∞.",
+          "mathHtml": "\\(P(|\\bar{X}_n - μ| &lt; ε) = ... \\)",
+          "explanation": "We take the limit as n → ∞ and use the fact that σ^2 is finite to conclude that P(|\\bar{X}_n - μ| &lt; ε) = 1."
+        }
+      ],
+      "finalAnswer": "The average \\bar{X}_n converges to 0 almost surely."
+    },
+    "intuition": "The WLLN shows that the average of a sequence of independent and identically distributed random variables will converge to their expected value with probability 1 as the number of observations increases.",
+    "visualDescription": "A diagram showing the convergence of the average to the expected value would be helpful.",
+    "commonMistakes": [
+      "Mistaking the WLLN for the Strong Law of Large Numbers"
+    ],
+    "realWorldApplications": [
+      "In machine learning, the WLLN is used to prove the consistency of algorithms such as empirical risk minimization."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems",
+      "weak law of large numbers"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:44:08.743Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_wlln_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental result in probability theory that states that the average of a sequence of independent and identically distributed random variables will converge to the population mean as the number of observations increases.</p>",
+    "formula": "{",
+    "latex": "\\(X_1 + X_2 + \\cdots + X_n)/n \\to \\mu\\) as \\(n \\to \\infty\\)\",",
+    "name": "WLLN\" },",
+    "problem": "{",
+    "statementHtml": "<p>Prove the WLLN using Chebyshev's inequality.</p>",
+    "hints": [
+      "Use the definition of variance",
+      "Apply Chebyshev's inequality"
+    ],
+    "solutionHtml": "<p>We can prove the WLLN by showing that for any \\(\\epsilon > 0\\),</p><ul><li>\\(P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}\\)</li></ul><p>Using Chebyshev's inequality, we have that for any \\(k > 0\\),</p><ul><li>\\(P(|\\bar{X}_n - \\mu| \\geq k) \\leq \\frac{\\sigma^2}{nk^2}\\)</li></ul><p>Letting \\(k = \\epsilon/\\sqrt{n}\\), we get that</p><ul><li>\\(P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}\\)</li></ul>\",",
+    "answerShort": "The WLLN is proven\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a sequence of independent and identically distributed random variables \\(X_1, X_2, \\ldots\\) with mean \\(\\mu = 0\\) and variance \\(\\sigma^2 = 1\\). Prove that the average of these variables will converge to 0 as the number of observations increases.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Apply Chebyshev's inequality\", \"mathHtml\": \"\\(P(|\\bar{X}_n| \\geq k) \\leq \\frac{\\sigma^2}{nk^2}\\)\", \"explanation\": \"We use Chebyshev's inequality to bound the probability that the average of the variables is far from 0\"}, {\"stepNumber\": 2, \"description\": \"Let \\(k = \\epsilon/\\sqrt{n}\\)\", \"mathHtml\": \"\\(P(|\\bar{X}_n| \\geq k) \\leq \\frac{\\sigma^2}{nk^2}\\)\", \"explanation\": \"We choose a value of \\(k\\) that depends on the desired accuracy \\(\\epsilon\\) and the number of observations \\(n`\"}, {\"stepNumber\": 3, \"description\": \"Show that the probability goes to 0 as \\(n \\to \\infty\\)\", \"mathHtml\": \"\\(P(|\\bar{X}_n| \\geq k) \\leq \\frac{\\sigma^2}{nk^2}\\)\", \"explanation\": \"We use the fact that the variance is finite and the number of observations increases to show that the probability goes to 0\"}, {\"stepNumber\": 4, \"description\": \"Conclude that the average converges to 0\", \"mathHtml\": \"\\(P(|\\bar{X}_n| \\geq k) \\leq \\frac{\\sigma^2}{nk^2}\\)\", \"explanation\": \"We use the fact that the probability goes to 0 as \\(n \\to \\infty\\) to conclude that the average converges to 0\"} ],",
+    "finalAnswer": "The WLLN is proven\" },",
+    "intuition": "The WLLN shows that even if individual observations are random, the average of many observations will be close to the true mean.",
+    "visualDescription": "A diagram showing the convergence of the average to the population mean would help illustrate this concept.",
+    "commonMistakes": "[\"Forgetting to apply Chebyshev's inequality\", \"Not letting \\(k\\) depend on \\(\\epsilon\\) and \\(n\\)\"],",
+    "realWorldApplications": [
+      "In machine learning, the WLLN is used in the analysis of algorithms and the evaluation of model performance."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:45:07.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

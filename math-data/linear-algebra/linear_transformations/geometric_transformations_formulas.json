@@ -1,0 +1,167 @@
+[
+  {
+    "id": "la_for_geometric_transformations_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "title": "Geometric Transformations: Rotation",
+    "contentHtml": "<p>Rotations are a fundamental concept in linear algebra and computer graphics.</p><p>In this formula, we'll explore how to represent rotations using matrices.</p>",
+    "formula": "{",
+    "latex": "\\[R(\\theta) = \\begin{bmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{bmatrix}\\]\",",
+    "name": "Rotation Matrix",
+    "variants": "[ {\"latex\": \"\\[R(2\\pi) = I\\]\", \"description\": \"The rotation matrix is periodic\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the rotated vector \\[\\begin{bmatrix} x' \\\\ y' \\end{bmatrix}\\] given initial vector \\[\\begin{bmatrix} x \\\\ y \\end{bmatrix}\\] and rotation angle θ.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Pre-multiply the initial vector by the rotation matrix\", \"mathHtml\": \"\\[R(\\theta) \\begin{bmatrix} x \\\\ y \\end{bmatrix}\\]\", \"explanation\": \"This applies the rotation to the vector\"} ],",
+    "finalAnswer": "<p>\\[\\begin{bmatrix} x' \\\\ y' \\end{bmatrix} = R(\\theta) \\begin{bmatrix} x \\\\ y \\end{bmatrix}\\]</p>\" },",
+    "intuition": "Rotations are a way to change the orientation of an object without changing its size or shape.",
+    "realWorldApplications": [
+      "Computer graphics, game development"
+    ],
+    "tags": [
+      "linear-algebra",
+      "computer-graphics"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:48:15.497Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_geometric_transformations_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "title": "Geometric Transformations: Rotation",
+    "contentHtml": "<p>Geometric transformations are essential in computer graphics and machine learning. This card focuses on rotations, a fundamental concept.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{R} = \\begin{bmatrix} \\cos(\\theta) & -\\sin(\\theta) \\\\ \\sin(\\theta) & \\cos(\\theta) \\end{bmatrix}\\]",
+      "name": "Rotation Matrix",
+      "variants": []
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to rotate a point (x, y) in the plane by an angle θ. What is the new position?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Apply the rotation matrix",
+          "mathHtml": "\\[\\begin{bmatrix} x' \\\\ y' \\end{bmatrix} = \\mathbf{R}\\begin{bmatrix} x \\\\ y \\end{bmatrix}\\]",
+          "explanation": "The new position is calculated by multiplying the original point with the rotation matrix."
+        }
+      ],
+      "finalAnswer": "The new position is (x', y')"
+    },
+    "intuition": "Rotations are a fundamental concept in computer graphics and machine learning. Understanding rotations helps us transform objects in various ways.",
+    "tags": [
+      "linear-algebra",
+      "geometric-transformations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:48:35.685Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_geometric_transformations_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "title": "Geometric Transformations: Rotation",
+    "contentHtml": "<p>Geometric transformations are essential in computer graphics and machine learning. This formula helps you understand how to rotate a point or vector around an axis.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{R} \\cdot \\mathbf{x} = \\begin{bmatrix} \\\\cos(\\theta) & -\\sin(\\theta) \\\\ \\sin(\\theta) & \\cos(\\theta) \\end{bmatrix} \\cdot \\mathbf{x}\\]",
+      "name": "Rotation Matrix"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Rotate the point (2,3) around the y-axis by 45 degrees.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the rotation angle and axis",
+          "mathHtml": "\\[\\theta = 45^\\circ, \\mathbf{a} = (0,1)\\]",
+          "explanation": "We need to specify the rotation angle and axis"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Construct the rotation matrix",
+          "mathHtml": "\\[\\mathbf{R} = \\begin{bmatrix} \\\\cos(\\theta) & -\\sin(\\theta) \\\\ \\sin(\\theta) & \\cos(\\theta) \\end{bmatrix}\\]",
+          "explanation": "Use the formula to create the rotation matrix"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the rotation",
+          "mathHtml": "\\[\\mathbf{x}' = \\mathbf{R} \\cdot (2,3)\\]",
+          "explanation": "Multiply the point by the rotation matrix"
+        }
+      ],
+      "finalAnswer": "(1.5,-0.866)"
+    },
+    "intuition": "Think of the rotation as a sequence of small translations and rotations around the axis.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:49:01.109Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_geometric_transformations_007",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "linear_transformations",
+    "topic": "geometric_transformations",
+    "title": "Geometric Transformations",
+    "contentHtml": "<p>Geometric transformations are a fundamental concept in linear algebra, allowing us to describe and analyze various operations on vectors and matrices.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{A} \\cdot \\mathbf{x} = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} \\]\",",
+    "name": "Matrix-vector multiplication",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider the rotation matrix:</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the rotation angle",
+        "mathHtml": "\\[ \\theta = \\frac{\\pi}{4} \\]",
+        "explanation": "We need to specify the angle of rotation."
+      }
+    ],
+    "finalAnswer": "The resulting vector after rotation\" },",
+    "intuition": "Geometric transformations provide a powerful way to describe and analyze various operations on vectors and matrices, with applications in computer graphics, image processing, and more.",
+    "realWorldApplications": [
+      "Computer vision",
+      "Image processing"
+    ],
+    "tags": [
+      "linear-algebra",
+      "geometric-transformations"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:49:21.074Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

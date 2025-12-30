@@ -1,0 +1,163 @@
+[
+  {
+    "id": "prob_wex_sampling_methods_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "title": "Monte Carlo and Importance Sampling",
+    "contentHtml": "<p>In this worked example, we'll explore how to use Monte Carlo and importance sampling methods in machine learning.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to estimate the value of π using Monte Carlo integration. We have a function <i>f(x)</i> that represents the area under the curve, but it's difficult to integrate exactly.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Generate random points\", \"mathHtml\": \"\\(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\\)\", \"explanation\": \"We generate a set of random points within the area we're interested in.\"}, {\"stepNumber\": 2, \"description\": \"Count points inside the curve\", \"mathHtml\": \"\\(N = \\sum_{i=1}^n I(y_i > f(x_i))\\)\", \"explanation\": \"We count the number of points that fall within the area under the curve.\"}, {\"stepNumber\": 3, \"description\": \"Estimate π using Monte Carlo\", \"mathHtml\": \"\\(\\hat{π} = \\frac{4N}{n}\\)\", \"explanation\": \"We use the ratio of points inside the curve to the total number of points as an estimate for π.\"}, {\"stepNumber\": 4, \"description\": \"Use importance sampling for efficiency\", \"mathHtml\": \"\\(x_i, y_i) \\sim g(x, y)\\)\", \"explanation\": \"To improve efficiency, we use importance sampling by generating points from a distribution <i>g</i> that is proportional to the function <i>f</i>. This helps us focus on the areas of high importance.\"}, {\"stepNumber\": 5, \"description\": \"Combine Monte Carlo and importance sampling\", \"mathHtml\": \"\\(\\hat{π} = \\frac{\\sum_{i=1}^n I(y_i > f(x_i)) g(x_i, y_i)}{\\sum_{i=1}^n g(x_i, y_i)}\\)\", \"explanation\": \"We combine the Monte Carlo estimate with importance sampling to get a more accurate and efficient estimate for π.\"}, ],",
+    "finalAnswer": "The estimated value of π\" },",
+    "intuition": "Monte Carlo integration is a powerful tool for approximating complex integrals, and importance sampling helps us focus on the areas that matter most.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:17:54.963Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sampling_methods_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "title": "Sampling Methods in Machine Learning",
+    "contentHtml": "<p>In machine learning, sampling methods are crucial for efficient computation and data exploration.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{N} \\sum_{i=1}^N f(x_i) = E[f(X)]\\]",
+      "name": "Monte Carlo Estimator"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to estimate the expected value of a function <i>f</i>(<i>x</i>) over a continuous distribution <i>X</i>. We have access to a random sample <i>X_1, X_2, ..., X_N</i> from this distribution. How can we use these samples to approximate the true expected value?</p>",
+      "hints": [
+        "Hint: Think about the law of large numbers."
+      ],
+      "solutionHtml": "<p>We can use Monte Carlo integration to estimate the expected value.</p><ul><li>Draw <i>N</i> independent and identically distributed (i.i.d.) samples from the distribution <i>X</i>.</li><li>Compute the average of the function values at these sample points: \\(\\frac{1}{N} \\sum_{i=1}^N f(x_i)\\).</li><li>The estimated expected value is the average function value.</li></ul>",
+      "answerShort": "Monte Carlo integration"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to estimate the area under a curve using Monte Carlo integration. We have a random sample of <i>N</i> points from the uniform distribution on the unit square [0,1]x[0,1]. How can we use these samples to approximate the true area?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Draw a random sample",
+          "mathHtml": "\\(X_1, X_2, ..., X_N\\)",
+          "explanation": "We need i.i.d. samples for the law of large numbers to hold."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the average area",
+          "mathHtml": "\\(\\frac{1}{N} \\sum_{i=1}^N f(x_i)\\)",
+          "explanation": "The estimated area is the average area of the sample points."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Scale the result",
+          "mathHtml": "\\(E[f(X)] = N \\cdot \\frac{1}{N} \\sum_{i=1}^N f(x_i)\\)",
+          "explanation": "We need to scale the estimated area by <i>N</i> to get the true expected value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Repeat and average",
+          "mathHtml": "\\(E[f(X)] = \\frac{1}{M} \\sum_{j=1}^M \\left( N \\cdot \\frac{1}{N} \\sum_{i=1}^N f(x_i)\\right)\\)",
+          "explanation": "We can repeat the process <i>M</i> times and average the results to reduce variance."
+        }
+      ],
+      "finalAnswer": "The estimated area is approximately 0.5"
+    },
+    "intuition": "Monte Carlo integration provides a simple way to estimate expected values by averaging function values over random samples.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:18:39.740Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sampling_methods_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "title": "Monte Carlo and Importance Sampling",
+    "contentHtml": "<p>In this example, we'll explore how to use Monte Carlo methods and importance sampling to solve a problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to estimate the area under a curve using Monte Carlo integration. We have a function <i>f(x)</i> defined on the interval [0,1].",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Generate random points\", \"mathHtml\": \"\\(\\mathbf{x} = (x_1, x_2, \\ldots, x_n)\\)\", \"explanation\": \"We generate <i>n</i> random points in the interval [0,1].\"}, {\"stepNumber\": 2, \"description\": \"Evaluate function at each point\", \"mathHtml\": \"\\(y_i = f(x_i)\\)\", \"explanation\": \"For each point, we evaluate the function <i>f(x)</i> and get a corresponding value <i>y</i>.\"}, {\"stepNumber\": 3, \"description\": \"Weight points by importance\", \"mathHtml\": \"\\(\\mathbf{w} = (w_1, w_2, \\ldots, w_n)\\)\", \"explanation\": \"We assign weights to each point based on their importance. For example, if the point is close to the curve, we give it a higher weight.\"}, {\"stepNumber\": 4, \"description\": \"Estimate area using weighted average\", \"mathHtml\": \"\\(\\hat{A} = \\frac{\\sum_{i=1}^n w_i y_i}{\\sum_{i=1}^n w_i}\\)\", \"explanation\": \"We estimate the area under the curve by taking a weighted average of the function values at each point.\"}, ],",
+    "finalAnswer": "The estimated area is <i>\\hat{A}</i>.\" },",
+    "intuition": "Monte Carlo methods and importance sampling are powerful tools for estimating complex integrals. By cleverly generating random points and weighting them by their importance, we can get a good estimate of the area under a curve.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:19:09.535Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sampling_methods_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "title": "Monte Carlo and Importance Sampling",
+    "contentHtml": "<p>In this example, we'll explore how to use Monte Carlo methods to estimate a probability distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Estimate the area under the curve of <i>f(x) = x^2</i> from 0 to 1 using Monte Carlo integration.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Generate random points (x, y) within the bounds\", \"mathHtml\": \"\\(x \\sim U[0, 1], y \\sim U[0, f(x)]\\)\", \"explanation\": \"This allows us to approximate the area under the curve by counting the proportion of points that fall below it.\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the function at each point\", \"mathHtml\": \"\\(f(x) = x^2\\)\", \"explanation\": \"We'll use these function values to estimate the area under the curve.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the area of each rectangle\", \"mathHtml\": \"\\(\\Delta A_i = f(x_i) \\cdot \\Delta x\\)\", \"explanation\": \"The width of each rectangle is the difference in x-values between consecutive points.\"}, {\"stepNumber\": 4, \"description\": \"Sum up the areas to get an estimate of the total area\", \"mathHtml\": \"\\(\\hat{A} = \\sum_{i=1}^n \\Delta A_i\\)\", \"explanation\": \"The more points we generate, the better our estimate will be.\"}, ],",
+    "finalAnswer": "The estimated area under the curve is approximately 0.3333.\", },",
+    "intuition": "Monte Carlo methods are useful when exact calculations are intractable or too computationally expensive. Importance sampling helps us focus on regions of high probability, making our estimates more accurate.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:19:36.879Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sampling_methods_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "title": "Monte Carlo Methods",
+    "contentHtml": "<p>In this example, we'll explore how to use Monte Carlo methods to estimate a probability distribution.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to estimate the area under a curve using Monte Carlo integration. We have a function <i>f(x)</i> and a bounding box [a, b].</p>",
+    "hints": [
+      "Hint: Use random sampling"
+    ],
+    "solutionHtml": "<p>We'll generate random points within the bounding box and evaluate the function at each point. The ratio of points where <i>f(x) &gt; 0</i> to the total number of points will give us an estimate of the area under the curve.</p>",
+    "answerShort": "Monte Carlo integration\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say we want to estimate the area under the function <i>f(x) = x^2</i> within the bounding box [0, 1]. We generate 100 random points and evaluate the function at each point.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Generate random points\", \"mathHtml\": \"\\\\[x_i \\\\sim Uniform(0, 1)\\\\]\", \"explanation\": \"We use a uniform distribution to ensure all points are equally likely.\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the function at each point\", \"mathHtml\": \"\\\\[y_i = f(x_i) = x_i^2\\\\]\", \"explanation\": \"We plug in each random point into the function to get a corresponding output value.\"}, {\"stepNumber\": 3, \"description\": \"Count the points where <i>f(x) &gt; 0</i>\", \"mathHtml\": \"\\\\[A = \\\\frac{1}{N} \\\\sum_{i=1}^N I(y_i > 0)\\\\]\", \"explanation\": \"We count the number of points where the function output is positive.\"}, {\"stepNumber\": 4\", \"description\": \"Estimate the area under the curve\", \"mathHtml\": \"\\\\[A \\\\approx \\\\frac{b-a}{N} \\\\sum_{i=1}^N I(y_i > 0)\\\\]\", \"explanation\": \"We use the ratio of positive points to the total number of points as an estimate of the area under the curve.\"}, {\"stepNumber\": 5, \"description\": \"Repeat and average\", \"mathHtml\": \"\\\\[A \\\\approx \\\\frac{1}{M} \\\\sum_{m=1}^M A_m\\\\]\", \"explanation\": \"We repeat this process multiple times to get a more accurate estimate of the area under the curve.\"} ],",
+    "finalAnswer": "The estimated area under the curve\" },",
+    "intuition": "Monte Carlo methods are useful when we can't find an analytical solution or when the problem is too complex.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:20:16.118Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

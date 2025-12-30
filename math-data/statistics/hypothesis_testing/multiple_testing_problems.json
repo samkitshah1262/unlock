@@ -1,0 +1,107 @@
+[
+  {
+    "id": "stat_prb_multiple_testing_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "When conducting multiple tests in a single study, we often face the <strong>multiple testing problem</strong>. This issue arises because each test has its own significance level, and the overall family-wise error rate (FWER) may exceed our desired threshold. Consider a scenario where we perform 10 independent tests with a nominal alpha of 0.05. What is the actual FWER?",
+    "hints": [
+      "Think about the probability of at least one false positive result.",
+      "Recall that the Bonferroni correction adjusts the significance level for each test.",
+      "The Benjamini-Hochberg procedure controls the FDR by adjusting the critical values."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use various methods to control the FWER or FDR. One approach is to apply the Bonferroni correction:</p>\\(FWER = 1 - (1 - \\alpha)^n\\)<p>where $n$ is the number of tests.</p><p>Another method is to employ the Benjamini-Hochberg procedure, which adjusts the critical values based on the rank of the test statistics.</p>\",",
+    "answerShort": "The actual FWER depends on the method used to control it.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:08:27.147Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "<p>When performing multiple tests, it's crucial to control the family-wise error rate (FWER) to avoid false discoveries. However, as the number of tests increases, the FWER can become prohibitively small. This problem explores three popular methods for controlling the FWER: Bonferroni, False Discovery Rate (FDR), and Benjamini-Hochberg.</p>",
+    "hints": [
+      "<p>Start by considering a single test with a desired significance level. How would you adjust this to accommodate multiple tests?</p>",
+      "<p>Think about the Bonferroni correction as a 'conservative' approach. What are its limitations, and how do FDR and Benjamini-Hochberg address these issues?</p>",
+      "<p>Visualize the p-value distribution for each test. How would you expect the FWER to change with increasing numbers of tests?</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll work through each method:</p><ul><li>Bonferroni: \\(\\mathbf{p} = \\frac{\\mathbf{i}}{\\mathbf{n}}\\)</li><li>FDR: \\(\\mathbf{q} = \\min(\\mathbf{p}, 1 - \\frac{\\mathbf{k}}{\\mathbf{n}})\\)</li><li>Benjamini-Hochberg: \\(\\mathbf{r} = \\max(0, 1 - \\frac{\\mathbf{i}}{\\mathbf{n}})\\)</li></ul>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:08:48.278Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "<p>Consider a multiple testing problem where we have <i>n</i> tests and want to control the family-wise error rate (FWER).</p>",
+    "hints": [
+      "Think about how many false positives you'd allow if all tests were independent.",
+      "Bonferroni's inequality can help us bound the FWER.",
+      "Benjamini-Hochberg's procedure is a more powerful alternative to Bonferroni."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use Bonferroni's inequality:</p>\\n\\[P(\\text{at least one false positive}) \\leq \\sum_{i=1}^k P(\\text{test } i \\text{ is a false positive})\\]\\n<p>Let <i>p</i> be the probability of a single test being a false positive. Then:</p>\\n\\[P(\\text{at least one false positive}) \\leq k \\cdot p\\]\\n<p>We can set this upper bound to our desired FWER, say <i>&alpha;</i>, and solve for <i>k</i>:</p>\\n\\[k \\geq -\\log(1-\\alpha) / \\log(p)\\]\\n<p>Now we have a procedure: reject all tests with p-value greater than the Bonferroni-corrected significance level.</p>\",",
+    "answerShort": "Bonferroni's inequality\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:09:07.597Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": {
+      "statementHtml": "<p>Consider a scenario where you have to perform multiple tests on the same dataset. Each test has its own null hypothesis and significance level. However, the family-wise error rate (FWER) is of concern. How can you control FWER while still making decisions based on individual test results?</p>",
+      "hints": [
+        "<p>Think about how to adjust your significance levels.</p>",
+        "<p>Consider a method that takes into account the number of tests performed.</p>",
+        "<p>Look for a procedure that provides a better trade-off between false positives and false negatives.</p>"
+      ],
+      "solutionHtml": "<p>To control FWER, you can use the Bonferroni correction. This involves multiplying each test's p-value by the total number of tests performed. Then, compare the resulting values to your desired significance level. If any value is below this threshold, reject the null hypothesis.</p><p>Alternatively, you can use the Benjamini-Hochberg procedure, which provides a more conservative correction for multiple testing.</p>",
+      "answerShort": "Bonferroni or Benjamini-Hochberg"
+    },
+    "commonMistakes": [
+      "<p>Failing to account for the number of tests performed.</p>",
+      "<p>Using a single significance level without adjusting for multiple testing.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:09:24.267Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

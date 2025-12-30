@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prob_thm_delta_method_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed.</p>",
+    "formula": {
+      "latex": "\\[g(X̄) = \\frac{1}{\\sqrt{n}} \\sum_{i=1}^n x_i\\]",
+      "name": "Function g"
+    },
+    "theorem": {
+      "statement": "\\[\\sqrt{n} (g(X̄) - g(μ)) \\stackrel{d}{\\rightarrow} N(0, σ_g^2)\\]",
+      "proofSketch": "The proof involves showing that the standardized sum is asymptotically normal and then applying the continuous mapping theorem."
+    },
+    "intuition": "The Delta Method provides a way to stabilize the variance of g(X̄) when X̄ is normally distributed. This is particularly useful in machine learning, where we often need to work with functions of means.",
+    "realWorldApplications": [
+      "In Bayesian inference, the Delta Method can be used to approximate the posterior distribution of a function of the mean."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:02:43.174Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_delta_method_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a fundamental limit theorem in probability theory that provides an asymptotic distribution of a function g(X̄) of the sample mean X̄.</p>",
+    "formula": {
+      "latex": "\\[g(X\\bar) = \\frac{g(\\mu)}{\\sqrt{n}} + \\frac{g'(\\mu)}{n} + o_p(1/\\sqrt{n})\\]",
+      "name": "Delta Method Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n → ∞} P\\left(\\frac{g(X\\bar) - g(\\mu)}{σ_g / \\sqrt{n}} ≤ x\\right) = Φ(x)\\]",
+      "proofSketch": "The proof involves showing that the standardized statistic has a limiting normal distribution using the Central Limit Theorem and Taylor series expansions."
+    },
+    "intuition": "The Delta Method provides a way to stabilize the variance of g(X̄) by subtracting off the leading term in its Taylor series expansion. This is useful in many applications, including confidence interval construction and hypothesis testing.",
+    "realWorldApplications": [
+      "In machine learning, the Delta Method is used to construct asymptotically valid confidence intervals for model parameters."
+    ],
+    "tags": [
+      "Probability Theory",
+      "Limit Theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:03.360Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

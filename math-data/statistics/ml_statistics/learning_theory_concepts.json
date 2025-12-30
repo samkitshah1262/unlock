@@ -1,0 +1,97 @@
+[
+  {
+    "id": "stat_con_learning_theory_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Statistical Learning Theory: VC Dimension and PAC Learning",
+    "subtitle": "Understanding generalization bounds in machine learning",
+    "contentHtml": "<p>Statistical learning theory provides a framework for understanding how machine learning models generalize to unseen data. Two key concepts are the Vapnik-Chervonenkis (VC) dimension and probably approximately correct (PAC) learning.</p><p>The VC dimension measures the capacity of a hypothesis space, which is crucial in determining the upper bound on the number of training examples required for good generalization.</p>",
+    "formula": "{",
+    "latex": "\\\\[VCdim(H) = \\\\sup_{n} \\\\{n : \\\\exists\\\\ x_1, ..., x_n s.t. f(x_1), ..., f(x_n) are linearly independent in H\\\\}\\]\",",
+    "name": "VC Dimension Formula\" },",
+    "intuition": "The VC dimension represents the maximum number of training examples that can be correctly classified by a hypothesis set.",
+    "realWorldApplications": [
+      "In ML, understanding the VC dimension helps design models that generalize well to unseen data"
+    ],
+    "commonMistakes": [
+      "Confusing the VC dimension with the model's capacity"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:36:49.746Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_learning_theory_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Statistical Learning Theory: VC Dimension and PAC Learning",
+    "contentHtml": "<p>In statistical learning theory, we study how to learn from data without overfitting.</p><p>The VC dimension is a measure of the complexity of a hypothesis space, while PAC learning provides a framework for evaluating the performance of an algorithm.</p>",
+    "formula": {
+      "latex": "\\[VCdim(H) = \\sup_{n\\geq1} \\max_{S\\subseteq [n]} |H|_S\\]",
+      "name": "VC dimension",
+      "variants": []
+    },
+    "intuition": "The VC dimension provides a way to bound the number of different hypotheses that can be learned from a dataset, while PAC learning ensures that our algorithm generalizes well to new data.",
+    "realWorldApplications": [
+      "In machine learning, understanding the VC dimension and PAC learning is crucial for designing algorithms that generalize well."
+    ],
+    "commonMistakes": [
+      "Not considering the trade-off between bias and variance"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:04.087Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_learning_theory_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand the complexity of a hypothesis space.</p><p>Intuitively, it measures how many different ways we can 'color' a dataset using a given set of hypotheses. The smaller the VC dimension, the more constrained our hypothesis space is, and vice versa.</p>",
+    "formula": {
+      "latex": "\\(VC_dim(H) = \\max_{x_1, ..., x_n} |\\{f(x_1), ..., f(x_n)| : f \\in H\\)",
+      "name": "Definition of VC Dimension"
+    },
+    "intuition": "The VC dimension provides a way to bound the number of possible hypotheses that can fit our training data. This is crucial in machine learning, as it allows us to guarantee generalization performance.",
+    "realWorldApplications": [
+      "In ML, we use VC dimension to analyze the complexity of neural networks and ensure they don't overfit."
+    ],
+    "commonMistakes": [
+      "Don't confuse VC dimension with the number of training examples; they're related but distinct concepts."
+    ],
+    "tags": [
+      "statistical learning theory",
+      "VC dimension",
+      "PAC learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:20.527Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

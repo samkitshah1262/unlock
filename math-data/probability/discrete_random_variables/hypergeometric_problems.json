@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_hypergeometric_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a deck of <i>n</i> cards with <i>K</i> red cards and <i>n-K</i> black cards. We draw <i>r</i> cards without replacement. What is the probability that exactly <i>k</i> of them are red?</p>",
+    "hints": [
+      "<p>Think about the number of ways to choose <i>k</i> red cards from the <i>K</i> available.</p>",
+      "<p>Now, consider the number of ways to choose the remaining <i>r-k</i> cards from the <i>n-K</i> black cards.</p>",
+      "<p>Use the multiplication principle to combine these two cases.</p>"
+    ],
+    "solutionHtml": "<p>We can use the hypergeometric distribution formula:</p>\\[\\mathbb{P}(K=k) = \\frac{\\binom{K}{k} \\binom{n-K}{r-k}}{\\binom{n}{r}}\\] <p>Here, <i>K</i> is the number of red cards, <i>k</i> is the number of red cards drawn, and <i>r</i> is the total number of cards drawn.</p>\",",
+    "answerShort": "The probability is given by the hypergeometric distribution formula.\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:27.245Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_hypergeometric_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "A random sample of <i>n</i> items is drawn from a population of <i>K</i> items containing <i>Kp</i> positive instances and <i>Kk</i> negative instances, without replacement. What is the probability that exactly <i>r</i> out of these <i>n</i> items are positive?",
+    "hints": [
+      "Start by considering the number of ways to choose <i>r</i> positive items from the total of <i>Kp</i>",
+      "Think about the number of ways to choose the remaining <i>n-r</i> items, given that they must be negative",
+      "Use the formula for combinations to simplify your answer"
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the hypergeometric distribution. Let's denote the event that an item is positive as 'P' and the event that it is negative as 'N'. We want to find <i>P(r)</i>, the probability of exactly <i>r</i> items being positive.</p><p>We have:</p>\\[ P(r) = \\frac{\\binom{K_p}{r} \\cdot \\binom{K-K_p}{n-r}}{\\binom{K}{n}} \\]<p>This formula represents the number of ways to choose <i>r</i> positive items from the total of <i>Kp</i>, multiplied by the number of ways to choose the remaining <i>n-r</i> items, given that they must be negative.</p>\",",
+    "answerShort": "<i>P(r) = \\frac{\\binom{K_p}{r} \\cdot \\binom{K-K_p}{n-r}}{\\binom{K}{n}}</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:53.670Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_hypergeometric_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "A bag contains <i>n</i> balls, <i>k</i> of which are red and <i>n-k</i> are blue. If we randomly draw <i>m</i> balls without replacement, what is the probability that exactly <i>r</i> of them are red?",
+    "hints": [
+      "Think about the number of ways to choose <i>r</i> red balls out of <i>k</i>",
+      "Consider the number of ways to choose the remaining <i>m-r</i> balls",
+      "Use the hypergeometric distribution formula"
+    ],
+    "solutionHtml": "Let's calculate the probability. We can use the hypergeometric distribution formula:\\[P(X=r)=\\frac{\\binom{k}{r}\\binom{n-k}{m-r}}{\\binom{n}{m}}.\\]Now, we can plug in the values and simplify.\",",
+    "answerShort": "The answer is P(X=r)\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:31:10.734Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

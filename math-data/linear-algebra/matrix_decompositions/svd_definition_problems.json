@@ -1,0 +1,111 @@
+[
+  {
+    "id": "la_prb_svd_definition_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "problem": "{",
+    "statementHtml": "Given a matrix A ∈ ℝ<sup>m×n</sup>, prove that its Singular Value Decomposition (SVD) exists and is unique.",
+    "hints": [
+      "Start by recalling the definition of SVD: A = UΣVᵀ. What does this decomposition tell us about the matrix?",
+      "Think about what makes a matrix singular or non-singular. How does this relate to the existence and uniqueness of SVD?",
+      "Consider the properties of the matrices U, Σ, and Vᵀ. Which ones are crucial for the existence and uniqueness of SVD?"
+    ],
+    "solutionHtml": " To prove the existence of SVD, we can show that any matrix A ∈ ℝ<sup>m×n</sup> can be written as A = UΣVᵀ, where U and V are orthogonal matrices, and Σ is a diagonal matrix with non-negative entries.  First, note that if A has full column rank (i.e., its columns are linearly independent), then the SVD exists. This is because we can always find an orthonormal basis for the column space of A, which corresponds to the columns of U. Similarly, we can find an orthonormal basis for the row space of A, which corresponds to the rows of V.  Now, suppose A does not have full column rank. Then, its nullspace (the set of vectors that satisfy Ax = 0) is non-trivial. Let u be a unit vector in this nullspace. Then, Au = 0, so Uu = ΣVᵀu = 0.  Since U and V are orthogonal matrices, their columns form orthonormal bases for the column and row spaces of A, respectively. Therefore, we can write any matrix A as A = UΣVᵀ, where U and V are orthogonal matrices, and Σ is a diagonal matrix with non-negative entries.  To prove uniqueness, suppose that A = U₁Σ₁V₁ᵀ = U₂Σ₂V₂ᵀ for some matrices U₁, U₂, V₁, and V₂. Then,  \\[\\begin{align*} U₁^T U₂ & = I, \\\\ V₁^T V₂ & = I, \\\\ Σ₁ Σ₂ & = Σ \\end{align*}\\]  These equations imply that U₁ = U₂, Σ₁ = Σ₂, and V₁ = V₂. Therefore, the SVD is unique.  The answerShort: The SVD exists and is unique for any matrix A ∈ ℝ<sup>m×n</sup>.\",",
+    "answerShort": "The SVD exists and is unique.\" },",
+    "commonMistakes": [
+      "Forgetting to consider the case where A has full column rank",
+      "Not recognizing that U and V are orthogonal matrices"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:38:16.106Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_definition_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, prove that it can be decomposed as A = UΣVᵀ, where U and V are orthogonal matrices, Σ is a diagonal matrix containing the singular values of A.</p>",
+    "hints": [
+      "Start by considering the eigenvalues and eigenvectors of AA<sup>T</sup>.",
+      "Use the fact that Σ is a diagonal matrix to simplify the decomposition.",
+      "Recall that U and V are orthogonal matrices, which implies certain properties."
+    ],
+    "solutionHtml": "<p>To prove the existence of such a decomposition, we can start by considering the eigenvalues and eigenvectors of AA<sup>T</sup>. Let λ be an eigenvalue with corresponding eigenvector v. Then:</p>\\n\\[AA^T v = λv\\]\\n<p>Since AA<sup>T</sup> is symmetric, its eigenvalues are real. We can then define the matrices U and Σ as follows:</p>\\n\\[U = [u_1, ..., u_k], Σ = diag(σ_1, ..., σ_k), V = [v_1, ..., v_k]\\]\\n<p>where u_i and v_i are the eigenvectors corresponding to λ_i. The matrix Σ contains the singular values of A.</p>\\n<p>To prove uniqueness, suppose we have another decomposition A = U'Σ'V'. Then:</p>\\n\\[U'S'V' = AA^T\\]\\n<p>Since U and V are orthogonal, so are U' and V'. This implies that Σ = Σ', U = U', and V = V', proving uniqueness.</p>\",",
+    "answerShort": "The decomposition A = UΣVᵀ exists and is unique.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:38:40.938Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_definition_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, prove that it can be decomposed as A = UΣVᵀ, where U and V are orthogonal matrices, Σ is a diagonal matrix containing the singular values of A.</p>",
+    "hints": [
+      "Start by considering the eigenvalue decomposition of AA<sup>T</sup>.",
+      "Show that the columns of U are the left-singular vectors of A.",
+      "Use the fact that Σ is a diagonal matrix to simplify the expression for Vᵀ."
+    ],
+    "solutionHtml": "<p>To prove the existence and uniqueness of the SVD, start by considering the eigenvalue decomposition of AA<sup>T</sup>.</p><ul><li>\\[AA^T = UΔU^T\\]</li></ul><p>Now, show that the columns of U are the left-singular vectors of A.</p><ul><li>\\[\\mathbf{u}_i = \\frac{\\mathbf{a}_i}{\\|\\mathbf{a}_i\\|}\\]</li></ul><p>Next, use the fact that Σ is a diagonal matrix to simplify the expression for Vᵀ.</p><ul><li>\\[V^T = UΣ^{-1}\\]</li></ul><p>This shows that A can be decomposed as A = UΣV^T.</p>\",",
+    "answerShort": "A = UΣVᵀ\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:39:02.651Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_definition_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "problem": {
+      "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, prove that it can be decomposed as A = UΣVᵀ, where U and V are orthogonal matrices, Σ is a diagonal matrix containing the singular values of A.</p>",
+      "hints": [
+        "Start by considering the eigenvalues and eigenvectors of AA<sup>T</sup>.",
+        "Recall that the SVD is closely related to the PCA decomposition.",
+        "Think about how you can use the properties of orthogonal matrices to simplify the expression."
+      ],
+      "solutionHtml": "<p>To prove the existence of the SVD, we need to show that AA<sup>T</sup> has only real eigenvalues. This follows from the fact that AA<sup>T</sup> is symmetric.</p><p>Next, we can use the spectral theorem to diagonalize AA<sup>T</sup></p>",
+      "answerShort": "The SVD exists and is unique."
+    },
+    "commonMistakes": [
+      "Forgetting that AA<sup>T</sup> has only real eigenvalues.",
+      "Trying to diagonalize AA instead of AA<sup>T</sup>"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:39:19.158Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

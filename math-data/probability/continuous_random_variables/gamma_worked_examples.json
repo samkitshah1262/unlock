@@ -1,0 +1,149 @@
+[
+  {
+    "id": "prob_wex_gamma_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution: Definition and Properties",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in various applications, including machine learning.</p>",
+    "formula": {
+      "latex": "\\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\]",
+      "name": "Gamma Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability density function (PDF) of a Gamma distribution with shape parameter k and rate parameter θ.</p>",
+      "hints": [
+        "Hint: Use the definition of the Gamma function"
+      ],
+      "solutionHtml": "<p>To find the PDF, we can use the following steps:</p><ul><li>Step 1: Recall that the Gamma function is defined as \\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\].</li><li>Step 2: Substitute x with k and θ with θ in the definition of the Gamma function.</li><li>Step 3: Simplify the expression to obtain the PDF.</li></ul>",
+      "answerShort": "The PDF is \\[f(x) = \\frac{\\theta^k}{\\Gamma(k)}x^{k-1}e^{-\\theta x}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the probability density function (PDF) of a Gamma distribution with shape parameter k = 2 and rate parameter θ = 3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recall the definition of the Gamma function",
+          "mathHtml": "\\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\]",
+          "explanation": "This will help us find the PDF"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Substitute x with k and θ with θ",
+          "mathHtml": "\\[f(x) = \\frac{\\theta^k}{\\Gamma(k)}x^{k-1}e^{-\\theta x}\\]",
+          "explanation": "This gives us the PDF in terms of k and θ"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[f(x) = \\frac{3^2}{\\Gamma(2)}x^{2-1}e^{-3x}\\]",
+          "explanation": "We can simplify the expression by plugging in the values of k and θ"
+        }
+      ],
+      "finalAnswer": "The PDF is \\[f(x) = \\frac{9}{1}x^1e^{-3x}\\]"
+    },
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process.",
+    "visualDescription": "A diagram showing the shape of the Gamma distribution could help illustrate its properties.",
+    "commonMistakes": [
+      "Forgetting to simplify the expression"
+    ],
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a call center"
+    ],
+    "tags": [
+      "probability",
+      "Gamma distribution",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:24:25.501Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_gamma_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "workedExample": "{",
+    "problemHtml": "Find the probability density function (PDF) of a gamma distribution with shape parameter $k=3$ and scale parameter $\theta=2$.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Simplify the expression by evaluating $\\Gamma(k)$ for $k=3$.\",",
+    "mathHtml": "\\[\\Gamma(3) = 2, f(x | k, \\theta) = \\frac{4}{2}x^2e^{-x/2}\\]\" },",
+    "explanation": "The gamma distribution is a continuous random variable that models the time between events in a Poisson process.\" }, {",
+    "finalAnswer": "The probability density function is $f(x | k, \\theta) = \\frac{4}{2}x^2e^{-x/2}$.\" },",
+    "intuition": "The gamma distribution is a powerful tool for modeling the time between events in a Poisson process. Its PDF can be used to calculate probabilities and expectations of these events.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:24:49.874Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_gamma_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution: Definition and Properties",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in many applications, including machine learning and signal processing.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Distribution PDF"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the expected value of a Gamma random variable with parameters \\(\\alpha = 3\\) and \\(\\beta = 2\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that the expected value is a weighted average",
+          "mathHtml": "\\[E[X] = \\int_0^\\infty x f(x | \\alpha, \\beta) dx\\]",
+          "explanation": "We can evaluate this integral using the definition of the Gamma distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use substitution and partial fractions",
+          "mathHtml": "\\[= \\frac{1}{2} \\int_0^\\infty x^{3-1} e^{-2x} dx\\]",
+          "explanation": "We can simplify the integral by recognizing it as a Gamma function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the integral using the definition of the Gamma function",
+          "mathHtml": "\\[= \\frac{1}{2} \\Gamma(4) / (2^3) = \\frac{6}{8}\\]",
+          "explanation": "The result is a finite value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "State the final answer",
+          "mathHtml": "",
+          "explanation": "The expected value of the Gamma random variable is 0.75."
+        }
+      ],
+      "finalAnswer": "E[X] = \\frac{6}{8}"
+    },
+    "intuition": "The Gamma distribution is a flexible model that can capture a wide range of shapes, making it useful in many applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:25:19.647Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

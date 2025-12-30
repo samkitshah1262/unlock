@@ -1,0 +1,207 @@
+[
+  {
+    "id": "stat_wex_ab_testing_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "problem": "{",
+    "statementHtml": "Suppose we want to test whether a new button design increases conversions on our website. We have two versions of the button: A (old) and B (new). We randomly assign users to one of these groups, with 50% going to each group. After collecting data, we find that 200 out of 500 users in group A converted, while 250 out of 500 users in group B converted. Can we conclude that the new button design is better?",
+    "hints": [
+      "Think about what 'better' means",
+      "Consider the sample size"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "Let's analyze this data step-by-step.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the conversion rates for each group\", \"mathHtml\": \"\\(\\frac{200}{500} = 0.4\\) and \\(\\frac{250}{500} = 0.5\\)\", \"explanation\": \"We're calculating the proportion of users who converted in each group.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the difference in conversion rates\", \"mathHtml\": \"\\(0.5 - 0.4 = 0.1\\)\", \"explanation\": \"This is the 'effect size' we're interested in.\" }, {\"stepNumber\": 3, \"description\": \"Check if the difference is statistically significant\", \"mathHtml\": \"\", \"explanation\": \"We can use a two-sample proportion test or a confidence interval to determine if this difference is due to chance or not.\" }, {\"stepNumber\": 4, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below our significance level (e.g., 0.05), we can conclude that the new button design has a statistically significant impact on conversions.\" } ],",
+    "finalAnswer": "\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:23:55.362Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ab_testing_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "problem": "{",
+    "statementHtml": "Suppose we want to compare the conversion rates of two versions of a website's landing page.",
+    "hints": [
+      "Determine the null hypothesis",
+      "Choose an appropriate test statistic"
+    ],
+    "solutionHtml": "<p>To design an A/B testing experiment, we need to specify the null and alternative hypotheses.</p>",
+    "answerShort": "H0: p1 = p2 vs. H1: p1 ≠ p2\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>We want to compare the conversion rates of two versions of a website's landing page.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the null and alternative hypotheses\", \"mathHtml\": \"\\(H_0: p_1 = p_2\\) vs. \\(H_1: p_1 \\neq p_2\\)\", \"explanation\": \"We want to test whether there's a significant difference in conversion rates between the two versions.\"}, {\"stepNumber\": 2, \"description\": \"Choose an appropriate test statistic\", \"mathHtml\": \"\\[t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}\\]\", \"explanation\": \"We'll use the Welch's t-test to compare the means of the two groups.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the sample sizes\", \"mathHtml\": \"\\(n_1 = 100\\), \\(n_2 = 100\\)\", \"explanation\": \"Assuming equal sample sizes for simplicity.\"}, {\"stepNumber\": 4, \"description\": \"Perform the t-test\", \"mathHtml\": \"\\[t = -2.5, p-value = 0.012\\]\", \"explanation\": \"We'll use a significance level of 0.05 and reject the null hypothesis if the p-value is below this threshold.\"}, {\"stepNumber\": 5, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"Since the p-value is below our threshold, we can conclude that there's a statistically significant difference in conversion rates between the two versions.\"} ],",
+    "finalAnswer": "Reject H0: p1 = p2\" },",
+    "intuition": "A/B testing helps us identify which version of a product or service performs better.",
+    "commonMistakes": [
+      "Not accounting for sequential effects",
+      "Incorrectly interpreting the results"
+    ],
+    "realWorldApplications": [
+      "Improving conversion rates in e-commerce",
+      "Optimizing marketing campaigns"
+    ],
+    "tags": [
+      "A/B Testing",
+      "Hypothesis Testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:24:25.452Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ab_testing_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "contentHtml": "<p>A/B testing is a fundamental concept in machine learning, allowing us to evaluate the effectiveness of different treatments or features.</p>",
+    "problem": {
+      "statementHtml": "Suppose we want to compare the conversion rates of two website designs. We have 1000 users and can randomly assign them to either design A or design B.",
+      "hints": [
+        "Make sure to account for any biases in the assignment process",
+        "Use a significance level of 0.05"
+      ],
+      "solutionHtml": "<p>We'll use a two-sample proportion test to compare the conversion rates.</p>",
+      "answerShort": "Reject the null hypothesis if p-value < 0.05"
+    },
+    "workedExample": {
+      "problemHtml": "Assume we have the following data: design A has 80 conversions out of 500 users, while design B has 90 conversions out of 500 users.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample proportions",
+          "mathHtml": "\\[p_A = \\frac{80}{500}, p_B = \\frac{90}{500}\\]",
+          "explanation": "We need to calculate the proportion of conversions for each design"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\sqrt{\\frac{(p_A + p_B) (1 - (p_A + p_B))}{500}}\\]",
+          "explanation": "We need to calculate the standard error for each design"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[z = \\frac{p_B - p_A}{SE}\\]",
+          "explanation": "The test statistic is the difference between the two proportions divided by the standard error"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[p-value = P(Z &lt; z)\\]",
+          "explanation": "We need to determine the probability of observing a test statistic at least as extreme as the one we calculated"
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis if p-value < 0.05"
+    },
+    "intuition": "A/B testing is all about comparing two groups and determining if there's a statistically significant difference between them.",
+    "visualDescription": "A simple bar chart showing the conversion rates for each design",
+    "commonMistakes": [
+      "Forgetting to account for biases in the assignment process",
+      "Not using a significance level"
+    ],
+    "realWorldApplications": [
+      "Comparing the effectiveness of different marketing campaigns",
+      "Evaluating the impact of new product features"
+    ],
+    "tags": [
+      "A/B testing",
+      "machine learning",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:24:56.946Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ab_testing_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "contentHtml": "<p>A/B testing is a fundamental concept in statistics and machine learning, allowing us to compare the performance of different versions of a product or service.</p>",
+    "problem": "{",
+    "statementHtml": "Suppose we want to test whether a new website design increases conversions compared to the current design. We have 1000 users per day and want to detect a 5% increase in conversions.",
+    "hints": [
+      "Consider the power of the test",
+      "Think about the null hypothesis"
+    ],
+    "solutionHtml": "<p>We need to decide on a sample size, alpha level, and power for our A/B test. Let's assume we want a 90% chance to detect a 5% increase in conversions.</p>",
+    "answerShort": "What would be an appropriate sample size?\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Design an A/B testing experiment with the following specifications:</p><ul><li>Null hypothesis: The new design does not increase conversions</li><li>Alternative hypothesis: The new design increases conversions by at least 5%</li><li>Alpha level: 0.05</li><li>Power: 90%</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the required sample size\", \"mathHtml\": \"\\\\[n = \\\\frac{(Z_{\\\\alpha/2} + Z_\\\\beta)^2 \\* (1 - p) \\* p}{(p_0 - p_1)^2}\\]\", \"explanation\": \"We use the formula for calculating the sample size in an A/B test\"}, {\"stepNumber\": 2, \"description\": \"Determine the number of users per group\", \"mathHtml\": \"\\\\[n_1 = n_2 = \\\\frac{n}{2}\\]\", \"explanation\": \"Since we want to compare two groups, we divide the total sample size by 2\"}, {\"stepNumber\": 3, \"description\": \"Calculate the expected conversion rates for each group\", \"mathHtml\": \"\\\\[p_0 = 0.05, p_1 = 0.10\\]\", \"explanation\": \"We assume a baseline conversion rate of 5% and an increased conversion rate of 10%\"}, {\"stepNumber\": 4, \"description\": \"Calculate the test statistic\", \"mathHtml\": \"\\\\[t = \\\\frac{(p_1 - p_0)}{\\\\sqrt{\\\\frac{(p_0 + p_1)}{2} \\* (1 - p_0 - p_1)}}\\]\", \"explanation\": \"We calculate the test statistic to compare the conversion rates between groups\"} ],",
+    "finalAnswer": "What would be an appropriate sample size?\" },",
+    "intuition": "A/B testing is a powerful tool for evaluating the effectiveness of different designs or treatments. By carefully designing and analyzing the experiment, we can make data-driven decisions with confidence.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:25:30.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ab_testing_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "problem": "{",
+    "statementHtml": "<p>Suppose you're a product manager at an e-commerce company, and you want to test whether a new button design increases conversion rates.</p>",
+    "hints": [
+      "Define the null hypothesis",
+      "Choose a suitable statistical test"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Design an A/B testing experiment to compare the conversion rate of two different button designs for a new product launch.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the null and alternative hypotheses\", \"mathHtml\": \"\\\\(H_0: p_1 = p_2\\\\) vs. \\\\(H_a: p_1 > p_2\\\\)\", \"explanation\": \"We want to test whether the new button design increases conversion rates.\"}, {\"stepNumber\": 2, \"description\": \"Choose a suitable statistical test\", \"mathHtml\": \"\\\\[t = \\frac{p_1 - p_2}{\\sqrt{\\frac{p_1(1-p_1) + p_2(1-p_2)}{n}}\\\\]\", \"explanation\": \"The Welch's t-test is suitable for this problem.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the sample sizes\", \"mathHtml\": \"\\\\[n = 1000, m = 500\\\\]\", \"explanation\": \"We need to determine the required sample size for each group.\"}, {\"stepNumber\": 4, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below a certain significance level (e.g., 0.05), we reject the null hypothesis and conclude that the new button design increases conversion rates.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "A/B testing helps you make data-driven decisions by comparing the performance of different designs or treatments.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:25:54.393Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

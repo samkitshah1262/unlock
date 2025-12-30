@@ -1,0 +1,241 @@
+[
+  {
+    "id": "la_wex_svd_definition_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "title": "Singular Value Decomposition (SVD)",
+    "contentHtml": "<p>Solve a matrix decomposition problem step-by-step using SVD.</p>",
+    "formula": {
+      "latex": "\\[ A = U\\Sigma V^\\mathsf{T} \\]",
+      "name": "SVD Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, find its singular value decomposition (SVD) A = UΣVᵀ.</p>",
+      "hints": [
+        "Hint: SVD is a factorization of A into three matrices."
+      ],
+      "solutionHtml": "<p>Solution steps:</p><ul><li>Step 1: Compute the covariance matrix Σ.</li><li>Step 2: Find the eigenvectors and eigenvalues of Σ.</li><li>Step 3: Construct the orthogonal matrices U and Vᵀ from the eigenvectors.</li></ul>",
+      "answerShort": "The SVD decomposition A = UΣVᵀ."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a matrix A with singular value decomposition A = UΣVᵀ. Compute Σ and Vᵀ given U.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the covariance matrix Σ.",
+          "mathHtml": "\\[ \\Sigma = (U^\\mathsf{T} AU)/n \\]",
+          "explanation": "We compute Σ as the average of the outer product of U and A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the eigenvectors and eigenvalues of Σ.",
+          "mathHtml": "\\[ \\Sigma = U\\Lambda U^\\mathsf{T} \\]",
+          "explanation": "We diagonalize Σ to obtain its eigenvectors and eigenvalues."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Construct the orthogonal matrices U and Vᵀ from the eigenvectors.",
+          "mathHtml": "\\[ V = U\\Lambda^\\frac{1}{2} \\]",
+          "explanation": "We construct Vᵀ as the matrix of eigenvectors scaled by their eigenvalues."
+        }
+      ],
+      "finalAnswer": "The SVD decomposition A = UΣVᵀ."
+    },
+    "intuition": "SVD is a powerful tool for dimensionality reduction and feature extraction in machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:39:48.627Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_svd_definition_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "title": "Singular Value Decomposition (SVD)",
+    "contentHtml": "<p>Solve the SVD problem step-by-step.</p>",
+    "formula": {
+      "latex": "\\[A = U\\Sigma V^\\T\\]",
+      "name": "SVD"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, find its SVD decomposition.</p>",
+      "hints": [
+        "Hint: Use the definition of SVD"
+      ],
+      "solutionHtml": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the SVD decomposition of \\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the definition of SVD",
+          "mathHtml": "\\[A = U\\Sigma V^\\T\\]",
+          "explanation": "We're using the definition to guide our solution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the singular values and vectors",
+          "mathHtml": "",
+          "explanation": "We'll use the definition again to find the singular values and vectors."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the diagonal matrix Σ",
+          "mathHtml": "\\[\\Sigma = \\begin{bmatrix}2 & 0 \\\\ 0 & 1.5\\end{bmatrix}\\]",
+          "explanation": "The diagonal entries of Σ are the singular values."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the matrices U and V",
+          "mathHtml": "\\[U = \\begin{bmatrix}0.2673 & -0.9487 \\\\ 0.9487 & 0.2673\\end{bmatrix},\nV^\\T = \\begin{bmatrix}-0.7071 & 0.7071 \\\\ 0.7071 & -0.7071\\end{bmatrix}\\]",
+          "explanation": "We'll use the definition again to find U and V."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Verify the SVD decomposition",
+          "mathHtml": "",
+          "explanation": "We can verify that A = UΣV^T by plugging in our values."
+        }
+      ],
+      "finalAnswer": "\\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix} = \\begin{bmatrix}0.2673 & -0.9487 \\\\ 0.9487 & 0.2673\\end{bmatrix}\\begin{bmatrix}2 & 0 \\\\ 0 & 1.5\\end{bmatrix}\\begin{bmatrix}-0.7071 & 0.7071 \\\\ 0.7071 & -0.7071\\end{bmatrix}^\\T\\]"
+    },
+    "intuition": "SVD is a powerful tool for dimensionality reduction and feature extraction in machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:40:24.206Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_svd_definition_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "title": "Singular Value Decomposition (SVD)",
+    "contentHtml": "<p>Solve a matrix decomposition problem step-by-step.</p>",
+    "formula": {
+      "latex": "\\[A = U\\Sigma V^\\T\\]",
+      "name": "SVD",
+      "variants": [
+        {
+          "latex": "\\[U\\in \\mathbb{R}^{m \\times k}, \\Sigma\\in \\mathbb{R}^{k \\times k}, V\\in \\mathbb{R}^{n \\times k}\\]",
+          "description": "Matrix dimensions"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the SVD of a matrix A.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Standardize the input matrix",
+          "mathHtml": "\\[A = \\frac{1}{\\sqrt{n}} \\begin{bmatrix} 2 & 0 \\\\ 0 & 3 \\end{bmatrix}\\]",
+          "explanation": "To ensure numerical stability"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the covariance matrix",
+          "mathHtml": "\\[Σ = (A^T A)\\]",
+          "explanation": "This is the core of SVD"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the eigenvectors and eigenvalues",
+          "mathHtml": "\\[V Σ V^T = U Σ^2 U^T\\]",
+          "explanation": "These are the singular vectors and values"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Reconstruct the original matrix",
+          "mathHtml": "\\[A \\approx U Σ V^T\\]",
+          "explanation": "This is the final result"
+        }
+      ],
+      "finalAnswer": "The SVD of A is given by UΣVᵀ"
+    },
+    "intuition": "SVD decomposes a matrix into three components: left singular vectors (U), diagonal matrix of singular values (Σ), and right singular vectors (V). This allows us to capture the essence of the original matrix in a more interpretable way.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:40:50.158Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_svd_definition_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_definition",
+    "title": "Singular Value Decomposition (SVD)",
+    "contentHtml": "<p>Solve a matrix decomposition problem step-by-step using SVD.</p>",
+    "formula": {
+      "latex": "\\[A = U\\Sigma V^T\\]",
+      "name": "SVD"
+    },
+    "problem": {
+      "statementHtml": "<p>Decompose the following matrix into its singular values, left and right singular vectors:</p><p>\\[A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\]</p>",
+      "hints": [
+        "Hint: Use SVD to diagonalize A"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ul><li>Step 1: Compute the covariance matrix Σ.</li><li>Step 2: Find the eigenvectors and eigenvalues of Σ.</li><li>Step 3: Use the eigenvectors to form U and V.</li></ul>",
+      "answerShort": "The SVD decomposition is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given matrix A:</p><p>\\[A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the covariance matrix Σ.",
+          "mathHtml": "\\[Σ = A^T A\\]",
+          "explanation": "This helps us diagonalize A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the eigenvectors and eigenvalues of Σ.",
+          "mathHtml": "\\[Σ = U \\Lambda V^T\\]",
+          "explanation": "Eigenvectors help us find the directions of maximum variance."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the eigenvectors to form U and V.",
+          "mathHtml": "\\[A = U \\Sigma V^T\\]",
+          "explanation": "Now we have our SVD decomposition!"
+        }
+      ],
+      "finalAnswer": "The SVD decomposition is..."
+    },
+    "intuition": "SVD helps us understand the underlying structure of a matrix by decomposing it into its most important features.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:41:18.173Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

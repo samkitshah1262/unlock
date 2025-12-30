@@ -1,0 +1,125 @@
+[
+  {
+    "id": "prob_wex_cdf_continuous_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often encounter continuous random variables (RVs). The cumulative distribution function (CDF) plays a crucial role in understanding these RVs.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\",",
+    "name": "Continuous CDF",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Find the CDF of a continuous RV X with probability density function (PDF) \\(f(x) = 2x e^{-x^2}\\) for \\(x \\geq 0\\).</p>\",",
+    "hints": [
+      "Hint: Use the definition of the CDF"
+    ],
+    "solutionHtml": "<p>To find the CDF, we integrate the PDF from negative infinity to x:</p><ul><li>Step 1: Integrate the PDF from -∞ to x</li>\\(F(x) = \\int_{-\\infty}^x f(t) dt = \\int_0^x 2t e^{-t^2} dt\\)</li><li>Step 2: Evaluate the integral using substitution or integration by parts</li>\\(F(x) = -e^{-x^2}\\)</li><li>Step 3: Verify that F(x) is a valid CDF (monotonic and approaches 0 as x → -∞, 1 as x → ∞)</li></ul>\",",
+    "answerShort": "-e^{-x^2}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of X with PDF \\(f(x) = 2x e^{-x^2}\\) for \\(x \\geq 0\\).</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Integrate the PDF from -∞ to x\", \"mathHtml\": \"\\(F(x) = \\int_{-\\infty}^x f(t) dt = \\int_0^x 2t e^{-t^2} dt\\)\", \"explanation\": \"We're using the definition of the CDF\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\(F(x) = -e^{-x^2}\\)\", \"explanation\": \"We'll use substitution or integration by parts to evaluate this integral\"}, {\"stepNumber\": 3, \"description\": \"Verify that F(x) is a valid CDF\", \"mathHtml\": \"\", \"explanation\": \"We need to check that the CDF is monotonic and approaches 0 as x → -∞, 1 as x → ∞\"} ],",
+    "finalAnswer": "-e^{-x^2}\" },",
+    "intuition": "The CDF for a continuous RV integrates the PDF over all possible values up to x. This gives us the probability that X takes on a value less than or equal to x.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:42:40.686Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_continuous_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "contentHtml": "<p>In this worked example, we'll derive the cumulative distribution function (CDF) for a continuous random variable.</p>",
+    "formula": {
+      "latex": "\\[F(x) = \\int_{-\\infty}^{x} f(t) dt\\]",
+      "name": "Continuous CDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the CDF of a continuous random variable X with probability density function (PDF) f(x) = 2x.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's find the CDF F(x) for X.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the integral",
+          "mathHtml": "\\[F(x) = \\int_{-\\infty}^{x} f(t) dt\\]",
+          "explanation": "We're integrating the PDF from negative infinity to x."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[F(x) = \\int_{0}^{x} 2t dt = x^2\\]",
+          "explanation": "We're evaluating the definite integral using the fundamental theorem of calculus."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check the limits",
+          "mathHtml": "",
+          "explanation": "The lower limit is 0 because the PDF is 0 for t < 0."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the CDF properties",
+          "mathHtml": "",
+          "explanation": "We can verify that F(x) is non-decreasing and approaches 1 as x approaches infinity."
+        }
+      ],
+      "finalAnswer": "\\[F(x) = x^2\\]"
+    },
+    "intuition": "The CDF for a continuous random variable represents the probability that the value of X falls within a given interval.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:43:08.702Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_continuous_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "cdf_continuous",
+    "title": "CDF for Continuous Random Variables",
+    "problem": "{",
+    "statementHtml": "Find the cumulative distribution function (CDF) for a continuous random variable X with probability density function (PDF) f(x) = 2x.",
+    "hints": [
+      "Hint: Start by finding the CDF's derivative"
+    ],
+    "solutionHtml": "<p>To find the CDF, we integrate the PDF:</p>\\[F_X(x) = \\\\int_{-\\\\infty}^x f(t) dt\\], <p>Then, we evaluate the integral:</p>\\[F_X(x) = \\\\int_{0}^x 2t dt = x^2\\], <p>The CDF is a cumulative function, so it must be non-decreasing. We can verify this by taking the derivative:</p>\\[\\frac{d}{dx} F_X(x) = 2x > 0 \\\\text{ for } x > 0\\], <p>This confirms that the CDF is indeed non-decreasing.</p>\",",
+    "answerShort": "F_X(x) = x^2\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF for X with PDF f(x) = e^{-x}:</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Integrate the PDF\", \"mathHtml\": \"\\\\[F_X(x) = \\\\int_{-\\\\infty}^x e^{-t} dt\\]\", \"explanation\": \"This is the definition of the CDF.\" }, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\\\[F_X(x) = -e^{-x} + C\\]\", \"explanation\": \"We use integration by parts to evaluate the integral.\" }, {\"stepNumber\": 3, \"description\": \"Determine the constant C\", \"mathHtml\": \"\\\\[C = \\\\lim_{x\\\\to\\\\infty} (-e^{-x}) = 0\\]\", \"explanation\": \"The constant C is determined by taking the limit as x approaches infinity.\" }, {\"stepNumber\": 4, \"description\": \"Write the final answer\", \"mathHtml\": \"\\\\[F_X(x) = 1 - e^{-x}\\]\", \"explanation\": \"We substitute the value of C and simplify the expression.\" } ],",
+    "finalAnswer": "F_X(x) = 1 - e^{-x}\" },",
+    "intuition": "The CDF for a continuous random variable is a cumulative function that represents the probability that X takes on a value less than or equal to x.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:43:43.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "la_prb_cross_product_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "title": "Cross Product in R³",
+    "problem": {
+      "statementHtml": "Find the cross product of vectors <i>a</i> = (1, 2, 3) and <i>b</i> = (4, 5, 6).",
+      "hints": [
+        "Recall that the cross product is a vector.",
+        "Use the formula for the cross product in R³: <i>c</i> = (<i>a</i><sub>1</sub><i>b</i><sub>2</sub> - <i>a</i><sub>2</sub><i>b</i><sub>1</sub>, <i>a</i><sub>2</sub><i>b</i><sub>3</sub> - <i>a</i><sub>3</sub><i>b</i><sub>2</sub>, <i>a</i><sub>3</sub><i>b</i><sub>1</sub> - <i>a</i><sub>1</sub><i>b</sub><sub>3</sub>).",
+        "Check that the result is a vector."
+      ],
+      "solutionHtml": "<p>To find the cross product, we can plug in the values:</p>\n<p><i>c</i> = ((1)(5) - (2)(4), (2)(6) - (3)(5), (3)(4) - (1)(6)) = (5-8, 12-15, 12-10) = (-3, -3, 2).</p>\n<p>The result is a vector.</p>",
+      "answerShort": "-3i + (-3j) + 2k"
+    },
+    "commonMistakes": [
+      "Forgetting to check the units of the cross product",
+      "Not using the correct formula"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:24:39.699Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cross_product_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "problem": "{",
+    "statementHtml": "<p>Find the cross product of two vectors <code>\\(\\mathbf{a} = (1, 2, 3)\\)</code> and <code>\\(\\mathbf{b} = (4, 5, 6)\\)</code> in R³.</p>\",",
+    "hints": [
+      "<p>Recall the definition of cross product: it's a vector orthogonal to both input vectors.</p>",
+      "<p>Think about how you can use the determinant of a matrix to compute the cross product.</p>",
+      "<p>Use the formula for cross product in R³ and plug in the values given.</p>"
+    ],
+    "solutionHtml": "<p>To find the cross product, we'll create a 3x3 matrix <code>\\[\\begin{bmatrix} i & j & k \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{bmatrix}\\]</code> and compute its determinant. The formula is:</p><p>\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]</p><p>In our case, this becomes:</p><p>\\[\\begin{vmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 0 & 0 & 0 \\end{vmatrix}\\] = (5*0 - 6*0) + (6*1 - 5*0) + (4*2 - 3*4)</p><p>After simplifying, we get:</p><p>\\[\\mathbf{a} \\times \\mathbf{b} = <(6-0), (4*2-3*4), (0-10)> = <12, -8, 0></code>.</p>\",",
+    "answerShort": "<code>\\(\\mathbf{a} \\times \\mathbf{b} = <12, -8, 0>\\)</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:25:06.549Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cross_product_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "problem": "{",
+    "statementHtml": "<p>Find the cross product of vectors <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math> in R³.</p>\",",
+    "hints": [
+      "Recall that the cross product is a vector operation.",
+      "Think about how it relates to the area of the parallelogram formed by the two vectors."
+    ],
+    "solutionHtml": "<p>To find the cross product, we can use the formula:</p><p>\\[\\mathbf{a} \\times \\mathbf{b} = (\\mathbf{a}_1 \\mathbf{b}_2 - \\mathbf{a}_2 \\mathbf{b}_1) \\mathbf{i} + (\\mathbf{a}_2 \\mathbf{b}_3 - \\mathbf{a}_3 \\mathbf{b}_2) \\mathbf{j} + (\\mathbf{a}_3 \\mathbf{b}_1 - \\mathbf{a}_1 \\mathbf{b}_3) \\mathbf{k}</p><p>Now, plug in the values of <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math>.</p>\",",
+    "answerShort": "<code>&#x2714; (vector)</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:25:25.806Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,469 @@
+[
+  {
+    "id": "prob_con_correlation_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation: Independence vs Uncorrelated",
+    "contentHtml": "<p>In probability theory, correlation measures the strength and direction of a linear relationship between two random variables.</p><p>Given two random variables X and Y, their joint distribution is characterized by a covariance matrix. The Pearson correlation coefficient ρ measures the linear relationship between X and Y.</p>",
+    "formula": "{",
+    "latex": "\\(\\rho = \\frac{\\text{cov}(X,Y)}{\\sigma_X\\sigma_Y}\\)\",",
+    "name": "Pearson Correlation Coefficient\" },",
+    "intuition": "Correlation is a measure of how well we can predict one variable from another. A high correlation means that knowing the value of one variable helps us better understand the other, while independence implies no predictive power.",
+    "realWorldApplications": [
+      "In machine learning, correlation is used to identify relevant features and reduce dimensionality."
+    ],
+    "commonMistakes": [
+      "Confusing correlation with causation",
+      "Assuming a high correlation means there's a strong relationship"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:09:29.918Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_correlation_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Understanding Correlation",
+    "contentHtml": "<p>Correlation measures the strength and direction of a linear relationship between two random variables.</p><p>In essence, it answers the question: 'Do changes in one variable tend to be accompanied by similar changes in another?'</p>",
+    "formula": {
+      "latex": "\\(r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\)",
+      "name": "Pearson Correlation Coefficient"
+    },
+    "intuition": "Think of correlation like a 'directional force' between two variables. A strong positive correlation means that as one variable increases, the other tends to increase too.",
+    "realWorldApplications": [
+      "In machine learning, correlation is used in feature engineering and dimensionality reduction"
+    ],
+    "commonMistakes": [
+      "Confusing correlation with causation",
+      "Failing to check for outliers or non-linear relationships"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:09:47.928Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_correlation_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation: Joint Distributions",
+    "contentHtml": "<p>In probability theory, correlation measures the linear relationship between two random variables X and Y.</p><p>Intuitively, if we plot a scatterplot of (X, Y), a positive correlation means that as X increases, Y tends to increase as well. Conversely, a negative correlation implies that as X grows, Y tends to decrease.</p>",
+    "formula": "{",
+    "latex": "\\( \\rho = \\frac{\\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)]}{\\sigma_X \\sigma_Y} \\)\",",
+    "name": "Pearson Correlation Coefficient\" },",
+    "intuition": "Correlation is a measure of how well we can predict Y from X, and vice versa. A high correlation indicates that knowing one variable helps us better understand the other.",
+    "visualDescription": "A scatterplot with positive/negative correlations would help illustrate this concept.",
+    "commonMistakes": [
+      "Confusing correlation with causation"
+    ],
+    "realWorldApplications": [
+      "In machine learning, correlation is used to identify relevant features and relationships between variables."
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:10:06.117Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_correlation_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Pearson Correlation and Bounds",
+    "contentHtml": "<p>The Pearson correlation coefficient measures the linear relationship between two random variables.</p><p>It's a fundamental concept in probability theory, with applications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[ \\rho(X,Y) = \\frac{\\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)]}{\\sigma_X\\sigma_Y} \\]\",",
+    "name": "Pearson Correlation Coefficient\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two variables, X and Y, with means μX and μY, respectively. Calculate the Pearson correlation coefficient if X has variance σX^2 and Y has variance σY^2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the covariance between X and Y\", \"mathHtml\": \"\\[ \\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)] = \\sum_{i=1}^{n} (x_i-\\mu_X)(y_i-\\mu_Y) \\]\", \"explanation\": \"We're using the definition of covariance.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the means and variances\", \"mathHtml\": \"\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "The Pearson correlation coefficient measures how well we can predict Y from X. A value close to 1 indicates a strong positive linear relationship, while a value close to -1 indicates a strong negative linear relationship.",
+    "realWorldApplications": [
+      "In machine learning, the Pearson correlation is used as a feature selection method to identify highly correlated features."
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:10:31.977Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_correlation_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Pearson Correlation and Bounds",
+    "contentHtml": "<p>The Pearson correlation coefficient measures the linear relationship between two random variables.</p>",
+    "formula": "{",
+    "latex": "\\[ \\rho(X,Y) = \\frac{\\mathrm{E}[(X-\\mu_X)(Y-\\mu_Y)]}{\\sigma_X \\sigma_Y} \\]\",",
+    "name": "Pearson Correlation\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two variables, height and weight. We want to measure the correlation between them.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the mean of each variable\", \"mathHtml\": \"\\\\[ \\mu_X = \\\\frac{1}{n} \\\\sum_{i=1}^n X_i \\\\]\", \"explanation\": \"This helps us center our data\"}, {\"stepNumber\": 2, \"description\": \"Calculate the covariance\", \"mathHtml\": \"\\\\[ Cov(X,Y) = \\\\mathrm{E}[(X-\\\\mu_X)(Y-\\\\mu_Y)] \\\\]\", \"explanation\": \"The numerator of the Pearson correlation formula\"} ],",
+    "finalAnswer": "The answer to this example\" },",
+    "intuition": "The Pearson correlation measures how well we can predict one variable from another using a linear function.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:10:52.336Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_correlation_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Pearson Correlation and Bounds",
+    "contentHtml": "<p>The Pearson correlation coefficient measures the linear relationship between two random variables X and Y.</p><p>It's defined as:</p>\\(r = \\frac{\\text{cov}(X, Y)}{\\sigma_X \\sigma_Y}\\)<p>This formula is essential in understanding the strength and direction of a linear association between two variables.</p>\",",
+    "formula": "{",
+    "latex": "\\(r = \\frac{\\text{cov}(X, Y)}{\\sigma_X \\sigma_Y}\\)\",",
+    "name": "Pearson Correlation\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two variables X and Y with means 2 and 3, respectively. If the covariance is 1, what's the Pearson correlation?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the standard deviations\", \"mathHtml\": \"\\( \\sigma_X = \\sqrt{\\frac{1}{n} \\sum_{i=1}^n (x_i - 2)^2}\\)\", \"explanation\": \"We need to find the standard deviation of X\"} ],",
+    "finalAnswer": "The Pearson correlation is 1/√(4) ≈ 0.5\" },",
+    "intuition": "The Pearson correlation measures how well we can predict Y from X, and vice versa.",
+    "realWorldApplications": [
+      "In machine learning, the Pearson correlation is used to evaluate feature importance."
+    ],
+    "tags": [
+      "correlation",
+      "Pearson"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:11:14.938Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_correlation_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation: Independence vs Uncorrelated",
+    "contentHtml": "<p>The Pearson correlation coefficient measures the linear relationship between two random variables. In this theorem, we explore the connection between independence and uncorrelatedness.</p>",
+    "formula": "{",
+    "latex": "\\(r_{X,Y} = \\frac{\\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)]}{\\sigma_X \\sigma_Y}\\)",
+    "name": "Pearson Correlation\" },",
+    "theorem": "{",
+    "statement": "\\\\[ X and Y are independent if and only if their Pearson correlation coefficient, r_{X,Y}, is equal to 0. \\\\\\\\ If the variables are uncorrelated, then |r_{X,Y}| \\\\leq 1. \\]\",",
+    "proofSketch": "The proof involves showing that independence implies zero correlation, and vice versa. The bound on the absolute value of the correlation coefficient follows from the Cauchy-Schwarz inequality.\" },",
+    "intuition": "Intuitively, uncorrelatedness means that knowing one variable doesn't give you any information about the other. Independence takes this a step further by implying that the variables are also statistically independent.",
+    "realWorldApplications": [
+      "In machine learning, understanding correlation and independence is crucial for feature selection and dimensionality reduction."
+    ],
+    "tags": [
+      "correlation",
+      "independence",
+      "uncorrelated"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:11:36.755Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_correlation_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation Theorem",
+    "contentHtml": "<p>The Pearson correlation coefficient measures the linear relationship between two random variables X and Y.</p>",
+    "formula": "{",
+    "latex": "\\\\(r_{XY} = \\\\frac{\\\\sum{(x_i - \\\\bar{x})(y_i - \\\\bar{y})}{\\\\sqrt{\\\\sum{(x_i - \\\\bar{x})^2}\\\\sum{(y_i - \\\\bar{y})^2}}}\\)\",",
+    "name": "Pearson Correlation\" },",
+    "theorem": "{",
+    "statement": "\\[|r_{XY}| \\leq 1,\\] with equality if and only if X and Y are linearly related.",
+    "proofSketch": "The proof involves showing that the correlation coefficient is a Cauchy-Schwarz inequality.\" },",
+    "intuition": "This theorem provides a fundamental bound on the strength of the relationship between two variables. It shows that the absolute value of the correlation coefficient is always less than or equal to 1, with equality only when there is a linear relationship.",
+    "realWorldApplications": [
+      "In machine learning, understanding the correlation between features is crucial for feature selection and engineering."
+    ],
+    "tags": [
+      "probability",
+      "correlation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:11:55.342Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_correlation_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": "{",
+    "statementHtml": "<p>Given two random variables X and Y with joint distribution P(X,Y), show that the correlation coefficient ρ is bounded by [-1,1].</p>",
+    "hints": [
+      "Consider the definition of correlation as a covariance normalized by standard deviations.",
+      "Think about what happens when one variable is constant.",
+      "Use the fact that the variance of X is always non-negative."
+    ],
+    "solutionHtml": "<p>To prove the bound, we can start with the definition of ρ:</p>\\(\\rho = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\)<p>Then, we can use the fact that the variance is always non-negative to get:</p>\\(-1 \\leq \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y} \\leq 1\\)<p>This shows that ρ is bounded by [-1,1].</p>\",",
+    "answerShort": "[-1,1]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:13.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_correlation_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": {
+      "statementHtml": "<p>Let X and Y be random variables with joint distribution <i>P(x,y)</i>. Show that if X and Y are uncorrelated, then they must also be independent.</p>",
+      "hints": [
+        "<p>If X and Y are uncorrelated, what does that mean for their covariance?</p>",
+        "<p>How can we use the fact that <i>P(x,y)</i> is a joint distribution to relate independence to correlation?</p>",
+        "<p>What property of independent random variables implies that they must be uncorrelated?</p>"
+      ],
+      "solutionHtml": "<p>To show that X and Y are independent if they're uncorrelated, we'll use the fact that <i>P(x,y)</i> is a joint distribution. Recall that two events A and B are independent if their probabilities satisfy <i>P(A ∩ B) = P(A)P(B)</i>.</p><p>If X and Y are uncorrelated, then their covariance <i>E[(X-EX)(Y-EY)]</i> is zero.</p><p>This implies that for any values x and y, we have:</p><p><i>P(x,y) = P(x)P(y)</i>.</p><p>This is exactly the condition for independence of X and Y. Therefore, if X and Y are uncorrelated, then they must also be independent.</p>",
+      "answerShort": "<i>X and Y are independent</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that covariance is not the same as correlation",
+      "Assuming independence implies zero correlation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:36.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_correlation_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": "{",
+    "statementHtml": "Let X and Y be random variables with joint distribution P(X,Y). Prove that if X and Y are uncorrelated, then they must be independent.",
+    "hints": [
+      "Start by recalling the definition of correlation coefficient.",
+      "Use the fact that E[XY] = E[X]E[Y] for independence.",
+      "Compare the expressions for correlated and uncorrelated cases."
+    ],
+    "solutionHtml": "<p>To prove this, we first recall the definition of correlation coefficient:</p>\\(\\rho_{X,Y} = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\)<p>Since X and Y are uncorrelated, we have that \\(\\rho_{X,Y} = 0\\). This implies that</p>\\(0 = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\) <p>Simplifying this expression gives us:</p>\\(\\text{Cov}(X,Y) = 0\\)<p>Now, recall the definition of covariance:</p>\\(\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]\\)<p>This implies that</p>\\(E[XY] = E[X]E[Y]\\)<p>This is exactly the condition for independence. Therefore, if X and Y are uncorrelated, then they must be independent.</p>\",",
+    "answerShort": "If X and Y are uncorrelated, then they are independent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:59.836Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_correlation_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Pearson Correlation and Bounds",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate Pearson correlation coefficient and its bounds.</p>",
+    "formula": {
+      "latex": "\\[r = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2}}\\]",
+      "name": "Pearson Correlation Coefficient"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two random variables X and Y with means \\mu_X and \\mu_Y, respectively. Calculate the Pearson correlation coefficient r.</p>",
+      "hints": [
+        "Hint: Use the definition of Pearson correlation"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>We'll calculate the numerator first:</li><li>\\(\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y}) = \\sum_{i=1}^n x_i y_i - \\bar{x}\\bar{y}\\)</li><li>Next, we'll calculate the denominator:</li><li>\\(\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2} = \\sigma_X \\sigma_Y\\)</li><li>Now, we can plug in the values:</li><li>r = \\frac{\\sum_{i=1}^n x_i y_i - \\bar{x}\\bar{y}}{\\sigma_X \\sigma_Y}</li></ul>",
+      "answerShort": "r = \\frac{\\sum_{i=1}^n x_i y_i - \\bar{x}\\bar{y}}{\\sigma_X \\sigma_Y}"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have two random variables X and Y with the following data:</p><ul><li>X: [1, 2, 3, 4, 5]</li><li>Y: [2, 3, 5, 7, 11]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the means of X and Y",
+          "mathHtml": "\\(\\bar{x} = \\frac{1 + 2 + 3 + 4 + 5}{5} = 3, \\bar{y} = \\frac{2 + 3 + 5 + 7 + 11}{5} = 5.2\\)",
+          "explanation": "We need the means to calculate the Pearson correlation coefficient"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the numerator of the Pearson correlation coefficient",
+          "mathHtml": "\\(\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y}) = (1-3)(2-5.2) + (2-3)(3-5.2) + ... + (5-3)(11-5.2) = 10.4\\)",
+          "explanation": "We're using the definition of Pearson correlation to calculate the numerator"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the denominator of the Pearson correlation coefficient",
+          "mathHtml": "\\(\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\sqrt{\\sum_{i=1}^n (y_i - \\bar{y})^2} = \\sigma_X \\sigma_Y\\)",
+          "explanation": "We'll calculate the variances of X and Y separately"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the Pearson correlation coefficient",
+          "mathHtml": "\\(r = \\frac{10.4}{\\sqrt{2.5} \\sqrt{33.6}} = 0.67\\)",
+          "explanation": "Now we can plug in the values and calculate the Pearson correlation coefficient"
+        }
+      ],
+      "finalAnswer": "r = 0.67"
+    },
+    "intuition": "The Pearson correlation coefficient measures the linear relationship between two random variables.",
+    "visualDescription": "A scatter plot of X vs Y with a positive slope would be helpful to visualize the correlation.",
+    "commonMistakes": [
+      "Forgetting to calculate the means",
+      "Incorrectly calculating the numerator"
+    ],
+    "realWorldApplications": [
+      "Linear regression in machine learning"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:14:02.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_correlation_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation in Joint Distributions",
+    "contentHtml": "<p>In probability theory, correlation measures the strength and direction of a linear relationship between two random variables.</p>",
+    "formula": "{",
+    "latex": "\\(r = \\frac{\\mathbb{E}[(X-\\mu_X)(Y-\\mu_Y)]}{\\sigma_X\\sigma_Y}\\)\",",
+    "name": "Pearson Correlation Coefficient\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given two random variables X and Y with joint distribution \\(f(x, y)\\), find the correlation coefficient.</p>\",",
+    "hints": [
+      "Use the definition of correlation"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two random variables X and Y with joint distribution \\(f(x, y) = \\frac{1}{4}e^{-(x-2)^2-(y-3)^2}\\). Find the correlation coefficient.</p>\",",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Calculate the correlation coefficient",
+    "mathHtml": "\\[r = \\frac{\\text{Cov}(X, Y)}{\\sigma_X\\sigma_Y}\\]\",",
+    "explanation": "The correlation coefficient is a normalized measure of the covariance\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "Correlation measures how well we can predict one variable given another. A high correlation means that knowing one value helps us guess the other, while a low correlation means they're independent.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:14:37.000Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_correlation_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "title": "Correlation: Independence vs Uncorrelated",
+    "contentHtml": "<p>In this worked example, we'll explore how to identify whether two variables are independent or just uncorrelated.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have two random variables X and Y with joint distribution P(X,Y). We want to determine if they're independent or just uncorrelated.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the correlation coefficient\", \"mathHtml\": \"\\[r = \\frac{\\text{cov}(X,Y)}{\\sigma_X\\sigma_Y}\\]\", \"explanation\": \"The Pearson correlation coefficient measures the linear relationship between X and Y.\"}, {\"stepNumber\": 2, \"description\": \"Check if the correlation is close to zero\", \"mathHtml\": \"\", \"explanation\": \"If the absolute value of r is close to zero, it indicates that there's no strong linear relationship.\"}, {\"stepNumber\": 3, \"description\": \"Verify independence using the joint distribution\", \"mathHtml\": \"\\[P(X,Y) = P(X)P(Y)\\]\", \"explanation\": \"Independence implies that the joint distribution factors into the product of the marginal distributions.\"}, {\"stepNumber\": 4, \"description\": \"Compare the results\", \"mathHtml\": \"\", \"explanation\": \"If the correlation is close to zero and the joint distribution factors as expected, we can conclude that X and Y are independent.\"} ],",
+    "finalAnswer": "X and Y are independent if the correlation is close to zero and P(X,Y) = P(X)P(Y).\" },",
+    "intuition": "Correlation only tells us about linear relationships. Independence implies a more general lack of dependence.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:15:01.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

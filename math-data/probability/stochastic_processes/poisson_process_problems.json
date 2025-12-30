@@ -1,0 +1,101 @@
+[
+  {
+    "id": "prob_prb_poisson_process_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "problem": "{",
+    "statementHtml": "<p>Poisson Process: Thinning</p><p>Given a Poisson process with rate λ, thin it by retaining only every k-th event.</p>",
+    "hints": [
+      "Think about the interarrival times.",
+      "Consider the conditional probability of an event occurring given that the previous event was retained."
+    ],
+    "solutionHtml": "<p>To thin the Poisson process, we need to find the probability that an event is retained given that it occurs.</p><p>\\[P(\\text{retained} \\mid \\text{event}) = \\frac{\\lambda}{k\\lambda} = \\frac{1}{k}\\]</p><p>This means the thinned process has rate $\\frac{\\lambda}{k}$.</p>\",",
+    "answerShort": "The probability of an event being retained is 1/k, and the rate of the thinned process is λ/k.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:33:42.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_poisson_process_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "problem": "{",
+    "statementHtml": "<p>Poisson Process Thinning Problem:</p><p>A Poisson process with rate $\\lambda$ is given. We want to thin it by keeping only every $k^{th}$ event.</p>\",",
+    "hints": [
+      "Think about the interarrival times.",
+      "Consider what happens when we thin a Poisson process."
+    ],
+    "solutionHtml": "<p>To solve this, let's first find the rate of the thinned process. The time between events is still exponentially distributed with mean $1/\\lambda$.</p><p>Then, we can use the fact that the interarrival times are independent and identically distributed to find the probability that a given event is kept.</p>\",",
+    "answerShort": "The rate of the thinned process is $\\frac{\\lambda}{k}$.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:33:58.202Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_poisson_process_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "problem": "{",
+    "statementHtml": "<p>Poisson Process Thinning: Given a Poisson process with rate λ and interarrival times T<sub>1</sub>, T<sub>2</sub>, ..., let us consider thinning this process by retaining only every k-th event. Find the rate of the thinned process.</p>",
+    "hints": [
+      "<p>Think about the rate of events in a fixed time interval.</p>",
+      "<p>Consider the probability that an event is retained given it occurs.</p>",
+      "<p>Use the definition of the Poisson process to find the rate of the thinned process.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to find the expected number of events in a fixed time interval. Let N(t) be the number of events in [0,t]. Then, the rate of the original Poisson process is λ = E[N(t)].</p><p>We thin the process by retaining only every k-th event. This means that we retain an event if and only if its index is a multiple of k. Let M(t) be the number of retained events in [0,t]. Then, the rate of the thinned process is λ'<sub>k</sub> = E[M(t)].</p><p>We can find λ'<sub>k</sub> by considering the probability that an event is retained given it occurs:</p><p>\\[\\lambda'<sub>k</sub> = \\frac{1}{k} \\cdot \\lambda\\]</p>\",",
+    "answerShort": "<p>The rate of the thinned process is λ'<sub>k</sub> = 1/k \\* λ.</p>\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:34:25.044Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_poisson_process_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "poisson_process",
+    "problem": {
+      "statementHtml": "<p>Poisson Process Thinning: Given a Poisson process with rate λ and interarrival times T1, T2, ..., TN, thin the process to obtain a new process with rate μ (0 ≤ μ ≤ λ). Find the distribution of the interarrival time in the thinned process.</p>",
+      "hints": [
+        "<p>Think about the relationship between the original Poisson process and its thinning.</p>",
+        "<p>Consider the conditional probability of an event occurring given that it has occurred at all.</p>",
+        "<p>Use the fact that the interarrival times in the thinned process are i.i.d. exponential random variables with rate μ.</p>"
+      ],
+      "solutionHtml": "<p>The thinning operation can be viewed as a Bernoulli process with probability p = μ/λ of an event occurring at each time step. The distribution of the interarrival time in the thinned process is then the convolution of the exponential distributions with rates λ and μ.</p>",
+      "answerShort": "Exponential distribution with rate μ"
+    },
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:34:41.693Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

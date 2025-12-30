@@ -1,0 +1,135 @@
+[
+  {
+    "id": "stat_prb_mle_concept_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "problem": "{",
+    "statementHtml": "Find the maximum likelihood estimate (MLE) of a parameter <i>θ</i> given i.i.d. observations <i>x_1, …, x_n</i> from a probability density function (PDF) <i>f(x | θ)</i>.",
+    "hints": [
+      "Start by defining the likelihood function as the product of individual PDFs.",
+      "Recall that the log-likelihood is the logarithm of the likelihood function. This can simplify calculations.",
+      "The MLE will occur at the value of <i>θ</i> that maximizes the log-likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we first define the likelihood function:</p>\\n\\ \\[L(θ) = \\prod_{i=1}^n f(x_i | θ).\\]\\n\\ <p>Next, we take the logarithm of both sides to obtain the log-likelihood:</p>\\n\\ \\[\\ell(θ) = \\log L(θ) = \\sum_{i=1}^n \\log f(x_i | θ).\\]\\n\\ <p>To find the MLE, we set the derivative of the log-likelihood with respect to <i>θ</i> equal to zero:</p>\\n\\ \\[\\frac{d}{dθ} \\ell(θ) = 0.\\]\\n\\ <p>Solving for <i>θ</i>, we find the MLE.</p>\",",
+    "answerShort": "The maximum likelihood estimate (MLE) is the value of <i>θ</i> that maximizes the log-likelihood.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:05.240Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimator (MLE) of a parameter <i>&theta;</i> given i.i.d. observations <i>x</i><sub>1</sub>, …, <i>x</i><sub>n</sub> from a probability distribution with density function <i>f(x | &theta;)</i>.</p>",
+    "hints": [
+      "<p>The likelihood function is the product of the densities.</p>",
+      "<p>Take the logarithm to simplify the calculation.</p>",
+      "<p>Find the derivative and set it equal to zero.</p>"
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p><p>\\(L(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\)</p><p>Take the logarithm:</p><p>\\(\\ell(\\theta | x) = \\log L(\\theta | x) = \\sum_{i=1}^n \\log f(x_i | \\theta)\\)</p><p>Find the derivative and set it equal to zero:</p><p>\\(0 = \\frac{\\partial \\ell}{\\partial \\theta} = \\sum_{i=1}^n \\frac{f'(x_i | \\theta)}{f(x_i | \\theta)}\\)</p>\",",
+    "answerShort": "<i>&theta;</i> that maximizes the likelihood function\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:24.784Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with probability density function (PDF) f(x; &theta;), find the maximum likelihood estimate (MLE) of the parameter &theta;</p>",
+      "hints": [
+        "Start by defining the likelihood function L(&theta; | x) = ∏[i=1 to n] f(xi; &theta;)",
+        "The log-likelihood function is useful for optimization",
+        "Use the first-order condition to find the MLE"
+      ],
+      "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function L(&theta; | x) = ∏[i=1 to n] f(xi; &theta;).</p><ol><li>Take the logarithm of both sides: ln(L(&theta; | x)) = ∑[i=1 to n] ln(f(xi; &theta;)).</li><li>Use the fact that ln(a*b) = ln(a) + ln(b) and simplify:</li><li>Now, take the derivative with respect to &theta; and set it equal to 0:</li></ol>",
+      "answerShort": "&theta; = (1/n) ∑[i=1 to n] xi"
+    },
+    "commonMistakes": [
+      "Forgetting to take the logarithm",
+      "Not using the first-order condition"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:42.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. observations <span class=\"math\">x_1, x_2, ..., x_n</span>, find the value of the parameter <span class=\"math\">\theta</span> that maximizes the likelihood function.</p>",
+    "hints": [
+      "<p>The likelihood function is a product of probability density functions.</p>",
+      "<p>Start by writing down the log-likelihood function and simplify it.</p>",
+      "<p>Now, set the derivative of the log-likelihood with respect to <span class=\"math\">\theta</span> equal to zero and solve for <span class=\"math\">\theta</span>.</p>"
+    ],
+    "solutionHtml": "<p>To find the maximum likelihood estimator (MLE), we first write down the likelihood function:</p><p>\\[f(x_1, x_2, ..., x_n | \\theta) = \\prod_{i=1}^n f(x_i | \\theta)\\]</p><p>Next, we take the log of both sides and simplify:</p><p>\\[\\log(f(x_1, x_2, ..., x_n | \\theta)) = \\sum_{i=1}^n \\log(f(x_i | \\theta))\\]</p><p>Now, set the derivative of the log-likelihood with respect to <span class=\\\"math\\\">\\theta</span> equal to zero:</p><p>\\[\\frac{\\partial}{\\partial \\theta} \\sum_{i=1}^n \\log(f(x_i | \\theta)) = 0\\]</p><p>Solve for <span class=\\\"math\\\">\\theta</span>, and we have the MLE.</p>\",",
+    "answerShort": "<span class=\\\"math\\\">\\\\hat{\\\\theta}</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:31:05.704Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. random variables X_1, ..., X_n with probability density function (PDF) f(x|θ), find the maximum likelihood estimate (MLE) of θ.</p>",
+    "hints": [
+      "Start by defining the likelihood function L(θ|x).",
+      "Notice that the log-likelihood is a sum of terms.",
+      "Focus on finding the derivative of the log-likelihood with respect to θ."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function. Since the log-likelihood is a sum of terms, we can focus on maximizing each term separately.</p><p>Let's denote the log-likelihood as ℓ(θ|x) = ∑_{i=1}^n log(f(X_i|θ)).</p><p>To find the MLE, we set the derivative of ℓ with respect to θ equal to 0:</p><p>\\[\\frac{\\partial \\ell}{\\partial \\theta} = \\sum_{i=1}^n \\frac{f'(X_i|\\theta)}{f(X_i|\\theta)} = 0.\\]</p><p>Solving for θ, we get the MLE.</p>\",",
+    "answerShort": "The maximum likelihood estimate is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:31:24.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

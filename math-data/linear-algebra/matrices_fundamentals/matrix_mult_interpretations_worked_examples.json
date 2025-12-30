@@ -1,0 +1,133 @@
+[
+  {
+    "id": "la_wex_matrix_mult_interpretations_008",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore different interpretations of matrix multiplication.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\cdot \\mathbf{B} = \\sum_{i=1}^n a_{i} b_i\\]",
+      "name": "Scalar Product"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two matrices A and B, compute the matrix product AB.</p>",
+      "hints": [
+        "Think about linear combinations of columns"
+      ],
+      "solutionHtml": "<p>We can interpret matrix multiplication in various ways:</p><ul><li>As a linear combination of columns: \\[\\mathbf{AB} = \\sum_{j=1}^m \\mathbf{a}_j b_j^T\\]</li><li>As a dot product between rows and columns: \\[\\mathbf{AB} = \\sum_{i=1}^n \\mathbf{a}_i (\\mathbf{B}\\mathbf{b}_i)^T\\]</li></ul>",
+      "answerShort": "The matrix product AB"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the matrix product \\[\\begin{bmatrix}1 &amp; 2 \\\\ 3 &amp; 4 \\end{bmatrix}\\] and \\[\\begin{bmatrix}5 \\\\ 6 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write the matrices as linear combinations of columns",
+          "mathHtml": "\\[\\mathbf{A} = 1\\mathbf{a}_1 + 2\\mathbf{a}_2, \\mathbf{B} = 5\\mathbf{b}_1 + 6\\mathbf{b}_2\\]",
+          "explanation": "This helps us see the linear combination of columns"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the dot products between rows and columns",
+          "mathHtml": "\\[\\mathbf{AB} = (1\\mathbf{a}_1 + 2\\mathbf{a}_2)(5\\mathbf{b}_1 + 6\\mathbf{b}_2)\\]",
+          "explanation": "This shows the dot product between rows and columns"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Expand the dot products",
+          "mathHtml": "\\[\\mathbf{AB} = 5\\mathbf{a}_1 \\mathbf{b}_1 + 6\\mathbf{a}_1 \\mathbf{b}_2 + 10\\mathbf{a}_2 \\mathbf{b}_1 + 12\\mathbf{a}_2 \\mathbf{b}_2\\]",
+          "explanation": "This gives us the final matrix product"
+        }
+      ],
+      "finalAnswer": "The resulting matrix is"
+    },
+    "intuition": "Matrix multiplication can be seen as a combination of linear combinations and dot products, allowing us to compute complex relationships between vectors.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:12:01.680Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpreting Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore how to interpret the result of matrix multiplication.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given two matrices A and B, compute the product C = AB.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the formula for matrix multiplication.\", \"mathHtml\": \"\\[C_{ij} = \\sum_k A_{ik}B_{kj}\\]\", \"explanation\": \"We're using the definition of matrix multiplication to compute each entry in C.\"}, {\"stepNumber\": 2, \"description\": \"Expand the formula for one entry in C.\", \"mathHtml\": \"\\[C_{11} = \\sum_k A_{1k}B_{k1}\\]\", \"explanation\": \"This helps us see that matrix multiplication is a linear combination of columns from B.\"}, {\"stepNumber\": 3, \"description\": \"Notice the dot product between rows in A and columns in B.\", \"mathHtml\": \"\\[C_{11} = \\sum_k (A_{1k} \\cdot B_{k1})\\]\", \"explanation\": \"This shows that matrix multiplication can be viewed as a collection of dot products.\"}, {\"stepNumber\": 4, \"description\": \"Consider the outer product of two vectors.\", \"mathHtml\": \"\\[C = uv^T\\]\", \"explanation\": \"We can think of matrix multiplication as a way to compute the outer product of each row in A with each column in B.\"}, {\"stepNumber\": 5, \"description\": \"Block multiply matrices.\", \"mathHtml\": \"\\[\\begin{bmatrix}A_1 & A_2\\end{bmatrix}\\begin{bmatrix}B_1 \\\\ B_2\\end{bmatrix} = \\begin{bmatrix}A_1B_1 + A_2B_2\\end{bmatrix}\\]\", \"explanation\": \"This illustrates how matrix multiplication can be used to combine matrices in a block-wise manner.\"} ],",
+    "finalAnswer": "The product C = AB is computed by iterating over the entries of the matrices and applying the formula.\" },",
+    "intuition": "Matrix multiplication is a way to combine information from multiple sources, allowing us to extract patterns and relationships between them.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:12:31.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore how to interpret matrix multiplication in terms of linear combinations of columns and dot products.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider the matrix product <code>\\[A \\cdot B = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} e & f \\\\ g & h \\end{bmatrix}\\]</code>. What does each entry in the resulting matrix represent?\",",
+    "steps": "[ {",
+    "stepNumber": "4\",",
+    "description": "The resulting matrix represents a linear combination of the columns of B, weighted by the rows of A",
+    "mathHtml": "<code>\\[A \\cdot B = \\text{linear combination of } B_{:,1}, B_{:,2}\\]</code>\",",
+    "explanation": "This is the key insight: matrix multiplication represents a linear combination of columns\" } ],",
+    "finalAnswer": "The resulting matrix represents a linear combination of the columns of B, weighted by the rows of A\" },",
+    "intuition": "Matrix multiplication can be thought of as computing the dot product between each row of the first matrix and each column of the second matrix. This allows us to combine and transform the columns of the second matrix in a flexible way.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:13:03.917Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "workedExample": "{",
+    "problemHtml": "Find the matrix product <code>A</code> × <code>B</code>, where <code>A</code> is a 2×3 matrix and <code>B</code> is a 3×4 matrix.",
+    "steps": "[ {",
+    "stepNumber": 5,
+    "description": "The final answer is the resulting matrix",
+    "mathHtml": "\\[C = A \\times B\\]\",",
+    "explanation": "\" } ],",
+    "finalAnswer": "The resulting matrix C\" },",
+    "intuition": "Matrix multiplication can be seen as a linear combination of columns in the first matrix, weighted by the rows of the second matrix. This is why we get a new matrix with dimensions that match the original matrices.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:13:30.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

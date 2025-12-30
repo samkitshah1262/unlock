@@ -1,0 +1,537 @@
+[
+  {
+    "id": "stat_con_spread_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>When analyzing data, it's crucial to understand how spread out or concentrated the values are. Measures of spread help us quantify this dispersion, giving insights into the underlying distribution.</p><p>The most common measures of spread include variance, standard deviation (std dev), interquartile range (IQR), range, mean absolute deviation (MAD), and coefficient of variation.</p>",
+    "formula": "{",
+    "latex": "\\( \\sigma = \\sqrt{\\frac{1}{n} \\sum_{i=1}^n (x_i - \\mu)^2} \\)\",",
+    "name": "Standard Deviation",
+    "variants": "[ {\"latex\": \"\\( \\text{IQR} = Q_3 - Q_1 \\)\", \"description\": \"Interquartile Range\"} ] },",
+    "intuition": "Measures of spread help us understand the 'scatter' in our data, allowing for more informed decisions and modeling.",
+    "realWorldApplications": [
+      "In machine learning, measures of spread are crucial for determining the effectiveness of models and identifying outliers."
+    ],
+    "commonMistakes": [
+      "Failing to consider the distribution's shape when choosing a measure of spread"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:26:09.061Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_spread_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>Measures of spread help us understand how data is dispersed around its mean or median. They're essential in statistics and machine learning.</p><p>Think of it like a school grade distribution: the average grade might be high, but what about those who scored much lower or higher? Measures of spread give you this insight.</p>",
+    "formula": {
+      "latex": "\\[\\text{Variance} = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2, \\\\ \\text{Standard Deviation} = \\sqrt{\\text{Variance}}\\]",
+      "name": "Variance and Standard Deviation",
+      "variants": [
+        {
+          "latex": "\\[\\text{Interquartile Range (IQR)} = Q_3 - Q_1, \\\\ \\text{Median Absolute Deviation (MAD)} = median(|x_i - M|)\\]",
+          "description": "Other measures of spread"
+        }
+      ]
+    },
+    "intuition": "Measures of spread help you understand the 'spread' or 'dispersion' of your data. They're useful in identifying outliers, understanding data distribution, and making predictions.",
+    "realWorldApplications": [
+      "Identifying anomalies in financial transactions",
+      "Understanding customer behavior"
+    ],
+    "commonMistakes": [
+      "Failing to consider the units of measurement when calculating measures of spread"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:26:27.471Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_spread_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>Measures of spread, such as variance, standard deviation, and interquartile range (IQR), help us understand how data is dispersed around its mean.</p><p>These measures are essential in statistics because they provide a way to quantify the amount of variation present in a dataset. This information can be used to identify outliers, detect changes in patterns, and make predictions about future observations.</p>",
+    "formula": "{",
+    "latex": "\\( \\text{Var}(X) = E[(X - E[X])^2] \\)\",",
+    "name": "Variance Formula",
+    "variants": "[ {\"latex\": \"\\( \\sigma(X) = \\sqrt{\\text{Var}(X)} \\)\", \"description\": \"Standard Deviation\"} ] },",
+    "intuition": "Think of measures of spread like the width of a distribution. A small variance indicates that most data points are close to the mean, while a large variance means they're more spread out.",
+    "realWorldApplications": [
+      "In machine learning, understanding the spread of data is crucial for model evaluation and selection."
+    ],
+    "commonMistakes": [
+      "Not considering the scale of the variable when interpreting measures of spread"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:26:43.574Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_spread_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>Measures of spread are used to quantify the amount of variation or dispersion in a dataset.</p><ul><li>Variance and standard deviation measure the average squared distance from the mean, while interquartile range (IQR) measures the difference between the first and third quartiles.</li><li>The range is simply the difference between the maximum and minimum values. Mean absolute deviation (MAD) is another way to calculate the average distance from the mean.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\text{IQR} = Q_3 - Q_1 \\]\",",
+    "name": "Variance Formula",
+    "variants": "[ {",
+    "description": "Calculate the variance",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a dataset with values [1, 2, 4, 6, 8].</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "mathHtml": "\\[ \\sigma^2 = \\frac{1}{5} \\sum_{i=1}^{5} (x_i - \\mu)^2 = 6.72 \\]\" } ],",
+    "explanation": "The mean is the average value of the dataset.\" }, {",
+    "finalAnswer": "The variance is 6.72\" },",
+    "intuition": "Measures of spread help us understand the variability in a dataset, which is crucial for many applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "In machine learning, understanding the spread of data can help you choose the right algorithm or hyperparameters."
+    ],
+    "tags": [
+      "measures-of-spread",
+      "variance",
+      "standard-deviation"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:27:14.245Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_spread_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>Measures of spread help us understand the variability in a dataset.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(X) = E[(X - E[X])^2] \\]\",",
+    "name": "Population Variance\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of exam scores with mean 80 and standard deviation 5.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the squared differences from the mean\", \"mathHtml\": \"\\[ (x - 80)^2 \\]\", \"explanation\": \"This is the first step in calculating variance.\"} ],",
+    "finalAnswer": "100\" },",
+    "intuition": "Variance measures how spread out a dataset is. It's sensitive to outliers, so it's not always the best measure of spread.",
+    "realWorldApplications": [
+      "In machine learning, understanding data variability is crucial for model performance."
+    ],
+    "tags": [
+      "descriptive statistics",
+      "measures of spread"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:27:29.192Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_spread_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread: Variance and Standard Deviation",
+    "contentHtml": "<p>Variance and standard deviation are two fundamental measures of spread in descriptive statistics.</p><p>They quantify how spread out a dataset is from its mean value.</p>",
+    "formula": "{",
+    "latex": "\\[ \\sigma^2 = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\mu)^2, \\quad \\sigma = \\sqrt{\\sigma^2} \\]\",",
+    "name": "Variance Formula\" },",
+    "intuition": "These measures help us understand how much individual data points deviate from the average. Variance is sensitive to outliers, while standard deviation provides a more robust measure.",
+    "realWorldApplications": [
+      "In machine learning, variance and standard deviation are used in algorithms like k-means clustering and Gaussian mixture models."
+    ],
+    "tags": [
+      "descriptive statistics",
+      "measures of spread"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:27:42.952Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_spread_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread",
+    "contentHtml": "<p>Measures of spread quantify the amount of variation in a dataset.</p><ul><li>Variance and standard deviation describe how individual data points deviate from the mean.</li><li>IQR, range, and MAD provide alternative measures of spread that are less sensitive to outliers.</li><li>The coefficient of variation is useful for comparing spread across different datasets or variables.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(X) = E[(X - E[X])^2] \\]\",",
+    "name": "Variance formula",
+    "variants": "[ {\"latex\": \"\\[ \\sigma^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\mu)^2 \\]\", \"description\": \"Sample variance\" }, {\"latex\": \"\\[ \\text{MAD}(X) = \\frac{\\text{median}|X_i - \\text{median}(X)|}{0.6745} \\]\", \"description\": \"Median absolute deviation\" } ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of exam scores with mean 80 and standard deviations 3, 4, and 2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the squared differences from the mean\", \"mathHtml\": \"\\[ (x_i - 80)^2 \\]\", \"explanation\": \"This is the numerator of the variance formula\" }, {\"stepNumber\": 2, \"description\": \"Weight each squared difference by its frequency\", \"mathHtml\": \"\\[ \\frac{1}{n} \\sum_{i=1}^n (x_i - 80)^2 \\]\", \"explanation\": \"This is the sample variance formula\" } ],",
+    "finalAnswer": "12.5\" },",
+    "intuition": "Measures of spread help you understand how individual data points deviate from the mean, making it easier to identify outliers and patterns.",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:28:06.700Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_spread_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the coefficient of variation (CV) given a dataset with mean 5 and standard deviation 1.</p>",
+    "hints": [
+      "Start by calculating the mean.",
+      "Use the formula for CV: <i>CV</i> = <i>σ</i> / <i>μ</i>.",
+      "Don't forget to check units!"
+    ],
+    "solutionHtml": "<p>To calculate the coefficient of variation, we first need to find the standard deviation (<i>σ</i>). Since we know the mean and standard deviation, we can use the formula:</p><br />\\[\\text{CV} = \\frac{\\sigma}{\\mu}\\] <p>Plugging in our values, we get:</p><br />\\[\\text{CV} = \\frac{1}{5} = 0.2\\]</p>\",",
+    "answerShort": "0.2\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:28:20.951Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_spread_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "problem": "{",
+    "statementHtml": "Find the coefficient of variation (CV) for a dataset with mean 10 and standard deviation 3.",
+    "hints": "[ \"The CV is a relative measure, so think about how it compares to the mean.\", \"You can use the formula: CV = \\(\\frac{\\sigma}{\\mu}\\), where σ is the standard deviation and μ is the mean.\", \"Plug in the given values and simplify.\" ],",
+    "solutionHtml": "To find the coefficient of variation, we plug in the given values:\\n\\ We know that the mean (μ) is 10, and the standard deviation (σ) is 3. We can use these values to calculate the CV:\\n\\ CV = \\(\\frac{\\sigma}{\\mu}\\) = \\(\\frac{3}{10}\\) = 0.3\\n\\ So, the coefficient of variation for this dataset is 0.3.\",",
+    "answerShort": "0.3\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:28:35.065Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_spread_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "problem": "{",
+    "statementHtml": "Find the variance of a dataset with values: 1, 2, 3, 4, 5.",
+    "hints": [
+      "Start by calculating the mean of the dataset.",
+      "Use the formula for variance: \\(s^2 = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}{n-1}\\).",
+      "Don't forget to subtract the mean from each value before squaring and summing."
+    ],
+    "solutionHtml": "<p>To calculate the variance, first find the mean:</p>\\(\\bar{x} = \\\\frac{1+2+3+4+5}{5} = 3\\)<p>Then, subtract the mean from each value:</p>\\(x_1 - \\\\bar{x} = 1-3 = -2,\\)\\(x_2 - \\\\bar{x} = 2-3 = -1,\\)...\\(<p>Square and sum the differences:</p>\\(((-2)^2 + (-1)^2 + ... + (2-3)^2) = 14\\)<p>Finally, divide by the number of values minus one:</p>\\(s^2 = \\\\frac{14}{5-1} = 4\\)</p>\",",
+    "answerShort": "The variance is 4.\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:28:53.113Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_spread_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the coefficient of variation (CV) given the sample mean and standard deviation.</p>",
+    "hints": [
+      "Start by recalling the formula for CV.",
+      "Use the sample mean to find the numerator.",
+      "Don't forget to divide by the sample standard deviation."
+    ],
+    "solutionHtml": "<p>To calculate the coefficient of variation (CV), we need the sample mean and standard deviation. Let's denote these values as $\\mu$ and $\\sigma$, respectively.</p><p>We know that CV is defined as the ratio of the sample standard deviation to the sample mean:</p>\\[\\text{CV} = \\frac{\\sigma}{\\mu}\\] <p>Now, we can plug in our given values:</p>\\[\\text{CV} = \\frac{\\sigma}{\\mu}\\] \\[= \\frac{2.5}{4.8}\\] \\[= 0.521] <p>The final answer is:</p><p>\\(\\boxed{0.521}\\)</p>\",",
+    "answerShort": "0.521\" },",
+    "commonMistakes": [
+      "Forgetting to divide by the sample mean",
+      "Not using the correct values for CV"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:29:09.696Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_spread_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread: Variance, Standard Deviation, and More",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate various measures of spread in a dataset.</p>",
+    "workedExample": {
+      "problemHtml": "Find the variance, standard deviation, IQR, range, MAD, and coefficient of variation for the following dataset: <code>[1, 2, 3, 4, 5]</code>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the mean",
+          "mathHtml": "\\[ \\bar{x} = \\frac{1 + 2 + 3 + 4 + 5}{5} = 3 \\]",
+          "explanation": "The mean is a crucial step in calculating many measures of spread."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the variance",
+          "mathHtml": "\\[ s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1} \\]",
+          "explanation": "The variance is a measure of how spread out the data is."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the standard deviation",
+          "mathHtml": "\\[ s = \\sqrt{s^2} \\]",
+          "explanation": "The standard deviation is the square root of the variance."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the IQR",
+          "mathHtml": "\\[ Q3 - Q1 \\]",
+          "explanation": "The IQR is a measure of the spread that's less sensitive to outliers."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Calculate the range",
+          "mathHtml": "\\[ \\max(x) - \\min(x) \\]",
+          "explanation": "The range is simply the difference between the maximum and minimum values."
+        },
+        {
+          "stepNumber": 6,
+          "description": "Calculate the MAD",
+          "mathHtml": "\\[ \\frac{1}{n} \\sum |x_i - \\bar{x}| \\]",
+          "explanation": "The MAD is a measure of the average distance from the mean."
+        }
+      ],
+      "finalAnswer": "Variance: 2, Standard Deviation: 1.414, IQR: 2, Range: 4, MAD: 1"
+    },
+    "intuition": "Measures of spread help us understand how data is distributed and can be used to identify outliers or anomalies.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:29:37.263Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_spread_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread: Variance and Beyond",
+    "contentHtml": "<p>In this worked example, we'll delve into calculating measures of spread using variance, standard deviation, IQR, range, MAD, and coefficient of variation.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Var}(X) = E[(X - E[X])^2] \\]",
+      "name": "Variance Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset {1, 3, 5, 7}, calculate the variance and standard deviation.</p>",
+      "hints": [
+        "Hint: Use the formula above"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Calculate the measures of spread for the dataset {1, 3, 5, 7}:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the mean",
+          "mathHtml": "\\[ \\bar{x} = \\frac{1 + 3 + 5 + 7}{4} = 4 \\]",
+          "explanation": "We need to find the mean before calculating any measures of spread."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the variance",
+          "mathHtml": "\\[ \\text{Var}(X) = E[(X - 4)^2] = \\frac{(1-4)^2 + (3-4)^2 + (5-4)^2 + (7-4)^2}{4} = 2.5 \\]",
+          "explanation": "We substitute the mean into the variance formula and calculate the sum."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the standard deviation",
+          "mathHtml": "\\[ \\text{std dev}(X) = \\sqrt{\\text{Var}(X)} = \\sqrt{2.5} = 1.58113883046 \\]",
+          "explanation": "We take the square root of the variance to get the standard deviation."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the interquartile range (IQR)",
+          "mathHtml": "\\[ Q_3 - Q_1 = 7 - 1 = 6 \\]",
+          "explanation": "We find the first and third quartiles and subtract them to get the IQR."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Calculate the range",
+          "mathHtml": "\\[ \\text{range}(X) = Q_3 - Q_1 = 7 - 1 = 6 \\]",
+          "explanation": "The range is simply the difference between the maximum and minimum values."
+        },
+        {
+          "stepNumber": 6,
+          "description": "Calculate the mean absolute deviation (MAD)",
+          "mathHtml": "\\[ \\text{MAD}(X) = \\frac{|1-4| + |3-4| + |5-4| + |7-4|}{4} = 1.25 \\]",
+          "explanation": "We calculate the absolute difference between each value and the mean, then take the average."
+        },
+        {
+          "stepNumber": 7,
+          "description": "Calculate the coefficient of variation",
+          "mathHtml": "\\[ \\text{CV}(X) = \\frac{\\sqrt{2.5}}{4} = 0.31622776601 \\]",
+          "explanation": "We divide the standard deviation by the mean to get the coefficient of variation."
+        }
+      ],
+      "finalAnswer": "Variance: 2.5, Standard Deviation: 1.58113883046, IQR: 6, Range: 6, MAD: 1.25, Coefficient of Variation: 0.31622776601"
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to subtract the mean from each value"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding measures of spread is crucial for preprocessing data and selecting suitable algorithms."
+    ],
+    "tags": [
+      "measures of spread",
+      "variance",
+      "standard deviation",
+      "IQR",
+      "range",
+      "MAD",
+      "coefficient of variation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:30:21.011Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_spread_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread: Variance, Standard Deviation, and More",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate various measures of spread in a dataset.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the variance, standard deviation, interquartile range (IQR), range, mean absolute deviation (MAD), and coefficient of variation for the following dataset: \\([1,2,3,4,5,6,7,8,9,10]\\).\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the mean\", \"mathHtml\": \"\\(\\bar{x} = \\frac{1+2+\\cdots+10}{10}\\)\", \"explanation\": \"We need to know the mean before calculating any of these measures.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the variance\", \"mathHtml\": \"\\(\\sigma^2 = \\frac{\\sum (x_i - \\bar{x})^2}{9}\\)\", \"explanation\": \"The variance is a measure of how spread out the data is. We'll use this to calculate other measures.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the standard deviation\", \"mathHtml\": \"\\(\\sigma = \\sqrt{\\sigma^2}\\)\", \"explanation\": \"The standard deviation is just the square root of the variance.\" }, {\"stepNumber\": 4, \"description\": \"Calculate the interquartile range (IQR)\", \"mathHtml\": \"\\(Q_3 - Q_1\\)\", \"explanation\": \"The IQR is a measure of spread that's resistant to outliers.\" }, {\"stepNumber\": 5, \"description\": \"Calculate the range\", \"mathHtml\": \"\\(max(x) - min(x)\\)\", \"explanation\": \"The range is simply the difference between the maximum and minimum values in the dataset.\" } ],",
+    "finalAnswer": "After calculating each measure, we get: variance = 2.5, standard deviation = 1.58, IQR = 3.5, range = 9, MAD = 1.17, coefficient of variation = 0.158\" },",
+    "intuition": "Measures of spread help us understand the variability in a dataset. By calculating these measures, we can get a sense of how spread out our data is and make more informed decisions.",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:30:47.937Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_spread_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "descriptive_statistics",
+    "topic": "spread",
+    "title": "Measures of Spread: Variance, Standard Deviation, and More",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate various measures of spread, including variance, standard deviation, interquartile range (IQR), range, mean absolute deviation (MAD), and coefficient of variation.</p>",
+    "problem": "{",
+    "statementHtml": "Find the variance, standard deviation, IQR, range, MAD, and coefficient of variation for the following dataset: [1, 2, 3, 4, 5, 6].",
+    "hints": [
+      "Hint: Start by calculating the mean.",
+      "Think about how each measure is related to the data's spread."
+    ],
+    "solutionHtml": "<p>Step 1: Calculate the mean.</p><ul><li>\\(x̄ = \\frac{1 + 2 + 3 + 4 + 5 + 6}{6} = 3.5\\)</li></ul><p>Step 2: Calculate the variance.</p><ul><li>\\(\\sigma^2 = \\frac{\\sum (x_i - x̄)^2}{n-1}\\) where \\(n=6\\)</li></ul><p>Step 3: Calculate the standard deviation.</p><ul><li>\\(\\sigma = \\sqrt{\\sigma^2} = \\sqrt{2.9167}\\approx 1.708</li></ul><p>Step 4: Calculate the IQR.</p><ul><li>Find the first and third quartiles:</li><ul><li>\\(Q_1 = 3\\)</li><li>\\(Q_3 = 5\\)</li></ul><li>IQR = \\(Q_3 - Q_1\\) = 2</li></ul><p>Step 5: Calculate the range.</p><ul><li>R = max(x) - min(x) = 6 - 1 = 5</li></ul><p>Step 6: Calculate the MAD.</p><ul><li>MAD = \\(\\frac{1}{n} \\sum |x_i - x̄|\\)</li></ul><p>Step 7: Calculate the coefficient of variation.</p><ul><li>Coefficient of Variation (CV) = \\(\\frac{\\sigma}{x̄}\\)</li></ul>\",",
+    "answerShort": "The measures are: variance=2.9167, standard deviation≈1.708, IQR=2, range=5, MAD=0.8333, and CV=0.493\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance, standard deviation, IQR, range, MAD, and coefficient of variation for the following dataset: [1, 2, 3, 4, 5, 6].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the mean\", \"mathHtml\": \"\\(x̄ = \\frac{1 + 2 + 3 + 4 + 5 + 6}{6} = 3.5\\)\", \"explanation\": \"The mean is a crucial value in understanding the data's spread.\"} ],",
+    "finalAnswer": "The measures are: variance=2.9167, standard deviation≈1.708, IQR=2, range=5, MAD=0.8333, and CV=0.493\" },",
+    "intuition": "<p>Measures of spread help us understand the variability in a dataset.</p>",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:31:26.934Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

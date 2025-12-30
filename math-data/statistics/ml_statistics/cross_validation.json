@@ -1,0 +1,534 @@
+[
+  {
+    "id": "stat_con_cross_validation_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a fundamental technique in machine learning that helps evaluate and improve model performance by splitting data into training and testing sets.</p><p>Imagine you're trying to predict house prices based on features like number of bedrooms, square footage, etc. You have a dataset with many examples, but you want to make sure your model generalizes well to new, unseen data. That's where cross-validation comes in.</p>",
+    "formula": "{",
+    "latex": "\\(K\\)-fold cross-validation: \\(\\frac{1}{K} \\sum_{k=1}^K L(y_k, f(X_k))\\)\",",
+    "name": "Cross-Validation Loss\" },",
+    "intuition": "Cross-validation helps prevent overfitting by testing your model on unseen data and averaging its performance.",
+    "visualDescription": "A diagram showing a dataset being split into training and testing sets, with the model's performance evaluated on the test set",
+    "commonMistakes": [
+      "Not using enough folds",
+      "Ignoring stratification for imbalanced datasets"
+    ],
+    "realWorldApplications": [
+      "Evaluating and improving model performance in natural language processing",
+      "Selecting the best hyperparameters for a neural network"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:02:33.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cross_validation_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning that helps evaluate and improve model performance by splitting data into training and testing sets.</p><p>Imagine you're trying to predict house prices based on features like number of bedrooms, square footage, and location. You'd want to train your model on some houses and test it on others to see how well it generalizes. This is the idea behind cross-validation.</p>",
+    "formula": "{",
+    "latex": "\\(K\\)-fold CV: \\(\\text{Score} = \\frac{1}{K} \\sum_{k=1}^K \\mathcal{L}(y_k, f(x_k))\\)\",",
+    "name": "Cross-Validation Score\" },",
+    "intuition": "Cross-validation helps prevent overfitting by ensuring your model isn't too specialized to a specific training set.",
+    "visualDescription": "A diagram showing k-fold cross-validation: data is split into k subsets, and the model is trained and tested on each subset in turn.",
+    "commonMistakes": [
+      "Not using enough folds",
+      "Using stratified CV when not necessary"
+    ],
+    "realWorldApplications": [
+      "Evaluating model performance for time series forecasting"
+    ],
+    "tags": [
+      "machine learning",
+      "model evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:02:50.737Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cross_validation_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation: A Crucial Tool in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a powerful technique used to evaluate and improve machine learning models.</p><p>Imagine you're trying to predict the price of a house based on its features, but your training data only includes houses from one neighborhood. If you train your model solely on this data, it might not generalize well to other neighborhoods or even different cities. Cross-validation helps mitigate this issue by splitting your data into smaller subsets and training your model on each subset in turn.</p>",
+    "formula": "{",
+    "latex": "\\\\[ K\\\\text{-fold cross-validation}: \\\\frac{1}{K} \\sum_{k=1}^K L(y_k, f(X_k)) \\\\]\",",
+    "name": "Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\\\[ Leave-One-Out Cross-Validation: \\\\frac{1}{n} \\sum_{i=1}^n L(y_i, f(X_i)) \\\\]\", \"description\": \"A special case of K-fold CV where k=n\" } ] },",
+    "intuition": "Cross-validation helps you avoid overfitting by evaluating your model on unseen data and averaging the results. This way, you can trust that your model will perform well on new, unseen data.",
+    "realWorldApplications": [
+      "Stratified cross-validation is particularly useful in medical diagnosis, where you want to ensure that your model performs equally well across different patient populations."
+    ],
+    "commonMistakes": [
+      "Failing to account for class imbalance when using stratified CV"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:10.324Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "K-Fold Cross-Validation",
+    "contentHtml": "<p>K-fold cross-validation is a widely used technique in machine learning to evaluate and compare the performance of different models.</p><p>It works by splitting the dataset into <i>k</i> folds, training on <i>k-1</i> folds, and testing on the remaining fold. This process is repeated for all folds, providing an estimate of model performance with lower variance than a single test set.</p>",
+    "formula": "{",
+    "latex": "\\[K-fold CV: \\frac{1}{k} \\sum_{i=1}^k L(y_i, f(x_i))\\]\",",
+    "name": "K-Fold Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[LOOCV: \\frac{1}{n} \\sum_{i=1}^n L(y_i, f(x_i))\\]\", \"description\": \"Leave-One-Out Cross-Validation\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of <i>n</i> samples with features <i>x</i> and target variable <i>y</i>. We want to evaluate the performance of two different models, <i>f1(x)</i> and <i>f2(x)</i>, using 5-fold cross-validation.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Split the dataset into 5 folds",
+        "mathHtml": "",
+        "explanation": "This ensures each model sees a different set of samples during training and testing."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "K-fold cross-validation provides a more robust estimate of model performance by averaging over multiple test sets, reducing the impact of outliers or biased sampling.",
+    "tags": [
+      "machine learning",
+      "statistics"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:33.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation Formulas",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning to evaluate model performance and prevent overfitting. Here are some essential formulas:</p>",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV: } \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(\\mathbf{x}_k))\\]\",",
+    "name": "K-fold Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[Leave-One-Out Cross-Validation (LOOCV): \\frac{1}{N} \\sum_{i=1}^N L(y_i, f(\\mathbf{x}_i))\\]\", \"description\": \"Used when N is small\"} ] },",
+    "intuition": "Cross-validation helps you estimate how well your model will generalize to new data by splitting it into training and testing sets. The formulas above show the average loss or error for each fold.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:47.464Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation Formulas",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV: } \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(x_k))\\]\",",
+    "name": "K-fold Cross-Validation Loss\" },",
+    "contentHtml": "<p>When evaluating machine learning models, we often use cross-validation to avoid overfitting. The K-fold cross-validation formula calculates the average loss across K folds.</p>",
+    "intuition": "Cross-validation helps us estimate how well our model generalizes by splitting data into subsets and training on each subset in turn.",
+    "realWorldApplications": [
+      "Evaluating models for classification, regression, and clustering tasks"
+    ],
+    "tags": [
+      "machine learning",
+      "cross-validation",
+      "evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:59.672Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation",
+    "subtitle": "Evaluating models with unseen data",
+    "contentHtml": "<p>Cross-validation is a resampling technique used to evaluate machine learning models by splitting the available data into training and testing sets.</p>",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV}: \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(x_k))\\]\",",
+    "name": "Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[Leave-One-Out Cross-Validation (LOOCV): \\frac{1}{n} \\sum_{i=1}^n L(y_i, f(x_i))\\]\", \"description\": \"A special case of K-fold CV where K=n\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with 100 samples and want to evaluate the performance of our model.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Split the data into training (80%) and testing sets (20%)",
+        "mathHtml": "",
+        "explanation": "This allows us to evaluate the model's performance on unseen data."
+      }
+    ],
+    "finalAnswer": "The average loss on the test set\" },",
+    "intuition": "Cross-validation helps prevent overfitting by providing a more accurate estimate of a model's performance.",
+    "tags": [
+      "machine learning",
+      "cross-validation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:18.620Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset with n samples and p features. Develop a cross-validation strategy to evaluate the performance of a machine learning model.</p>",
+    "hints": [
+      "Start by thinking about how you would partition your data.",
+      "Consider using a stratified approach if your target variable is categorical.",
+      "Think about how you can use k-fold CV to get an unbiased estimate of your model's performance."
+    ],
+    "solutionHtml": "<p>To develop a cross-validation strategy, let's start by defining our problem. We want to evaluate the performance of a machine learning model on unseen data.</p><p>We'll use 5-fold cross-validation with stratification since our target variable is categorical.</p><p>Here are the steps:</p><ol><li>\\(k = 5\\), we split our dataset into 5 folds.</li><li>We train our model on \\(4\\) of the folds and evaluate its performance on the remaining fold.</li><li>We repeat this process for each fold, keeping track of the average performance.</li></ol>\",",
+    "answerShort": "Use 5-fold stratified cross-validation to evaluate your machine learning model.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:36.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Develop a cross-validation strategy to evaluate the performance of a machine learning model on a dataset.</p>",
+      "hints": [
+        "<p>K-fold cross-validation is a popular choice for most problems.</p>",
+        "<p>Stratified cross-validation ensures that each fold has roughly the same class distribution as the original data.</p>",
+        "<p>Nested cross-validation can be used to tune hyperparameters and evaluate model performance simultaneously.</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we will use a combination of k-fold cross-validation and stratified sampling. First, we divide our dataset into k folds...</p>",
+      "answerShort": "K-fold cross-validation with stratification"
+    },
+    "commonMistakes": [
+      "Failing to account for class imbalance in the data",
+      "Not using enough folds in the cross-validation process"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:48.920Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Given a dataset with <i>n</i> samples and <i>p</i> features, perform k-fold cross-validation to evaluate the performance of a machine learning model.</p>",
+      "hints": [
+        "Start by splitting your data into <i>k</i> roughly equal-sized folds.",
+        "Use each fold as a test set exactly once, while using the remaining folds for training.",
+        "Repeat this process <i>k</i> times to get an average performance metric."
+      ],
+      "solutionHtml": "<p>To perform k-fold cross-validation:</p><ol><li>Split your data into <i>k</i> roughly equal-sized folds.</li><li>For each fold, use the remaining <i>k-1</i> folds as a training set and the current fold as a test set.</li><li>Compute the performance metric (e.g., accuracy) on the test set.</li><li>Repeat steps 2-3 for all folds.</li><li>Average the performance metrics to get your final result.</li></ol>",
+      "answerShort": "Average performance metric"
+    },
+    "commonMistakes": [
+      "Forgetting to use each fold as a test set exactly once.",
+      "Not repeating the process <i>k</i> times."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:05.864Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation",
+    "problem": {
+      "statementHtml": "<p>Given a dataset and a model, design a cross-validation strategy to evaluate the model's performance.</p>",
+      "hints": [
+        "Start by considering different types of cross-validation (K-fold, LOOCV, stratified, nested).",
+        "Think about how you would apply these strategies to your specific problem.",
+        "Consider the trade-offs between bias and variance in your evaluation metric."
+      ],
+      "solutionHtml": "<p>To evaluate a model's performance, we can use K-fold cross-validation. This involves splitting our dataset into K subsets (folds), training the model on K-1 folds, and evaluating its performance on the remaining fold.</p><p>We repeat this process for each fold to get an average performance metric.</p>",
+      "answerShort": "K-fold cross-validation"
+    },
+    "commonMistakes": [
+      "Not considering overfitting or underfitting",
+      "Using too few folds"
+    ],
+    "realWorldApplications": [
+      "Evaluating the performance of a machine learning model on a time series dataset"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:20.503Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Consider a dataset with <i>n</i> samples and <i>p</i> features. How would you evaluate the performance of a machine learning model without overfitting?</p>",
+      "hints": [
+        "Think about how to divide your data into training and testing sets.",
+        "You'll need to repeat this process multiple times to get an accurate estimate.",
+        "Stratification can be important if your dataset is imbalanced."
+      ],
+      "solutionHtml": "<p>To avoid overfitting, we use <i>k</i>-fold cross-validation. This involves splitting our data into <i>k</i> subsets (folds) and using <i>k-1</i> folds for training and the remaining fold for testing.</p><p>We repeat this process <i>k</i> times, each time using a different fold as the test set. The average performance across all <i>k</i> iterations gives us an estimate of the model's true performance.</p>",
+      "answerShort": "Use k-fold cross-validation with k=5 or 10"
+    },
+    "commonMistakes": [
+      "Not using stratification when necessary",
+      "Using too few folds (e.g., k=2)",
+      "Not repeating the process multiple times to get an accurate estimate"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:37.350Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cross_validation_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation: K-Fold and Beyond",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a cross-validation problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of 100 samples from two classes (A and B) with equal proportions. We want to evaluate the performance of a classifier using k-fold cross-validation.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Split the data into training and testing sets\", \"mathHtml\": \"\", \"explanation\": \"This step is crucial in ensuring that our evaluation is unbiased.\"}, {\"stepNumber\": 2, \"description\": \"Choose a suitable value for k (e.g., k=5)\", \"mathHtml\": \"\", \"explanation\": \"A common choice is k=5 or k=10, depending on the size of the dataset and computational resources.\"}, {\"stepNumber\": 3, \"description\": \"Perform k-fold cross-validation\", \"mathHtml\": \"\\[ \\text{Accuracy} = \\frac{\\sum_{i=1}^k \\mathbf{1}_{\\hat{y}_i=y_i}}{n} \\]\", \"explanation\": \"We calculate the accuracy for each fold and then average them to get an overall estimate.\"}, {\"stepNumber\": 4, \"description\": \"Repeat steps 2-3 multiple times (e.g., 10 iterations) and report the mean accuracy\", \"mathHtml\": \"\", \"explanation\": \"This helps us account for any variability in our evaluation due to random fluctuations.\"} ],",
+    "finalAnswer": "The final answer is the mean accuracy across all iterations.\" },",
+    "intuition": "Cross-validation provides a way to evaluate model performance while avoiding overfitting by using unseen data during training.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:59.966Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cross_validation_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Solving Cross-Validation Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a cross-validation problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with 100 samples and want to evaluate the performance of a classifier using k-fold cross-validation. We set <i>k</i> = 5. How many training sets and test sets will we create?</p>",
+    "steps": "[ {",
+    "stepNumber": "3\",",
+    "description": "Verify the calculation",
+    "mathHtml": "\\[20 \\times 5 = 100\\]",
+    "explanation": "We can verify our calculation by ensuring that the total number of samples (100) is equal to the sum of training and test sets.\" } ],",
+    "finalAnswer": "We'll create 20 training sets and 20 test sets\" },",
+    "intuition": "Cross-validation helps us evaluate a model's performance on unseen data by creating multiple training-test splits.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:06:20.942Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cross_validation_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning to evaluate and improve model performance.</p>",
+    "formula": "{",
+    "latex": "\\\\[k\\\\text{-fold CV}: \\\\frac{1}{k} \\sum_{i=1}^k L(y, y_i)\\\\]\",",
+    "name": "Cross-Validation Loss\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a dataset of 1000 samples, and we want to evaluate the performance of our logistic regression model. How can we use cross-validation to do this?</p>",
+    "hints": [
+      "Hint: Think about splitting the data into training and testing sets"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say we have a dataset of 1000 samples, with features X1, X2, and target variable Y. We want to evaluate the performance of our logistic regression model.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Split the data into training (80%) and testing sets",
+        "mathHtml": "\\[\\frac{800}{1000}\\]",
+        "explanation": "We need a representative sample for evaluation"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Train the model on the training set",
+        "mathHtml": "",
+        "explanation": "This is where our model learns from the data"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Evaluate the model's performance on the testing set",
+        "mathHtml": "\\[L(y, y_i)\\]",
+        "explanation": "We want to see how well our model generalizes to new data"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Repeat steps 1-3 for multiple iterations (e.g., k-fold CV)",
+        "mathHtml": "",
+        "explanation": "This helps us account for overfitting and get a more accurate estimate of the model's performance"
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Cross-validation is like taking a snapshot of your model's performance at different points in time. By averaging these snapshots, you get a better sense of how well your model will perform on new data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:06:47.920Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cross_validation_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning to evaluate and improve model performance.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of 1000 images, each labeled as either 'dog' or 'cat'. We want to train a convolutional neural network (CNN) to classify these images. How can we ensure our model generalizes well to new, unseen data?",
+    "steps": "[ {",
+    "stepNumber": "4\",",
+    "description": "Average the performance metrics across folds",
+    "mathHtml": "\\[\\text{Mean Accuracy} = \\frac{1}{5} \\sum_{i=1}^5 \\text{Accuracy}_i\\]",
+    "explanation": "By averaging our results, we're getting a more representative estimate of our model's performance.\" } ],",
+    "finalAnswer": "The mean accuracy across the 5 folds is 0.85\" },",
+    "intuition": "Cross-validation helps us avoid overfitting by testing our model on unseen data and averaging its performance.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:07:16.081Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cross_validation_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation: A Step-by-Step Guide",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning that helps evaluate and improve model performance.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of 1000 images, each labeled as either 'dog' or 'cat'. We want to train a classifier to predict the animal type. However, we're concerned about overfitting due to the limited training data.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Split the dataset into training and testing sets\", \"mathHtml\": \"\", \"explanation\": \"This is the first step in cross-validation.\"}, {\"stepNumber\": 2, \"description\": \"Choose a suitable k-fold strategy (e.g., k=5)\", \"mathHtml\": \"\\[k = 5\\]\", \"explanation\": \"A common choice for k is 5, as it provides a good balance between overfitting and underfitting.\"}, {\"stepNumber\": 3, \"description\": \"Train the classifier on each fold's training set\", \"mathHtml\": \"\", \"explanation\": \"This step helps us evaluate the model's performance on unseen data.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the average accuracy across all folds\", \"mathHtml\": \"\", \"explanation\": \"The final answer is the average of these accuracies.\"} ],",
+    "finalAnswer": "Average accuracy across all folds\" },",
+    "intuition": "Cross-validation helps us avoid overfitting by evaluating our model on unseen data, which is crucial for machine learning applications.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:07:36.263Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "id": "stat_con_ci_variance_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "Confidence Intervals for Variance",
+    "contentHtml": "<p>In statistics, we often want to estimate a population variance based on a sample of data. A confidence interval (CI) provides a range of values within which the true population variance is likely to lie.</p><p>The chi-squared distribution plays a crucial role in constructing CIs for variance.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI}_{variance} = \\left(\\frac{(n-1)S^2}{\\chi_{\\alpha/2, n-1}^{2}},\\frac{(n-1)S^2}{\\chi_{1-\\alpha/2, n-1}^{2}}\\right]\\",
+      "name": "Chi-squared CI for Variance"
+    },
+    "intuition": "A CI for variance gives us a range of plausible values for the population variance. This is useful in many real-world applications, such as quality control or machine learning.",
+    "realWorldApplications": [
+      "Identifying outliers in datasets"
+    ],
+    "commonMistakes": [
+      "Failing to account for degrees of freedom when constructing CIs"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:14:37.690Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_variance_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "Confidence Intervals for Variance: Chi-squared Approach",
+    "contentHtml": "<p>In statistical hypothesis testing, we often need to estimate a population parameter with a certain level of confidence. For variance, this is particularly important in machine learning and data analysis.</p><p>A common approach is the chi-squared interval, which provides an interval estimate for the population variance based on a sample.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\chi^2 = \\sum_{i=1}^{n-1} \\frac{(x_i - \\bar{x})^2}{s^2} \\\\]\",",
+    "name": "Chi-squared statistic\" },",
+    "intuition": "The chi-squared interval provides a way to quantify the uncertainty in our estimate of the population variance, which is crucial for many statistical tests and machine learning algorithms.",
+    "realWorldApplications": [
+      "In regression analysis, we often need to estimate the variance of residuals to assess model performance."
+    ],
+    "commonMistakes": [
+      "Failing to account for the degrees of freedom when constructing the interval"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:14:52.341Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_variance_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "Interval Estimation of Variance: Chi-squared CI",
+    "contentHtml": "<p>In interval estimation, we often want to construct a confidence interval (CI) for a population parameter, such as the variance. The chi-squared distribution provides a useful tool for this task.</p><p>The chi-squared CI for the variance is based on the sample variance and the degrees of freedom. It's a two-sided interval that contains the true population variance with a specified probability (usually 0.95).</p>",
+    "formula": {
+      "latex": "\\[\\text{CI}_{\\chi^2}(s^2) = \\left(\\frac{(n-1)s^2}{\\chi^2_{\\alpha/2}(n-1)}, \\frac{(n-1)s^2}{\\chi^2_{1-\\alpha/2}(n-1)}\\right]\\",
+      "name": "Chi-squared CI for Variance"
+    },
+    "intuition": "The chi-squared CI for variance is a powerful tool in statistical inference. It allows us to make probabilistic statements about the true population variance, which is crucial in many real-world applications.",
+    "realWorldApplications": [
+      "In machine learning, we often need to estimate the variance of a distribution to determine the spread of data or to select an appropriate kernel function."
+    ],
+    "commonMistakes": [
+      "Failing to account for degrees of freedom when constructing the CI",
+      "Using an incorrect significance level"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:15:10.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

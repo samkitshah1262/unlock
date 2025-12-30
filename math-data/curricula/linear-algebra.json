@@ -1,0 +1,154 @@
+{
+  "subject": "linear_algebra",
+  "title": "Linear Algebra",
+  "description": "Comprehensive linear algebra from foundations to advanced matrix decompositions, with deep focus on ML/AI applications including neural networks, dimensionality reduction, and optimization",
+  "targetAudience": ["undergraduate", "graduate", "ML practitioners", "data scientists", "engineers"],
+  "totalEstimatedCards": 450,
+  "chapters": [
+    {
+      "id": "vectors_foundations",
+      "title": "Vectors and Vector Spaces",
+      "description": "Foundational concepts: vectors, operations, and the abstract structure of vector spaces",
+      "order": 1,
+      "topics": [
+        {"id": "vector_definition", "title": "What is a Vector?", "description": "Geometric and algebraic definitions, column vs row vectors, notation conventions", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 8, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "vector_arithmetic", "title": "Vector Arithmetic", "description": "Addition, subtraction, scalar multiplication, linear combinations", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "vector_geometry", "title": "Geometric Interpretation", "description": "Magnitude, direction, unit vectors, geometric visualization in R², R³", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "dot_product", "title": "Dot Product (Inner Product)", "description": "Algebraic and geometric definitions, angle between vectors, orthogonality", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "cross_product", "title": "Cross Product", "description": "Definition in R³, geometric meaning, applications to area and volume", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "vector_projections", "title": "Vector Projections", "description": "Scalar and vector projections, projection onto lines and planes", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "vector_spaces_abstract", "title": "Abstract Vector Spaces", "description": "Axioms, examples beyond Rⁿ (polynomials, functions, matrices), verification", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "subspaces", "title": "Subspaces", "description": "Definition, subspace test, examples, trivial subspaces", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "span_linear_combinations", "title": "Span and Linear Combinations", "description": "Spanning sets, span as smallest subspace, geometric interpretation", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "linear_independence", "title": "Linear Independence", "description": "Definition, testing for independence, geometric meaning, maximal independent sets", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "basis_dimension", "title": "Basis and Dimension", "description": "Standard basis, finding bases, dimension theorem, coordinates", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "matrices_fundamentals",
+      "title": "Matrices and Matrix Operations",
+      "description": "Matrix algebra: operations, properties, and special matrices",
+      "order": 2,
+      "topics": [
+        {"id": "matrix_basics", "title": "Matrix Fundamentals", "description": "Definition, notation, dimensions, equality, entry access", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 8, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "matrix_addition_scalar", "title": "Matrix Addition and Scalar Multiplication", "description": "Operations, properties, zero and identity matrices", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 8, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "matrix_multiplication", "title": "Matrix Multiplication", "description": "Definition, row-column rule, dimensions compatibility, non-commutativity", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "matrix_mult_interpretations", "title": "Interpretations of Matrix Multiplication", "description": "Linear combination of columns, dot products, outer products, block multiplication", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "transpose", "title": "Matrix Transpose", "description": "Definition, properties, symmetric matrices, transpose rules", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "special_matrices", "title": "Special Matrices", "description": "Diagonal, triangular, symmetric, skew-symmetric, identity, zero", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "matrix_inverse", "title": "Matrix Inverse", "description": "Definition, uniqueness, properties, computing 2×2 inverse", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "inverse_properties", "title": "Properties of Inverses", "description": "Product inverse, transpose inverse, inverse existence conditions", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "orthogonal_matrices", "title": "Orthogonal Matrices", "description": "Definition, properties, preservation of lengths and angles, rotation matrices", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "block_matrices", "title": "Block Matrices", "description": "Partitioned matrices, block multiplication, applications", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 8, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "linear_transformations",
+      "title": "Linear Transformations",
+      "description": "The connection between matrices and linear maps",
+      "order": 3,
+      "topics": [
+        {"id": "transformation_definition", "title": "What is a Linear Transformation?", "description": "Definition, linearity conditions, examples and non-examples", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "matrix_of_transformation", "title": "Matrix Representation", "description": "Standard matrix, finding the matrix from transformation properties", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "geometric_transformations", "title": "Geometric Transformations", "description": "Rotations, reflections, scaling, shearing, projections in 2D/3D", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "composition", "title": "Composition of Transformations", "description": "Composition as matrix multiplication, order matters", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "kernel_range", "title": "Kernel and Range", "description": "Null space, column space, image, preimage, injective/surjective", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "rank_nullity", "title": "Rank-Nullity Theorem", "description": "Statement, proof, applications, dimension counting", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "change_of_basis", "title": "Change of Basis", "description": "Coordinate change, transition matrices, similar matrices", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "systems_equations",
+      "title": "Systems of Linear Equations",
+      "description": "Solving linear systems systematically",
+      "order": 4,
+      "topics": [
+        {"id": "systems_introduction", "title": "Systems of Linear Equations", "description": "Matrix form Ax=b, solution types, geometric interpretation", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "row_operations", "title": "Elementary Row Operations", "description": "Three types, row equivalence, elementary matrices", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "gaussian_elimination", "title": "Gaussian Elimination", "description": "Algorithm, row echelon form, back substitution", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "gauss_jordan", "title": "Gauss-Jordan Elimination", "description": "Reduced row echelon form, uniqueness, finding inverses", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "solution_sets", "title": "Solution Sets", "description": "Particular and homogeneous solutions, parametric form, free variables", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "rank", "title": "Matrix Rank", "description": "Row rank, column rank, rank computation, rank and solutions", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "lu_decomposition", "title": "LU Decomposition", "description": "Factorization, solving systems, computational efficiency", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "numerical_stability", "title": "Numerical Considerations", "description": "Pivoting strategies, conditioning, floating point errors", "cardTypes": ["concept", "problem"], "estimatedCards": 8, "difficulty": 4, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "determinants",
+      "title": "Determinants",
+      "description": "Theory, computation, and geometric meaning of determinants",
+      "order": 5,
+      "topics": [
+        {"id": "determinant_2x2_3x3", "title": "Determinants of Small Matrices", "description": "2×2 formula, 3×3 by Sarrus rule, basic properties", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "cofactor_expansion", "title": "Cofactor Expansion", "description": "Minors, cofactors, expansion along any row/column", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "determinant_properties", "title": "Properties of Determinants", "description": "Row operations effects, transpose, products, triangular matrices", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "determinant_inverse", "title": "Determinants and Inverses", "description": "Invertibility criterion, adjugate matrix, Cramer's rule", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "geometric_determinant", "title": "Geometric Interpretation", "description": "Area, volume, orientation, linear transformation scaling factor", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "useful"}
+      ]
+    },
+    {
+      "id": "eigentheory",
+      "title": "Eigenvalues and Eigenvectors",
+      "description": "The central topic of linear algebra, essential for ML",
+      "order": 6,
+      "topics": [
+        {"id": "eigen_definition", "title": "Eigenvalues and Eigenvectors Defined", "description": "Definition, geometric meaning, the eigenvalue equation Av = λv", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "characteristic_polynomial", "title": "The Characteristic Polynomial", "description": "det(A - λI) = 0, finding eigenvalues, algebraic multiplicity", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "finding_eigenvectors", "title": "Finding Eigenvectors", "description": "Null space of (A - λI), eigenspaces, geometric multiplicity", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "eigenvalue_properties", "title": "Properties of Eigenvalues", "description": "Trace and determinant relations, eigenvalues of special matrices", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "diagonalization", "title": "Diagonalization", "description": "When possible, P⁻¹AP = D, computing matrix powers", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "spectral_theorem", "title": "Spectral Theorem for Symmetric Matrices", "description": "Real eigenvalues, orthogonal eigenvectors, orthogonal diagonalization", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "complex_eigenvalues", "title": "Complex Eigenvalues", "description": "Characteristic polynomial with complex roots, rotation matrices", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "power_method", "title": "Power Iteration", "description": "Numerical method for dominant eigenvalue, convergence", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "cayley_hamilton", "title": "Cayley-Hamilton Theorem", "description": "Matrix satisfies its characteristic polynomial, applications", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 8, "difficulty": 4, "mlRelevance": "useful"}
+      ]
+    },
+    {
+      "id": "inner_products_orthogonality",
+      "title": "Inner Products and Orthogonality",
+      "description": "Orthogonal bases, projections, and the foundation of least squares",
+      "order": 7,
+      "topics": [
+        {"id": "inner_product_spaces", "title": "Inner Product Spaces", "description": "Axioms, examples, induced norm, Cauchy-Schwarz inequality", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "orthogonal_sets", "title": "Orthogonal and Orthonormal Sets", "description": "Definitions, properties, linear independence, coordinates", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "gram_schmidt", "title": "Gram-Schmidt Process", "description": "Algorithm, orthonormalization, numerical considerations", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "orthogonal_projection", "title": "Orthogonal Projection", "description": "Projection onto subspaces, projection matrices, best approximation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "qr_decomposition", "title": "QR Decomposition", "description": "Orthogonal × upper triangular, existence, computation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "least_squares", "title": "Least Squares Problems", "description": "Normal equations, geometric view, solving overdetermined systems", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "orthogonal_complements", "title": "Orthogonal Complements", "description": "Definition, properties, four fundamental subspaces", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "matrix_decompositions",
+      "title": "Matrix Decompositions",
+      "description": "SVD and other advanced factorizations essential for ML",
+      "order": 8,
+      "topics": [
+        {"id": "svd_definition", "title": "Singular Value Decomposition (SVD)", "description": "Definition A = UΣVᵀ, existence, uniqueness, singular values", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "svd_geometry", "title": "Geometric Meaning of SVD", "description": "Rotation-scaling-rotation, principal axes, image of unit sphere", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "svd_properties", "title": "Properties of SVD", "description": "Rank, null space, range from SVD, relation to eigenvalues", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "low_rank_approximation", "title": "Low-Rank Approximation", "description": "Truncated SVD, Eckart-Young theorem, optimal approximation", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "pseudoinverse", "title": "Moore-Penrose Pseudoinverse", "description": "Definition via SVD, properties, solving least squares", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "positive_definite", "title": "Positive Definite Matrices", "description": "Definitions, tests, eigenvalue characterization, applications", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "cholesky", "title": "Cholesky Decomposition", "description": "A = LLᵀ for positive definite matrices, computation, applications", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "matrix_norms", "title": "Matrix Norms", "description": "Frobenius norm, spectral norm, induced norms, condition number", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "ml_applications",
+      "title": "Linear Algebra in Machine Learning",
+      "description": "Direct applications to ML algorithms and neural networks",
+      "order": 9,
+      "topics": [
+        {"id": "pca", "title": "Principal Component Analysis (PCA)", "description": "Covariance matrix, principal components, variance explained, dimensionality reduction", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "linear_regression_matrix", "title": "Linear Regression via Linear Algebra", "description": "Normal equations, ridge regression, matrix formulation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "matrix_calculus", "title": "Matrix Calculus", "description": "Derivatives of matrix expressions, gradient of quadratic forms, Jacobian, Hessian", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "kernel_matrices", "title": "Kernel Methods", "description": "Gram matrices, kernel trick, positive semi-definite kernels", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "neural_network_linear", "title": "Linear Algebra in Neural Networks", "description": "Weight matrices, forward pass as matrix operations, batch processing", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "attention_transformers", "title": "Attention and Transformers", "description": "Attention as matrix operations, QKV matrices, softmax attention", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 5, "mlRelevance": "core"},
+        {"id": "embeddings", "title": "Embeddings and Representation Learning", "description": "Word embeddings, matrix factorization, dimensionality reduction", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "recommender_systems", "title": "Matrix Factorization for Recommendations", "description": "Collaborative filtering, SVD-based recommendations, NMF", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "la_con_attention_transformers_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention in Transformers: A Linear Algebra Perspective",
+    "contentHtml": "<p>Attention mechanisms are a crucial component of transformer models in natural language processing and machine learning. At its core, attention is a weighted sum of values, where the weights are learned based on the similarity between input sequences.</p><p>In this context, we'll explore how attention can be viewed as matrix operations, leveraging linear algebra concepts like QKV matrices and softmax attention.</p>",
+    "formula": {
+      "latex": "\\[Q\\cdot K^T\\]",
+      "name": "Attention Matrix"
+    },
+    "intuition": "The key insight is that attention allows the model to focus on specific parts of the input sequence, effectively weighting their importance.",
+    "visualDescription": "A diagram showing a matrix multiplication between Q and K^T would help illustrate the concept.",
+    "commonMistakes": [
+      "Confusing attention with traditional neural network layers"
+    ],
+    "realWorldApplications": [
+      "Transformer-based language models for machine translation",
+      "Attention mechanisms in computer vision"
+    ],
+    "tags": [
+      "linear-algebra",
+      "machine-learning",
+      "attention-mechanism"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:41:06.215Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_attention_transformers_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention and Transformers: Matrix Operations",
+    "contentHtml": "<p>In many natural language processing tasks, we need to focus on specific parts of the input sequence that are most relevant to a given task or query. This is where attention mechanisms come in – they allow us to weigh the importance of each input element based on its relevance to the current context.</p><p>Mathematically, attention can be represented as matrix operations between three matrices: Query (Q), Key (K), and Value (V). These matrices are typically learned during training and are used to compute a weighted sum of the value matrix, where the weights are determined by the dot product of Q and K.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\text{Attention} = \\\\frac{\\\\exp(\\\\mathbf{Q} \\cdot \\\\mathbf{K}^T / \\\\sqrt{d})}{\\\\sum_{i=1}^{n} \\\\exp(\\\\mathbf{Q}_i \\cdot \\\\mathbf{K}^T_i / \\\\sqrt{d})}\\\\]\",",
+    "name": "Attention Formula\" },",
+    "intuition": "Think of attention as a way to highlight the most important parts of an input sequence by computing a weighted sum of its elements. The weights are determined by how well each element aligns with the current context, which is represented by the query matrix.",
+    "realWorldApplications": [
+      "Transformers in NLP",
+      "Attention-based models for machine translation"
+    ],
+    "commonMistakes": [
+      "Confusing attention with traditional sequence-to-sequence models",
+      "Overlooking the importance of softmax normalization"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:41:27.995Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_attention_transformers_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention and Transformers: Matrix Operations",
+    "contentHtml": "<p>When dealing with long sequences or complex data structures in machine learning, attention mechanisms allow us to focus on specific parts of the input that are most relevant for a given task. This concept is crucial in transformer-based models.</p>",
+    "formula": {
+      "latex": "\\[Q\\cdot K^T\\]",
+      "name": "Query-Key Attention"
+    },
+    "intuition": "Think of attention as a spotlight shining on the most important parts of your input data, allowing you to concentrate on what matters.",
+    "realWorldApplications": [
+      "Transformer-based language models like BERT and RoBERTa"
+    ],
+    "commonMistakes": [
+      "Confusing attention with traditional neural network layers"
+    ],
+    "tags": [
+      "attention",
+      "transformers",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:41:41.253Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

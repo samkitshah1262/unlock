@@ -1,0 +1,445 @@
+[
+  {
+    "id": "prob_con_marginal_distributions_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Given a joint distribution <i>P(x, y)</i>, the marginal distribution of <i>x</i> (or <i>y</i>) is obtained by summing (or integrating) over all possible values of the other variable. This process effectively 'marginalizes' out the dependency between the variables.</p>",
+    "formula": "{",
+    "latex": "\\(P(x) = \\sum_y P(x, y)\\)\",",
+    "name": "Marginalization Formula",
+    "variants": "[ {\"latex\": \"\\(P(y) = \\int_x P(x, y) dx\\)\", \"description\": \"Continuous case\"} ] },",
+    "whyMatters": "<p>Marginal distributions are crucial in machine learning and artificial intelligence as they enable us to model complex relationships between variables while simplifying the underlying probability structure.</p>",
+    "geometricIntuition": "<p>Imagine a joint distribution represented by a 2D histogram. Marginalization is like taking a vertical slice (for <i>x</i>) or horizontal slice (for <i>y</i>) of this histogram, effectively collapsing the dependency between variables.</p>",
+    "commonMistakes": [
+      "Forgetting to normalize the resulting marginal distribution"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:22.310Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_marginal_distributions_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Imagine you're trying to calculate the probability of a specific outcome given some initial conditions. You can do this by considering all possible intermediate states and their corresponding probabilities, but this can be computationally expensive.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]",
+      "name": "Marginalization Formula",
+      "variants": [
+        {
+          "latex": "\\[ P(Y) = \\int P(X,Y) dX \\]",
+          "description": "Continuous case"
+        }
+      ]
+    },
+    "intuition": "Marginalization helps us focus on the variables that matter most, reducing the complexity of our calculations and making it easier to make predictions or decisions.",
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in Bayesian inference to update model parameters given new data."
+    ],
+    "commonMistakes": [
+      "Failing to recognize when marginalization can simplify a problem"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:39.973Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_marginal_distributions_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Imagine you have a large dataset with multiple features, and you want to analyze the distribution of one feature while ignoring the others. Marginalization enables you to do just that.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]"
+    },
+    "intuition": "Marginalization is like taking a snapshot of a joint distribution and focusing on one variable while discarding the others.",
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in topics such as feature selection and dimensionality reduction."
+    ],
+    "commonMistakes": [
+      "Don't confuse marginalization with conditioning; they're distinct concepts."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:54.667Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_marginal_distributions_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory, allowing us to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "formula": "{",
+    "latex": "\\[P(X) = \\sum_{Y} P(X,Y)\\] (discrete case), \\[P(X) = \\int P(X,y) dy\\] (continuous case)\",",
+    "name": "Marginal Distribution Formula",
+    "variants": "[ {\"latex\": \"\\[P(Y) = \\sum_{X} P(X,Y)\\]\", \"description\": \"Marginalizing out X\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a joint distribution over two variables, X and Y. If we know the probability mass function (PMF) or probability density function (PDF), how can we find the marginal PMF/PDF for one of the variables?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the joint distribution\", \"mathHtml\": \"\\[P(X,Y)\\]\", \"explanation\": \"Start with the joint distribution.\"} ],",
+    "finalAnswer": "The marginal PMF/PDF\" },",
+    "intuition": "Marginalization helps us focus on a single variable's behavior, ignoring the influence of other variables.",
+    "realWorldApplications": [
+      "Bayesian inference in machine learning"
+    ],
+    "tags": [
+      "probability",
+      "marginalization"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:47:17.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_marginal_distributions_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a powerful technique in probability theory. It allows us to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "formula": "{",
+    "latex": "\\[ P(X) = \\sum_{Y} P(X, Y) \\]\",",
+    "name": "Marginal Distribution Formula",
+    "variants": "[ {\"latex\": \"\\[ P(Y) = \\int P(X, Y) dX \\]\", \"description\": \"For continuous variables\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a joint distribution over two variables X and Y. If we know the marginal distribution of X, can we recover the joint distribution?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Use the formula to write down the marginal distribution of X\", \"mathHtml\": \"\\[ P(X) = \\sum_{Y} P(X, Y) \\]\", \"explanation\": \"We sum over all possible values of Y\"} ],",
+    "finalAnswer": "No, we cannot recover the joint distribution from just the marginal distribution\" },",
+    "intuition": "Marginalization helps us focus on a single variable while ignoring others. This is crucial in many machine learning applications, such as Bayesian inference and generative models.",
+    "realWorldApplications": [
+      "Bayesian inference for neural networks"
+    ],
+    "tags": [
+      "probability",
+      "marginalization",
+      "joint distributions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:47:40.292Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_marginal_distributions_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "formula": "{",
+    "latex": "\\[P(X) = \\sum_{Y} P(X, Y)\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a joint distribution over two random variables X and Y. If we want to find the marginal distribution of X, what would be the correct formula?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the joint distribution\", \"mathHtml\": \"\\[P(X, Y)\\]\", \"explanation\": \"Start by recognizing that we have a joint distribution over X and Y.\"}, {\"stepNumber\": 2, \"description\": \"Sum out Y\", \"mathHtml\": \"\\[\\sum_{Y} P(X, Y)\\]\", \"explanation\": \"To find the marginal distribution of X, we need to sum out all possible values of Y.\"} ],",
+    "finalAnswer": "The correct formula is the one above.\" },",
+    "intuition": "Marginalization helps us focus on a single variable by averaging out the influence of other variables.",
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in Bayesian inference to simplify complex posterior distributions."
+    ],
+    "tags": [
+      "probability",
+      "marginalization"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:01.729Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_marginal_distributions_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Find the marginal distribution of X given a joint distribution P(X,Y).</p>",
+    "hints": [
+      "<p>Start by recognizing that the marginal distribution is a sum/integral over all possible values of Y.</p>",
+      "<p>Use the definition of the joint distribution to rewrite the expression in terms of P(Y|X).</p>",
+      "<p>Simplify the expression by pulling out any constants and factoring out P(X).</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution, we sum/integrate over all possible values of Y:</p>\\n\\ \\[P(X) = \\int_{-\\infty}^{\\infty} P(X,Y) dY\\]\\n\\ <p>We can rewrite this expression using the definition of the joint distribution:</p>\\n\\ \\[P(X) = \\int_{-\\infty}^{\\infty} P(Y|X) P(X) dY\\]\\n\\ <p>Simplifying, we get:</p>\\n\\ \\[P(X) = P(X) \\int_{-\\infty}^{\\infty} P(Y|X) dY\\]\\n\\ <p>Factoring out P(X), we finally obtain:</p>\\n\\ \\[P(X) = P(X)\\]</p>\",",
+    "answerShort": "P(X)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:24.589Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_marginal_distributions_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <i>P(X,Y)</i>, find the marginal distribution of <i>X</i>.</p>",
+    "hints": [
+      "Start by recognizing that the marginal distribution is a sum (or integral) over all possible values of <i>Y</i>",
+      "Use the definition of conditional probability to relate the joint distribution to the marginal distribution",
+      "Don't forget to normalize the resulting distribution"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution, we sum out the <i>Y</i> variable:</p><p>\\[P_X(x) = \\sum_{y} P(X=x,Y=y)\\]</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:37.271Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_marginal_distributions_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <i>P(X,Y)</i>, find the marginal distribution of <i>X</i>.</p>",
+    "hints": [
+      "<p>Simplify the expression by summing/integrating out <i>Y</i>.</p>",
+      "<p>Use the definition of conditional probability to relate <i>P(X,Y)</i> and <i>P(Y)</i>.</p>",
+      "<p>Apply the marginalization property.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of <i>X</i>, we sum out <i>Y</i>:</p>\\[P_X(x) = \\sum_y P(X=x, Y=y)\\]<p>This is equivalent to taking the expected value of <i>P(Y|x)</i> with respect to <i>P(y)</i>.</p>\",",
+    "answerShort": "<code>P_X(x)</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:54.180Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_marginal_distributions_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions: Summing Out Variables",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex distributions by summing out variables.</p>",
+    "formula": "{",
+    "latex": "\\[P(X) = \\sum_{Y} P(X,Y)\\]",
+    "name": "Marginal Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <code>P(X,Y)</code>, find the marginal distribution of <code>X</code>.</p>",
+    "hints": [
+      "Hint: Use the definition of marginalization"
+    ],
+    "solutionHtml": "<p><ul><li>We start by recalling the definition of marginalization:</li></ul>\\[P(X) = \\\\sum_{Y} P(X,Y)\\]</p><p><ul><li>Now, we can apply this formula to our joint distribution <code>P(X,Y)</code>:</li></ul>\",",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a joint distribution of exam scores and hours studied:</p><p><code>P(S,H) = \\frac{1}{2} \\delta(S-80, H=5) + \\frac{1}{4} \\delta(S-90, H=10) + \\frac{1}{4} \\delta(S-100, H=15)</code></p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the marginal distribution of <code>X</code>",
+        "mathHtml": "\\[P(X) = \\sum_{Y} P(X,Y)\\]",
+        "explanation": "We're summing out the hours studied variable"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Apply the formula to each term",
+        "mathHtml": "",
+        "explanation": "We'll calculate the marginal distribution for each possible score"
+      }
+    ],
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Marginalization helps us focus on a specific variable while ignoring others, making it easier to analyze and work with complex distributions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:49:24.432Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_marginal_distributions_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions: Summing Out Variables",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]",
+      "name": "Marginal Distribution Formula",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X,Y) and a marginal distribution P(Y), find the expression for P(X).</p>",
+      "hints": [
+        "Hint: Use the definition of marginalization"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the formula for marginalization.</p><ul><li>Step 1: Write down the joint distribution P(X,Y)</li><li>Step 2: Sum out Y using the definition of marginalization</li><li>Step 3: Simplify the expression to get P(X)</li></ul>",
+      "answerShort": "P(X) = \\sum_{Y} P(X,Y)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X,Y) where X and Y are binary variables. Find the expression for P(X).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the joint distribution",
+          "mathHtml": "\\[ P(X,Y) = \\frac{1}{4} + \\frac{1}{2}X\\cdot Y \\]",
+          "explanation": "We start by writing down the joint distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Sum out Y using marginalization",
+          "mathHtml": "\\[ P(X) = \\sum_{Y=0,1} P(X,Y) = \\frac{1}{4} + X\\cdot \\left( \\frac{1}{2} + \\frac{1}{2}X \\right) \\]",
+          "explanation": "We sum out Y using the definition of marginalization."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[ P(X) = \\frac{1}{2} + X \\cdot \\left( \\frac{1}{2} + X \\right) \\]",
+          "explanation": "We simplify the expression to get the final answer."
+        }
+      ],
+      "finalAnswer": "P(X) = \\frac{1}{2} + X \\cdot \\left( \\frac{1}{2} + X \\right)"
+    },
+    "intuition": "Marginalization allows us to reduce the dimensionality of a joint distribution by summing out variables, making it easier to work with and analyze.",
+    "visualDescription": "A diagram showing the joint distribution P(X,Y) and the marginal distribution P(Y) would help illustrate the concept of marginalization.",
+    "commonMistakes": [
+      "Forgetting to sum out Y",
+      "Not simplifying the expression"
+    ],
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in probabilistic graphical models to simplify complex distributions."
+    ],
+    "tags": [
+      "probability",
+      "marginalization",
+      "joint distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:50:06.219Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_marginal_distributions_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution <span class=\"latex\">P(X,Y)</span> over two random variables X and Y. If we want to find the marginal distribution of X, we need to integrate out Y:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Integrate out Y",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\int P(X,Y)dY</span>",
+          "explanation": "We're using the definition of marginalization to integrate out Y and obtain a distribution over X only."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Simplify the integral",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\int P(X=y,Y)dY</span>",
+          "explanation": "We're assuming a discrete Y for simplicity. The integral becomes a sum over possible values of Y."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the sum",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\sum_{y} P(X=x,Y=y)</span>",
+          "explanation": "We're evaluating the sum by plugging in specific values for X and Y."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Normalize the result",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\frac{\\sum_{y} P(X=x,Y=y)}{\\sum_{x,y} P(X=x,Y=y)}</span>",
+          "explanation": "We're normalizing the result to ensure it's a valid probability distribution."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Final answer",
+          "mathHtml": "<span class=\"latex\">P_X(x)</span>",
+          "explanation": "The final answer is the marginal distribution of X, which we can use for further analysis or modeling."
+        }
+      ],
+      "finalAnswer": "<span class=\"latex\">P_X(x)</span>"
+    },
+    "intuition": "Marginalization helps us focus on a specific variable while ignoring others. It's like taking a snapshot of the joint distribution from a particular perspective.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:50:38.357Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

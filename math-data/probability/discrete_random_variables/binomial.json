@@ -1,0 +1,621 @@
+[
+  {
+    "id": "prob_con_binomial_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a fundamental concept in probability theory that models the number of successes in a fixed number of independent trials, where each trial has a constant probability of success.</p><p>Formally, let X be the random variable representing the number of successes in n independent trials, each with a probability p of success. The binomial distribution is characterized by the probability mass function:</p>\\(P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)<p>This formula shows that the probability of k successes out of n trials depends on the number of ways k successes can occur among n trials, and the probability of each success or failure.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)\",",
+    "name": "Binomial Distribution Formula\" },",
+    "whyMatters": "<p>The binomial distribution has numerous applications in machine learning and artificial intelligence, such as modeling the number of positive examples in a dataset or the number of correct predictions in a classification model.</p>",
+    "intuition": "<p>Think of flipping a coin multiple times. The binomial distribution helps us understand the probability of getting a certain number of heads (or tails) given the number of flips and the probability of heads on each flip.</p>",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:05:34.247Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_binomial_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, where each trial has a constant probability of success.</p><p>For example, flipping a fair coin 10 times can be modeled using the binomial distribution to calculate the probability of getting exactly 5 heads or tails.</p>",
+    "formula": {
+      "latex": "\\[ P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k} \\]",
+      "name": "Binomial Probability Formula"
+    },
+    "intuition": "The binomial distribution is useful when you want to calculate the probability of a specific number of successes in a fixed number of trials, where each trial has a constant probability of success.",
+    "realWorldApplications": [
+      "In machine learning, the binomial distribution can be used to model the number of positive or negative samples in a dataset."
+    ],
+    "commonMistakes": [
+      "Not accounting for the independence of trials",
+      "Assuming the probability of success is not constant"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:05:51.148Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_binomial_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, where each trial has a constant probability of success.</p><p>This concept matters because it's widely used in machine learning and AI to model binary outcomes, such as predicting whether a customer will purchase a product or not.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(X=k) = \\\\binom{n}{k} p^k (1-p)^{n-k}\\]\",",
+    "name": "Binomial Probability Formula\" },",
+    "intuition": "The binomial distribution is like flipping a coin multiple times. Each flip has a certain probability of landing heads or tails, and the number of heads or tails follows a binomial distribution.",
+    "realWorldApplications": [
+      "Predicting customer purchases in e-commerce"
+    ],
+    "commonMistakes": [
+      "Forgetting that the trials are independent",
+      "Not accounting for the constant probability of success"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:06:07.044Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_binomial_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, where each trial has a constant probability of success.</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = {n\\choose k} p^k (1-p)^{n-k}\\]",
+      "name": "Binomial Distribution Formula"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability that exactly 3 heads appear?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the number of trials (n) and the probability of success (p)",
+          "mathHtml": "\\[n=5, p=0.5\\]",
+          "explanation": "We know that each coin flip is an independent trial."
+        }
+      ],
+      "finalAnswer": "P(X=3) = 10*(0.5^3)*(0.5^(5-3)) = 0.15625"
+    },
+    "intuition": "The binomial distribution helps us understand the probability of a certain number of successes in a fixed number of trials, which is crucial in many real-world applications, such as quality control and medical research.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:06:27.679Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_binomial_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with a constant probability of success.</p><p>This distribution is commonly used to model binary outcomes, such as coin tosses or medical test results.</p>",
+    "formula": "{",
+    "latex": "\\[ P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k} \\]\",",
+    "name": "Binomial Probability Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability that exactly 3 of those flips result in heads?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the parameters\", \"mathHtml\": \"\\(n=5\\), \\(k=3\\)\", \"explanation\": \"The number of trials is 5, and we're interested in the probability of exactly 3 successes.\"}, {\"stepNumber\": 2, \"description\": \"Plug in values\", \"mathHtml\": \"\\[ P(X=3) = \\binom{5}{3} (1/2)^3 (1-1/2)^{5-3} \\]\", \"explanation\": \"We use the binomial probability formula with \\(n=5\\), \\(k=3\\), and \\(p=1/2\\)\"}, {\"stepNumber\": 3, \"description\": \"Calculate the result\", \"mathHtml\": \"\\[ P(X=3) = 10 \\cdot (1/2)^3 \\cdot (1/2)^2 = 0.15625 \\]\", \"explanation\": \"We plug in the values and simplify\"} ],",
+    "finalAnswer": "0.15625\" },",
+    "intuition": "The binomial distribution is a powerful tool for modeling binary outcomes, and its applications are vast.",
+    "realWorldApplications": [
+      "Predicting the number of heads in a coin toss sequence"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:06:55.445Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_binomial_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with a constant probability of success.</p>",
+    "formula": {
+      "latex": "\\[ P(X=k) = {n\\choose k} p^k (1-p)^{n-k} \\]",
+      "name": "Binomial Probability Formula"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability of getting exactly 3 heads?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the number of trials (n)",
+          "mathHtml": "\\[ n = 5 \\]",
+          "explanation": "We are flipping a coin 5 times."
+        }
+      ],
+      "finalAnswer": "0.3125"
+    },
+    "intuition": "The binomial distribution is useful for modeling binary outcomes in repeated experiments.",
+    "realWorldApplications": [
+      "Modeling the number of defects in a manufacturing process"
+    ],
+    "tags": [
+      "probability",
+      "discrete random variables",
+      "binomial distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:07:13.631Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_binomial_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, where each trial has a constant probability of success.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(X=k) = {n\\\\choose k} p^k (1-p)^{n-k}\\]\",",
+    "name": "Binomial Probability Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability that exactly 3 heads appear?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the number of trials (n)\", \"mathHtml\": \"\", \"explanation\": \"We have 5 coin flips.\"}, {\"stepNumber\": 2, \"description\": \"Determine the probability of success (p)\", \"mathHtml\": \"\", \"explanation\": \"Each coin flip has a 50% chance of being heads.\"}, {\"stepNumber\": 3, \"description\": \"Plug in values into the formula\", \"mathHtml\": \"\\\\[P(X=3) = {5\\\\choose 3} \\\\left(\\\\frac{1}{2}\\\\right)^3 \\\\left(1-\\\\frac{1}{2}\\\\right)^{5-3}\\]\", \"explanation\": \"We use the binomial probability formula with n=5, k=3, and p=0.5\"} ],",
+    "finalAnswer": "P(X=3) = 0.15625\" },",
+    "intuition": "The binomial distribution is useful in modeling binary outcomes, such as coin flips or yes/no questions.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:07:37.953Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_binomial_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution Theorem",
+    "contentHtml": "<p>The binomial distribution is a fundamental concept in probability theory that describes the number of successes in a fixed number of independent trials.</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = {n\\choose k} p^k (1-p)^{n-k}\\]",
+      "name": "Binomial Probability Formula"
+    },
+    "theorem": {
+      "statement": "\\[P(X=k) = \\sum_{i=0}^{k} {n\\choose i} p^i (1-p)^{n-i}\\]"
+    },
+    "intuition": "The binomial distribution theorem provides a way to calculate the probability of exactly k successes in n independent trials, each with a fixed probability p.",
+    "realWorldApplications": [
+      "In machine learning, the binomial distribution is used in binary classification problems, such as spam vs. non-spam emails."
+    ],
+    "tags": [
+      "probability",
+      "binomial"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:07:54.224Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_binomial_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with a constant probability of success.</p>",
+    "formula": "{",
+    "latex": "\\[ P(X=k) = {n\\choose k} p^k (1-p)^{n-k} \\]",
+    "name": "Binomial Probability Mass Function\" },",
+    "theorem": "{",
+    "statement": "\\\\[ E[X] = np, \\quad Var[X] = np(1-p) \\\\]\" },",
+    "intuition": "The binomial distribution is a fundamental concept in probability theory, with applications in machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "Estimating the number of positive reviews for a product"
+    ],
+    "tags": [
+      "probability",
+      "binomial",
+      "discrete"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:08:08.839Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "problem": {
+      "statementHtml": "<p>Let X be a binomial random variable with n trials and probability p of success in each trial. Find the mean and variance of X.</p>",
+      "hints": [
+        "Start by recalling the definition of a binomial distribution.",
+        "Think about how the mean is related to the number of successes.",
+        "The variance will depend on both the mean and the probability."
+      ],
+      "solutionHtml": "<p>To find the mean, we can use the formula for the expected value:</p>\n\n\\[ \nE[X] = np \\]\n<p>This makes sense intuitively, since each success contributes to the total number of successes.</p>\n\n<p>Next, let's find the variance:</p>\n\n\\[ \nV(X) = E[X^2] - (E[X])^2 \\]\n<p>We can use the formula for the expected value again:</p>\n\n\\[ \nE[X^2] = n(p + q) \\]\n<p>Now we can plug in our values and simplify:</p>\n\n\\[ \nV(X) = np(1-p) \\]\n<p>This makes sense intuitively, since the variance depends on both the mean and the probability.</p>",
+      "answerShort": "The mean is np, and the variance is np(1-p)"
+    },
+    "commonMistakes": [
+      "Forgetting to account for the number of trials",
+      "Not recognizing that the variance depends on both the mean and the probability"
+    ],
+    "realWorldApplications": [
+      "Modeling the number of defects in a manufacturing process"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:08:32.820Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a binomial random variable with n trials and probability p of success in each trial. Find the mean and variance of X.",
+    "hints": [
+      "Start by recalling the definition of the binomial distribution.",
+      "Think about how the mean and variance relate to the number of successes.",
+      "Use the formula for the mean and variance of a sum of independent random variables."
+    ],
+    "solutionHtml": " The probability mass function (PMF) of X is given by:  \\[P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]  The mean, or expected value, of X is:  \\[\\mathbb{E}[X] = np\\]  To find the variance, we can use the formula for the variance of a sum of independent random variables:  \\[\\text{Var}(X) = \\sum_{k=0}^n k^2 P(X=k) - (\\mathbb{E}[X])^2\\] \\[= \\sum_{k=0}^n k^2 \\binom{n}{k} p^k (1-p)^{n-k} - (np)^2\\]  Now, we can use the fact that:  \\[\\sum_{k=0}^n k^2 \\binom{n}{k} p^k (1-p)^{n-k} = n(1-p) + np\\]  Substituting this into our expression for the variance, we get:  \\[\\text{Var}(X) = n(1-p) + np - (np)^2\\] \\[= np(1-p)\\]  So, the mean and variance of X are given by:  \\[\\mathbb{E}[X] = np\\] \\[\\text{Var}(X) = np(1-p)\\]  \",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:08:59.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a binomial random variable with n = 10 trials and p = 0.5 success probability. Find P(X ≥ 6).",
+    "hints": [
+      "Recall the formula for the binomial distribution.",
+      "Use the fact that P(X ≥ 6) = 1 - P(X ≤ 5).",
+      "You can use a calculator or software to compute the cumulative probabilities."
+    ],
+    "solutionHtml": "\\[P(X \\geq 6) = 1 - P(X \\leq 5) = 1 - \\sum_{k=0}^{5} {10 \\choose k} (0.5)^{10}\\] <p>Now, use a calculator or software to compute the cumulative probabilities.</p> <p>The final answer is: 0.3286</p>\",",
+    "answerShort": "0.3286\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:09:17.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a binomial random variable with n trials and probability of success p. Find the mean and variance of X.</p>",
+    "hints": [
+      "<p>The mean is simply np.</p>",
+      "<p>For the variance, recall that Var(X) = E[X^2] - (E[X])^2.</p>",
+      "<p>You can use the fact that X^2 is also a binomial random variable with parameters n and p.</p>"
+    ],
+    "solutionHtml": "<p>To find the mean of X, we have:</p>\\(\\mu = E[X] = np\\)<p>This makes sense intuitively because if you're flipping a coin n times, you'd expect to get approximately np heads.</p><p>Now let's find the variance:</p>\\(Var(X) = E[X^2] - (E[X])^2 = n \\cdot p \\cdot (1-p)\\)<p>This is because X^2 has the same distribution as a binomial random variable with parameters n and p, but shifted up by np.</p><p>The final answer is:</p>\\(\\mu = np\\), \\(Var(X) = n \\cdot p \\cdot (1-p)\\)\",",
+    "answerShort": "np, n*p*(1-p)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:09:39.771Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_binomial_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution: Definition and Derivation",
+    "contentHtml": "<p>In probability theory, the binomial distribution is a discrete random variable that models the number of successes in a fixed number of independent trials, each with a constant probability of success.</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]",
+      "name": "Binomial Distribution Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability of exactly 3 heads in 5 coin tosses, each with a 0.6 probability of being heads.</p>",
+      "hints": [
+        "Hint: Use the binomial distribution formula"
+      ],
+      "solutionHtml": "<p>We can use the binomial distribution formula:</p><ul><li>Set n = 5 and k = 3</li><li>Calculate p^k (1-p)^{n-k} = (0.6)^3 (0.4)^2</li><li>Multiply by \\binom{n}{k} = \\frac{5!}{3!(5-3)!}</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>What is the probability of exactly 2 successes in 4 independent trials, each with a 0.7 probability of success?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the number of trials and the desired number of successes",
+          "mathHtml": "\\[n = 4, k = 2\\]",
+          "explanation": "We need to determine the number of trials (n) and the desired number of successes (k)"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the binomial coefficient",
+          "mathHtml": "\\[\\binom{n}{k} = \\frac{4!}{2!(4-2)!}\\]",
+          "explanation": "The binomial coefficient is calculated using the formula"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the probability of success and failure",
+          "mathHtml": "\\[p^k (1-p)^{n-k} = (0.7)^2 (0.3)^2\\]",
+          "explanation": "We calculate the probability of k successes and n-k failures"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply the binomial coefficient and the probability",
+          "mathHtml": "\\[P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]",
+          "explanation": "We multiply the binomial coefficient with the probability to get the final answer"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The binomial distribution formula provides a way to calculate the probability of exactly k successes in n trials, given the probability of success p.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:10:18.688Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_binomial_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution: Definition and Derivation",
+    "contentHtml": "<p>In this worked example, we'll derive the binomial distribution formula and explore its properties.</p>",
+    "formula": {
+      "latex": "\\[P(X=k)={n\\choose k}p^k(1-p)^{n-k}\\]",
+      "name": "Binomial Probability Mass Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a fair coin 5 times. What's the probability of getting exactly 3 heads?</p>",
+      "hints": [
+        "Think about the number of possible outcomes.",
+        "Use the binomial distribution formula."
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's solve this problem step-by-step.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the parameters",
+          "mathHtml": "\\[n=5, k=3, p=0.5\\]",
+          "explanation": "We need to know how many trials (flips) we have and what's the probability of success (getting heads)."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the number of combinations",
+          "mathHtml": "\\[{n\\choose k}={5\\choose 3}=10\\]",
+          "explanation": "We use the combination formula to find the number of ways we can get exactly 3 heads."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug in the values and simplify",
+          "mathHtml": "\\[P(X=3)={10}\\cdot (0.5)^3\\cdot (1-0.5)^{5-3}=0.15625\\]",
+          "explanation": "We plug in the values and simplify the expression to get the probability."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check our answer",
+          "mathHtml": "",
+          "explanation": "Let's verify that our answer makes sense."
+        }
+      ],
+      "finalAnswer": "0.15625"
+    },
+    "intuition": "The binomial distribution is a powerful tool for modeling repeated trials with a fixed probability of success.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:10:48.451Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_binomial_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a fundamental concept in probability theory that models the number of successes in a fixed number of independent trials.</p>",
+    "formula": {
+      "latex": "\\[ P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k} \\]",
+      "name": "Binomial Probability"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability that exactly 3 heads appear?</p>",
+      "hints": [
+        "Think about the number of possible outcomes",
+        "Use the binomial formula"
+      ],
+      "solutionHtml": "<p>We can use the binomial formula:</p><ul><li>Number of trials (n) = 5</li><li>Probability of success (p) = 0.5</li><li>Desired number of successes (k) = 3</li></ul>",
+      "answerShort": "The probability is approximately 0.246"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to know the expected value and variance of a binomial distribution with n=10, p=0.2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the mean",
+          "mathHtml": "\\[ E[X] = np \\]",
+          "explanation": "The mean is simply the product of the number of trials and the probability of success."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the variance",
+          "mathHtml": "\\[ V[X] = np(1-p) \\]",
+          "explanation": "The variance is the product of the number of trials, the probability of success, and the probability of failure."
+        }
+      ],
+      "finalAnswer": "The mean is 2 and the variance is 1.6"
+    },
+    "intuition": "The binomial distribution is a great example of how probability can be used to model real-world phenomena.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:11:16.178Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_binomial_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "contentHtml": "<p>The binomial distribution is a fundamental concept in probability theory, used to model the number of successes in a fixed number of independent trials.</p>",
+    "formula": {
+      "latex": "\\[ P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k} \\]",
+      "name": "Binomial Probability"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a fair coin 5 times. What is the probability that exactly 3 heads appear?</p>",
+      "hints": [
+        "Hint: Use the binomial distribution formula"
+      ],
+      "solutionHtml": "<p>We can use the binomial distribution formula:</p><ul><li>\\(n=5, k=3, p=0.5\\)</li></ul><p>Plugging in these values, we get:</p>",
+      "answerShort": "0.2461"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the mean and variance of a binomial distribution with \\(n=10, p=0.6\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the mean",
+          "mathHtml": "\\[ E(X) = np \\]",
+          "explanation": "The mean is simply the product of the number of trials and the probability of success."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the variance",
+          "mathHtml": "\\[ V(X) = n p (1-p) \\]",
+          "explanation": "The variance is the product of the number of trials, the probability of success, and the probability of failure."
+        }
+      ],
+      "finalAnswer": "4.2"
+    },
+    "intuition": "The binomial distribution is often used in machine learning to model binary outcomes, such as classifying an image as either cat or dog.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:11:44.211Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

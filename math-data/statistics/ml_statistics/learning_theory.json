@@ -1,0 +1,395 @@
+[
+  {
+    "id": "stat_con_learning_theory_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Statistical Learning Theory: VC Dimension and PAC Learning",
+    "subtitle": "Understanding generalization bounds in machine learning",
+    "contentHtml": "<p>Statistical learning theory provides a framework for understanding how machine learning models generalize to unseen data. Two key concepts are the Vapnik-Chervonenkis (VC) dimension and probably approximately correct (PAC) learning.</p><p>The VC dimension measures the capacity of a hypothesis space, which is crucial in determining the upper bound on the number of training examples required for good generalization.</p>",
+    "formula": "{",
+    "latex": "\\\\[VCdim(H) = \\\\sup_{n} \\\\{n : \\\\exists\\\\ x_1, ..., x_n s.t. f(x_1), ..., f(x_n) are linearly independent in H\\\\}\\]\",",
+    "name": "VC Dimension Formula\" },",
+    "intuition": "The VC dimension represents the maximum number of training examples that can be correctly classified by a hypothesis set.",
+    "realWorldApplications": [
+      "In ML, understanding the VC dimension helps design models that generalize well to unseen data"
+    ],
+    "commonMistakes": [
+      "Confusing the VC dimension with the model's capacity"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:36:49.746Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_learning_theory_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Statistical Learning Theory: VC Dimension and PAC Learning",
+    "contentHtml": "<p>In statistical learning theory, we study how to learn from data without overfitting.</p><p>The VC dimension is a measure of the complexity of a hypothesis space, while PAC learning provides a framework for evaluating the performance of an algorithm.</p>",
+    "formula": {
+      "latex": "\\[VCdim(H) = \\sup_{n\\geq1} \\max_{S\\subseteq [n]} |H|_S\\]",
+      "name": "VC dimension",
+      "variants": []
+    },
+    "intuition": "The VC dimension provides a way to bound the number of different hypotheses that can be learned from a dataset, while PAC learning ensures that our algorithm generalizes well to new data.",
+    "realWorldApplications": [
+      "In machine learning, understanding the VC dimension and PAC learning is crucial for designing algorithms that generalize well."
+    ],
+    "commonMistakes": [
+      "Not considering the trade-off between bias and variance"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:04.087Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_learning_theory_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand the complexity of a hypothesis space.</p><p>Intuitively, it measures how many different ways we can 'color' a dataset using a given set of hypotheses. The smaller the VC dimension, the more constrained our hypothesis space is, and vice versa.</p>",
+    "formula": {
+      "latex": "\\(VC_dim(H) = \\max_{x_1, ..., x_n} |\\{f(x_1), ..., f(x_n)| : f \\in H\\)",
+      "name": "Definition of VC Dimension"
+    },
+    "intuition": "The VC dimension provides a way to bound the number of possible hypotheses that can fit our training data. This is crucial in machine learning, as it allows us to guarantee generalization performance.",
+    "realWorldApplications": [
+      "In ML, we use VC dimension to analyze the complexity of neural networks and ensure they don't overfit."
+    ],
+    "commonMistakes": [
+      "Don't confuse VC dimension with the number of training examples; they're related but distinct concepts."
+    ],
+    "tags": [
+      "statistical learning theory",
+      "VC dimension",
+      "PAC learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:20.527Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_learning_theory_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand when machine learning models generalize well.</p><p>In this formula, we'll explore how to calculate the VC dimension and its connection to PAC learning.</p>",
+    "formula": "{",
+    "latex": "\\[VCdim(H) = \\sup_{S \\subseteq X} |S|,\\] where $H$ is a hypothesis class and $X$ is the input space.\",",
+    "name": "VC Dimension Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification problem with two classes: positive (1) and negative (0). We want to calculate the VC dimension of a hypothesis class $H$ that consists of all linear separators.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a subset of the input space\", \"mathHtml\": \"\\[S = \\{x_1, x_2, ..., x_k\\} \\subseteq X\\]\", \"explanation\": \"We select a representative set of inputs.\"} ],",
+    "finalAnswer": "The VC dimension is 2\" },",
+    "intuition": "The VC dimension measures the complexity of a hypothesis class. A higher VC dimension means the class can fit more complex relationships, but also increases the risk of overfitting.",
+    "tags": [
+      "VC Dimension",
+      "PAC Learning"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:39.618Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_learning_theory_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand the complexity of a hypothesis class.</p><p>It's closely related to PAC (Probably Approximately Correct) learning, which provides generalization bounds for our models.</p>",
+    "formula": "{",
+    "latex": "\\[VC(\\mathcal{H}) = \\sup_{S \\subseteq X} |S|,\\] where $\\mathcal{H}$ is the hypothesis class and $X$ is the input space.\",",
+    "name": "VC Dimension Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification problem with a dataset of 1000 examples. We want to use a neural network with 5 hidden layers, each containing 20 neurons.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the VC dimension for our hypothesis class.\", \"mathHtml\": \"\\[VC(\\mathcal{H}) = ?\\]\", \"explanation\": \"Why is this important?\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The VC dimension helps us understand how complex a hypothesis class is, which affects our model's ability to generalize.",
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:37:56.454Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_learning_theory_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory, providing a bound on the number of hypotheses that can be learned from a dataset.</p><p>PAC (Probably Approximately Correct) learning is a framework for analyzing the performance of machine learning algorithms.</p>",
+    "formula": "{",
+    "latex": "\\[VC_dim(H) \\leq d\\] where $H$ is a hypothesis class and $d$ is the VC dimension.\",",
+    "name": "VC Dimension Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification problem with a dataset of size $n$. How can we use the VC dimension to bound the number of hypotheses that can be learned?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the VC dimension for the hypothesis class\", \"mathHtml\": \"\\(VC_dim(H) = k\\)\", \"explanation\": \"The VC dimension is a measure of the complexity of the hypothesis class.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The VC dimension provides an upper bound on the number of hypotheses that can be learned from a dataset, allowing us to analyze the performance of machine learning algorithms.",
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:38:13.284Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_learning_theory_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand when machine learning models can generalize well.</p><p>In this context, PAC (Probably Approximately Correct) learning provides a framework for analyzing the performance of algorithms on unseen data.</p>",
+    "formula": "{",
+    "latex": "\\[VCdim(H) = \\sup_{S \\subseteq X} |S|,\\] where $H$ is a hypothesis class and $X$ is the input space.\",",
+    "name": "VC Dimension Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification problem with $n$ training examples.</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Compute the VC dimension of $H$ using the formula above",
+    "mathHtml": "\\[VCdim(H) = \\sup_{S \\subseteq X} |S|,\\]\",",
+    "explanation": "This step helps us understand the capacity of our hypothesis class\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "The VC dimension provides a bound on how well a learning algorithm can generalize to new data. A lower VC dimension means the algorithm is more likely to overfit, while a higher VC dimension indicates it may be able to learn more complex patterns.",
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:38:33.342Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_learning_theory_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "contentHtml": "<p>The VC dimension is a fundamental concept in statistical learning theory that helps us understand the complexity of a hypothesis class.</p><p>In this theorem, we'll explore the connection between VC dimension and PAC learnability.</p>",
+    "formula": "{",
+    "latex": "\\[VCdim(H) = \\max_{S\\subseteq [n]} |\\{f \\in H : f(x) = y \\\\forall x \\in S, y \\in {0,1} \\}\\]",
+    "name": "VC Dimension",
+    "variants": "[] },",
+    "theorem": "{",
+    "statement": "\\\\[\\\\textbf{Theorem: } For any hypothesis class $H$ and $\\epsilon > 0$, if $VCdim(H) \\leq \\\\frac{1}{\\\\epsilon}$, then there exists a learning algorithm that learns $H$ with probability at least $1-\\\\delta$.\",",
+    "proofSketch": "The proof involves showing that the number of possible hypotheses is bounded by the VC dimension. Then, we use this bound to construct a learning algorithm that achieves the desired error rate.\" },",
+    "intuition": "In simple terms, the theorem states that if the VC dimension of a hypothesis class is small enough, then we can learn it with high probability using a polynomial number of examples.",
+    "realWorldApplications": [
+      "This theorem has implications for designing efficient machine learning algorithms and understanding their limitations."
+    ],
+    "tags": [
+      "VC Dimension",
+      "PAC Learning"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:38:52.819Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_learning_theory_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "Vapnik-Chervonenkis (VC) Dimension",
+    "contentHtml": "<p>The Vapnik-Chervonenkis (VC) dimension is a fundamental concept in statistical learning theory that measures the complexity of a hypothesis space.</p><p>It was introduced by Vladimir Vapnik and Alexey Chervonenkis in the 1970s as a way to bound the generalization error of a learning algorithm.</p>",
+    "formula": {
+      "latex": "\\[VC_dim(H) = \\max_{S \\subseteq X, |S| = d} |\\{f \\in H : f(x) = f(y), \\forall x,y \\in S\\}\\]",
+      "name": "Vapnik-Chervonenkis Dimension"
+    },
+    "theorem": {
+      "statement": "\\[For any hypothesis space H and any distribution D, if VC_dim(H) ≤ d then the probability of error is bounded by O(1/d) for any learning algorithm.",
+      "proofSketch": "The proof involves showing that the number of possible hypotheses in H is at most 2^d, and then using this bound to derive the desired generalization error bound."
+    },
+    "intuition": "The VC dimension measures how complex a hypothesis space is by counting the maximum number of ways it can shatter a set of d points. This complexity measure has important implications for learning algorithms, as high VC dimensions often require more training data to generalize well.",
+    "realWorldApplications": [
+      "In machine learning, understanding the VC dimension helps us choose suitable algorithms and hyperparameters for our problem."
+    ],
+    "tags": [
+      "statistical-learning-theory",
+      "VC-dimension"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:39:13.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "problem": "{",
+    "statementHtml": "Let <i>G</i> be a class of functions from <i>X</i> to <i>y</i>. Consider a hypothesis space <i>H ⊆ G</i>. Suppose we have a training set <i>T = {(x_1, y_1), ..., (x_m, y_m)}</i>. Prove that if <i>H</i> has finite VC dimension <i>d</i>, then there exists a constant <i>c > 0</i> such that for any <i>ε > 0</i>, the probability of an event is at most <i>c \\* (d \\* ln(1/ε) + ln(|T|))</i>.\",",
+    "hints": [
+      "Hint: Recall the definition of VC dimension.",
+      "Think about the number of possible hypotheses in H.",
+      "Use the union bound to upper-bound the probability."
+    ],
+    "solutionHtml": "<p>Step 1: Recall that the VC dimension is the maximum size of a set that can be shattered by <i>H</i>. Since <i>H</i> has finite VC dimension, there exists some integer <i>d</i> such that no set of size greater than <i>d+1</i> can be shattered.</p><p>Step 2: Fix some <i>ε > 0</i>. We want to upper-bound the probability that an event occurs. Let <i>E</i> be the event that there exists a hypothesis in <i>H</i> that misclassifies at least one point in <i>T</i>.</p><p>Step 3: Use the union bound to get:</p>\\[\\mathbb{P}(E) ≤ \\sum_{S ⊆ T, |S| > d} \\mathbb{P}(\\text{all points in } S \\text{ are misclassified})\\]\\[≤ \\binom{|T|}{d+1} \\left( \\frac{\\epsilon}{2} \\right)^{d+1}\\]\\<p>Step 4: Simplify the expression:</p>\\[\\mathbb{P}(E) ≤ c \\* (d \\* ln(1/ε) + ln(|T|))\\]",
+    "answerShort": "The probability is at most <i>c \\* (d \\* ln(1/ε) + ln(|T|))</i>\" },",
+    "commonMistakes": [
+      "Forgetting to use the union bound.",
+      "Not considering the size of the training set."
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:39:42.584Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "problem": {
+      "statementHtml": "Suppose we have a hypothesis class H with VC dimension d. Prove that if a learning algorithm is PAC-learnable for this class, then it must be able to generalize well.",
+      "hints": [
+        "Start by recalling the definition of PAC learnability.",
+        "Think about what it means for an algorithm to generalize well.",
+        "Use the fact that the VC dimension upper bounds the number of examples needed to learn a concept."
+      ],
+      "solutionHtml": "To prove this, we need to show that if H is PAC-learnable, then it must be able to generalize well. Let's start by recalling the definition of PAC learnability: an algorithm A is said to be PAC-learnable for a class H if there exists a probability distribution P over X such that for all concepts c in H, there exists a hypothesis h in H with error at most ε and confidence at least 1 - δ. Now, let's think about what it means for an algorithm to generalize well: it must be able to correctly classify new, unseen examples. We can use the fact that the VC dimension upper bounds the number of examples needed to learn a concept to show that if H is PAC-learnable, then it must be able to generalize well.",
+      "answerShort": "The answer is..."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the probability distribution P.",
+      "Not using the fact that VC dimension upper bounds the number of examples needed."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:01.629Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "problem": {
+      "statementHtml": "<p>Prove that the VC dimension of a set of linear functions is equal to the number of input features.</p>",
+      "hints": [
+        "Consider the simplest possible case: a single feature.",
+        "Think about what happens when you add more features.",
+        "Recall the definition of VC dimension."
+      ],
+      "solutionHtml": "<p>To prove this, we'll show that any set of linear functions with VC dimension <i>n</i> can be shattered by a set of at most <i>n</i> input features.</p>\n<p>Let's start with the simplest case: a single feature. In this case, the VC dimension is 1, and we can indeed shatter any set of examples using linear functions in one dimension.</p>\n<p>Now suppose we have <i>n</i> input features. We can show that any set of at most <i>n</i> linear functions in these dimensions can be shattered by a set of at most <i>n</i> examples.</p>",
+      "answerShort": "The VC dimension is equal to the number of input features."
+    },
+    "commonMistakes": [
+      "Forgetting that the VC dimension only depends on the set of functions, not their parameters.",
+      "Thinking that the VC dimension increases with the number of output classes."
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:18.794Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "problem": {
+      "statementHtml": "<p>Given a hypothesis class H and a probability distribution P over the input space X, show that with high probability, a randomly chosen hypothesis h from H will generalize well to unseen data.</p>",
+      "hints": [
+        "Consider the number of possible hypotheses in H.",
+        "Think about how this relates to the complexity of the hypothesis class.",
+        "Recall the definition of PAC learning."
+      ],
+      "solutionHtml": "<p>To prove this, we need to show that with high probability, a randomly chosen hypothesis h from H will have a low error rate on unseen data.</p><p>We can do this by bounding the expected error using the VC dimension and then applying the union bound.</p>",
+      "answerShort": "The answer is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:30.826Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

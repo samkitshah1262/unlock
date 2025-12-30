@@ -1,0 +1,137 @@
+[
+  {
+    "id": "stat_for_regularization_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>Regularization is a crucial concept in regression analysis that helps mitigate overfitting by adding a penalty term to the loss function.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\beta} = (X^T X + \\alpha I)^{-1} X^T y \\]\",",
+    "name": "Ridge Regression Formula",
+    "variants": "[ {\"latex\": \"\\[ \\hat{\\beta}_{\\text{Lasso}} = (X^T X + \\alpha I)^{-1} X^T y, \\quad \\text{s.t. } ||\\hat{\\beta}||_1 \\leq t \\]\", \"description\": \"Lasso Regression Formula\"}, {\"latex\": \"\\[ \\hat{\\beta}_{\\text{Elastic Net}} = (X^T X + \\alpha I)^{-1} X^T y, \\quad \\text{s.t. } ||\\hat{\\beta}||_2 \\leq t, ||\\hat{\\beta}||_1 \\leq s \\]\", \"description\": \"Elastic Net Regression Formula\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a linear regression model with 10 features and 1000 samples. How would you regularize the model to prevent overfitting?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Choose a suitable regularization parameter α",
+        "mathHtml": "",
+        "explanation": "This depends on the complexity of the problem and the desired level of regularization"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Select a regularization method (Ridge, Lasso, or Elastic Net)",
+        "mathHtml": "",
+        "explanation": "Each method has its strengths and weaknesses"
+      }
+    ],
+    "finalAnswer": "The answer\" },",
+    "intuition": "Regularization helps prevent overfitting by adding a penalty term to the loss function. This encourages simpler models that generalize better.",
+    "realWorldApplications": [
+      "Feature selection in image classification"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:58:07.806Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regularization_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression",
+    "subtitle": "A crucial concept in machine learning and statistics",
+    "contentHtml": "<p>Regularization is a powerful technique to prevent overfitting in regression models.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\beta} = (X^T X + \\alpha I)^{-1} X^T y \\]\",",
+    "name": "Ridge Regression Formula",
+    "variants": "[ {\"latex\": \"\\[ \\hat{\\beta} = (X^T X + \\lambda I)^{-1} X^T y \\]\", \"description\": \"Lasso Regression Formula\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset with features $x_1, x_2$ and target variable $y$, find the coefficients for a ridge regression model.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the design matrix\", \"mathHtml\": \"\\[ X = \\begin{bmatrix} x_1 & x_2 \\\\ \\end{bmatrix} \\]\", \"explanation\": \"This is the input data for our model\"} ],",
+    "finalAnswer": "The coefficients\" },",
+    "intuition": "Regularization helps by adding a penalty term to the loss function, which prevents large coefficients and reduces overfitting.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:58:26.453Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regularization_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>Regularization is a crucial concept in regression analysis that helps mitigate overfitting by adding a penalty term to the loss function.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\beta} = (X^T X + \\alpha I)^{-1} X^T y \\]\",",
+    "name": "Ridge Regression Formula",
+    "variants": "[ {\"latex\": \"\\[ \\hat{\\beta} = (X^T X + \\lambda ||\\beta||_2^2)^{-1} X^T y \\]\", \"description\": \"Lasso Regression Formula\"} ] },",
+    "intuition": "Regularization helps balance the bias-variance tradeoff by adding a penalty term that favors simpler models.",
+    "realWorldApplications": [
+      "Feature selection in recommender systems"
+    ],
+    "tags": [
+      "regularization",
+      "ridge regression",
+      "lasso regression",
+      "elastic net"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:58:40.480Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regularization_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression",
+    "contentHtml": "<p>Regularization is a crucial technique in regression analysis to prevent overfitting by adding a penalty term to the loss function.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\beta} = (X^T X + \\lambda ||\\beta||_1)^{-1} X^T y \\]\",",
+    "name": "Ridge Regression",
+    "variants": "[ {",
+    "description": "Lasso Regression\" } ] },",
+    "intuition": "Regularization helps balance the bias-variance tradeoff by shrinking coefficients towards zero, making the model more robust and less prone to overfitting.",
+    "realWorldApplications": [
+      "Feature selection in machine learning"
+    ],
+    "tags": [
+      "regularization",
+      "ridge regression",
+      "lasso regression"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:58:54.089Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

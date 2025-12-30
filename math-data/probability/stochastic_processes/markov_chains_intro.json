@@ -1,0 +1,658 @@
+[
+  {
+    "id": "prob_con_markov_chains_intro_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains",
+    "contentHtml": "<p>A discrete-time Markov chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain probabilistic rules.</p><p>The transition between states is governed by a probability distribution, which is encapsulated in the transition matrix P. This matrix specifies the probability of transitioning from any given state to any other state at each time step.</p>",
+    "formula": "{",
+    "latex": "\\(P_{ij}\\) represents the probability of transitioning from state \\(i\\) to state \\(j\\)\",",
+    "name": "\" },",
+    "intuition": "The key insight is that DTMCs are memoryless, meaning that the future state only depends on the current state and not on any past states.",
+    "visualDescription": "A diagram showing a sequence of states with arrows representing transitions would help illustrate this concept",
+    "commonMistakes": [
+      "Confusing DTMCs with continuous-time Markov chains"
+    ],
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) algorithms are used in machine learning for tasks like Bayesian inference and sampling from complex distributions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:09:41.602Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_markov_chains_intro_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains",
+    "contentHtml": "<p>A Discrete-Time Markov Chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain probabilistic rules.</p><p>The transition between states is governed by a probability distribution, which is encapsulated in the <i>transition matrix</i>.</p>",
+    "formula": "{",
+    "latex": "\\\\[ P = \\\\begin{bmatrix} p_{11} & p_{12} \\\\\\\\ p_{21} & p_{22} \\\\end{bmatrix}\\]\",",
+    "name": "Transition Matrix\" },",
+    "intuition": "Think of a DTMC as a random walk, where the current state determines the next possible states. The transition matrix captures this probabilistic relationship.",
+    "realWorldApplications": [
+      "Modeling communication networks",
+      "Analyzing social network dynamics"
+    ],
+    "commonMistakes": [
+      "Confusing DTMCs with Continuous-Time Markov Chains",
+      "Ignoring the Markov property"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:09:57.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_markov_chains_intro_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains",
+    "contentHtml": "<p>A discrete-time Markov chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain rules.</p><p>The key idea is that the future state of the system depends only on its current state, not on any of the past states. This property is known as the Markov property.</p>",
+    "formula": {
+      "latex": "\\[P(X_{n+1} = j | X_n = i) = p_{ij}\\]",
+      "name": "Transition Probability"
+    },
+    "intuition": "Think of a DTMC like a random walk on a graph. The current state determines the next possible states, and the probability of transitioning to each state is given by the transition matrix.",
+    "realWorldApplications": [
+      "In reinforcement learning, DTMCs are used to model decision-making processes"
+    ],
+    "commonMistakes": [
+      "Don't confuse DTMCs with continuous-time Markov chains or other types of stochastic processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:10:14.241Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_markov_chains_intro_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>A discrete-time Markov chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain probabilistic rules.</p><p>The transition matrix P represents the probability of transitioning from one state to another.</p>",
+    "formula": "{",
+    "latex": "\\[P = \\begin{bmatrix} p_{11} & p_{12} & \\cdots & p_{1n} \\\\ p_{21} & p_{22} & \\cdots & p_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ p_{n1} & p_{n2} & \\cdots & p_{nn} \\end{bmatrix}\\]\",",
+    "name": "Transition Matrix\" },",
+    "intuition": "DTMCs are used to model random processes that have a finite number of states and can only transition between these states according to certain probabilities.",
+    "visualDescription": "A diagram showing the states and transitions in a DTMC",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:10:33.285Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_markov_chains_intro_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>A discrete-time Markov chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain probabilistic rules.</p><p>The transition matrix P represents the probability of moving from one state to another in one time step. The Markov property states that the future state of the system depends only on its current state, not on any of its past states.</p>",
+    "formula": "{",
+    "latex": "\\[P = \\begin{bmatrix} p_{11} & p_{12} & \\ldots & p_{1n}\\\\ p_{21} & p_{22} & \\ldots & p_{2n}\\\\ \\vdots & \\vdots & \\ddots & \\vdots\\\\ p_{n1} & p_{n2} & \\ldots & p_{nn}\\end{bmatrix}\\]\",",
+    "name": "Transition Matrix\" },",
+    "intuition": "The transition matrix P encodes the probability of moving from one state to another, allowing us to model and analyze complex systems.",
+    "visualDescription": "A diagram showing a DTMC with multiple states and transitions",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:10:51.721Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_markov_chains_intro_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>A discrete-time Markov chain (DTMC) is a mathematical system that undergoes transitions from one state to another according to certain rules.</p><p>The transition matrix, also known as the probability transition matrix, represents the probabilities of transitioning from one state to another.</p>",
+    "formula": {
+      "latex": "\\[ P = \\left(\\begin{array}{ccc} p_{11} & p_{12} & \\cdots \\\\ p_{21} & p_{22} & \\cdots \\\\ \\vdots & \\vdots & \\ddots \\end{array}\\right) \\]",
+      "name": "Transition Matrix"
+    },
+    "intuition": "A DTMC is a powerful tool for modeling and analyzing systems that exhibit probabilistic behavior. It's used in many fields, including machine learning and artificial intelligence.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:11:06.823Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_markov_chains_intro_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory, modeling random processes that undergo transitions from one state to another.</p>",
+    "formula": "{",
+    "latex": "\\[ P(X_{n+1} = j | X_n = i) = p_{ij}, \\]",
+    "name": "Transition Probability",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Markov chain with two states, A and B. The transition probability matrix is given by</p><ul><li>P(A → A) = 0.7, P(A → B) = 0.3</li><li>P(B → A) = 0.4, P(B → B) = 0.6</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Find the probability of transitioning to B",
+    "mathHtml": "\\[ P(X_2 = B | X_1 = A) = p_{AB} \\]\",",
+    "explanation": "We use the transition probability to find the probability of transitioning from A to B\" } ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Markov chains provide a powerful framework for modeling and analyzing random processes, with applications in machine learning and AI.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:11:31.844Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": "{",
+    "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that the probability of being in state <i>i</i> at time <i>t</i>, given that we were in state <i>j</i> at time <i>s</i>, is equal to the (t-s)th power of the <i>j</i>th row of <i>P</i>.",
+    "hints": [
+      "Think about the Markov property and how it relates to the transition matrix.",
+      "Recall that the probability of being in state <i>i</i> at time <i>t</i>, given that we were in state <i>j</i> at time <i>s</i>, is equal to the dot product of the <i>j</i>th row of <i>P</i> and a vector with a 1 in the <i>i</i>th position and zeros elsewhere.",
+      "Use mathematical induction to prove that this probability remains unchanged after each time step."
+    ],
+    "solutionHtml": "<p>To prove this, we can use mathematical induction. The base case is when <i>t</i> = <i>s</i>, in which case the statement is trivially true.</p><p>For the inductive step, assume that the statement holds for some arbitrary <i>k</i>. We want to show that it also holds for <i>k+1</i>.</p><p>We have:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = P(X_{k+1} = i, X_k = j) / P(X_k = j)\\]</p><p>Using the Markov property and the transition matrix, we can rewrite this as:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = \\sum_{m=1}^n P(X_{k+1} = i, X_k = m, X_{k-1} = j) / P(X_k = j)\\]</p><p>By the inductive hypothesis, we know that:</p><p><code>\\[P(X_k = m | X_{k-1} = j) = (P^k)_{jm}\\]</p><p>Substituting this into our expression for <i>P(X_{k+1} = i | X_k = j)</i>, we get:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = \\sum_{m=1}^n (P^{k+1})_{im} (P^k)_{jm} / P(X_k = j)\\]</p><p>This is equal to:</p><p><code>\\[(P^{k+1})_{ij}\\]</p><p>which completes the inductive step.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:10.786Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that if <i>P</i> is regular (has at least one recurrent class), then there exists a stationary distribution.",
+      "hints": [
+        "Think about the definition of a regular Markov chain.",
+        "Recall the concept of a stationary distribution and its relation to the transition matrix.",
+        "Use the fact that a regular Markov chain has at least one recurrent class to your advantage."
+      ],
+      "solutionHtml": "<p>To prove this, we can use the following steps:</p><ol><li>Let <i>P</i> be the transition matrix of our discrete-time Markov chain.</li><li>Show that <i>P</i> has at least one recurrent class.</li><li>Use the fact that a regular Markov chain has at least one recurrent class to conclude that there exists a stationary distribution.</li></ol>",
+      "answerShort": "The stationary distribution exists."
+    },
+    "commonMistakes": [
+      "Not recognizing that a regular Markov chain has at least one recurrent class.",
+      "Failing to use this fact to prove the existence of a stationary distribution."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:30.296Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "<p>Consider a discrete-time Markov chain with transition matrix <i>P</i>. Show that if <i>P</i><sup>n</sup> exists for all <i>n</i>, then the chain is ergodic.</p>",
+      "hints": [
+        "Check that the chain has a finite number of states.",
+        "Use induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>.",
+        "Show that the chain's stationary distribution exists and is unique."
+      ],
+      "solutionHtml": "<p>To prove ergodicity, we first need to show that the chain has a finite number of states. This follows from the fact that the transition matrix <i>P</i> has only finitely many entries.</p><p>Next, we use induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>. The base case is trivial, and the inductive step follows from the fact that <i>P</i><sup>n+1</sup> = <i>P</i><sup>n</sup>&nbsp;<i>P</i>.</p><p>Finally, we show that the chain's stationary distribution exists and is unique. This follows from the fact that the chain has a finite number of states.</p>",
+      "answerShort": "The chain is ergodic."
+    },
+    "commonMistakes": [
+      "Forgetting to check that the chain has a finite number of states.",
+      "Not using induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:53.484Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": "{",
+    "statementHtml": "<p>Consider a discrete-time Markov chain with transition matrix <i>P</i>. Show that if <i>P</i><sup>n</sup> exists, then it satisfies the Markov property.</p>",
+    "hints": [
+      "Start by recalling the definition of the Markov property.",
+      "Think about what happens when you apply the transition matrix multiple times.",
+      "Use induction to prove the result."
+    ],
+    "solutionHtml": "<p>To show that <i>P</i><sup>n</sup> satisfies the Markov property, we'll use induction. The base case is trivial: if <i>n</i>=1, then <i>P</i><sup>1</sup> clearly satisfies the Markov property.</p>\\n<p>Now assume that <i>P</i><sup>k</sup> satisfies the Markov property for some <i>k</i>&ge;1. We need to show that <i>P</i><sup>k+1</sup> also satisfies the Markov property.</p>\\n<p>Let <i>X</i><sub><i>t</i></sub> be the state at time <i>t</i>. Then:</p>\\n<pre><code>\\[P(X_{k+1}=j | X_k=i) = P(P(X_{k+1}=j | X_k=i)) = P(X_{k+1}=j)\\]</code></pre>\\n<p>This shows that <i>P</i><sup>k+1</sup> satisfies the Markov property, completing the induction.</p>\",",
+    "answerShort": "The transition matrix <i>P</i><sup>n</sup> satisfies the Markov property.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:13:19.191Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that if <i>P</i> is irreducible and aperiodic, then it has a unique stationary distribution.",
+      "hints": [
+        "Start by recalling the definition of a stationary distribution.",
+        "Think about what properties an irreducible and aperiodic chain must have.",
+        "Use the fact that the chain's transition matrix is stochastic."
+      ],
+      "solutionHtml": "<p>Let <i>&#x03C6;</i>(<i>t</i>) be the probability distribution at time <i>t</i>. Since the chain is irreducible and aperiodic, it has a unique stationary distribution <i>&#x03C6;</i><sub>∞</sub>.</p><p>We need to show that <i>&#x03C6;</i>(<i>t</i>) converges to <i>&#x03C6;</i><sub>∞</sub> as <i>t</i> → ∞.</p><p>Using the definition of a stationary distribution, we have:</p><p><i>&#x03C6;</i>(<i>t</i>) = P&#x03C6;(0) = ...</p>",
+      "answerShort": "The unique stationary distribution exists."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the chain's aperiodicity.",
+      "Assuming that the chain has multiple stationary distributions."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:13:41.406Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_chains_intro_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>A discrete-time Markov chain is a mathematical system that undergoes transitions from one state to another according to certain probabilistic rules.</p>",
+    "formula": {
+      "latex": "\\[P = \\begin{bmatrix} p_{00} & p_{01} \\\\ p_{10} & p_{11} \\end{bmatrix}\\]",
+      "name": "Transition Matrix",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a transition matrix P, find the probability of being in state 1 at time t+1 if we're currently in state 0.</p>",
+      "hints": [
+        "Hint: Use the definition of a Markov chain"
+      ],
+      "solutionHtml": "<p>The solution involves multiplying the initial state vector by the transition matrix and exponentiating the result.</p>",
+      "answerShort": "The probability is P(1|0) = p_{10}"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Markov chain with two states, 0 and 1. The transition matrix P is given by:</p><p>\\[P = \\begin{bmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{bmatrix}\\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the probability of being in state 1 at time t+1 if we're currently in state 0.",
+          "mathHtml": "\\[P(1|0) = P_{10} = 0.4\\]",
+          "explanation": "We use the definition of a Markov chain to find the transition probability."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the probability of being in state 1 at time t+1 if we're currently in state 1.",
+          "mathHtml": "\\[P(1|1) = P_{11} = 0.6\\]",
+          "explanation": "We use the definition of a Markov chain to find the transition probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the probability of being in state 0 at time t+1 if we're currently in state 0.",
+          "mathHtml": "\\[P(0|0) = P_{00} = 0.7\\]",
+          "explanation": "We use the definition of a Markov chain to find the transition probability."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the probability of being in state 0 at time t+1 if we're currently in state 1.",
+          "mathHtml": "\\[P(0|1) = P_{01} = 0.3\\]",
+          "explanation": "We use the definition of a Markov chain to find the transition probability."
+        }
+      ],
+      "finalAnswer": "The answer is P(1|0) = 0.4"
+    },
+    "intuition": "Discrete-time Markov chains are useful in modeling systems that undergo transitions from one state to another according to certain probabilistic rules.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to normalize the transition matrix"
+    ],
+    "realWorldApplications": [
+      "Recommendation systems, natural language processing"
+    ],
+    "tags": [
+      "Markov chain",
+      "transition matrix"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:14:26.386Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_chains_intro_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>In this card, we'll explore the basics of discrete-time Markov chains.</p>",
+    "formula": {
+      "latex": "\\[ P = \\begin{bmatrix} p_{00} & p_{01} \\\\ p_{10} & p_{11} \\end{bmatrix} \\]",
+      "name": "Transition Matrix"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a discrete-time Markov chain with transition matrix P, find the probability of being in state 0 at time t.</p>",
+      "hints": [
+        "Hint: Use the definition of a Markov chain.",
+        "Hint: Consider the one-step transition probabilities."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the definition of a Markov chain and the given transition matrix P.</p><ul><li>Step 1: Write down the probability of being in state 0 at time t-1. This is simply P(0) = p_{00}.</li><li>Step 2: Use the one-step transition probabilities to find the probability of transitioning from state 0 at time t-1 to state 0 or 1 at time t. This is given by P(0|0) = p_{00} and P(1|0) = p_{10}.</li><li>Step 3: Multiply the probabilities together to find the probability of being in state 0 at time t. This is P(0) * P(0|0) + P(1|0) * (1 - P(0)).</li></ul>",
+      "answerShort": "The answer is P(0) * p_{00} + p_{10} * (1 - P(0))"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a discrete-time Markov chain with transition matrix</p><p>\\[ P = \\begin{bmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{bmatrix} \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the probability of being in state 0 at time t-1",
+          "mathHtml": "\\[ P(0) = p_{00} = 0.7 \\]",
+          "explanation": "This is given by the definition of a Markov chain."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use one-step transition probabilities to find the probability of transitioning from state 0 at time t-1 to state 0 or 1 at time t",
+          "mathHtml": "\\[ P(0|0) = p_{00} = 0.7, P(1|0) = p_{10} = 0.4 \\]",
+          "explanation": "These are given by the transition matrix."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply the probabilities together to find the probability of being in state 0 at time t",
+          "mathHtml": "\\[ P(0) * p_{00} + p_{10} * (1 - P(0)) \\]",
+          "explanation": "This is the key step in finding the answer."
+        }
+      ],
+      "finalAnswer": "The final answer is 0.7 * 0.7 + 0.4 * (1 - 0.7) = 0.49"
+    },
+    "intuition": "Discrete-time Markov chains are a fundamental concept in probability theory, and understanding the transition matrix is crucial for modeling real-world systems.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:15:13.501Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_chains_intro_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory, with applications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[ P = \\left(\\begin{array}{cc} p & 1-p \\\\ 0 & 1 \\end{array}\\right) \\]",
+      "name": "Transition Matrix"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a discrete-time Markov chain with transition matrix P, find the probability of being in state 2 at time t=3.</p>",
+      "hints": [
+        "Hint: Use the Chapman-Kolmogorov equations"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Markov chain with two states, A and B. The transition matrix P is given by:</p><p>\\[ P = \\left(\\begin{array}{cc} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{array}\\right) \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the Chapman-Kolmogorov equations for t=2",
+          "mathHtml": "\\[ P^2 = \\left(\\begin{array}{cc} p_1 & p_2 \\\\ p_3 & p_4 \\end{array}\\right) \\]",
+          "explanation": "We use the Chapman-Kolmogorov equations to find the probability of being in state 2 at time t=2."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P^2",
+          "mathHtml": "\\[ P^2 = P \\cdot P = \\left(\\begin{array}{cc} p_1 & p_2 \\\\ p_3 & p_4 \\end{array}\\right) \\]",
+          "explanation": "We multiply the transition matrix by itself to find the probability of being in each state at time t=2."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find P^3",
+          "mathHtml": "\\[ P^3 = P \\cdot P^2 = \\left(\\begin{array}{cc} p_1 & p_2 \\\\ p_3 & p_4 \\end{array}\\right) \\]",
+          "explanation": "We multiply the transition matrix by its square to find the probability of being in each state at time t=3."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the probability of being in state 2 at time t=3",
+          "mathHtml": "\\[ P^3_{12} = \\left(\\begin{array}{cc} p_1 & p_2 \\\\ p_3 & p_4 \\end{array}\\right) \\]",
+          "explanation": "We find the probability of being in state 2 at time t=3 by looking at the (2,2) entry of P^3."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Find the answer",
+          "mathHtml": "\\[ P^3_{12} = \\left(\\begin{array}{cc} p_1 & p_2 \\\\ p_3 & p_4 \\end{array}\\right) \\]",
+          "explanation": "We find the final answer by evaluating the probability of being in state 2 at time t=3."
+        }
+      ],
+      "finalAnswer": "0.6"
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Mistake: Forgetting to multiply the transition matrix by itself"
+    ],
+    "realWorldApplications": [
+      "Application: Modeling user behavior in recommendation systems"
+    ],
+    "tags": [
+      "Markov Chains",
+      "Transition Matrix"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:16:04.050Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_chains_intro_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory.</p>",
+    "formula": {
+      "latex": "\\[ P = \\left(\\begin{array}{cc} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{array}\\right) \\]",
+      "name": "Transition Matrix",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a discrete-time Markov chain with transition matrix P, find the probability of being in state A after two time steps.</p>",
+      "hints": [
+        "Hint: Use the definition of a Markov chain and the given transition matrix."
+      ],
+      "solutionHtml": "<p>To solve this problem, we first need to understand the definition of a discrete-time Markov chain. A Markov chain is defined as a set of states and a transition matrix P.</p><p>Next, we can use the given transition matrix P to find the probability of being in state A after two time steps.</p>",
+      "answerShort": "0.28"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a discrete-time Markov chain with states {A, B} and the following transition matrix:</p><p>\\[ P = \\left(\\begin{array}{cc} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{array}\\right) \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Understand the definition of a discrete-time Markov chain",
+          "mathHtml": "",
+          "explanation": "A Markov chain is defined as a set of states and a transition matrix P."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the probability of being in state A after one time step",
+          "mathHtml": "\\[ P(A|A) = \\left(\\begin{array}{cc} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{array}\\right) \\]",
+          "explanation": "We can use the given transition matrix P to find the probability of being in state A after one time step."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the probability of being in state A after two time steps",
+          "mathHtml": "\\[ P(A|A) = \\left(\\begin{array}{cc} (0.7)^2 + 0.7 \\cdot 0.4 & 0.3 \\cdot 0.7 + 0.6 \\cdot 0.4 \\\\ (0.4) \\cdot 0.7 + (0.6) \\cdot 0.4 & (0.3) \\cdot 0.3 + (0.6) \\cdot 0.6 \\end{array}\\right) \\]",
+          "explanation": "We can use the result from step 2 to find the probability of being in state A after two time steps."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the answer",
+          "mathHtml": "",
+          "explanation": "The final answer is the probability of being in state A after two time steps."
+        }
+      ],
+      "finalAnswer": "0.28"
+    },
+    "intuition": "Markov chains are a powerful tool for modeling and analyzing complex systems.",
+    "visualDescription": "A diagram showing the transition matrix P",
+    "commonMistakes": [
+      "Forgetting to use the given transition matrix"
+    ],
+    "realWorldApplications": [
+      "Recommendation systems in machine learning"
+    ],
+    "tags": [
+      "Markov chain",
+      "transition matrix"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:16:52.150Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_markov_chains_intro_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "title": "Discrete-Time Markov Chains: Definition and Transition Matrix",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\[ P = \\left(\\begin{array}{cc} p & 1-p \\\\ 0 & 1 \\end{array}\\right) \\]",
+    "name": "Transition Matrix",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Given a discrete-time Markov chain with two states, A and B. The transition matrix P is:</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a weather forecasting system that can be in one of two states: Sunny (A) or Cloudy (B). The system transitions from Sunny to Cloudy with probability 0.3, and from Cloudy to Sunny with probability 0.7.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the transition matrix P.\", \"mathHtml\": \"\\\\[ P = \\\\left(\\\\begin{array}{cc} p & 1-p \\\\\\\\ 0 & 1 \\\\end{array}\\\\right) \\\\]\", \"explanation\": \"We define the transition matrix P to capture the probability of transitioning from one state to another.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the probability of being in each state after one time step.\", \"mathHtml\": \"\\\\[ P^1 = \\\\left(\\\\begin{array}{cc} p & 1-p \\\\\\\\ 0 & 1 \\\\end{array}\\\\right) \\\\]\", \"explanation\": \"We raise the transition matrix to the power of 1 to get the probability distribution after one time step.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the expected value of being in each state.\", \"mathHtml\": \"\\\\[ E[P] = \\\\left(\\\\begin{array}{cc} p & 1-p \\\\\\\\ 0 & 1 \\\\end{array}\\\\right) \\\\]\", \"explanation\": \"We calculate the expected value by taking the dot product of the probability distribution with the states.\"}, {\"stepNumber\": 4, \"description\": \"Verify that the Markov property holds.\", \"mathHtml\": \"\\\\[ P^2 = (P \\cdot P) \\\\]\", \"explanation\": \"The Markov property ensures that the future state only depends on the current state and not on any previous states.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to normalize the transition matrix"
+    ],
+    "realWorldApplications": [
+      "Predicting weather patterns using machine learning models"
+    ],
+    "tags": [
+      "Markov Chains",
+      "Probability Theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:17:30.930Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

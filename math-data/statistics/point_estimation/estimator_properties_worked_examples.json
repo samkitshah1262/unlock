@@ -1,0 +1,127 @@
+[
+  {
+    "id": "stat_wex_estimator_properties_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply these fundamental properties of estimators in mathematical statistics.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a random sample X_1, ..., X_n from a population with mean μ and variance σ^2. We want to estimate μ using the sample mean.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the estimator\", \"mathHtml\": \"\\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\", \"explanation\": \"We're defining our estimator as the sample mean.\"}, {\"stepNumber\": 2, \"description\": \"Show unbiasedness\", \"mathHtml\": \"\\(\\mathbb{E}[\\bar{X}] = \\frac{1}{n}\\sum_{i=1}^{n} \\mathbb{E}[X_i] = \\mu\\)\", \"explanation\": \"We're showing that the expected value of our estimator is equal to the population mean.\"}, {\"stepNumber\": 3, \"description\": \"Demonstrate consistency\", \"mathHtml\": \"\\(\\bar{X}_n \\rightarrow_p \\mu\\) as \\(n \\rightarrow \\infty\\)\", \"explanation\": \"We're demonstrating that our estimator converges in probability to the population mean as the sample size increases.\"}, {\"stepNumber\": 4, \"description\": \"Prove efficiency\", \"mathHtml\": \"\\(\\text{Var}[\\bar{X}] = \\frac{\\sigma^2}{n}\\)\", \"explanation\": \"We're showing that our estimator has minimal variance among all unbiased estimators.\"}, {\"stepNumber\": 5, \"description\": \"Show sufficiency\", \"mathHtml\": \"\\(\\bar{X}\\) is sufficient for μ given X_1, ..., X_n\\)\", \"explanation\": \"We're demonstrating that the sample mean contains all the information necessary to estimate the population mean.\"} ],",
+    "finalAnswer": "The sample mean \\(\\bar{X}\\) is an unbiased, consistent, efficient, and sufficient estimator of the population mean μ.\" },",
+    "intuition": "These properties ensure our estimator accurately represents the underlying population characteristic.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:15:37.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore how to identify and utilize these essential properties in point estimation.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to estimate the mean of a normal distribution with unknown parameters. We have a random sample <i>X_1, X_2, ..., X_n</i> from this population.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define an estimator\", \"mathHtml\": \"\\[ \\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i \\]\", \"explanation\": \"We choose the sample mean as our estimator because it's a natural choice for estimating the population mean.\"}, {\"stepNumber\": 2, \"description\": \"Check unbiasedness\", \"mathHtml\": \"\\[ E[\\bar{X}] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right] = \\mu \\]\", \"explanation\": \"To be an unbiased estimator, the expected value of our estimator should equal the true parameter. In this case, the expected value of the sample mean is the population mean.\"}, {\"stepNumber\": 3, \"description\": \"Verify consistency\", \"mathHtml\": \"\\[ P(\\bar{X} \\rightarrow \\mu) = 1 \\]\", \"explanation\": \"Consistency means that our estimator should converge to the true parameter as the sample size increases. In this case, the sample mean is a consistent estimator of the population mean.\"}, {\"stepNumber\": 4\", \"description\": \"Examine efficiency\", \"mathHtml\": \"\\[ Var(\\bar{X}) = \\frac{\\sigma^2}{n} \\]\", \"explanation\": \"Efficiency refers to how much information our estimator extracts from the data. In this case, the sample mean is an efficient estimator because its variance decreases as the sample size increases.\"}, {\"stepNumber\": 5\", \"description\": \"Check sufficiency\", \"mathHtml\": \"\\[ P(\\bar{X} | X_1, ..., X_n) = P(\\bar{X}) \\]\", \"explanation\": \"Sufficiency means that our estimator should not depend on any additional information beyond the data itself. In this case, the sample mean is sufficient because it only depends on the random sample and not on any external factors.\"} ],",
+    "finalAnswer": "The sample mean <i>\\\\bar{X}</i> is an unbiased, consistent, efficient, and sufficient estimator of the population mean.\" },",
+    "intuition": "In point estimation, we want our estimators to be as good as possible. Unbiasedness ensures our estimator doesn't systematically over- or under-estimate the true parameter. Consistency means it gets better with more data. Efficiency measures how much information it extracts from the data. Sufficiency guarantees it only depends on the data itself.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:09.369Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness",
+    "contentHtml": "<p>In this example, we'll explore how to determine if an estimator is unbiased.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random sample <i>X</i> from a population with mean μ. We want to estimate μ using the sample mean <i>&#x03BC;</i>. Is this estimator unbiased?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the estimator\", \"mathHtml\": \"\\[&#x03BC; = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\", \"explanation\": \"We're defining the sample mean as our estimator.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the expected value of the estimator\", \"mathHtml\": \"\\[E[&#x03BC;] = E[\\frac{1}{n} \\sum_{i=1}^n x_i]\\]\", \"explanation\": \"We're calculating the expected value of our estimator.\"}, {\"stepNumber\": 3, \"description\": \"Show that the expected value equals the population mean\", \"mathHtml\": \"\\[E[&#x03BC;] = E[\\frac{1}{n} \\sum_{i=1}^n x_i] = μ\\]\", \"explanation\": \"We're showing that our estimator is unbiased by demonstrating that its expected value equals the population mean.\"}, {\"stepNumber\": 4, \"description\": \"Conclude that the estimator is unbiased\", \"mathHtml\": \"\", \"explanation\": \"Since the expected value of our estimator equals the population mean, we can conclude that it's an unbiased estimator.\"} ],",
+    "finalAnswer": "The sample mean is an unbiased estimator for the population mean.\" },",
+    "intuition": "An unbiased estimator means that, on average, it produces the same result as the true value.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:31.678Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore the properties of estimators in mathematical statistics.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to estimate the population mean <i>μ</i> using a random sample <i>x</i><sub>1</sub>, ..., <i>x</i><sub>n</sub>.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the estimator",
+          "mathHtml": "\\[ \\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]",
+          "explanation": "We choose a simple average as our estimator."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check for unbiasedness",
+          "mathHtml": "\\[ E(\\hat{\\mu}) = \\frac{1}{n} \\sum_{i=1}^n E(x_i) = \\mu \\]",
+          "explanation": "Unbiasedness ensures our estimator is not systematically off from the true value."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify consistency",
+          "mathHtml": "\\[ \\hat{\\mu} \\xrightarrow{P} \\mu \\]",
+          "explanation": "Consistency means that as the sample size increases, our estimator converges to the true population mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check for efficiency",
+          "mathHtml": "\\[ V(\\hat{\\mu}) = \\frac{\\sigma^2}{n} \\]",
+          "explanation": "Efficiency measures how well our estimator uses the available information to minimize variance."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Establish sufficiency",
+          "mathHtml": "\\[ \\hat{\\mu} \\perp x_{i+1} - x_i \\]",
+          "explanation": "Sufficiency ensures that our estimator only depends on the sufficient statistics, which are the minimal set of statistics needed to make inferences."
+        }
+      ],
+      "finalAnswer": "The estimator <i>\\hat{\\mu}</i> is unbiased, consistent, efficient, and sufficient."
+    },
+    "intuition": "In summary, a good estimator should be unbiased, consistent, efficient, and sufficient. These properties ensure that our estimates are reliable and accurate.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:58.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

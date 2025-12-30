@@ -1,0 +1,148 @@
+[
+  {
+    "id": "stat_for_mle_examples_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In statistics and machine learning, Maximum Likelihood Estimation (MLE) is a widely used method to estimate parameters of probability distributions.</p><p>MLE finds the values that make the observed data most likely. This card covers MLE formulas for normal, exponential, Poisson, and Bernoulli distributions.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{\\sigma} \\sum_{i=1}^n (x_i - \\mu)^2 = 0 \\]\",",
+    "name": "Normal Distribution MLE\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset of exam scores with mean 80 and standard deviation 5, use MLE to estimate the population mean.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\[ \bar{x} = \\frac{\\sum x_i}{n} \\]",
+        "explanation": "This is the starting point for our MLE calculation."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Plug in the values and solve for μ",
+        "mathHtml": "\\[ \\frac{n(80 - \\mu)^2}{5^2} = 0 \\]",
+        "explanation": "We set the derivative to zero and solve for μ."
+      }
+    ],
+    "finalAnswer": "μ ≈ 80\" },",
+    "intuition": "MLE finds the values that make the observed data most likely. In this case, we're using MLE to estimate the population mean from a sample of exam scores.",
+    "realWorldApplications": [
+      "Estimating parameters in natural language processing"
+    ],
+    "tags": [
+      "statistics",
+      "machine learning",
+      "parameter estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:35:21.456Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>MLE is a fundamental concept in statistical inference, allowing us to estimate population parameters from sample data.</p><p>In this card, we'll explore MLEs for common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{n} \\sum_{i=1}^n x_i \\] (Normal MLE)\",",
+    "name": "Normal MLE",
+    "variants": "[ {\"latex\": \"\\[ \\lambda = \\bar{x} \\]\", \"description\": \"Exponential MLE\"}, {\"latex\": \"\\[ \\lambda = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"description\": \"Poisson MLE\"}, {\"latex\": \"\\[ p = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"description\": \"Bernoulli MLE\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a sample of size n from a normal distribution with unknown mean μ and variance σ^2, find the MLE for μ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample mean\", \"mathHtml\": \"\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"explanation\": \"The MLE for μ is simply the sample mean.\"} ],",
+    "finalAnswer": "The MLE for μ is the sample mean\" },",
+    "intuition": "MLEs are often used in machine learning to estimate parameters of probability distributions. This card provides a foundation for understanding these concepts.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:35:43.330Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation (MLE) for Common Distributions",
+    "contentHtml": "<p>In this card, we'll explore how to apply Maximum Likelihood Estimation (MLE) to common distributions such as Normal, Exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{N} \\sum_{i=1}^N x_i \\] for Normal distribution\",",
+    "name": "",
+    "variants": "[ {\"latex\": \"\\\\lambda = \\\\bar{x}\", \"description\": \"Exponential\"}, {\"latex\": \"\\\\lambda = \\\\frac{\\\\sum_{i=1}^N x_i}{N}\", \"description\": \"Poisson\"}, {\"latex\": \"p = \\\\frac{1}{2} + \\\\frac{1}{N} \\* \\\\sum_{i=1}^N x_i\", \"description\": \"Bernoulli\"} ] },",
+    "intuition": "<p>MLE is a widely used method for estimating parameters in statistical models. It's based on the idea that the best estimate of a parameter is the one that maximizes the likelihood of observing the data.</p>",
+    "realWorldApplications": [
+      "Estimating population means in machine learning"
+    ],
+    "tags": [
+      "Maximum Likelihood Estimation",
+      "MLE",
+      "Point Estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:00.435Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_examples_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "title": "Maximum Likelihood Estimation for Common Distributions",
+    "contentHtml": "<p>In this card, we'll explore the maximum likelihood estimation (MLE) method for common distributions: normal, exponential, Poisson, and Bernoulli.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{1}{n} \\sum_{i=1}^n x_i = E[X] \\]\",",
+    "name": "Normal Distribution MLE\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean μ and variance σ^2. We want to estimate the population mean using the MLE method.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]",
+        "explanation": "The MLE for a normal distribution is simply the sample mean."
+      }
+    ],
+    "finalAnswer": "μ\" },",
+    "intuition": "MLE finds the value that maximizes the likelihood of observing our data, given the assumed distribution. This makes it a powerful tool in machine learning and statistics.",
+    "realWorldApplications": [
+      "Estimating population means in natural language processing"
+    ],
+    "tags": [
+      "maximum likelihood estimation",
+      "normal distribution",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:18.226Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

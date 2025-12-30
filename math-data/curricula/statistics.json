@@ -1,0 +1,140 @@
+{
+  "subject": "statistics",
+  "title": "Mathematical Statistics",
+  "description": "Comprehensive statistics from descriptive to advanced inference, with deep focus on ML evaluation, experimental design, and Bayesian methods",
+  "targetAudience": ["undergraduate", "graduate", "ML practitioners", "data scientists", "researchers"],
+  "totalEstimatedCards": 450,
+  "chapters": [
+    {
+      "id": "descriptive_statistics",
+      "title": "Descriptive Statistics",
+      "description": "Summarizing and visualizing data",
+      "order": 1,
+      "topics": [
+        {"id": "data_types", "title": "Types of Data", "description": "Categorical, ordinal, interval, ratio scales", "cardTypes": ["concept", "problem"], "estimatedCards": 8, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "central_tendency", "title": "Measures of Central Tendency", "description": "Mean, median, mode, trimmed mean, weighted mean", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "spread", "title": "Measures of Spread", "description": "Variance, std dev, IQR, range, MAD, coefficient of variation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "quantiles_percentiles", "title": "Quantiles and Percentiles", "description": "Quartiles, deciles, percentiles, box plots", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "shape", "title": "Shape of Distributions", "description": "Skewness, kurtosis, symmetric vs asymmetric", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "visualization", "title": "Data Visualization", "description": "Histograms, density plots, scatter plots, violin plots", "cardTypes": ["concept", "problem"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "sample_correlation", "title": "Sample Correlation", "description": "Pearson, Spearman, Kendall correlations, interpretation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "sampling_distributions",
+      "title": "Sampling and Sampling Distributions",
+      "description": "From population to sample, and the distributions of statistics",
+      "order": 2,
+      "topics": [
+        {"id": "population_sample", "title": "Population and Sample", "description": "Parameters vs statistics, random sampling, sampling bias", "cardTypes": ["concept", "problem"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "sampling_distribution_mean", "title": "Sampling Distribution of the Mean", "description": "Mean and variance of X̄, standard error", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "t_distribution", "title": "Student's t-Distribution", "description": "Definition, degrees of freedom, relation to normal, t-table", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "chi_squared_distribution", "title": "Chi-Squared Distribution", "description": "Definition, degrees of freedom, sum of squared normals", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "f_distribution", "title": "F-Distribution", "description": "Definition, ratio of chi-squared, applications", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 10, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "sampling_methods", "title": "Sampling Methods", "description": "Simple random, stratified, cluster, systematic sampling", "cardTypes": ["concept", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "point_estimation",
+      "title": "Point Estimation",
+      "description": "Estimating parameters from data",
+      "order": 3,
+      "topics": [
+        {"id": "estimators_intro", "title": "Estimators and Estimates", "description": "Definition, examples, notation", "cardTypes": ["concept", "problem"], "estimatedCards": 8, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "estimator_properties", "title": "Properties of Estimators", "description": "Unbiasedness, consistency, efficiency, sufficiency", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "mse", "title": "Mean Squared Error", "description": "Definition, bias-variance decomposition, MSE comparison", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "method_of_moments", "title": "Method of Moments", "description": "Derivation, examples, comparison to MLE", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "mle_concept", "title": "Maximum Likelihood Estimation", "description": "Likelihood function, log-likelihood, finding MLE", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "mle_examples", "title": "MLE for Common Distributions", "description": "Normal, exponential, Poisson, Bernoulli MLEs", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "mle_properties", "title": "Properties of MLEs", "description": "Invariance, consistency, asymptotic normality, efficiency", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "fisher_information", "title": "Fisher Information", "description": "Definition, computation, observed vs expected", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "cramer_rao", "title": "Cramér-Rao Lower Bound", "description": "Variance bound, efficiency, UMVUE", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "sufficient_statistics", "title": "Sufficient Statistics", "description": "Definition, factorization theorem, minimal sufficiency", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "interval_estimation",
+      "title": "Interval Estimation",
+      "description": "Confidence intervals and their interpretation",
+      "order": 4,
+      "topics": [
+        {"id": "ci_concept", "title": "Confidence Interval Concept", "description": "Definition, interpretation, confidence level, common misconceptions", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "ci_normal_known", "title": "CI for Mean (Known Variance)", "description": "Z-interval, derivation, margin of error", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "ci_normal_unknown", "title": "CI for Mean (Unknown Variance)", "description": "T-interval, using sample variance", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "ci_variance", "title": "CI for Variance", "description": "Chi-squared interval, interpretation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "ci_proportion", "title": "CI for Proportions", "description": "Normal approximation, exact methods, Wilson interval", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "ci_difference", "title": "CI for Differences", "description": "Two means, two proportions, paired data", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "sample_size", "title": "Sample Size Determination", "description": "For given precision, margin of error calculation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "bootstrap_ci", "title": "Bootstrap Confidence Intervals", "description": "Non-parametric CI, percentile method, BCa method", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "hypothesis_testing",
+      "title": "Hypothesis Testing",
+      "description": "Statistical inference through hypothesis tests",
+      "order": 5,
+      "topics": [
+        {"id": "testing_framework", "title": "Hypothesis Testing Framework", "description": "Null vs alternative, one vs two-tailed, decision procedure", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "errors_power", "title": "Type I and Type II Errors", "description": "Definitions, significance level, power of test", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "p_values", "title": "P-Values", "description": "Definition, interpretation, common misconceptions", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "z_tests", "title": "Z-Tests", "description": "One-sample, two-sample, proportions", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "t_tests", "title": "T-Tests", "description": "One-sample, two-sample, paired t-test", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "chi_squared_tests", "title": "Chi-Squared Tests", "description": "Goodness of fit, independence, homogeneity", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "f_tests", "title": "F-Tests", "description": "Comparing variances, ANOVA preview", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "power_analysis", "title": "Power Analysis", "description": "Power calculation, effect size, sample size for power", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "multiple_testing", "title": "Multiple Testing Problem", "description": "Family-wise error, Bonferroni, FDR, Benjamini-Hochberg", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "nonparametric_tests", "title": "Nonparametric Tests", "description": "Wilcoxon, Mann-Whitney, Kruskal-Wallis, permutation tests", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "regression",
+      "title": "Regression Analysis",
+      "description": "Linear regression and its extensions",
+      "order": 6,
+      "topics": [
+        {"id": "simple_linear_regression", "title": "Simple Linear Regression", "description": "Model, least squares, interpretation, residuals", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "regression_inference", "title": "Inference in Simple Regression", "description": "Confidence intervals, hypothesis tests for slope", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "multiple_regression", "title": "Multiple Linear Regression", "description": "Matrix formulation, interpretation, partial coefficients", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "regression_assumptions", "title": "Regression Assumptions", "description": "Linearity, independence, normality, homoscedasticity", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "diagnostics", "title": "Regression Diagnostics", "description": "Residual plots, leverage, influential points, Cook's distance", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "multicollinearity", "title": "Multicollinearity", "description": "Detection, VIF, consequences, remedies", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "model_selection", "title": "Model Selection", "description": "R², adjusted R², AIC, BIC, cross-validation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "regularization", "title": "Regularized Regression", "description": "Ridge, Lasso, Elastic Net, bias-variance tradeoff", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "logistic_regression", "title": "Logistic Regression", "description": "Binary classification, odds ratios, MLE, interpretation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 3, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "bayesian_statistics",
+      "title": "Bayesian Statistics",
+      "description": "Bayesian approach to inference",
+      "order": 7,
+      "topics": [
+        {"id": "bayesian_paradigm", "title": "Bayesian Paradigm", "description": "Prior, likelihood, posterior, philosophy comparison", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "prior_selection", "title": "Prior Selection", "description": "Informative vs non-informative, proper vs improper, Jeffreys", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "conjugate_priors", "title": "Conjugate Priors", "description": "Beta-Binomial, Normal-Normal, Gamma-Poisson", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "bayesian_estimation", "title": "Bayesian Point Estimation", "description": "Posterior mean, MAP, loss functions", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "credible_intervals", "title": "Credible Intervals", "description": "Definition, HPD intervals, comparison to frequentist CI", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "bayesian_hypothesis", "title": "Bayesian Hypothesis Testing", "description": "Bayes factors, posterior odds, model comparison", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "bayesian_regression", "title": "Bayesian Linear Regression", "description": "Prior on coefficients, posterior distribution, prediction", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "hierarchical_models", "title": "Hierarchical Models", "description": "Multi-level priors, partial pooling, random effects", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 5, "mlRelevance": "core"},
+        {"id": "computational_bayes", "title": "Computational Bayes", "description": "Grid approximation, MCMC recap, Stan/PyMC preview", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 5, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "ml_statistics",
+      "title": "Statistics for Machine Learning",
+      "description": "Statistical foundations of ML evaluation and methodology",
+      "order": 8,
+      "topics": [
+        {"id": "bias_variance_tradeoff", "title": "Bias-Variance Tradeoff", "description": "Decomposition, implications for model selection", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "cross_validation", "title": "Cross-Validation", "description": "K-fold, LOOCV, stratified, nested CV, time series CV", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "model_evaluation", "title": "Model Evaluation Metrics", "description": "Accuracy, precision, recall, F1, AUC-ROC, calibration", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "statistical_tests_ml", "title": "Statistical Tests for ML", "description": "McNemar, paired t-test for classifiers, Wilcoxon", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "ab_testing", "title": "A/B Testing", "description": "Design, analysis, common pitfalls, sequential testing", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "causal_inference", "title": "Causal Inference Basics", "description": "Potential outcomes, confounding, propensity scores", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "experimental_design", "title": "Experimental Design", "description": "Randomization, blocking, factorial designs", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "learning_theory", "title": "Statistical Learning Theory", "description": "VC dimension, PAC learning, generalization bounds", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 15, "difficulty": 5, "mlRelevance": "specialized"}
+      ]
+    }
+  ]
+}

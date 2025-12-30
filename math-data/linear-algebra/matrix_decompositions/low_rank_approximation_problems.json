@@ -1,0 +1,102 @@
+[
+  {
+    "id": "la_prb_low_rank_approximation_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best low-rank approximation using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Use the Eckart-Young theorem to determine the optimal rank.",
+      "Truncate the decomposition at the desired rank."
+    ],
+    "solutionHtml": "<p>Let's compute the SVD of A:</p>\\(\\mathbf{A} = \\mathbf{U\\Sigma V^T}\\)<br><p>Now, apply the Eckart-Young theorem to find the optimal rank:</p>\\[\\text{rank} = k\\] <br><p>Finally, truncate the decomposition at the desired rank:</p>\\(\\mathbf{\\tilde{A}} = \\mathbf{\\tilde{U}\\tilde{\\Sigma}\\tilde{V}^T}\\)<br>\",",
+    "answerShort": "The best low-rank approximation is given by \\(\\mathbf{\\tilde{A}}\\)\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:40.513Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best rank-k approximation using Truncated SVD.</p>",
+    "hints": [
+      "<p>The Eckart-Young theorem provides a clue about the optimal choice of k.</p>",
+      "<p>Think about how to minimize the Frobenius norm.</p>",
+      "<p>Use the fact that Σ<sub>i=1</sub><sup>k</sup> σ<sub>i</sub> u<sub>i</sub>v<sub>i</sub>T is a rank-k approximation.</p>"
+    ],
+    "solutionHtml": "<p>To find the best rank-k approximation, we apply the Truncated SVD algorithm:</p>\\n\\ <p><code>S = U ΣV<sup>T</sup></code>, where Σ is a diagonal matrix with k non-zero entries.</p>\\n\\ <p>We then set <code>k</code> to the desired value and obtain the truncated SVD:</p>\\n\\ <p><code>A ≈ U Σ<sub>k</sub>V<sup>T</sup></code>.</p>\",",
+    "answerShort": "A ≈ U Σ<sub>k</sub>V<sup>T</sup>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:49:59.035Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Find a low-rank approximation of a given matrix using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of the original matrix.",
+      "Select the top-k singular values and corresponding singular vectors to form the approximated matrix.",
+      "Verify that the approximation error is minimized."
+    ],
+    "solutionHtml": "<p>To find a low-rank approximation, we first compute the SVD of the original matrix:</p>\\[\\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T.\\]<p>Next, we select the top-k singular values and corresponding singular vectors to form the approximated matrix:</p>\\[\\tilde{\\mathbf{A}} = \\mathbf{U}_k\\Sigma_k\\mathbf{V}_k^T,\\]where $\\mathbf{U}_k$ and $\\mathbf{V}_k$ are the matrices formed by the top-k columns of $\\mathbf{U}$ and $\\mathbf{V}$, respectively.</p><p>Finally, we verify that the approximation error is minimized:</p>\\[\\|\\mathbf{A} - \\tilde{\\mathbf{A}}\\|_F = \\min_{\\text{rank }k}\\|\\mathbf{A} - \\tilde{\\mathbf{A}}\\|_F.\\]\",",
+    "answerShort": "The low-rank approximation is given by $\\tilde{\\mathbf{A}}$.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:50:20.793Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_low_rank_approximation_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "low_rank_approximation",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A ∈ ℝ<sup>m×n</sup>, find the best rank-k approximation using Truncated SVD.</p>",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Focus on the k largest singular values and corresponding singular vectors.",
+      "Use these to construct the low-rank approximation."
+    ],
+    "solutionHtml": "<p>To find the best rank-k approximation, we apply Truncated SVD:</p>\\n\\ \\[A \\approx U_k Σ_k V_k^T,\\]\\n\\ where $U_k$ and $V_k$ are matrices containing the k largest singular vectors of A, and $\\Sigma_k$ is a diagonal matrix with the k largest singular values.</p>\\n\\ <p>Next, we compute the low-rank approximation:</p>\\n\\ \\[A \\approx U_k Σ_k V_k^T.\\]\\n\\ <p>The final answer is the approximated matrix.</p>\",",
+    "answerShort": "U_k Σ_k V_k^T\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:50:36.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

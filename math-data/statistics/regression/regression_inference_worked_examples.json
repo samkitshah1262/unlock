@@ -1,0 +1,157 @@
+[
+  {
+    "id": "stat_wex_regression_inference_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to constructing confidence intervals and performing hypothesis tests for the slope in simple linear regression.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores (X) and study hours (Y). We want to test whether there's a significant positive relationship between studying and scoring. Given our data, we estimate the simple linear regression model Y = 2 + 3X + ε.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the sample size (n) and mean of X.",
+          "mathHtml": "\\[ n = 30 \\]",
+          "explanation": "We need to know how many data points we have and what's the average value of X."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample variance (s^2) of X.",
+          "mathHtml": "\\[ s^2 = \\frac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n-1} \\]",
+          "explanation": "We need to know how spread out our data is, so we calculate the sample variance."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the t-statistic for the slope.",
+          "mathHtml": "\\[ t = \\frac{b_1 - \\beta_1}{s_e / \\sqrt{\\sum (X_i - \\bar{X})^2}} \\]",
+          "explanation": "We want to know how many standard errors away our estimated slope is from the true slope."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the t-distribution or a t-table to find the critical value (t*) for the desired confidence level.",
+          "mathHtml": "\\[ \\text{Critical Value} = t* \\]",
+          "explanation": "We need to know how many standard errors away from the true slope our estimated slope is, given our desired confidence level."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "Inference in simple regression helps us understand whether there's a statistically significant relationship between two variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:28:15.187Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to infer the slope of a simple linear regression model.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of exam scores and study hours for a class. We want to test whether there is a significant relationship between study hours and exam scores.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\\(H_0: \\beta = 0\\)\\), \\(H_a: \\beta \\neq 0\\)\", \"explanation\": \"We want to test whether there is a relationship between study hours and exam scores.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the sample slope\", \"mathHtml\": \"\\(b = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\\)\", \"explanation\": \"We use the formula for the sample slope to calculate our estimate.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the standard error of the sample slope\", \"mathHtml\": \"\\(SE(b) = \\sqrt{\\frac{SYY}{SSXX - SSXY^2}}\\)\", \"explanation\": \"We need the standard error to calculate the t-statistic.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the t-statistic\", \"mathHtml\": \"\\(t = \\frac{b}{SE(b)}\\)\", \"explanation\": \"The t-statistic measures how many standard errors our sample slope is away from zero.\"}, {\"stepNumber\": 5, \"description\": \"Determine the p-value and make a decision\", \"mathHtml\": \"\\(p = P(t > |t|)\\)\", \"explanation\": \"We compare our calculated p-value to a significance level (usually 0.05) to determine whether we reject or fail to reject the null hypothesis.\"} ],",
+    "finalAnswer": "Reject the null hypothesis if \\(p < 0.05\\), otherwise fail to reject.\" },",
+    "intuition": "Inference in simple regression is about using sample data to make conclusions about the population. We're testing whether our observed relationship between study hours and exam scores is due to chance or if it's a real pattern.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:28:42.198Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "subtitle": "Confidence intervals and hypothesis tests for slope",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to investigate the relationship between hours studied (x) and exam scores (y). We collect data and find that the slope of the regression line is 2.5 with a standard error of 0.3.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the critical value for the confidence interval\", \"mathHtml\": \"\\[t_{\\frac{\\alpha}{2}, n-2} = \\ldots\\]\", \"explanation\": \"We need to find the critical value from the t-distribution table.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the margin of error\", \"mathHtml\": \"\\[ME = t_{\\frac{\\alpha}{2}, n-2} \\cdot \\frac{s}{\\sqrt{n}} = \\ldots\\]\", \"explanation\": \"The margin of error is the critical value multiplied by the standard deviation and divided by the square root of the sample size.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the confidence interval\", \"mathHtml\": \"\\[CI = b_0 + ME = \\ldots\\]\", \"explanation\": \"The confidence interval is the slope plus or minus the margin of error.\"}, {\"stepNumber\": 4, \"description\": \"Perform a hypothesis test for the slope\", \"mathHtml\": \"\\[H_0: \\beta_1 = 0,\\ H_A: \\beta_1 > 0\\]\", \"explanation\": \"We want to test whether the slope is significantly different from zero.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the test statistic and p-value\", \"mathHtml\": \"\\[t = \\ldots,\\ p = \\ldots\\]\", \"explanation\": \"The test statistic is calculated as the ratio of the sample mean to the standard error, and the p-value represents the probability of observing a test statistic at least as extreme as the one we obtained, assuming that the null hypothesis is true.\"} ],",
+    "finalAnswer": "The confidence interval for the slope is (2.1, 3.0), and the p-value for the hypothesis test is 0.01.\" },",
+    "intuition": "Inference in simple regression allows us to make conclusions about the relationship between two variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:29:10.292Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "problem": {
+      "statementHtml": "<p>Given a simple linear regression model with slope β and intercept α, test the null hypothesis that the true slope is equal to 0.</p>",
+      "hints": [
+        "Consider the t-statistic",
+        "Think about the standard error"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores and study hours, with β = 2.5 and α = 10. Test the null hypothesis that the true slope is equal to 0.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean and standard deviation of the residuals.",
+          "mathHtml": "\\[\\bar{r} = \\frac{1}{n-2}\\sum_{i=3}^n (y_i - \\hat{y}_i)\\]",
+          "explanation": "This helps us estimate the standard error."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the t-statistic.",
+          "mathHtml": "\\[t = \\frac{\\beta}{s_β}\\]",
+          "explanation": "We're comparing our observed slope to the null hypothesis of a slope equal to 0."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Look up the critical value from the t-distribution table or use software.",
+          "mathHtml": "",
+          "explanation": "This gives us the threshold for rejecting the null hypothesis."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the calculated t-statistic to the critical value.",
+          "mathHtml": "",
+          "explanation": "If our t-statistic is greater than the critical value, we reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Inference in simple regression helps us determine if there's a statistically significant relationship between two variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:29:32.678Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,270 @@
+[
+  {
+    "id": "stat_wex_prior_selection_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[\\pi(x) = \\frac{1}{Z} e^{-\\frac{1}{2}\\sigma^2 (x-\\mu)^2}\\]",
+      "name": "Normal distribution prior",
+      "variants": [
+        {
+          "latex": "\\[\\pi(x) = \\frac{1}{C} x^{a-1} (1-x)^{b-1}\\]",
+          "description": "Beta distribution prior"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin flip experiment with an unknown probability of heads. We want to model this uncertainty using a Bayesian approach.</p>",
+      "hints": [
+        "Think about the possible values for the prior"
+      ],
+      "solutionHtml": "<p>We can use a uniform distribution as our prior, assuming equal likelihood for all possible outcomes.</p>",
+      "answerShort": "Uniform distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores with mean \\(\\mu = 80\\) and standard deviation \\(\\sigma = 5\\). We want to model the uncertainty in the true average score using a Bayesian approach.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Choose an informative prior",
+          "mathHtml": "\\[\\pi(x) = \\frac{1}{Z} e^{-\\frac{1}{2}\\sigma^2 (x-\\mu)^2}\\]",
+          "explanation": "An informative prior can help us make more accurate predictions."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Consider a non-informative prior",
+          "mathHtml": "\\[\\pi(x) = \\frac{1}{C} x^{a-1} (1-x)^{b-1}\\]",
+          "explanation": "A non-informative prior can help us avoid making strong assumptions about the data."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use Jeffreys' prior",
+          "mathHtml": "\\[\\pi(x) = \\sqrt{\\frac{f'(x)}{2}}\\]",
+          "explanation": "Jeffreys' prior is a compromise between informative and non-informative priors."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Update the prior with new data",
+          "mathHtml": "\\[\\pi(x|D) = \\frac{\\pi(x)f(D|x)}{\\int_{-\\infty}^{\\infty} \\pi(x')f(D|x') dx'}\\]",
+          "explanation": "We can update our prior using Bayes' theorem."
+        }
+      ],
+      "finalAnswer": "The updated posterior distribution"
+    },
+    "intuition": "Prior selection is about balancing the need for informative models with the risk of overfitting.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:52.532Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ P(\\theta | x) = \\frac{P(x | \\theta) P(\\theta)}{P(x)} \\]",
+      "name": "Bayes' theorem",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset, how do we choose an informative prior that reflects our knowledge about the model parameters?</p>",
+      "hints": [
+        "Consider the domain expertise",
+        "Think about the prior's impact on the posterior"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we're modeling the probability of a coin being fair. We have a dataset of 10 coin flips, and we want to choose an informative prior for the coin's bias.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the domain expertise",
+          "mathHtml": "",
+          "explanation": "We know that coins are typically biased towards heads or tails."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a prior distribution",
+          "mathHtml": "\\[ P(b) = \\frac{1}{\\sqrt{12}} \\exp(-|b|/\\sqrt{3}) \\]",
+          "explanation": "This is an improper prior that reflects our lack of knowledge about the coin's bias."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Update the prior with the data",
+          "mathHtml": "",
+          "explanation": "We'll use Bayes' theorem to update the prior with the likelihood of the observed data."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check for convergence",
+          "mathHtml": "",
+          "explanation": "We'll monitor the posterior's convergence using MCMC or other methods."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The resulting posterior distribution will reflect our updated knowledge about the coin's bias."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "A good prior should reflect our domain expertise and be updated by the data to produce a meaningful posterior.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Choosing an improper prior without justification"
+    ],
+    "realWorldApplications": [
+      "Modeling user behavior in recommendation systems"
+    ],
+    "tags": [
+      "Bayesian statistics",
+      "prior selection",
+      "inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:19:20.959Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ \\pi(x) = \\frac{\\alpha}{\\beta + x} \\]",
+      "name": "Informative Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin toss experiment with an unknown probability of heads, p. We want to model our prior beliefs about p.</p>",
+      "hints": [
+        "Hint: Think about the shape of the prior"
+      ],
+      "solutionHtml": "<p>To select a proper prior, we need to ensure it integrates to 1. A common choice is the beta distribution, which has parameters α and β.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose our initial belief about p is that it's likely to be close to 0.5 (α = 10, β = 20).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior",
+          "mathHtml": "\\[ \\pi(p) = \\frac{10}{30 + p} \\]",
+          "explanation": "We choose an informative prior to reflect our initial belief."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check if it's proper",
+          "mathHtml": "\\[ \\int_{0}^{1} \\frac{10}{30 + p} dp = 1 \\]",
+          "explanation": "The integral evaluates to 1, so the prior is proper."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Update with data",
+          "mathHtml": "\\[ \\pi(p | D) = \\frac{\\pi(p) \\times L(D | p)}{\\int_{0}^{1} \\pi(p) \\times L(D | p) dp} \\]",
+          "explanation": "We can now update the prior with our observed data."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "\\[ \\pi(p | D) = \\frac{\\alpha + N}{\\beta + N} \\]",
+          "explanation": "The updated prior reflects our new beliefs about p."
+        }
+      ],
+      "finalAnswer": "A proper and informative prior is selected"
+    },
+    "intuition": "Proper priors ensure the model integrates to 1, while informative priors reflect our initial beliefs.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:19:48.399Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. We'll explore the differences between informative and non-informative priors, proper and improper priors, and Jeffreys' prior.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{P}(\\theta | x) = \\frac{\\mathbf{L}(x | \\theta) \\pi(\\theta)}{\\int_{\\theta} \\mathbf{L}(x | \\theta) \\pi(\\theta) d\\theta}\\]",
+      "name": "Bayes' Theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we're modeling the probability of a coin being fair. We have prior knowledge that the coin is likely to be biased towards heads or tails, but not extremely so. How do we represent this uncertainty?</p>",
+      "hints": [
+        "Consider a conjugate prior",
+        "Think about the shape of the prior"
+      ],
+      "solutionHtml": "<p>We can use an informative prior that reflects our prior knowledge. For example, a beta distribution with parameters (2, 2) would imply a relatively flat prior over the range [0, 1].</p>",
+      "answerShort": "Informative prior"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of coin tosses and want to estimate the probability of heads. We know that the coin is likely biased towards either heads or tails, but not extremely so. How do we select a prior?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the type of prior needed",
+          "mathHtml": "",
+          "explanation": "We need an informative prior to reflect our prior knowledge."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a conjugate prior",
+          "mathHtml": "",
+          "explanation": "A beta distribution is a natural choice for modeling probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Select the parameters of the prior",
+          "mathHtml": "",
+          "explanation": "We choose (2, 2) to reflect our prior knowledge that the coin is likely biased towards either heads or tails."
+        }
+      ],
+      "finalAnswer": "Informative beta prior with parameters (2, 2)"
+    },
+    "intuition": "Prior selection is about incorporating domain knowledge and uncertainty into your model. It's essential to choose a prior that reflects your understanding of the problem.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:16.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

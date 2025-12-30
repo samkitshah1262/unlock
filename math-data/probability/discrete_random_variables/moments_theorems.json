@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prob_thm_moments_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>In probability theory, moments of a discrete random variable are used to describe its distribution. Higher moments provide more information about the shape of the distribution.</p><p>A moment generating function (MGF) is a cumulative distribution function that can be used to calculate any moment of the distribution.</p>",
+    "formula": {
+      "latex": "\\[ E(X^n) = \\int_{-\\infty}^{\\infty} x^n f(x) dx \\]",
+      "name": "Moment Formula"
+    },
+    "theorem": {
+      "statement": "\\[ M(t) = \\sum_{k=0}^\\infty e^{tk} P(X=k) \\] is the unique moment generating function for a discrete random variable X.",
+      "proofSketch": "The proof involves showing that the MGF uniquely determines the distribution and then using the uniqueness of the MGF to prove the theorem."
+    },
+    "intuition": "The MGF provides a way to calculate any moment of a distribution, making it a powerful tool for analyzing discrete random variables.",
+    "realWorldApplications": [
+      "Moment generating functions are used in machine learning to analyze the distribution of features and make predictions."
+    ],
+    "tags": [
+      "probability",
+      "moment generating function"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:58:22.030Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_moments_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>The moment generating function (MGF) of a discrete random variable is a powerful tool to analyze its higher moments.</p>",
+    "formula": {
+      "latex": "\\[ M_G(t) = E[e^{tX}] \\]",
+      "name": "Moment Generating Function"
+    },
+    "theorem": {
+      "statement": "\\[ M_G(t_1) = M_G(t_2) \\Rightarrow X \\sim F \\] if and only if all moments are finite",
+      "proofSketch": "The proof involves showing that the uniqueness of the MGF implies the same for its derivatives, which correspond to the moments."
+    },
+    "intuition": "The MGF encodes the distribution's moment information. Uniqueness ensures that a single distribution corresponds to each set of moments.",
+    "realWorldApplications": [
+      "In machine learning, MGFs are used in Bayesian inference and density estimation."
+    ],
+    "tags": [
+      "Probability Theory",
+      "Discrete Random Variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:58:38.571Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

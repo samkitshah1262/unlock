@@ -1,0 +1,233 @@
+[
+  {
+    "id": "stat_wex_conjugate_priors_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a model.</p>",
+    "formula": {
+      "latex": "\\[\\beta \\sim \\text{Beta}(a,b)\\]",
+      "name": "Conjugate Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a binomial distribution with $n=10$ and $p=0.5$. We want to update our prior belief about the probability of success, represented by \\(\\theta\\), given that we observe $k=7$ successes.</p>",
+      "hints": [
+        "Hint: Use conjugate prior for binomial"
+      ],
+      "solutionHtml": "<p>We can use a beta distribution as our prior and update it using Bayes' theorem. The updated posterior distribution is also a beta distribution, which is the key insight here.</p>",
+      "answerShort": "Beta(8,3)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's work through an example to illustrate this process.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior distribution",
+          "mathHtml": "\\[\\theta \\sim \\text{Beta}(a,b)\\]",
+          "explanation": "We choose a beta distribution as our prior because it's conjugate to the binomial likelihood."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior using Bayes' theorem",
+          "mathHtml": "\\[p(\\theta | k) \\propto p(k | \\theta) \\cdot p(\\theta)\\]",
+          "explanation": "We update our prior distribution by multiplying it with the likelihood and normalizing."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the updated posterior",
+          "mathHtml": "\\[p(\\theta | k) = \\frac{p(k | \\theta) \\cdot p(\\theta)}{\\int_{0}^{1} p(k | \\theta) \\cdot p(\\theta) d\\theta}\\]",
+          "explanation": "We integrate out the prior to get our updated posterior distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the final answer",
+          "mathHtml": "\\[p(\\theta | k) = \\text{Beta}(8,3)\\]",
+          "explanation": "After updating our prior using Bayes' theorem, we get a new beta distribution as our posterior."
+        }
+      ],
+      "finalAnswer": "Beta(8,3)"
+    },
+    "intuition": "Conjugate priors allow us to update our understanding of a model in a way that's mathematically tractable and easy to interpret.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:24:45.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are essential for updating posteriors.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binomial distribution with <i>n</i> trials and <i>k</i> successes. We want to update our prior belief about the probability of success using Bayes' theorem.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior\", \"mathHtml\": \"\\( \\beta_0 \\sim Beta(\\alpha_0, \\beta_0) \\)\", \"explanation\": \"We choose a conjugate prior that is also a beta distribution.\"}, {\"stepNumber\": 2, \"description\": \"Observe the data\", \"mathHtml\": \"\\( x \\sim Binomial(n, p) \\)\", \"explanation\": \"We collect <i>x</i> successes out of <i>n</i> trials.\"}, {\"stepNumber\": 3, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\( \\beta_1 | x \\sim Beta(\\alpha_0 + x, \\beta_0 + n - x) \\)\", \"explanation\": \"We update our prior belief about <i>p</i> using the observed data.\"}, {\"stepNumber\": 4, \"description\": \"Posterior distribution\", \"mathHtml\": \"\\( p | x \\sim Beta(\\alpha_1, \\beta_1) \\)\", \"explanation\": \"Our updated posterior belief about <i>p</i> is still a beta distribution, but with updated parameters.\"} ],",
+    "finalAnswer": "The conjugate prior for the binomial distribution is another beta distribution.\" },",
+    "intuition": "Conjugate priors simplify Bayesian inference by maintaining the same distribution family throughout.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:25:08.421Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a system based on new data.</p>",
+    "formula": {
+      "latex": "\\[\\beta(a_1 + x, b_1 + n - x) = \\frac{\\Gamma(a_1 + b_1)}{\\Gamma(a_1) \\Gamma(b_1)} \\frac{(a_1 + x)^{x} (b_1 + n - x)^{n-x}}{(a_1 + b_1)^{n-1}}\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin with an unknown probability of heads, and we flip it 10 times. We observe 5 heads. What is the updated distribution for the coin's probability?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior",
+          "mathHtml": "\\[\\beta(a_0, b_0) = \\frac{\\Gamma(a_0 + b_0)}{\\Gamma(a_0) \\Gamma(b_0)} \\frac{(a_0)^{x_0} (b_0)^{n-x_0}}{(a_0 + b_0)^{n-1}}\\]",
+          "explanation": "We start with a vague prior for the coin's probability."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior",
+          "mathHtml": "\\[\\beta(a_1, b_1) = \\frac{\\Gamma(a_0 + x_0 + 1)}{\\Gamma(a_0 + 1) \\Gamma(b_0 + n - x_0)} \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}\\]",
+          "explanation": "We update the prior using Bayes' rule."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the updated distribution",
+          "mathHtml": "\\[\\beta(a_1, b_1) = \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}\\]",
+          "explanation": "We simplify the updated distribution by canceling out common terms."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the maximum a posteriori (MAP) estimate",
+          "mathHtml": "\\[\\hat{p} = \\frac{a_1 + x_0}{a_1 + b_1 + n}\\]",
+          "explanation": "We find the MAP estimate by finding the mode of the updated distribution."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The updated distribution tells us that our belief about the coin's probability has shifted towards a more likely value given the data."
+        }
+      ],
+      "finalAnswer": "The updated distribution for the coin's probability is \\beta(a_1, b_1) = \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}"
+    },
+    "intuition": "Conjugate priors allow us to update our understanding of a system based on new data, without having to re-specify the prior distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:25:50.102Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our knowledge about parameters given new data.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binomial distribution with <i>n</i> trials and <i>p</i> probability of success. We want to update our prior belief about <i>p</i> using the observed number of successes, <i>k</i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior distribution\", \"mathHtml\": \"\\[ \\alpha \\sim Beta(\\alpha_0, \\beta_0) \\]\", \"explanation\": \"We choose a beta distribution as our prior because it's conjugate to the binomial likelihood.\"}, {\"stepNumber\": 2, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\[ f(p | k) = \\frac{f(k | p) f(p)}{\\int_{0}^{1} f(k | p') f(p') dp'} \\]\", \"explanation\": \"We use Bayes' theorem to update our prior with the likelihood of observing <i>k</i> successes given <i>p</i>. The integral normalizes the posterior.\"}, {\"stepNumber\": 3, \"description\": \"Simplify the posterior\", \"mathHtml\": \"\\[ f(p | k) = Beta(\\alpha_0 + k, \\beta_0 + n - k) \\]\", \"explanation\": \"We can simplify the posterior by recognizing it's still a beta distribution.\"}, {\"stepNumber\": 4, \"description\": \"Compute the updated mean and variance\", \"mathHtml\": \"\\[ E[p | k] = \\frac{\\alpha_0 + k}{\\alpha_0 + n}, Var[p | k] = \\frac{(\\alpha_0 + k)(\\beta_0 + n - k)}{(n+1)\\alpha_0^2} \\]\", \"explanation\": \"We can compute the updated mean and variance of our posterior distribution.\"}, {\"stepNumber\": 5, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"Our updated belief about <i>p</i> is now a beta distribution with new parameters. We can use this to make inferences or predictions.\"} ],",
+    "finalAnswer": "The posterior distribution is Beta(\\alpha_0 + k, \\beta_0 + n - k)\" },",
+    "intuition": "Conjugate priors allow us to easily update our knowledge about parameters given new data by leveraging the mathematical structure of the problem.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:26:20.687Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating posterior distributions.</p>",
+    "formula": {
+      "latex": "\\[\\beta(a + x, b + n - x) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin flip experiment with an unknown probability of heads, p. We observe <i>n</i> flips and <i>x</i> heads. What is the updated distribution for <i>p</i>?</p>",
+      "hints": [
+        "Hint: Use conjugate prior",
+        "Hint: Update using Bayes' theorem"
+      ],
+      "solutionHtml": "<p>We can model this problem using a Beta-Binomial conjugate prior.</p><ul><li>Step 1: Define the prior distribution as \\(\\beta(a, b)\\). In this case, we choose <i>a</i> and <i>b</i> such that the prior mean is close to our initial guess of <i>p</i>.</li><li>Step 2: Update the prior using Bayes' theorem with the likelihood function \\(f(x | p) = \\binom{n}{x} p^x (1-p)^{n-x}\\).</li><li>Step 3: Simplify the posterior distribution to get \\(\\beta(a + x, b + n - x)\\).</li><li>Step 4: Interpret the updated distribution and make predictions.</li></ul>",
+      "answerShort": "Updated Beta-Binomial distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We observe <i>n=10</i> flips with <i>x=5</i> heads. Our initial guess for <i>p</i> is 0.4.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior distribution",
+          "mathHtml": "\\[\\beta(a, b) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+          "explanation": "Choose <i>a</i> and <i>b</i> to match our initial guess of <i>p</i>."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior using Bayes' theorem",
+          "mathHtml": "\\[f(x | p) = \\binom{n}{x} p^x (1-p)^{n-x}\\]",
+          "explanation": "Use the likelihood function to update the prior."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the posterior distribution",
+          "mathHtml": "\\[\\beta(a + x, b + n - x) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+          "explanation": "Simplify the updated distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the updated distribution",
+          "mathHtml": "",
+          "explanation": "Make predictions and interpret the results."
+        }
+      ],
+      "finalAnswer": "Updated Beta-Binomial distribution"
+    },
+    "intuition": "Conjugate priors simplify Bayesian inference by providing an updated distribution that is from the same family as the prior.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:27:01.836Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

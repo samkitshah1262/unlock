@@ -1,0 +1,71 @@
+[
+  {
+    "id": "la_thm_pca_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "title": "Principal Component Analysis (PCA)",
+    "contentHtml": "<p>Principal Component Analysis (PCA) is a widely used dimensionality reduction technique in machine learning.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\mathbf{C} = \\\\frac{1}{N-1} \\\\sum_{i=1}^N (\\\\mathbf{x}_i - \\\\bar{\\mathbf{x}}) (\\\\mathbf{x}_i - \\\\bar{\\mathbf{x}})^T \\\\]\",",
+    "name": "covariance matrix\" },",
+    "theorem": "{",
+    "statement": "\\[ \\mathbf{v}_1 = \\arg\\max_{\\mathbf{v} \\in \\mathbb{R}^n} \\frac{||\\mathbf{C}\\mathbf{v}||}{||\\mathbf{v}||} \\]",
+    "proofSketch": "The proof involves showing that the principal components are the eigenvectors of the covariance matrix, and then using the Rayleigh quotient to find the maximum variance direction.\" },",
+    "intuition": "PCA finds the directions of maximum variance in the data, allowing for dimensionality reduction while preserving most of the information.",
+    "realWorldApplications": [
+      "Image compression",
+      "Feature extraction"
+    ],
+    "tags": [
+      "dimensionality reduction",
+      "machine learning"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:15:29.357Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_pca_009",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "title": "Principal Component Analysis (PCA)",
+    "contentHtml": "<p>Principal Component Analysis (PCA) is a widely used dimensionality reduction technique in machine learning.</p><p>Given a dataset with correlated features, PCA helps to identify the most important directions of variation and project the data onto a lower-dimensional space.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Var}(x) = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2 \\]",
+      "name": "Variance Formula"
+    },
+    "theorem": {
+      "statement": "\\[ \\mathbf{W} \\Lambda \\mathbf{W}^T = \\mathbf{C} \\]",
+      "proofSketch": "The proof involves showing that the eigenvectors of the covariance matrix are orthogonal and form a basis for the lower-dimensional space."
+    },
+    "intuition": "PCA finds the directions in which the data varies most, allowing us to reduce the dimensionality while retaining most of the information.",
+    "realWorldApplications": [
+      "Dimensionality reduction for image compression",
+      "Feature extraction for text classification"
+    ],
+    "tags": [
+      "dimensionality reduction",
+      "feature extraction"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:15:46.273Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ai-standardization-vs-normalization-example-1",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Standardization vs. Normalization",
+    "articleSlug": "standardization-vs-normalization",
+    "chapter": "Feature Scaling",
+    "title": "Example",
+    "subtitle": "Feature Scaling",
+    "contentHtml": "<ul>\n  <li>The figure below shows a dataset that contains an independent variable (purchased) and 3 dependent variables (Country, Age, and Salary). We can easily notice that the variables are not on the same scale because the range of Age is from 27 to 50, while the range of Salary going from 48K to 83K. The range of Salary is much wider than the range of Age. This will cause some issues in our models since a lot of machine learning models such as k-means clustering and nearest neighbor classification are based on the Euclidean Distance.</li>\n</ul>\n<p><img src=\"/primers/ai/assets/standardization-vs-normalization/1.png\" alt=\"\"></p>\n<ul>\n  <li>When we calculate the equation of Euclidean distance, the number of <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-1-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>&amp;#x2212;</mo><msup><mi>x</mi><mn>1</mn></msup><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-1\" style=\"width: 4.898em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 4.065em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.201em, 1004.07em, 2.503em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-2\"><span class=\"mo\" id=\"MathJax-Span-3\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"msubsup\" id=\"MathJax-Span-4\"><span style=\"display: inline-block; position: relative; width: 0.94em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-5\" style=\"font-family: STIXGeneral-Italic;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.523em;\"><span class=\"mn\" id=\"MathJax-Span-6\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">2</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span><span class=\"mo\" id=\"MathJax-Span-7\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">−</span><span class=\"msubsup\" id=\"MathJax-Span-8\" style=\"padding-left: 0.263em;\"><span style=\"display: inline-block; position: relative; width: 0.94em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-9\" style=\"font-family: STIXGeneral-Italic;\">x<span style=\"display: inline-block; overflow: hidden; height: 1px; width: 0.003em;\"></span></span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.523em;\"><span class=\"mn\" id=\"MathJax-Span-10\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">1</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span><span class=\"msubsup\" id=\"MathJax-Span-11\"><span style=\"display: inline-block; position: relative; width: 0.784em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.18em, 1000.26em, 4.326em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mo\" id=\"MathJax-Span-12\" style=\"font-family: STIXGeneral-Regular;\">)</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.315em;\"><span class=\"mn\" id=\"MathJax-Span-13\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">2</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.378em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo stretchy=\"false\">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>1</mn></msup><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-1\">(x^2-x^1)^2</script> is much bigger than the number of <span class=\"MathJax_Preview\" style=\"color: inherit; display: none;\"></span><span class=\"MathJax\" id=\"MathJax-Element-2-Frame\" tabindex=\"0\" data-mathml=\"<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>&amp;#x2212;</mo><msup><mi>y</mi><mn>1</mn></msup><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup></math>\" role=\"presentation\" style=\"position: relative;\"><nobr aria-hidden=\"true\"><span class=\"math\" id=\"MathJax-Span-14\" style=\"width: 4.794em; display: inline-block;\"><span style=\"display: inline-block; position: relative; width: 3.961em; height: 0px; font-size: 120%;\"><span style=\"position: absolute; clip: rect(1.201em, 1003.96em, 2.555em, -999.997em); top: -2.185em; left: 0em;\"><span class=\"mrow\" id=\"MathJax-Span-15\"><span class=\"mo\" id=\"MathJax-Span-16\" style=\"font-family: STIXGeneral-Regular;\">(</span><span class=\"msubsup\" id=\"MathJax-Span-17\"><span style=\"display: inline-block; position: relative; width: 0.888em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.44em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-18\" style=\"font-family: STIXGeneral-Italic;\">y</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.471em;\"><span class=\"mn\" id=\"MathJax-Span-19\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">2</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span><span class=\"mo\" id=\"MathJax-Span-20\" style=\"font-family: STIXGeneral-Regular; padding-left: 0.263em;\">−</span><span class=\"msubsup\" id=\"MathJax-Span-21\" style=\"padding-left: 0.263em;\"><span style=\"display: inline-block; position: relative; width: 0.888em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.44em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mi\" id=\"MathJax-Span-22\" style=\"font-family: STIXGeneral-Italic;\">y</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.471em;\"><span class=\"mn\" id=\"MathJax-Span-23\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">1</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span><span class=\"msubsup\" id=\"MathJax-Span-24\"><span style=\"display: inline-block; position: relative; width: 0.784em; height: 0px;\"><span style=\"position: absolute; clip: rect(3.18em, 1000.26em, 4.326em, -999.997em); top: -4.008em; left: 0em;\"><span class=\"mo\" id=\"MathJax-Span-25\" style=\"font-family: STIXGeneral-Regular;\">)</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span><span style=\"position: absolute; top: -4.372em; left: 0.315em;\"><span class=\"mn\" id=\"MathJax-Span-26\" style=\"font-size: 70.7%; font-family: STIXGeneral-Regular;\">2</span><span style=\"display: inline-block; width: 0px; height: 4.013em;\"></span></span></span></span></span><span style=\"display: inline-block; width: 0px; height: 2.19em;\"></span></span></span><span style=\"display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.378em;\"></span></span></nobr><span class=\"MJX_Assistive_MathML\" role=\"presentation\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo stretchy=\"false\">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>1</mn></msup><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></math></span></span><script type=\"math/tex\" id=\"MathJax-Element-2\">(y^2-y^1)^2</script> which means the Euclidean distance will be dominated by the salary if we do not apply feature scaling. The difference in Age contributes less to the overall difference. Therefore, we should use Feature Scaling to bring all values to the same magnitudes and, thus, solve this issue. To do this, there are primarily two methods called standardization and normalization.</li>\n</ul>\n<p><img src=\"/primers/ai/assets/standardization-vs-normalization/2.png\" alt=\"\"></p>",
+    "contentMarkdown": "*   The figure below shows a dataset that contains an independent variable (purchased) and 3 dependent variables (Country, Age, and Salary). We can easily notice that the variables are not on the same scale because the range of Age is from 27 to 50, while the range of Salary going from 48K to 83K. The range of Salary is much wider than the range of Age. This will cause some issues in our models since a lot of machine learning models such as k-means clustering and nearest neighbor classification are based on the Euclidean Distance.\n\n![](/primers/ai/assets/standardization-vs-normalization/1.png)\n\n*   When we calculate the equation of Euclidean distance, the number of (x2−x1)2(x2−x1)2(x^2-x^1)^2 is much bigger than the number of (y2−y1)2(y2−y1)2(y^2-y^1)^2 which means the Euclidean distance will be dominated by the salary if we do not apply feature scaling. The difference in Age contributes less to the overall difference. Therefore, we should use Feature Scaling to bring all values to the same magnitudes and, thus, solve this issue. To do this, there are primarily two methods called standardization and normalization.\n\n![](/primers/ai/assets/standardization-vs-normalization/2.png)",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 3,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining",
+      "machine learning"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": true,
+      "hasImages": true,
+      "wordCount": 177,
+      "contentLength": 8709
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/standardization-vs-normalization/#example",
+    "scrapedAt": "2025-12-28T11:48:22.173Z"
+  },
+  {
+    "id": "ai-standardization-vs-normalization-algorithms-the-benefit-the-most-from-feature-scali-2",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Standardization vs. Normalization",
+    "articleSlug": "standardization-vs-normalization",
+    "chapter": "When Feature Scaling Matters",
+    "title": "Algorithms the Benefit the Most from Feature Scaling",
+    "subtitle": "When Feature Scaling Matters",
+    "contentHtml": "<p><img src=\"/primers/ai/assets/standardization-vs-normalization/7.png\" alt=\"\"></p>\n<ul>\n  <li>Note: If an algorithm is not distance-based, feature scaling is unimportant, including Naive Bayes, linear discriminant analysis, and tree-based models (gradient boosting, random forest, etc.).</li>\n</ul>",
+    "contentMarkdown": "![](/primers/ai/assets/standardization-vs-normalization/7.png)\n\n*   Note: If an algorithm is not distance-based, feature scaling is unimportant, including Naive Bayes, linear discriminant analysis, and tree-based models (gradient boosting, random forest, etc.).",
+    "order": 2,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": true,
+      "wordCount": 27,
+      "contentLength": 299
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/standardization-vs-normalization/#algorithms-the-benefit-the-most-from-feature-scaling",
+    "scrapedAt": "2025-12-28T11:48:22.173Z"
+  }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "prob_prb_binomial_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "problem": {
+      "statementHtml": "<p>Let X be a binomial random variable with n trials and probability p of success in each trial. Find the mean and variance of X.</p>",
+      "hints": [
+        "Start by recalling the definition of a binomial distribution.",
+        "Think about how the mean is related to the number of successes.",
+        "The variance will depend on both the mean and the probability."
+      ],
+      "solutionHtml": "<p>To find the mean, we can use the formula for the expected value:</p>\n\n\\[ \nE[X] = np \\]\n<p>This makes sense intuitively, since each success contributes to the total number of successes.</p>\n\n<p>Next, let's find the variance:</p>\n\n\\[ \nV(X) = E[X^2] - (E[X])^2 \\]\n<p>We can use the formula for the expected value again:</p>\n\n\\[ \nE[X^2] = n(p + q) \\]\n<p>Now we can plug in our values and simplify:</p>\n\n\\[ \nV(X) = np(1-p) \\]\n<p>This makes sense intuitively, since the variance depends on both the mean and the probability.</p>",
+      "answerShort": "The mean is np, and the variance is np(1-p)"
+    },
+    "commonMistakes": [
+      "Forgetting to account for the number of trials",
+      "Not recognizing that the variance depends on both the mean and the probability"
+    ],
+    "realWorldApplications": [
+      "Modeling the number of defects in a manufacturing process"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:08:32.820Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a binomial random variable with n trials and probability p of success in each trial. Find the mean and variance of X.",
+    "hints": [
+      "Start by recalling the definition of the binomial distribution.",
+      "Think about how the mean and variance relate to the number of successes.",
+      "Use the formula for the mean and variance of a sum of independent random variables."
+    ],
+    "solutionHtml": " The probability mass function (PMF) of X is given by:  \\[P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]  The mean, or expected value, of X is:  \\[\\mathbb{E}[X] = np\\]  To find the variance, we can use the formula for the variance of a sum of independent random variables:  \\[\\text{Var}(X) = \\sum_{k=0}^n k^2 P(X=k) - (\\mathbb{E}[X])^2\\] \\[= \\sum_{k=0}^n k^2 \\binom{n}{k} p^k (1-p)^{n-k} - (np)^2\\]  Now, we can use the fact that:  \\[\\sum_{k=0}^n k^2 \\binom{n}{k} p^k (1-p)^{n-k} = n(1-p) + np\\]  Substituting this into our expression for the variance, we get:  \\[\\text{Var}(X) = n(1-p) + np - (np)^2\\] \\[= np(1-p)\\]  So, the mean and variance of X are given by:  \\[\\mathbb{E}[X] = np\\] \\[\\text{Var}(X) = np(1-p)\\]  \",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:08:59.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "title": "Binomial Distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a binomial random variable with n = 10 trials and p = 0.5 success probability. Find P(X ≥ 6).",
+    "hints": [
+      "Recall the formula for the binomial distribution.",
+      "Use the fact that P(X ≥ 6) = 1 - P(X ≤ 5).",
+      "You can use a calculator or software to compute the cumulative probabilities."
+    ],
+    "solutionHtml": "\\[P(X \\geq 6) = 1 - P(X \\leq 5) = 1 - \\sum_{k=0}^{5} {10 \\choose k} (0.5)^{10}\\] <p>Now, use a calculator or software to compute the cumulative probabilities.</p> <p>The final answer is: 0.3286</p>\",",
+    "answerShort": "0.3286\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:09:17.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_binomial_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "binomial",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a binomial random variable with n trials and probability of success p. Find the mean and variance of X.</p>",
+    "hints": [
+      "<p>The mean is simply np.</p>",
+      "<p>For the variance, recall that Var(X) = E[X^2] - (E[X])^2.</p>",
+      "<p>You can use the fact that X^2 is also a binomial random variable with parameters n and p.</p>"
+    ],
+    "solutionHtml": "<p>To find the mean of X, we have:</p>\\(\\mu = E[X] = np\\)<p>This makes sense intuitively because if you're flipping a coin n times, you'd expect to get approximately np heads.</p><p>Now let's find the variance:</p>\\(Var(X) = E[X^2] - (E[X])^2 = n \\cdot p \\cdot (1-p)\\)<p>This is because X^2 has the same distribution as a binomial random variable with parameters n and p, but shifted up by np.</p><p>The final answer is:</p>\\(\\mu = np\\), \\(Var(X) = n \\cdot p \\cdot (1-p)\\)\",",
+    "answerShort": "np, n*p*(1-p)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:09:39.771Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

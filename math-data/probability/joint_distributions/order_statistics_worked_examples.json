@@ -1,0 +1,144 @@
+[
+  {
+    "id": "prob_wex_order_statistics_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: min, max, kth",
+    "contentHtml": "<p>Understanding order statistics is crucial in probability theory and has numerous applications in machine learning.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the distribution of the <i>k</i>th order statistic from a joint distribution.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Let's start by considering the cumulative distribution function (CDF) of the joint distribution.\", \"mathHtml\": \"\\[F(x_1, x_2, \\ldots, x_n) = P(X_1 \\leq x_1, X_2 \\leq x_2, \\ldots, X_n \\leq x_n)\\]\", \"explanation\": \"We'll use the CDF to find the distribution of the order statistic.\"}, {\"stepNumber\": 2, \"description\": \"Now, let's focus on the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[F_k(x) = P(X_{(k)} \\leq x)\\]\", \"explanation\": \"We'll find the CDF of the <i>k</i>th order statistic by considering the event that all but the <i>k</i>th smallest values are less than or equal to <i>x</i>.\"}, {\"stepNumber\": 3, \"description\": \"To simplify the calculation, let's consider a specific example.\", \"mathHtml\": \"\\[F_k(x) = P(X_{(k)} \\leq x | X_1 > x, X_2 > x, \\ldots, X_{k-1} > x)\\]\", \"explanation\": \"We'll use the given joint distribution to find the conditional CDF.\"}, {\"stepNumber\": 4, \"description\": \"Finally, we can find the density function of the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[f_k(x) = F_k^\\prime(x)\\]\", \"explanation\": \"The density function is the derivative of the CDF.\"}, {\"stepNumber\": 5, \"description\": \"Putting it all together, we get the distribution of the <i>k</i>th order statistic.\", \"mathHtml\": \"\\[f_k(x) = \\ldots\\]\", \"explanation\": \"The final answer is a function that depends on the joint distribution and the value of <i>k</i>.\"} ],",
+    "finalAnswer": "The density function of the <i>k</i>th order statistic.\" },",
+    "intuition": "Order statistics provide a way to analyze the behavior of extreme values in a dataset.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:28:02.203Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_order_statistics_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of Min, Max, and kth Order Statistic",
+    "problem": {
+      "statementHtml": "<p>Let X1, ..., Xn be i.i.d. random variables with cumulative distribution function F(x). Find the distribution of the minimum (Xmin), maximum (Xmax), and kth order statistic (Xk).</p>",
+      "hints": [
+        "Hint: Use the fact that each Xi has the same distribution"
+      ],
+      "solutionHtml": "<p>Let's start by finding the distribution of Xmin. Since F(x) is non-decreasing, we have:</p>\n<p>F(Xmin &lt;= x) = P(Xi &lt;= x for all i) = ∏[P(Xi &lt;= x)]</p>\n<p>Now, take the derivative with respect to x:</p>\n<p>F'(Xmin &lt;= x) = f(x)</p>\n<p>This is the cumulative distribution function of Xmin. Similarly, we can find the distribution of Xmax by taking the derivative of 1 - F(x).</p>",
+      "answerShort": "The distributions are given by F(Xmin &lt;= x) and 1 - F(Xmax &gt;= x)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have three i.i.d. random variables X1, X2, X3 with uniform distribution on [0, 1]. Find the distribution of Xmin and Xmax.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find F(Xmin &lt;= x)",
+          "mathHtml": "\\[F(X_{\\text{min}} &lt;= x) = \\prod[P(X_i &lt;= x)] = x^3\\]",
+          "explanation": "We use the fact that each Xi has the same distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find F'(Xmin &lt;= x)",
+          "mathHtml": "\\[F'(X_{\\text{min}} &lt;= x) = f(x) = 3x^2\\]",
+          "explanation": "We take the derivative of the cumulative distribution function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find F(Xmax &gt;= x)",
+          "mathHtml": "\\[F(X_{\\text{max}} &gt;= x) = 1 - \\prod[1-P(X_i &lt;= x)] = 1-(1-x)^3\\]",
+          "explanation": "We use the fact that each Xi has the same distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find F'(Xmax &gt;= x)",
+          "mathHtml": "\\[F'(X_{\\text{max}} &gt;= x) = f(x) = 3(1-x)^2\\]",
+          "explanation": "We take the derivative of the cumulative distribution function."
+        }
+      ],
+      "finalAnswer": "The distributions are given by F(Xmin &lt;= x) and 1 - F(Xmax &gt;= x)"
+    },
+    "intuition": "Order statistics provide a way to quantify extreme values in a dataset, which is crucial in many real-world applications, such as finance and quality control.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:28:45.389Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_order_statistics_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Min, Max, and kth",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the distribution of order statistics in a joint distribution.</p>",
+    "formula": {
+      "latex": "\\[F_{k}(x) = F(x)^{k} \\cdot (1-F(x))^{n-k}\\]",
+      "name": "Order Statistic Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution of two random variables X and Y, find the distribution of the kth order statistic.</p>",
+      "hints": [
+        "Consider the cumulative distribution function (CDF)"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution of X and Y, with CDF F(x,y). Find the distribution of the kth order statistic.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the event A as {X ≤ x, Y ≤ y}",
+          "mathHtml": "\\[P(A) = F(x,y)\\]",
+          "explanation": "We're defining the event A to be the set of points where X is less than or equal to x and Y is less than or equal to y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the probability that the kth order statistic is less than or equal to x",
+          "mathHtml": "\\[P(X_{k} ≤ x) = P(A)\\]",
+          "explanation": "We're finding the probability that the kth order statistic is less than or equal to x, which is equivalent to finding the probability of event A."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Differentiate with respect to x",
+          "mathHtml": "\\[f_{k}(x) = F'(x)^{k} \\cdot (1-F(x))^{n-k}\\]",
+          "explanation": "We're differentiating the CDF with respect to x to find the PDF of the kth order statistic."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Integrate to find the cumulative distribution function",
+          "mathHtml": "\\[F_{k}(x) = \\int_{-∞}^{x} f_{k}(t) dt\\]",
+          "explanation": "We're integrating the PDF with respect to x to find the CDF of the kth order statistic."
+        }
+      ],
+      "finalAnswer": "The distribution of the kth order statistic is F_{k}(x)"
+    },
+    "intuition": "Order statistics are a fundamental concept in probability theory, and understanding their distribution is crucial for many applications, including machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:29:21.346Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

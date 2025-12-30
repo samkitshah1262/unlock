@@ -1,0 +1,115 @@
+[
+  {
+    "id": "la_prb_cholesky_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "cholesky",
+    "problem": {
+      "statementHtml": "<p>Given a positive definite matrix A, decompose it into Cholesky factors L and Lᵀ.</p>",
+      "hints": [
+        "<p>Start by considering the square root of A.</p>",
+        "<p>Think about how you can use this to construct L.</p>",
+        "<p>Use the fact that LLᵀ = A to guide your construction.</p>"
+      ],
+      "solutionHtml": "<p>To decompose A into Cholesky factors, we'll start by finding the square root of A. Since A is positive definite, its square root exists and is also positive definite.</p><p>We can then construct L as the upper triangular matrix whose diagonal elements are the square roots of the corresponding diagonal elements of A.</p><p>Finally, we can set Lᵀ = LT to complete the decomposition.</p>",
+      "answerShort": "L"
+    },
+    "commonMistakes": [
+      "<p>Failing to recognize that the square root of a positive definite matrix is also positive definite.</p>",
+      "<p>Misunderstanding how to construct L from the square root of A.</p>"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:06:06.071Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cholesky_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "cholesky",
+    "problem": "{",
+    "statementHtml": "<p>Given a positive definite matrix A, decompose it into Cholesky factors L and L<sup>T</sup>. Compute the decomposition using the following steps:</p>",
+    "hints": [
+      "Start by finding the square root of the diagonal elements.",
+      "Use these values to construct the lower triangular matrix L.",
+      "Verify that LL<sup>T</sup> equals A."
+    ],
+    "solutionHtml": "<p>To compute the Cholesky decomposition, we follow these steps:</p><ul><li>Find the square roots of the diagonal elements: \\\\(L_{ii} = \\sqrt{A_{ii}}\\\\)</li><li>Construct the lower triangular matrix L by setting \\\\(L_{ij} = 0\\\\) for \\\\(i &gt; j\\\\)</li><li>Verify that LL<sup>T</sup> equals A:</li></ul>\",",
+    "answerShort": "The Cholesky decomposition is A = LL<sup>T</sup>\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:06:23.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cholesky_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "cholesky",
+    "title": "Cholesky Decomposition",
+    "problem": {
+      "statementHtml": "<p>Decompose the following matrix into its Cholesky form: A = LLᵀ, where A is a positive definite matrix.</p>",
+      "hints": [
+        "Start by finding the diagonal elements of L.",
+        "Use the fact that the off-diagonal elements of L are determined by the upper triangle of A.",
+        "The decomposition will be unique for positive definite matrices."
+      ],
+      "solutionHtml": "<p>To find the Cholesky decomposition, we can iterate over the columns of A.</p><ul><li>For each column j, find the diagonal element l_{jj} such that a_{ij} = l_{ii} * l_{jj}</li><li>For each off-diagonal element below the diagonal, find the corresponding element in L such that a_{ij} = l_{ii} * l_{jj}</li></ul>",
+      "answerShort": "L"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the matrix A = [[4, 12, -16], [12, 37, -47], [-16, -47, 64]], decompose it into its Cholesky form.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the diagonal elements of L.",
+          "mathHtml": "\\[ l_{11} = \\sqrt{4} = 2 \\]",
+          "explanation": "The diagonal element is simply the square root of the corresponding diagonal element in A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the off-diagonal elements below the diagonal.",
+          "mathHtml": "\\[ l_{12} = \\frac{12}{2} = 6, l_{13} = -8 \\]",
+          "explanation": "The off-diagonal elements are determined by the upper triangle of A."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the remaining off-diagonal elements.",
+          "mathHtml": "\\[ l_{22} = \\sqrt{37-6^2/4} = 5.38518, l_{23} = -7.79453 \\]",
+          "explanation": "The remaining off-diagonal elements are determined by the upper triangle of A and the previously found diagonal elements."
+        }
+      ],
+      "finalAnswer": "L = [[2, 0, 4], [0, 5.38518, -7.79453], [0, 0, 8]]"
+    },
+    "commonMistakes": [
+      "Forgetting to square root the diagonal elements",
+      "Not accounting for the symmetry of L"
+    ],
+    "realWorldApplications": [
+      "Principal component analysis (PCA) in machine learning"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:06:54.933Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

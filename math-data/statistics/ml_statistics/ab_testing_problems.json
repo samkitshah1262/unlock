@@ -1,0 +1,138 @@
+[
+  {
+    "id": "stat_prb_ab_testing_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "problem": "{",
+    "statementHtml": "In an A/B testing scenario, a company wants to determine if a new marketing campaign is more effective than their current one. They have two groups: Group A receives the new campaign, and Group B receives the current campaign. Assuming equal sample sizes, what is the minimum number of observations required for each group to detect a statistically significant difference in conversion rates with a 95% confidence level?",
+    "hints": [
+      "Start by determining the required effect size.",
+      "Use the formula for calculating the sample size for two-sample proportions tests.",
+      "Consider using sequential testing to reduce the overall sample size."
+    ],
+    "solutionHtml": "\\[Let's assume we want to detect a difference of 5% in conversion rates. Using the formula for calculating the sample size for two-sample proportions tests, we get...\\] (steps omitted for brevity)\",",
+    "answerShort": "At least 384 observations per group\" },",
+    "commonMistakes": [
+      "Not considering the effect size",
+      "Using a non-parametric test when the data is continuous"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:22:22.941Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ab_testing_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "title": "A/B Testing: Design and Analysis",
+    "problem": {
+      "statementHtml": "<p>Design an A/B testing experiment to determine if a new marketing campaign is effective.</p>",
+      "hints": [
+        "Start by defining the null and alternative hypotheses.",
+        "Choose a suitable statistical test for this problem.",
+        "Consider how you will handle confounding variables."
+      ],
+      "solutionHtml": "<p>To design an A/B testing experiment, we need to define the null and alternative hypotheses. Let's say our null hypothesis is that the new marketing campaign has no significant impact on sales (H<sub>0</sub>: μ<sub>A</sub> = μ<sub>B</sub>). Our alternative hypothesis is that the new marketing campaign has a significant positive impact on sales (H<sub>1</sub>: μ<sub>A</sub> > μ<sub>B</sub>). We will use a two-sample t-test to analyze the results.</p><p>We will randomly assign half of our customers to the treatment group and the other half to the control group. This way, we can compare the average sales for each group.</p>",
+      "answerShort": "Two-sample t-test"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:22:38.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ab_testing_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "problem": "{",
+    "statementHtml": "<p>Design an A/B testing experiment to measure the effect of a new feature on user engagement.</p>",
+    "hints": [
+      "Start by defining the null and alternative hypotheses.",
+      "Consider how you will collect data (e.g., randomize users into treatment and control groups).",
+      "Think about how you will analyze the results (e.g., calculate the difference in means between groups)"
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to specify the null and alternative hypotheses.</p>\\n<p>\\(H_0: \\mu_A = \\mu_B\\)</p>\\n<p>\\(H_a: \\mu_A > \\mu_B\\)</p>\\n<p>Next, we will design a randomized experiment with two groups: A (treatment) and B (control).</p>\\n<p>We will collect data by randomly assigning users to either group.</p>\\n<p>To analyze the results, we can calculate the difference in means between the two groups:</p>\\n<p>\\(\\bar{x}_A - \\bar{x}_B\\)</p>\",",
+    "answerShort": "The null hypothesis is rejected if the p-value is below a certain significance level.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:22:55.694Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ab_testing_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "problem": {
+      "statementHtml": "<p>Design an A/B testing experiment to compare the conversion rates of two different product offers.</p>",
+      "hints": [
+        "Start by defining the null and alternative hypotheses.",
+        "Consider using a sequential testing approach to optimize the experiment's duration.",
+        "Think about how you'll measure the conversion rate and calculate the sample size."
+      ],
+      "solutionHtml": "<p>To design an A/B testing experiment, we first need to define the null and alternative hypotheses. Let <i>p</i><sub>A</sub> be the true conversion rate of offer A, and <i>p</i><sub>B</sub> be the true conversion rate of offer B. The null hypothesis is that the two offers have equal conversion rates (<i>H<sub>0</sub></i>: <i>p</i><sub>A</sub> = <i>p</i><sub>B</sub>). The alternative hypothesis is that one offer has a higher conversion rate than the other (<i>H<sub>1</sub></i>: <i>p</i><sub>A</sub> ≠ <i>p</i><sub>B</sub>). We'll use a sequential testing approach to optimize the experiment's duration.</p>",
+      "answerShort": "The null and alternative hypotheses are defined, and a sequential testing approach is chosen."
+    },
+    "commonMistakes": [
+      "Failing to define clear null and alternative hypotheses.",
+      "Not considering a sequential testing approach to optimize the experiment's duration."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:23:14.199Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ab_testing_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "ab_testing",
+    "problem": "{",
+    "statementHtml": "An e-commerce company wants to test whether a new product page design increases conversions. Design an A/B testing plan with a sample size of 1000 users.",
+    "hints": [
+      "Start by defining the null and alternative hypotheses",
+      "Choose a suitable statistical test for this problem",
+      "Consider how you'll handle unequal group sizes"
+    ],
+    "solutionHtml": "<p>Let's assume we want to detect a 5% increase in conversions with a power of 80%. We can set up the hypotheses as:</p>\\(\\mathbf{H}_0: p_1 = p_2 \\quad \\text{vs.} \\quad \\mathbf{H}_a: p_1 > p_2\\)<p>where \\(p_1\\) and \\(p_2\\) are the conversion rates for the old and new designs, respectively.</p><p>We can use a two-sample proportion test to compare the conversion rates. Since we want to detect a 5% increase, we'll need a sufficient sample size to achieve this power.</p>\",",
+    "answerShort": "Sample size: approximately 1200 users\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:23:30.891Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

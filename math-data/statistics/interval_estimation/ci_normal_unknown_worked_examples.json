@@ -1,0 +1,249 @@
+[
+  {
+    "id": "stat_wex_ci_normal_unknown_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "CI for Mean with Unknown Variance",
+    "contentHtml": "<p>In this worked example, we'll derive a T-interval confidence interval (CI) for the mean of a population when the sample variance is unknown.</p>",
+    "formula": {
+      "latex": "\\[t = \\frac{\\bar{x} - \\mu}{s/\\sqrt{n}}\\]",
+      "name": "T-statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size n=16 is taken from a normal distribution with unknown mean and variance. The sample mean is \\bar{x}=25, and the sample standard deviation is s=3.</p>",
+      "hints": [
+        "Hint: Use the T-distribution"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Construct a 95% CI for the population mean using the sample data above.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean and standard deviation",
+          "mathHtml": "\\[\\bar{x}=25, s=3\\]",
+          "explanation": "We need these values to construct the T-statistic."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the T-statistic",
+          "mathHtml": "\\[t = \\frac{25 - \\mu}{3/\\sqrt{16}}\\]",
+          "explanation": "The T-statistic is used to determine the critical value from the T-distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the degrees of freedom",
+          "mathHtml": "\\[df = n-1=15\\]",
+          "explanation": "The degrees of freedom are used to find the critical value from the T-distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the critical value from the T-distribution",
+          "mathHtml": "\\[t_{0.975} = 2.131\\]",
+          "explanation": "We use the degrees of freedom and the desired confidence level to find the critical value."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Construct the CI",
+          "mathHtml": "\\[CI = (25 - 2.131 \\cdot 3/\\sqrt{16}, 25 + 2.131 \\cdot 3/\\sqrt{16})\\]",
+          "explanation": "The CI is constructed by adding and subtracting the product of the critical value, the standard deviation, and the square root of the sample size from the sample mean."
+        }
+      ],
+      "finalAnswer": "\\[CI = (23.47, 26.53)\\]"
+    },
+    "intuition": "The T-interval CI provides a way to estimate the population mean when the sample variance is unknown.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:12:55.875Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_unknown_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval Estimation for Mean (Unknown Variance)",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a T-interval estimate for the mean of a population when the sample variance is unknown.</p>",
+    "formula": {
+      "latex": "\\[\\bar{x} \\pm t_{n-1, \\alpha/2} \\cdot \\sqrt{\\frac{s^2}{n}}\\]",
+      "name": "T-interval formula"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 25 is taken from a normal distribution with unknown mean and variance. The sample mean is 12.5, and the sample standard deviation is 2.1.</p>",
+      "hints": [
+        "Hint: Use the T-distribution"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Construct a 95% confidence interval for the population mean using the sample data provided.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample standard error",
+          "mathHtml": "\\[s_\\bar{x} = \\sqrt{\\frac{s^2}{n}}\\]",
+          "explanation": "We need to calculate the standard error of the mean to determine the width of our interval."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the critical value from the T-distribution",
+          "mathHtml": "\\[t_{24,0.025} \\approx 2.064\\]",
+          "explanation": "We'll use a T-table or calculator to find the critical value corresponding to our desired confidence level and degrees of freedom."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the margin of error",
+          "mathHtml": "\\[M = t_{24,0.025} \\cdot s_\\bar{x}\\]",
+          "explanation": "The margin of error is the product of the critical value and the standard error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the confidence interval",
+          "mathHtml": "\\[CI = (12.5 - M, 12.5 + M)\\]",
+          "explanation": "Our interval estimate is simply the sample mean plus or minus the margin of error."
+        }
+      ],
+      "finalAnswer": "(12.5 - 0.43, 12.5 + 0.43)"
+    },
+    "intuition": "The T-interval provides a way to construct an interval estimate for the population mean when the sample variance is unknown.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:13:24.855Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_unknown_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval Estimation for Mean (Unknown Variance)",
+    "contentHtml": "<p>In this worked example, we'll solve a problem step-by-step to demonstrate T-interval estimation for the mean of a population with unknown variance.</p>",
+    "formula": {
+      "latex": "\\[\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\\]",
+      "name": "Sample Mean"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 25 is taken from a population with unknown variance. The sample mean is calculated to be 10.2. Construct a 95% T-interval estimate for the true population mean.</p>",
+      "hints": [
+        "Hint: Use the sample standard deviation"
+      ],
+      "solutionHtml": "<p>...</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 25 is taken from a population with unknown variance. The sample mean is calculated to be 10.2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample standard deviation",
+          "mathHtml": "\\[s = \\sqrt{\\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}{n-1}}\\]",
+          "explanation": "We need the sample variance to construct the T-interval."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\frac{s}{\\sqrt{n}}\\]",
+          "explanation": "The standard error is used to determine the critical value for the T-distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the critical value",
+          "mathHtml": "\\[t_{0.975} = ...\\]",
+          "explanation": "We use a t-table or calculator to find the critical value for a two-tailed test with α = 0.05."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the T-interval",
+          "mathHtml": "\\[CI = \\bar{x} \\pm t_{0.975} \\cdot SE\\]",
+          "explanation": "The T-interval is constructed by adding and subtracting the product of the critical value and standard error from the sample mean."
+        }
+      ],
+      "finalAnswer": "CI = 9.45, 11.05"
+    },
+    "intuition": "The T-interval provides a range of values within which we can be confident that the true population mean lies.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:13:53.932Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_unknown_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval Estimation for Mean (Unknown Variance)",
+    "contentHtml": "<p>In this example, we'll use the T-interval to estimate the mean of a population given a sample with unknown variance.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we have a random sample of size <i>n</i> = 25 from a normal distribution with unknown mean μ and variance σ<sup>2</sup>. We want to construct a T-interval estimate for μ.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "We start by calculating the sample mean, which is a natural estimator for the population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample variance",
+          "mathHtml": "\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2\\]",
+          "explanation": "Next, we calculate the sample variance using the formula for unbiased estimation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the T-statistic",
+          "mathHtml": "\\[t = \\frac{\\bar{x} - μ}{s / \\sqrt{n}}\\]",
+          "explanation": "The T-statistic is a standardized measure of how far our sample mean is from the population mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the critical value",
+          "mathHtml": "\\[t_{crit} = t^{-1}(1 - \\alpha)\\]",
+          "explanation": "We use the T-distribution to find the critical value corresponding to our desired confidence level."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Construct the interval estimate",
+          "mathHtml": "\\[CI = (\\bar{x} - t_{crit} \\cdot s / \\sqrt{n}, \\bar{x} + t_{crit} \\cdot s / \\sqrt{n})\\]",
+          "explanation": "Finally, we construct the T-interval by adding and subtracting the critical value multiplied by the standard error."
+        }
+      ],
+      "finalAnswer": "The estimated interval is (CI)."
+    },
+    "intuition": "The T-interval provides a way to estimate the population mean while accounting for uncertainty in both the sample mean and variance.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:14:21.911Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

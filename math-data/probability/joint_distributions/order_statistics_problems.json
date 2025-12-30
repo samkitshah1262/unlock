@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_order_statistics_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "Find the distribution of the <i>k</i>th order statistic from a joint distribution of two random variables X and Y.",
+    "hints": [
+      "Consider the cumulative distribution function (CDF) of X.",
+      "Think about the probability that the <i>k</i>th order statistic is less than or equal to some value.",
+      "Use the fact that the CDF of the joint distribution can be written as the product of the marginal CDFs."
+    ],
+    "solutionHtml": "\\[F(x) = P(X \\leq x, Y \\leq y) = F_X(x)F_Y(y)\\] for some constant <i>y</i>. Now, find the probability that the <i>k</i>th order statistic is less than or equal to <i>x</i>, which is equivalent to finding P(X \\leq x, Y \\leq y). This can be done by integrating F(x) with respect to <i>y</i> from 0 to ∞. The final answer is the derivative of this integral with respect to <i>x</i>.\",",
+    "answerShort": "The distribution of the <i>k</i>th order statistic is the same as the distribution of X.\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:26:27.358Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_order_statistics_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Find the distribution of the <i>k</i>th order statistic from a joint distribution of two random variables.</p>",
+    "hints": [
+      "Start by considering the case where <i>k</i> is equal to one.",
+      "Think about how you would find the probability that the minimum value is less than some constant.",
+      "Use the fact that the joint density is symmetric around its median."
+    ],
+    "solutionHtml": "<p>To find the distribution of the <i>k</i>th order statistic, we can use the following steps:</p><ol><li><p>Let <span class=\\\"math inline\\\">\\(X_{(k)}\\)</span> be the <i>k</i>th order statistic. We want to find the probability density function (PDF) of <span class=\\\"math inline\\\">\\(X_{(k)}\\)</span>.</p></li><li><p>We can start by finding the PDF of the minimum value, which is given by:</p><span class=\\\"math display\\\"><equation>\\[f_{\\min}(x) = F(x) \\cdot f_X(x)\\]</equation></span><p>where <span class=\\\"math inline\\\">\\(F(x)\\)</span> is the cumulative distribution function (CDF) of the joint distribution and <span class=\\\"math inline\\\">\\(f_X(x)\\)</span> is the PDF of the marginal distribution.</p></li><li><p>To find the PDF of the maximum value, we can use the fact that the joint density is symmetric around its median:</p><span class=\\\"math display\\\"><equation>\\[f_{\\max}(x) = F(x) \\cdot f_X(x)\\]</equation></span><p>This PDF represents the probability that the maximum value is less than or equal to <span class=\\\"math inline\\\">\\(x\\)</span>.</p></li><li><p>Finally, we can find the distribution of the <i>k</i>th order statistic by taking the derivative of the CDF:</p><span class=\\\"math display\\\"><equation>\\[f_{X_{(k)}}(x) = \\frac{d}{dx} F(x)\\]</equation></span><p>This represents the probability density function of the <i>k</i>th order statistic.</p></li></ol>\",",
+    "answerShort": "<span class=\\\"math inline\\\">\\(f_{X_{(k)}}(x) = \\frac{d}{dx} F(x)\\)</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:27:02.682Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_order_statistics_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Find the distribution of the kth order statistic from a joint distribution <code>F(x,y)</code>.</p>",
+    "hints": [
+      "Recall that the cdf of the kth order statistic is the integral of the joint pdf.",
+      "Use the fact that the joint pdf can be written as the product of the marginal pdfs.",
+      "The key insight is to recognize that the kth order statistic is a function of the <code>x</code> variable only."
+    ],
+    "solutionHtml": "<p>To find the distribution of the kth order statistic, we need to integrate the joint pdf with respect to all variables except for <code>x</code>. This gives us:</p>\\n\\[P(X_{(k)} \\leq x) = \\int\\limits_{-\\infty}^{x} \\int\\limits_{-\\infty}^{\\infty} f(x,y) dy dx.\\]\\n<p>Now, we can use the fact that the joint pdf is equal to the product of the marginal pdfs:</p>\\n\\[P(X_{(k)} \\leq x) = \\int\\limits_{-\\infty}^{x} f_X(x) dx.\\]\\n<p>This shows that the distribution of the kth order statistic is simply the cdf of the <code>x</code> variable.</p>\",",
+    "answerShort": "The distribution of the kth order statistic is the cdf of the x variable.\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:27:26.755Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

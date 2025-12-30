@@ -1,0 +1,102 @@
+[
+  {
+    "id": "la_prb_least_squares_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Solve the overdetermined system using normal equations.</p>",
+    "hints": [
+      "Check if you can find a closed-form solution.",
+      "Think about how to minimize the squared error.",
+      "Recall that inner products are useful for finding orthogonal vectors."
+    ],
+    "solutionHtml": "<p>To solve this problem, we will use the normal equations.</p>\\n<p>First, we need to define the matrix A and the vector b:</p>\\n\\[A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\end{bmatrix},\\]\\[b = \\begin{bmatrix} 7 \\\\ 8 \\\\ 9 \\end{bmatrix}.\\]</p>\\n<p>Next, we need to compute the matrix product:</p>\\n\\[X = (A^T A)^{-1} A^T b.\\]</p>\",",
+    "answerShort": "The solution is X.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:28:28.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "Find the least squares solution to the overdetermined system <br/> \\[x_1 + 2x_2 = 3, x_1 + 4x_2 = 5, x_1 + 6x_2 = 7\\].\",",
+    "hints": [
+      "The normal equations can be derived from the original system.",
+      "The coefficient matrix is not square, so we need to use a pseudoinverse.",
+      "The solution will be the vector that minimizes the sum of squared errors."
+    ],
+    "solutionHtml": "<p>First, we form the augmented matrix:</p><br/> \\[\\begin{bmatrix} 1 &amp; 2 &amp; | &amp; 3 \\\\ 1 &amp; 4 &amp; | &amp; 5 \\\\ 1 &amp; 6 &amp; | &amp; 7 \\end{bmatrix}\\]</p><br/> <p>Then, we can write the normal equations:</p><br/> \\[\\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\\\ 7 &amp; 12 \\end{bmatrix}\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} 9 \\\\ 15 \\\\ 21 \\end{bmatrix}\\]</p><br/> <p>Next, we can solve the normal equations:</p><br/> \\[\\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\end{bmatrix}^{-1} \\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\end{bmatrix}\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} 9 \\\\ 15 \\\\ 21 \\end{bmatrix}\\]</p><br/> <p>The solution is:</p><br/> \\(x_1 = 1, x_2 = 1\\)</p>\",",
+    "answerShort": "The least squares solution is (1, 1)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:28:58.448Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of data points <code>(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)</code>, find the best-fitting line in the sense that it minimizes the sum of squared errors.</p>",
+    "hints": [
+      "<p>Start by finding the mean of the x-values and the mean of the y-values.</p>",
+      "<p>Use these means to define a system of linear equations.</p>",
+      "<p>Solve this system using matrix operations or Gaussian elimination.</p>"
+    ],
+    "solutionHtml": "<p>To find the best-fitting line, we need to minimize the sum of squared errors:</p>\\n\\ \\[ \\sum_{i=1}^n (y_i - (mx_i + b))^2 \\]\\n\\ <p>This is a quadratic function in terms of m and b. Setting its derivative with respect to m and b to zero gives us a system of linear equations.</p>\\n\\ \\[ \\begin{cases}\\n\\ \\sum_{i=1}^n x_i y_i - (\\bar{x}m + b)\\sum_{i=1}^n x_i = 0\\n\\ \\sum_{i=1}^n y_i - m\\sum_{i=1}^n x_i - bn = 0\\n\\ \\end{cases}\\]\\n\\ <p>Solving this system using matrix operations or Gaussian elimination gives us the values of m and b.</p>\",",
+    "answerShort": "The values of m and b that minimize the sum of squared errors.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:29:23.103Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Solve the overdetermined system using normal equations:</p><p>\\[\\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b}\\]</p>\",",
+    "hints": [
+      "Check that <i>A</i> has full column rank.",
+      "Use the geometric view to find the projection matrix.",
+      "The normal equations are symmetric and positive semi-definite."
+    ],
+    "solutionHtml": "<p>To solve the system, we first compute the projection matrix:</p><p>\\[\\mathbf{P} = \\mathbf{A} (\\mathbf{A}^T \\mathbf{A})^{-1} \\mathbf{A}^T\\]</p><p>Then, we can find the least squares solution by projecting <i>b</i>:</p><p>\\[\\mathbf{x} = (\\mathbf{P}^T \\mathbf{P})^{-1} \\mathbf{P}^T \\mathbf{b}\\]</p>\",",
+    "answerShort": "The least squares solution is given by the above formula.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:29:43.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

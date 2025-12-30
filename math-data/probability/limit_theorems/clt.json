@@ -1,0 +1,545 @@
+[
+  {
+    "id": "prob_con_clt_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a fundamental concept in probability theory that states that, given certain conditions, the distribution of the mean of independent and identically distributed random variables will converge to a normal distribution as the sample size increases.</p><p>In other words, even if the underlying distribution is not normal, the average of many samples will be approximately normally distributed. This has far-reaching implications in statistics, machine learning, and data analysis.</p>",
+    "formula": {
+      "latex": "\\[\\lim_{n \\to \\infty} P\\left(\\frac{\\bar{x}-\\mu}{\\sigma/\\sqrt{n}} \\leq x\\right) = \\Phi(x)\\]",
+      "name": "CLT Formula",
+      "variants": []
+    },
+    "intuition": "The CLT is often misunderstood as saying that the mean of a large sample will be normally distributed. Instead, it says that the distribution of the mean (i.e., the average) will converge to normality.",
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of Gaussian distributions in modeling and inference."
+    ],
+    "tags": [
+      "probability",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:49:02.772Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_clt_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) states that the average of a sufficiently large number of independent and identically distributed random variables will be approximately normally distributed.</p><p>This means that even if the individual distributions are not normal, the distribution of the mean will converge to a normal distribution as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[\\bar{X} \\sim N(\\mu, \\\\frac{\\sigma^2}{n})\\]",
+      "name": "CLT Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P\\left(\\sqrt{n}\\left|\\frac{\\bar{X}-\\mu}{\\sigma} \\right| &lt; k\\right) = \\Phi(k)\\]",
+      "proofSketch": "The proof involves showing that the sum of independent random variables can be approximated by a normal distribution using the Lindeberg-Feller theorem."
+    },
+    "intuition": "The CLT matters because it allows us to model real-world phenomena with a normal distribution, even if the underlying data is not normally distributed. This has significant implications for statistical inference and machine learning algorithms.",
+    "realWorldApplications": [
+      "In natural language processing, the CLT can be used to model the distribution of word frequencies in a large corpus."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:49:24.117Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_clt_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a cornerstone of probability theory, stating that under certain conditions, the distribution of the mean of independent and identically distributed random variables will converge to a normal distribution.</p><p>This theorem has far-reaching implications in statistics, machine learning, and data analysis, as it provides a framework for understanding the behavior of sample means and their relationship to population parameters.</p>",
+    "formula": {
+      "latex": "\\[\\lim_{n \\to \\infty} P\\left(\\frac{\\sum_{i=1}^n X_i - n\\mu}{\\sqrt{n}\\sigma} \\leq x\\right) = \\Phi(x)\\]",
+      "name": "CLT Formula"
+    },
+    "intuition": "The CLT provides a powerful tool for understanding the behavior of sample means, allowing us to make inferences about population parameters. This is particularly important in machine learning, where we often rely on sample means to estimate population parameters.",
+    "realWorldApplications": [
+      "Estimating population means from large datasets",
+      "Understanding the behavior of sample means in statistical modeling"
+    ],
+    "commonMistakes": [
+      "Assuming the CLT applies to all distributions",
+      "Not considering the conditions for the CLT to hold"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:49:43.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_clt_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a cornerstone of probability theory.</p><p>It states that given certain conditions, the distribution of the mean of i.i.d. random variables will converge to a normal distribution as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\sim N(0, \\sigma^2) \\]",
+      "name": "CLT Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P \\left( \\frac{\\sum_{i=1}^n X_i - n\\mu}{\\sqrt{n}\\sigma} &lt; x \\right) = \\Phi(x) \\]",
+      "proofSketch": "The proof typically involves showing that the sum of i.i.d. random variables is asymptotically normal using characteristic functions or moment methods."
+    },
+    "intuition": "The CLT provides a powerful tool for modeling real-world phenomena, as many natural processes involve averaging over large numbers of observations.",
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of Gaussian distributions in modeling and inference."
+    ],
+    "tags": [
+      "CLT",
+      "Probability Theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:04.813Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_clt_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a cornerstone of probability theory, stating that under certain conditions, the distribution of the mean of i.i.d. random variables converges to a normal distribution as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\sim N(0, \\sigma^2)\\]",
+      "name": "CLT Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P \\left( \\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\leq x \\right) = \\Phi \\left( \\frac{x}{\\sigma/\\sqrt{n}} \\right)\\]",
+      "proofSketch": "The proof involves showing that the sum of i.i.d. random variables is approximately normally distributed by applying the Lindeberg-Feller CLT and then using the Berry-Esseen theorem to establish the rate of convergence."
+    },
+    "intuition": "In essence, the CLT says that as you average more and more independent observations, the distribution of those averages becomes increasingly normal. This has far-reaching implications in statistics, machine learning, and data analysis.",
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of Gaussian distributions in modeling real-world phenomena."
+    ],
+    "tags": [
+      "probability",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:28.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": "{",
+    "statementHtml": "<p>Prove that as <i>n</i> grows to infinity, the average of <i>n</i> independent identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges in distribution to a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.</p>",
+    "hints": [
+      "<p>The key is to show that the sum of these random variables has a limiting normal distribution.</p>",
+      "<p>Use the fact that the sum of independent random variables is also normally distributed when the number of terms grows large.</p>",
+      "<p>You can apply the Lindeberg-Feller theorem or the Berry-Esseen theorem to prove this result.</p>"
+    ],
+    "solutionHtml": "<p>To prove this, we'll use the Berry-Esessen theorem. First, note that each random variable has mean <i>μ</i> and variance <i>σ<sup>2</sup></i>. Then, let's define <i>Z</i> as the sum of these random variables:</p><p>\\[Z = \\frac{\\sum_{i=1}^n (X_i - μ)}{σ\\sqrt{n}}.\\]</p><p>We can apply the Berry-Esessen theorem to show that <i>Z</i> converges in distribution to a standard normal distribution.</p>\",",
+    "answerShort": "The average of <i>n</i> independent identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges in distribution to a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:56.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "problem": "{",
+    "statementHtml": "<p>Given a sequence of i.i.d. random variables X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub> with mean μ and variance σ<sup>2</sup>, show that the sample mean \\(\\bar{X}_n = \\frac{1}{n} \\sum_{i=1}^n X_i\\) converges in distribution to a normal random variable with mean μ and variance σ<sup>2</sup>/n as n → ∞.</p>\",",
+    "hints": [
+      "<p>The key is to recognize that the sample mean is a linear combination of independent random variables.</p>",
+      "<p>Use the fact that the sum of independent random variables is also normally distributed if the number of terms grows sufficiently large.</p>",
+      "<p>You can use Chebyshev's inequality or Slutsky's theorem to prove convergence in distribution.</p>"
+    ],
+    "solutionHtml": "<p>To prove this, we'll use a combination of the central limit theorem for sums and the continuous mapping theorem. Let Y<sub>i</sub> = X<sub>i</sub> - μ, so that Y<sub>1</sub>, ..., Y<sub>n</sub> are i.i.d. with mean 0 and variance σ<sup>2</sup>. Then \\(\\bar{Y}_n = \\frac{1}{n} \\sum_{i=1}^n Y_i\\) is a linear combination of independent random variables, so it converges in distribution to a normal random variable by the central limit theorem for sums. Since μ is the mean of X<sub>1</sub>, ..., X<sub>n</sub>, we have that \\(\\bar{X}_n = \\mu + \\frac{1}{n} \\sum_{i=1}^n Y_i\\). By the continuous mapping theorem, this converges in distribution to a normal random variable with mean μ and variance σ<sup>2</sup>/n.</p>\",",
+    "answerShort": "The sample mean converges in distribution to a normal random variable\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:51:29.239Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": {
+      "statementHtml": "<p>Prove that as <i>n</i> grows, the average of <i>n</i> independent and identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges to <i>μ</i>.</p>",
+      "hints": [
+        "<p>Start by considering the sum of the random variables.</p>",
+        "<p>Use the fact that the mean of a sum is equal to the sum of the means.</p>",
+        "<p>Apply Chebyshev's inequality to bound the probability of the average deviating from <i>μ</i>.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we'll use the Lindeberg-Feller CLT. Let <i>Z<sub>i</sub></i> be the <i>i</i>-th random variable.</p><p>We need to show that for any <i>&epsilon;</i> > 0 and <i>&delta;</i> > 0, there exists an integer <i>N</i> such that for all <i>n</i> ≥ <i>N</i>,</p><p><i>P</i>(|<i>Z</i><sub>1</sub> + ... + <i>Z</i><sub><i>n</i></sub>| &gt; <i>&epsilon;</i>) ≤ <i>&delta;</i>.</p>",
+      "answerShort": "<i>N</i> = O(<i>(&sigma;<sup>2</sup> / &epsilon;<sup>2</sup>))</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the CLT to each term in the sum",
+      "Not recognizing that the variance of the average is <i>&sigma;<sup>2</sup></i>/<i>n</i>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:51:55.556Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": "{",
+    "statementHtml": "<p>Prove that as <i>n</i> approaches infinity, the average of <i>n</i> independent and identically distributed random variables with finite mean and variance converges to a normal distribution.</p>",
+    "hints": [
+      "Start by considering the sum of the random variables.",
+      "Use the fact that the variance of the sum is proportional to <i>n</i>.",
+      "Apply the Lindeberg-Feller CLT"
+    ],
+    "solutionHtml": "<p>Let <i>X</i><sub><i>i</i></sub> be the <i>i</i>-th random variable. We have:</p>\\n<p><i>Z</i> = (<i>n</i><sup>-1/2</sup>) \\(\\sum_{i=1}^n X_i\\) converges in distribution to a standard normal.</p>\",",
+    "answerShort": "Converges in distribution\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:52:13.743Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": {
+      "statementHtml": "<p>Prove that as <i>n</i> grows, the average of <i>n</i> independent and identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges to <i>μ</i>.</p>",
+      "hints": [
+        "<p>The key is to recognize that the sum of these random variables can be viewed as a linear combination of independent standard normal variables.</p>",
+        "<p>Use this insight to apply the Lindeberg-Feller CLT.</p>",
+        "<p>Show that the variance of the average converges to zero.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we can use the Lindeberg-Feller CLT. First, note that the sum of these random variables is a linear combination of independent standard normal variables:</p>\n\n\\[5pt]\n\\begin{align*} \frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} X_i - nμ \\right) \\\\ &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} X_i - nμ + \\mu \\sum_{i=1}^{n} 1 \\right) \\\\ &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} (X_i - μ) + \\mu \\sqrt{n} \\right). \\end{align*}\n\n<p>Now, apply the CLT to this sum:</p>\n\n\\[5pt]\n\\begin{align*} \\frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) &\\xrightarrow{d}\\ N(0, σ^2). \\end{align*}\n\n<p>Finally, note that the average of these random variables is just a scaled version of this sum:</p>\n\n\\[5pt]\n\\begin{align*} \\frac{1}{n} \\sum_{i=1}^{n} (X_i - μ) &= \\frac{1}{n} \\left( \\frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) \\right). \\end{align*}\n\n<p>Since the sum converges to a normal distribution, so does the average.</p>",
+      "answerShort": "The average of these random variables converges to <i>μ</i>"
+    },
+    "commonMistakes": [
+      "<p>Failing to recognize that the sum is a linear combination of independent standard normal variables.</p>",
+      "<p>Not applying the CLT correctly.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:52:52.447Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a specific problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random variable X with mean μ = 10 and variance σ^2 = 4. We want to find the probability that X is greater than 12.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Standardize X\", \"mathHtml\": \"\\(Z = \\frac{X - \\mu}{\\sigma}\\)\", \"explanation\": \"We standardize X by subtracting its mean and dividing by its standard deviation.\"}, {\"stepNumber\": 2, \"description\": \"Approximate the distribution of Z\", \"mathHtml\": \"\\[Z \\sim N(0,1)\\]\", \"explanation\": \"By applying the CLT, we can approximate the distribution of Z as a normal distribution with mean 0 and variance 1.\"}, {\"stepNumber\": 3, \"description\": \"Find the probability that Z > 1.5\", \"mathHtml\": \"\\(P(Z > 1.5) = P(Z < -1.5)\\)\", \"explanation\": \"We can find this probability by finding the area under the standard normal curve to the left of -1.5.\"}, {\"stepNumber\": 4, \"description\": \"Use a calculator or table\", \"mathHtml\": \"\\(P(Z > 1.5) \\approx 0.0668\\)\", \"explanation\": \"We can use a calculator or table to find that this probability is approximately 0.0668.\"}, {\"stepNumber\": 5, \"description\": \"Translate back to the original problem\", \"mathHtml\": \"\\(P(X > 12) = P(Z > 1.5)\\)\", \"explanation\": \"Finally, we translate our answer back to the original problem by noting that \\(X > 12\\) if and only if \\(Z > 1.5\\).\"} ],",
+    "finalAnswer": "The probability that X is greater than 12 is approximately 0.0668.\" },",
+    "intuition": "The CLT allows us to approximate the distribution of a sum of independent random variables as normal, even if the individual variables don't follow a normal distribution.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:53:25.327Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: A Worked Example",
+    "contentHtml": "<p>In this example, we'll apply the Central Limit Theorem (CLT) to a real-world scenario.</p>",
+    "formula": {
+      "latex": "\\[\\frac{\\sqrt{n}}{\\sigma}\\]",
+      "name": "Standardized Variable"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 100 is taken from a population with mean 50 and standard deviation 10. What can we say about the distribution of the sample mean?</p>",
+      "hints": [
+        "Hint: Think about the shape of the sampling distribution."
+      ],
+      "solutionHtml": "<p>To apply the CLT, we first need to check if the conditions are met.</p><ul><li>Check that the population is normally distributed. Since it's not given, we'll assume it's not normal.</li><li>Verify that the sample size is large enough. In this case, n = 100 is sufficient.</li></ul><p>Now, apply the CLT: as n → ∞, the sampling distribution of the mean will converge to a normal distribution with mean μ and standard deviation σ / √n.</p>",
+      "answerShort": "The sample mean will be approximately normally distributed."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 100 is taken from a population with mean 50 and standard deviation 10. What can we say about the distribution of the sample mean?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the conditions are met",
+          "mathHtml": "",
+          "explanation": "We need to verify that the population is normally distributed and that the sample size is large enough."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Verify normality assumption",
+          "mathHtml": "",
+          "explanation": "Since it's not given, we'll assume it's not normal."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check if sample size is sufficient",
+          "mathHtml": "",
+          "explanation": "In this case, n = 100 is sufficient."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Apply the Central Limit Theorem",
+          "mathHtml": "\\[\\frac{\\sqrt{n}}{\\sigma}\\]",
+          "explanation": "As n → ∞, the sampling distribution of the mean will converge to a normal distribution with mean μ and standard deviation σ / √n."
+        }
+      ],
+      "finalAnswer": "The sample mean will be approximately normally distributed."
+    },
+    "intuition": "The CLT provides a powerful tool for making inferences about population means based on sample data.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:54:01.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a real-world problem.</p>",
+    "formula": "{",
+    "latex": "\\(X_n \\sim N(\\mu, \\sigma^2/n)\\)\",",
+    "name": "CLT Formula",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random sample of size 100 from a normal distribution with mean 5 and standard deviation 1. What can we say about the sample mean?</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's assume our random sample is \\(X_1, X_2, ..., X_{100}\\) with mean \\(\\bar{X}_n = (1/100) \\sum_{i=1}^{100} X_i\\).</p>\",",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Use the CLT to make inferences",
+    "mathHtml": "",
+    "explanation": "We can use the CLT to construct confidence intervals or perform hypothesis tests on the population mean.\" } ],",
+    "finalAnswer": "The sample mean is approximately normally distributed with mean 5 and standard deviation 1/\\(\\sqrt{100}\\).\" },",
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of normal distributions in modeling and hypothesis testing."
+    ],
+    "tags": [
+      "CLT",
+      "Normal Distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:54:34.928Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a specific problem.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X with mean μ and variance σ^2. We want to find the probability that X is within k standard deviations of its mean, i.e., P(μ - kσ &lt;= X &lt;= μ + kσ).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Standardize the random variable",
+          "mathHtml": "\\[Z = \\frac{X - \\mu}{\\sigma}\\]",
+          "explanation": "We standardize X by subtracting its mean and dividing by its standard deviation, which helps us apply the CLT."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply the Central Limit Theorem",
+          "mathHtml": "\\[Z \\sim N(0,1)\\]",
+          "explanation": "Since the standardized variable Z has mean 0 and variance 1, we can apply the CLT to find its distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the desired probability",
+          "mathHtml": "\\[P(\\mu - k\\sigma &lt;= X &lt;= \\mu + k\\sigma) = P(Z &lt;= k)\\]",
+          "explanation": "We can now use the standard normal distribution to find the desired probability."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use a table or calculator to find the probability",
+          "mathHtml": "\\[P(Z &lt;= k) \\approx 0.8416\\]",
+          "explanation": "Using a standard normal distribution table or calculator, we can find the approximate value of P(Z &lt;= k)."
+        }
+      ],
+      "finalAnswer": "The probability is approximately 0.8416."
+    },
+    "intuition": "The CLT helps us model the behavior of many real-world phenomena by assuming that a sum of independent random variables follows a normal distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:55:05.477Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a real-world scenario.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu)^2 = \\sigma^2\\]",
+      "name": "Chi-Square Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 25 is taken from a normal distribution with mean 10 and standard deviation 3. What can we say about the sample mean?</p>",
+      "hints": [
+        "Hint: Think about the shape of the sampling distribution"
+      ],
+      "solutionHtml": "<p>We'll apply the Central Limit Theorem to find the distribution of the sample mean.</p>",
+      "answerShort": "The sample mean is approximately normally distributed"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's say we have a dataset of exam scores with a mean of 80 and standard deviation of 5. We want to know the distribution of the average score for a random sample of size 30.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the population parameters",
+          "mathHtml": "\\[\\mu = 80, \\sigma = 5\\]",
+          "explanation": "We need to know the mean and standard deviation of the original distribution"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample size",
+          "mathHtml": "\\[n = 30\\]",
+          "explanation": "The larger the sample size, the more normal the sampling distribution will be"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the CLT",
+          "mathHtml": "\\[\\bar{X} \\sim N(80, \\frac{5^2}{30})\\]",
+          "explanation": "The sample mean is approximately normally distributed with a mean of 80 and standard deviation of \\frac{5}{\\sqrt{30}}"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "We can now use this normal distribution to make inferences about the population mean"
+        }
+      ],
+      "finalAnswer": "The sample mean is approximately normally distributed with a mean of 80 and standard deviation of \\frac{5}{\\sqrt{30}}"
+    },
+    "intuition": "The CLT allows us to simplify complex distributions by assuming normality, making it a powerful tool in statistics and machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:55:40.660Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

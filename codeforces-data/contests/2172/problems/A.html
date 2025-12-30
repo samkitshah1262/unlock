@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Art Contest</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .problem-statement {
+      background: #fff;
+    }
+    .header .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    .time-limit, .memory-limit, .input-file, .output-file {
+      color: #666;
+      font-size: 0.9em;
+      margin: 5px 0;
+    }
+    .property-title {
+      display: inline;
+      font-weight: normal;
+    }
+    .input-specification, .output-specification, .note {
+      margin: 20px 0;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .sample-tests {
+      margin: 20px 0;
+    }
+    .sample-test {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .input, .output {
+      flex: 1;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 0.9em;
+    }
+    .MathJax {
+      font-size: 1.1em;
+    }
+    p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="problem-statement"><div class="header"><div class="title">A. ASCII Art Contest</div><div class="time-limit"><div class="property-title">time limit per test</div>1 second</div><div class="memory-limit"><div class="property-title">memory limit per test</div>256 megabytes</div><div class="input-file input-standard"><div class="property-title">input</div>standard input</div><div class="output-file output-standard"><div class="property-title">output</div>standard output</div></div><div><p>Three leading AI-powered creative assistants—Gemini, ChatGPT, and Claude—enter the first ever ASCII Art Contest, where they must impress a panel of human judges with their text-based masterpieces.</p><p>Each participant receives a score between 80 and 100 (inclusive). The organizers want to announce the final standing only if the judges' opinions are "close enough"; otherwise, they will ask the judges to reconsider.</p><p>Given the three integer scores of Gemini, ChatGPT, and Claude, determine the contest result:</p><ul> <li> If the maximum score and the minimum score differ by at least 10 points, print <span class="tex-font-style-tt">check again</span> (the judging seems inconsistent, so the panel must re-evaluate). </li><li> Otherwise, print <span class="tex-font-style-tt">final X</span>, where <span class="tex-font-style-tt">X</span> is the median of the three scores (the score that would be in the middle if all three were sorted in non-decreasing order). </li></ul></div><div class="input-specification"><div class="section-title">Input</div><p>A single line contains three integers <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;&amp;#x2113;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 2.925em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.221em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.301em, 1002.22em, 2.546em, -999.997em); top: -2.162em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">g<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Math-italic; padding-left: 0.165em;">c</span><span class="mo" id="MathJax-Span-6" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-7" style="font-family: MathJax_Main; padding-left: 0.165em;">ℓ</span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>g</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>ℓ</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">g, c, \ell</script>, representing the scores of Gemini, ChatGPT, and Claude respectively.</p><ul> <li> <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;80&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;&amp;#x2113;&lt;/mi&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;100&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-8" style="width: 9.743em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.362em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.301em, 1007.31em, 2.546em, -999.997em); top: -2.162em; left: 0em;"><span class="mrow" id="MathJax-Span-9"><span class="mn" id="MathJax-Span-10" style="font-family: MathJax_Main;">80</span><span class="mo" id="MathJax-Span-11" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mi" id="MathJax-Span-12" style="font-family: MathJax_Math-italic; padding-left: 0.273em;">g<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-14" style="font-family: MathJax_Math-italic; padding-left: 0.165em;">c</span><span class="mo" id="MathJax-Span-15" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-16" style="font-family: MathJax_Main; padding-left: 0.165em;">ℓ</span><span class="mo" id="MathJax-Span-17" style="font-family: MathJax_Main; padding-left: 0.273em;">≤</span><span class="mn" id="MathJax-Span-18" style="font-family: MathJax_Main; padding-left: 0.273em;">100</span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>80</mn><mo>≤</mo><mi>g</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>ℓ</mi><mo>≤</mo><mn>100</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">80\le g, c, \ell \le 100</script> </li></ul></div><div class="output-specification"><div class="section-title">Output</div><p>Print the required answer in a line.</p></div><div class="sample-tests"><div class="section-title">Examples</div><div class="sample-test"><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id007381041024344306" id="id0004333968224139062" class="input-output-copier">Copy</div></div><pre id="id007381041024344306">88 94 95
+</pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id00060449209336967624" id="id008489699201741402" class="input-output-copier">Copy</div></div><pre id="id00060449209336967624">final 94
+</pre></div><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id007507505519876486" id="id0017784681398272173" class="input-output-copier">Copy</div></div><pre id="id007507505519876486">100 80 81
+</pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id006819337919099415" id="id0023777052750425431" class="input-output-copier">Copy</div></div><pre id="id006819337919099415">check again
+</pre></div><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id006176354942447573" id="id001316816226870482" class="input-output-copier">Copy</div></div><pre id="id006176354942447573">98 99 98
+</pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id002281375269793151" id="id008456298376230813" class="input-output-copier">Copy</div></div><pre id="id002281375269793151">final 98
+</pre></div><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id003325113910305838" id="id003672330171811503" class="input-output-copier">Copy</div></div><pre id="id003325113910305838">95 86 85
+</pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id0048516791648307656" id="id0034971183339015055" class="input-output-copier">Copy</div></div><pre id="id0048516791648307656">check again
+</pre></div></div></div></div>
+</body>
+</html>

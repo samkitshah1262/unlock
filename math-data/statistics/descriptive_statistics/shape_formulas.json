@@ -1,0 +1,168 @@
+[
+  {
+    "id": "stat_for_shape_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "title": "Skewness and Kurtosis: Understanding Distribution Shape",
+    "contentHtml": "<p>In descriptive statistics, skewness and kurtosis are two fundamental measures of a distribution's shape.</p><p>Skewness measures how asymmetrical the distribution is, while kurtosis measures its 'tailed-ness' or 'peaked-ness'. Understanding these properties is crucial in many fields, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Skewness} = \\frac{\\mathbb{E}\\left[(X-\\mu)^3\\right]}{\\sigma^3}, \\quad \\text{Kurtosis} = \\frac{\\mathbb{E}\\left[(X-\\mu)^4\\right]}{\\sigma^4} - 3, \\]\",",
+    "name": "Pearson's Skewness and Excess Kurtosis\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a dataset of exam scores with a mean of 70 and standard deviation of 10. If the distribution is skewed to the left (i.e., most students scored below 70), what can we infer about the data?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the skewness\", \"mathHtml\": \"\\[ \\text{Skewness} = ... \\]\", \"explanation\": \"A negative skewness indicates...\"}, {\"stepNumber\": 2, \"description\": \"Check for kurtosis\", \"mathHtml\": \"\\[ \\text{Kurtosis} = ... \\]\", \"explanation\": \"...\"} ],",
+    "finalAnswer": "The data is likely to have a long tail on the left side.\" },",
+    "intuition": "Skewness and kurtosis provide valuable insights into the distribution's shape, helping us identify potential issues in machine learning models or data preprocessing.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:36:38.775Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_shape_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "title": "Skewness and Kurtosis",
+    "contentHtml": "<p>Understanding the shape of distributions is crucial in statistical analysis. Skewness and kurtosis are two essential measures that help us determine whether a distribution is symmetric or not.</p>",
+    "formula": {
+      "latex": "\\[\\gamma_1 = \\frac{E[(X-\\mu)^3]}{\\sigma^3}\\]",
+      "name": "Skewness",
+      "variants": [
+        {
+          "latex": "\\[\\alpha_2 = \\frac{E[(X-\\mu)^4] - 3(E[X-\\mu])^2}{\\sigma^4}\\]",
+          "description": "Kurtosis"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset with the following values: [1, 2, 3, 4, 5]. Calculate the skewness of this distribution.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the mean (\\mu) and standard deviation (\\sigma)",
+          "mathHtml": "\\[\\mu = \\frac{1+2+3+4+5}{5} = 3.0, \\quad \\sigma = \\sqrt{[(1-3.0)^2 + (2-3.0)^2 + ...]/(5-1)}\\]",
+          "explanation": "We need to calculate the mean and standard deviation before calculating skewness"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "Skewness measures how asymmetrical a distribution is, while kurtosis measures how peaked or flat it is.",
+    "realWorldApplications": [
+      "In machine learning, understanding the shape of distributions can help in feature engineering and model selection."
+    ],
+    "tags": [
+      "descriptive statistics",
+      "shape of distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:37:00.952Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_shape_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "title": "Skewness and Kurtosis",
+    "contentHtml": "<p>Understanding the shape of a distribution is crucial in statistical analysis. Skewness and kurtosis are two fundamental measures that help us determine whether a distribution is symmetric or not.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Skewness} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^3}{s^3 n } \\]",
+      "name": "Pearson's Skewness Formula",
+      "variants": [
+        {
+          "latex": "\\[ \\text{Kurtosis} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^4}{s^4 n } - 3 \\]",
+          "description": "Excess Kurtosis"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a dataset of exam scores with a mean of 80 and standard deviation of 10. Calculate the skewness if the majority of students scored between 70-90.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the mean difference",
+          "mathHtml": "\\( (x_i - \\bar{x}) \\)",
+          "explanation": "This helps us understand the direction and magnitude of deviations from the mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Cube the differences and sum them up",
+          "mathHtml": "\\[ \\sum_{i=1}^n (x_i - \\bar{x})^3 \\]",
+          "explanation": "This step helps us capture the asymmetry of the distribution."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "Skewness measures how asymmetric a distribution is, while kurtosis measures its 'tailed-ness'.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:37:22.991Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_shape_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "title": "Shape of Distributions: Skewness and Kurtosis",
+    "contentHtml": "<p>Understanding the shape of a distribution is crucial in descriptive statistics. In this card, we'll explore skewness and kurtosis, two fundamental measures that help us describe the asymmetry and heaviness of distributions.</p>",
+    "formula": {
+      "latex": "\\[\\text{Skewness} = \\frac{\\sum_{i=1}^{n}(x_i-\\bar{x})^3}{n \\sigma^3}\\]",
+      "name": "Pearson's Skewness Formula"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the exam scores of a class with mean 80 and standard deviation 10. If the distribution is skewed to the right, what can we infer about the scores?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the direction of skewness",
+          "mathHtml": "",
+          "explanation": "If the distribution is skewed to the right, it means that more students scored above the mean."
+        }
+      ],
+      "finalAnswer": "The scores are likely clustered towards the higher end."
+    },
+    "intuition": "Skewness measures how asymmetrical a distribution is. A positive skewness indicates a tail-heavy distribution, while a negative skewness suggests a tail-light distribution.",
+    "realWorldApplications": [
+      "In machine learning, understanding the shape of distributions can help in selecting appropriate algorithms and preprocessing techniques."
+    ],
+    "tags": [
+      "descriptive statistics",
+      "shape of distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:37:41.880Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,626 @@
+[
+  {
+    "id": "stat_con_mle_concept_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>Given a set of data, we often want to find the most likely distribution that generated it. Maximum Likelihood Estimation (MLE) is a widely used technique for doing just that.</p><p>The idea behind MLE is to find the parameters of a probability distribution that make the observed data the most likely outcome. In other words, we're looking for the values of these parameters that maximize the likelihood function.</p>",
+    "formula": {
+      "latex": "\\[\\mathcal{L}(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\]",
+      "name": "Likelihood Function"
+    },
+    "intuition": "MLE is like finding the best fit for a puzzle piece. We're trying to find the distribution that makes the observed data fit together most naturally.",
+    "realWorldApplications": [
+      "In machine learning, MLE is used in many applications such as estimating parameters of a Gaussian mixture model or a Bayesian network."
+    ],
+    "commonMistakes": [
+      "Don't confuse MLE with maximum a posteriori (MAP) estimation, which also involves finding the most likely value but takes into account prior distributions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:27:41.592Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_mle_concept_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In statistics, Maximum Likelihood Estimation (MLE) is a widely used method to estimate parameters of a probability distribution. Given a set of data points, MLE finds the values that maximize the likelihood function.</p><p>The likelihood function measures how likely it is for the observed data to occur given a particular set of parameters. In other words, it's the probability density function (PDF) evaluated at the observed data points.</p>",
+    "formula": "{",
+    "latex": "\\\\[f(x | \\\\theta) = \\\\frac{1}{\\\\sqrt{2\\\\pi}\\\\sigma} e^{(-\\\\frac{(x-\\\\mu)^2}{2\\\\sigma^2})}\\]\",",
+    "name": "Likelihood Function\" },",
+    "intuition": "MLE is a way to find the most likely values of parameters that could have generated our data. It's like finding the best fit for a puzzle piece.",
+    "realWorldApplications": [
+      "In machine learning, MLE is used in algorithms such as logistic regression and Naive Bayes classifier."
+    ],
+    "commonMistakes": [
+      "Don't confuse MLE with Bayesian estimation; they're different approaches to parameter estimation."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:27:57.554Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_mle_concept_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>Given a statistical model and a set of observed data, maximum likelihood estimation (MLE) is a widely used method to find the most likely parameter values that best describe the data.</p><p>In essence, MLE seeks to find the parameters that maximize the probability of observing the given data. This is achieved by finding the values that make the likelihood function as large as possible.</p>",
+    "formula": {
+      "latex": "\\[\\mathcal{L}(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\]",
+      "name": "Likelihood Function"
+    },
+    "intuition": "MLE is a way to find the best explanation for the data by maximizing the probability of observing that data.",
+    "realWorldApplications": [
+      "In machine learning, MLE is used in algorithms such as logistic regression and Naive Bayes classifier."
+    ],
+    "commonMistakes": [
+      "Don't confuse MLE with Bayesian estimation. While both methods estimate parameters, they have different underlying philosophies."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:28:12.304Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_concept_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>Given a statistical model and a set of observed data, Maximum Likelihood Estimation (MLE) is a widely used method to find the most likely parameter values that explain the data.</p>",
+    "formula": "{",
+    "latex": "\\[L(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\]\",",
+    "name": "Likelihood Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a coin flip dataset with heads and tails, and we want to estimate the probability of getting heads.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\[L(p | x) = p^{x_1} (1-p)^{n-x_1}\\]\", \"explanation\": \"The likelihood function is the product of probabilities for each observation.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm to simplify\", \"mathHtml\": \"\\[l(p | x) = \\sum_{i=1}^n (x_i \\log p + (n-x_i) \\log(1-p))\\]\", \"explanation\": \"The log-likelihood is a more numerically stable alternative to the likelihood function.\"} ],",
+    "finalAnswer": "The MLE estimate for the probability of getting heads\" },",
+    "intuition": "MLE finds the parameter values that make the observed data most likely. This is useful in machine learning when we want to infer parameters from a dataset.",
+    "tags": [
+      "Maximum Likelihood Estimation",
+      "Point Estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:28:33.236Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_concept_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "subtitle": "Finding the most likely parameter values",
+    "contentHtml": "<p>The maximum likelihood estimation (MLE) is a widely used method in statistical inference.</p><p>Given a set of observed data, MLE finds the parameters that maximize the probability of observing this particular data.</p>",
+    "formula": "{",
+    "latex": "\\[L(\\theta|x) = \\prod_{i=1}^n f(x_i | \\theta)\\]\",",
+    "name": "Likelihood function",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean μ and standard deviation σ. We want to find the most likely values for μ and σ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\[L(μ,σ|x) = \\prod_{i=1}^n f(x_i | μ,σ)\\]\", \"explanation\": \"The likelihood function is the product of the probability density functions for each data point.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\[L(μ,σ|x) = \\sum_{i=1}^n \\ln f(x_i | μ,σ)\\]\", \"explanation\": \"Taking the logarithm makes the calculation easier.\"} ],",
+    "finalAnswer": "The MLE values for μ and σ\" },",
+    "intuition": "MLE finds the most likely parameters by maximizing the probability of observing the data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:28:53.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_concept_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>The maximum likelihood estimation (MLE) is a fundamental concept in statistical inference.</p><p>Given a set of data and a probability distribution, MLE finds the parameters that maximize the likelihood of observing the data.</p>",
+    "formula": "{",
+    "latex": "\\[L(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\]\",",
+    "name": "Likelihood Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean μ and standard deviation σ. We want to estimate these parameters using MLE.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\[L(\\mu, \\sigma | x) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{(-\\frac{(x_i - \\mu)^2}{2\\sigma^2})}\\]\", \"explanation\": \"We use the normal distribution to model the exam scores\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm of the likelihood function\", \"mathHtml\": \"\\[l(\\mu, \\sigma | x) = -n \\log(\\sqrt{2\\pi}\\sigma) - \\frac{1}{2} \\sum_{i=1}^n (x_i - \\mu)^2 / \\sigma^2\\]\", \"explanation\": \"This simplifies the calculation\"} ],",
+    "finalAnswer": "The MLE estimates for μ and σ\" },",
+    "intuition": "MLE is a way to find the most likely set of parameters given some data, which is useful in many real-world applications.",
+    "realWorldApplications": [
+      "Estimating population means and standard deviations"
+    ],
+    "tags": [
+      "statistical inference",
+      "maximum likelihood estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:29:16.305Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_mle_concept_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>Given a set of data and a statistical model, Maximum Likelihood Estimation (MLE) is a widely used method to find the most likely parameter values that explain the observed data.</p>",
+    "formula": "{",
+    "latex": "\\[ \\theta_{ML} = \\arg\\max_\\theta P(D | \\theta) \\]\",",
+    "name": "Maximum Likelihood Estimator\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores and want to estimate the mean score using a normal distribution model.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\( P(D | \\theta) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x_i - \\mu)^2 / (2\\sigma^2)} \\)\", \"explanation\": \"The likelihood function represents the probability of observing the data given the model parameters.\"}, {\"stepNumber\": 2, \"description\": \"Find the log-likelihood\", \"mathHtml\": \"\\( L(\\theta) = \\log P(D | \\theta) = -\\frac{n}{2} \\log(2\\pi) - n \\log(\\sigma) - \\sum_{i=1}^n (x_i - \\mu)^2 / (2\\sigma^2) \\)\", \"explanation\": \"The log-likelihood is a more numerically stable alternative to the likelihood function.\"}, {\"stepNumber\": 3, \"description\": \"Find the MLE using the log-likelihood\", \"mathHtml\": \"\\( \\theta_{ML} = \\arg\\max_\\theta L(\\theta) = (\\frac{1}{n} \\sum_{i=1}^n x_i, \\sqrt{\\frac{1}{n} \\sum_{i=1}^n (x_i - \\mu)^2}) \\)\", \"explanation\": \"The MLE is the value of theta that maximizes the log-likelihood function.\"} ],",
+    "finalAnswer": "The estimated mean score and standard deviation\" },",
+    "intuition": "MLE finds the most likely parameter values by maximizing the probability of observing the data given the model.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:29:42.929Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "problem": "{",
+    "statementHtml": "Find the maximum likelihood estimate (MLE) of a parameter <i>θ</i> given i.i.d. observations <i>x_1, …, x_n</i> from a probability density function (PDF) <i>f(x | θ)</i>.",
+    "hints": [
+      "Start by defining the likelihood function as the product of individual PDFs.",
+      "Recall that the log-likelihood is the logarithm of the likelihood function. This can simplify calculations.",
+      "The MLE will occur at the value of <i>θ</i> that maximizes the log-likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we first define the likelihood function:</p>\\n\\ \\[L(θ) = \\prod_{i=1}^n f(x_i | θ).\\]\\n\\ <p>Next, we take the logarithm of both sides to obtain the log-likelihood:</p>\\n\\ \\[\\ell(θ) = \\log L(θ) = \\sum_{i=1}^n \\log f(x_i | θ).\\]\\n\\ <p>To find the MLE, we set the derivative of the log-likelihood with respect to <i>θ</i> equal to zero:</p>\\n\\ \\[\\frac{d}{dθ} \\ell(θ) = 0.\\]\\n\\ <p>Solving for <i>θ</i>, we find the MLE.</p>\",",
+    "answerShort": "The maximum likelihood estimate (MLE) is the value of <i>θ</i> that maximizes the log-likelihood.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:05.240Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimator (MLE) of a parameter <i>&theta;</i> given i.i.d. observations <i>x</i><sub>1</sub>, …, <i>x</i><sub>n</sub> from a probability distribution with density function <i>f(x | &theta;)</i>.</p>",
+    "hints": [
+      "<p>The likelihood function is the product of the densities.</p>",
+      "<p>Take the logarithm to simplify the calculation.</p>",
+      "<p>Find the derivative and set it equal to zero.</p>"
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p><p>\\(L(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\)</p><p>Take the logarithm:</p><p>\\(\\ell(\\theta | x) = \\log L(\\theta | x) = \\sum_{i=1}^n \\log f(x_i | \\theta)\\)</p><p>Find the derivative and set it equal to zero:</p><p>\\(0 = \\frac{\\partial \\ell}{\\partial \\theta} = \\sum_{i=1}^n \\frac{f'(x_i | \\theta)}{f(x_i | \\theta)}\\)</p>\",",
+    "answerShort": "<i>&theta;</i> that maximizes the likelihood function\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:24.784Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with probability density function (PDF) f(x; &theta;), find the maximum likelihood estimate (MLE) of the parameter &theta;</p>",
+      "hints": [
+        "Start by defining the likelihood function L(&theta; | x) = ∏[i=1 to n] f(xi; &theta;)",
+        "The log-likelihood function is useful for optimization",
+        "Use the first-order condition to find the MLE"
+      ],
+      "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function L(&theta; | x) = ∏[i=1 to n] f(xi; &theta;).</p><ol><li>Take the logarithm of both sides: ln(L(&theta; | x)) = ∑[i=1 to n] ln(f(xi; &theta;)).</li><li>Use the fact that ln(a*b) = ln(a) + ln(b) and simplify:</li><li>Now, take the derivative with respect to &theta; and set it equal to 0:</li></ol>",
+      "answerShort": "&theta; = (1/n) ∑[i=1 to n] xi"
+    },
+    "commonMistakes": [
+      "Forgetting to take the logarithm",
+      "Not using the first-order condition"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:30:42.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. observations <span class=\"math\">x_1, x_2, ..., x_n</span>, find the value of the parameter <span class=\"math\">\theta</span> that maximizes the likelihood function.</p>",
+    "hints": [
+      "<p>The likelihood function is a product of probability density functions.</p>",
+      "<p>Start by writing down the log-likelihood function and simplify it.</p>",
+      "<p>Now, set the derivative of the log-likelihood with respect to <span class=\"math\">\theta</span> equal to zero and solve for <span class=\"math\">\theta</span>.</p>"
+    ],
+    "solutionHtml": "<p>To find the maximum likelihood estimator (MLE), we first write down the likelihood function:</p><p>\\[f(x_1, x_2, ..., x_n | \\theta) = \\prod_{i=1}^n f(x_i | \\theta)\\]</p><p>Next, we take the log of both sides and simplify:</p><p>\\[\\log(f(x_1, x_2, ..., x_n | \\theta)) = \\sum_{i=1}^n \\log(f(x_i | \\theta))\\]</p><p>Now, set the derivative of the log-likelihood with respect to <span class=\\\"math\\\">\\theta</span> equal to zero:</p><p>\\[\\frac{\\partial}{\\partial \\theta} \\sum_{i=1}^n \\log(f(x_i | \\theta)) = 0\\]</p><p>Solve for <span class=\\\"math\\\">\\theta</span>, and we have the MLE.</p>\",",
+    "answerShort": "<span class=\\\"math\\\">\\\\hat{\\\\theta}</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:31:05.704Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_concept_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of i.i.d. random variables X_1, ..., X_n with probability density function (PDF) f(x|θ), find the maximum likelihood estimate (MLE) of θ.</p>",
+    "hints": [
+      "Start by defining the likelihood function L(θ|x).",
+      "Notice that the log-likelihood is a sum of terms.",
+      "Focus on finding the derivative of the log-likelihood with respect to θ."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function. Since the log-likelihood is a sum of terms, we can focus on maximizing each term separately.</p><p>Let's denote the log-likelihood as ℓ(θ|x) = ∑_{i=1}^n log(f(X_i|θ)).</p><p>To find the MLE, we set the derivative of ℓ with respect to θ equal to 0:</p><p>\\[\\frac{\\partial \\ell}{\\partial \\theta} = \\sum_{i=1}^n \\frac{f'(X_i|\\theta)}{f(X_i|\\theta)} = 0.\\]</p><p>Solving for θ, we get the MLE.</p>\",",
+    "answerShort": "The maximum likelihood estimate is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:31:24.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_concept_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimator (MLE) using a concrete dataset.</p>",
+    "formula": {
+      "latex": "\\[\\mathcal{L}(\\theta | x) = \\prod_{i=1}^n f(x_i | \\theta)\\]",
+      "name": "Likelihood function"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a dataset of exam scores with mean \\mu and standard deviation \\sigma. We want to find the MLE for \\mu using the maximum likelihood estimation method.</p>",
+      "hints": [
+        "Consider the likelihood function"
+      ],
+      "solutionHtml": "<p>We'll follow these steps:</p><ul><li>Find the likelihood function \\mathcal{L}(\\theta | x) given our dataset and model assumptions</li><li>Evaluate the log-likelihood function \\log(\\mathcal{L}(\\theta | x)) to simplify the optimization process</li><li>Finding the MLE involves maximizing the log-likelihood with respect to \\theta</li></ul>",
+      "answerShort": "MLE for \\mu"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores: [85, 92, 78, 95, 88]. We want to find the MLE for \\mu using the maximum likelihood estimation method.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the likelihood function",
+          "mathHtml": "\\[\\mathcal{L}(\\theta | x) = \\prod_{i=1}^5 f(x_i | \\mu, \\sigma) = \\frac{e^{-(x_1-\\mu)^2/2\\sigma^2}}{\\sqrt{2\\pi}\\sigma} \\cdots",
+          "explanation": "We assume a normal distribution for the exam scores."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the log-likelihood function",
+          "mathHtml": "\\[\\log(\\mathcal{L}(\\theta | x)) = -\\frac{1}{2} \\sum_{i=1}^5 (x_i-\\mu)^2/\\sigma^2 + \\log(\\sqrt{2\\pi}/\\sigma)",
+          "explanation": "This simplifies the optimization process."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the MLE by maximizing the log-likelihood",
+          "mathHtml": "\\[\\frac{d}{d\\mu} \\log(\\mathcal{L}(\\theta | x)) = -2\\sum_{i=1}^5 (x_i-\\mu)/\\sigma^2 = 0",
+          "explanation": "We set the derivative equal to zero and solve for \\mu."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Solve for the MLE",
+          "mathHtml": "\\[\\hat{\\mu} = (1/5) \\sum_{i=1}^5 x_i",
+          "explanation": "This is our maximum likelihood estimator for \\mu."
+        }
+      ],
+      "finalAnswer": "The estimated mean exam score is 89.4"
+    },
+    "intuition": "The MLE is the value that maximizes the probability of observing our dataset given a model.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:32:02.095Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_concept_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimator (MLE) using a concrete problem.</p>",
+    "formula": {
+      "latex": "\\[ P(X | \\theta) = \\prod_{i=1}^n p(x_i | \\theta) \\]",
+      "name": "Likelihood function",
+      "variants": []
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random sample of size n from a Poisson distribution with parameter \\lambda. The likelihood function is given by:</p><p>\\[ P(X | \\lambda) = \\prod_{i=1}^n \\frac{e^{-\\lambda}\\lambda^{x_i}}{x_i!} \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Take the logarithm of the likelihood function",
+          "mathHtml": "\\[ L(\\lambda) = \\log P(X | \\lambda) = \\sum_{i=1}^n (-\\lambda + x_i \\log \\lambda - \\log x_i!) \\]",
+          "explanation": "This helps us avoid dealing with products of exponential terms"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the derivative of the log-likelihood function",
+          "mathHtml": "\\[ \\frac{dL}{d\\lambda} = -n + \\sum_{i=1}^n x_i \\log \\lambda \\]",
+          "explanation": "We're looking for the point where the likelihood function is maximized"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Set the derivative to zero and solve for \\lambda",
+          "mathHtml": "\\[ -n + \\sum_{i=1}^n x_i \\log \\lambda = 0 \\]",
+          "explanation": "This gives us the MLE"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify that the second derivative is negative",
+          "mathHtml": "\\[ \\frac{d^2L}{d\\lambda^2} = -\\sum_{i=1}^n \\frac{x_i}{\\lambda} < 0 \\]",
+          "explanation": "This confirms that we've found a maximum"
+        }
+      ],
+      "finalAnswer": "The MLE is given by the solution to the equation above"
+    },
+    "intuition": "Maximum likelihood estimation finds the value of the parameter that makes the observed data most likely. In this example, we used the logarithm to simplify the calculation.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:32:32.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_concept_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimator (MLE) using the likelihood function and log-likelihood.</p>",
+    "formula": {
+      "latex": "\\[f(x; \\theta) = \\prod_{i=1}^n f(x_i; \\theta)\\]",
+      "name": "Likelihood Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset X = {x_1, x_2, ..., x_n}, find the MLE of the parameter \\theta.</p>",
+      "hints": [
+        "Check if the likelihood function is correctly specified"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset X = {1, 2, 3, 4, 5} and a probability density function (PDF) f(x; \\theta) = \\theta x + (1-\\theta).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Specify the likelihood function",
+          "mathHtml": "\\[f(X; \\theta) = \\prod_{i=1}^5 f(x_i; \\theta) = \\prod_{i=1}^5 (\\theta x_i + (1-\\theta))\\]",
+          "explanation": "We're using the product rule to combine the individual likelihoods of each data point."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Take the logarithm",
+          "mathHtml": "\\[L(\\theta) = \\log f(X; \\theta) = \\sum_{i=1}^5 \\log (\\theta x_i + (1-\\theta))\\]",
+          "explanation": "Taking the log helps us avoid dealing with products of small numbers."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the derivative",
+          "mathHtml": "\\[\\frac{dL}{d\\theta} = \\sum_{i=1}^5 \\frac{x_i}{\\theta x_i + (1-\\theta)} - \\frac{1}{\\theta}\\]",
+          "explanation": "We're finding the derivative of the log-likelihood with respect to \\theta."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Set the derivative equal to zero",
+          "mathHtml": "\\[0 = \\sum_{i=1}^5 \\frac{x_i}{\\theta x_i + (1-\\theta)} - \\frac{1}{\\theta}\\]",
+          "explanation": "We're setting the derivative equal to zero to find the critical point."
+        }
+      ],
+      "finalAnswer": "\\[\\hat{\\theta} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]"
+    },
+    "intuition": "The MLE is the value of \\theta that maximizes the likelihood function.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:33:06.160Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_concept_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In this worked example, we'll apply maximum likelihood estimation to find the most likely value of a parameter.</p>",
+    "formula": {
+      "latex": "\\[f(x; \\theta) = \\prod_{i=1}^n f(x_i; \\theta)\\]",
+      "name": "Likelihood function"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a dataset of exam scores, and we want to estimate the true mean score using maximum likelihood estimation.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>We are given a dataset of exam scores: \\[1, 2, 3, 4, 5\\]. We want to estimate the true mean score using maximum likelihood estimation.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the likelihood function",
+          "mathHtml": "\\[f(x; \\theta) = \\prod_{i=1}^n f(x_i; \\theta)\\]",
+          "explanation": "The likelihood function represents the probability of observing our dataset given a parameter value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Write down the log-likelihood",
+          "mathHtml": "\\[L(\\theta) = \\log(f(x; \\theta))\\]",
+          "explanation": "Taking the logarithm helps with numerical stability and simplifies the calculation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the MLE by taking the derivative of the log-likelihood",
+          "mathHtml": "\\[\\frac{dL}{d\\theta} = \\sum_{i=1}^n \\frac{x_i - \\theta}{f(x; \\theta)}\\]",
+          "explanation": "The derivative tells us the direction in which the likelihood function increases."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Set the derivative to zero and solve for \\theta",
+          "mathHtml": "\\[0 = \\sum_{i=1}^n \\frac{x_i - \\bar{x}}{f(x; \\bar{x})}\\]",
+          "explanation": "Setting the derivative to zero gives us an equation that we can solve for the MLE."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Plug in the values and find the estimated mean score",
+          "mathHtml": "\\[\\hat{\\theta} = \\frac{1}{n}\\sum_{i=1}^n x_i\\]",
+          "explanation": "The estimated mean score is simply the average of our dataset."
+        }
+      ],
+      "finalAnswer": "The estimated mean score is 3."
+    },
+    "intuition": "Maximum likelihood estimation finds the most likely value of a parameter by maximizing the likelihood function.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to take the logarithm"
+    ],
+    "realWorldApplications": [
+      "Estimating population means in machine learning models"
+    ],
+    "tags": [
+      "maximum likelihood",
+      "estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:33:40.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_concept_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "mle_concept",
+    "title": "Maximum Likelihood Estimation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the maximum likelihood estimator (MLE) for a given probability distribution.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random variable X with a probability density function f(x|θ) that depends on an unknown parameter θ. We want to find the MLE of θ based on a sample x1, …, xn from this distribution.</p>",
+    "hints": [
+      "Hint: Start by defining the likelihood function and then take the logarithm."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The MLE of θ is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say our random variable X represents the number of heads in a sequence of coin flips. We have a sample of n = 10 coin flip results: x1, …, xn. The probability density function f(x|θ) is given by the binomial distribution:</p>\\[f(x|θ) = \\binom{n}{x} θ^x (1-θ)^{n-x}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the likelihood function\", \"mathHtml\": \"\\(L(θ|x1, …, xn) = \\prod_{i=1}^{n} f(xi|θ)\\)\", \"explanation\": \"The likelihood function represents the probability of observing our sample given θ.\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm\", \"mathHtml\": \"\\(L(θ|x1, …, xn) = \\sum_{i=1}^{n} log(f(xi|θ))\\)\", \"explanation\": \"Taking the logarithm helps us avoid dealing with products of small numbers.\"}, {\"stepNumber\": 3, \"description\": \"Find the derivative\", \"mathHtml\": \"\\(L'(θ|x1, …, xn) = \\sum_{i=1}^{n} \\frac{f'(xi|θ)}{f(xi|θ)}\\)\", \"explanation\": \"We need to find the derivative of the logarithmic likelihood function with respect to θ.\"}, {\"stepNumber\": 4, \"description\": \"Set the derivative equal to zero\", \"mathHtml\": \"\\(L'(θ|x1, …, xn) = 0\\)\", \"explanation\": \"This is the key step in finding the MLE. We set the derivative equal to zero and solve for θ.\"}, {\"stepNumber\": 5, \"description\": \"Solve for θ\", \"mathHtml\": \"\\(θ = \\frac{1}{n} \\sum_{i=1}^{n} xi\\)\", \"explanation\": \"After some algebraic manipulations, we arrive at the MLE of θ.\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The key insight here is that the MLE is the value of θ that maximizes the likelihood function.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:34:13.989Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

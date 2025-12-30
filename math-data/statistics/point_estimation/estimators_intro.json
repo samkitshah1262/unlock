@@ -1,0 +1,200 @@
+[
+  {
+    "id": "stat_con_estimators_intro_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "title": "Estimators and Estimates",
+    "contentHtml": "<p>In statistics, an estimator is a function that takes in data as input and produces an estimate of a population parameter. This concept is crucial in machine learning and artificial intelligence, where we often work with limited or noisy data.</p><p>Think of it like trying to estimate the average height of a group of people based on a small sample of measurements. The estimator would take those measurements as input and produce an estimated average height.</p>",
+    "formula": {
+      "latex": "\\(\\hat{θ} = f(X)\\)",
+      "name": "Estimator Formula"
+    },
+    "intuition": "An estimator is a way to make an educated guess about a population parameter based on the data we have.",
+    "realWorldApplications": [
+      "In machine learning, estimators are used to train models and make predictions."
+    ],
+    "commonMistakes": [
+      "Don't confuse estimators with parameters; they're not the same thing."
+    ],
+    "tags": [
+      "estimation",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:09:59.946Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_estimators_intro_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "title": "Estimators and Estimates",
+    "contentHtml": "<p>An estimator is a function that takes in data as input and produces an estimate of a population parameter.</p><p>For example, if we want to estimate the average height of adults in a country based on a sample of heights from a survey, our estimator would take in these sample heights and output an estimated average height.</p>",
+    "formula": {
+      "latex": "\\hat{\\theta} = \\frac{1}{n} \\sum_{i=1}^n x_i",
+      "name": "Point Estimator"
+    },
+    "intuition": "Think of an estimator as a 'best guess' function that takes in data and produces a single value representing our estimate.",
+    "realWorldApplications": [
+      "Machine learning models often use point estimators to make predictions based on training data."
+    ],
+    "commonMistakes": [
+      "Don't confuse the estimator with the true population parameter"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:10:12.926Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_estimators_intro_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "title": "Estimators and Estimates",
+    "contentHtml": "<p>An estimator is a function that takes in data and produces an estimate of some population parameter. In mathematical statistics, we're interested in finding good estimators for parameters like means, variances, and proportions.</p><p>For example, suppose we want to estimate the average height of adults in a city based on a random sample of 100 people. We could use the sample mean as our estimator, which would be the average height of those 100 individuals.</p>",
+    "formula": {
+      "latex": "\\(\\hat{θ} = \\frac{1}{n} \\sum_{i=1}^n x_i\\)",
+      "name": "Sample Mean Estimator"
+    },
+    "intuition": "Think of an estimator like a guesser. It takes in some data and produces an estimate of what the true value might be.",
+    "realWorldApplications": [
+      "Estimating population means is crucial in machine learning, where we often need to make predictions about unseen data."
+    ],
+    "commonMistakes": [
+      "Don't confuse an estimator with the actual parameter it's estimating!"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:10:27.683Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimators_intro_004",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "problem": "{",
+    "statementHtml": "<p>Find the estimator and estimate of a population mean given a random sample.</p>",
+    "hints": [
+      "Start by recalling the definition of an estimator.",
+      "Think about how you would use the sample mean to make an educated guess about the population mean.",
+      "Consider what kind of bias or variance might be present in your estimate."
+    ],
+    "solutionHtml": "<p>To find the estimator, we can simply use the sample mean as our best guess for the population mean.</p><p>Mathematically, this is represented by:</p>\\(\\hat{\\mu} = \\bar{x}\\)<p>The estimate of the population mean is then simply the value of the sample mean:</p>\\(\\hat{\\mu} = 25\\)</p>\",",
+    "answerShort": "The estimator is the sample mean and the estimate is 25.\" },",
+    "commonMistakes": [
+      "Forgetting to consider the bias in the estimator",
+      "Not recognizing that the sample mean is a random variable"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:10:42.317Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimators_intro_005",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "problem": "{",
+    "statementHtml": "<p>Find an unbiased estimator for a population mean.</p>",
+    "hints": [
+      "<p>The sample mean is an intuitive choice.</p>",
+      "<p>Why do we need to ensure the estimator is unbiased?</p>",
+      "<p>What's the relationship between the sample mean and the population mean?</p>"
+    ],
+    "solutionHtml": "<p>To find an unbiased estimator for a population mean, we can use the sample mean. The formula is:</p>\\(\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i\\)<p>where \\(x_i\\) are the individual data points and \\(n\\) is the sample size.</p><p>The sample mean is an unbiased estimator because:</p>\\[\\mathbb{E}(\\bar{x}) = \\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}(x_i) = \\mu\\]<p>where \\(\\mu\\) is the population mean.</p>\",",
+    "answerShort": "\\(\\bar{x}\\)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:10:57.781Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimators_intro_006",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "problem": "{",
+    "statementHtml": "<p>Find an unbiased estimator for a population mean.</p>",
+    "hints": [
+      "Start by considering a random sample from the population.",
+      "Think about how you can use this sample to estimate the population mean.",
+      "Recall that an unbiased estimator has expected value equal to the parameter being estimated."
+    ],
+    "solutionHtml": "<p>To find an unbiased estimator for the population mean, we can use the sample mean.</p>\\n<p>Let X<sub>1</sub>, ..., X<sub>n</sub> be a random sample from the population with mean μ. Then, the sample mean is given by:</p>\\n\\[{\\overline{X}} = \\frac{1}{n} \\sum_{i=1}^{n} X_i.\\]\\n<p>The expected value of the sample mean is:</p>\\n\\[\\mathbb{E}({\\overline{X}}) = \\frac{1}{n} \\sum_{i=1}^{n} \\mathbb{E}(X_i) = \\mu,\\]\\n<p>which shows that the sample mean is an unbiased estimator for the population mean.</p>\",",
+    "answerShort": "The sample mean\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:11:14.743Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimators_intro_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimators_intro",
+    "problem": "{",
+    "statementHtml": "Find the maximum likelihood estimator (MLE) of a population mean <i>μ</i> given a random sample <i>x_1, …, x_n</i>.",
+    "hints": [
+      "Start by considering the joint probability density function (PDF) of the sample.",
+      "Focus on the term involving <i>μ</i> in the PDF.",
+      "Use the fact that MLE is the value that maximizes the likelihood"
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the joint PDF:</p>\\(\\frac{1}{\\sqrt{2\\pi \\sigma^2}} e^{ -\\frac{(x_i-\\mu)^2}{2\\sigma^2} }\\) <br> <p>Take the logarithm of both sides and simplify:</p>\\(-\\frac{n}{2}\\ln(2\\pi \\sigma^2) - \\frac{1}{2\\sigma^2} \\sum_{i=1}^{n}(x_i-\\mu)^2\\) <br> <p>Now, take the derivative with respect to <i>μ</i> and set it equal to 0:</p>\\(\\frac{\\partial }{\\partial \\mu}\\left(-\\frac{1}{2\\sigma^2} \\sum_{i=1}^{n}(x_i-\\mu)^2\\right) = 0\\) <br> <p>Solve for <i>μ</i>:</p>\\(\\hat{\\mu} = \\frac{1}{n}\\sum_{i=1}^{n} x_i\\)",
+    "answerShort": "The maximum likelihood estimator of the population mean is the sample mean.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:11:36.422Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

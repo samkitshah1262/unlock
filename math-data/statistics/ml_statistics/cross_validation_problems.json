@@ -1,0 +1,152 @@
+[
+  {
+    "id": "stat_prb_cross_validation_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset with n samples and p features. Develop a cross-validation strategy to evaluate the performance of a machine learning model.</p>",
+    "hints": [
+      "Start by thinking about how you would partition your data.",
+      "Consider using a stratified approach if your target variable is categorical.",
+      "Think about how you can use k-fold CV to get an unbiased estimate of your model's performance."
+    ],
+    "solutionHtml": "<p>To develop a cross-validation strategy, let's start by defining our problem. We want to evaluate the performance of a machine learning model on unseen data.</p><p>We'll use 5-fold cross-validation with stratification since our target variable is categorical.</p><p>Here are the steps:</p><ol><li>\\(k = 5\\), we split our dataset into 5 folds.</li><li>We train our model on \\(4\\) of the folds and evaluate its performance on the remaining fold.</li><li>We repeat this process for each fold, keeping track of the average performance.</li></ol>\",",
+    "answerShort": "Use 5-fold stratified cross-validation to evaluate your machine learning model.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:36.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Develop a cross-validation strategy to evaluate the performance of a machine learning model on a dataset.</p>",
+      "hints": [
+        "<p>K-fold cross-validation is a popular choice for most problems.</p>",
+        "<p>Stratified cross-validation ensures that each fold has roughly the same class distribution as the original data.</p>",
+        "<p>Nested cross-validation can be used to tune hyperparameters and evaluate model performance simultaneously.</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we will use a combination of k-fold cross-validation and stratified sampling. First, we divide our dataset into k folds...</p>",
+      "answerShort": "K-fold cross-validation with stratification"
+    },
+    "commonMistakes": [
+      "Failing to account for class imbalance in the data",
+      "Not using enough folds in the cross-validation process"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:48.920Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Given a dataset with <i>n</i> samples and <i>p</i> features, perform k-fold cross-validation to evaluate the performance of a machine learning model.</p>",
+      "hints": [
+        "Start by splitting your data into <i>k</i> roughly equal-sized folds.",
+        "Use each fold as a test set exactly once, while using the remaining folds for training.",
+        "Repeat this process <i>k</i> times to get an average performance metric."
+      ],
+      "solutionHtml": "<p>To perform k-fold cross-validation:</p><ol><li>Split your data into <i>k</i> roughly equal-sized folds.</li><li>For each fold, use the remaining <i>k-1</i> folds as a training set and the current fold as a test set.</li><li>Compute the performance metric (e.g., accuracy) on the test set.</li><li>Repeat steps 2-3 for all folds.</li><li>Average the performance metrics to get your final result.</li></ol>",
+      "answerShort": "Average performance metric"
+    },
+    "commonMistakes": [
+      "Forgetting to use each fold as a test set exactly once.",
+      "Not repeating the process <i>k</i> times."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:05.864Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation",
+    "problem": {
+      "statementHtml": "<p>Given a dataset and a model, design a cross-validation strategy to evaluate the model's performance.</p>",
+      "hints": [
+        "Start by considering different types of cross-validation (K-fold, LOOCV, stratified, nested).",
+        "Think about how you would apply these strategies to your specific problem.",
+        "Consider the trade-offs between bias and variance in your evaluation metric."
+      ],
+      "solutionHtml": "<p>To evaluate a model's performance, we can use K-fold cross-validation. This involves splitting our dataset into K subsets (folds), training the model on K-1 folds, and evaluating its performance on the remaining fold.</p><p>We repeat this process for each fold to get an average performance metric.</p>",
+      "answerShort": "K-fold cross-validation"
+    },
+    "commonMistakes": [
+      "Not considering overfitting or underfitting",
+      "Using too few folds"
+    ],
+    "realWorldApplications": [
+      "Evaluating the performance of a machine learning model on a time series dataset"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:20.503Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cross_validation_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "problem": {
+      "statementHtml": "<p>Consider a dataset with <i>n</i> samples and <i>p</i> features. How would you evaluate the performance of a machine learning model without overfitting?</p>",
+      "hints": [
+        "Think about how to divide your data into training and testing sets.",
+        "You'll need to repeat this process multiple times to get an accurate estimate.",
+        "Stratification can be important if your dataset is imbalanced."
+      ],
+      "solutionHtml": "<p>To avoid overfitting, we use <i>k</i>-fold cross-validation. This involves splitting our data into <i>k</i> subsets (folds) and using <i>k-1</i> folds for training and the remaining fold for testing.</p><p>We repeat this process <i>k</i> times, each time using a different fold as the test set. The average performance across all <i>k</i> iterations gives us an estimate of the model's true performance.</p>",
+      "answerShort": "Use k-fold cross-validation with k=5 or 10"
+    },
+    "commonMistakes": [
+      "Not using stratification when necessary",
+      "Using too few folds (e.g., k=2)",
+      "Not repeating the process multiple times to get an accurate estimate"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:05:37.350Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

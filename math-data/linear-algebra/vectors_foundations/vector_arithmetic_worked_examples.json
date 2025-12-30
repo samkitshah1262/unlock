@@ -1,0 +1,110 @@
+[
+  {
+    "id": "la_wex_vector_arithmetic_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_arithmetic",
+    "title": "Vector Arithmetic: Addition, Subtraction, and Scalar Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore how to perform vector arithmetic operations.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the sum of vectors <math>\\mathbf{a} = [2, 3]</math> and <math>\\mathbf{b} = [1, -1]</math>:\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Add corresponding components\", \"mathHtml\": \"\\(\\mathbf{a} + \\mathbf{b} = [2+1, 3-1] = [3, 2]\\)\", \"explanation\": \"We add the x-components and y-components separately.\"}, {\"stepNumber\": 2, \"description\": \"Subtract vector <math>\\mathbf{c} = [-4, 5]</math> from vector <math>\\mathbf{a}</math>\", \"mathHtml\": \"\\(\\mathbf{a} - \\mathbf{c} = [2-(-4), 3-5] = [6, -2]\\)\", \"explanation\": \"We subtract the corresponding components.\"}, {\"stepNumber\": 3, \"description\": \"Scale vector <math>\\mathbf{b}</math> by a factor of 2\", \"mathHtml\": \"\\(\\lambda \\mathbf{b} = 2[1, -1] = [2, -2]\\)\", \"explanation\": \"We multiply each component of the vector by the scalar.\"}, {\"stepNumber\": 4, \"description\": \"Find a linear combination of vectors <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math>\", \"mathHtml\": \"\\(\\alpha \\mathbf{a} + \\beta \\mathbf{b} = [2\\alpha+1\\beta, 3\\alpha-\\beta]\\)\", \"explanation\": \"We combine the vectors using coefficients α and β.\"}, {\"stepNumber\": 5, \"description\": \"Find a specific linear combination\", \"mathHtml\": \"\\(\\frac{1}{2}\\mathbf{a} + \\frac{3}{4}\\mathbf{b} = [1+3/2, 3-3/4] = [5/2, 9/4]\\)\", \"explanation\": \"We choose specific coefficients to create a new vector.\"} ],",
+    "finalAnswer": "[5/2, 9/4]\" },",
+    "intuition": "Vector arithmetic operations allow us to manipulate and combine vectors in various ways, enabling applications such as data processing and machine learning.",
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:11:08.615Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_vector_arithmetic_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_arithmetic",
+    "title": "Vector Arithmetic",
+    "contentHtml": "<p>In vector spaces, we can perform various operations on vectors to create new ones.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{u} + \\mathbf{v} = \\begin{bmatrix} u_1 + v_1 \\\\ u_2 + v_2 \\\\ \\vdots \\\\ u_n + v_n \\end{bmatrix}\\]",
+      "name": "Vector Addition"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the sum of vectors \\mathbf{a} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix} and \\mathbf{b} = \\begin{bmatrix} -1 \\\\ 0 \\\\ 4 \\end{bmatrix}</p>",
+      "hints": [
+        "Add corresponding components"
+      ],
+      "solutionHtml": "<p>To add vectors, we add their corresponding components:</p><ul><li>\\(a_1 + b_1 = 1 + (-1) = 0\\)</li><li>\\(a_2 + b_2 = 2 + 0 = 2\\)</li><li>\\(a_3 + b_3 = 3 + 4 = 7\\)</li></ul><p>The result is \\mathbf{c} = \\begin{bmatrix} 0 \\\\ 2 \\\\ 7 \\end{bmatrix}</p>",
+      "answerShort": "\\begin{bmatrix} 0 \\\\ 2 \\\\ 7 \\end{bmatrix}"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the sum of vectors \\mathbf{x} = \\begin{bmatrix} 3 \\\\ -1 \\\\ 2 \\end{bmatrix} and \\mathbf{y} = \\begin{bmatrix} 2 \\\\ 4 \\\\ -3 \\end{bmatrix}</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Add corresponding components",
+          "mathHtml": "\\(x_1 + y_1 = 3 + 2 = 5\\)",
+          "explanation": "We add the first components of both vectors"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Add corresponding components",
+          "mathHtml": "\\(x_2 + y_2 = -1 + 4 = 3\\)",
+          "explanation": "We add the second components of both vectors"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Add corresponding components",
+          "mathHtml": "\\(x_3 + y_3 = 2 + (-3) = -1\\)",
+          "explanation": "We add the third components of both vectors"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Write the result as a vector",
+          "mathHtml": "\\[\\mathbf{z} = \\begin{bmatrix} 5 \\\\ 3 \\\\ (-1) \\end{bmatrix}\\]",
+          "explanation": "The sum of vectors is written as a new vector"
+        }
+      ],
+      "finalAnswer": "\\begin{bmatrix} 5 \\\\ 3 \\\\ (-1) \\end{bmatrix}"
+    },
+    "intuition": "Vector addition combines the components of two vectors to create a new one, which can be useful in machine learning and computer vision applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:11:49.543Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_vector_arithmetic_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "vector_arithmetic",
+    "title": "Vector Arithmetic: Addition, Subtraction, and Scalar Multiplication",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to perform vector arithmetic operations.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the result of adding vectors <math>\\mathbf{a} = (1, 2)</math> and <math>\\mathbf{b} = (3, -1)</math>:\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Add corresponding components\", \"mathHtml\": \"\\(\\mathbf{a} + \\mathbf{b} = (1+3, 2-1) = (4, 1)\\)\", \"explanation\": \"We add the x-components and y-components separately\"}, {\"stepNumber\": 2, \"description\": \"Find the result of subtracting vectors <math>\\mathbf{x}</math> and <math>\\mathbf{y}</math>\", \"mathHtml\": \"\\(\\mathbf{x} - \\mathbf{y} = (1-3, 2-(-1)) = (-2, 3)\\)\", \"explanation\": \"We subtract the x-components and y-components separately\"}, {\"stepNumber\": 3, \"description\": \"Multiply a vector by a scalar\", \"mathHtml\": \"\\(2\\mathbf{a} = (2*1, 2*2) = (2, 4)\\)\", \"explanation\": \"We multiply each component of the vector by the scalar\"}, {\"stepNumber\": 4, \"description\": \"Combine vectors using linear combinations\", \"mathHtml\": \"\\(\\alpha\\mathbf{a} + \\beta\\mathbf{b} = (\\alpha*1, \\alpha*2) + (\\beta*3, \\beta*(-1))\\)\", \"explanation\": \"We combine the vectors by multiplying each component by its corresponding coefficient\"} ],",
+    "finalAnswer": "(4, 1)\" },",
+    "intuition": "Vector arithmetic operations allow us to manipulate and combine vectors in meaningful ways, which is essential for many applications in machine learning and artificial intelligence.",
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:12:15.982Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

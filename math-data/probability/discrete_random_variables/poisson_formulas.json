@@ -1,0 +1,162 @@
+[
+  {
+    "id": "prob_for_poisson_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "poisson",
+    "title": "Poisson Distribution",
+    "contentHtml": "<p>The Poisson distribution is a fundamental concept in probability theory, modeling rare events where the mean and variance are equal.</p><p>This formula is particularly useful when dealing with low-probability events or counting the number of successes in a fixed number of independent trials.</p>",
+    "formula": {
+      "latex": "\\[ P(k) = \\frac{e^{-\\lambda} (\\lambda)^k }{k! } \\]",
+      "name": "Poisson Probability",
+      "variants": []
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we're modeling the number of defects in a manufacturing process. If the average number of defects is 2, what's the probability of observing exactly 3 defects?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the values",
+          "mathHtml": "\\[ P(3) = \\frac{e^{-2} (2)^3 }{3! } \\]",
+          "explanation": "We're using the Poisson probability formula with λ=2"
+        }
+      ],
+      "finalAnswer": "The answer is approximately 0.1804"
+    },
+    "intuition": "The Poisson distribution is a good fit when you have a rare event and the mean and variance are equal.",
+    "realWorldApplications": [
+      "Quality control in manufacturing"
+    ],
+    "tags": [
+      "probability",
+      "rare events"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:22:34.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_poisson_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "poisson",
+    "title": "Poisson Distribution",
+    "contentHtml": "<p>The Poisson distribution is a fundamental concept in probability theory, used to model rare events that occur independently with a constant average rate.</p>",
+    "formula": {
+      "latex": "\\[ P(k) = \\frac{e^{-\\lambda} (\\lambda^k)}{k!} \\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A manufacturing process produces an average of 2 defective products per hour. What is the probability that exactly 3 defective products are produced in a given hour?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the value of lambda",
+          "mathHtml": "\\[ \\lambda = 2 \\]",
+          "explanation": "Since we know the average rate, we can use this value to calculate the probability"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate P(3)",
+          "mathHtml": "\\[ P(3) = \\frac{e^{-2} (2^3)}{3!} \\]",
+          "explanation": "We can use the formula to calculate the probability of exactly 3 defective products"
+        }
+      ],
+      "finalAnswer": "P(3) = 0.1499"
+    },
+    "intuition": "The Poisson distribution is useful when modeling rare events that occur independently with a constant average rate.",
+    "realWorldApplications": [
+      "Modeling the number of defects in manufacturing processes",
+      "Analyzing the frequency of rare events in finance"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:22:57.435Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_poisson_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "poisson",
+    "title": "Poisson Distribution",
+    "contentHtml": "<p>The Poisson distribution is a fundamental concept in probability theory, modeling rare events where the mean and variance are equal.</p><p>It's derived from the binomial distribution by letting the number of trials approach infinity while keeping the product <i>n</i>&times;<i>p</i> constant.</p>",
+    "formula": "{",
+    "latex": "\\[ P(k) = \\frac{e^{-\\lambda} (\\lambda)^k }{k!}\\]\",",
+    "name": "Poisson Probability Mass Function",
+    "variants": "[ {\"latex\": \"\\[ E(X) = Var(X) = \\lambda\\]\", \"description\": \"Mean and variance are equal to the parameter λ\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're modeling the number of defects in a manufacturing process. If the average number of defects is 2, what's the probability of exactly 3 defects?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Plug in λ=2 into the Poisson PMF\", \"mathHtml\": \"\\[ P(3) = \\frac{e^{-2} (2)^3 }{3!}\\]\", \"explanation\": \"We're using the formula with λ=2\"} ],",
+    "finalAnswer": "The probability is approximately 0.149\" },",
+    "intuition": "The Poisson distribution helps us model rare events where the mean and variance are equal, making it a crucial concept in many real-world applications.",
+    "realWorldApplications": [
+      "Quality control in manufacturing"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:23:21.301Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_poisson_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "poisson",
+    "title": "Poisson Distribution",
+    "contentHtml": "<p>The Poisson distribution is a discrete probability distribution that models rare events with a constant average rate over time or space.</p><p>It's often used to analyze the number of defects in a manufacturing process, the number of phone calls received by a call center, or the number of mutations in a DNA sequence.</p>",
+    "formula": {
+      "latex": "\\[ P(k) = \\frac{e^{-\\lambda} (\\lambda^k)}{k!} \\]",
+      "name": "Poisson Distribution Formula",
+      "variants": []
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose a manufacturing process produces an average of 2 defective products per hour. What is the probability that exactly 3 defective products are produced in the next hour?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the values",
+          "mathHtml": "\\[ P(3) = \\frac{e^{-2} (2^3)}{3!} \\]",
+          "explanation": "We plug in λ=2 and k=3 into the formula"
+        }
+      ],
+      "finalAnswer": "The probability is approximately 0.149"
+    },
+    "intuition": "The Poisson distribution is a good model when the average rate of events is constant, but the number of events is small compared to the average.",
+    "realWorldApplications": [
+      "Analyzing defect rates in manufacturing processes",
+      "Modeling phone call volumes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:23:43.106Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

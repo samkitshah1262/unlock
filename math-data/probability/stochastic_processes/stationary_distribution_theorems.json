@@ -1,0 +1,73 @@
+[
+  {
+    "id": "prob_thm_stationary_distribution_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions",
+    "contentHtml": "<p>A stochastic process has a stationary distribution if its probability distribution remains unchanged over time.</p>",
+    "formula": {
+      "latex": "\\[P(x) = \\frac{1}{\\pi} \\int_{-\\infty}^{\\infty} P(y) f(x|y) dy\\]",
+      "name": "Stationary Distribution Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\text{Let } X_t \\text{ be a Markov chain. Then, } P(X_0 = x) = P(X_t = x) \\text{ for all } t > 0.\\]",
+      "proofSketch": "The proof involves showing that the probability distribution of the process converges to a limiting distribution as time increases."
+    },
+    "intuition": "A stationary distribution represents the long-term behavior of a stochastic process, where the probability of being in each state remains constant over time.",
+    "realWorldApplications": [
+      "PageRank algorithm in Google's search engine"
+    ],
+    "tags": [
+      "Markov Chains",
+      "Stochastic Processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:24:24.844Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_stationary_distribution_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions Theorem",
+    "contentHtml": "<p>The Stationary Distributions Theorem is a fundamental result in probability theory that guarantees the existence and uniqueness of stationary distributions for certain stochastic processes.</p>",
+    "formula": {
+      "latex": "\\[ P^t = \\left( P^{t-1} \\right)P \\]",
+      "name": "Markov Chain Transition Matrix"
+    },
+    "theorem": {
+      "statement": "\\[ \\forall t \\geq 0, \\text{ if } P \\text{ is a transition matrix for a Markov chain, then } \\exists! \\pi \\in \\Delta \\text{ such that } \\pi = \\pi P. \\]",
+      "proofSketch": "The proof involves showing that the desired stationary distribution exists and is unique by using the fact that the Markov chain is ergodic."
+    },
+    "intuition": "In essence, this theorem states that for a given Markov chain, there exists a unique probability distribution that remains unchanged under iteration of the transition matrix. This has significant implications in many areas, including search engines and recommendation systems.",
+    "realWorldApplications": [
+      "PageRank algorithm"
+    ],
+    "tags": [
+      "Markov Chains",
+      "Stochastic Processes",
+      "Probability Theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:24:43.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

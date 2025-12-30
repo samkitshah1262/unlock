@@ -1,0 +1,141 @@
+{
+  "subject": "probability",
+  "title": "Probability Theory",
+  "description": "Comprehensive probability from basic rules to measure theory, with deep focus on Bayesian inference, stochastic processes, and ML applications",
+  "targetAudience": ["undergraduate", "graduate", "ML practitioners", "data scientists", "quants"],
+  "totalEstimatedCards": 420,
+  "chapters": [
+    {
+      "id": "probability_foundations",
+      "title": "Foundations of Probability",
+      "description": "Basic concepts, axioms, and counting principles",
+      "order": 1,
+      "topics": [
+        {"id": "sample_spaces_events", "title": "Sample Spaces and Events", "description": "Outcomes, events, event algebra, sigma-algebras preview", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "probability_axioms", "title": "Probability Axioms", "description": "Kolmogorov axioms, probability measures, basic properties", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "counting_basic", "title": "Basic Counting", "description": "Multiplication principle, addition principle, inclusion-exclusion", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 1, "mlRelevance": "useful"},
+        {"id": "permutations", "title": "Permutations", "description": "Arrangements, k-permutations, permutations with repetition", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "combinations", "title": "Combinations", "description": "Binomial coefficients, properties, Pascal's triangle", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "multinomial", "title": "Multinomial Coefficients", "description": "Partitioning objects, multinomial theorem", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "useful"}
+      ]
+    },
+    {
+      "id": "conditional_probability",
+      "title": "Conditional Probability and Independence",
+      "description": "The core of probabilistic reasoning",
+      "order": 2,
+      "topics": [
+        {"id": "conditional_definition", "title": "Conditional Probability", "description": "Definition P(A|B), interpretation, updating beliefs", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "multiplication_rule", "title": "Multiplication Rule", "description": "Chain rule for probabilities, tree diagrams", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "total_probability", "title": "Law of Total Probability", "description": "Partitioning sample space, weighted averages", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "bayes_theorem", "title": "Bayes' Theorem", "description": "Statement, proof, prior/posterior/likelihood interpretation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "bayes_applications", "title": "Applications of Bayes' Theorem", "description": "Medical testing, spam filtering, legal reasoning", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "independence_definition", "title": "Independence of Events", "description": "Definition, testing independence, independent vs disjoint", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "conditional_independence", "title": "Conditional Independence", "description": "Definition, importance in graphical models, examples", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "pairwise_mutual", "title": "Pairwise vs Mutual Independence", "description": "Distinction, counterexamples, implications", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 10, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "discrete_random_variables",
+      "title": "Discrete Random Variables",
+      "description": "PMFs, expectation, and common discrete distributions",
+      "order": 3,
+      "topics": [
+        {"id": "rv_definition", "title": "Random Variables", "description": "Definition as function, discrete vs continuous, measurability", "cardTypes": ["concept", "problem"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "pmf", "title": "Probability Mass Function", "description": "Definition, properties, visualization", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "cdf_discrete", "title": "Cumulative Distribution Function", "description": "Definition, properties, relationship to PMF", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "expectation_discrete", "title": "Expectation", "description": "Definition, interpretation, linearity, LOTUS", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "variance_discrete", "title": "Variance and Standard Deviation", "description": "Definition, properties, computational formula", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "moments", "title": "Moments and Moment Generating Functions", "description": "Higher moments, MGF definition, MGF uniqueness", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "bernoulli", "title": "Bernoulli Distribution", "description": "Definition, expectation, variance, applications", "cardTypes": ["concept", "formula", "problem"], "estimatedCards": 8, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "binomial", "title": "Binomial Distribution", "description": "Definition, derivation, mean, variance, normal approximation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "geometric", "title": "Geometric Distribution", "description": "Waiting time, memoryless property, mean, variance", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "negative_binomial", "title": "Negative Binomial Distribution", "description": "k successes, relation to geometric, overdispersion", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "poisson", "title": "Poisson Distribution", "description": "Rare events, derivation from binomial, mean=variance", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "hypergeometric", "title": "Hypergeometric Distribution", "description": "Sampling without replacement, relation to binomial", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "useful"}
+      ]
+    },
+    {
+      "id": "continuous_random_variables",
+      "title": "Continuous Random Variables",
+      "description": "PDFs and common continuous distributions",
+      "order": 4,
+      "topics": [
+        {"id": "pdf_definition", "title": "Probability Density Function", "description": "Definition, interpretation, P(X=x)=0 paradox", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "cdf_continuous", "title": "CDF for Continuous RVs", "description": "Definition, properties, PDF-CDF relationship", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "expectation_continuous", "title": "Expectation for Continuous RVs", "description": "Integration, LOTUS, mean as balance point", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "variance_continuous", "title": "Variance for Continuous RVs", "description": "Integration formula, properties", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "uniform", "title": "Uniform Distribution", "description": "Definition, mean, variance, applications", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "exponential", "title": "Exponential Distribution", "description": "Memoryless property, relation to Poisson, hazard rate", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "normal_standard", "title": "Standard Normal Distribution", "description": "Definition, z-scores, standard normal table, 68-95-99.7 rule", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "normal_general", "title": "General Normal Distribution", "description": "Parameters μ, σ², standardization, properties", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "gamma", "title": "Gamma Distribution", "description": "Definition, parameters, special cases (chi-squared, exponential)", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "beta", "title": "Beta Distribution", "description": "Definition on [0,1], conjugate prior, applications", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "transformations", "title": "Transformations of Random Variables", "description": "PDF of g(X), Jacobian method, examples", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "joint_distributions",
+      "title": "Joint Distributions",
+      "description": "Multiple random variables and their relationships",
+      "order": 5,
+      "topics": [
+        {"id": "joint_pmf_pdf", "title": "Joint PMF and PDF", "description": "Definition, properties, visualization", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "marginal_distributions", "title": "Marginal Distributions", "description": "Marginalization, summing/integrating out variables", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "conditional_distributions", "title": "Conditional Distributions", "description": "P(Y|X), conditional PDF, Bayesian updating", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "conditional_expectation", "title": "Conditional Expectation", "description": "E[Y|X], law of iterated expectations, regression function", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "covariance", "title": "Covariance", "description": "Definition, properties, computational formula", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "correlation", "title": "Correlation", "description": "Pearson correlation, bounds, independence vs uncorrelated", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "multivariate_normal", "title": "Multivariate Normal Distribution", "description": "Definition, mean vector, covariance matrix, marginals, conditionals", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "order_statistics", "title": "Order Statistics", "description": "Distribution of min, max, kth order statistic", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "functions_multiple_rv", "title": "Functions of Multiple RVs", "description": "Sum, difference, product of independent RVs, convolution", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "limit_theorems",
+      "title": "Limit Theorems",
+      "description": "Convergence and the foundations of statistics",
+      "order": 6,
+      "topics": [
+        {"id": "convergence_modes", "title": "Modes of Convergence", "description": "Almost sure, in probability, in distribution, in mean", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "wlln", "title": "Weak Law of Large Numbers", "description": "Statement, proof via Chebyshev, implications", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "slln", "title": "Strong Law of Large Numbers", "description": "Statement, interpretation, sample mean consistency", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 10, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "clt", "title": "Central Limit Theorem", "description": "Statement, proof sketch, universality, rate of convergence", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "clt_applications", "title": "Applications of CLT", "description": "Confidence intervals, normal approximation to binomial", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "delta_method", "title": "Delta Method", "description": "Asymptotic distribution of g(X̄), variance stabilization", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "characteristic_functions", "title": "Characteristic Functions", "description": "Definition, properties, uniqueness, inversion", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "specialized"}
+      ]
+    },
+    {
+      "id": "stochastic_processes",
+      "title": "Stochastic Processes",
+      "description": "Introduction to random processes",
+      "order": 7,
+      "topics": [
+        {"id": "markov_chains_intro", "title": "Discrete-Time Markov Chains", "description": "Definition, transition matrix, Markov property", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "markov_classification", "title": "State Classification", "description": "Transient, recurrent, periodic, irreducible", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "stationary_distribution", "title": "Stationary Distributions", "description": "Definition, existence, uniqueness, PageRank example", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "ergodic_theorem", "title": "Ergodic Theorem", "description": "Long-run averages, MCMC convergence", "cardTypes": ["concept", "theorem", "problem"], "estimatedCards": 10, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "poisson_process", "title": "Poisson Process", "description": "Definition, interarrival times, properties, thinning", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "random_walks", "title": "Random Walks", "description": "Simple random walk, gambler's ruin, reflection principle", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "brownian_motion", "title": "Brownian Motion", "description": "Definition, properties, scaling, applications preview", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "specialized"}
+      ]
+    },
+    {
+      "id": "ml_probability",
+      "title": "Probability in Machine Learning",
+      "description": "ML-specific probability topics",
+      "order": 8,
+      "topics": [
+        {"id": "bayesian_inference", "title": "Bayesian Inference", "description": "Prior, likelihood, posterior, conjugate priors, MAP estimation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "naive_bayes", "title": "Naive Bayes Classifier", "description": "Independence assumption, training, prediction, smoothing", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "graphical_models", "title": "Probabilistic Graphical Models", "description": "Bayesian networks, factor graphs, d-separation", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "information_theory", "title": "Information Theory", "description": "Entropy, cross-entropy, KL divergence, mutual information", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "sampling_methods", "title": "Sampling Methods", "description": "Monte Carlo, importance sampling, rejection sampling", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "mcmc", "title": "Markov Chain Monte Carlo", "description": "Metropolis-Hastings, Gibbs sampling, convergence diagnostics", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 5, "mlRelevance": "core"},
+        {"id": "variational_inference", "title": "Variational Inference", "description": "ELBO, mean-field approximation, reparameterization trick", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 5, "mlRelevance": "core"},
+        {"id": "probabilistic_models", "title": "Probabilistic Generative Models", "description": "Latent variable models, EM preview, VAE preview", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"}
+      ]
+    }
+  ]
+}

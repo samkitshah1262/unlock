@@ -1,0 +1,163 @@
+[
+  {
+    "id": "prob_wex_conditional_expectation_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "title": "Conditional Expectation: E[Y|X]",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate the conditional expectation E[Y|X] of a random variable Y given another random variable X.</p>",
+    "formula": "{",
+    "latex": "\\(E[Y | X] = \\int y f(y|x) dy\\)\",",
+    "name": "Conditional Expectation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have two random variables X and Y, with joint distribution \\(f(x,y)\\). We want to find the conditional expectation of Y given X.</p>\",",
+    "hints": [
+      "Hint: Use the law of iterated expectations"
+    ],
+    "solutionHtml": "<p>We can start by using the law of iterated expectations:</p>\\n<p>\\(E[Y | X] = \\int y f(y|x) dy\\)</p>\\n<p>Now, we need to find the regression function \\(m(x)\\), which is the expected value of Y given X.</p>\",",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say we have a random variable X that represents the number of hours studied, and another random variable Y that represents the score on an exam. The joint distribution is:</p>\\n<p>\\(f(x,y) = \\frac{1}{10} e^{-(x-3)^2 - (y-80)^2}\\)</p>\",",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Calculate the conditional expectation",
+    "mathHtml": "\\[E[Y | X] = \\int y f(y|x) dy\\]\",",
+    "explanation": "Finally, we can use the conditional distribution to calculate the conditional expectation.\" } ],",
+    "finalAnswer": "The answer\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:02:23.564Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_expectation_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "title": "Conditional Expectation: E[Y|X] and Law of Iterated Expectations",
+    "contentHtml": "<p>In this worked example, we'll explore conditional expectation E[Y|X] and its relationship to the law of iterated expectations.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the conditional expectation E[X^2|X=3].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recall the definition of conditional expectation\", \"mathHtml\": \"\\(E[Y|X] = \\int y f(y|x) dy\\)\", \"explanation\": \"We're using the integral form to find E[X^2|X=3].\"}, {\"stepNumber\": 2, \"description\": \"Plug in X=3 and simplify\", \"mathHtml\": \"\\(E[X^2|X=3] = \\int (x^2) f(x^2|X=3) dx^2\\)\", \"explanation\": \"Since we're given X=3, we can substitute it into the integral.\"}, {\"stepNumber\": 3, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\(E[X^2|X=3] = (3)^2 f((3)^2|X=3) \\int dx^2\\)\", \"explanation\": \"We're essentially evaluating the probability density function at X=3.\"}, {\"stepNumber\": 4, \"description\": \"Find the final answer\", \"mathHtml\": \"\\(E[X^2|X=3] = (9) f((9)|X=3)\\)\", \"explanation\": \"This is our conditional expectation given X=3.\"} ],",
+    "finalAnswer": "(9) f((9)|X=3)\" },",
+    "intuition": "Conditional expectation helps us understand how the expected value of Y changes when we condition on a specific value of X.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:02:49.995Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_expectation_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "title": "Conditional Expectation: E[Y|X]",
+    "contentHtml": "<p>Understand how to compute the expected value of Y given X.</p>",
+    "formula": "{",
+    "latex": "\\(E[Y | X] = \\int y f(y|x) dy\\)\",",
+    "name": "Conditional Expectation Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find E[Y|X] for a joint distribution \\(f(x, y)\\).</p>\",",
+    "hints": [
+      "Hint: Use the law of iterated expectations"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say we have a joint distribution \\(f(x, y) = \\frac{1}{2}e^{-(x-0.5)^2-(y-0.5)^2}\\). Find E[Y|X=0.7].</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the conditional distribution\", \"mathHtml\": \"\\(f(y | x) = \\frac{f(x, y)}{\\int f(x, t) dt}\\)\", \"explanation\": \"We're finding the probability density of Y given X.\"}, {\"stepNumber\": 2, \"description\": \"Integrate out Y\", \"mathHtml\": \"\\[\\int_{-\\infty}^{\\infty} y f(y | x) dy\\]\", \"explanation\": \"This is where we apply the law of iterated expectations.\"}, {\"stepNumber\": 3, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\(0.5 \\cdot e^{-(x-0.5)^2}\\)\", \"explanation\": \"We're using our given joint distribution and integrating out Y.\"}, {\"stepNumber\": 4\", \"description\": \"Plug in X=0.7\", \"mathHtml\": \"\\(0.5 \\cdot e^{-(0.7-0.5)^2}\\)\", \"explanation\": \"Now we substitute the value of X into our conditional distribution.\"} ],",
+    "finalAnswer": "\\(E[Y | X = 0.7] = 0.5\\)\" },",
+    "intuition": "Conditional expectation helps us understand how Y changes given a specific value of X.",
+    "visualDescription": "A diagram showing the joint distribution and conditional distribution would help illustrate this concept.",
+    "commonMistakes": [
+      "Forgetting to integrate out Y"
+    ],
+    "realWorldApplications": [
+      "Regression analysis in machine learning"
+    ],
+    "tags": [
+      "conditional expectation",
+      "law of iterated expectations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:03:25.399Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_expectation_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_expectation",
+    "title": "Conditional Expectation: E[Y|X] and Law of Iterated Expectations",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate conditional expectation E[Y|X] using the law of iterated expectations.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X,Y), find the conditional expectation E[Y|X=x] for some specific value x.</p>",
+      "hints": [
+        "Hint: Use the definition of conditional expectation and the law of iterated expectations."
+      ],
+      "solutionHtml": "<p>To solve this, we'll use the law of iterated expectations:</p><ul><li>First, find E[Y|X=x] = ∫y P(Y=y|X=x) dy</li><li>Then, calculate E[E[Y|X=x]|X=x] using the definition of conditional expectation</li></ul>",
+      "answerShort": "E[Y|X=x]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X,Y) where X is binary (0 or 1) and Y is continuous. We want to find the conditional expectation E[Y|X=1].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the marginal distribution of X",
+          "mathHtml": "\\[P(X=1) = \\int_{y} P(Y=y|X=1) dy\\]",
+          "explanation": "We need this to apply the law of iterated expectations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the conditional expectation E[Y|X=1] using the definition",
+          "mathHtml": "\\[E[Y|X=1] = \\int_{y} y P(Y=y|X=1) dy\\]",
+          "explanation": "This is the core of conditional expectation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the law of iterated expectations",
+          "mathHtml": "\\[E[Y|X=1] = E[E[Y|X=1]|X=1]\\]",
+          "explanation": "Now we're using the definition of conditional expectation to find the final answer."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the final answer",
+          "mathHtml": "\\[E[Y|X=1] = \\frac{\\int_{y} y P(Y=y|X=1) dy}{P(X=1)}\\]",
+          "explanation": "This is the final result."
+        }
+      ],
+      "finalAnswer": "The conditional expectation E[Y|X=1]"
+    },
+    "intuition": "Conditional expectation helps us understand how a random variable Y changes given some information X. In this example, we're using the law of iterated expectations to find the expected value of Y given X=1.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:04:02.840Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

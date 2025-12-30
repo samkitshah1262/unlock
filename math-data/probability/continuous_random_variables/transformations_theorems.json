@@ -1,0 +1,73 @@
+[
+  {
+    "id": "prob_thm_transformations_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformation of Continuous Random Variables",
+    "contentHtml": "<p>The Jacobian method is a powerful tool to transform continuous random variables.</p><p>Given a function g(x), we can find the probability density function (PDF) of Y=g(X) using the Jacobian method.</p>",
+    "formula": {
+      "latex": "\\[f_Y(y) = \\frac{\\partial+}{\\partial y} f_X(g^{-1}(y)) |_{g^{-1}(y)} \\]",
+      "name": "Jacobian Method"
+    },
+    "theorem": {
+      "statement": "\\[f_Y(y) = \\frac{\\partial+}{\\partial y} f_X(g^{-1}(y)) |_{g^{-1}(y)} \\]"
+    },
+    "intuition": "The Jacobian method helps us find the PDF of Y=g(X) by relating it to the PDF of X. This is useful in machine learning when we need to transform data.",
+    "realWorldApplications": [
+      "Transforming data for neural networks"
+    ],
+    "tags": [
+      "Continuous Random Variables",
+      "Jacobian Method",
+      "Transformation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:34:25.945Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_transformations_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformation of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications, including machine learning and artificial intelligence.</p><p>This theorem provides a powerful tool for analyzing such transformations.</p>",
+    "formula": {
+      "latex": "\\[g(X) = h(f(X))\\]",
+      "name": "Transformation Formula"
+    },
+    "theorem": {
+      "statement": "\\[P(g(X) \\leq y) = \\int_{-\\infty}^y p_g(t) dt, where p_g(t) = |h'(f^{-1}(t))|p_X(f^{-1}(t))\\]",
+      "proofSketch": "The proof involves applying the change of variables formula and using the chain rule to compute the Jacobian."
+    },
+    "intuition": "This theorem allows us to transform a continuous random variable X into another variable g(X) while preserving its probability distribution.",
+    "realWorldApplications": [
+      "Transforming features in machine learning models"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "transformations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:34:43.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

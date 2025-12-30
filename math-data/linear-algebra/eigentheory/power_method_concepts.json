@@ -1,0 +1,100 @@
+[
+  {
+    "id": "la_con_power_method_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "title": "Power Iteration: A Numerical Method for Dominant Eigenvalues",
+    "contentHtml": "<p>Power iteration is a simple yet effective numerical method to find the dominant eigenvalue of a square matrix. It's an essential concept in linear algebra and has numerous applications in machine learning, particularly in clustering and dimensionality reduction.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{v}_k = A \\mathbf{v}_{k-1} / ||A \\mathbf{v}_{k-1}||_2\\]",
+      "name": "Power Iteration Formula"
+    },
+    "intuition": "The key insight is that the power iteration method amplifies the components of the input vector that correspond to the dominant eigenvalue. This is because the matrix A maps the input vector to a direction that is more aligned with the eigenvector corresponding to the dominant eigenvalue.",
+    "realWorldApplications": [
+      "K-Means Clustering",
+      "Principal Component Analysis (PCA)"
+    ],
+    "commonMistakes": [
+      "Assuming power iteration always converges",
+      "Not normalizing the input vector"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:50:11.635Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_power_method_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "title": "Power Iteration",
+    "contentHtml": "<p>Power iteration is a simple yet effective numerical method to find the dominant eigenvalue and eigenvector of a square matrix.</p><p>The idea is to repeatedly apply the matrix transformation to an initial guess, until convergence. This process can be visualized as iteratively projecting a vector onto the direction of the matrix's action.</p>",
+    "formula": "{",
+    "latex": "\\\\[x^{(k+1)} = Ax^{(k)}/\\\\|Ax^{(k)}\\\\|\\]\",",
+    "name": "Power Iteration Update\" },",
+    "intuition": "Think of power iteration as repeatedly 'walking' in the direction of the matrix's action, with each step getting closer to the dominant eigenvector.",
+    "realWorldApplications": [
+      "Finding the principal components in dimensionality reduction"
+    ],
+    "commonMistakes": [
+      "Assuming the initial guess is an eigenvector",
+      "Not checking for convergence"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:50:26.111Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_power_method_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "title": "Power Iteration",
+    "subtitle": "A numerical method for finding dominant eigenvalues",
+    "contentHtml": "<p>Power iteration is a simple yet effective algorithm for approximating the largest eigenvalue of a matrix and its corresponding eigenvector. It's a fundamental concept in linear algebra, with far-reaching implications in machine learning and artificial intelligence.</p><p>The basic idea is to repeatedly apply the matrix to a random vector until convergence, effectively amplifying the dominant eigenvector.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{x}_{k+1} = A \\mathbf{x}_k / ||A \\mathbf{x}_k||_2 \\]",
+      "name": "Power Iteration Formula"
+    },
+    "intuition": "Think of power iteration as a game of 'eigenvector amplification'. You start with a random vector, and then repeatedly apply the matrix to amplify its dominant components. The process converges to the largest eigenvector, which is crucial in many machine learning applications.",
+    "realWorldApplications": [
+      "Principal component analysis (PCA)"
+    ],
+    "commonMistakes": [
+      "Failing to normalize the vectors",
+      "Not checking for convergence"
+    ],
+    "tags": [
+      "linear-algebra",
+      "eigenvalues",
+      "machine-learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:50:43.378Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

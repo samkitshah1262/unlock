@@ -1,0 +1,126 @@
+[
+  {
+    "id": "stat_prb_causal_inference_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference Basics: Potential Outcomes",
+    "problem": {
+      "statementHtml": "Consider a binary treatment variable <i>T</i> and an outcome variable <i>O</i>. Assume we have access to the potential outcomes <i>O_0</i> and <i>O_1</i>, representing what would happen if the treatment were not applied (<i>T=0</i>) or applied (<i>T=1</i>).",
+      "hints": [
+        "Think about how you would estimate the average treatment effect (ATE) given these potential outcomes.",
+        "Consider a scenario where there is confounding between <i>T</i> and <i>O</i>, meaning that the treatment variable affects the outcome, but not directly.",
+        "How can we use propensity scores to address this confounding issue?"
+      ],
+      "solutionHtml": "<p>To estimate the ATE, we need to compare the potential outcomes. Let's denote the average outcome when <i>T=0</i> as <span class=\"math\">\\(E[O_0]\\)</span>, and the average outcome when <i>T=1</i> as <span class=\"math\">\\(E[O_1]\\)</span>. The ATE is then given by:</p><p><span class=\"math\">\\(ATE = E[O_1] - E[O_0]\\)</span></p>",
+      "answerShort": "The average treatment effect (ATE) is the difference between the potential outcomes."
+    },
+    "commonMistakes": [
+      "Failing to account for confounding in the analysis",
+      "Incorrectly estimating propensity scores"
+    ],
+    "realWorldApplications": [
+      "Using causal inference techniques to evaluate the effectiveness of a new medical treatment"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:28:48.394Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_causal_inference_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "problem": {
+      "statementHtml": "Suppose we want to determine if a new medicine reduces blood pressure in patients with hypertension. We randomly assign half of them to receive the medicine and the other half to receive a placebo. After some time, we measure their blood pressures. How do we analyze this data to draw conclusions about the medicine's effectiveness?",
+      "hints": [
+        "Think about what would happen if there were no differences between the two groups.",
+        "Consider how confounding variables could affect our results.",
+        "Propensity scores can help us account for these issues."
+      ],
+      "solutionHtml": "To analyze this data, we'll use potential outcomes and propensity scores. Let's say <i>P</i>(treatment) is the probability of receiving the medicine. We can define four possible outcomes: <i>y</i><sub>11</sub> (blood pressure when treated), <i>y</i><sub>10</sub> (blood pressure without treatment), <i>y</i><sub>01</sub>, and <i>y</i><sub>00</sub>. The average treatment effect is then <i>E</i>(<i>y</i><sub>11</sub> - <i>y</i><sub>10</sub>).",
+      "answerShort": "Use propensity scores to estimate the average treatment effect."
+    },
+    "commonMistakes": [
+      "Failing to account for confounding variables.",
+      "Incorrectly assuming that the treated and control groups are comparable."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:29:06.781Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_causal_inference_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference Basics: Potential Outcomes",
+    "problem": "{",
+    "statementHtml": "<p>Consider a binary treatment variable <i>T</i> and an outcome variable <i>O</i>. Assume that there are two potential outcomes for each individual, one if they receive the treatment (<i>O_1</i>) and another if they do not (<i>O_0</i>). The goal is to estimate the effect of the treatment on the outcome.</p>",
+    "hints": [
+      "<p>Think about how you would measure this effect in real-world scenarios.</p>",
+      "<p>What are some common challenges when trying to estimate this effect?</p>",
+      "<p>How do potential outcomes relate to propensity scores?</p>"
+    ],
+    "solutionHtml": "<p>To estimate the treatment effect, we can use the potential outcomes framework. Let <i>E[T=1]</i> be the expected outcome if an individual receives the treatment and <i>E[T=0]</i> be the expected outcome if they do not.</p><p>The treatment effect is then given by:</p>\\(\\text{TE} = E[T=1] - E[T=0]\\)<p>This framework helps us to account for confounding variables that might affect both the treatment and the outcome.</p>\",",
+    "answerShort": "\\(\\text{TE}\\)\" },",
+    "commonMistakes": [
+      "Failing to consider potential outcomes",
+      "Not accounting for confounding variables"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:29:25.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_causal_inference_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "problem": {
+      "statementHtml": "<p>Consider a binary outcome variable <i>y</i>, and let <i>Z</i> be a treatment indicator (0 or 1). Suppose we want to estimate the average treatment effect (ATE) on <i>y</i>. However, there may exist confounding variables that affect both <i>Z</i> and <i>y</i>. How can we adjust for these confounders?</p>",
+      "hints": [
+        "<p>Think about how to create a counterfactual scenario where the treatment is applied.</p>",
+        "<p>What would happen if we were able to observe both treated and control units, but only for those with similar covariates?</p>",
+        "<p>How can propensity scores help us match treated and control units?</p>"
+      ],
+      "solutionHtml": "<p>To address confounding, we can use potential outcomes framework. Let <i>y_0</i> be the outcome if the treatment is not applied (control), and <i>y_1</i> be the outcome if the treatment is applied (treated). We want to estimate the ATE as <i>E[y_1 - y_0]</i>. However, since we can only observe one of these outcomes for each unit, we need to use propensity scores.</p><p>We define a propensity score <i>p</i> as the probability of receiving treatment given covariates <i>X</i>. Then, we match treated and control units based on their propensity scores. The ATE is estimated as the difference in outcomes between matched pairs.</p>",
+      "answerShort": "<i>E[y_1 - y_0]</i>"
+    },
+    "commonMistakes": [
+      "Failing to account for confounding variables",
+      "Incorrectly estimating propensity scores"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:29:47.295Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

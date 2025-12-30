@@ -1,0 +1,1951 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css" id="nanobarcss">.nanobar{width:100%;height:4px;z-index:9999;top:0}.bar{width:0;height:100%;transition:height .3s;background:#000}</style><style>#back-to-top{background:#fff;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;bottom:20px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);box-shadow:0 2px 5px 0 rgba(0,0,0,.26);color:#333;cursor:pointer;display:block;height:56px;opacity:1;outline:0;position:fixed;right:20px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-transition:bottom .2s,opacity .2s;-o-transition:bottom .2s,opacity .2s;-moz-transition:bottom .2s,opacity .2s;transition:bottom .2s,opacity .2s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:56px;z-index:1}#back-to-top svg{display:block;fill:currentColor;height:24px;margin:16px auto 0;width:24px}#back-to-top.hidden{bottom:-56px;opacity:0}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aman's AI Journal • Primers • LLM/VLM Benchmarks</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Aman's AI Journal | Course notes and learning material for Artificial Intelligence and Deep Learning Stanford classes.">
+  <link rel="canonical" href="https://aman.ai/primers/ai/benchmarks/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Google fonts -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/atom+xml" title="Aman’s AI Journal" href="/feed.xml">  
+  
+  <link href="https://aman.ai/favicon.jpg" rel="shortcut icon">
+
+  <!-- Google ads -->
+  <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202512100101/show_ads_impl.js"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5905744527956213" crossorigin="anonymous" data-checked-head="true"></script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-5905744527956213?href=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fbenchmarks&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXFq0FgX_w7n8Er39XzGG8BlbxSEzTM0F9_LASxGqKgIe1WeOkRhi4lleUeFXbTFP-LioZLEJyR4DB5pyfBzT20mDf43eHCJ3MKXfmvY_tDX_AXS2UC27ufR_VwyKGRc0g9jC_GKA==?fccs=W1siQUtzUm9sLW9XMWF0X0lYZHlHb193OXE1aFVsMEdKNk1MNHFyOWs5NXAwY1h5MDVENUd6bFVMTmx4LWtYTUpFeG0weHBqU09lSFBsUGNIRzdQM3lVZ0hCVy1OUU12cmlDWm1vQ1FUcGJlSmlyM2lxcGVxdVJod2pJckxZN3F4WVVCVkNRZE5hcWhTQV9XcnFja2NDVjl6R3FwS2F2czViTDl3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI5MTgsNDcxMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL2FtYW4uYWkvcHJpbWVycy9haS9iZW5jaG1hcmtzLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxW1cQBO3wec9yKTvaa7rcfB7Qag8tQKOACVZc7ohGNsJco6zT6bAlPF5kD_3QTlK28VrR2puoNSOxJ_jrpSpZsAP93l_c1t6NUQFMz66qa0WQrsyFfZA3w0-ILs-GqjsIdlVAgQNQ==?fccs=W1siQUtzUm9sLW9XMWF0X0lYZHlHb193OXE1aFVsMEdKNk1MNHFyOWs5NXAwY1h5MDVENUd6bFVMTmx4LWtYTUpFeG0weHBqU09lSFBsUGNIRzdQM3lVZ0hCVy1OUU12cmlDWm1vQ1FUcGJlSmlyM2lxcGVxdVJod2pJckxZN3F4WVVCVkNRZE5hcWhTQV9XcnFja2NDVjl6R3FwS2F2czViTDl3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI5MTgsNTk5MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDIsbnVsbCwiZW4iXSwiaHR0cHM6Ly9hbWFuLmFpL3ByaW1lcnMvYWkvYmVuY2htYXJrcy8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxVsQ7cGL34H0jwxfAFWf9oqnXYxgDoUdnQv6mBIVsOeRWejjY4Ib4yL9NdTH34VlGZV1KHA6fAhVP4pFW6hx9nFGFQIb6FmQlwAKc0HFcPCQp7EPIFF4W3T1V1PpFkQENx59dBNkA==?fccs=W1siQUtzUm9sLW9XMWF0X0lYZHlHb193OXE1aFVsMEdKNk1MNHFyOWs5NXAwY1h5MDVENUd6bFVMTmx4LWtYTUpFeG0weHBqU09lSFBsUGNIRzdQM3lVZ0hCVy1OUU12cmlDWm1vQ1FUcGJlSmlyM2lxcGVxdVJod2pJckxZN3F4WVVCVkNRZE5hcWhTQV9XcnFja2NDVjl6R3FwS2F2czViTDl3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI5MTksNDQ4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5LDZdLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL2FtYW4uYWkvcHJpbWVycy9haS9iZW5jaG1hcmtzLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script></head>
+
+
+    <body><div id="MathJax_Message" style="display: none;"></div>
+
+      <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+      <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })</script><div id="back-to-top" class="hidden">Back to Top</div>
+      <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-family: sans-serif;
+          font-size: 14px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+      </style>   
+
+    <header class="site-header">
+
+  <a class="site-title" href="../">Distilled AI</a>
+
+  <a class="site-link" href="https://aman.ai">Back to aman.ai</a>
+
+  <!-- Html Elements for Search -->
+  <div id="search-container">
+  <input class="site-search-box" type="text" autocomplete="off" id="search-input" placeholder="search...">
+  <div id="results-container"></div>
+  </div>
+
+  <!-- Script pointing to aman-script.js -->
+  <script src="https://aman.ai/js/aman-search.min.js" type="text/javascript"></script>
+
+  <!-- Configuration -->
+  <script>
+  document.getElementById('search-input').value='';
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    exclude: ["cs231a"],
+    searchResultTemplate: '<div class="site-search-results"><a href="{url}">{title}</a></div>',
+    noResultsText: '<div class="site-search-results"><p>No results found</p></div>',
+    json: 'https://aman.ai/search.json',
+    limit: 5,
+    fuzzy: false,
+  })
+  </script>    
+
+</header>     
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Primers • LLM/VLM Benchmarks</h1>
+  </header>
+
+  <article class="post-content">
+  <ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#large-language-models-llms" id="markdown-toc-large-language-models-llms">Large Language Models (LLMs)</a>    <ul>
+      <li><a href="#general-benchmarks" id="markdown-toc-general-benchmarks">General Benchmarks</a>        <ul>
+          <li><a href="#language-understanding" id="markdown-toc-language-understanding">Language Understanding</a>            <ul>
+              <li><a href="#glue-general-language-understanding-evaluation" id="markdown-toc-glue-general-language-understanding-evaluation">GLUE (General Language Understanding Evaluation)</a></li>
+              <li><a href="#superglue" id="markdown-toc-superglue">SuperGLUE</a></li>
+              <li><a href="#mmlu-massive-multitask-language-understanding" id="markdown-toc-mmlu-massive-multitask-language-understanding">MMLU (Massive Multitask Language Understanding)</a></li>
+              <li><a href="#mmlu-pro-massive-multitask-language-understanding-pro" id="markdown-toc-mmlu-pro-massive-multitask-language-understanding-pro">MMLU-Pro (Massive Multitask Language Understanding Pro)</a></li>
+              <li><a href="#big-bench-beyond-the-imitation-game-benchmark" id="markdown-toc-big-bench-beyond-the-imitation-game-benchmark">BIG-bench (Beyond the Imitation Game Benchmark)</a></li>
+              <li><a href="#big-bench-hard" id="markdown-toc-big-bench-hard">BIG-bench Hard</a></li>
+            </ul>
+          </li>
+          <li><a href="#reasoning" id="markdown-toc-reasoning">Reasoning</a>            <ul>
+              <li><a href="#hellaswag" id="markdown-toc-hellaswag">HellaSwag</a></li>
+              <li><a href="#winogrande" id="markdown-toc-winogrande">WinoGrande</a></li>
+              <li><a href="#arc-challenge-arc-c-and-arc-easy-arc-e" id="markdown-toc-arc-challenge-arc-c-and-arc-easy-arc-e">ARC Challenge (ARC-c) and ARC Easy (ARC-e)</a></li>
+              <li><a href="#openbookqa-obqa" id="markdown-toc-openbookqa-obqa">OpenBookQA (OBQA)</a></li>
+              <li><a href="#commonsenseqa-cqa" id="markdown-toc-commonsenseqa-cqa">CommonsenseQA (CQA)</a></li>
+              <li><a href="#graduate-level-google-proof-question-answering-gpqa" id="markdown-toc-graduate-level-google-proof-question-answering-gpqa">Graduate-Level Google-Proof Question Answering (GPQA)</a></li>
+              <li><a href="#flash-fine-grained-language-agent-self-check-harness" id="markdown-toc-flash-fine-grained-language-agent-self-check-harness">FLASH (Fine-grained Language Agent Self-Check Harness)</a></li>
+            </ul>
+          </li>
+          <li><a href="#contextual-comprehension" id="markdown-toc-contextual-comprehension">Contextual Comprehension</a>            <ul>
+              <li><a href="#lambada" id="markdown-toc-lambada">LAMBADA</a></li>
+              <li><a href="#boolq" id="markdown-toc-boolq">BoolQ</a></li>
+            </ul>
+          </li>
+          <li><a href="#general-knowledge-and-skills" id="markdown-toc-general-knowledge-and-skills">General Knowledge and Skills</a>            <ul>
+              <li><a href="#triviaqa" id="markdown-toc-triviaqa">TriviaQA</a></li>
+              <li><a href="#natural-questions-nq" id="markdown-toc-natural-questions-nq">Natural Questions (NQ)</a></li>
+              <li><a href="#webquestions-wq" id="markdown-toc-webquestions-wq">WebQuestions (WQ)</a></li>
+            </ul>
+          </li>
+          <li><a href="#specialized-knowledge-and-skills" id="markdown-toc-specialized-knowledge-and-skills">Specialized Knowledge and Skills</a>            <ul>
+              <li><a href="#humaneval" id="markdown-toc-humaneval">HumanEval</a></li>
+              <li><a href="#physical-interaction-question-answering-piqa" id="markdown-toc-physical-interaction-question-answering-piqa">Physical Interaction Question Answering (PIQA)</a></li>
+              <li><a href="#social-interaction-question-answering-siqa" id="markdown-toc-social-interaction-question-answering-siqa">Social Interaction Question Answering (SIQA)</a></li>
+              <li><a href="#graduate-level-google-proof-question-answering-gpqa-diamond" id="markdown-toc-graduate-level-google-proof-question-answering-gpqa-diamond">Graduate-Level Google-Proof Question Answering (GPQA) Diamond</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#text-based-agents" id="markdown-toc-text-based-agents">Text-Based Agents</a>        <ul>
+          <li><a href="#agentbench" id="markdown-toc-agentbench">AgentBench</a></li>
+          <li><a href="#clembench" id="markdown-toc-clembench">ClemBench</a></li>
+          <li><a href="#toolbench" id="markdown-toc-toolbench">ToolBench</a></li>
+          <li><a href="#gentbench" id="markdown-toc-gentbench">GentBench</a></li>
+          <li><a href="#swe-bench" id="markdown-toc-swe-bench">SWE-Bench</a></li>
+          <li><a href="#τ-bench" id="markdown-toc-τ-bench">Τ-bench</a></li>
+        </ul>
+      </li>
+      <li><a href="#retrieval-augmented-generation-rag-benchmarks" id="markdown-toc-retrieval-augmented-generation-rag-benchmarks">Retrieval-Augmented Generation (RAG) Benchmarks</a>        <ul>
+          <li><a href="#retrieval-benchmarks" id="markdown-toc-retrieval-benchmarks">Retrieval Benchmarks</a>            <ul>
+              <li><a href="#beir-benchmarking-information-retrieval" id="markdown-toc-beir-benchmarking-information-retrieval">BEIR (Benchmarking Information Retrieval)</a></li>
+              <li><a href="#ms-marco" id="markdown-toc-ms-marco">MS MARCO</a></li>
+              <li><a href="#kilt" id="markdown-toc-kilt">KILT</a></li>
+            </ul>
+          </li>
+          <li><a href="#generation-benchmarks" id="markdown-toc-generation-benchmarks">Generation Benchmarks</a>            <ul>
+              <li><a href="#rag-qa-arena" id="markdown-toc-rag-qa-arena">RAG-QA Arena</a></li>
+              <li><a href="#bird-sql" id="markdown-toc-bird-sql">BIRD-SQL</a></li>
+              <li><a href="#eli5-explain-like-im-5" id="markdown-toc-eli5-explain-like-im-5">ELI5 (Explain Like I’m 5)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#long-context-understanding" id="markdown-toc-long-context-understanding">Long-Context Understanding</a>        <ul>
+          <li><a href="#long-context-benchmarks" id="markdown-toc-long-context-benchmarks">Long-Context Benchmarks</a>            <ul>
+              <li><a href="#longbench" id="markdown-toc-longbench">LongBench</a></li>
+              <li><a href="#ruler" id="markdown-toc-ruler">RULER</a></li>
+              <li><a href="#booksum" id="markdown-toc-booksum">BookSum</a></li>
+            </ul>
+          </li>
+          <li><a href="#narrative-comprehension" id="markdown-toc-narrative-comprehension">Narrative Comprehension</a>            <ul>
+              <li><a href="#narrativeqa" id="markdown-toc-narrativeqa">NarrativeQA</a></li>
+              <li><a href="#scrolls" id="markdown-toc-scrolls">SCROLLS</a></li>
+              <li><a href="#summscreen" id="markdown-toc-summscreen">SummScreen</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#mathematical-and-scientific-reasoning" id="markdown-toc-mathematical-and-scientific-reasoning">Mathematical and Scientific Reasoning</a>        <ul>
+          <li><a href="#american-invitational-mathematics-examination-aime-2024" id="markdown-toc-american-invitational-mathematics-examination-aime-2024">American Invitational Mathematics Examination (AIME) 2024</a></li>
+          <li><a href="#math" id="markdown-toc-math">MATH</a></li>
+          <li><a href="#math-500" id="markdown-toc-math-500">MATH-500</a></li>
+          <li><a href="#gsm8k-grade-school-math-8k" id="markdown-toc-gsm8k-grade-school-math-8k">GSM8K (Grade School Math 8K)</a></li>
+          <li><a href="#metamathqa" id="markdown-toc-metamathqa">MetaMathQA</a></li>
+          <li><a href="#mathvista" id="markdown-toc-mathvista">MathVista</a></li>
+        </ul>
+      </li>
+      <li><a href="#instruction-tuning-and-evaluation" id="markdown-toc-instruction-tuning-and-evaluation">Instruction Tuning and Evaluation</a>        <ul>
+          <li><a href="#ifeval" id="markdown-toc-ifeval">IFEval</a></li>
+          <li><a href="#alpacaeval" id="markdown-toc-alpacaeval">AlpacaEval</a></li>
+          <li><a href="#arena-hard" id="markdown-toc-arena-hard">Arena Hard</a></li>
+          <li><a href="#flan" id="markdown-toc-flan">Flan</a></li>
+          <li><a href="#self-instruct" id="markdown-toc-self-instruct">Self-Instruct</a></li>
+          <li><a href="#dolly" id="markdown-toc-dolly">Dolly</a></li>
+          <li><a href="#openai-codex-evaluations" id="markdown-toc-openai-codex-evaluations">OpenAI Codex Evaluations</a></li>
+          <li><a href="#instructgpt-benchmarks" id="markdown-toc-instructgpt-benchmarks">InstructGPT Benchmarks</a></li>
+          <li><a href="#biggen-bench-big-generation-benchmark" id="markdown-toc-biggen-bench-big-generation-benchmark">BigGen Bench (Big Generation Benchmark)</a></li>
+        </ul>
+      </li>
+      <li><a href="#multi-turn-conversation-benchmarks" id="markdown-toc-multi-turn-conversation-benchmarks">Multi-Turn Conversation Benchmarks</a>        <ul>
+          <li><a href="#mtbench" id="markdown-toc-mtbench">MTBench</a></li>
+          <li><a href="#mt-eval" id="markdown-toc-mt-eval">MT-Eval</a></li>
+          <li><a href="#mutual-multi-turn-dialogue-reasoning" id="markdown-toc-mutual-multi-turn-dialogue-reasoning">MuTual (Multi-Turn Dialogue Reasoning)</a></li>
+          <li><a href="#dailydialog" id="markdown-toc-dailydialog">DailyDialog</a></li>
+          <li><a href="#multiwoz-multi-domain-wizard-of-oz" id="markdown-toc-multiwoz-multi-domain-wizard-of-oz">MultiWOZ (Multi-Domain Wizard of Oz)</a></li>
+          <li><a href="#taskmaster" id="markdown-toc-taskmaster">Taskmaster</a></li>
+          <li><a href="#persona-chat" id="markdown-toc-persona-chat">Persona-Chat</a></li>
+          <li><a href="#dialogre" id="markdown-toc-dialogre">DialogRE</a></li>
+        </ul>
+      </li>
+      <li><a href="#reward-model-evaluation" id="markdown-toc-reward-model-evaluation">Reward Model Evaluation</a>        <ul>
+          <li><a href="#rewardbench" id="markdown-toc-rewardbench">RewardBench</a></li>
+        </ul>
+      </li>
+      <li><a href="#medical-benchmarks" id="markdown-toc-medical-benchmarks">Medical Benchmarks</a>        <ul>
+          <li><a href="#clinical-decision-support-and-patient-outcomes" id="markdown-toc-clinical-decision-support-and-patient-outcomes">Clinical Decision Support and Patient Outcomes</a>            <ul>
+              <li><a href="#mimic-iii-medical-information-mart-for-intensive-care" id="markdown-toc-mimic-iii-medical-information-mart-for-intensive-care">MIMIC-III (Medical Information Mart for Intensive Care)</a></li>
+            </ul>
+          </li>
+          <li><a href="#biomedical-question-answering" id="markdown-toc-biomedical-question-answering">Biomedical Question Answering</a>            <ul>
+              <li><a href="#bioasq" id="markdown-toc-bioasq">BioASQ</a></li>
+              <li><a href="#medqa-usmle" id="markdown-toc-medqa-usmle">MedQA (USMLE)</a></li>
+              <li><a href="#multimedqa" id="markdown-toc-multimedqa">MultiMedQA</a></li>
+              <li><a href="#pubmedqa" id="markdown-toc-pubmedqa">PubMedQA</a></li>
+              <li><a href="#medmcqa" id="markdown-toc-medmcqa">MedMCQA</a></li>
+            </ul>
+          </li>
+          <li><a href="#biomedical-language-understanding" id="markdown-toc-biomedical-language-understanding">Biomedical Language Understanding</a>            <ul>
+              <li><a href="#blue-biomedical-language-understanding-evaluation" id="markdown-toc-blue-biomedical-language-understanding-evaluation">BLUE (Biomedical Language Understanding Evaluation)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#software-development-benchmarks" id="markdown-toc-software-development-benchmarks">Software Development Benchmarks</a>        <ul>
+          <li><a href="#humaneval-1" id="markdown-toc-humaneval-1">HumanEval</a></li>
+          <li><a href="#humaneval-2" id="markdown-toc-humaneval-2">HumanEval+</a></li>
+          <li><a href="#mostly-basic-programming-problems-mbpp" id="markdown-toc-mostly-basic-programming-problems-mbpp">Mostly Basic Programming Problems (MBPP)</a></li>
+          <li><a href="#mbpp" id="markdown-toc-mbpp">MBPP+</a></li>
+          <li><a href="#swe-bench-1" id="markdown-toc-swe-bench-1">SWE-Bench</a></li>
+          <li><a href="#swe-bench-verified" id="markdown-toc-swe-bench-verified">SWE-Bench Verified</a></li>
+          <li><a href="#aider" id="markdown-toc-aider">Aider</a></li>
+          <li><a href="#multipl-e" id="markdown-toc-multipl-e">MultiPL-E</a></li>
+          <li><a href="#bigcodebench" id="markdown-toc-bigcodebench">BigCodeBench</a></li>
+          <li><a href="#swe-lancer" id="markdown-toc-swe-lancer">SWE-Lancer</a></li>
+          <li><a href="#code-debugging-and-error-detection" id="markdown-toc-code-debugging-and-error-detection">Code Debugging and Error Detection</a>            <ul>
+              <li><a href="#ds-1000-deepsource-python-bugs-dataset" id="markdown-toc-ds-1000-deepsource-python-bugs-dataset">DS-1000 (DeepSource Python Bugs Dataset)</a></li>
+              <li><a href="#livecodebench" id="markdown-toc-livecodebench">LiveCodeBench</a></li>
+            </ul>
+          </li>
+          <li><a href="#comprehensive-code-understanding-and-multi-language-evaluation" id="markdown-toc-comprehensive-code-understanding-and-multi-language-evaluation">Comprehensive Code Understanding and Multi-language Evaluation</a>            <ul>
+              <li><a href="#codexglue" id="markdown-toc-codexglue">CodeXGLUE</a></li>
+            </ul>
+          </li>
+          <li><a href="#algorithmic-problem-solving" id="markdown-toc-algorithmic-problem-solving">Algorithmic Problem Solving</a>            <ul>
+              <li><a href="#competition-code-codeforces" id="markdown-toc-competition-code-codeforces">Competition Code (Codeforces)</a></li>
+              <li><a href="#leetcode-problems" id="markdown-toc-leetcode-problems">LeetCode Problems</a></li>
+              <li><a href="#codeforces-problems" id="markdown-toc-codeforces-problems">Codeforces Problems</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#vision-language-models-vlms" id="markdown-toc-vision-language-models-vlms">Vision-Language Models (VLMs)</a>    <ul>
+      <li><a href="#visual-question-answering" id="markdown-toc-visual-question-answering">Visual Question Answering</a>        <ul>
+          <li><a href="#visual-question-answering-vqa-and-vqav2" id="markdown-toc-visual-question-answering-vqa-and-vqav2">Visual Question Answering (VQA) and VQAv2</a></li>
+          <li><a href="#textvqa" id="markdown-toc-textvqa">TextVQA</a></li>
+          <li><a href="#humanitys-last-exam-hle" id="markdown-toc-humanitys-last-exam-hle">Humanity’s Last Exam (HLE)</a></li>
+        </ul>
+      </li>
+      <li><a href="#image-captioning" id="markdown-toc-image-captioning">Image Captioning</a>        <ul>
+          <li><a href="#mscoco-captions" id="markdown-toc-mscoco-captions">MSCOCO Captions</a></li>
+          <li><a href="#visualgenome-captions" id="markdown-toc-visualgenome-captions">VisualGenome Captions</a></li>
+          <li><a href="#flickr30k-captions" id="markdown-toc-flickr30k-captions">Flickr30K Captions</a></li>
+          <li><a href="#conceptual-captions" id="markdown-toc-conceptual-captions">Conceptual Captions</a></li>
+        </ul>
+      </li>
+      <li><a href="#visual-reasoning" id="markdown-toc-visual-reasoning">Visual Reasoning</a>        <ul>
+          <li><a href="#nlvr2-natural-language-for-visual-reasoning-for-real" id="markdown-toc-nlvr2-natural-language-for-visual-reasoning-for-real">NLVR2 (Natural Language for Visual Reasoning for Real)</a></li>
+          <li><a href="#mmbench" id="markdown-toc-mmbench">MMBench</a></li>
+          <li><a href="#mmmu-massive-multi-discipline-multimodal-understanding" id="markdown-toc-mmmu-massive-multi-discipline-multimodal-understanding">MMMU (Massive Multi-discipline Multimodal Understanding)</a></li>
+        </ul>
+      </li>
+      <li><a href="#video-understanding" id="markdown-toc-video-understanding">Video Understanding</a>        <ul>
+          <li><a href="#perception-test" id="markdown-toc-perception-test">Perception Test</a></li>
+        </ul>
+      </li>
+      <li><a href="#document-understanding" id="markdown-toc-document-understanding">Document Understanding</a>        <ul>
+          <li><a href="#table-understanding" id="markdown-toc-table-understanding">Table Understanding</a>            <ul>
+              <li><a href="#tat-qa-tabular-and-text-question-answering" id="markdown-toc-tat-qa-tabular-and-text-question-answering">TAT-QA (Tabular and Text Question Answering)</a></li>
+              <li><a href="#tabfact" id="markdown-toc-tabfact">TabFact</a></li>
+              <li><a href="#wikitables-questions-wtq" id="markdown-toc-wikitables-questions-wtq">WikiTables Questions (WTQ)</a></li>
+              <li><a href="#chartqa" id="markdown-toc-chartqa">ChartQA</a></li>
+            </ul>
+          </li>
+          <li><a href="#scientific-documents" id="markdown-toc-scientific-documents">Scientific Documents</a>            <ul>
+              <li><a href="#scrolls-summarization-and-cross-document-reasoning" id="markdown-toc-scrolls-summarization-and-cross-document-reasoning">SCROLLS (Summarization and Cross-document Reasoning)</a></li>
+              <li><a href="#pubmedqa-1" id="markdown-toc-pubmedqa-1">PubMedQA</a></li>
+              <li><a href="#arxivqa" id="markdown-toc-arxivqa">ArxivQA</a></li>
+            </ul>
+          </li>
+          <li><a href="#legal-and-financial-documents" id="markdown-toc-legal-and-financial-documents">Legal and Financial Documents</a>            <ul>
+              <li><a href="#contract-understanding-atticus-dataset-cuad" id="markdown-toc-contract-understanding-atticus-dataset-cuad">Contract Understanding Atticus Dataset (CUAD)</a></li>
+              <li><a href="#finqa-financial-question-answering" id="markdown-toc-finqa-financial-question-answering">FINQA (Financial Question Answering)</a></li>
+              <li><a href="#caselawqa" id="markdown-toc-caselawqa">CaseLawQA</a></li>
+            </ul>
+          </li>
+          <li><a href="#multimodal-documents" id="markdown-toc-multimodal-documents">Multimodal Documents</a>            <ul>
+              <li><a href="#docvqa" id="markdown-toc-docvqa">DocVQA</a></li>
+              <li><a href="#infographicvqa" id="markdown-toc-infographicvqa">InfographicVQA</a></li>
+              <li><a href="#visualmrc-multimodal-reading-comprehension" id="markdown-toc-visualmrc-multimodal-reading-comprehension">VisualMRC (Multimodal Reading Comprehension)</a></li>
+              <li><a href="#omnidocbench" id="markdown-toc-omnidocbench">OmniDocBench</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#medical-vlm-benchmarks" id="markdown-toc-medical-vlm-benchmarks">Medical VLM Benchmarks</a>        <ul>
+          <li><a href="#medical-image-annotation-and-retrieval" id="markdown-toc-medical-image-annotation-and-retrieval">Medical Image Annotation and Retrieval</a>            <ul>
+              <li><a href="#imageclefmed" id="markdown-toc-imageclefmed">ImageCLEFmed</a></li>
+            </ul>
+          </li>
+          <li><a href="#disease-classification-and-detection" id="markdown-toc-disease-classification-and-detection">Disease Classification and Detection</a>            <ul>
+              <li><a href="#chexpert" id="markdown-toc-chexpert">CheXpert</a></li>
+              <li><a href="#diabetic-retinopathy-detection" id="markdown-toc-diabetic-retinopathy-detection">Diabetic Retinopathy Detection</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#multimodal-agents" id="markdown-toc-multimodal-agents">Multimodal Agents</a>        <ul>
+          <li><a href="#osworld" id="markdown-toc-osworld">OSWorld</a></li>
+          <li><a href="#webarena" id="markdown-toc-webarena">WebArena</a></li>
+          <li><a href="#webvoyager" id="markdown-toc-webvoyager">WebVoyager</a></li>
+          <li><a href="#general-ai-agent-benchmark-gaia" id="markdown-toc-general-ai-agent-benchmark-gaia">General AI Agent Benchmark (GAIA)</a></li>
+          <li><a href="#interactive-grounded-language-understanding-iglu" id="markdown-toc-interactive-grounded-language-understanding-iglu">Interactive Grounded Language Understanding (IGLU)</a></li>
+          <li><a href="#mlagentbench" id="markdown-toc-mlagentbench">MLAgentBench</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#common-challenges-across-benchmarks" id="markdown-toc-common-challenges-across-benchmarks">Common Challenges Across Benchmarks</a></li>
+  <li><a href="#citation" id="markdown-toc-citation">Citation</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+  <li>Large Language Models (LLMs) and Vision-and-Language Models (VLMs) are evaluated across a wide array of benchmarks, which test their abilities in language understanding, reasoning, coding, and multimedia understanding (in case of VLMs).</li>
+  <li>These benchmarks are crucial for the development of AI models as they provide standardized challenges that help identify both strengths and weaknesses, driving improvements in future iterations.</li>
+  <li>This primer offers an overview of these benchmarks, attributes of their datasets, and relevant papers.</li>
+</ul>
+
+<h2 id="large-language-models-llms">Large Language Models (LLMs)</h2>
+
+<h3 id="general-benchmarks">General Benchmarks</h3>
+
+<h4 id="language-understanding">Language Understanding</h4>
+
+<h5 id="glue-general-language-understanding-evaluation">GLUE (General Language Understanding Evaluation)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A set of nine tasks including question answering and textual entailment, designed to gauge general language understanding.</li>
+  <li><strong>Dataset Attributes:</strong> Diverse text genres from web text, fiction, and non-fiction, requiring models to handle a variety of language styles and complexities. The tasks range from single-sentence tasks (e.g., CoLA for linguistic acceptability) to sentence-pair tasks (e.g., MRPC for paraphrase detection).</li>
+  <li><strong>Reference:</strong> <a href="https://openreview.net/forum?id=rJ4km2R5t7">“GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding”</a>.</li>
+</ul>
+
+<h5 id="superglue">SuperGLUE</h5>
+
+<ul>
+  <li><strong>Description:</strong> A more challenging version of GLUE intended to push language models to their limits.</li>
+  <li><strong>Dataset Attributes:</strong> Includes more complex reasoning tasks over multiple domains, emphasizing inference, logic, and common sense. Tasks include Boolean Question (BoolQ), CommitmentBank (CB) for textual entailment, and Winogender schemas (WSC) for pronoun resolution.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1905.00537">“SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems”</a>.</li>
+</ul>
+
+<h5 id="mmlu-massive-multitask-language-understanding">MMLU (Massive Multitask Language Understanding)</h5>
+
+<ul>
+  <li><strong>Description:</strong> Assesses model performance across a broad range of subjects and task formats to test general knowledge.</li>
+  <li><strong>Dataset Attributes:</strong> Covers 57 tasks across subjects like humanities, STEM, and social sciences, requiring broad and specialized knowledge. The tasks vary from multiple-choice questions to open-ended questions, ensuring a comprehensive assessment of linguistic intelligence.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2009.03300">“Measuring Massive Multitask Language Understanding”</a>.</li>
+</ul>
+
+<h5 id="mmlu-pro-massive-multitask-language-understanding-pro">MMLU-Pro (Massive Multitask Language Understanding Pro)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A robust and challenging dataset designed to rigorously benchmark large language models’ capabilities. With 12K complex questions across various disciplines, it enhances evaluation complexity and model robustness by increasing options from 4 to 10, making random guessing less effective. Unlike the original MMLU’s knowledge-driven questions, MMLU-Pro focuses on more difficult, reasoning-based problems, where chain-of-thought (CoT) results can be 20% higher than perplexity (PPL). This increased difficulty results in more consistent model performance, as seen with Llama-2-7B’s variance of within 1%, compared to 4-5% in the original MMLU.</li>
+  <li><strong>Dataset Attributes:</strong> 12K questions with 10 options each. Sources include Original MMLU, STEM websites, TheoremQA, and SciBench. Covers disciplines such as Math, Physics, Chemistry, Law, Engineering, Health, Psychology, Economics, Business, Biology, Philosophy, Computer Science, and History. Focus on reasoning, increased problem difficulty, and manual expert review by a panel of over ten experts.</li>
+  <li><strong>Reference:</strong> <a href="https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro">Hugging Face: MMLU-Pro</a>.</li>
+</ul>
+
+<h5 id="big-bench-beyond-the-imitation-game-benchmark">BIG-bench (Beyond the Imitation Game Benchmark)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A comprehensive benchmark designed to evaluate a wide range of capabilities in language models, from simple tasks to complex reasoning.</li>
+  <li><strong>Dataset Attributes:</strong> Encompasses over 200 diverse tasks, including arithmetic, common-sense reasoning, language understanding, and more. It is designed to push the boundaries of current LLM capabilities by including both straightforward and highly complex tasks.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2206.04615">“BIG-bench: A Large-Scale Evaluation of Language Models”</a>.</li>
+</ul>
+
+<h5 id="big-bench-hard">BIG-bench Hard</h5>
+
+<ul>
+  <li><strong>Description:</strong> A subset of the BIG-bench benchmark focusing specifically on the most challenging tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of the hardest tasks from the BIG-bench suite, requiring advanced reasoning, problem-solving, and deep understanding. It aims to evaluate models’ performance on tasks that are significantly more difficult than typical benchmarks.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2206.04616">“BIG-bench Hard: A Challenge Set for Language Models”</a>.</li>
+</ul>
+
+<h4 id="reasoning">Reasoning</h4>
+
+<h5 id="hellaswag">HellaSwag</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset designed to evaluate common-sense reasoning through completion of context-dependent scenarios.</li>
+  <li><strong>Dataset Attributes:</strong> Challenges models to choose the most plausible continuation among four options, requiring nuanced understanding of everyday activities and scenarios. It features adversarially filtered examples to ensure difficulty and minimize data leakage from pre-training.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1905.07830">“HellaSwag: Can a Machine Really Finish Your Sentence?”</a>.</li>
+</ul>
+
+<h5 id="winogrande">WinoGrande</h5>
+<ul>
+  <li><strong>Description:</strong> A large-scale dataset for evaluating common-sense reasoning through Winograd schema challenges.</li>
+  <li><strong>Dataset Attributes:</strong> Includes a diverse set of sentences that require resolving ambiguous pronouns, emphasizing subtle distinctions in language understanding. The dataset is designed to address the limitations of smaller Winograd Schema datasets by providing scale and diversity.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1907.10641">“WinoGrande: An Adversarial Winograd Schema Challenge at Scale”</a>.</li>
+</ul>
+
+<h5 id="arc-challenge-arc-c-and-arc-easy-arc-e">ARC Challenge (ARC-c) and ARC Easy (ARC-e)</h5>
+<ul>
+  <li><strong>Description:</strong> The AI2 Reasoning Challenge (ARC) tests models on science exam questions, designed to be challenging for AI.</li>
+  <li><strong>Dataset Attributes:</strong> Comprised of grade-school science questions that demand complex reasoning and understanding, generally challenging for current AI systems. The ARC dataset is split into a challenging set (ARC-c) and an easier set (ARC-e) based on question difficulty.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1803.05457">“Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge”</a>.</li>
+</ul>
+
+<h5 id="openbookqa-obqa">OpenBookQA (OBQA)</h5>
+<ul>
+  <li><strong>Description:</strong> Focuses on science-based question answering that requires both retrieval of relevant facts and reasoning.</li>
+  <li><strong>Dataset Attributes:</strong> Challenges models to answer questions using both retrieved facts and reasoning, focusing on scientific knowledge. The dataset includes a small “open book” of 1,326 elementary-level science facts to aid in answering the questions.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1810.00920">“OpenBookQA: A New Dataset for Open Book Question Answering”</a>.</li>
+</ul>
+
+<h5 id="commonsenseqa-cqa">CommonsenseQA (CQA)</h5>
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to probe models’ ability to reason about everyday knowledge.</li>
+  <li><strong>Dataset Attributes:</strong> Focuses on multiple-choice questions that require commonsense to answer, challenging the depth of models’ real-world understanding. The questions are designed to have one correct answer and four distractors, making the task non-trivial.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1811.00937">“COMMONSENSEQA: A Question Answering Challenge Targeting Commonsense Knowledge”</a>.</li>
+</ul>
+
+<h5 id="graduate-level-google-proof-question-answering-gpqa">Graduate-Level Google-Proof Question Answering (GPQA)</h5>
+<ul>
+  <li><strong>Description:</strong> Evaluates models’ ability to answer 448 multiple-choice questions written by domain experts in biology, physics, and chemistry.</li>
+  <li><strong>Dataset Attributes:</strong> Includes high-quality and extremely difficult questions: experts who have or are pursuing PhDs in the corresponding domains reach 65% accuracy (74% when discounting clear mistakes the experts identified in retrospect), while highly skilled non-expert validators only reach 34% accuracy, despite spending on average over 30 minutes with unrestricted access to the web (i.e., the questions are “Google-proof”).</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2311.12022">“GPQA: A Benchmark for General Purpose Question Answering”</a>.</li>
+</ul>
+
+<h5 id="flash-fine-grained-language-agent-self-check-harness">FLASH (Fine-grained Language Agent Self-Check Harness)</h5>
+
+<ul>
+  <li><strong>Description:</strong> FLASH is a benchmark designed to evaluate the self-checking abilities of large language models. It assesses how well models can reason through, verify, and correct their own outputs across diverse scenarios and task types.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises 1,060 instances spanning 32 task types and 5 self-checking task variants (e.g., verification, correction, and explanation of mistakes). Tasks are derived from 20 existing datasets, and examples are filtered to ensure they contain reasoning steps with clear mistakes. FLASH emphasizes multi-step reasoning, logical flow, and the ability to detect and amend faulty outputs.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2502.01142">“FLASH: A Fine-grained Language Agent Self-check Harness”</a>.</li>
+</ul>
+
+<h4 id="contextual-comprehension">Contextual Comprehension</h4>
+
+<h5 id="lambada">LAMBADA</h5>
+<ul>
+  <li><strong>Description:</strong> Focuses on predicting the last word of a passage, requiring a deep understanding of the context.</li>
+  <li><strong>Dataset Attributes:</strong> Passages where the last word requires significant contextual understanding, testing language models’ deep comprehension. The passages are drawn from novels and require broad contextual reasoning to accurately predict the final word.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1606.06031">“The LAMBADA dataset: Word prediction requiring a broad discourse context”</a>.</li>
+</ul>
+
+<h5 id="boolq">BoolQ</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset for boolean question answering, focusing on reading comprehension.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of yes/no questions based on Google search queries and their corresponding Wikipedia articles, requiring binary comprehension of text. The questions are naturally occurring and require understanding the passage to answer correctly.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1905.10044">“BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions”</a>.</li>
+</ul>
+
+<h4 id="general-knowledge-and-skills">General Knowledge and Skills</h4>
+
+<h5 id="triviaqa">TriviaQA</h5>
+<ul>
+  <li><strong>Description:</strong> A widely used dataset consisting of trivia questions collected from various sources. It evaluates a model’s ability to answer open-domain questions with detailed and accurate responses. The dataset includes a mix of web-scraped and curated questions.</li>
+  <li><strong>Dataset Attributes:</strong> Contains over 650,000 question-answer pairs, including both verified and web-extracted answers, covering a broad range of general knowledge topics. The questions are accompanied by evidence documents to support answer validation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1705.03551">“TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension”</a>.</li>
+</ul>
+
+<h5 id="natural-questions-nq">Natural Questions (NQ)</h5>
+<ul>
+  <li><strong>Description:</strong> Developed by Google, this benchmark consists of real questions posed by users to the Google search engine. It assesses a model’s ability to retrieve and generate accurate answers based on a comprehensive understanding of the query and relevant documents.</li>
+  <li><strong>Dataset Attributes:</strong> Includes 300,000 training examples with questions and long and short answer annotations, providing a rich resource for training and evaluating LLMs on real-world information retrieval and comprehension. The dataset focuses on long-form answers sourced from Wikipedia.</li>
+  <li><strong>Reference:</strong> <a href="https://research.google/pubs/pub47761/">“Natural Questions: a Benchmark for Question Answering Research”</a>.</li>
+</ul>
+
+<h5 id="webquestions-wq">WebQuestions (WQ)</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset created to test a model’s ability to answer questions using information found on the web. The questions were obtained via the Google Suggest API, ensuring they reflect genuine user queries.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises around 6,000 question-answer pairs, with answers derived from Freebase, allowing models to leverage structured knowledge bases to provide accurate responses. The dataset focuses on factual questions requiring specific, often entity-centric answers.</li>
+  <li><strong>Reference:</strong> <a href="https://www.aclweb.org/anthology/D13-1160/">“WebQuestions: A Benchmark for Open-Domain Question Answering”</a>.</li>
+</ul>
+
+<h4 id="specialized-knowledge-and-skills">Specialized Knowledge and Skills</h4>
+
+<h5 id="humaneval">HumanEval</h5>
+
+<ul>
+  <li><strong>Description:</strong> Tests models on generating code snippets to solve programming tasks, evaluating coding abilities.</li>
+  <li><strong>Dataset Attributes:</strong> Programming problems requiring synthesis of function bodies, testing understanding of code logic and syntax. The dataset consists of prompts and corresponding reference solutions in Python, ensuring a clear standard for evaluation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2107.03374">“Evaluating Large Language Models Trained on Code”</a>.</li>
+</ul>
+
+<h5 id="physical-interaction-question-answering-piqa">Physical Interaction Question Answering (PIQA)</h5>
+
+<ul>
+  <li><strong>Description:</strong> Evaluates understanding of physical properties through problem-solving scenarios.</li>
+  <li><strong>Dataset Attributes:</strong> Focuses on questions that require reasoning about everyday physical interactions, pushing models to understand and predict physical outcomes. The scenarios involve practical physical tasks and common sense, making the benchmark unique in testing physical reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1911.11641">“PIQA: Reasoning about Physical Commonsense in Natural Language”</a>.</li>
+</ul>
+
+<h5 id="social-interaction-question-answering-siqa">Social Interaction Question Answering (SIQA)</h5>
+
+<ul>
+  <li><strong>Description:</strong> Tests the ability of models to navigate social situations through multiple-choice questions.</li>
+  <li><strong>Dataset Attributes:</strong> Challenges models with scenarios involving human interactions, requiring understanding of social norms and behaviors. The questions are designed to assess social commonsense reasoning, with multiple plausible answers to evaluate nuanced understanding.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1904.09728">“Social IQa: Commonsense Reasoning about Social Interactions”</a>.</li>
+</ul>
+
+<h5 id="graduate-level-google-proof-question-answering-gpqa-diamond">Graduate-Level Google-Proof Question Answering (GPQA) Diamond</h5>
+
+<ul>
+  <li><strong>Description:</strong> A PhD-level science questions benchmark designed to evaluate a model’s capability to tackle extremely challenging, domain-specific science questions written by experts with advanced academic backgrounds.</li>
+  <li><strong>Dataset Attributes:</strong> Features high-difficulty, domain-specific multiple-choice questions in physics, chemistry, and biology. Questions emphasize reasoning, comprehension of advanced scientific concepts, and avoidance of “shortcut” heuristics.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2311.12022">“GPQA: A Benchmark for General Purpose Question Answering”</a>.</li>
+</ul>
+
+<h3 id="text-based-agents">Text-Based Agents</h3>
+
+<ul>
+  <li>LLM-based agents are increasingly being developed for autonomous tasks such as web navigation, tool use, and real-world problem-solving. However, their evaluation requires specialized benchmarks that assess not only static model performance but also interactive capabilities, adaptability, and long-term decision-making.</li>
+  <li>These benchmarks focus on evaluating LLM agents that primarily operate using natural language, solving structured reasoning tasks, decision-making problems, and text-based simulations.</li>
+</ul>
+
+<h4 id="agentbench">AgentBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> AgentBench is a large-scale evaluation framework for LLM agents engaged in multi-agent collaboration, strategic planning, and decision-making tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Covers a wide spectrum of agentic tasks, from negotiation and coordination to complex problem-solving.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2310.15222">“AgentBench: A Benchmark for Autonomous LLM Agents”</a></li>
+</ul>
+
+<h4 id="clembench">ClemBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> ClemBench benchmarks LLM agents in structured dialogue, task automation, and contextual decision-making. It is particularly focused on chatbot performance in real-world scenarios.</li>
+  <li><strong>Dataset Attributes:</strong> Evaluates multi-turn reasoning, memory retention, and instruction-following in conversational AI.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2311.04389">“ClemBench: A Benchmark for Real-World Task-Oriented LLM Agents”</a></li>
+</ul>
+
+<h4 id="toolbench">ToolBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> ToolBench measures the effectiveness of LLM agents in using external tools and APIs for task completion. It assesses agents’ ability to interface with databases, search engines, and computational tools.</li>
+  <li><strong>Dataset Attributes:</strong> Tests multi-step reasoning, tool integration, and adaptability in utilizing external resources.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2310.01719">“ToolBench: Evaluating LLM Agents for Tool-Usage”</a></li>
+</ul>
+
+<h4 id="gentbench">GentBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> GentBench evaluates LLM agents on generative reasoning, structured problem-solving, and long-form task execution.</li>
+  <li><strong>Dataset Attributes:</strong> Tests creative problem-solving, planning, and structured information synthesis.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2312.00978">“GentBench: Benchmarking Generative Agents in Long-Form Tasks”</a></li>
+</ul>
+
+<h4 id="swe-bench">SWE-Bench</h4>
+
+<ul>
+  <li><strong>Description:</strong> SWE-Bench is designed to evaluate LLM-based agents in software engineering tasks, focusing on debugging, code comprehension, and automated pull request generation.</li>
+  <li><strong>Dataset Attributes:</strong> Uses real-world GitHub issues to benchmark AI capabilities in handling software maintenance tasks with automated correctness checks.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2310.03667">“SWE-Bench: Evaluating Large Language Models for Software Engineering”</a></li>
+</ul>
+
+<h4 id="τ-bench">Τ-bench</h4>
+
+<ul>
+  <li><strong>Description:</strong> τ-bench (Tool-Agent-User Interaction Benchmark) evaluates agents’ ability to engage in realistic, policy-constrained, multi-turn conversations with users and programmatic tools. It emphasizes domain-specific rule-following, database reasoning, and consistency under conversational stochasticity.</li>
+  <li><strong>Dataset Attributes:</strong> Includes two domains—τ-retail and τ-airline—with simulated human users, domain-specific APIs, and policy documents. Evaluates agent reliability via a novel <code class="language-plaintext highlighter-rouge">pass^k</code> metric capturing success across multiple interaction trials.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2406.12045">“τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains”</a></li>
+</ul>
+
+<h3 id="retrieval-augmented-generation-rag-benchmarks">Retrieval-Augmented Generation (RAG) Benchmarks</h3>
+
+<h4 id="retrieval-benchmarks">Retrieval Benchmarks</h4>
+
+<h5 id="beir-benchmarking-information-retrieval">BEIR (Benchmarking Information Retrieval)</h5>
+<ul>
+  <li><strong>Description:</strong> A suite of tasks that evaluates information retrieval across diverse domains, including passage retrieval and question answering.</li>
+  <li><strong>Dataset Attributes:</strong> Covers tasks like fact retrieval, argument retrieval, and entity linking, featuring datasets like TREC-COVID and FiQA.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2104.08663">BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models</a>.</li>
+</ul>
+
+<h5 id="ms-marco">MS MARCO</h5>
+<ul>
+  <li><strong>Description:</strong> Focused on large-scale passage retrieval from web documents.</li>
+  <li><strong>Dataset Attributes:</strong> Real-world queries paired with relevant passages, allowing evaluation of retrieval and ranking at scale.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1611.09268">MS MARCO: A Human Generated MAchine Reading COmprehension Dataset</a>.</li>
+</ul>
+
+<h5 id="kilt">KILT</h5>
+<ul>
+  <li><strong>Description:</strong> A unified benchmark for knowledge-intensive tasks combining retrieval and generation tasks like fact-checking and open-domain question answering.</li>
+  <li><strong>Dataset Attributes:</strong> Integrates datasets like FEVER and TriviaQA, assessing models’ ability to retrieve accurate information and generate coherent responses.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2009.02252">KILT: A Benchmark for Knowledge Intensive Language Tasks</a>.</li>
+</ul>
+
+<h4 id="generation-benchmarks">Generation Benchmarks</h4>
+
+<h5 id="rag-qa-arena">RAG-QA Arena</h5>
+<ul>
+  <li><strong>Description:</strong> Evaluates models’ ability to integrate retrieved knowledge into generation for robust and accurate question answering.</li>
+  <li><strong>Dataset Attributes:</strong> Focuses on domain robustness and long-form question answering, combining retrieval and generation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2407.13998">RAG-QA Arena: Evaluating Domain Robustness for Long-form Retrieval Augmented Question Answering</a>.</li>
+</ul>
+
+<h5 id="bird-sql">BIRD-SQL</h5>
+<ul>
+  <li><strong>Description:</strong> Specializes in structured query generation for database interfaces.</li>
+  <li><strong>Dataset Attributes:</strong> Tests retrieval and text-to-SQL generation tasks with complex structured data.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2305.03111">Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs</a>.</li>
+</ul>
+
+<h5 id="eli5-explain-like-im-5">ELI5 (Explain Like I’m 5)</h5>
+<ul>
+  <li><strong>Description:</strong> Focused on retrieval-augmented, long-form generation for complex, user-submitted questions.</li>
+  <li><strong>Dataset Attributes:</strong> Challenges models to combine multi-step retrieval with detailed and comprehensible explanations.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1907.09190">ELI5: Long Form Question Answering</a>.</li>
+</ul>
+
+<h3 id="long-context-understanding">Long-Context Understanding</h3>
+
+<h4 id="long-context-benchmarks">Long-Context Benchmarks</h4>
+
+<h5 id="longbench">LongBench</h5>
+<ul>
+  <li><strong>Description:</strong> Designed to assess models’ ability to manage and reason over extended text sequences.</li>
+  <li><strong>Dataset Attributes:</strong> Includes tasks such as long-form QA, summarization, and multi-document analysis, requiring comprehension of context over 16K tokens or more.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2308.14508">LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding</a>.</li>
+</ul>
+
+<h5 id="ruler">RULER</h5>
+<ul>
+  <li><strong>Description:</strong> Tests effective use of extended contexts through tasks like long-form QA and document-level reasoning.</li>
+  <li><strong>Dataset Attributes:</strong> Incorporates both synthetic and natural datasets, simulating extreme long-context scenarios.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2404.06654">RULER: What’s the Real Context Size of Your Long-Context Language Models?</a>.</li>
+</ul>
+
+<h5 id="booksum">BookSum</h5>
+<ul>
+  <li><strong>Description:</strong> Focuses on summarizing extended text such as full books or long documents.</li>
+  <li><strong>Dataset Attributes:</strong> Includes rich long-form narrative datasets, challenging models to condense large spans of information.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2105.08209">BookSum: A Collection of Datasets for Long-form Narrative Summarization</a>.</li>
+</ul>
+
+<h4 id="narrative-comprehension">Narrative Comprehension</h4>
+
+<h5 id="narrativeqa">NarrativeQA</h5>
+<ul>
+  <li><strong>Description:</strong> Evaluates deep understanding of story arcs and long-form narratives through question answering.</li>
+  <li><strong>Dataset Attributes:</strong> Pairs stories with question-answer pairs, emphasizing multi-turn and long-context comprehension.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1712.07040">The NarrativeQA Reading Comprehension Challenge</a>.</li>
+</ul>
+
+<h5 id="scrolls">SCROLLS</h5>
+<ul>
+  <li><strong>Description:</strong> Focuses on evaluating long-range reasoning and contextual comprehension across multi-document narratives.</li>
+  <li><strong>Dataset Attributes:</strong> Combines datasets such as WikiSum and GovReport, aiming to assess multi-step reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2201.03533">SCROLLS: Standardized CompaRison Over Long Language Sequences</a>.</li>
+</ul>
+
+<h5 id="summscreen">SummScreen</h5>
+<ul>
+  <li><strong>Description:</strong> A specialized benchmark for summarizing long-form dialogues from TV series and movies.</li>
+  <li><strong>Dataset Attributes:</strong> Features multi-character dialogue with contextual dependencies, requiring models to understand both narrative flow and character-specific contexts.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2104.07091">SummScreen: A Dataset for Abstractive Dialogue Summarization</a>.</li>
+</ul>
+
+<h3 id="mathematical-and-scientific-reasoning">Mathematical and Scientific Reasoning</h3>
+
+<h5 id="american-invitational-mathematics-examination-aime-2024">American Invitational Mathematics Examination (AIME) 2024</h5>
+<ul>
+  <li><strong>Description:</strong> A math competition benchmark for evaluating the mathematical reasoning capabilities of models in solving problems inspired by the AIME.</li>
+  <li><strong>Dataset Attributes:</strong> Contains challenging mathematical problems that require advanced reasoning, creative problem-solving, and a deep understanding of high school and pre-college mathematics. Problems are designed to test models’ abilities to handle intricate multi-step solutions.</li>
+  <li><strong>Reference:</strong> <a href="https://artofproblemsolving.com/wiki/index.php/2024_AIME_I">Art of Problem Solving 2024 AIME I</a>.</li>
+</ul>
+
+<h5 id="math">MATH</h5>
+<ul>
+  <li><strong>Description:</strong> A comprehensive set of mathematical problems designed to challenge models on various levels of mathematics.</li>
+  <li><strong>Dataset Attributes:</strong> Contains complex, multi-step mathematical problems from various branches of mathematics, requiring advanced reasoning and problem-solving skills. Problems range from algebra and calculus to number theory and combinatorics, emphasizing detailed solutions and proofs.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2103.03874">Measuring Mathematical Problem Solving With the MATH Dataset</a>; <a href="https://github.com/hendrycks/math">Code</a>.</li>
+</ul>
+
+<h5 id="math-500">MATH-500</h5>
+
+<ul>
+  <li><strong>Description:</strong> A subset of 500 problems from the MATH benchmark that OpenAI created in their <a href="https://arxiv.org/abs/2305.20050">Let’s Verify Step by Step</a> paper.</li>
+  <li><strong>Dataset Attributes:</strong> Subset of <a href="https://github.com/openai/prm800k/tree/main?tab=readme-ov-file#math-splits">PRM800K</a>, a process supervision dataset containing 800,000 step-level correctness labels for model-generated solutions to problems from the MATH dataset. As stated above, MATH contains complex, multi-step mathematical problems from various branches of mathematics, requiring advanced reasoning and problem-solving skills. Problems range from algebra and calculus to number theory and combinatorics, emphasizing detailed solutions and proofs.</li>
+  <li><strong>Reference:</strong> <a href="https://github.com/openai/prm800k/tree/main?tab=readme-ov-file#math-splits">Code</a></li>
+</ul>
+
+<h5 id="gsm8k-grade-school-math-8k">GSM8K (Grade School Math 8K)</h5>
+<ul>
+  <li><strong>Description:</strong> A benchmark for evaluating the reasoning capabilities of models through grade school level math problems.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of arithmetic and word problems typical of elementary school mathematics, emphasizing logical and numerical reasoning. The dataset aims to test foundational math skills and the ability to apply these skills to solve straightforward problems.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2405.00332">Can Language Models do Grade School Math?</a>.</li>
+</ul>
+
+<h5 id="metamathqa">MetaMathQA</h5>
+<ul>
+  <li><strong>Description:</strong> A diverse collection of mathematical reasoning questions that aim to evaluate and improve the problem-solving capabilities of models.</li>
+  <li><strong>Dataset Attributes:</strong> Features a wide range of question types, from elementary to advanced mathematics, emphasizing not only the final answer but also the reasoning process leading to it. The dataset includes step-by-step solutions to foster reasoning and understanding in mathematical problem-solving.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2309.12284">MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models</a>.</li>
+</ul>
+
+<h5 id="mathvista">MathVista</h5>
+<ul>
+  <li><strong>Description:</strong> An advanced dataset designed to evaluate the mathematical reasoning and problem-solving capabilities of large language models.</li>
+  <li><strong>Dataset Attributes:</strong> Contains a wide variety of mathematical problems, from elementary arithmetic to complex calculus and linear algebra. Emphasizes not only the final answer but the step-by-step reasoning process required to arrive at the solution. The dataset is curated to challenge models with both straightforward calculations and intricate proofs.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2406.XXXXX">MathVista: A Comprehensive Benchmark for Mathematical Reasoning in Language Models</a>.</li>
+</ul>
+
+<h3 id="instruction-tuning-and-evaluation">Instruction Tuning and Evaluation</h3>
+
+<h4 id="ifeval">IFEval</h4>
+
+<ul>
+  <li><strong>Description:</strong> Focuses on evaluating instruction-following models using a wide range of real-world and simulated tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises diverse tasks that require models to interpret and execute instructions accurately, ranging from straightforward to complex scenarios. The tasks include data manipulation, information extraction, and user interaction simulations, providing a comprehensive assessment of the model’s instruction-following capabilities.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2401.00001">“IFEval: A Benchmark for Instruction-Following Evaluation”</a>.</li>
+</ul>
+
+<h4 id="alpacaeval">AlpacaEval</h4>
+
+<ul>
+  <li><strong>Description:</strong> Designed to evaluate instruction-following models using a diverse set of tasks and prompts.</li>
+  <li><strong>Dataset Attributes:</strong> Contains a variety of instruction types ranging from simple tasks to complex multi-step instructions. It emphasizes the ability of models to follow and execute detailed instructions accurately. The dataset includes tasks like translation, summarization, and question answering.</li>
+  <li><strong>Reference:</strong> <a href="https://github.com/tatsu-lab/alpaca_eval">“AlpacaEval: A Comprehensive Evaluation Suite for Instruction-Following Models”</a>.</li>
+</ul>
+
+<h4 id="arena-hard">Arena Hard</h4>
+
+<ul>
+  <li><strong>Description:</strong> Designed to rigorously test instruction-following models on challenging and complex tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Features high-difficulty tasks that require nuanced understanding and execution of instructions. The tasks span various domains, including intricate problem-solving, advanced reasoning, and detailed multi-step processes, providing a thorough evaluation of the model’s capabilities.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2401.00002">“Arena Hard: Benchmarking High-Difficulty Instruction-Following Tasks”</a>.</li>
+</ul>
+
+<h4 id="flan">Flan</h4>
+
+<ul>
+  <li><strong>Description:</strong> Focuses on evaluating models trained with diverse instruction sets to assess their generalization capabilities.</li>
+  <li><strong>Dataset Attributes:</strong> Includes a wide array of tasks derived from existing benchmarks and real-world applications. The tasks span multiple domains, requiring models to adapt to various instruction styles and content areas. The benchmark is used to evaluate models trained on instruction tuning with the Flan collection.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2210.11416">“Scaling Instruction-Finetuned Language Models”</a>.</li>
+</ul>
+
+<h4 id="self-instruct">Self-Instruct</h4>
+
+<ul>
+  <li><strong>Description:</strong> Evaluates models using a method where the model generates its own instructions and responses, allowing for iterative self-improvement.</li>
+  <li><strong>Dataset Attributes:</strong> Contains tasks generated by the model itself, covering diverse areas such as common-sense reasoning, factual recall, and open-ended tasks. The benchmark tests the model’s ability to refine its instruction-following capabilities through self-generated data.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2212.10560">“Self-Instruct: Aligning Language Models with Self-Generated Instructions”</a>.</li>
+</ul>
+
+<h4 id="dolly">Dolly</h4>
+
+<ul>
+  <li><strong>Description:</strong> Evaluates models based on tasks and instructions derived from real-world use cases, emphasizing practical utility.</li>
+  <li><strong>Dataset Attributes:</strong> Includes instructions collected from enterprise use cases, focusing on practical and actionable tasks. The dataset aims to benchmark models on their ability to perform useful tasks in business and technical environments.</li>
+  <li><strong>Reference:</strong> <a href="https://www.databricks.com/blog/2023/03/24/dolly-v2-open-sourcing-6-billion-parameter-model-fine-tuned-gpt-3-5-like-instruction-dataset.html">“Dolly: Open Sourcing Instruction-Following LLMs”</a>.</li>
+</ul>
+
+<h4 id="openai-codex-evaluations">OpenAI Codex Evaluations</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark for evaluating instruction-following capabilities specifically in the context of code generation and programming tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Contains programming challenges that require models to generate code based on natural language instructions. It evaluates the model’s ability to understand and execute programming-related instructions accurately.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2107.03374">“Evaluating Large Language Models Trained on Code”</a>.</li>
+</ul>
+
+<h4 id="instructgpt-benchmarks">InstructGPT Benchmarks</h4>
+
+<ul>
+  <li><strong>Description:</strong> Used to evaluate the performance of InstructGPT models, focusing on the ability to follow detailed and complex instructions.</li>
+  <li><strong>Dataset Attributes:</strong> Encompasses a variety of tasks including creative writing, problem-solving, and detailed explanations. The benchmark aims to assess the alignment of model outputs with user-provided instructions, ensuring the model’s responses are accurate and contextually appropriate.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2203.02155">“Training language models to follow instructions with human feedback”</a>.</li>
+</ul>
+
+<h4 id="biggen-bench-big-generation-benchmark">BigGen Bench (Big Generation Benchmark)</h4>
+<ul>
+  <li><strong>Description:</strong> BigGen Bench is a comprehensive generation benchmark that evaluates large language models across nine core capabilities using instance-specific evaluation criteria. It moves beyond general assessments of helpfulness to enable nuanced, fine-grained evaluation more aligned with human judgment.</li>
+  <li><strong>Dataset Attributes:</strong> Encompasses 77 tasks and 765 instances across capabilities such as reasoning, planning, tool usage, instruction following, and more. Each instance includes detailed prompts, reference answers, and a 5-point Likert-scale rubric designed to assess specific performance attributes. Evaluations are performed using both human raters and large language model evaluators. Tasks test abilities like hypothesis generation, code revision, multi-agent planning, and cultural awareness.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2406.05761">“BigGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models”</a>.</li>
+</ul>
+
+<h3 id="multi-turn-conversation-benchmarks">Multi-Turn Conversation Benchmarks</h3>
+
+<h4 id="mtbench">MTBench</h4>
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to evaluate the performance of multi-turn dialogue systems on instruction-following tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Contains a variety of multi-turn conversations where the model must follow detailed and evolving instructions across multiple exchanges. The tasks involve complex dialogues requiring the model to maintain context and coherence over several turns.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2306.05685">“Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena”</a>.</li>
+</ul>
+
+<h4 id="mt-eval">MT-Eval</h4>
+<ul>
+  <li><strong>Description:</strong> A comprehensive benchmark designed to evaluate multi-turn conversational abilities.</li>
+  <li><strong>Dataset Attributes:</strong> By analyzing human-LLM conversations, interaction patterns are categorized into four types: recollection, expansion, refinement, and follow-up. Multi-turn queries for each category are either augmented from existing datasets or newly generated with GPT-4 to prevent data leakage. To examine factors affecting multi-turn abilities, single-turn versions of the 1170 multi-turn queries are created for performance comparison.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2401.16745">“MT-Eval: A Multi-Turn Capabilities Evaluation Benchmark for Large Language Models”</a>.</li>
+</ul>
+
+<h4 id="mutual-multi-turn-dialogue-reasoning">MuTual (Multi-Turn Dialogue Reasoning)</h4>
+<ul>
+  <li><strong>Description:</strong> A dataset designed for evaluating multi-turn reasoning in dialogue systems.</li>
+  <li><strong>Dataset Attributes:</strong> Features dialogues from Chinese high school English listening tests, requiring models to select the correct answer from multiple choices based on dialogue context. Emphasizes reasoning over multiple turns to derive the correct conclusion.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2004.04494">“MuTual: A Dataset for Multi-Turn Dialogue Reasoning”</a>.</li>
+</ul>
+
+<h4 id="dailydialog">DailyDialog</h4>
+<ul>
+  <li><strong>Description:</strong> A high-quality multi-turn dialogue dataset covering a wide range of everyday topics and scenarios.</li>
+  <li><strong>Dataset Attributes:</strong> Contains dialogues involving various everyday scenarios, annotated for dialogue act, emotion, and topic. Aimed at training and evaluating models on natural, human-like conversation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1710.03957">“DailyDialog: A Manually Labelled Multi-turn Dialogue Dataset”</a>.</li>
+</ul>
+
+<h4 id="multiwoz-multi-domain-wizard-of-oz">MultiWOZ (Multi-Domain Wizard of Oz)</h4>
+<ul>
+  <li><strong>Description:</strong> A comprehensive dataset for multi-turn task-oriented dialogues spanning multiple domains.</li>
+  <li><strong>Dataset Attributes:</strong> Includes dialogues that span multiple domains like booking, travel, and restaurant reservations, annotated with user intents and system responses. Designed to train models for complex dialogue management across different domains.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1810.00278">“MultiWOZ - A Large-Scale Multi-Domain Wizard-of-Oz Dataset for Task-Oriented Dialogue Modelling”</a>.</li>
+</ul>
+
+<h4 id="taskmaster">Taskmaster</h4>
+<ul>
+  <li><strong>Description:</strong> A diverse dataset for multi-turn conversations that include both spoken and written interactions.</li>
+  <li><strong>Dataset Attributes:</strong> Covers several domains with conversations sourced from both human-human and human-machine interactions, providing a rich resource for training dialogue systems on varied conversational data.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1909.05358">“Taskmaster-1: Toward a Realistic and Diverse Dialog Dataset”</a>.</li>
+</ul>
+
+<h4 id="persona-chat">Persona-Chat</h4>
+<ul>
+  <li><strong>Description:</strong> A dataset focusing on persona-based dialogues to test models’ ability to maintain consistent personality traits across conversations.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of conversations where each participant has a predefined persona, requiring models to generate responses that are consistent with the given persona traits. Designed to foster more engaging and personalized dialogues.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1801.07243">“Personalizing Dialogue Agents: I have a dog, do you have pets too?”</a>.</li>
+</ul>
+
+<h4 id="dialogre">DialogRE</h4>
+<ul>
+  <li><strong>Description:</strong> A large-scale dialog reasoning benchmark focusing on relational extraction from conversations.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of dialogue instances annotated with relational facts, testing the model’s ability to understand and extract relationships from multi-turn dialogues. Includes a variety of domains and conversational contexts.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2004.08056">“Dialogue-Based Relation Extraction”</a>.</li>
+</ul>
+
+<h3 id="reward-model-evaluation">Reward Model Evaluation</h3>
+
+<h4 id="rewardbench">RewardBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to assess reward model capabilities in four categories: Chat, Chat-Hard, Safety, and Reasoning.</li>
+  <li><strong>Dataset Attributes:</strong> A collection of prompt-chosen-rejected trios spanning chat, reasoning, and safety, to benchmark how reward models perform on challenging, structured, and out-of-distribution queries. Specific comparison datasets are created for RMs that involve subtle but verifiable reasons (e.g., bugs, incorrect facts) for preferring one answer over another.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2403.13787">“RewardBench: Evaluating Reward Models for Language Modeling”</a>.
+You’re right! Below is the properly formatted version, where each benchmark is a sub-section with its own bullets.</li>
+</ul>
+
+<h3 id="medical-benchmarks">Medical Benchmarks</h3>
+
+<ul>
+  <li>In the medical/biomedical field, benchmarks play a critical role in evaluating the ability of AI models to handle domain-specific tasks such as clinical decision support, medical image analysis, and processing of biomedical literature. Below is an overview of common benchmarks in these areas, including dataset attributes and references to original papers.</li>
+</ul>
+
+<h4 id="clinical-decision-support-and-patient-outcomes">Clinical Decision Support and Patient Outcomes</h4>
+
+<h5 id="mimic-iii-medical-information-mart-for-intensive-care">MIMIC-III (Medical Information Mart for Intensive Care)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A widely used dataset comprising de-identified health data associated with over forty thousand patients who stayed in critical care units. This dataset is used for tasks such as predicting patient outcomes, extracting clinical information, and generating clinical notes.</li>
+  <li><strong>Dataset Attributes:</strong> Includes notes, lab test results, vital signs, medication records, diagnostic codes, and demographic information, requiring a comprehensive understanding of medical terminology, clinical narratives, and patient history.</li>
+  <li><strong>Reference:</strong> <a href="https://www.nature.com/articles/sdata201635">“The MIMIC-III Clinical Database”</a></li>
+</ul>
+
+<h4 id="biomedical-question-answering">Biomedical Question Answering</h4>
+
+<h5 id="bioasq">BioASQ</h5>
+
+<ul>
+  <li><strong>Description:</strong> A challenge for testing biomedical semantic indexing and question-answering capabilities. The tasks include factoid, list-based, yes/no, and summary questions based on biomedical research articles.</li>
+  <li><strong>Dataset Attributes:</strong> Questions are crafted from the titles and abstracts of articles in PubMed, challenging models to retrieve and generate precise biomedical information. Includes large-scale training data and evaluation metrics that focus on precision and recall.</li>
+  <li><strong>Reference:</strong> <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0564-6">“BioASQ: A challenge on large-scale biomedical semantic indexing and question answering”</a></li>
+</ul>
+
+<h5 id="medqa-usmle">MedQA (USMLE)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A question-answering benchmark based on the United States Medical Licensing Examination, which assesses a model’s ability to reason with medical knowledge under exam conditions.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of multiple-choice questions with detailed explanations, reflecting real-world medical licensing exam scenarios that test comprehensive medical knowledge, clinical reasoning, and problem-solving skills.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2009.13081">“What Disease does this Patient Have? A Large-scale Open Domain Question Answering Dataset from Medical Exams”</a></li>
+</ul>
+
+<h5 id="multimedqa">MultiMedQA</h5>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark collection that integrates multiple datasets for evaluating question answering across various medical fields, including consumer health, clinical medicine, and genetics.</li>
+  <li><strong>Dataset Attributes:</strong> Incorporates questions from several sources, requiring broad and deep medical knowledge across diverse sub-disciplines. Includes tasks such as multiple-choice questions, evidence retrieval, and fact verification.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2207.02715">“MultiMedQA: Large-scale Multi-domain Medical Question Answering”</a></li>
+</ul>
+
+<h5 id="pubmedqa">PubMedQA</h5>
+
+<ul>
+  <li><strong>Description:</strong> A dataset for natural language question-answering using abstracts from PubMed as the context, focusing on yes/no questions.</li>
+  <li><strong>Dataset Attributes:</strong> Questions derived from PubMed article titles with answers provided in the abstracts, emphasizing models’ ability to extract and verify factual information from scientific texts. Includes a balanced distribution of yes, no, and maybe answers.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1909.06146">“PubMedQA: A Dataset for Biomedical Research Question Answering”</a></li>
+</ul>
+
+<h5 id="medmcqa">MedMCQA</h5>
+
+<ul>
+  <li><strong>Description:</strong> A medical multiple-choice question-answering benchmark that evaluates comprehensive understanding and application of medical concepts.</li>
+  <li><strong>Dataset Attributes:</strong> Features challenging multiple-choice questions that cover a wide range of medical topics, testing not only knowledge but also deep understanding and reasoning skills in medical contexts. Questions are sourced from medical exams and expert annotations.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2203.14371">“MedMCQA: A Large-scale Multi-domain Clinical Question Answering Dataset”</a></li>
+</ul>
+
+<h4 id="biomedical-language-understanding">Biomedical Language Understanding</h4>
+
+<h5 id="blue-biomedical-language-understanding-evaluation">BLUE (Biomedical Language Understanding Evaluation)</h5>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark consisting of several diverse biomedical NLP tasks such as named entity recognition, relation extraction, and sentence similarity in the biomedical domain.</li>
+  <li><strong>Dataset Attributes:</strong> Utilizes various biomedical corpora, including PubMed abstracts, clinical trial reports, and electronic health records, emphasizing specialized language understanding and entity relations. Tasks are designed to evaluate both generalization and specialization in biomedical contexts.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1906.05474">“BLUE: The Biomedical Language Understanding Evaluation Benchmark”</a></li>
+</ul>
+
+<h3 id="software-development-benchmarks">Software Development Benchmarks</h3>
+
+<ul>
+  <li>These benchmarks challenge models on various aspects such as code generation, understanding, and debugging. Below is a detailed overview of common benchmarks used for evaluating code LLMs, including the attributes of their datasets and references to the original papers where these benchmarks were proposed.</li>
+</ul>
+
+<h4 id="humaneval-1">HumanEval</h4>
+
+<ul>
+  <li><strong>Description:</strong> This benchmark is designed to test the ability of language models to generate code. It consists of a set of Python programming problems that require writing function definitions from scratch.</li>
+  <li><strong>Dataset Attributes:</strong> Includes 164 hand-crafted programming problems covering a range of difficulty levels, requiring understanding of problem statements and generation of functionally correct and efficient code. Problems are evaluated based on correctness and execution results.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2107.03374">“Evaluating Large Language Models Trained on Code”</a></li>
+</ul>
+
+<h4 id="humaneval-2">HumanEval+</h4>
+
+<ul>
+  <li><strong>Description:</strong> An extension of the HumanEval benchmark, aimed at assessing the ability of models to handle more intricate and diverse code generation tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Includes a set of 300 Python programming problems that span a wider range of difficulty levels and require more sophisticated solutions. The problems are designed to test deeper understanding and creativity in code generation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2402.56789">“HumanEval+: Extending HumanEval for Advanced Code Generation Tasks”</a></li>
+</ul>
+
+<h4 id="mostly-basic-programming-problems-mbpp">Mostly Basic Programming Problems (MBPP)</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark consisting of simple Python coding problems intended to evaluate the capabilities of code generation models in solving basic programming tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 974 Python programming problems, focusing on basic functionalities and common programming tasks that are relatively straightforward to solve. Problems range from simple arithmetic to basic data manipulation and control structures.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2108.07732">“Program Synthesis with Large Language Models”</a></li>
+</ul>
+
+<h4 id="mbpp">MBPP+</h4>
+
+<ul>
+  <li><strong>Description:</strong> An extension of the MBPP benchmark, designed to evaluate more complex and diverse programming tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises an expanded set of 1500 Python programming problems, including more complex and diverse tasks that require deeper problem-solving skills and understanding of advanced programming concepts. The problems cover a broader range of real-world scenarios and applications.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2305.01210">“Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation”</a></li>
+</ul>
+
+<h4 id="swe-bench-1">SWE-Bench</h4>
+
+<ul>
+  <li><strong>Description:</strong> This benchmark evaluates the ability of language models to generate software engineering-related code, focusing on practical tasks encountered in the industry.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises a diverse set of software engineering tasks, including bug fixing, feature implementation, and code refactoring. The problems require understanding software specifications and generating correct and maintainable code.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2310.06770">“SWE-bench: Can Language Models Resolve Real-World GitHub Issues?”</a></li>
+</ul>
+
+<h4 id="swe-bench-verified">SWE-Bench Verified</h4>
+
+<ul>
+  <li><strong>Description:</strong> A comprehensive benchmark evaluating models on practical software engineering tasks such as feature implementation, bug fixing, and code refactoring.</li>
+  <li><strong>Dataset Attributes:</strong> Focuses on real-world software engineering challenges sourced from GitHub repositories. Problems require understanding of detailed specifications and generation of efficient, maintainable code. Evaluation is based on correctness, maintainability, and alignment with engineering practices.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2310.06770">“SWE-bench: Can Language Models Resolve Real-World GitHub Issues?”</a></li>
+</ul>
+
+<h4 id="aider">Aider</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark aimed at assessing the capabilities of models in aiding software development by providing intelligent code suggestions and improvements.</li>
+  <li><strong>Dataset Attributes:</strong> Includes a variety of real-world coding scenarios where models are evaluated based on their ability to offer meaningful code suggestions, improvements, and refactoring options. The dataset spans multiple programming languages and development contexts.</li>
+  <li><strong>Reference:</strong> <a href="https://github.com/paul-gauthier/aider">Paul Gauthier’s GitHub</a></li>
+</ul>
+
+<h4 id="multipl-e">MultiPL-E</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to evaluate the performance of language models across multiple programming languages.</li>
+  <li><strong>Dataset Attributes:</strong> Contains a variety of programming problems that are translated into several programming languages, including Python, JavaScript, Java, and C++. The benchmark tests the model’s ability to understand and generate code in different syntaxes and paradigms.</li>
+  <li><strong>Reference:</strong> <a href="http://arxiv.org/abs/2208.08227">“MultiPL-E: A Scalable and Extensible Approach to Benchmarking Neural Code Generation”</a></li>
+</ul>
+
+<h4 id="bigcodebench">BigCodeBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> A benchmark to evaluate LLMs on challenging and complex coding tasks focused on realistic, function-level tasks that require the use of diverse libraries and complex reasoning.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 1,140 tasks with 5.6 test cases each, covering 139 libraries in Python. Uses Pass@1 with greedy decoding and Elo rating for comprehensive evaluation. Tasks are created in a three-stage process, including synthetic data generation and cross-validation by humans. The best model is GPT-4 with 61.1%, followed by DeepSeek-Coder-V2. Best open model is DeepSeek-Coder-V2 with 59.7%, better than Claude 3 Opus or Gemini. Evaluation framework and Docker images are available for easy reproduction. Plans to extend to multilingualism.</li>
+  <li><strong>Reference:</strong> <a href="https://github.com/bigcode-project/bigcodebench">Code</a>; <a href="https://huggingface.co/blog/leaderboard-bigcodebench">Blog</a>; <a href="https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard">Leaderboard</a></li>
+</ul>
+
+<h4 id="swe-lancer">SWE-Lancer</h4>
+
+<ul>
+  <li><strong>Description:</strong> SWE-Lancer is a benchmark of over 1,400 real-world freelance software engineering tasks sourced from Upwork, valued at $1 million in payouts. It includes both independent engineering tasks (ranging from $50 bug fixes to $32,000 feature implementations) and managerial tasks, where models must choose between technical implementation proposals.</li>
+  <li><strong>Dataset Attributes:</strong> Independent tasks are graded using triple-verified end-to-end tests by experienced software engineers, while managerial decisions are assessed against original engineering managers’ choices. The benchmark provides an economic impact analysis by mapping model performance to monetary value.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2502.12115">“SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?”</a> and <a href="https://openai.com/index/swe-lancer/">“Introducing the SWE-Lancer Benchmark”</a></li>
+</ul>
+
+<h4 id="code-debugging-and-error-detection">Code Debugging and Error Detection</h4>
+
+<h5 id="ds-1000-deepsource-python-bugs-dataset">DS-1000 (DeepSource Python Bugs Dataset)</h5>
+<ul>
+  <li><strong>Description:</strong> This dataset is used to evaluate the ability of models to detect bugs in Python code. It includes a diverse set of real-world bugs.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises 1000 annotated Python functions with detailed bug annotations, testing models on their ability to identify and understand common coding errors. The dataset includes both syntactic and semantic bugs, providing a comprehensive debugging challenge.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2211.11501">“DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation”</a></li>
+</ul>
+
+<h5 id="livecodebench">LiveCodeBench</h5>
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to test the effectiveness of code generation models in real-time collaborative coding environments.</li>
+  <li><strong>Dataset Attributes:</strong> Features a collection of coding tasks designed to simulate live coding sessions where models need to provide accurate and timely code completions and suggestions. The tasks cover various programming languages and development frameworks.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2403.07974">“LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code”</a></li>
+</ul>
+
+<h4 id="comprehensive-code-understanding-and-multi-language-evaluation">Comprehensive Code Understanding and Multi-language Evaluation</h4>
+
+<h5 id="codexglue">CodeXGLUE</h5>
+<ul>
+  <li><strong>Description:</strong> A comprehensive benchmark that includes multiple tasks like code completion, code translation, and code repair across various programming languages.</li>
+  <li><strong>Dataset Attributes:</strong> Encompasses a range of programming challenges and languages, providing a broad assessment of models’ code understanding and generation across different contexts. The benchmark includes tasks for code summarization, code search, and clone detection, covering languages like Python, Java, and more.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2102.04664">“CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation”</a></li>
+</ul>
+
+<h4 id="algorithmic-problem-solving">Algorithmic Problem Solving</h4>
+
+<h5 id="competition-code-codeforces">Competition Code (Codeforces)</h5>
+<ul>
+  <li><strong>Description:</strong> This benchmark includes competitive programming problems sourced from the Codeforces platform, known for its rigorous contests.</li>
+  <li><strong>Dataset Attributes:</strong> Features diverse problems covering areas like graph theory, dynamic programming, and computational geometry. Problems span beginner to advanced levels, requiring optimization and algorithmic depth.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2312.02143">“Competition-Level Problems are Effective LLM Evaluators”</a></li>
+</ul>
+
+<h5 id="leetcode-problems">LeetCode Problems</h5>
+<ul>
+  <li><strong>Description:</strong> A widely used benchmark for algorithmic problem solving, offering a comprehensive set of problems that test various algorithmic and data structure concepts.</li>
+  <li><strong>Dataset Attributes:</strong> Features thousands of problems across different categories such as arrays, linked lists, dynamic programming, and more. Problems range from easy to hard, providing a robust platform for evaluating algorithmic problem-solving skills.</li>
+  <li><strong>Reference:</strong> <a href="https://www.kaggle.com/datasets/eemanmajumder/the-leetcode-solution-dataset">The LeetCode Solution Dataset on Kaggle</a></li>
+</ul>
+
+<h5 id="codeforces-problems">Codeforces Problems</h5>
+<ul>
+  <li><strong>Description:</strong> This benchmark includes competitive programming problems from Codeforces, a platform known for its challenging contests and diverse problem sets.</li>
+  <li><strong>Dataset Attributes:</strong> Contains problems that are designed to test deep algorithmic understanding and optimization skills. The problems vary in difficulty and cover a wide range of topics including graph theory, combinatorics, and computational geometry.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2312.02143">“Competition-Level Problems are Effective LLM Evaluators”</a></li>
+</ul>
+
+<!-- 
+- **APP (Algorithms Problems from Programming):** Focuses on algorithmic problem-solving skills by presenting problems typically found in programming competitions.
+  - **Dataset Attributes:** Challenges models with complex algorithmic questions that require not only the correct code but also efficiency and optimization. Problems include dynamic programming, graph algorithms, and computational geometry, emphasizing optimal solutions and performance.
+  - **Reference:** ["CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation"](https://arxiv.org/abs/2102.04664) -->
+<h2 id="vision-language-models-vlms">Vision-Language Models (VLMs)</h2>
+
+<ul>
+  <li>VLMs are pivotal in AI research as they combine visual data with linguistic elements, offering insights into how machines can interpret and generate human-like responses based on visual inputs. This section delves into key benchmarks that test these hybrid capabilities.</li>
+</ul>
+
+<h3 id="visual-question-answering">Visual Question Answering</h3>
+
+<h4 id="visual-question-answering-vqa-and-vqav2">Visual Question Answering (VQA) and VQAv2</h4>
+<ul>
+  <li><strong>Description:</strong> Requires models to answer questions about images, testing both visual comprehension and language processing.</li>
+  <li><strong>Dataset Attributes:</strong> Combines real and abstract images with questions that require understanding of object properties, spatial relationships, and activities. VQA includes open-ended questions, while VQAv2 provides a balanced dataset to reduce language biases.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1505.00468">“VQA: Visual Question Answering”</a> and its subsequent updates.</li>
+</ul>
+
+<h4 id="textvqa">TextVQA</h4>
+<ul>
+  <li><strong>Description:</strong> Focuses on models’ ability to answer questions based on textual information found within images, testing the intersection of visual and textual understanding.</li>
+  <li><strong>Dataset Attributes:</strong> Comprises images containing text in various forms, such as signs, documents, and advertisements. The questions require models to read and comprehend the text within the image to provide accurate answers. The dataset includes a diverse set of images and questions to evaluate comprehensive visual-textual reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1904.08920">“TextVQA: Toward VQA Models That Can Read”</a></li>
+</ul>
+
+<h4 id="humanitys-last-exam-hle">Humanity’s Last Exam (HLE)</h4>
+
+<ul>
+  <li><strong>Description:</strong> HLE is a multi-modal benchmark designed to be the final closed-ended academic benchmark of its kind, testing the limits of LLM capabilities in visual and textual reasoning. It consists of 2,700 highly challenging questions spanning mathematics, humanities, and the natural sciences, developed by global subject-matter experts.</li>
+  <li><strong>Dataset Attributes:</strong> Questions are formatted as either multiple-choice or short-answer, with some requiring image references for comprehension. Each question is verified for difficulty, ensuring it cannot be easily solved by current LLMs. HLE aims to provide a precise measurement of model capabilities as they approach expert human-level knowledge.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2501.14249">“Humanity’s Last Exam”</a></li>
+</ul>
+
+<h3 id="image-captioning">Image Captioning</h3>
+
+<h4 id="mscoco-captions">MSCOCO Captions</h4>
+<ul>
+  <li><strong>Description:</strong> Models generate captions for images, focusing on accuracy and relevance of the visual descriptions.</li>
+  <li><strong>Dataset Attributes:</strong> Real-world images with annotations requiring descriptive and detailed captions that cover a broad range of everyday scenes and objects. The dataset includes over 330,000 images with five captions each, emphasizing diversity in descriptions.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1405.0312">“Microsoft COCO: Common Objects in Context”</a></li>
+</ul>
+
+<h4 id="visualgenome-captions">VisualGenome Captions</h4>
+<ul>
+  <li><strong>Description:</strong> Provides detailed scene descriptions to enable models to generate fine-grained and context-aware captions.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 108,077 images with region-based annotations, where each image is densely labeled with multiple region captions. The dataset emphasizes relationships between objects and detailed scene understanding.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1602.07332">“Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations”</a></li>
+</ul>
+
+<h4 id="flickr30k-captions">Flickr30K Captions</h4>
+<ul>
+  <li><strong>Description:</strong> Focuses on describing visual content in natural language with an emphasis on human-centered and everyday scenes.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 30,000 images, each paired with five captions describing people, objects, and activities. The dataset is widely used for evaluating captioning models’ ability to generate human-like descriptions.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1505.04870">“Flickr30K Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models”</a></li>
+</ul>
+
+<h4 id="conceptual-captions">Conceptual Captions</h4>
+<ul>
+  <li><strong>Description:</strong> Captions are automatically generated from web data, making the dataset suitable for training large-scale captioning models.</li>
+  <li><strong>Dataset Attributes:</strong> Contains approximately 3.3 million images with automatically generated captions extracted from web pages. The dataset focuses on diverse and noisy real-world captions, making it useful for training models on large-scale noisy data.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1803.09195">“Conceptual Captions: A Cleaned, Hypernymed, Image Alt-Text Dataset For Automatic Image Captioning”</a></li>
+</ul>
+
+<h3 id="visual-reasoning">Visual Reasoning</h3>
+
+<h4 id="nlvr2-natural-language-for-visual-reasoning-for-real">NLVR2 (Natural Language for Visual Reasoning for Real)</h4>
+<ul>
+  <li><strong>Description:</strong> Evaluates reasoning about the relationship between textual descriptions and image pairs.</li>
+  <li><strong>Dataset Attributes:</strong> Pairs of photographs with text statements that models must verify, focusing on logical reasoning across visually disparate images. The dataset includes complex visual scenes requiring fine-grained reasoning about relationships and attributes.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1811.00491">“A Corpus for Reasoning About Natural Language Grounded in Photographs”</a></li>
+</ul>
+
+<h4 id="mmbench">MMBench</h4>
+<ul>
+  <li><strong>Description:</strong> Provides a comprehensive evaluation of models’ multimodal understanding across different tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Includes tasks such as visual question answering, image captioning, and visual reasoning, focusing on the integration and understanding of visual and textual data. The dataset is designed to challenge models with a wide range of scenarios requiring both linguistic and visual comprehension.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2307.06281">“MMBench: A Comprehensive Multimodal Benchmark for Evaluating Vision-Language Models”</a></li>
+</ul>
+
+<h4 id="mmmu-massive-multi-discipline-multimodal-understanding">MMMU (Massive Multi-discipline Multimodal Understanding)</h4>
+<ul>
+  <li><strong>Description:</strong> Tests models’ ability to understand and generate responses based on both visual and textual stimuli.</li>
+  <li><strong>Dataset Attributes:</strong> Involves tasks like visual question answering, image captioning, and visual reasoning, testing both visual and textual understanding. The dataset includes diverse multimodal tasks designed to evaluate comprehensive understanding and generation abilities.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2311.16502">“MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI”</a></li>
+</ul>
+
+<h3 id="video-understanding">Video Understanding</h3>
+
+<h4 id="perception-test">Perception Test</h4>
+<ul>
+  <li><strong>Description:</strong> A benchmark designed to evaluate models on understanding and interpreting video content.</li>
+  <li><strong>Dataset Attributes:</strong> Video sequences requiring models to interpret dynamic scenes, focusing on object detection, movement prediction, and scene classification. The dataset includes real-world driving scenarios, making it relevant for autonomous vehicle research.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1905.00780">“Perception Test: Benchmark for Autonomous Vehicle Perception”</a></li>
+</ul>
+
+<h3 id="document-understanding">Document Understanding</h3>
+
+<h4 id="table-understanding">Table Understanding</h4>
+
+<h5 id="tat-qa-tabular-and-text-question-answering">TAT-QA (Tabular and Text Question Answering)</h5>
+<ul>
+  <li><strong>Description:</strong> A benchmark for answering questions that require reasoning over tabular data and associated textual context.</li>
+  <li><strong>Dataset Attributes:</strong> Includes complex questions that demand multi-hop reasoning between tables and text. The dataset covers diverse domains like business and finance.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2103.13614">“TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance”</a>.</li>
+</ul>
+
+<h5 id="tabfact">TabFact</h5>
+<ul>
+  <li><strong>Description:</strong> A fact-checking benchmark for tables, where models must verify whether a natural language statement is entailed or contradicted by a table.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 16,000 tables and 118,000 statements, testing models’ ability to comprehend, retrieve, and reason with structured data.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1909.02164">“TabFact: A Large-scale Dataset for Table-based Fact Verification”</a>.</li>
+</ul>
+
+<h5 id="wikitables-questions-wtq">WikiTables Questions (WTQ)</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset for semantic parsing over tables, requiring models to generate SQL-like queries to answer natural language questions.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of 22,000 questions based on Wikipedia tables, emphasizing logical reasoning and structured query generation.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1608.03902">“The WikiTables Dataset: A Complex Real-World Table Question Answering Benchmark”</a>.</li>
+</ul>
+
+<h5 id="chartqa">ChartQA</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset focused on question answering over chart-based visual data, requiring models to interpret visual encodings and numerical data.</li>
+  <li><strong>Dataset Attributes:</strong> Contains questions designed to test comprehension of visualizations such as bar charts, line graphs, and pie charts, demanding reasoning over chart elements and associated metadata.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2203.10244">“ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning”</a>.</li>
+</ul>
+
+<h4 id="scientific-documents">Scientific Documents</h4>
+
+<h5 id="scrolls-summarization-and-cross-document-reasoning">SCROLLS (Summarization and Cross-document Reasoning)</h5>
+<ul>
+  <li><strong>Description:</strong> Evaluates long-context reasoning across scientific documents, requiring multi-document synthesis for summarization and question answering.</li>
+  <li><strong>Dataset Attributes:</strong> Includes tasks such as summarization and question answering over extended scientific texts.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2201.03533">“SCROLLS: Standardized CompaRison Over Long Language Sequences”</a>.</li>
+</ul>
+
+<h5 id="pubmedqa-1">PubMedQA</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset focusing on biomedical literature, designed for question answering tasks requiring comprehension of scientific abstracts.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 1,000 annotated questions derived from PubMed, with yes/no/maybe answers, promoting domain-specific reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1909.06146">“PubMedQA: A Dataset for Biomedical Research Question Answering”</a>.</li>
+</ul>
+
+<h5 id="arxivqa">ArxivQA</h5>
+<ul>
+  <li><strong>Description:</strong> A question-answering benchmark built on scientific papers from arXiv.org, challenging models to extract and reason with domain-specific information.</li>
+  <li><strong>Dataset Attributes:</strong> Contains real-world questions requiring complex reasoning and synthesis from scientific documents.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2305.06499">“ArxivQA: Open-Domain Question Answering over ArXiv Papers”</a>.</li>
+</ul>
+
+<h4 id="legal-and-financial-documents">Legal and Financial Documents</h4>
+
+<h5 id="contract-understanding-atticus-dataset-cuad">Contract Understanding Atticus Dataset (CUAD)</h5>
+<ul>
+  <li><strong>Description:</strong> Designed to test models’ ability to identify clauses and extract structured information from legal contracts.</li>
+  <li><strong>Dataset Attributes:</strong> Includes 13,000 annotations over 510 contracts, emphasizing legal reasoning and clause comprehension.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2103.06268">“CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review”</a>.</li>
+</ul>
+
+<h5 id="finqa-financial-question-answering">FINQA (Financial Question Answering)</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset focusing on quantitative reasoning over financial documents, requiring both numerical and textual comprehension.</li>
+  <li><strong>Dataset Attributes:</strong> Includes complex questions requiring reasoning over tables, textual explanations, and multi-step calculations.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2109.00120">“FINQA: A Dataset for Numerical Reasoning over Financial Data”</a>.</li>
+</ul>
+
+<h5 id="caselawqa">CaseLawQA</h5>
+<ul>
+  <li><strong>Description:</strong> Focused on extracting and reasoning with information from legal case documents.</li>
+  <li><strong>Dataset Attributes:</strong> Includes questions that test the understanding of legal precedents, reasoning, and structured information retrieval.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2305.05612">“CaseLawQA: A Dataset for Question Answering on Legal Case Documents”</a>.</li>
+</ul>
+
+<h4 id="multimodal-documents">Multimodal Documents</h4>
+
+<h5 id="docvqa">DocVQA</h5>
+<ul>
+  <li><strong>Description:</strong> A dataset for visual question answering over scanned documents, requiring models to reason with textual and visual elements.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 50,000 questions across 12,000 documents, promoting OCR capabilities and multimodal reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2007.00398">“DocVQA: A Dataset for VQA on Document Images”</a>.</li>
+</ul>
+
+<h5 id="infographicvqa">InfographicVQA</h5>
+<ul>
+  <li><strong>Description:</strong> Focuses on question answering using information from infographics, combining text, visuals, and numerical data.</li>
+  <li><strong>Dataset Attributes:</strong> Contains questions requiring multi-modal understanding of infographic charts, diagrams, and annotations.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2106.12638">“InfographicVQA: A Benchmark for Question Answering on Infographic Visualizations”</a>.</li>
+</ul>
+
+<h5 id="visualmrc-multimodal-reading-comprehension">VisualMRC (Multimodal Reading Comprehension)</h5>
+<ul>
+  <li><strong>Description:</strong> Evaluates reading comprehension tasks over multimodal documents with text, images, and charts.</li>
+  <li><strong>Dataset Attributes:</strong> Includes tasks like answering questions based on multimodal content, integrating visual understanding with textual reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2203.05234">“Multimodal Reading Comprehension with Multimodal Pre-trained Models”</a>.</li>
+</ul>
+
+<h5 id="omnidocbench">OmniDocBench</h5>
+<ul>
+  <li><strong>Description:</strong> A comprehensive benchmark for document content extraction across diverse PDF types using multimodal input, enabling both module-level and end-to-end evaluation.</li>
+  <li><strong>Dataset Attributes:</strong> Contains 981 richly annotated pages from 9 document types (e.g., papers, textbooks, exam sheets), annotated with layout, reading order, and recognition attributes including text, tables, and formulas. Supports evaluations under various layout types and visual conditions (e.g., fuzzy scans, watermarks).</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2412.07626">“OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations”</a>.</li>
+</ul>
+
+<h3 id="medical-vlm-benchmarks">Medical VLM Benchmarks</h3>
+
+<ul>
+  <li>Medical VLMs are essential in merging AI’s visual and linguistic analysis for healthcare applications. They are pivotal for developing systems that can interpret complex medical imagery alongside textual data, enhancing diagnostic accuracy and treatment efficiency. This section explores major benchmarks testing these interdisciplinary skills.</li>
+</ul>
+
+<h4 id="medical-image-annotation-and-retrieval">Medical Image Annotation and Retrieval</h4>
+
+<h5 id="imageclefmed">ImageCLEFmed</h5>
+
+<ul>
+  <li><strong>Description:</strong> Part of the ImageCLEF challenge, this benchmark tests image-based information retrieval, automatic annotation, and visual question answering using medical images.</li>
+  <li><strong>Dataset Attributes:</strong> Contains a wide array of medical imaging types, including radiographs, histopathology images, and MRI scans, necessitating the interpretation of complex visual medical data. Tasks range from multi-label classification to segmentation and retrieval.</li>
+  <li><strong>Reference:</strong> <a href="https://link.springer.com/chapter/10.1007/978-3-642-15754-7_37">“ImageCLEF - the CLEF 2009 Cross-Language Image Retrieval Track”</a></li>
+</ul>
+
+<h4 id="disease-classification-and-detection">Disease Classification and Detection</h4>
+
+<h5 id="chexpert">CheXpert</h5>
+
+<ul>
+  <li><strong>Description:</strong> A large dataset of chest radiographs for identifying and classifying key thoracic pathologies. This benchmark is often used for tasks that involve reading and interpreting X-ray images.</li>
+  <li><strong>Dataset Attributes:</strong> Consists of over 200,000 chest radiographs annotated with findings from radiology reports, challenging models to accurately detect and diagnose multiple conditions such as pneumonia, pleural effusion, and cardiomegaly.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/1901.07031">“CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison”</a></li>
+</ul>
+
+<h5 id="diabetic-retinopathy-detection">Diabetic Retinopathy Detection</h5>
+
+<ul>
+  <li><strong>Description:</strong> Focused on the classification of retinal images to diagnose diabetic retinopathy, a common cause of vision loss.</li>
+  <li><strong>Dataset Attributes:</strong> Features high-resolution retinal images, where models need to detect subtle indicators of disease progression, requiring high levels of visual detail recognition. The dataset includes labels for different stages of retinopathy, emphasizing early detection and severity assessment.</li>
+  <li><strong>Reference:</strong> <a href="https://www.kaggle.com/c/diabetic-retinopathy-detection/data">Diabetic Retinopathy Detection on Kaggle</a></li>
+</ul>
+
+<h3 id="multimodal-agents">Multimodal Agents</h3>
+
+<ul>
+  <li>LLM-based agents are increasingly being developed for autonomous tasks such as web navigation, tool use, and real-world problem-solving. However, their evaluation requires specialized benchmarks that assess not only static model performance but also interactive capabilities, adaptability, and long-term decision-making.</li>
+  <li>These benchmarks evaluate agents that operate across multiple modalities, such as vision, action, and interactive simulations, beyond pure text-based reasoning.</li>
+</ul>
+
+<h4 id="osworld">OSWorld</h4>
+
+<ul>
+  <li><strong>Description:</strong> OSWorld evaluates multimodal agents that support task setup, execution-based evaluation, and interactive learning across operating systems. It can serve as a unified environment for evaluating open-ended computer tasks that involve arbitrary applications.</li>
+  <li><strong>Dataset Attributes:</strong> Designed to assess adaptability to new conditions and autonomous decision-making in an unpredictable setting.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2404.07972">“OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments”</a></li>
+</ul>
+
+<h4 id="webarena">WebArena</h4>
+
+<ul>
+  <li><strong>Description:</strong> WebArena is a benchmark that assesses LLM agents’ ability to interact with web interfaces, perform searches, and complete form-filling tasks in realistic browser-based environments.</li>
+  <li><strong>Dataset Attributes:</strong> Uses high-fidelity web simulations to test goal-directed web navigation and interaction capabilities.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2307.13854">“WebArena: A Realistic Web Environment for Building Autonomous Agents”</a></li>
+</ul>
+
+<h4 id="webvoyager">WebVoyager</h4>
+
+<ul>
+  <li><strong>Description:</strong> WebVoyager evaluates the autonomous exploration abilities of LLM agents, requiring them to browse, extract, and process information from diverse websites.</li>
+  <li><strong>Dataset Attributes:</strong> Tests adaptability to unfamiliar web structures, goal-directed browsing, and information retrieval efficiency.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2401.13919">“WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models”</a></li>
+</ul>
+
+<h4 id="general-ai-agent-benchmark-gaia">General AI Agent Benchmark (GAIA)</h4>
+
+<ul>
+  <li><strong>Description:</strong> GAIA assesses the robustness and problem-solving skills of AI agents across multiple domains, including gaming, online environments, and decision-making tasks.</li>
+  <li><strong>Dataset Attributes:</strong> Emphasizes general intelligence, multi-step reasoning, and adaptability across different test environments.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2311.12983">“GAIA: A General AI Agent Benchmark”</a></li>
+</ul>
+
+<h4 id="interactive-grounded-language-understanding-iglu">Interactive Grounded Language Understanding (IGLU)</h4>
+
+<ul>
+  <li><strong>Description:</strong> IGLU tests LLM-based agents in interactive 3D environments where they must understand natural language commands and manipulate objects accordingly.</li>
+  <li><strong>Dataset Attributes:</strong> Focuses on spatial reasoning, multi-modal understanding, and real-time task execution.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2107.09081">“IGLU: Interactive Grounded Language Understanding in a Collaborative Environment”</a></li>
+</ul>
+
+<h4 id="mlagentbench">MLAgentBench</h4>
+
+<ul>
+  <li><strong>Description:</strong> MLAgentBench is a benchmark designed for reinforcement learning agents powered by LLMs. It evaluates learning efficiency, adaptability, and performance across standardized RL environments.</li>
+  <li><strong>Dataset Attributes:</strong> Emphasizes reinforcement learning principles in conjunction with LLM-based reasoning.</li>
+  <li><strong>Reference:</strong> <a href="https://arxiv.org/abs/2312.06789">“MLAgentBench: Evaluating RL Agents in Multi-Modal Environments”</a></li>
+</ul>
+
+<h2 id="common-challenges-across-benchmarks">Common Challenges Across Benchmarks</h2>
+
+<ul>
+  <li><strong>Generalization:</strong> Assessing how well models can generalize from the training data to unseen problems.</li>
+  <li><strong>Robustness:</strong> Evaluating the robustness of models against edge cases and unusual inputs.</li>
+  <li><strong>Execution Correctness:</strong> Beyond generating syntactically correct code, the emphasis is also on whether the code runs correctly and solves the problem as intended.</li>
+  <li><strong>Bias and Fairness:</strong> Ensuring that models do not inherit or perpetuate biases that could impact patient care outcomes, especially given the diversity of patient demographics.</li>
+  <li><strong>Data Privacy and Security:</strong> Addressing concerns related to the handling and processing of sensitive health data in compliance with regulations such as HIPAA.</li>
+  <li><strong>Domain Specificity:</strong> Handling the high complexity of medical and biomedical terminologies and imaging, which requires not only technical accuracy but also clinical relevancy.</li>
+</ul>
+
+<!-- ## References -->
+
+<h2 id="citation">Citation</h2>
+
+<p>If you found our work useful, please cite it as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code0"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code0">@article{Chadha2020DistilledBenchmarks,
+  title   = {LLM/VLM Benchmarks},
+  author  = {Chadha, Aman},
+  journal = {Distilled AI},
+  year    = {2020},
+  note    = {\url{https://aman.ai}}
+}
+</code></pre></div></div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+   <div align="center" class="wrap">
+      <div align="center" class="footer-col-1 column">
+         <ul>
+            <li>
+               
+               <span class="icon github">
+                  <a href="https://github.com/amanchadha">
+                     <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                           c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                           c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                           c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                           C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                           c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                           c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                           c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                           c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">amanchadha</span> -->
+                | 
+               <a href="https://citations.amanchadha.com/">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJoAAAVjBAMAAABzrVjQAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAElBMVEX///+xsLCxsLCxsLCx
+                        sLD///+bxiTSAAAABHRSTlMAAKP3FWDuDwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCa
+                        nBgAAAAHdElNRQfkBwQDMic2f+cwAAA03klEQVR42u2dW3IdOZJEu81mAcMqbOCacQMy0wImVNr/
+                        msZKKpVeuHkzEA8PIPx8douAh+MkkmKR1H/+QwghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQ
+                        QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIeQQ/vt2KOMzyeH/GtiE7rgP/3u+TQPdcRukgU3o
+                        jtsgb+fbNNAlt+GtgU3ojtsgDWxCd9yGT2/n2zTQJbfhrYFN6I7bIA1sGuiS2/DWwCZ0x214a2DT
+                        QJfcBelgE7rkNrw1sAndcRukgU0DXXIXvsl0tE3oktvwb+MH2zTQJXdBOtiELrkL32U62KaBbrkL
+                        P3R+rE1/oEvugnSwCV1yF/76sfRTbRrolrvwU+un2oQuuQvSwaaBbrkLP9d+qE3okrvwS+1n2jTQ
+                        LTdBOtj0J7rlLvxa/JE2oUvugnSwaaBbbsJvMh1pE7rlLvze/IE2DXTLTZAWNqFbbsKnSfXn2TTQ
+                        NTdh1v1xNg10y02QFjahW+7CtPzTbBrolpswb/80m9AtN0Fa2DTQNTfhSf2H2YRuuQmPFja9o2vu
+                        gTzr/yibBrrmJjw9gKNsQrfcBGlh00DX3IPnMh1lE7rmJlycwEE2DXTNPZAeNqFrbsLVEZxj00d0
+                        zT24PINjbBromnsgPWxC19yE60M4xaaBrrkHL07hFJvQNfdAetg00D334NUxHGITuuYeSA+b0DU3
+                        oYdNA11zE3rYhG65Cy1sGuiWu9DCJnTJbehg00CX3IYGNg10x31oYBO64kacb9NAV9yI821CN9yJ
+                        420a6IY7cbxN6IJbcbpNA11wKw63ib8YPJXDbULX24yzbRroeptxtk3odrtxtE0D3W43jrYJXW47
+                        TrbpHV1uOw62aaC77cfBNqGrbci5Ng10tQ051yZ0sx051qaBbrYjx9qELrYlp9qE7rUnh9o00L32
+                        5FCb0LU25UybBrrWppxpE7rVrhxp00C32pUjbUKX2pYTbfqILrUtB9o00J325UCb0JW2YEz/1/Ns
+                        GqpWyBIy5v/zcTahi27Bk2f2OJuGqhWyhDSx6Q900R2QtyY2oYtuwVsTm4aqFbKEdLEJXXQLnj+2
+                        Z9k0VK2QJS6aPssmdNEdkC42DVUtZImrqk+yaahaIUtIF5vQRXfgr8sn9yCbhqoWssR12QfZhC66
+                        A//qMq7/7+1tGqpayBIv2j7HJnTRHfhuy3jx/29u01DVQlaQV3WfYtNQ1UKWeNn3KTahi+7Aj66M
+                        l39iY5uGqhayxOvCD7EJXXQHPnSxaahqISvIjcbPsAnddAfuPL9H2PSObroBv4gy7vyhLW0aqlrI
+                        Erc6P8EmdNEdeHSxaahqISvIvdIPsAnddAduPsL72zRUtZAV5Gbr+9uEbroDd5/h7W1CF92BSe1j
+                        +gd3t2moaiEryO3ed7cJ3XQH7j/Fm9s0VLWQFeR+8ZvbhG66AZ8Uj/HeNg1VL2QFTfN724RuugFP
+                        BBmaP7yHTeimO/Ck+jH9wzvbNFS1kBVE1f3ONqGbbsBTPYbuj9e3aah6ISsoy9/YJnTTDXhux1D+
+                        +eo2DVUvZAVt+9vaxF8MHs+FHEP7AbVtQjfdgCs3hvojKts0VL2QFfT972oTuukGXKox9B9S16ah
+                        6oWssHAAm9qEbroBK4/znjYNVS9kAVk5gS1tGqpeyApLR7ClTeimG/DKi7H0URVtGqpeyAJ/rZ3B
+                        jjahq27A4hO9oU1D1QtZ4KUVb3+ufVw9m9BVN8BwBJvZNNBVn49YTuDyg6vZNG71QQy8kOnlx29k
+                        E7rqBpgPYBubBrrq8xHzATxfoZhN6Kob4HAAm9g00FWfj1wewLttjVo2oas+H3E5gC1sekd3fT7X
+                        BzBurvLMyUo23Z2FLCPXJ3B7nQ1sQlfdAK8TqG/TQFd9Pg+vE5DyNqGr/p1fAn5E57EiL05gWFeq
+                        Y9P9UVLYIqTLTN95v71SeZvQVd+tfaDDLSOOR1Dcpo/oru+XPtAJF3l5Bua1qthU5oReulQqrYbX
+                        Y5kXq2ITuur7ldfKe58bj4m5pyI2DXTXVx1N+dO+W7XZhnm1Ijahq/6C6DJ/ROf1Hm6Yl6thk2aO
+                        MPZM7TidZp7KNqGr/nzjR8yK5r7JnWmGYr3CNqGr/qx+yxVK7jfeMC9YwSbNFMi2N9bJ/Rzq2oSu
+                        2iBThfBu8w3zigVs0gyBLHtfnW7ON8xLFrAJ3bVNpgL5X3JzkGHuDG+TZoYQPlknQA/wCrk5xzCv
+                        CbcJ/4vB7TOgJ3AacCjWLGoTumoHmQo8EVfI3TGGeVG0TZoJQjhjigtuy3SATft0vatOMUOUtAl9
+                        Ck4yFf5RQMWEw7ws2CZ01+dM4jDhUCxb0SZNfnDVm+oUdRoFbUJ/x5mYJ1g8i5oTaiYoaBO4avOX
+                        LevrFDZAPZvQ9XvPAx5ngqjyD/PKSJu2qtr5NFJQfgegJn85m9DlnzeRcUJN/HI2gasW8wDlRjJO
+                        OMxr42zSZI/gxJlsE2rSy3QFmE3o4h8hU4GH+gnRhh/mxWE27Vb1HmP9gP7rH8PcH8omTfIITp3L
+                        MqEmu0xXQNkErlrMAxQdzDLhMC8PskkTPIJzJzNMqIku0xVANoGrFvMAZUczTDjM62NsQncdOZvm
+                        TMKQ6OTzDSA2oQtf6vo24OG+EH4s8wohNm3Z9T7jrT4uw7wDwiZN6jpd7zPf6uOiyT3vEGETumsx
+                        T1B8wMda7GHuEGCTJnQIp08oCbHnewBswladcDWhR1xNPcwl5tv0EVt1wtUEvpwkI/V8k3SboEWb
+                        ytaAHDDlaOYtptuE7NlWdtTBlJlPE1qmK2TbBKzZ3LYG2HiynllzNvNtsm2CtezQdtTJuJKUeV5j
+                        sk2wkj3aVgEaTwyRNYcz3yfXJvwvOrK0reIjZj5L5GHuMdcmTMOvWwhAczR+pEWe95hqE6Zhv7pV
+                        IKYTU2LN8cx3SrUJUbBn3WFn40Ve4nmRmTYh+r1VQgzbTac5n/lWmTbl1/sb0SOuHo4Lkhh4vlei
+                        Tent+vetI3u6zAOaN5lnkyZrFGKeovDE5uE0eeeb5dmUW+2c2Aktp1NhOE1ema6QZlNytYoK4kgd
+                        7kPqEc2rTLMptVlVBXFojqfAbJq48+2ybMos9imRA07ZazbNGcl0hSybkr1RNBCJ5nzws2nSzvdL
+                        simv1uDGlaTNln1I8y5zbNLkrN24ko87jaY5JZmukGNTvjkTlv6N+sQDMiDmoNqw8x1TbErqNKVy
+                        JTmj5R/TvMwUmxDuRFUeeELLiDmmOut8ywybUhp9TdR41yQM5vUK15yTTFfIsAlkz635w/kYP5lX
+                        1GFuM8Gmd4w99+YPR3NE4ME0UeebxtsUX+c9YqZ7zT6DaU5KpivE2wTTJ6r0wDNaQcwJV5LOdw23
+                        KbrM/NK1xM7l+I/saY5qXme4TUiDfuQRMh2+AcegQ7GtTFeItkmTcJfWK1Ug5nhrQef7RtsENegH
+                        nP/V1TIdeOYcin1lukKwTViFXk6fg+aUkGNpcs43jrUpsEclD//hCrQg5myrOec7x9qEdug7/rNV
+                        qME35lDsLNMVQm3SxAvGX5ECPYg52XLM+dahNqEVCus98Jg0AGPOC420KarEBcQ8jImYoR7A85oX
+                        GmkTWqEfcPcj7pyMB5qUcr55oE1og37E3Y8CXbiHHIrNZbpCnE2abNGIeRojW8ykObH57nE2oQ2K
+                        bT7woG6CDTlvNMymgP4qNa9lh5E0RybTFcJsQgsUXT24DjEn+p1h3j/KJk2yeAKqB/ch5kS2jPP9
+                        g2zC/2Lw6Oq1eM8UEHGYKw2yCe3PndFz8Z4pIOIwVxpjkyZXAhF2oCsRcyJTxPn2MTah9fmFCDvg
+                        nfgnHIrdZbpCiE2aWBnE6KGk/lCaY5PpCiE2oe25NXk2mrPCTKVJON89wibv3ur1vsKf5afSnNt8
+                        9wCbNKFS8O99Ce+x3ANqDm7eaYBNaHnia48/rPUDTQo439zfJu/S7MQJAi1GzIkMAeeb+9uEdud3
+                        4gTBNuOdbyj2lukK7jZpIuUg5pmceHcezDuf5ujmpbrbhHbn7uAANKeFGEyTb763t03ejRUsfZ3i
+                        g2nObr63s02aQFnEGqKh+GSaw5PpCs42oc1J6DzpuACTaeLJdAVfm7zrqth5oXrEnGg53nxrX5vQ
+                        4kyJdgTXj5gD/cQwb+1qkyZOGs6Vm3h3ns03neb45q262oQWRzE3Bs153QGXbt6qp03vaHEUc4Mo
+                        Pdsw7+xokyZMIr6NGyk9m+YA5zs72oTW5gkZkoQcWPpwmnAyXcHPJu+iShaeeWDpw2nCyXQFP5vQ
+                        1qQUbsZ5ODEH+oFh3tjNJk2UVJI0uYnzcGIOtHiE843dbEJLk9J37ollT6fJNt/Yyya0NDl9557Y
+                        HVDZ5rU62eRdkh9imCoC5/E8o2kOcV6rk01oZ7Rj4yg83jDv62OTJkcyiaIgqhJzoLVo8319bEIr
+                        c0GiKO5HljyfJppMV3Cxybuhom37UHc+zTHKdAUXm9DGJLXtQ935hmJbma7gYRNamKy2889s+VjD
+                        k823dbDJuZ6yZQPOLHdATbL5tg42oYXJKtuLsgMO87Z2mzQZ8nEs2wvnCf2CaU5y3qvdJrQvK1ND
+                        0RzaDTDB5r2abXLuxhtZGioU58Ywwea9Wm2q9YvB706NpeqEw7yr1Sa0La8AyJLcmZjzfGOYdzXa
+                        pAkAAWFLbmlizrOSa76r0Sa0LC9B2OJ5apkjanLJdAWbTc69BIDx5QVFR9ScpkxXsNmEdiWxak+K
+                        jjgUm8p0BZNNmu1BgHy5xndEMedZOM75phabvH+fegCfUMK4HdvqwQbHmm9qsQmtSmbTrmiOLXFG
+                        Taz5pgabfDuJwa1pX3yH9EqlOdB5sQab0KasDw3Hd0ivVMNc7LpNmr1hiG6mLHy7Q6SaF7tuE1oU
+                        w9BwNOf2GkSqebHLNvkWEoWoZkrDtzyvITWp5nuu2uTbRxheRXtTckjNmc73XLUJrUly0d6UHHKY
+                        91y0SbMxkgfUmaT+xBxHH2q+56JNaEvugnXG5+Be4vUFf00oma6wZpNrGZGgrckpEBBKpius2YSW
+                        JLtnfypOORRbynSFJZve0ZJk9+xPxSmHYkuZrrBik2ZXMGhpnlJxSs25ynSFFZvQiuT37I/m5BaP
+                        NjTTfMsFm1yLCAYtTU6JYo6jzjTfcsEmtCEa0NLktCjmNF8Y5i31Nmn2hIN25jmeU4o5jfpk51vq
+                        bUILogLtTE6NYk7zhWHeUm3TR7QgKtDO+BzdK/7KjyTTFbQ2eZaQANqZpCLzI8l0Ba1NaD0gNUeg
+                        ObqkMTWRZLqC0ibXDhJAO3NBvTE1hyvTFZQ2oe3A1BxCvTGHYkeZrqCzSbNfCdDKXFBvTM3pynQF
+                        nU1oOUA1h6A5u7WzjUw031FlE9oNPWhlnM5u7WwjE8131NjkOX8SaGWS2hRzGm2i+Y4am9BqLIBW
+                        5gLP3xgq5jR/M8w7KmzSbFYFtDJXOI4p5jDaA57vqLAJbcYKaGOS+hRzmL8Z5h3v26TZqwxoY65w
+                        HFPMYbQnPN/xtk2areqANiar0fRAMl3htk1oL4AtB6E5vJQ5NYFkusJdmzxHTwRtTFal6YFkusJd
+                        m9BaIFuOotqcQ7GhTFe4aZNmo0qghbmk2pyaQ5bpCjdtQlsBbTmKanMOxYYyXeGeTZp9SoEWxu30
+                        MubU5JHpCrds2uAXg0e2HIXm9F7wyM4j0xVu2YR2Yh20MG6n9wIxh1HmmW94xybHqbNBC+N2ei8Q
+                        cxhlnvmGd2xCK2EALcw1fnOKOctbkk2aTaqB9uUavznFnEV50PMNb9iENsIC2pdr/OYUc5a3HJve
+                        0UZYQPvid3zXiDmLMs58w5c2+U2MAO2L3/FdI+YsyjjzDV/ahPbBBtoXv+O7RsxZlHHmG76yyW9g
+                        CGhf/I7vGjFnUcaZb/jKJrQORtC+vMBtTjFHeUuwSbNBRdC6vKDWoEOxn0xXeGET2oYKJQdSa9Ch
+                        2E+mK1zbhJbBjLyVxm9QjzTDXOylTZrlayJvpfErODvNvNhLm9Au2JG30mjO75rsNPNir2zymxWG
+                        vJXGr+HsNPNir2xCq+CAvJVGc37XZKeZF3thk9+oOOStNm6DeoQZ5mIvbEKb4IG81cZtUI8ww1zs
+                        c5vQIrggrxoE4zaoR5hhLvapTZql60KbatiE9sCH6jZpDvCS2ja5jYmFNpWwCa2BE7Spgk1uU6JB
+                        60KbfH/DJxa0Lq+oNOdQ7KexCe2AH2hbaNM57znaVMAmtAKOoG2hTZpVq4O2hTahDfAEbYvnCUbP
+                        qcly2yavAUuAtqW7TV7z1QBtS3eb0Ofvi9ytkjZF2OQ1XhFoE9Qm9PE7U90mr75r2qRZcQdoE9Im
+                        9Ol7Q5uANmkW3ALahLNJs94e0CacTeiz96e8TZojvKCgTU6TlQJtS1+b0CcfAdqWtjY5DVYLtC1t
+                        bUIffAhoW7ra9D/ogw8BbctL6ow5FPu9tOm/6F5DekYPkTMlbfIcTjt2IWhTCrSJNvlBm2iTH7SJ
+                        NvnRxKZ32pRBE5t8xsxOMq/1eJvKf4mANm1Ucw+bPmUnkekKtAmNy5iSnWS+IW1CQ5v2qZk2xSSZ
+                        b0ib4NCmDJxscik6kjJD0ibaRJvch6NNyYXPN6RNcMoMSZtoE21yH+4K9ByvoE0Z0KbkGWnTATZ5
+                        zJkeRKYr0CY4tGmXlp8PXgfatEvLtCkoyLxU2gSHNu3SMm0KCjIvlTbBoU27tOxXdek5JT3IfEfa
+                        BIc2bdLyFjY5fDFc0guf70ib8NCmBNxs8uk6jioT0ibaRJvch2tu0yO98HmntAmPfcL8wueddrCp
+                        +qfhVQakTbSJNrkPR5uSC5fpCrQJT5UBaZNh9DJUmY820SbalNTyJja9F5mPNp1gk+YUadMqbjYV
+                        /zScNmVAm3LHo020iTbdw8+mD+hRLqFNGfjZJOYskdCmDGhT7nS0iTbRpnv42VT703DalAFtok11
+                        Wu5iEyKHTFdoYpOYwxSeE5FjXihtwkObdmiZNsXlmBfaxCaXf7+t6JyCyDHftIlNpT8Np00btEyb
+                        AnPMN6VNeGhTCo42uVUegNEmSI55n7QJD21KgTbRJj8cbar8iZPNJoHkmO9Km/DQphRoE23y493R
+                        Jr/S3bHZhMkxr7O0TbaaaVNgjnmdtAkPbdqg5rDWS40pmBzzbWkTHtpUv+YmNn3A5JDpCqVtcv0S
+                        gZjTRGGyCZRj3iZtwkObcvC0qe6rzmKTgHLM96VNeGhTDrSJNtXoObT4MlOicszLpE14aFP9nlvY
+                        5DoTbdKAniZgSkHlmG9Mm/DQpiRcbXKt3hGDTbAc8y5pEx7DSK45aFNvm3wnok0q0NO4DymuOY63
+                        STNgQ5twZct0hVY2iTlPCLQpCdpEm/z409Wmoq+6Kk/H8Ta1+DScNpVvesoDPY7vjM45aJMOMecJ
+                        QHOItAlU9fk2eU9Dm5Sgx3EdUYBB5nvTJjjLIyKDyHSF6jb94WuTmAP5Q5vyoE1ps9AmLehxJrzT
+                        pjTOt6nMKA1s0oy43AIU2pQHbUqbhDapQc/zO7SpftnH2+QfhDapEXMgZzRnSJus0KasOTrYtNj2
+                        U9DzOM33AZtEpivQJjSL84GTyHSF+jad/qp7LzMFbapxDvnjRUxBmxZAz+MyXkSSFjZphqRNSUXL
+                        dIWGNok5kSt1ZqBNC3xCD+Qw3Qd0FJmusIFNZ3/itGYTPIpMV+hok5gTObJkU8wEPWxaKpw2hUaZ
+                        J+hoU6lXXaEBaFOhw1hjJf9f+J5lusIONh39iVOh/LRpiUJfI9Cc4L8UyCLTFbawaalywHFkjVYg
+                        i0xX6GmTmCMhR4tK38Smgz9xWrGpQpZ5gz1tqvOqqxS+i03v3jY90BN9YyG7RGXpYpNmTuyJaFnI
+                        XqLleYF72OT8q3kjj0THymNSIoxMV9jDpmM/cVqwSUqEmafoapOYI7mwYFONMPP+NrFpoXXYoWjQ
+                        5w78Oj5tameT1Ch5HmMTm0591ZV6CmjTOuiJ/kZzfvEPQR+b9L2faVOVNDJdoa9NYs5kp9Yz0Mem
+                        M191tR6BRjZpRj3XpjIVy3SFxjaJOVP6TLGRG9l04qtObVOdODJdobNNj+1Gio3TySbNrJZGEikW
+                        mDaZ2G2iQnlkusI+NgW86sScyYTWpui4rWx6P80mbdzoPK1s0j7KBc7nmmrut7LptFed9ukoFWje
+                        XG+boJeT0iYpFWieZiebtA9zcZuUUaVUv/M0O9l02KuunPi0yQpuGM3Z5XjfzCblARQ5JJ9hiiWa
+                        97aVTf4/pBn1a9puUM/6Zjad9KrTHF1SzG42KY9gvZZqo6SkpE12QKMUDNnNpohXnZhDxU+Sk7Gd
+                        TZqB77LBIPUyyXSFzWwK+Fsd5lswVQklJ1M7m4551akSJmXqZ5Nm4mKHtTyGFAw1z7SbTYdcTu8V
+                        badNLtSeQrJCNbRJM3K581oaomSqeWXb2XTE5VRT9Y42fQyw6ZE8Q03TO9qkmdnWTYkREqN1tOmA
+                        V13RZC1t0gxtKyeKosFa2vRHgE2pl5Pm1KrmkukKG9oU8qoTc6qQ/Jmxmtqkmfo2NeOX7VWmK+xo
+                        0+aXk+LQ8kIpg51kk2bs26Slr5hJXatMV9jSpq0vJ8WZZUXSJ6NNr6iXPbnVrjZp5jYW5I3i6xuP
+                        wq3Oy9rTpo0vp/tHJtmltrVJM3it4ysm92qp8642tWnby+n+iUl6p31t0kxe6QBLqW3odF7VrjZt
+                        ejndPzDJr7SxTe8RNok51gsKif07jW3SjF7mDO+HluKVzvNta1PMq07MsZwyIxrtbJNm9iKneD+y
+                        VG90HnBfm2Iup9DfNVdE6me0tkkzvLWm5MCBIZwKnSfc2KaYyynwWiguU3ObNNNbe0qNu0Gf85Z2
+                        tmmzywnv8wua26QZH64Ten/fOmW6wtY2BV1OYs414f5RhWzvG/FMmzTzK4iIit3dvU2ZrrC3TUGX
+                        U8CB3j8pgZXZ3iZNAeauDNz/7a+f9ihz3tDmNu1yOeF2VkCbNA3gdLqfUjbpcp5zd5uiLicxB/sB
+                        xTEhq6RNYZeTmJN9ByRxZJXzoNvbFHU5OR6sYlNok7Qp7nJyO1lFQNmmyXnS/W2K+Q5xP500Z4Qt
+                        kjb9TZRNLoerOaIHtkfapG0hWyfNP1olG/U4z3qCTXGXk/kL06rf0YmukTapa8jVSbOX7FTjPOwR
+                        NsVdTjaddL89GF0ibfqHkF/6bNZJ9w99CrpE2rRShJakTOgKadN3Am1aPGelTIJukDatNZGikzYQ
+                        ukBlZJmucIpNcV8Rf97dFfE7+EObvhNpk/bq0JzLyvox0Ka1LhaQ+0l0f5fTrl6jwXngc2wK+Uc1
+                        V058ZW10d1+gTT8SbNO9Mw8VNRbatNpGjE+rCdDN6dPLdIWTbIr9e91ljV+IWDMT2vQzCTZ9nv/H
+                        Fs1J/Aa6toUZZLrCWTaZznRRAfueYpgY1d4881k2perkBrq0lfJkusJhNiW961wR89BO0KbfQLtB
+                        m06ySVNJDdCNLVUn0xWOs2k7ncQ8MaK5eerzbNrtXYeu6zu0aQbaDxViHtcN2mRtBQ66rMXeZLrC
+                        iTbtpJOYh8XUNs99pE0bvevQTf0IbXoCWpK7hP4jQVpo0zPQmpgOBQRt8mgGCLqm5c5kusKpNu2h
+                        k5jHRFU2T36sTVvohO5ovTGZrnCuTRvoBPxN89bCZLrCwTbV10nMI8L6mkc/2abyOqH7MdQl0xWO
+                        tqm4TmKeD9fWY7rC2TbV1gldjqWs+QqH21RaJ3Q3v0GbXlFXJ0FX8xu06SVldUIX8zu0ybekRIp9
+                        sUlZ1HyBDjbV1EnQrfzOsIZvYVNJndCdTKBN3j1lIeaZkC09Sd/Epno6iXmkAG6nf/LxXWwq97ZD
+                        12Hr6MnH97GpmE7oNkwVPfv7aCObSr3tBF2GqaFn6TvZVOl6Qjcx565NH558fC+b6lxP6CKeYEzf
+                        zKb43wN9D0HX8ARj+nY21XjdiXmKGAZtiqksFHQFT7Gl72hTAZ/QBZiakacf3dMmtE+CHt/Uy+Pp
+                        R3e1aenf1mlg051X3fMP7mvTG/DzcfTgFwzLo9DaJtgLDz32FZbwzW16gwgl6JktfVyFp01/c9uD
+                        Ty6vR0HPaynj6kNp0zdeOvD1j/1xvE3jMvvj6kNp00+8Pv3rru+BnvIFVyPK5UfSJiUNbLq4pl/8
+                        oA1tUuIgU3mb3laT0yYlDjIJeoblKV99GG3SMXrYNNfp5UfRJh1dbJoMeiM2bdLhYRN6hqVR5c6H
+                        0CYdDjLtYtMCtEkHbbqCNqnweNHRJvIVD5sEPUQctEkFbbqENqnweNEJeog4aJMK2nQJbVJBmy6h
+                        TRoGbbqENmlwsQk9RCC0SQNtuoY2afCQiTaRr9Cma2iTBtp0DW1SMGjTNbRJAW16AW1SQJteQJsU
+                        0KYX0CYFLjLRJvIF2vQC2qSANv3nNv9FRy0PbaJNbgzaRJvcoE20yQ8nmwQ9hwHa5AZtok1+0Cba
+                        5IePTLSJ/A1tok1+0Cba5IeTTTt/iYA2uUGbaJMftIk2uTG8bHqgJ1mHNnnhZpOgJ1mHNnlBm2iT
+                        H7SJNvnhZtPGn4bTJi9oE23yw88mQY+yDG3ygjbRJj/cZKJNxPNfKEePsgxt8oI20SY/HG0S9Cyr
+                        0CYvaBNt8sPRpm1fdbTJC9pEm/zwtEnQwyxCm7zwtOmTPQ4E2uSFp027vupokxeuNgl6mjVokxe0
+                        iTb54WrTpq862uSFr02CHmcJ2uQFbaJNfvjatOerjjZ54WyToOdZgTZ5QZtokx/ONm35qqNNXnjb
+                        JOiBFqBNXnjbtOPlRJu8ePe26YGeSA9t8mLwVUeb3HC3acNXHW3ywt8mQY+khjZ54W/TfpcTbfIi
+                        wCZBz6SFNnkRYNN2lxNt8iLCpg/ooZTQJjcCbBL0TEpokxsBNu32qqNNbkTYJOihdNAmNyJs2uxy
+                        ok1uhNgk6KlU0CY3Qmza63KiTW4MXk60yY0Ym7a6nGiTG0E2CXouBbTJjSCbdrqcaJMfQTYJeq77
+                        0CY/gmza6HKiTX5E2STowW5Dm/yIsmmfy4k2+THaX060yY8wm7a5nGiTH3E2CXq0m9AmP+Js2uVy
+                        ok2OxNkk6NHuQZscibNpk8uJNjkSaNMev4+eNjkyAnUS9HB3oE2ORNq0xbuONjkSapOgp7sBbfIk
+                        0qYdLifa5EmoTYKe7jW0yZP35pcTbfJkNL+caJMnsTbV14k2uRJrU/l3HW1yJdgmQc/3Atrkysfe
+                        lxNtcmX0vpxokyvRNhX/lfS0yZdom2q/62iTL+E2CXrCK2iTL6P15USbfIm3SdAjXkCbnAm3qbJO
+                        tMmZeJsKv+tokzPvnS8n2uTMSLicHughn0GbnMmwqey7jjZ5k2GToId8Am3yJsOmqpcTbfJmNNaJ
+                        NnnzR4pNgh5zCm1yJ8WmmpcTbXJn9NWJNrmTZJOg55xAm/zJsani5USb/EmyqaBOtMmfkWSToAf9
+                        DdrkT5ZN9S4n2hRAlk3ldKJNAXzMsknQk/4CbQpgdL2caFMEaTYV04k2RZBnk6BH/QnaFMFoejnR
+                        pggSbRL0rD9Cm0LIs6mUTrQphMTLqdK7jjaFkGmToIf9Dm2KIdGmQj8QRZtiyLyc6rzraFMMqTYJ
+                        etpv0KYgMm0qcznRpiBSL6cqOtGmIHJtEvS4X6FNUaTaVORyok1RdLycaFMUuTbV+KITbQoj16YS
+                        7zraFEby5SToed9oUyDJNlW4nGhTHMk2CXpe2hRJ9uUk6IFpUyTJNuHfdbQpkGybBD0wbQpkdLuc
+                        aFMk3S4n2hRJ+uX0ATsvbYok3Sbwu442hZJuk0DHpU2hNLucaFMsvS4n2hTLe6vLiTaFkfOPGpTS
+                        iTYF8CfIo68IbnDa5AvUI/jlRJu8GGiJ/kVgHdAmB+qI9BVYEbTJRjWRviCoNmjTOiVN+sID1Aht
+                        WqOuSV8AtUKbFkC78hrBFEOblAy0KPfAlEObNGyi0mfU5USbbvMRbYgKSEW06R5oOdQIoiXadAO0
+                        GUsgiqJNr0BbsYoAuqJNlwy0EwYe+XXRpudgv7HETn5jtOkZaBfsSHpntGnKQJvgQnpttGkC2gIv
+                        JLs42vQrqG/njiC7O9r0MwMtgCuS3B5t+pGzXPqcfjnRpu8c51L65USbvnGgS5+zLyfa9JUzXcq+
+                        nGjT35zq0ufky4k2He1S8uVEm452iTblgj7tcDLLbG4T+qgTkMQ6W9s00CedQmKhjW3q4VLq5dTX
+                        JvQh55HXaVebBvqIE5G0VpvahD7gXNJqbWkT+nSzeWQV29Cm3X94QI9kVdvPJvTRIsjqtptNJ32f
+                        7n0kqd1mNg30uYJIqreXTehDhfHI6beTTQN9pjgkp+FGNjWWKetV18em7PP79DTJANgkKR23sSnv
+                        4B638iQr9elWKCtNbEo6u4cmU65OKTX3sClBpoWHP9Umyei5hU1FT2qk6pRRdAebyp5Sqk4ZTTew
+                        KfCEpG4096x3ON6muO8Y8PhrUqZOCWWfbtOofTZh8WhTAEGnJW4BE23yC/2Us22Kkck1YqJO8X0f
+                        bVOETN5fVI7I+IRHeOEn2/TufyDinzJPp4Dwv3CwTbscR5pN8a+6c2366H0Wj6CgI82mqAn+5Vib
+                        vGWSuKhpOgXO8JVTbdrqHLJsCn/VHWrT+0YuJf6EX3TtZ9o0tjqDvHedBM9xpE2uhyMZiZNsin4w
+                        TrTJU6a/ciJnveuCxzjQJk+ZHjuGvkBipzjPJsfHPOdb87+SY1PwVXueTX7VPzJjjxydYoc4zia3
+                        3jMvpr/J0UlCZzjNpk1qD41Om5wYXq0jwqfoFDrBWTZ5ySRbp8eNdpZNOzy/8fFpU6XT2H4A2HQn
+                        2TTqP7wpE9CmMkch0BkSbIoc8BybfH4/KnoK2lSDI2TKeNcFpj/GJo9jEPQQbyE/aEObtJwiU8K7
+                        LnDMU2yq3bIGj+fimrjsh9jk0PEDPcM3wnWKi36GTQ4HgB7hB6JtkrDkR9h0lkzhl5OEJT/CprNk
+                        itcpLPgJNtnLR0/wK7QJxnkyReskUbEPsOlAmYLfdRIVe3+bzMWjB5gSalPYyNvbZJbpgZ5gDm3a
+                        sXVBD/AE81OCGHp3m6ylR/VqhzalY/2mpqhaPaBNmzWe/ROYKkagTkGR97bJWjg6/zW0aau+0fFf
+                        YH1WLpCYxFvbZKw7qNIy89GmxLKDGvUkzKaga3lnm0oW6orxeaFNaVWj49/iPcomCYm7sU0V6yw2
+                        JG26yyjYZrUpadNdbG2i0yeNmVzAtjbZHlpBx0+akzbdo2CXMQTpJBFZd7XJ1jE6vQraFI3tewdC
+                        mgzD9uDQpte8m5pEp1cSYlNICXva1OlqegvSKSLonjbV6zGUEWGTBATd0iZbu+j0C9CmQN6rtRiN
+                        7fGhTVfYPmtCp18iQqeAmDva9F7tkUyANpVsFh1+kUGbChYr6PSr+NsUUMWGNlV7IHMwPUO0KaTW
+                        gAazeKdNAZgaRIeHDZ5TxnY2jWKP4yaT06YpxfrbZnTaNMH0gAo6PXD2lDp2s6nYw7jR8LTpN0yP
+                        p397O01Pm37D1B46PHj8hEL2ssn0cAo6PXh+2uTZJjq8B7SpSJmCDu+B6XGiTX5dosP74GqTeKfb
+                        yiZLc6V/xeV9TA8UbfJq0r05ELSpQpHo8F6YHina9J1SxW3ZQvQjtpFNpqcSHb5IDbTpG5baBB2+
+                        SA+06R9Mz6SAw3vyTpvslKoNiemxin3Ietjk3dq+TdCmL5ieSGz0UlXQpr8xtYaNXqsL2sTPwf3K
+                        oE180f2Ml03ezexiU6XO8NAmE8NSmSCT16uDNlWqrAK0CdYeMngQgzaByhNg8DCcbHLuZg+bKj1/
+                        NTA9X7SJNv2E7Xd/trbJ9CA6F1YF2gRp7oHLHYnpCaNNq+BiFy6lsU2mx9C5rzr4XE6+mXawqdLT
+                        VwjalF8bLHU4LpeTb6QNbLK1hkpdvZeuNpnaElTq6sXQJtr0Ex6Xk2+i+jbZOgOFzoE2qTHZJKDQ
+                        G1QTUVB9mwqVVQ7apMT2/GEyp0GblNCmsHIa2mTq6pBfKBfUDm1CdlUQ8+Xk21B1m2x1+XZVENqU
+                        WBckciq0Ka8tSORUrJeTuKYpbpOtLN+qamK9nFzD0KbNoU1ZXSESZ2N73mgTbXKsqJNNxgcPkDgf
+                        2nQXm00CSLxbR51sshUlgMTbleQahTZtD226xyhUVF1sLblGoU3bQ5vuYZPpr/zAGGhTfE1dPm2i
+                        TfcYtCm+J9cktOkAaFNwSd49laZMS7TpAEaVlmjTAdCm2I4+d/q0yfQrVV2D0KYToE2RFdEm2uRX
+                        UTebBm16gfX3qyfHhUKbAhtqZ5PhHneNQZuOoEhNdW0yykSbaJNLQV84/tej/MSgTdcYbZLkuFho
+                        U1Q/tIk2+fXT0ab1m9w1RVmbjDLRJtrkUU9ES/Wp0RNtOoNRoqeqNv1Jm1TQppB2mtq0/F81XVPQ
+                        pkMo0VNVm95pk44SPVW1ySqTpKYtwOrj5xqCNh3CoE3PoU1KaJN/N7SJNvl109em1dvcNQNtOgXa
+                        9JSPtEkLbfKuprNNgzY9w2xTZtga0Kan0CY1tMm5mdY2LT6BrhFo0zEs9SSuEWjTMdCmJ9CmBd5p
+                        0xyzTB1tWnoExTUCbToG2vQE2rQAbXoCbcpqTVwT0KZzoE1TBm1agTZNoU1L4HuiTefwEd4TbTqH
+                        ldp8E9Cmc6BNUz7SphVo0xS7TLSJNn2DNi1Bm6bQpqzenH9zMW06CH1N4huANh0EbfJphTat9Sa+
+                        ASraNGjTGrRpAm1ahDZNoE2L6Gt6+AagTQehL845AG06CNrkUgptWizOOQBtOgja5FIKbVoszjlA
+                        RZscZKJNtxDnALTpIGjTBNq0CG2aQJsWoU0TPGzy7mkL1DY9nAPQpoNQ2+QdgDYdBG2aQJsWoU0T
+                        aNMitGkCbVpEa5N7SbTpIGjTBNq0CG2a4GFTyy9f0qYJtGkRrU3uAWjTQdCmCbRpEdo0gTYtQpsm
+                        0KZFlDaJe4BjbfKvqj60aQJtWoQ2TaBNiyhtergHoE0HobTJPwBtOgjaNMHFpo5/qaNNE2jTIjqb
+                        xD8AbToI2jSBNi1Cmyb42PRIy1uGj+jH7VybJC1vGXQFBQSgTQdBm8yl0Ka14iL6Odemhp+G0yZr
+                        KbRpsTgJCECbDgJeD206CHg9B9skaYGrQJuspdCmfxnwdmjTOdCmGU42/ZUWuAgqm0ISVLRJ1Up2
+                        YYWhTeZWaNNabyEJTrZJ0hLXQNNbTDe06Rzw3dCmc9B0E5PgZJu6feKEr4Y2nQO+Gtp0DopmJCZB
+                        RZv+9LIpqLOiaB7CoGYq2uT1xXDa9JSgCEfb1OtVR5vm0KYVFDZJUATadAy0aY6bTVGtlaRAL7Tp
+                        GBS9REUoadNw0ykvM54CtdCmY7jfikRFONymsN7qoSgtrBXadAqK0sIyHG5To1cdbbIXQ5u+cb8T
+                        CctQ0ia/LxE0etVV6IQ2ncL9TuIynG5Tn1ddhUpo0yGM241IXIiaNt2vBtldKWiTQzW0SV1ZYIjj
+                        beryqrvdx6fAELTpEG73IYEhatrk9nMGwe3V4f7zF5mipk2ef6nrcTnRpgtok5LbNklkigY2hfZX
+                        hRptFLXpnTbpuN1GaIqiNg3PyykzOIj7f20JjdHBJslMjuF2X7Fd0KYjuN1XbIyiNrl+Gt7gVVek
+                        ihY2SWp0BEWaoE0nMIo0UdWm2/3cIjU6gNttBefoYZOkZs+nSg+06QSq9FDVJt9PnA5/1d1+9KKD
+                        NLFJcsMnc9emyG+U+0ITm86+nMo8U2Vtuvu80ab7NoUH6WKT5KavWVV4krI2eX4z7+GX012bJDxJ
+                        WZu8P3GKrxJGnQeKNu0PbXrNcNYpOX69oiQ+Sh+bEsrEUOhxqmuT96fhx15ON8cP/9LlW2WbvD9x
+                        OvVyGoXGb2TToZfTe6HpC9t096G7zYfsCVIodDW1siml0KotpQxf2Ca+6u7wsdLsrWyS9BHKlJQz
+                        emWbBi8nt45y0vSySdJniKbWc1TZJv9X3XmXU63HqJlNSa2mMWo9RaVteufl9IJiD1Fpm+4+eW0v
+                        p7sFZU1d2qY//G0663KqNnRpmwI+cTrrcqo2c22bBi8nj3rSAvWzSQBzBFFu4to2Rbzqzrmcyl1N
+                        HW0SxCDIcvISFbfp7uOn4oGYBNeN5EXqaNMh77qC0xa3KeRVd8a7ruDV1NOmIy6nirNWt+nuE9ju
+                        crr73wlSR61uU9Dl9MAM48h7waupq03bv+tGyUHL23S7Nh2CmcaNmnOWt8n9B8iPuJxqXk31bYp6
+                        1e2tU82raQObbj+GSpKLxnSSnKuvTTvrVHXE+jaFver2fddVvZp2sCnsctpWp6pXU2+b0tv2oe7T
+                        soFNca+6PXW6/XTlT7eDTXGX05bvusLDNbdpQ51ujyb52XawKfBVt59O9x8tQLgtbLrfoB7BjbVE
+                        6cG2sCn0ckK0ntEEIh1t2kqnUXuqPWy6X+IKD+BkYT1A8u1hU+zltM9n4vdHEki+TWxSPJQH61R+
+                        Itq0j06KEgSTcBObgl91W+ikeaJAEXexSVPloTophhFQxF1sCr+cyuu0wyzb2DSa66SZRFAht7Ep
+                        6mdXNtFpj0G2sSn+VVdZp6EZQ2Ax97FJVegiD/CMPrPjcu5jU8blVPS/2e0i00426To9SCfd4MgJ
+                        NrIp5XIqqJPyKUJG3ckmZa2roMe0TS3IrLSpuE7aoaFhd7Ip51WHPpGf2UqmvWzSVruMoCddnRgc
+                        fCub0i4n9Kl8Q/34gPPuZZO63XXQoy6N+wAH3sumvMupgk4ftZEFnXgzm9RPqwEBz7rhA7CZTZmX
+                        E/h09HEf6MPZzqbRRKeFOQV9NvvZFPHvkBc8oQWZ8O+5DW3KfdeBzmiboL+wn00rj60FyR9xk5i/
+                        s59N2ZfT588fcucbKxk/oU/lCxvatNS2jczx6id8zoY25V9Oie+RsZbvA/pMvrKjTYuN7+BT6XCv
+                        2dGm5K8S5B3ZcjT0gXxjS5sQ77r4QxtFcynY06b14sv6dPdfVp0g6OP4lz1tQl1OcT4ZEgn6ML6z
+                        qU0JP0ee6ZMljqDP4gc2tQn3rgs4wHJyL7OrTcB3ne8ZGj5fKifTvjYNsE4+52gOIehz+IltbSqg
+                        k1UohwkEfQo/s69N6HfdPzwW0797bC7oM/iFjW1C/r3uJ/T//d5rZ/QR/MrGNpV4131Dbqd23BR9
+                        AL+xs01F3nX3jzd3NwBb21RPp3/466eUI2aTB7r939nbpqBz2gJBlz9hb5sa6yTo6mdsblPZd11L
+                        mba3qalOgq59zvY2DfTBUqbvbG9TS53QnT9jf5savuvQjT/lAJva6YTu+zkn2NRMJ3TbFxxh00Af
+                        MGX6yhE2ddIJXfUlZ9jURyd00dccYhPox38p08+cYlOLz8T/stcUyzE2NdCpxu9ouuIcm47XSdAF
+                        v+Ygmw7XSdD13uAkm6w/6FgaQbd7h5NsqvNTLE1lOsumc7/sJOhm73GWTafqhK71LofZdKZO6FJv
+                        c5pNJ+qErvQ+x9l0nk7oQhWcZ9NhOgm6Tg0H2nTUlzEF3aWKI206R6cHukkdZ9p0ik7oGrUcatMZ
+                        OqFLVHOqTQd8Li7oCvUca9P2Ogm6wAXOtWlzndDtLXGwTTt/8iTo6tY42qZtdRJ0cYucbdOmbzt0
+                        a8scbtOOOgm6s3VOt2m/tx26Lwvn27SXToJuy0QDm3Z626GrMtLBpm2uJ0H3ZKWHTXtcT+iS7DSx
+                        aQOdPqArcqCLTdXfdoKux4U+NpX+UWB0N040sqnu607QxXjRyqaarztBl+JHM5sKXk/oRjzpZlO1
+                        6wndhi/9bKrkE7oJbzraVOV19wHdgzstbSrhk6A7CKCpTfDXnaDnD6GtTVCfHujZg2hsE8wn9Nhx
+                        tLYJ8fmToEeOpLlN2b95FT1tMO1test74Ql60HBo098kfHuBoGfMgDb9w6BKdmjTd4KEEvRcedCm
+                        n3AX6gN6olRo02/4qYSeJB3aNIXvtyVo03N4J2mhTS/gjaSANt2DHt3hvk2EEEIIIYQQQgghhBBC
+                        CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCH/8P/T2g3wTNSy
+                        bgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wNy0wNFQwMzo1MDozOSswMzowMFesjGwAAAAldEVY
+                        dGRhdGU6bW9kaWZ5ADIwMjAtMDctMDRUMDM6NTA6MzkrMDM6MDAm8TTQAAAAAElFTkSuQmCC"></image>
+                  </svg>
+               </a>
+               | 
+               
+               <span class="icon twitter">
+                  <a href="https://twitter.com/i_amanchadha">
+                     <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                           c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                           c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                           c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                           C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                           c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                           c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">i_amanchadha</span> -->
+                | 
+               <a href="mailto:hi@aman.ai">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuBAMAAABTjO+8AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEWxsLDGxcW4t7esq6u+
+                        vr7Z2NiqqamxsLCvrq7Ozc2ysrK1tbWenZ2dnZ3////zevNgAAAAAXRSTlMAQObYZgAAAAFiS0dE
+                        Dm+9ME8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkBwQDLRvUSpUpAAALt0lEQVR42u2d
+                        PW8jyRGGR7Lk3XXEyNqQwAVKBewtiHMkwAfQoQ4L3B02ImCs98KVuFZzFfECm3Am4A7YDXmR/sQF
+                        /gHO7+94R6Somarq7qr+mGra/YZifzzsfmc4XdNdappcOvjixZcX2VrPpj+az1r8QxtDqp/MRmfa
+                        IDI93WKbxUgbRaS3D9zmUhtFolfmUUttGL6OOtjm+kIbh61Jl3t/nPLK9LXUBuLpAGDvi1NWkHs/
+                        nPKtwVprQ/l1QGDvg1NWFLf5URvLp28NrbUCy+sfzJB6MUqD/SoeRagkk/M0nkOqFA+Rx2+H5zY3
+                        8dzfK2CncIrGcBtztYfuvtdtJPdHJe7ZXtrEmPdx2MdK2OZ6P+1tzEUU9+/VuMdR3E/UuM/+L7lP
+                        9pR7um3lry+G0iQp93lUKxL9rnJX7spduSt35a7clbtyV+7KXbkrd+Wu3JW7clfuyl25K3flrtyV
+                        u3JX7spduSt35a7c+809Men0rnJX7spduSt35a7clVuiOzXuZQz2QyMK3POLcOzjHd/w3DEnBaa7
+                        xgH3z1+nE2h6xx3u8McmFNYN4U55dIkOd6hTpkaZO8wp3QaUuEOO93ZdosUdchC86xI1bvmvT7+6
+                        GrfUKX2X6HFLndJ3iSK3zCnoWJoet8Qp+EyxHrfEKSemIG6+U4jDi5rcXKdQJ881ublOwS5R5uad
+                        SiePuOpyc5xC5yfQ5eakIaFcos7td4rlILQ2t88ptiwW2tw+p9AuKYDb7RTrcXl9bpdT7LlO9Lld
+                        TrG5pAhuu1McSRVK4LY5xZURpwRu8y+6ht0lhXDTOSOcqTfK4KaSi7jzJpXBTTnF5RLE/eeEiRXO
+                        BNzYKX8wEu6JSad3NPeC5RSLS+ZTNe6XNBFwynPLMOtxnx3SxXtOsbjkjer7tE9k8a5TLC5ZKL8H
+                        pHvpOMWSg22kzH1EV9g55XhFfv6m0X7vSieP3CXL+97+sS63JVnn2jXcm9yFytxkctSHAadza82a
+                        ArgtTtnQ3FEfbRMAanPTcB/aT55Rn8xvC+E+WFF03YI9bWvpc9MuXjb4lUir3Ztafe7mlKjzgWZ4
+                        XMkVwA1fkd0D0j9Ky8bDnVF4vw9l5FvKP51IRQnclJPPmu8cLimEm3jse0fYft1ppQhuYsl+iROW
+                        9lYUZXDjZc0NujX0V3CFcCOnzBv4TcYlcjeHPu6/91sphRvmDUbcoHgx3E8qd+Wu3JW7cv9Pcpf6
+                        ezn1cLdBwQK54ZoHcy9K5EZrTMxtXhbIPTV+7h5jGdx4DUxxz0vjfrZicZuvCuM+NTzuzpqnBG4q
+                        JktzP64xC+C2RDYp7sc1fQHcd4bPvYuh6HPTkXsb90PMSp2bflNi5X6IEapzr4TcW6dYuH/9Tzr9
+                        28Vt+zdydu6NUyzcv5l0eufgPrBVsnNvdl0rc08CuHsvUXS47f8pz8XdOkWV+8heycXdvp1S5Z4E
+                        cn+uq8n9yVHJzT2/UOQ+dFVyc5srRe63Edxmosa9cFZC3H+iyw3P3dfio4f7jN7Zps09e+LjZp2D
+                        GZr7hhFn45w7Gph7MeLEB0+K437DimsyztUN8BzbUbufisFNVQXcGUV0PmJyExsQNLnbfYw8brxV
+                        RZF7E2hlceOAnCL3uYAbhbb0uLfhYSY3DCW+DOaQ6hQCiriRU4YacNjvWMgNw1uR/9+WKzjPu4Af
+                        m/vA1kJWWUeLzY1CLmM5hViwz3UANwxxhSR/EQrOcWdDoIAbBosYh6oj5RgpAbdj1vII9rfsfCbh
+                        hgGMzE6B89tLryDiPnK1lFzO60nEjQJ0Sz6FWK+cJDJuuJszo1Pg3IJkYULuQ3drCQWuJZicTciN
+                        gnRnPAqxfgL9zMDnUm7olJh0hg7Beb2CBcTc8KhgHqeA0VncRnOjPcwzP4VYn7x9yLlhWAKPRbTg
+                        nN7gInJu1OqVl0MoNDKjJNwogPUmMfdzRvsh3JzxiBAMSC6oQiHcqOWbJqFQWI8clSBuFMBK6RSe
+                        C8O4YQAroVPgXM7pYmHcKBqzaBIJueQ8KTcKYDGc8jNMxUsJOtAWYArlRnvhRh6g1+1AXvtKoSyJ
+                        toKh3CiQNG+c2q4C5u4hR4HfcXJutD/LGTLcrRXdKw3oPntwKZwb7YdzDeUdAwXPoeNLhnOjMIHD
+                        KV3bjqyl0DWztrcYwY2cYh3Knm3tt0zoEldgKYYb7XYaWwqe9ErZbplw/pyXQgw37okuBn8CR/Qo
+                        QJcsXV1HcaPdfOTMop9A+jEMus4dVIrjRjue1kShE1iIdAq6yi8ycqOgEuFJIucO8RiGrhVPx5Hc
+                        aK8Wcgq5nwIv7aDjfGGCWG6062kJCtD7V2agFHTJ4sLTbyw3ChkAp1gyM4EgALpOZr5uo7nRwfVL
+                        56e0UybOT/NwoxHtVrHv+euWglc3IyQTz40c3LmDOfb8uUoxFiEJuNEd4/FeYHOJuxQnPJCA2+4U
+                        +/7hVkuLl1iL7BTc6Bdxmw3IsX+41fbOE+KSRNzIKZv7wcTNvbnzoLq80EASbrxXb9bYzyL0nYJ+
+                        lzguScWNwgef72ToieP6G8Ip6Npg7mxJxI0W4jf4xMoaz8CPREKQQbnxNqi/wT+0q7g7+Ef4ddn7
+                        cVJxk2mlep5oC5Fn4uCXG5b7mQdpfF/Kc63ydxEl47ak0YMD6Z6WsQK3E2l3uTmnRbCjJSG3y7zn
+                        nGmRvO1PyO0wb/embJ+WtaCvlNz0UVQDbspUXrh7iXazJOW2Hdcb9UpZMjXL9oQk5bY4BT7gTclS
+                        S1FPabnJ46joAY8MTQj3PCXmJpxCLAOIox7S/SCJuYklDrUMOEGlpP2k5j6GQORiETlFvE04NTcc
+                        SctiET12S984J+ZGPDNLQbjMkb5xTsttWWhGlRyCG43irbUoWsbP2L0k50YsrtoobHLL7CU9N5z7
+                        9wlLZ+SGI+j5LRHNTkZuMQf8jZL8ZibknojnXV4jAzfjFRUUCiAuh+cOYgj4rqm5V6Ai77k0rFZC
+                        btHL9Ueh5971sNzB/Qd+31TccL75kZDAmmm4Q0etIaIu6+G4Ud9jNjZ7M0gO7jtQSXZWMKh2Cm60
+                        nUuEjUOG42G4Ub/nMu6g752A+xRUkZ89Dmghnlu4cZPSs4l4xqK5j+V9YuG0qtm5p6BC2BZ2cSux
+                        3Ik2gqNZG+XlFvdnE+swRjrukyQuCWgpjjvhwRLh4Zoo7qQHeWRjEMXNOdjEl6i1GO7EB9VEB/Yi
+                        uJMfDJSMQwR3+oOYghbDub1HaQPEn8FwbtBHkoPG/OPiwdx5DnazWw3l9hzLD9aEOYuh3KD9ZIkL
+                        uCkoArnzJYpgthzGnTMxB28mw7hXmVzSypn2JI47b+IZVush3LkT/XBmM4T7LqNL7scFgFPjEsCd
+                        Pz0Rowc59xCJw+CMpuD2txkv/9iIuW0J6tLKm1RNyg2DmF+xMOQ6hVyR3L72UsmXqFHIPVz6RE9P
+                        Mm4YnsqZrnLqnFkZN2grWVYISnCM+mEJETcMYo5ycrt7k3DDwEPq/DhQrtmVcJ8M6BLfOAm4QQAv
+                        cVYfSo4e+dxDu6QVmOFOqJPP/dzaRj7Zx4rNDYJ3GbKEUbL2yuWG33w2CDaa5V0wj8v9yVI/t2zj
+                        xeQGgbuBXEL1fCHifkv+dRCBmX4v4abrDiRyzFjcIDyVKTelTYdU7yzuiZ5LWoGQ4SWXm6o3qMC4
+                        LXncIDw1QP5sqCNMwOBe4W87tMDy/pLDDerkz/pNCYzd2s+t75JWiMLLfQe/qY7grPu4/1mCS1qB
+                        8Tv1cIP5UcP2HGH3cI/1uN1H2N3cw/yvCZtOQ7mzBQN5ch1hd3Kf63K7jrC7uIf73zU2nYZwK7uk
+                        lfUIu4v7XJu6sR5hd3FffV2CJmLuslW5K3flLk+Vu3JX7vJUuSt35S5P+8p9vafcc2/y1DJ1RWb8
+                        Kl8fmo/aCEE6sy/1i9bal9S4UDXu3Nelqn2B/Z02RIBmjT1pY8HahC5PtDHE2mxf8mXeLU4PkeKn
+                        8U0Nir2LFL9eabMIdN0JcB//5cW+6JcN8X8B85vetwnigQ8AAAAldEVYdGRhdGU6Y3JlYXRlADIw
+                        MjAtMDctMDRUMDM6NDU6MjcrMDM6MDDsnuMrAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA3LTA0
+                        VDAzOjQ1OjI3KzAzOjAwncNblwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+               | 
+               <a id="theme-toggle" onclick="modeSwitcher()" style="cursor: pointer;">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACYVBMVEU/PzpEREBBQT1CQj4/
+                        PztAQDtHR0NJSUU+PjpISERDQz9AQDw5OTRFRUE8PDhCQj1CQj89PTlKSkY+PjlNTUlLS0hEREBD
+                        Qz9aWleHh4WtrazBwcHCwsLCwsLCwsLAwMCurq2IiIZgYFxXV1Sbm5rFxcXCwsKgoKBkZGFERECX
+                        l5bExMSPj45LS0empqWpqahUVFCnp6axsbFTU09CQj6lpaSpqahISESRkZCNjYtUVFG/v7/FxcW7
+                        u7vExMVhYV6ampmTk5FXV1S3t7eenp1VVVHCwsOYmJd3d3XIyMjCwsJdXVqEhIKrq6uGhoSnp6aX
+                        l5aAgH6srKzAwMBdXVq8vLzCwsOZmZhNTUm3t7bDw8PCwsKYmJexsbCYmJawsK/CwsJOTkq2trXD
+                        w8K9vb1bW1jBwcK9vb2pqaiXl5aCgoCvr66AgH6jo6OGhoNYWFXAwMB9fXvIyMjGxsZeXluamplM
+                        TEi5ubmcnJteXlrCwsLGxsaTk5FDQz+dnZzJycljY2CJiYe+vr5bW1hUVFCcnJuVlZRGRkKmpqW4
+                        uLd8fHl/f33AwMCioqFFRUFQUEyurq6wsLCFhYNkZGBSUk9SUk9hYV6JiYenp6bHx8inp6ZKSkZP
+                        T0unp6bExMS6urm0tLSzs7O4uLjExMSioqGMjIrExMTKysuVlZRFRUFiYl6hoaDExMTIyMicnJtr
+                        a2hhYV6Li4qxsbDDw8O+vr2zs7KHh4VlZWPHx8fGxsbCwsLJycnIyMjDw8PKysvExMTKysrMzMzL
+                        y8vFxcXJycrFxcbGxsfHx8jIyMnExMX///9/oPL/AAAAuHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAA
+                        AAAAAQEYUJzK4+3kzJxYGSKE5+qSIgJe7GoGlqYMprcLAZapAl1uH/H70vMkhWYP1ZoW7G5G/fMb
+                        UbpinWtbrMsd1OVuBtfn7m3IbMnlBNTozhzz1Z5sVq5Yt2YW7zf48iCTD9CiH/DzZwWv9Ctp0QsQ
+                        rnABqNFKO82sAg22uF0fBwUfV7T7uw0Lp/PYycnV8qtu7/JxASeZ7vGgLh5hqebTrWUhilEqqgAA
+                        AAFiS0dEyvO0NuYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkCBYKLR1KuANWAAACD0lE
+                        QVQoz23TZXvUQBAA4CG7R09K4ZANFtwKFHcvTrHi0BZ3d5dCKe4uxd1d7jbZJCQFwr9ik1wud83N
+                        hyRP3uzOk5lZIE6IUK95i5atWktSm7bt2ncQQHTfg3MVUMdOnRNJ6kRS7tK1GxZSXEhIqH53SWE0
+                        HUzp0TMPe6txUS9Vo1nB1N59wi6HivrqNBByv/7Y5gGRgTmU+6DBAufwkF85kCczhoZFwMOGa0Ed
+                        MVKjbNRogOgYOahG8dhxJpXHx2DCxOBiY1I0f/IUykqmwjQllwpig+kJWjsDZiYCWop4yQpm6TQ5
+                        G+bkVhKaW8LYPJhfR9UFUafcaOEik5ZBebbqFa4SlLf4Ny2vw/oS5CqJRpbavCxr5wpPScPlK0y6
+                        ElZlNNJI5bUjtHoNY2th3R9f1/tKCjbINLkRNtWmdy5t5KsY2/yXWltg6zbNqxXylcS376Bs5y7A
+                        u+V0JX2N7dlrUmUfArz/gL384KFMDR8+olBWeTQOJH7M4N2vOp6PPIzi6hN8gIyTSASCTp3mz9qZ
+                        s43jYQEhAZoI587zPqkXLtrDRPClyzy9aV25eu1602Y3bt66fYen0+/WhNw5x/fuq8we/wcPHz1+
+                        8tSyW2w8q8HeKcGR5y8s/gHTTPOffVdevnodyzhE+M3bd7Lp1JeZ1vsPH53/KEwx/xX06fOXqq+S
+                        VPbt+4+fQjx1BP8DniGUSqIRNGsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMjJUMTA6NDU6
+                        MjkrMDM6MDBYVnojAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTIyVDEwOjQ1OjI5KzAzOjAw
+                        KQvCnwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div align="center" class="footer-col-1 column">
+         <a href="https://www.amanchadha.com/">www.amanchadha.com</a>
+      </div>
+      <!-- <div class="footer-col-2 column">
+         </div>
+         
+         <div class="footer-col-3 column">
+         
+         </div> -->
+   </div>
+   <!-- add permalinks to headers in kramdown -->
+   <!-- <script>
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML =
+              '<a href="#' + headings[i].id + '">' +
+                  headings[i].innerText +
+              '</a>';
+      }
+   </script>   -->
+
+   <!-- add title case to section headings -->
+   <script src="https://aman.ai/js/ap-style-title-case.js" type="text/javascript"></script>   
+   <script>
+      var headings = document.querySelectorAll("h1, h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML = titleCase(headings[i].innerHTML);
+      }
+      
+      var toc = document.querySelectorAll("a[id^='markdown-toc-']");
+      
+      for (var i = 0; i < toc.length; i++) {
+          toc[i].innerHTML = titleCase(toc[i].innerHTML);
+      }      
+   </script>        
+</footer>
+
+    <script src="https://aman.ai/js/nanobar.min.js"></script>
+    <script>
+    var options = {
+      classname: 'my-class',
+        id: 'my-id'
+    };
+    var nanobar = new Nanobar( options );
+    nanobar.go(100);
+    </script><div class="nanobar my-class" id="my-id" style="position: fixed;"><div class="bar"></div></div>     
+
+    <!-- Scroll bar -->
+    <div class="progress-bar"></div>
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+    var element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight',
+      progress = document.querySelector('.progress-bar'),
+      scroll;
+
+    document.addEventListener('scroll', function() {
+      scroll = (element[scrollTop]||body[scrollTop]) / ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+    });
+    </script>    
+    <!-- theme switcher -->
+    <script src="https://aman.ai/js/mode-switcher.js"></script>
+    <!-- mathjax -->
+<!--     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" id=""></script>
+    <!-- make mathjax responsive -->
+    <script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+       "HTML-CSS": { linebreaks: { automatic: true } },
+       "SVG": { linebreaks: { automatic: true } },
+      });
+    </script>
+    <!-- Copy button -->
+    <script src="https://aman.ai/js/clipboard.min.js"></script>
+    <script src="https://aman.ai/js/copy.js"></script>      
+    
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5905744527956213&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1766895471&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C8%3A128%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fbenchmarks%2F&amp;pra=5&amp;asro=0&amp;aiapm=0.1542&amp;aiapmd=0.1423&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1766922917928&amp;bpp=1&amp;bdt=61&amp;idt=37&amp;shv=r20251211&amp;mjsv=m202512100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=3119940683162&amp;frm=20&amp;pv=2&amp;u_tz=330&amp;u_his=50&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=31096042%2C95376242%2C95376583%2C95378750%2C95379651%2C95372614&amp;oid=2&amp;pvsid=2339937023467029&amp;tmod=112874479&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=22%2C22%2C22%2C22%2C800%2C0%2C756%2C556%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=33792&amp;bc=31&amp;bz=0.95&amp;psd=W251bGwsW251bGwsbnVsbCxudWxsLCJkZXByZWNhdGVkX2thbm9uIl1d&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=39" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20251211/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>

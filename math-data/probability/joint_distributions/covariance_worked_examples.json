@@ -1,0 +1,196 @@
+[
+  {
+    "id": "prob_wex_covariance_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "title": "Covariance: Definition and Properties",
+    "contentHtml": "<p>Covariance is a fundamental concept in probability theory that measures the linear relationship between two random variables.</p>",
+    "formula": {
+      "latex": "\\[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] \\]",
+      "name": "covariance formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the covariance between X and Y, given their joint distribution:</p>",
+      "hints": [
+        "Hint: Use the definition of covariance"
+      ],
+      "solutionHtml": "<p>Solution steps:</p><ul><li>Step 1: Calculate E[X] and E[Y].</li><li>Step 2: Calculate (X-E[X]) and (Y-E[Y]).</li><li>Step 3: Multiply the results from Step 1 and 2, then take the expected value.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let X and Y have joint distribution:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate E[X] and E[Y].",
+          "mathHtml": "\\[ E[X] = \\frac{1}{2} \\\\ E[Y] = \\frac{3}{4} \\]",
+          "explanation": "We need to find the expected values of X and Y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate (X-E[X]) and (Y-E[Y]).",
+          "mathHtml": "\\[ (X-E[X]) = X - \\frac{1}{2} \\\\ (Y-E[Y]) = Y - \\frac{3}{4} \\]",
+          "explanation": "We subtract the expected values from each random variable."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply the results and take the expected value.",
+          "mathHtml": "\\[ Cov(X,Y) = E\\left[(X-E[X])(Y-E[Y])\\right] \\]",
+          "explanation": "Now we multiply the terms and find the expected value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify the expression.",
+          "mathHtml": "\\[ Cov(X,Y) = \\frac{1}{8} \\]",
+          "explanation": "We simplify the expression to get the final answer."
+        }
+      ],
+      "finalAnswer": "The covariance is..."
+    },
+    "intuition": "Covariance measures how much two variables tend to move together.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:07:37.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_covariance_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "title": "Covariance: Definition and Computational Formula",
+    "contentHtml": "<p>In probability theory, covariance measures the direction and magnitude of the linear relationship between two random variables.</p>",
+    "formula": {
+      "latex": "\\[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] \\]",
+      "name": "covariance formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the covariance between X and Y, given their joint distribution:</p><p>P(x,y) = (1/4)(δ(x-0)+δ(y-0)) + (1/2)(δ(x-1)δ(y-0) + δ(x-0)δ(y-1)) + (1/4)(δ(x-1)δ(y-1))</p>",
+      "hints": [
+        "Hint: Use the definition of covariance and the joint distribution"
+      ],
+      "solutionHtml": "<p>Step 1: Calculate E[X] and E[Y]</p><p>\\[ E[X] = \\frac{1}{4}(0) + \\frac{1}{2}(1) + \\frac{1}{4}(1) = \\frac{3}{4} \\]\\<p>Step 2: Calculate E[Y]</p><p>\\[ E[Y] = \\frac{1}{4}(0) + \\frac{1}{2}(0) + \\frac{1}{4}(1) = \\frac{1}{4} \\]\\<p>Step 3: Calculate Cov(X,Y)</p><p>\\[ Cov(X,Y) = E[(X-\\frac{3}{4})(Y-\\frac{1}{4})] \\]</p>",
+      "answerShort": "Cov(X,Y) = -\\frac{1}{8}"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the covariance between X and Y, given their joint distribution:</p><p>P(x,y) = (1/4)(δ(x-0)+δ(y-0)) + (1/2)(δ(x-1)δ(y-0) + δ(x-0)δ(y-1)) + (1/4)(δ(x-1)δ(y-1))</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate E[X] and E[Y]",
+          "mathHtml": "\\[ E[X] = \\frac{1}{4}(0) + \\frac{1}{2}(1) + \\frac{1}{4}(1) = \\frac{3}{4} \\]\\",
+          "explanation": "We need to calculate the expected values of X and Y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate E[Y]",
+          "mathHtml": "\\[ E[Y] = \\frac{1}{4}(0) + \\frac{1}{2}(0) + \\frac{1}{4}(1) = \\frac{1}{4} \\]\\",
+          "explanation": "We need to calculate the expected value of Y."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate Cov(X,Y)",
+          "mathHtml": "\\[ Cov(X,Y) = E[(X-\\frac{3}{4})(Y-\\frac{1}{4})] \\]\\",
+          "explanation": "Now we can calculate the covariance using the definition."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the final answer",
+          "mathHtml": "\\[ Cov(X,Y) = -\\frac{1}{8} \\]\\",
+          "explanation": "The final answer is the covariance between X and Y."
+        }
+      ],
+      "finalAnswer": "-\\frac{1}{8}"
+    },
+    "intuition": "Covariance measures the direction and magnitude of the linear relationship between two random variables.",
+    "visualDescription": "A diagram showing the joint distribution and the calculation of covariance would be helpful for visual learners.",
+    "commonMistakes": [
+      "Forgetting to subtract the expected values"
+    ],
+    "realWorldApplications": [
+      "In machine learning, covariance is used in dimensionality reduction techniques like PCA."
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:08:30.807Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_covariance_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "title": "Covariance",
+    "contentHtml": "<p>Covariance is a fundamental concept in probability theory that measures the linear relationship between two random variables.</p>",
+    "formula": "{",
+    "latex": "\\[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] \\]",
+    "name": "covariance formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the covariance between X and Y given their joint distribution:</p><ul><li>P(x,y) = (1/4)(δ(x-0, y-0) + δ(x-1, y-0) + δ(x-0, y-1) + δ(x-1, y-1))</li></ul>",
+    "hints": [
+      "Hint: Use the definition of covariance and the given joint distribution"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ol><li>Find the expected value of X.</li><math>\\[ E[X] = 0.5 \\\\]</math><li>Find the expected value of Y.</li><math>\\[ E[Y] = 0.5 \\\\]</math><li>Expand the covariance formula using the joint distribution and the expected values.</li><p>We get:</p><math>\\[ Cov(X,Y) = (1/4)(E[(X-0.5)(Y-0.5)]) \\\\]</math>\",",
+    "answerShort": "Cov(X,Y) = 0\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the covariance between X and Y given their joint distribution:</p><ul><li>P(x,y) = (1/4)(δ(x-0, y-0) + δ(x-1, y-0) + δ(x-0, y-1) + δ(x-1, y-1))</li></ul>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the expected value of X.",
+        "mathHtml": "\\[ E[X] = 0.5 \\]",
+        "explanation": "We take the average of all possible values of X."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the expected value of Y.",
+        "mathHtml": "\\[ E[Y] = 0.5 \\]",
+        "explanation": "We take the average of all possible values of Y."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Expand the covariance formula using the joint distribution and the expected values.",
+        "mathHtml": "\\[ Cov(X,Y) = (1/4)(E[(X-0.5)(Y-0.5)]) \\]",
+        "explanation": "We plug in the given joint distribution and expected values into the covariance formula."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Simplify the expression.",
+        "mathHtml": "\\[ Cov(X,Y) = 0 \\]",
+        "explanation": "After simplifying, we get Cov(X,Y) = 0"
+      }
+    ],
+    "finalAnswer": "Cov(X,Y) = 0\" },",
+    "intuition": "The covariance between two random variables measures how much they tend to move together.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:09:12.711Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

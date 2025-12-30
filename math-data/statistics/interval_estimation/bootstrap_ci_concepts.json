@@ -1,0 +1,92 @@
+[
+  {
+    "id": "stat_con_bootstrap_ci_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When we're unsure about the true value of a population parameter, interval estimation provides a way to construct an interval that likely contains the true value.</p><p>The bootstrap method is a non-parametric technique used for constructing confidence intervals. It's particularly useful when the underlying distribution is unknown or complex.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = [x^{*}_{l}, x^{*}_{u}]\\]",
+      "name": "Bootstrap CI"
+    },
+    "intuition": "The bootstrap method works by resampling the original data with replacement, creating many 'new' datasets. Each of these new datasets is then used to construct a confidence interval. By repeating this process many times, we can get an idea of how the true value might be distributed.",
+    "realWorldApplications": [
+      "In machine learning, bootstrap methods are often used for estimating uncertainty in model predictions."
+    ],
+    "commonMistakes": [
+      "Failing to account for the variability introduced by resampling"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:16.116Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_bootstrap_ci_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When working with statistical models, it's crucial to quantify uncertainty and provide confidence intervals (CIs) for our estimates. Traditional methods rely on asymptotic theory, which can be limiting in practice. Bootstrap confidence intervals offer a non-parametric alternative, providing more robust results.</p><p>The bootstrap method involves resampling your dataset with replacement to generate new datasets, each with its own set of statistics. By repeating this process many times, you create a distribution of possible estimates and their corresponding CIs.</p>",
+    "formula": {
+      "latex": "\\[ CI = [\\text{Percentile} - \\alpha/2, \\text{Percentile} + \\alpha/2] \\]",
+      "name": "Bootstrap CI Formula"
+    },
+    "intuition": "The bootstrap method provides a way to estimate uncertainty without relying on specific assumptions about the underlying distribution. This is particularly useful when dealing with complex models or limited data.",
+    "realWorldApplications": [
+      "In machine learning, bootstrapping can help evaluate model performance and provide more accurate estimates of generalization error."
+    ],
+    "commonMistakes": [
+      "Failing to understand that bootstrap CIs are not necessarily symmetric; be mindful of the direction of the estimate."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:32.442Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_bootstrap_ci_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When estimating a population parameter using a sample statistic, it's crucial to quantify the uncertainty associated with that estimate. One way to do this is by constructing confidence intervals (CI) around the point estimate. In this concept card, we'll explore bootstrap confidence intervals, a non-parametric method for creating CIs.</p><p>The bootstrap method involves resampling your original dataset with replacement to create many new datasets, each representing a possible realization of the data-generating process. For each of these 'bootstrap' samples, you calculate the statistic of interest (e.g., mean or proportion). This creates a distribution of values for that statistic.</p><p>The 2.5th and 97.5th percentiles of this bootstrap distribution become the lower and upper bounds of your CI, respectively. The idea is that if you were to repeat the process many times, about 95% of the time the true parameter would fall within these bounds.</p>",
+    "formula": {
+      "latex": "\\[CI = [\\text{Percentile}^{2.5}_{97.5}(\\hat{\\theta})]\\]",
+      "name": "Bootstrap CI"
+    },
+    "intuition": "The bootstrap method allows us to create CIs without making assumptions about the underlying distribution of the data, making it a powerful tool for exploratory data analysis and model evaluation.",
+    "realWorldApplications": [
+      "In machine learning, bootstrap CIs can be used to quantify the uncertainty in model predictions or feature importance scores."
+    ],
+    "commonMistakes": [
+      "Failing to account for the variability in the bootstrap distribution when constructing the CI"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:52.350Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

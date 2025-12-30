@@ -1,0 +1,899 @@
+{
+  "totalCards": 14,
+  "bySubject": {
+    "linear_algebra": 5,
+    "probability": 3,
+    "statistics": 3,
+    "calculus": 3
+  },
+  "byType": {
+    "concept": 7,
+    "formula": 1,
+    "worked_example": 4,
+    "theorem": 1,
+    "problem": 1
+  },
+  "byDifficulty": {
+    "2": 4,
+    "3": 8,
+    "4": 2
+  },
+  "lastUpdated": "2025-12-26T07:06:39.337Z",
+  "cards": [
+    {
+      "id": "la_con_eigen_basics_001",
+      "subject": "linear_algebra",
+      "type": "concept",
+      "chapter": "eigenvalues_eigenvectors",
+      "topic": "eigen_basics",
+      "title": "What Are Eigenvalues and Eigenvectors?",
+      "subtitle": "The special directions where matrices just scale",
+      "contentHtml": "<p>An <strong>eigenvector</strong> of a matrix \\(A\\) is a non-zero vector \\(\\mathbf{v}\\) that, when multiplied by \\(A\\), only gets <em>scaled</em>—it doesn't change direction. The scaling factor is called the <strong>eigenvalue</strong> \\(\\lambda\\):</p><p>\\[A\\mathbf{v} = \\lambda\\mathbf{v}\\]</p><p>Think of it this way: most vectors get rotated and stretched in complicated ways when you apply a linear transformation. But eigenvectors are special—they stay on the same line, just getting longer or shorter (or flipped if \\(\\lambda < 0\\)).</p><p><strong>Why this matters:</strong> Eigenvalues reveal the fundamental behavior of a transformation. In ML, they tell us about the principal directions of variance in data (PCA), the stability of dynamical systems, and the convergence of iterative algorithms.</p>",
+      "visualDescription": "A 2D plot showing a matrix transformation. Most vectors (gray arrows) get rotated and stretched. Two eigenvectors (colored arrows) stay on their original lines, just getting scaled by their eigenvalues.",
+      "intuition": "Imagine pushing on a flexible grid. Most points move in complex ways, but some special directions just stretch or compress uniformly. Those are the eigenvectors—the 'natural axes' of the transformation.",
+      "commonMistakes": [
+        "Thinking eigenvectors must be unit vectors (they can have any non-zero length)",
+        "Forgetting that the zero vector is never an eigenvector",
+        "Confusing eigenvalues with the entries of the matrix"
+      ],
+      "realWorldApplications": [
+        "PCA uses eigenvectors of the covariance matrix to find principal components",
+        "Google's PageRank is the dominant eigenvector of the web link matrix",
+        "Eigenvalues determine stability in control systems and neural network training"
+      ],
+      "tags": [
+        "eigenvalue",
+        "eigenvector",
+        "linear transformation",
+        "PCA",
+        "fundamental"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "la_con_matrix_multiplication_001",
+        "la_con_linear_transformations_001"
+      ],
+      "relatedCards": [
+        "la_for_characteristic_polynomial_001",
+        "la_thm_spectral_theorem_001"
+      ],
+      "nextCards": [
+        "la_wex_eigen_basics_001",
+        "la_prb_eigen_basics_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "la_for_characteristic_polynomial_001",
+      "subject": "linear_algebra",
+      "type": "formula",
+      "chapter": "eigenvalues_eigenvectors",
+      "topic": "characteristic_polynomial",
+      "title": "The Characteristic Polynomial",
+      "subtitle": "Finding eigenvalues by solving det(A - λI) = 0",
+      "contentHtml": "<p>To find eigenvalues, we need \\(A\\mathbf{v} = \\lambda\\mathbf{v}\\) for some non-zero \\(\\mathbf{v}\\). Rearranging:</p><p>\\[(A - \\lambda I)\\mathbf{v} = \\mathbf{0}\\]</p><p>This has a non-zero solution only when \\(A - \\lambda I\\) is singular, i.e., when its determinant is zero.</p>",
+      "formula": {
+        "latex": "\\det(A - \\lambda I) = 0",
+        "name": "Characteristic Equation",
+        "variants": [
+          {
+            "latex": "p(\\lambda) = \\det(A - \\lambda I)",
+            "description": "The characteristic polynomial p(λ)"
+          },
+          {
+            "latex": "p(\\lambda) = (-1)^n \\lambda^n + \\cdots + \\det(A)",
+            "description": "General form for n×n matrix"
+          }
+        ]
+      },
+      "intuition": "The determinant measures 'volume scaling'. When det = 0, the transformation squashes space—meaning some vectors get mapped to zero. Those are exactly the eigenvectors!",
+      "commonMistakes": [
+        "Forgetting to subtract λ from ALL diagonal entries",
+        "Sign errors when expanding the determinant",
+        "Not checking that found λ values actually give non-trivial eigenvectors"
+      ],
+      "realWorldApplications": [
+        "Eigenvalue computation in numerical linear algebra libraries (though they use better algorithms than direct polynomial solving)",
+        "Analyzing stability of systems by checking if eigenvalues have negative real parts"
+      ],
+      "tags": [
+        "eigenvalue",
+        "determinant",
+        "polynomial",
+        "characteristic equation"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "important",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "la_con_eigen_basics_001",
+        "la_for_determinant_basics_001"
+      ],
+      "relatedCards": [
+        "la_wex_characteristic_polynomial_001"
+      ],
+      "nextCards": [
+        "la_prb_characteristic_polynomial_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "la_wex_eigen_basics_001",
+      "subject": "linear_algebra",
+      "type": "worked_example",
+      "chapter": "eigenvalues_eigenvectors",
+      "topic": "eigen_basics",
+      "title": "Finding Eigenvalues and Eigenvectors: 2×2 Example",
+      "subtitle": "Complete walkthrough for a simple matrix",
+      "contentHtml": "<p>Let's find all eigenvalues and eigenvectors of:</p><p>\\[A = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\]</p>",
+      "workedExample": {
+        "problemHtml": "Find all eigenvalues and eigenvectors of \\(A = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\)",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "description": "Set up the characteristic equation",
+            "mathHtml": "\\[\\det(A - \\lambda I) = \\det\\begin{pmatrix} 4-\\lambda & 1 \\\\ 2 & 3-\\lambda \\end{pmatrix} = 0\\]",
+            "explanation": "We need to find values of λ where (A - λI) is singular"
+          },
+          {
+            "stepNumber": 2,
+            "description": "Expand the determinant",
+            "mathHtml": "\\[(4-\\lambda)(3-\\lambda) - (1)(2) = 0\\]\\[12 - 4\\lambda - 3\\lambda + \\lambda^2 - 2 = 0\\]\\[\\lambda^2 - 7\\lambda + 10 = 0\\]",
+            "explanation": "Use the 2×2 determinant formula: ad - bc"
+          },
+          {
+            "stepNumber": 3,
+            "description": "Solve the quadratic",
+            "mathHtml": "\\[(\\lambda - 5)(\\lambda - 2) = 0\\]\\[\\lambda_1 = 5, \\quad \\lambda_2 = 2\\]",
+            "explanation": "Factor or use quadratic formula. These are our eigenvalues!"
+          },
+          {
+            "stepNumber": 4,
+            "description": "Find eigenvector for λ₁ = 5",
+            "mathHtml": "\\[(A - 5I)\\mathbf{v} = \\begin{pmatrix} -1 & 1 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\mathbf{0}\\]\\[-v_1 + v_2 = 0 \\Rightarrow v_2 = v_1\\]\\[\\mathbf{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\\]",
+            "explanation": "Solve the homogeneous system. Any scalar multiple works!"
+          },
+          {
+            "stepNumber": 5,
+            "description": "Find eigenvector for λ₂ = 2",
+            "mathHtml": "\\[(A - 2I)\\mathbf{v} = \\begin{pmatrix} 2 & 1 \\\\ 2 & 1 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\mathbf{0}\\]\\[2v_1 + v_2 = 0 \\Rightarrow v_2 = -2v_1\\]\\[\\mathbf{v}_2 = \\begin{pmatrix} 1 \\\\ -2 \\end{pmatrix}\\]",
+            "explanation": "Same process for the second eigenvalue"
+          },
+          {
+            "stepNumber": 6,
+            "description": "Verify our answers",
+            "mathHtml": "\\[A\\mathbf{v}_1 = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 5 \\end{pmatrix} = 5\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} \\checkmark\\]",
+            "explanation": "Always verify! Av should equal λv"
+          }
+        ],
+        "finalAnswer": "Eigenvalues: λ₁ = 5, λ₂ = 2. Eigenvectors: v₁ = (1, 1)ᵀ, v₂ = (1, -2)ᵀ"
+      },
+      "visualDescription": "Show the matrix A transforming the plane, with the two eigenvectors highlighted. v₁ gets stretched by 5, v₂ gets stretched by 2.",
+      "commonMistakes": [
+        "Arithmetic errors in determinant expansion",
+        "Stopping after finding eigenvalues without computing eigenvectors",
+        "Not verifying the answer by checking Av = λv"
+      ],
+      "tags": [
+        "eigenvalue",
+        "eigenvector",
+        "2x2 matrix",
+        "worked example"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 3,
+      "prerequisites": [
+        "la_con_eigen_basics_001",
+        "la_for_characteristic_polynomial_001"
+      ],
+      "relatedCards": [
+        "la_prb_eigen_basics_001"
+      ],
+      "nextCards": [
+        "la_con_diagonalization_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "la_thm_spectral_theorem_001",
+      "subject": "linear_algebra",
+      "type": "theorem",
+      "chapter": "eigenvalues_eigenvectors",
+      "topic": "spectral_theorem",
+      "title": "The Spectral Theorem",
+      "subtitle": "Symmetric matrices are orthogonally diagonalizable",
+      "contentHtml": "<p>The Spectral Theorem is one of the most important results in linear algebra, especially for machine learning. It tells us that <em>symmetric matrices have nice properties</em>.</p>",
+      "theorem": {
+        "statement": "\\textbf{Spectral Theorem:} If \\(A\\) is a real symmetric matrix (\\(A = A^T\\)), then:\\begin{enumerate}\\item All eigenvalues of \\(A\\) are real\\item Eigenvectors corresponding to distinct eigenvalues are orthogonal\\item \\(A\\) can be diagonalized as \\(A = Q\\Lambda Q^T\\) where \\(Q\\) is orthogonal\\end{enumerate}",
+        "proofSketch": "For real eigenvalues: if Av = λv, then v̄ᵀAv = λ||v||². Since A is symmetric and real, v̄ᵀAv is real, so λ must be real. For orthogonality: if Av₁ = λ₁v₁ and Av₂ = λ₂v₂ with λ₁ ≠ λ₂, then λ₁(v₁·v₂) = (Av₁)·v₂ = v₁·(Av₂) = λ₂(v₁·v₂), so v₁·v₂ = 0."
+      },
+      "intuition": "Symmetric matrices represent 'pure scaling' in orthogonal directions—no rotation or shearing. The eigenvectors give you the natural coordinate system where the matrix acts most simply.",
+      "commonMistakes": [
+        "Applying this theorem to non-symmetric matrices",
+        "Forgetting that Q must be orthogonal, not just invertible",
+        "Confusing Q⁻¹ with Qᵀ (they're equal for orthogonal matrices)"
+      ],
+      "realWorldApplications": [
+        "PCA: The covariance matrix is symmetric, so we can find orthogonal principal components",
+        "Optimization: Hessians of twice-differentiable functions are symmetric",
+        "Graph Laplacians: Spectral clustering uses eigenvalues of symmetric Laplacian matrices"
+      ],
+      "tags": [
+        "spectral theorem",
+        "symmetric matrix",
+        "diagonalization",
+        "orthogonal",
+        "PCA"
+      ],
+      "difficulty": 4,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "la_con_diagonalization_001",
+        "la_con_orthogonal_matrices_001"
+      ],
+      "relatedCards": [
+        "la_con_svd_basics_001",
+        "la_con_pca_001"
+      ],
+      "nextCards": [
+        "la_wex_spectral_theorem_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "la_prb_eigen_basics_001",
+      "subject": "linear_algebra",
+      "type": "problem",
+      "chapter": "eigenvalues_eigenvectors",
+      "topic": "eigen_basics",
+      "title": "Find Eigenvalues of a 3×3 Matrix",
+      "subtitle": "Practice with a larger matrix",
+      "contentHtml": "<p>This problem tests your ability to find eigenvalues of a 3×3 matrix with a special structure that makes computation easier.</p>",
+      "problem": {
+        "statementHtml": "<p>Find all eigenvalues of the matrix:</p><p>\\[A = \\begin{pmatrix} 2 & 1 & 0 \\\\ 0 & 2 & 1 \\\\ 0 & 0 & 3 \\end{pmatrix}\\]</p>",
+        "hints": [
+          "Notice that A is upper triangular. What's special about the determinant of triangular matrices?",
+          "For a triangular matrix, det(A - λI) factors very nicely...",
+          "The eigenvalues of a triangular matrix are just its diagonal entries!"
+        ],
+        "solutionHtml": "<p><strong>Key insight:</strong> For a triangular matrix, the determinant is the product of diagonal entries.</p><p>\\[\\det(A - \\lambda I) = \\det\\begin{pmatrix} 2-\\lambda & 1 & 0 \\\\ 0 & 2-\\lambda & 1 \\\\ 0 & 0 & 3-\\lambda \\end{pmatrix}\\]</p><p>\\[= (2-\\lambda)(2-\\lambda)(3-\\lambda) = 0\\]</p><p>The eigenvalues are the diagonal entries: \\(\\lambda_1 = 2\\) (with algebraic multiplicity 2) and \\(\\lambda_2 = 3\\).</p>",
+        "answerShort": "λ = 2 (multiplicity 2), λ = 3"
+      },
+      "commonMistakes": [
+        "Expanding the full 3×3 determinant instead of using the triangular shortcut",
+        "Confusing algebraic multiplicity with geometric multiplicity"
+      ],
+      "tags": [
+        "eigenvalue",
+        "triangular matrix",
+        "determinant",
+        "3x3"
+      ],
+      "difficulty": 2,
+      "mlRelevance": "important",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "la_con_eigen_basics_001"
+      ],
+      "relatedCards": [
+        "la_wex_eigen_basics_001"
+      ],
+      "nextCards": [
+        "la_prb_eigen_basics_002"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "prob_con_bayes_theorem_001",
+      "subject": "probability",
+      "type": "concept",
+      "chapter": "foundations",
+      "topic": "bayes_theorem",
+      "title": "Bayes' Theorem: Updating Beliefs",
+      "subtitle": "How to reverse conditional probabilities",
+      "contentHtml": "<p>Bayes' Theorem is the mathematical foundation for <em>updating beliefs based on evidence</em>. If you know how likely evidence is given a hypothesis, Bayes tells you how likely the hypothesis is given the evidence.</p><p>In machine learning, this is everywhere: spam filters update their belief that an email is spam based on words; medical diagnosis systems update disease probability based on symptoms; neural networks can be viewed as doing approximate Bayesian inference.</p><p>The key insight: <strong>your final belief depends on both the evidence AND your prior belief</strong>.</p>",
+      "formula": {
+        "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}",
+        "name": "Bayes' Theorem",
+        "variants": [
+          {
+            "latex": "P(H|E) = \\frac{P(E|H) \\cdot P(H)}{P(E)}",
+            "description": "Hypothesis-Evidence notation (common in ML)"
+          },
+          {
+            "latex": "\\text{posterior} = \\frac{\\text{likelihood} \\times \\text{prior}}{\\text{evidence}}",
+            "description": "Intuitive names for each term"
+          },
+          {
+            "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B|A)P(A) + P(B|A^c)P(A^c)}",
+            "description": "Expanded form using law of total probability"
+          }
+        ]
+      },
+      "intuition": "Imagine you're a doctor. A patient tests positive for a rare disease. The test is 99% accurate, but the disease affects only 1 in 10,000 people. Is the patient likely sick? Bayes says: probably not! The false positive rate among healthy people dominates because there are so many more healthy people.",
+      "commonMistakes": [
+        "Confusing P(A|B) with P(B|A) — these are generally NOT equal!",
+        "Ignoring the prior probability P(A)",
+        "Forgetting that P(B) in the denominator normalizes everything"
+      ],
+      "realWorldApplications": [
+        "Spam filters: P(spam|words) from P(words|spam) and P(spam)",
+        "Medical diagnosis: P(disease|symptoms) from test accuracy and prevalence",
+        "A/B testing: Bayesian inference for conversion rates",
+        "Language models: Next-word prediction is Bayesian at its core"
+      ],
+      "tags": [
+        "bayes",
+        "conditional probability",
+        "prior",
+        "posterior",
+        "inference"
+      ],
+      "difficulty": 2,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "prob_con_conditional_probability_001"
+      ],
+      "relatedCards": [
+        "prob_for_bayes_theorem_001",
+        "prob_wex_bayes_theorem_001"
+      ],
+      "nextCards": [
+        "prob_con_bayesian_inference_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "prob_wex_bayes_theorem_001",
+      "subject": "probability",
+      "type": "worked_example",
+      "chapter": "foundations",
+      "topic": "bayes_theorem",
+      "title": "The Medical Test Problem",
+      "subtitle": "Why accurate tests can still be wrong",
+      "contentHtml": "<p>This classic problem shows why base rates matter—even with an accurate test.</p>",
+      "workedExample": {
+        "problemHtml": "<p>A disease affects 1% of the population. A test for the disease is 95% accurate (it correctly identifies 95% of sick people and 95% of healthy people). If a person tests positive, what's the probability they actually have the disease?</p>",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "description": "Identify the known probabilities",
+            "mathHtml": "\\[P(D) = 0.01 \\quad \\text{(prior: disease prevalence)}\\]\\[P(D^c) = 0.99 \\quad \\text{(probability of being healthy)}\\]\\[P(+|D) = 0.95 \\quad \\text{(sensitivity: true positive rate)}\\]\\[P(+|D^c) = 0.05 \\quad \\text{(false positive rate)}\\]",
+            "explanation": "We know the test accuracy and disease prevalence. We want P(D|+)."
+          },
+          {
+            "stepNumber": 2,
+            "description": "Write Bayes' Theorem",
+            "mathHtml": "\\[P(D|+) = \\frac{P(+|D) \\cdot P(D)}{P(+)}\\]",
+            "explanation": "This is what we're solving for"
+          },
+          {
+            "stepNumber": 3,
+            "description": "Calculate P(+) using law of total probability",
+            "mathHtml": "\\[P(+) = P(+|D)P(D) + P(+|D^c)P(D^c)\\]\\[= (0.95)(0.01) + (0.05)(0.99)\\]\\[= 0.0095 + 0.0495 = 0.059\\]",
+            "explanation": "Only 5.9% of all people test positive"
+          },
+          {
+            "stepNumber": 4,
+            "description": "Apply Bayes' Theorem",
+            "mathHtml": "\\[P(D|+) = \\frac{(0.95)(0.01)}{0.059} = \\frac{0.0095}{0.059} \\approx 0.161\\]",
+            "explanation": "Substitute all values into Bayes' formula"
+          },
+          {
+            "stepNumber": 5,
+            "description": "Interpret the result",
+            "mathHtml": "\\[P(D|+) \\approx 16.1\\%\\]",
+            "explanation": "Despite a 95% accurate test, a positive result only means ~16% chance of disease! This is because most positive tests come from the large pool of healthy people."
+          }
+        ],
+        "finalAnswer": "Only about 16% of people who test positive actually have the disease."
+      },
+      "visualDescription": "A tree diagram or 2x2 contingency table showing the population split into disease/healthy, then positive/negative tests, with counts for 10,000 people.",
+      "intuition": "Out of 10,000 people: 100 have the disease (95 test positive). 9,900 are healthy (495 test positive). So 95 true positives vs 495 false positives: only 95/590 ≈ 16% of positives have the disease.",
+      "commonMistakes": [
+        "Thinking a 95% accurate test means 95% of positives are true",
+        "Ignoring how rare the disease is (the base rate fallacy)",
+        "Confusing sensitivity with positive predictive value"
+      ],
+      "tags": [
+        "bayes",
+        "medical testing",
+        "base rate",
+        "worked example"
+      ],
+      "difficulty": 2,
+      "mlRelevance": "core",
+      "estimatedMinutes": 3,
+      "prerequisites": [
+        "prob_con_bayes_theorem_001"
+      ],
+      "relatedCards": [
+        "prob_prb_bayes_theorem_001"
+      ],
+      "nextCards": [
+        "prob_con_bayesian_inference_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "prob_con_normal_distribution_001",
+      "subject": "probability",
+      "type": "concept",
+      "chapter": "continuous_rv",
+      "topic": "normal",
+      "title": "The Normal Distribution",
+      "subtitle": "The bell curve that's everywhere",
+      "contentHtml": "<p>The <strong>normal distribution</strong> (or Gaussian) is the most important continuous distribution in statistics and ML. Its bell-shaped curve appears whenever you add up many small, independent random effects.</p><p>The distribution is completely determined by two parameters:</p><ul><li><strong>Mean μ</strong>: The center of the bell</li><li><strong>Variance σ²</strong>: The spread (σ is standard deviation)</li></ul><p>The 68-95-99.7 rule: About 68% of data falls within 1σ of the mean, 95% within 2σ, and 99.7% within 3σ.</p>",
+      "formula": {
+        "latex": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+        "name": "Normal PDF",
+        "variants": [
+          {
+            "latex": "f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}",
+            "description": "Standard normal (μ=0, σ=1)"
+          },
+          {
+            "latex": "X \\sim \\mathcal{N}(\\mu, \\sigma^2)",
+            "description": "Notation for normal distribution"
+          }
+        ]
+      },
+      "intuition": "Why does this specific formula appear so often? The Central Limit Theorem! When you average many independent random things, the result approaches a normal distribution regardless of what the original distribution was.",
+      "commonMistakes": [
+        "Confusing σ² (variance) with σ (standard deviation) in the notation N(μ, ?)",
+        "Thinking all bell-shaped curves are normal",
+        "Forgetting that the normal extends to ±∞ (even if probability is tiny)"
+      ],
+      "realWorldApplications": [
+        "Measurement errors in experiments",
+        "Gaussian noise in signal processing and ML",
+        "Prior distributions in Bayesian neural networks",
+        "Latent spaces in VAEs are designed to be standard normal"
+      ],
+      "tags": [
+        "normal",
+        "gaussian",
+        "bell curve",
+        "continuous distribution"
+      ],
+      "difficulty": 2,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "prob_con_pdf_cdf_001"
+      ],
+      "relatedCards": [
+        "prob_thm_clt_001",
+        "prob_con_multivariate_normal_001"
+      ],
+      "nextCards": [
+        "prob_for_normal_001",
+        "prob_wex_normal_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "stat_con_mle_001",
+      "subject": "statistics",
+      "type": "concept",
+      "chapter": "estimation",
+      "topic": "mle",
+      "title": "Maximum Likelihood Estimation",
+      "subtitle": "Finding the parameters that make your data most likely",
+      "contentHtml": "<p><strong>Maximum Likelihood Estimation (MLE)</strong> is the most common way to estimate parameters from data. The idea: choose the parameter values that make the observed data most probable.</p><p>Given data \\(x_1, \\ldots, x_n\\) and a model with parameter \\(\\theta\\), the <strong>likelihood function</strong> is:</p><p>\\[L(\\theta) = P(\\text{data} | \\theta) = \\prod_{i=1}^n f(x_i | \\theta)\\]</p><p>The MLE is the \\(\\theta\\) that maximizes this. In practice, we maximize the <strong>log-likelihood</strong> (easier because products become sums):</p><p>\\[\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta \\sum_{i=1}^n \\log f(x_i | \\theta)\\]</p>",
+      "formula": {
+        "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_{\\theta} \\prod_{i=1}^n f(x_i | \\theta)",
+        "name": "Maximum Likelihood Estimator",
+        "variants": [
+          {
+            "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_{\\theta} \\sum_{i=1}^n \\log f(x_i | \\theta)",
+            "description": "Log-likelihood form (more practical)"
+          },
+          {
+            "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\min_{\\theta} \\left( -\\sum_{i=1}^n \\log f(x_i | \\theta) \\right)",
+            "description": "Negative log-likelihood (for minimization)"
+          }
+        ]
+      },
+      "intuition": "Imagine you flip a coin 10 times and get 7 heads. What's the most likely value of the true heads probability p? MLE says: the p that makes '7 heads in 10 flips' most probable. Answer: p = 0.7. Makes sense—the data is your best guide!",
+      "visualDescription": "A plot showing the likelihood function L(θ) as a curve, with the MLE marked at the peak. Show how different parameter values give different likelihoods of the observed data.",
+      "commonMistakes": [
+        "Confusing likelihood with probability (likelihood is a function of θ, not x)",
+        "Forgetting to use log-likelihood for numerical stability",
+        "Not checking that you found a maximum, not a minimum or saddle point"
+      ],
+      "realWorldApplications": [
+        "Training logistic regression (cross-entropy loss is negative log-likelihood)",
+        "Fitting Gaussian mixture models (EM algorithm maximizes likelihood)",
+        "Language models: predicting next word by maximizing likelihood",
+        "Virtually all parametric models in ML use MLE or variants"
+      ],
+      "tags": [
+        "MLE",
+        "likelihood",
+        "estimation",
+        "log-likelihood"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "prob_con_pdf_cdf_001",
+        "prob_con_conditional_probability_001"
+      ],
+      "relatedCards": [
+        "stat_wex_mle_001",
+        "stat_thm_mle_properties_001"
+      ],
+      "nextCards": [
+        "stat_con_mle_properties_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "stat_wex_mle_001",
+      "subject": "statistics",
+      "type": "worked_example",
+      "chapter": "estimation",
+      "topic": "mle",
+      "title": "MLE for Normal Distribution",
+      "subtitle": "Deriving the sample mean and variance",
+      "contentHtml": "<p>This fundamental example shows that MLE for normally distributed data gives exactly the sample mean and sample variance.</p>",
+      "workedExample": {
+        "problemHtml": "<p>Given i.i.d. samples \\(x_1, \\ldots, x_n\\) from \\(\\mathcal{N}(\\mu, \\sigma^2)\\), find the MLEs for \\(\\mu\\) and \\(\\sigma^2\\).</p>",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "description": "Write the likelihood function",
+            "mathHtml": "\\[L(\\mu, \\sigma^2) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left(-\\frac{(x_i - \\mu)^2}{2\\sigma^2}\\right)\\]",
+            "explanation": "Product of n normal PDFs"
+          },
+          {
+            "stepNumber": 2,
+            "description": "Take the log-likelihood",
+            "mathHtml": "\\[\\ell(\\mu, \\sigma^2) = -\\frac{n}{2}\\log(2\\pi) - \\frac{n}{2}\\log(\\sigma^2) - \\frac{1}{2\\sigma^2}\\sum_{i=1}^n (x_i - \\mu)^2\\]",
+            "explanation": "Log turns products into sums, making calculus easier"
+          },
+          {
+            "stepNumber": 3,
+            "description": "Maximize with respect to μ",
+            "mathHtml": "\\[\\frac{\\partial \\ell}{\\partial \\mu} = \\frac{1}{\\sigma^2}\\sum_{i=1}^n (x_i - \\mu) = 0\\]\\[\\Rightarrow \\hat{\\mu}_{\\text{MLE}} = \\frac{1}{n}\\sum_{i=1}^n x_i = \\bar{x}\\]",
+            "explanation": "The MLE for μ is just the sample mean!"
+          },
+          {
+            "stepNumber": 4,
+            "description": "Maximize with respect to σ²",
+            "mathHtml": "\\[\\frac{\\partial \\ell}{\\partial \\sigma^2} = -\\frac{n}{2\\sigma^2} + \\frac{1}{2(\\sigma^2)^2}\\sum_{i=1}^n (x_i - \\mu)^2 = 0\\]\\[\\Rightarrow \\hat{\\sigma}^2_{\\text{MLE}} = \\frac{1}{n}\\sum_{i=1}^n (x_i - \\bar{x})^2\\]",
+            "explanation": "The MLE for σ² is the sample variance (with n, not n-1)"
+          },
+          {
+            "stepNumber": 5,
+            "description": "Note on bias",
+            "mathHtml": "\\[E[\\hat{\\sigma}^2_{\\text{MLE}}] = \\frac{n-1}{n}\\sigma^2 \\neq \\sigma^2\\]",
+            "explanation": "The MLE for variance is biased! That's why we often use n-1 (Bessel's correction)"
+          }
+        ],
+        "finalAnswer": "\\(\\hat{\\mu}_{\\text{MLE}} = \\bar{x}\\) (sample mean), \\(\\hat{\\sigma}^2_{\\text{MLE}} = \\frac{1}{n}\\sum(x_i - \\bar{x})^2\\) (biased sample variance)"
+      },
+      "commonMistakes": [
+        "Using n-1 instead of n (MLE gives n; unbiased estimate uses n-1)",
+        "Forgetting to verify it's a maximum via second derivative",
+        "Sign errors in the derivatives"
+      ],
+      "tags": [
+        "MLE",
+        "normal distribution",
+        "sample mean",
+        "sample variance"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "important",
+      "estimatedMinutes": 3,
+      "prerequisites": [
+        "stat_con_mle_001",
+        "prob_con_normal_distribution_001"
+      ],
+      "relatedCards": [
+        "stat_prb_mle_001"
+      ],
+      "nextCards": [
+        "stat_con_mle_properties_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "stat_con_bias_variance_001",
+      "subject": "statistics",
+      "type": "concept",
+      "chapter": "ml_statistics",
+      "topic": "bias_variance",
+      "title": "The Bias-Variance Tradeoff",
+      "subtitle": "Why simple models underfit and complex models overfit",
+      "contentHtml": "<p>The <strong>bias-variance tradeoff</strong> is a fundamental concept explaining why ML models fail. For any estimator or model, the expected error can be decomposed:</p><p>\\[\\text{Expected Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Irreducible Noise}\\]</p><p><strong>Bias</strong>: How wrong the model is on average. Simple models have high bias—they underfit, missing patterns in the data.</p><p><strong>Variance</strong>: How much the model changes with different training data. Complex models have high variance—they overfit, memorizing noise.</p><p>The tradeoff: reducing one often increases the other!</p>",
+      "formula": {
+        "latex": "\\mathbb{E}[(y - \\hat{f}(x))^2] = \\text{Bias}[\\hat{f}(x)]^2 + \\text{Var}[\\hat{f}(x)] + \\sigma^2",
+        "name": "Bias-Variance Decomposition",
+        "variants": [
+          {
+            "latex": "\\text{Bias}[\\hat{f}(x)] = \\mathbb{E}[\\hat{f}(x)] - f(x)",
+            "description": "Bias = expected prediction minus true value"
+          },
+          {
+            "latex": "\\text{Var}[\\hat{f}(x)] = \\mathbb{E}[(\\hat{f}(x) - \\mathbb{E}[\\hat{f}(x)])^2]",
+            "description": "Variance = spread of predictions"
+          }
+        ]
+      },
+      "intuition": "Imagine aiming at a target. Bias is how far your average shot is from the bullseye. Variance is how spread out your shots are. A simple model is like always aiming at the center—biased if the target is elsewhere, but consistent. A complex model adjusts to each attempt—low bias but shots scatter wildly.",
+      "visualDescription": "Four target diagrams showing: (1) Low bias, low variance (tight cluster on bullseye), (2) Low bias, high variance (scattered around bullseye), (3) High bias, low variance (tight cluster off-center), (4) High bias, high variance (scattered off-center).",
+      "commonMistakes": [
+        "Thinking you can minimize both bias and variance simultaneously (tradeoff!)",
+        "Confusing training error with test error (variance shows up in test error)",
+        "Ignoring the irreducible noise term (some error can't be fixed)"
+      ],
+      "realWorldApplications": [
+        "Model selection: choosing the right complexity",
+        "Regularization: adding penalty to reduce variance",
+        "Ensemble methods: averaging reduces variance",
+        "Cross-validation: estimating the tradeoff on your data"
+      ],
+      "tags": [
+        "bias",
+        "variance",
+        "tradeoff",
+        "overfitting",
+        "underfitting"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "stat_con_estimators_basics_001"
+      ],
+      "relatedCards": [
+        "stat_con_regularization_001",
+        "stat_con_cross_validation_001"
+      ],
+      "nextCards": [
+        "stat_wex_bias_variance_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "calc_con_gradient_001",
+      "subject": "calculus",
+      "type": "concept",
+      "chapter": "multivariable",
+      "topic": "gradient",
+      "title": "The Gradient: Direction of Steepest Ascent",
+      "subtitle": "The key to optimization in ML",
+      "contentHtml": "<p>The <strong>gradient</strong> of a multivariable function \\(f(\\mathbf{x})\\) is a vector containing all partial derivatives:</p><p>\\[\\nabla f = \\left( \\frac{\\partial f}{\\partial x_1}, \\frac{\\partial f}{\\partial x_2}, \\ldots, \\frac{\\partial f}{\\partial x_n} \\right)\\]</p><p>The gradient has a beautiful geometric meaning: <strong>it points in the direction where \\(f\\) increases fastest</strong>, and its magnitude tells you how steep that increase is.</p><p>This is why gradient descent works: to minimize a function, move in the direction <em>opposite</em> the gradient.</p>",
+      "formula": {
+        "latex": "\\nabla f(\\mathbf{x}) = \\begin{pmatrix} \\frac{\\partial f}{\\partial x_1} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_n} \\end{pmatrix}",
+        "name": "Gradient Vector",
+        "variants": [
+          {
+            "latex": "\\nabla f = \\left( f_{x_1}, f_{x_2}, \\ldots, f_{x_n} \\right)",
+            "description": "Compact subscript notation"
+          },
+          {
+            "latex": "D_\\mathbf{u} f = \\nabla f \\cdot \\mathbf{u}",
+            "description": "Directional derivative (u is unit vector)"
+          }
+        ]
+      },
+      "intuition": "Imagine standing on a hillside. The gradient points directly uphill—the steepest way up. Its length tells you how steep the slope is. If you want to get to the bottom (minimize), walk opposite to the gradient.",
+      "visualDescription": "A contour plot of a 2D function with gradient vectors drawn perpendicular to contour lines, pointing toward higher values. Show that gradient is perpendicular to level curves.",
+      "commonMistakes": [
+        "Confusing gradient (a vector) with its magnitude (a scalar)",
+        "Forgetting that the gradient points UPHILL (toward higher values)",
+        "Not realizing the gradient is perpendicular to level curves/surfaces"
+      ],
+      "realWorldApplications": [
+        "Gradient descent for training neural networks",
+        "Optimizing loss functions in all of ML",
+        "Natural gradient for more efficient optimization",
+        "Gradient-based feature attribution (saliency maps)"
+      ],
+      "tags": [
+        "gradient",
+        "partial derivative",
+        "optimization",
+        "directional derivative"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "calc_con_partial_derivatives_001"
+      ],
+      "relatedCards": [
+        "calc_con_gradient_descent_001",
+        "calc_for_directional_derivative_001"
+      ],
+      "nextCards": [
+        "calc_wex_gradient_001",
+        "calc_con_hessian_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "calc_con_gradient_descent_001",
+      "subject": "calculus",
+      "type": "concept",
+      "chapter": "ml_calculus",
+      "topic": "gradient_descent",
+      "title": "Gradient Descent: The Optimization Workhorse",
+      "subtitle": "How neural networks learn",
+      "contentHtml": "<p><strong>Gradient descent</strong> is the algorithm that trains nearly all modern ML models. The idea is simple: to minimize a function, repeatedly take small steps in the direction opposite the gradient.</p><p>Starting from some initial point \\(\\mathbf{x}_0\\), we update:</p><p>\\[\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta \\nabla f(\\mathbf{x}_t)\\]</p><p>where \\(\\eta\\) (eta) is the <strong>learning rate</strong>—how big each step is.</p><p>The magic: even for functions with millions of parameters (like neural network weights), this simple local rule leads to good solutions!</p>",
+      "formula": {
+        "latex": "\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta \\nabla f(\\mathbf{x}_t)",
+        "name": "Gradient Descent Update",
+        "variants": [
+          {
+            "latex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla_{\\theta} \\mathcal{L}(\\theta)",
+            "description": "ML notation (θ = parameters, L = loss)"
+          },
+          {
+            "latex": "\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta_t \\nabla f(\\mathbf{x}_t)",
+            "description": "With adaptive learning rate"
+          }
+        ]
+      },
+      "intuition": "Imagine being blindfolded on a hilly landscape and trying to find the lowest point. Strategy: feel which direction is downhill (that's the negative gradient), take a step that way, repeat. The learning rate is your step size—too big and you overshoot, too small and you're too slow.",
+      "visualDescription": "A 3D loss surface with the gradient descent path shown as a zigzagging line from a random starting point down to a minimum. Show how different learning rates affect the path.",
+      "commonMistakes": [
+        "Learning rate too high → divergence or oscillation",
+        "Learning rate too low → painfully slow convergence",
+        "Confusing local minima with global minima",
+        "Forgetting that gradient descent finds LOCAL minima, not necessarily global"
+      ],
+      "realWorldApplications": [
+        "Training all neural networks (backprop computes gradients, GD uses them)",
+        "Logistic regression, linear regression, SVM training",
+        "Modern variants: SGD, Adam, AdaGrad, RMSprop",
+        "Fine-tuning large language models"
+      ],
+      "tags": [
+        "gradient descent",
+        "optimization",
+        "learning rate",
+        "neural networks"
+      ],
+      "difficulty": 3,
+      "mlRelevance": "core",
+      "estimatedMinutes": 2,
+      "prerequisites": [
+        "calc_con_gradient_001"
+      ],
+      "relatedCards": [
+        "calc_con_backpropagation_001",
+        "calc_con_convexity_001"
+      ],
+      "nextCards": [
+        "calc_wex_gradient_descent_001",
+        "calc_prb_gradient_descent_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    },
+    {
+      "id": "calc_wex_chain_rule_001",
+      "subject": "calculus",
+      "type": "worked_example",
+      "chapter": "ml_calculus",
+      "topic": "backpropagation",
+      "title": "Chain Rule in Neural Networks",
+      "subtitle": "Computing gradients through layers",
+      "contentHtml": "<p>This example shows how the chain rule computes gradients in a simple 2-layer neural network—the foundation of backpropagation.</p>",
+      "workedExample": {
+        "problemHtml": "<p>Consider a simple network: input \\(x\\), hidden layer \\(h = \\sigma(w_1 x)\\), output \\(y = w_2 h\\), loss \\(L = (y - t)^2\\) where \\(t\\) is the target. Find \\(\\frac{\\partial L}{\\partial w_1}\\).</p>",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "description": "Write out the computation graph",
+            "mathHtml": "\\[x \\xrightarrow{w_1} z_1 = w_1 x \\xrightarrow{\\sigma} h = \\sigma(z_1) \\xrightarrow{w_2} y = w_2 h \\xrightarrow{} L = (y-t)^2\\]",
+            "explanation": "The gradient must flow backward through each operation"
+          },
+          {
+            "stepNumber": 2,
+            "description": "Apply chain rule",
+            "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = \\frac{\\partial L}{\\partial y} \\cdot \\frac{\\partial y}{\\partial h} \\cdot \\frac{\\partial h}{\\partial z_1} \\cdot \\frac{\\partial z_1}{\\partial w_1}\\]",
+            "explanation": "Multiply the derivatives along the path from L back to w₁"
+          },
+          {
+            "stepNumber": 3,
+            "description": "Compute each partial derivative",
+            "mathHtml": "\\[\\frac{\\partial L}{\\partial y} = 2(y - t)\\]\\[\\frac{\\partial y}{\\partial h} = w_2\\]\\[\\frac{\\partial h}{\\partial z_1} = \\sigma'(z_1)\\]\\[\\frac{\\partial z_1}{\\partial w_1} = x\\]",
+            "explanation": "Each is a simple local derivative"
+          },
+          {
+            "stepNumber": 4,
+            "description": "Multiply them together",
+            "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = 2(y-t) \\cdot w_2 \\cdot \\sigma'(z_1) \\cdot x\\]",
+            "explanation": "This is the gradient flowing from loss back to the first weight"
+          },
+          {
+            "stepNumber": 5,
+            "description": "Interpret the result",
+            "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = \\underbrace{2(y-t)}_{\\text{error signal}} \\cdot \\underbrace{w_2 \\cdot \\sigma'(z_1)}_{\\text{through hidden layer}} \\cdot \\underbrace{x}_{\\text{input}}\\]",
+            "explanation": "The gradient is: (how wrong we are) × (how the error propagates back) × (the input that caused it)"
+          }
+        ],
+        "finalAnswer": "\\(\\frac{\\partial L}{\\partial w_1} = 2(y-t) \\cdot w_2 \\cdot \\sigma'(z_1) \\cdot x\\)"
+      },
+      "intuition": "Backpropagation is just the chain rule applied systematically. Each layer passes back the 'blame' for the error, scaled by its local gradient. The product of all these local gradients gives the total gradient.",
+      "commonMistakes": [
+        "Applying chain rule in wrong order (should be forward then backward)",
+        "Forgetting the σ'(z) term (the activation derivative)",
+        "Vanishing gradients when σ'(z) is small (problem with sigmoid/tanh)"
+      ],
+      "tags": [
+        "chain rule",
+        "backpropagation",
+        "neural network",
+        "gradient"
+      ],
+      "difficulty": 4,
+      "mlRelevance": "core",
+      "estimatedMinutes": 3,
+      "prerequisites": [
+        "calc_con_gradient_001",
+        "calc_con_chain_rule_multi_001"
+      ],
+      "relatedCards": [
+        "calc_con_backpropagation_001"
+      ],
+      "nextCards": [
+        "calc_prb_backpropagation_001"
+      ],
+      "generatedAt": "2025-12-26T10:00:00.000Z",
+      "generatedBy": "manual-sample",
+      "reviewed": true,
+      "version": 1
+    }
+  ]
+}

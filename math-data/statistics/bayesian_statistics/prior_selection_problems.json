@@ -1,0 +1,120 @@
+[
+  {
+    "id": "stat_prb_prior_selection_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior Selection: Informative vs Non-Informative</p>",
+      "hints": [
+        "Consider a simple coin flip example",
+        "Think about how informative priors affect posterior distributions",
+        "Don't forget to check the proper/ improper prior distinction"
+      ],
+      "solutionHtml": "<p>To illustrate, let's consider a fair coin with unknown bias. We can model this using a beta distribution as our prior.</p>\n<p>For an informative prior, we might assume a strong prior belief that the coin is slightly biased towards heads or tails.</p>\n<p>This would result in a more concentrated posterior distribution around the true value of the bias.</p>\n<p>In contrast, a non-informative prior (e.g., uniform) would lead to a broader posterior distribution, reflecting our lack of prior knowledge about the coin's bias.</p>",
+      "answerShort": "Informative priors result in more concentrated posteriors"
+    },
+    "commonMistakes": [
+      "Forgetting that improper priors can still be useful",
+      "Assuming all informative priors are proper"
+    ],
+    "realWorldApplications": [
+      "Using non-informative priors for hyperparameter tuning in deep learning models"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:17:36.465Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior selection is a crucial step in Bayesian statistics. Consider a simple coin flip experiment where we want to estimate the probability of heads. Suppose we have two prior distributions: one informative and one non-informative.</p>",
+      "hints": [
+        "Think about what 'informative' means in this context.",
+        "Recall that improper priors can be problematic.",
+        "Jeffreys' prior is a special case - why?"
+      ],
+      "solutionHtml": "<p>To illustrate the difference, let's assume our informative prior has mean 0.5 and variance 0.1. The non-informative prior could be a uniform distribution over [0,1].</p><p>Now, suppose we observe 10 coin flips with 6 heads. How would our posterior distributions change?</p>",
+      "answerShort": "The informative prior leads to a more concentrated posterior, while the non-informative prior yields a broader distribution."
+    },
+    "commonMistakes": [
+      "Failing to recognize that improper priors can lead to inconsistent posteriors.",
+      "Assuming all priors are equivalent without considering the context."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:17:51.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior selection in Bayesian statistics is crucial. Consider a scenario where you have two informative priors: <i>A</i> and <i>B</i>. Which one should you use?</p>",
+      "hints": [
+        "Think about the strength of each prior.",
+        "Consider the data distribution.",
+        "Check if the priors are proper or improper."
+      ],
+      "solutionHtml": "<p>To tackle this problem, we need to understand the differences between informative and non-informative priors. Informative priors contain information beyond just the data, while non-informative priors only reflect our uncertainty about the model parameters.</p><p>A proper prior is one that integrates to 1, whereas an improper prior does not. Jeffreys' prior is a type of improper prior that can be used when there's no prior knowledge.</p>",
+      "answerShort": "Use the informative prior with the strongest evidence."
+    },
+    "commonMistakes": [
+      "Choosing the wrong prior based on personal bias.",
+      "Ignoring the data distribution in favor of the prior."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:05.775Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": "{",
+    "statementHtml": "<p>Prior selection in Bayesian statistics is crucial. Consider a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\). What prior distribution should we choose for \\(\\mu\\)?</p>\",",
+    "hints": [
+      "Start by thinking about the properties you want your prior to have.",
+      "Consider whether you want your prior to be informative or non-informative.",
+      "Think about how you can use Jeffreys' prior as a starting point."
+    ],
+    "solutionHtml": "<p>To choose an appropriate prior, we need to consider the properties of our normal distribution. Since we're modeling uncertainty in \\(\\mu\\), we want our prior to be non-informative. A common choice is the improper prior \\(p(\\mu) = 1\\).</p>\",",
+    "answerShort": "The answer is an improper prior, specifically \\(p(\\mu) = 1\\).\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:19.922Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

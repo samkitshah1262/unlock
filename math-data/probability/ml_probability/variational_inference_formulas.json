@@ -1,0 +1,162 @@
+[
+  {
+    "id": "prob_for_variational_inference_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex posterior distributions using a simpler distribution called the variational distribution.</p><p>The evidence lower bound (ELBO) is a key concept in variational inference, which provides an upper bound on the log likelihood of the data given the model parameters.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{ELBO} = \\mathbb{E}_{q(\\phi)}[\\log p(D | \\theta)] - KL[q(\\phi) || p(\\phi)] \\]\",",
+    "name": "Evidence Lower Bound (ELBO)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian neural network with weights $\theta$ and inputs $x$. We want to approximate the posterior distribution over the weights given some observed data.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Choose a variational distribution q(φ) that is easy to work with",
+        "mathHtml": "",
+        "explanation": "This could be a normal distribution or a mixture of normals."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The ELBO provides an upper bound on the log likelihood, which makes it easier to optimize the model parameters.",
+    "tags": [
+      "variational inference",
+      "ELBO",
+      "mean-field approximation"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:29:13.765Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variational_inference_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions using simpler ones.</p><p>The evidence lower bound (ELBO) is a key concept in variational inference, which provides a lower bound on the log likelihood of the data given the model parameters.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathcal{L} = \\mathbb{E}_{q(\\phi)}[\\log p(y | x)] - KL[q(\\phi) || p(\\phi)] \\]\",",
+    "name": "ELBO (Evidence Lower Bound)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification problem with a neural network model.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Choose a variational distribution for the model parameters",
+        "mathHtml": "",
+        "explanation": "This is typically a normal distribution."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The ELBO provides a way to balance the complexity of the model with the simplicity of the variational distribution, allowing us to optimize the model parameters using stochastic gradient descent.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:29:33.802Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variational_inference_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions by optimizing a lower bound on the log likelihood.</p><p>The evidence lower bound (ELBO) is a fundamental concept in variational inference, which provides a tractable way to optimize the parameters of a probabilistic model.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{ELBO} = \\mathbb{E}_{q(\\phi)}\\left[\\log p(y|x;\\theta) - KL(q(\\phi)\\|p(\\phi)) \\right] \\]\",",
+    "name": "Evidence Lower Bound (ELBO)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a probabilistic model that generates images of handwritten digits. We want to approximate the posterior distribution over the model parameters given some observed data.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Choose a mean-field variational distribution",
+        "mathHtml": "\\[ q(\\phi) = \\prod_{i} q_{{i}}(\\phi_{{i}}) \\]",
+        "explanation": "This allows us to factorize the complex posterior into simpler distributions"
+      }
+    ],
+    "finalAnswer": "The ELBO can be optimized using stochastic gradient descent or other optimization algorithms\" },",
+    "intuition": "Variational inference provides a way to trade off between model complexity and tractability, allowing us to make accurate predictions while avoiding expensive computations",
+    "realWorldApplications": [
+      "Image generation",
+      "Text summarization"
+    ],
+    "tags": [
+      "variational inference",
+      "ELBO",
+      "mean-field approximation"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:29:58.401Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variational_inference_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions using simpler ones.</p><p>The evidence lower bound (ELBO) is a key concept in variational inference, which provides an upper bound on the log likelihood of the data given the model parameters.</p>",
+    "formula": "{",
+    "latex": "\\[ ELBO = \\mathbb{E}_{q}[\\log p(x|z)] - KL(q||p(Z|x) ) \\]\",",
+    "name": "ELBO Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian neural network with a Gaussian prior on the weights. How can we use variational inference to approximate the posterior distribution of the weights given the data?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Choose a mean-field approximation for the posterior",
+        "mathHtml": "",
+        "explanation": "This allows us to factorize the posterior into independent components"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Use the reparameterization trick to compute the ELBO",
+        "mathHtml": "",
+        "explanation": "This helps us to avoid computing the derivative of the sampling process"
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The ELBO provides a way to upper-bound the log likelihood of the data given the model parameters, which can be used for optimization and inference.",
+    "realWorldApplications": [
+      "Variational autoencoders (VAEs) are a popular application of variational inference in machine learning"
+    ],
+    "tags": [
+      "variational inference",
+      "ELBO",
+      "mean-field approximation"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:30:24.041Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

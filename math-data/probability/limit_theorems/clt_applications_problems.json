@@ -1,0 +1,102 @@
+[
+  {
+    "id": "prob_prb_clt_applications_004",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "problem": "{",
+    "statementHtml": "Suppose we have a random variable X that follows a binomial distribution with parameters n and p. Construct a 95% confidence interval for the true proportion p using the central limit theorem (CLT).",
+    "hints": [
+      "Start by applying the CLT to approximate the distribution of the sample mean.",
+      "Use the inverse normal distribution function to find the critical value.",
+      "The width of the confidence interval will depend on the sample size and the desired level of confidence."
+    ],
+    "solutionHtml": "<p>To apply the CLT, we need to check if the conditions are met. Since n is large enough, we can assume that the sample mean follows a normal distribution.</p><p>Next, we find the critical value z using the inverse normal distribution function with a confidence level of 95%:</p>\\[\\text{z} = \\Phi^{-1}(0.975) ≈ 1.96\\]</p><p>The width of the confidence interval is then:</p>\\[2 \\cdot \\frac{\\sigma}{\\sqrt{n}} \\cdot z ≈ 2 \\cdot \\sqrt{\\frac{p(1-p)}{n}} \\cdot 1.96\\]</p><p>Finally, we construct the confidence interval:</p>\\[\\text{CI} = \\left(\\bar{x} - 1.96 \\cdot \\frac{\\sigma}{\\sqrt{n}}, \\bar{x} + 1.96 \\cdot \\frac{\\sigma}{\\sqrt{n}}\\right)\\]",
+    "answerShort": "The 95% confidence interval for the true proportion p is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:56:56.062Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_applications_005",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the true proportion of defective products in a random sample of size <i>n</i>.</p>",
+    "hints": [
+      "Start by determining the standard deviation of the sampling distribution.",
+      "Use the Central Limit Theorem to justify normal approximation.",
+      "Apply the formula for the margin of error."
+    ],
+    "solutionHtml": "<p>To construct a 95% confidence interval, we first need to determine the z-score corresponding to our desired level of confidence.</p><p>\\[z = \\text{norm}^{-1}(0.975) ≈ 1.96.\\]</p><p>Next, we calculate the standard deviation of the sampling distribution:</p><p>\\[\\sigma = \\sqrt{\\frac{p(1-p)}{n}}.\\]</p><p>Then, we apply the formula for the margin of error:</p><p>\\[E = z \\cdot \\sigma ≈ 0.048.\\]</p><p>Finally, we construct our confidence interval:</p><p>\\[CI = (\\hat{p} - E, \\hat{p} + E).\\]</p>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:57:16.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_applications_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the true proportion <i>p</i> of students who prefer coffee over tea.</p>",
+    "hints": [
+      "<p>The sample size is large enough to apply the Central Limit Theorem (CLT).</p>",
+      "<p>Use the normal approximation to the binomial distribution.</p>",
+      "<p>Round your answer to two decimal places.</p>"
+    ],
+    "solutionHtml": "<p>To construct a 95% confidence interval, we need to find the <i>Z</i>-score corresponding to the desired confidence level:</p>\\n\\[Z = \\text{invNorm}(0.975) ≈ 1.96.\\]\\n<p>Next, calculate the standard error:</p>\\n\\[SE = \\sqrt{\\frac{p̂(1-p̂)}{n}} ≈ √(\\frac{0.7(1-0.7)}{100}) ≈ 0.05.\\]\\n<p>Now, use the <i>Z</i>-score and standard error to find the critical value:</p>\\n\\[criticalValue = Z \\cdot SE ≈ 1.96 \\cdot 0.05 ≈ 0.098.\\]\\n<p>The confidence interval is then:</p>\\n\\[(p̂ - criticalValue, p̂ + criticalValue) = (0.7 - 0.098, 0.7 + 0.098) ≈ (0.602, 0.798).\\]</p>\",",
+    "answerShort": "The 95% confidence interval is approximately [0.60, 0.80].\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:57:41.304Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_applications_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the true proportion <i>p</i> of students who prefer coffee over tea.</p>",
+    "hints": [
+      "Start by identifying the sample proportion <i>&hat;p</i>.",
+      "Recall that the standard error of the sample proportion is <i>SE(&hat;p) = sqrt{&hat;p(1-&hat;p)/n}</i>.",
+      "Use the Central Limit Theorem to justify the normal approximation."
+    ],
+    "solutionHtml": "<p>To construct the confidence interval, we need to find the critical value <i>Z</i> corresponding to a 2.5th percentile of the standard normal distribution.</p><p>We can use a calculator or software to obtain <i>Z &asymp; -1.96</i>.</p><p>The lower bound of the confidence interval is then given by:</p><p>\\[&hat;p - Z \\cdot SE(&hat;p) = 0.6 - 1.96 \\cdot sqrt{0.6(1-0.6)/100} &asymp; 0.512.\\]</p><p>The upper bound is similarly calculated as:</p><p>\\[&hat;p + Z \\cdot SE(&hat;p) = 0.6 + 1.96 \\cdot sqrt{0.6(1-0.6)/100} &asymp; 0.688.\\]</p>\",",
+    "answerShort": "The 95% confidence interval is [0.512, 0.688].\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:58:05.954Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

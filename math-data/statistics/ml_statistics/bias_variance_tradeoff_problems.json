@@ -1,0 +1,111 @@
+[
+  {
+    "id": "stat_prb_bias_variance_tradeoff_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "problem": "{",
+    "statementHtml": "Consider a binary classification model with true positive rate (TPR) <i>T</i> and false positive rate (FPR) <i>F</i>. Prove that the bias-variance tradeoff can be decomposed into two components: <i>B</i><sub>1</sub> = <i>T</i>(1-<i>T</i>) and <i>B</i><sub>2</sub> = 1/2(<i>F</i>+<i>T</i>).",
+    "hints": [
+      "Start by considering the probability of a positive example being misclassified.",
+      "Think about how the TPR and FPR relate to each other.",
+      "Use the definition of bias as the average error rate."
+    ],
+    "solutionHtml": "<p>Let <i>P</i>(+|+) be the probability of a positive example being correctly classified, and <i>P</i>(-|-) be the probability of a negative example being correctly classified. Then, the bias is given by:</p>\\n\\[B = P(-|+) + P(+|-).\\]\\n<p>Now, we can decompose the bias into two components:</p>\\n\\[B = T(1-T) + \\frac{1}{2}(F+T),\\]\\n<p>The first term represents the probability of a positive example being misclassified, while the second term represents the probability of a negative example being misclassified.</p>\",",
+    "answerShort": "The bias can be decomposed into two components: <i>B</i><sub>1</sub> = <i>T</i>(1-<i>T</i>) and <i>B</i><sub>2</sub> = 1/2(<i>F</i>+<i>T</i>).\" },",
+    "commonMistakes": [
+      "Forgetting to consider the probability of a negative example being misclassified."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:59:29.994Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bias_variance_tradeoff_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "problem": "{",
+    "statementHtml": "<p>Consider a binary classification model with true positive rate <i>T</i> and false positive rate <i>F</i>. Decompose the expected error into bias <i>B</i> and variance <i>V</i>. What is the relationship between these components?</p>",
+    "hints": "[ \"<p>The expected error can be written as <i>E[(y - \\hat{y})^2]</i>.</p>\", \"<p>Expand the squared term using the definition of bias and variance.</p>\", \"<p>Relate the resulting expression to the true positive rate and false positive rate.</p>\" ],",
+    "solutionHtml": "<p>The expected error can be written as <i>E[(y - \\hat{y})^2]</i>. Expanding this expression, we get:</p><p>\\[E[(y - \\hat{y})^2] = E[y^2] + E[\\hat{y}^2] - 2E[y\\hat{y}]</p><p>This can be decomposed into bias and variance components:</p><p>\\[B + V = E[y^2] + E[\\hat{y}^2] - 2E[y\\hat{y}]\\]</p><p>Now, relate the resulting expression to the true positive rate and false positive rate.</p>\",",
+    "answerShort": "<i>B + V</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:59:49.853Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bias_variance_tradeoff_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "problem": {
+      "statementHtml": "Consider a binary classification model with accuracy <i>A</i>. Suppose we have two models: <i>M1</i> with high bias and low variance, and <i>M2</i> with low bias and high variance. Which model would you expect to perform better on average?",
+      "hints": [
+        "Think about the tradeoff between correct classifications and incorrect ones.",
+        "Consider how each model handles different types of data (e.g., outliers).",
+        "Recall that high variance can lead to overfitting."
+      ],
+      "solutionHtml": "<p>To decompose the bias-variance tradeoff, let's consider the expected error <i>E</i> for each model.</p><p><i>M1</i>'s expected error is dominated by its high bias: <i>E(M1) ≈ P(error due to bias)</i>.</p><p><i>M2</i>'s expected error is dominated by its high variance: <i>E(M2) ≈ P(error due to overfitting)</i>.</p><p>Given these expectations, which model would you expect to perform better on average?</p>",
+      "answerShort": "M1"
+    },
+    "commonMistakes": [
+      "Focusing solely on the variance component and neglecting bias.",
+      "Assuming that high variance always leads to overfitting."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:00:07.304Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bias_variance_tradeoff_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "problem": {
+      "statementHtml": "The bias-variance tradeoff in a model refers to the balance between how well it fits the training data (<i>bias</i>) and how well it generalizes to new, unseen data (<i>variance</i>).",
+      "hints": [
+        "Start by considering a simple linear regression model.",
+        "Think about how increasing the complexity of the model affects its ability to fit the training data.",
+        "Consider what happens when you add more features or interactions to the model."
+      ],
+      "solutionHtml": "<p>To decompose the bias-variance tradeoff, imagine a simple linear regression model with one feature.</p><p>The bias term represents how well the model fits the training data. As you increase the complexity of the model (e.g., by adding more features or interactions), the bias decreases because the model becomes better at fitting the noise in the training data.</p><p>However, as the model becomes more complex, it also becomes more prone to overfitting, which increases the variance term. This is because the model starts to fit the random fluctuations in the training data rather than the underlying signal.</p>",
+      "answerShort": "The bias-variance tradeoff is a delicate balance between fitting the training data and generalizing to new data."
+    },
+    "commonMistakes": [
+      "Failing to recognize that increasing model complexity can both decrease bias and increase variance.",
+      "Thinking that overfitting only occurs when the model is too complex, rather than it being a function of the tradeoff between bias and variance."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:00:26.354Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "prob_prb_pairwise_mutual_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "pairwise_mutual",
+    "problem": {
+      "statementHtml": "<p>Consider two events A and B in a probability space. We say that A is pairwise independent of B if <i>P(A ∩ B)</i> = <i>P(A)</i>·<i>P(B)</i>. Is this the same as saying that A and B are mutually independent? Provide an example to support your answer.</p>",
+      "hints": [
+        "<p>Think about what it means for two events to be independent.</p>",
+        "<p>Consider a scenario where event A is not pairwise independent of event B, but they still satisfy the mutual independence condition.</p>",
+        "<p>What would happen if we were to apply the formula for conditional probability?</p>"
+      ],
+      "solutionHtml": "<p>To see why pairwise and mutual independence are different, let's consider an example. Suppose we have two events: A is flipping heads on a coin, and B is rolling a die.</p><p>If the coin flip and the die roll are independent, then the probability of both events occurring together is simply the product of their individual probabilities.</p><p>However, if the die roll depends on the coin flip (e.g., if we only consider even numbers when the coin lands heads), then A and B are no longer pairwise independent. Despite this, they still satisfy the mutual independence condition because the probability of both events occurring together is still just the product of their individual probabilities.</p>",
+      "answerShort": "<i>Pairwise independence does not imply mutual independence.</i>"
+    },
+    "commonMistakes": [
+      "Assuming that pairwise and mutual independence are equivalent"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding the difference between pairwise and mutual independence is crucial for modeling complex relationships between variables."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:30:49.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pairwise_mutual_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "pairwise_mutual",
+    "problem": {
+      "statementHtml": "<p>Consider two events A and B in a probability space. We say that A is pairwise independent of B if P(A ∩ B) = P(A)P(B). Show that pairwise independence does not imply mutual independence.</p>",
+      "hints": [
+        "Think about the case where P(A) = 1.",
+        "Consider an event C such that P(C|A) ≠ P(C|¬A)."
+      ],
+      "solutionHtml": "<p>To show that pairwise independence does not imply mutual independence, we construct a counterexample.</p><ul><li>Let A be the event that a coin lands heads up and B be the event that it lands tails up. Then P(A) = P(B) = 1/2.</li><li>We have pairwise independence since P(A ∩ B) = P(A)P(B) = (1/2)(1/2) = 1/4.</li><li>However, A and B are not mutually independent because P(A|B) ≠ P(A|¬B). Specifically, P(A|B) = 0 while P(A|¬B) = 1.</li></ul>",
+      "answerShort": "Pairwise independence does not imply mutual independence."
+    },
+    "commonMistakes": [
+      "Assuming that pairwise independence implies mutual independence",
+      "Failing to consider a counterexample"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:31:10.119Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pairwise_mutual_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "pairwise_mutual",
+    "problem": "{",
+    "statementHtml": "Let events A and B be pairwise independent if P(A ∩ B) = P(A)P(B). Show that pairwise independence does not imply mutual independence.",
+    "hints": [
+      "Start by considering the case where P(A) = 0 or P(B) = 0. What can you conclude?",
+      "Think about what it means for events to be mutually independent. How does this relate to pairwise independence?",
+      "Use the definition of conditional probability to derive a contradiction"
+    ],
+    "solutionHtml": "\\[P(A ∩ B) = P(A)P(B)\\] implies \\[P(A|B) = P(A)\\]. Now, suppose A and B are mutually independent. Then, \\[P(A ∩ B) = P(A)P(B)\\], but this is not necessarily equal to \\[P(A)P(B)\\]. This shows that pairwise independence does not imply mutual independence.\",",
+    "answerShort": "Pairwise independence does not imply mutual independence.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:31:28.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pairwise_mutual_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "pairwise_mutual",
+    "problem": {
+      "statementHtml": "<p>Consider two events A and B. We say they are pairwise independent if P(A ∩ B) = P(A)P(B). However, this does not imply mutual independence, where we require P(A | B) = P(A) and P(B | A) = P(B).</p>",
+      "hints": [
+        "<p>Think about the difference between 'not dependent' and 'independent'.</p>",
+        "<p>Pairwise independence only ensures that the events don't affect each other's probability.</p>",
+        "<p>Mutual independence requires that the conditional probabilities are equal to the original probabilities.</p>"
+      ],
+      "solutionHtml": "<p>To illustrate this, consider two coin tosses. Pairwise independence holds because the first toss does not affect the second. However, mutual independence fails because the outcome of the first toss affects the probability of the second.</p>",
+      "answerShort": "Pairwise independent events are not necessarily mutually independent."
+    },
+    "commonMistakes": [
+      "<p>Many students assume that pairwise and mutual independence are equivalent.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:31:45.452Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

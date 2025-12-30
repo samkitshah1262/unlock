@@ -1,0 +1,117 @@
+[
+  {
+    "id": "stat_prb_bayesian_paradigm_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_paradigm",
+    "problem": {
+      "statementHtml": "Consider a Bayesian model with prior distribution <i>P(θ)</i> and likelihood function <i>L(θ|x)</i>. Given observed data <i>x</i>, derive the posterior distribution <i>P(θ|x)</i>.",
+      "hints": [
+        "Start by applying Bayes' theorem: <i>P(θ|x) ∝ P(x|θ)P(θ)</i>",
+        "Recognize that the likelihood function can be written as a product of conditional probabilities.",
+        "Use the chain rule to expand the posterior distribution."
+      ],
+      "solutionHtml": "<p>Applying Bayes' theorem, we get:</p><p><i>P(θ|x) ∝ P(x|θ)P(θ)</i></p><p>Now, recognize that the likelihood function can be written as a product of conditional probabilities:</p><p><i>L(θ|x) = ∏<sub>i</sub> P(xi | θ)</i></p><p>Using the chain rule to expand the posterior distribution:</p><p><i>P(θ|x) ∝ ∫ P(x|θ, θ')P(θ')dθ'</i></p>",
+      "answerShort": "<i>P(θ|x) ∝ L(θ|x)P(θ)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply Bayes' theorem",
+      "Not recognizing the likelihood function as a product of conditional probabilities"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:12:29.872Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_paradigm_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_paradigm",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian paradigm where we update our prior distribution <i>p</i>(<i>θ</i>) based on new data <i>D</i>. Write down the posterior distribution <i>p</i>(<i>θ</i>|<i>D</i>). What is the key difference between this approach and a frequentist one?</p>",
+      "hints": [
+        "<p>Start by writing down Bayes' theorem: <i>p</i>(<i>θ</i>|<i>D</i>) = <i>p</i>(<i>D</i>|<i>θ</i>) <i>p</i>(<i>θ</i>) / <i>p</i>(<i>D</i>)</p>",
+        "<p>Notice that the likelihood <i>p</i>(<i>D</i>|<i>θ</i>) plays a crucial role in updating the prior.</p>",
+        "<p>Think about how this approach differs from a frequentist one, which would focus on estimating population parameters rather than updating beliefs.</p>"
+      ],
+      "solutionHtml": "<p>To derive the posterior distribution, we can plug in our prior and likelihood functions. Let's assume <i>p</i>(<i>D</i>|<i>θ</i>) = <i>N</i>(<i>D</i>|<i>μ</i>, <i>σ</i><sup>2</sup>). Then, the posterior distribution is:</p>\n<p><i>p</i>(<i>θ</i>|<i>D</i>) ∝ <i>p</i>(<i>D</i>|<i>θ</i>) <i>p</i>(<i>θ</i>) = <i>N</i>(<i>D</i>|<i>μ</i>, <i>σ</i><sup>2</sup>) <i>N</i>(<i>θ</i>|<i>μ</i>, <i>τ</i><sup>2</sup>)</p>",
+      "answerShort": "<i>p</i>(<i>θ</i>|<i>D</i>) ∝ <i>N</i>(<i>D</i>|<i>μ</i>, <i>σ</i><sup>2</sup>) <i>N</i>(<i>θ</i>|<i>μ</i>, <i>τ</i><sup>2</sup>)"
+    },
+    "commonMistakes": [
+      "<p>Failing to recognize the importance of the prior distribution in Bayesian inference.</p>",
+      "<p>Misunderstanding the role of likelihood functions in updating the posterior distribution.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:12:59.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_paradigm_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_paradigm",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian model with prior distribution <i>P</i>(<i>θ</i>) and likelihood function <i>L</i>(<i>x</i>|<i>θ</i>). What is the posterior distribution <i>P</i>(<i>θ</i>|<i>x</i>)?</p>",
+    "hints": [
+      "<p>The prior distribution represents our initial uncertainty about the parameter <i>θ</i>.</p>",
+      "<p>The likelihood function encodes our knowledge about the data <i>x</i> given the parameter <i>θ</i>.</p>",
+      "<p>The posterior distribution combines the prior and likelihood information to update our belief about <i>θ</i>.</p>"
+    ],
+    "solutionHtml": "<p>To find the posterior distribution, we can use Bayes' theorem:</p>\\n\\ <p><i>P</i>(<i>θ</i>|<i>x</i>) = <i>P</i>(<i>θ</i>) &middot; <i>L</i>(<i>x</i>|<i>θ</i>) / ∫<i>P</i>(<i>θ</i>) &middot; <i>L</i>(<i>x</i>|<i>θ</i>) d<i>θ</i></p>\\n\\ <p>The integral is the normalizing constant, which ensures that the posterior distribution integrates to 1.</p>\",",
+    "answerShort": "<i>P</i>(<i>θ</i>|<i>x</i>)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:13:20.509Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_paradigm_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_paradigm",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian model with prior distribution <i>P</i>(<i>θ</i>) and likelihood function <i>L</i>(<i>y</i>|<i>θ</i>). Derive the posterior distribution <i>P</i>(<i>θ</i>|<i>y</i>). Compare this to a frequentist approach.</p>",
+      "hints": [
+        "<p>Start by writing down Bayes' theorem: <i>P</i>(<i>θ</i>|<i>y</i>) = <i>P</i>(<i>y</i>|<i>θ</i>) <i>P</i>(<i>θ</i>) / <i>P</i>(<i>y</i>)</p>",
+        "<p>Now, apply the prior and likelihood functions to Bayes' theorem.</p>",
+        "<p>Compare your result to a frequentist approach. What are the key differences?</p>"
+      ],
+      "solutionHtml": "<p>To derive the posterior distribution, we can plug in the given prior and likelihood functions:</p><p><i>P</i>(<i>θ</i>|<i>y</i>) = <i>L</i>(<i>y</i>|<i>θ</i>) <i>P</i>(<i>θ</i>) / ∫<i>L</i>(<i>y</i>|<i>θ</i>) <i>P</i>(<i>θ</i>) d<i>θ</i></p><p>Simplify the expression to get the desired posterior distribution.</p>",
+      "answerShort": "<i>P</i>(<i>θ</i>|<i>y</i>) = ... (fill in the answer)"
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the posterior distribution",
+      "Not recognizing that the prior and likelihood functions are conjugate"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:13:42.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_moments_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function p(x) = {0.4, 0.3, 0.1, 0.2} for x = 1, 2, 3, and 4.</p>",
+    "hints": [
+      "<p>Start by finding the moment generating function (MGF). Recall that MGF is a cumulative sum of probabilities weighted by powers of t.</p>",
+      "<p>Use the definition of MGF to find its derivative with respect to t. This will help you identify the third moment.</p>",
+      "<p>Plug in the values of p(x) and x into your expression for the third moment.</p>"
+    ],
+    "solutionHtml": "<p>To find the third moment, we first need to compute the MGF:</p>\\n\\[M(t) = 0.4e^{t} + 0.3e^{2t} + 0.1e^{3t} + 0.2e^{4t}\\]\\n<p>Now, take the derivative of M(t) with respect to t:</p>\\n\\[\\frac{dM}{dt}(t) = 0.4e^{t} + 0.6e^{2t} + 0.3e^{3t} + 0.8e^{4t}\\]\\n<p>The third moment is given by the coefficient of t^3 in this expression:</p>\\n\\[\\mu_3 = \\frac{d^2M}{dt^2}(0) = (0.6)(2!) + (0.3)(3!) + (0.8)(4!) = 11.2</p>\",",
+    "answerShort": "The third moment is 11.2.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:06.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_moments_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function p(x) = \\(\\frac{1}{2}\\)\\[\\delta_{0,1} + \\frac{1}{4}\\]\\[\\delta_{2,3}\\].</p>\",",
+    "hints": [
+      "Start by calculating the first two moments.",
+      "Use the definition of moment generating functions (MGFs) to relate the MGF to the moments.",
+      "The third moment is a bit more involved, but you can still use the MGF to find it."
+    ],
+    "solutionHtml": "<p>To calculate the third moment, we first need to find the MGF. The MGF of X is</p>\\[\\mathcal{M}_X(t) = \\sum_{x} p(x) e^{tx}\\].<p>Substituting our values for p(x), we get</p>\\[\\mathcal{M}_X(t) = \\frac{1}{2}e^0 + \\frac{1}{4}(e^{2t}+e^{3t})\\].<p>The MGF is a polynomial in t, so the third moment is just the coefficient of the t^3 term.</p>\\[\\mathcal{M}_X(t) = 1 + \\frac{1}{2}t + \\frac{3}{4}t^2 + \\frac{3}{8}t^3 + O(t^4)\\].<p>The third moment is therefore \\(\\boxed{\\frac{3}{4}}\\).</p>\",",
+    "answerShort": "\\(\\frac{3}{4}\\)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:32.469Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_moments_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function P(X = k) = (1/4)^k \\* (3/2)^(−1) for k = 0, 1, 2.</p>\",",
+    "hints": [
+      "Recall that the moment generating function is used to find moments.",
+      "The third moment can be found by differentiating the MGF three times and evaluating at t = 0.",
+      "Use the fact that the MGF of a discrete random variable is a polynomial."
+    ],
+    "solutionHtml": "<p>To find the third moment, we first need to find the MGF.</p><p>MGF(s) = ∑<sub>k=0∞</sub> P(X = k) \\* e<sup>ks</sup> = (1/4)<sup>0</sup> \\* (3/2)<sup>-1</sup> + (1/4)<sup>1</sup> \\* (3/2)<sup>-1</sup> \\* e<sup>s</sup> + ...</p><p>Now, we differentiate the MGF three times and evaluate at t = 0:</p><p>Moment(3) = [d³/(ds³)]M(t)|<sub>t=0</sub> = ...</p>\",",
+    "answerShort": "Moment(3) = 1/2\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:55.105Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

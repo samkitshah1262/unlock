@@ -1,0 +1,423 @@
+[
+  {
+    "id": "la_con_systems_introduction_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Systems of Linear Equations",
+    "subtitle": "Matrix form and solution types",
+    "contentHtml": "<p>A system of linear equations is a set of simultaneous equations in which each equation is a linear combination of the variables.</p><p>We can represent these systems using matrices, where each row corresponds to an equation and each column represents a variable. The matrix form is Ax=b, where A is the coefficient matrix, x is the vector of variables, and b is the constant vector.</p>",
+    "formula": {
+      "latex": "\\[Ax=b\\]",
+      "name": "Matrix Form"
+    },
+    "intuition": "Understanding systems of linear equations is crucial in many areas, including machine learning. For instance, in neural networks, we often encounter systems of linear equations when computing the output of a layer.",
+    "commonMistakes": [
+      "Forgetting to consider the possibility of multiple solutions"
+    ],
+    "realWorldApplications": [
+      "Neural Networks",
+      "Linear Regression"
+    ],
+    "tags": [
+      "linear-algebra",
+      "machine-learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:16:10.730Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_systems_introduction_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Systems of Linear Equations",
+    "contentHtml": "<p>A system of linear equations is a set of simultaneous equations in which each equation is a linear combination of variables.</p><p>In matrix form, this can be represented as Ax=b, where A is the coefficient matrix, x is the column vector of variables, and b is the constant term vector.</p>",
+    "formula": {
+      "latex": "\\[Ax=b\\]",
+      "name": "Matrix Form"
+    },
+    "intuition": "Think of a system of linear equations as a set of constraints that must be satisfied simultaneously. The matrix form provides a concise way to represent these constraints and solve for the variables.",
+    "realWorldApplications": [
+      "Linear regression in machine learning"
+    ],
+    "commonMistakes": [
+      "Failing to recognize the importance of the coefficient matrix A",
+      "Not considering the possibility of multiple solutions or no solution at all"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:16:25.298Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_systems_introduction_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Systems of Linear Equations",
+    "contentHtml": "<p>A system of linear equations is a set of simultaneous equations in which each equation is a linear combination of the variables.</p><p>We can represent such systems using matrices and vectors.</p>",
+    "formula": {
+      "latex": "\\[ A\\mathbf{x} = \\mathbf{b} \\]",
+      "name": "Ax=b"
+    },
+    "intuition": "Understanding systems of linear equations is crucial in many areas, including machine learning. For instance, in neural networks, the weights and biases are often represented as a system of linear equations.",
+    "realWorldApplications": [
+      "Neural Networks"
+    ],
+    "commonMistakes": [
+      "Forgetting to consider the possibility of multiple solutions or no solution at all."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:16:38.096Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_systems_introduction_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "problem": "{",
+    "statementHtml": "Solve the system of linear equations <br/> \\[ \\begin{align*} x + 2y - z &= 3 \\\\ 4x - y + 5z &= 7 \\\\ 3x + y - 2z &= 1 \\end{align*} \\] in matrix form.\",",
+    "hints": [
+      "Check if the system is consistent or inconsistent",
+      "Try to find a solution by inspection (if possible)",
+      "Use row operations to transform the augmented matrix"
+    ],
+    "solutionHtml": "<p>First, we can use row operations to transform the augmented matrix:</p><br/> \\[ \\begin{align*} 1 &amp; 0 &amp; -2 &amp; 3 \\\\ 0 &amp; 1 &amp; 4 &amp; 7 \\\\ 3 &amp; 1 &amp; -5 &amp; 1 \\end{align*} \\] <br/> <p>Next, we can solve for the variables:</p><br/> x = 1, y = 2, z = 1\",",
+    "answerShort": "x = 1, y = 2, z = 1\" },",
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:16:57.126Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_systems_introduction_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "problem": "{",
+    "statementHtml": "Solve the system of linear equations <br/> \\[x + 2y - z = 1\\]<br/> \\[3x - y + 4z = 7\\]<br/> \\[x - 3y + 2z = -2\\] in matrix form.\",",
+    "hints": [
+      "Start by writing the augmented matrix A|b",
+      "Use row operations to transform A into upper triangular form",
+      "The solution is now easily read from the right-hand side"
+    ],
+    "solutionHtml": "<p>To solve this system, we first write it in matrix form:</p><br/> \\[A|b = \\begin{bmatrix} 1 & 2 & -1 \\\\ 3 & -1 & 4 \\\\ 1 & -3 & 2 \\end{bmatrix} | \\begin{bmatrix} 1 \\\\ 7 \\\\ -2 \\end{bmatrix}\\]<br/><p>We then apply row operations to transform A into upper triangular form:</p><br/> \\[R_1 \\rightarrow R_1 + 3R_2, R_2 \\rightarrow R_2 - 9R_1\\] <br/> \\[\\begin{bmatrix} 1 & 2 & -1 \\\\ 0 & -13 & 11 \\\\ 1 & -3 & 2 \\end{bmatrix} | \\begin{bmatrix} 4 \\\\ 7 \\\\ -2 \\end{bmatrix}\\]<br/><p>The solution is now easily read from the right-hand side:</p><br/> \\[x = 0, y = 1, z = 1\\]\",",
+    "answerShort": "x=0, y=1, z=1\" },",
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:17:21.070Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_systems_introduction_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "problem": "{",
+    "statementHtml": "<p>Consider the system of linear equations:</p><p>\\[A\\mathbf{x} = \\mathbf{b}\\]</p>\",",
+    "hints": [
+      "Check if A is invertible",
+      "If so, what does that tell you about x?",
+      "How do you find the solution?"
+    ],
+    "solutionHtml": "<p>To solve this system, we can use matrix operations:</p><p>\\[A^{-1}A\\mathbf{x} = A^{-1}\\mathbf{b}\\]</p><p>\\[\\mathbf{x} = (A^{-1}A)^{-1}(A^{-1}\\mathbf{b})\\]</p>\",",
+    "answerShort": "The solution is x\" },",
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:17:35.016Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_systems_introduction_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "problem": {
+      "statementHtml": "<p>Solve the system of linear equations represented by the matrix equation <span class=\"latex\">\\[A\\mathbf{x} = \\mathbf{b}\\]</span>, where A is a 2x3 matrix and b is a 2-element vector.</p>",
+      "hints": [
+        "Check if any rows or columns of A are zero.",
+        "Try to find the free variable(s) in the system.",
+        "Use back-substitution to find the value of x."
+      ],
+      "solutionHtml": "<p>To solve this system, we can use row operations to transform A into upper triangular form.</p><ul><li>Swap rows 1 and 2: <span class=\"latex\">\\[\\begin{bmatrix}0 &amp; 1 &amp; -2 \\ 1 &amp; 0 &amp; 3 \\end{bmatrix}\\]</span></li><li>Eliminate the second row:</li><ul><li><span class=\"latex\">\\[x_1 + 2x_2 = 4\\]</span></li><li><span class=\"latex\">\\[x_2 = 2\\]</span></li></ul><li>Solve for x_1: <span class=\"latex\">\\[x_1 = 0\\]</span></li></ul>",
+      "answerShort": "<p>x = [0, 2]^T</p>"
+    },
+    "commonMistakes": [
+      "Forgetting to perform row operations",
+      "Not recognizing the free variable(s)"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:17:55.502Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_systems_introduction_008",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Solving Systems of Linear Equations",
+    "contentHtml": "<p>Solve systems of linear equations in matrix form using Gaussian elimination.</p>",
+    "formula": "{",
+    "latex": "\\[Ax = b\\]",
+    "name": "System of Linear Equations\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the solution to the system:</p><p>\\[\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 3 &amp; -1 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\-3\\\\end{bmatrix}\\]</p>\",",
+    "hints": [
+      "Rearrange the matrix",
+      "Use row operations"
+    ],
+    "solutionHtml": "<p>We can solve this system using Gaussian elimination:</p><ul><li>First, we'll add -2 times the first equation to the second:</li>\\[\\\\mathbf{A}x = \\\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 3-6 &amp; -1+4 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\0\\\\end{bmatrix}\\]</li><li>Now, we can see that the second equation is already satisfied:</li>\\[\\\\mathbf{A}x = \\\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 0 &amp; -3 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\-1/3\\\\end{bmatrix}\\]</li></ul>\",",
+    "answerShort": "The solution is x = [4, -1/3]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Solve the system:</p><p>\\[\\begin{bmatrix}2 &amp; 1 \\\\\\\\ 1 &amp; 3 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\-1\\\\end{bmatrix}\\]</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Add -2 times the first equation to the second\", \"mathHtml\": \"\\\\[\\\\mathbf{A}x = \\\\begin{bmatrix}2 &amp; 1 \\\\\\\\ 2-2 &amp; 3+2 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\-3\\\\end{bmatrix}\\]\", \"explanation\": \"This eliminates the second variable.\"}, {\"stepNumber\": 2, \"description\": \"Add -1 times the first equation to the second\", \"mathHtml\": \"\\\\[\\\\mathbf{A}x = \\\\begin{bmatrix}2 &amp; 1 \\\\\\\\ 0 &amp; 4 \\\\end{bmatrix}\\\\[0.5em]x = \\\\begin{bmatrix}4\\\\\\\\-3/2\\\\end{bmatrix}\\]\", \"explanation\": \"This eliminates the second variable.\"}, {\"stepNumber\": 3, \"description\": \"Write down the solution\", \"mathHtml\": \"\\\\[x_1 = 2, x_2 = -1/2\\\\]\", \"explanation\": \"The solution is now clear.\"} ],",
+    "finalAnswer": "The solution is x = [2, -1/2]\" },",
+    "intuition": "Gaussian elimination helps us solve systems by transforming the matrix into upper triangular form.",
+    "visualDescription": "A diagram showing the row operations and resulting matrices",
+    "commonMistakes": [
+      "Forgetting to check for singular matrices"
+    ],
+    "realWorldApplications": [
+      "Linear regression in machine learning"
+    ],
+    "tags": [
+      "linear algebra",
+      "Gaussian elimination",
+      "systems of linear equations"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:18:41.470Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_systems_introduction_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Solving Systems of Linear Equations",
+    "contentHtml": "<p>Solve systems of linear equations in matrix form using Gaussian elimination.</p>",
+    "formula": {
+      "latex": "\\[ A\\mathbf{x} = \\mathbf{b} \\]",
+      "name": "Ax=b"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the system:</p><ul><li>Ax = b</li></ul>",
+      "hints": [
+        "Rearrange the matrix",
+        "Use row operations"
+      ],
+      "solutionHtml": "<p>To solve this system, we'll use Gaussian elimination.</p>",
+      "answerShort": "The solution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the solution to:</p><ul><li>\\[ \\begin{bmatrix} 2 &amp; 1 \\\\ -3 &amp; 1 \\end{bmatrix}\\mathbf{x} = \\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix} \\]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Rearrange the matrix to have a leading one",
+          "mathHtml": "\\[ \\begin{bmatrix} 2 &amp; 1 \\\\ -3 &amp; 1 \\end{bmatrix}\\rightarrow\\begin{bmatrix} 1 &amp; 0.5 \\\\ -1.5 &amp; 1 \\end{bmatrix} \\]",
+          "explanation": "This makes the next step easier"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use row operations to eliminate the top-left entry",
+          "mathHtml": "\\[ \\begin{bmatrix} 1 &amp; 0.5 \\\\ -1.5 &amp; 1 \\end{bmatrix}\\rightarrow\\begin{bmatrix} 1 &amp; 0.5 \\\\ 0 &amp; 2.5 \\end{bmatrix} \\]",
+          "explanation": "Now we can focus on the bottom row"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve for x",
+          "mathHtml": "\\[ \\begin{bmatrix} 1 &amp; 0.5 \\\\ 0 &amp; 2.5 \\end{bmatrix}\\rightarrow\\begin{bmatrix} 1 &amp; 0.5 \\\\ 0 &amp; 1 \\end{bmatrix} \\]",
+          "explanation": "The solution is now clear"
+        }
+      ],
+      "finalAnswer": "x = [2, 3]"
+    },
+    "intuition": "Gaussian elimination helps us transform the matrix into upper triangular form, making it easier to solve.",
+    "estimatedMinutes": 1,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:19:15.844Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_systems_introduction_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Solving Systems of Linear Equations",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a system of linear equations using matrix form.</p>",
+    "formula": {
+      "latex": "\\[ A\\mathbf{x} = \\mathbf{b} \\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Solve the system:</p><ul><li>2x + y - z = 3</li><li>x - 2y + 3z = -1</li><li>y + x - 2z = 0</li></ul>",
+      "hints": [
+        "Hint: Use row operations to transform the matrix"
+      ],
+      "solutionHtml": "<p>To solve this system, we'll first convert it into matrix form:</p><ul><li>\\[ \\begin{bmatrix} 2 &amp; 1 &amp; -1 \\\\ -1 &amp; 1 &amp; 3 \\\\ 1 &amp; 1 &amp; -2 \\end{bmatrix} \\mathbf{x} = \\begin{bmatrix} 3 \\\\ -1 \\\\ 0 \\end{bmatrix} \\]</li></ul>",
+      "answerShort": "x = 1, y = 2, z = 1"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Solve the system:</p><ul><li>2x + y - z = 3</li><li>x - 2y + 3z = -1</li><li>y + x - 2z = 0</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Add the first two equations to eliminate y",
+          "mathHtml": "\\[ (2x + y - z) + (x - 2y + 3z) = 3 + (-1) \\]",
+          "explanation": "This step helps us get rid of the y variable"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Add the resulting equation to the third equation",
+          "mathHtml": "\\[ (x - 2y + 3z) + (y + x - 2z) = (-1) + 0 \\]",
+          "explanation": "This step helps us get rid of the z variable"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve for x",
+          "mathHtml": "\\[ 3x = 2 \\]",
+          "explanation": "Now we can solve for x and then substitute back into the original equations to find y and z"
+        }
+      ],
+      "finalAnswer": "x = 1, y = 2, z = 1"
+    },
+    "intuition": "The key insight is that row operations allow us to manipulate the matrix without changing its solution.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:19:51.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_systems_introduction_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "systems_introduction",
+    "title": "Solving Systems of Linear Equations: Matrix Form",
+    "contentHtml": "<p>Solve systems of linear equations in matrix form using Gaussian elimination.</p>",
+    "formula": {
+      "latex": "\\[ A\\mathbf{x}=\\mathbf{b} \\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the system:</p><ul><li>Ax = b</li></ul>",
+      "hints": [
+        "Hint: Use row operations to transform the matrix"
+      ],
+      "solutionHtml": "<p>To solve this system, we'll use Gaussian elimination.</p>",
+      "answerShort": "The solution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the solution to:</p><ul><li>\\[ \\begin{bmatrix} 2 &amp; 1 \\\\ -3 &amp; -2 \\end{bmatrix}\\mathbf{x}=\\begin{bmatrix} 5 \\\\ -7 \\end{bmatrix} \\]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write the augmented matrix",
+          "mathHtml": "\\[ \\begin{bmatrix} 2 &amp; 1 &amp; | &amp; 5 \\\\ -3 &amp; -2 &amp; | &amp; -7 \\end{bmatrix} \\]",
+          "explanation": "This is the standard form for a system of linear equations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply row operations to transform the matrix",
+          "mathHtml": "\\[ \\begin{bmatrix} 1 &amp; 0.5 &amp; | &amp; 2.5 \\\\ -3/2 &amp; -1 &amp; | &amp; -7/2 \\end{bmatrix} \\]",
+          "explanation": "We're using row operations to eliminate the variable x_2."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify and solve for the variables",
+          "mathHtml": "\\[ \\begin{bmatrix} 1 &amp; 0.5 &amp; | &amp; 2.5 \\\\ 0 &amp; -1/2 &amp; | &amp; -10/2 \\end{bmatrix} \\]",
+          "explanation": "We've simplified the matrix and can now solve for the variables."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Write the solution",
+          "mathHtml": "\\[ x_1 = 5, x_2 = -7 \\]",
+          "explanation": "The solution is the values of the variables x_1 and x_2."
+        }
+      ],
+      "finalAnswer": "x_1 = 5, x_2 = -7"
+    },
+    "intuition": "Gaussian elimination helps us solve systems by transforming the matrix into upper triangular form.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:20:26.560Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

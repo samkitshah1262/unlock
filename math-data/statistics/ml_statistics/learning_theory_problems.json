@@ -1,0 +1,120 @@
+[
+  {
+    "id": "stat_prb_learning_theory_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "problem": "{",
+    "statementHtml": "Let <i>G</i> be a class of functions from <i>X</i> to <i>y</i>. Consider a hypothesis space <i>H ⊆ G</i>. Suppose we have a training set <i>T = {(x_1, y_1), ..., (x_m, y_m)}</i>. Prove that if <i>H</i> has finite VC dimension <i>d</i>, then there exists a constant <i>c > 0</i> such that for any <i>ε > 0</i>, the probability of an event is at most <i>c \\* (d \\* ln(1/ε) + ln(|T|))</i>.\",",
+    "hints": [
+      "Hint: Recall the definition of VC dimension.",
+      "Think about the number of possible hypotheses in H.",
+      "Use the union bound to upper-bound the probability."
+    ],
+    "solutionHtml": "<p>Step 1: Recall that the VC dimension is the maximum size of a set that can be shattered by <i>H</i>. Since <i>H</i> has finite VC dimension, there exists some integer <i>d</i> such that no set of size greater than <i>d+1</i> can be shattered.</p><p>Step 2: Fix some <i>ε > 0</i>. We want to upper-bound the probability that an event occurs. Let <i>E</i> be the event that there exists a hypothesis in <i>H</i> that misclassifies at least one point in <i>T</i>.</p><p>Step 3: Use the union bound to get:</p>\\[\\mathbb{P}(E) ≤ \\sum_{S ⊆ T, |S| > d} \\mathbb{P}(\\text{all points in } S \\text{ are misclassified})\\]\\[≤ \\binom{|T|}{d+1} \\left( \\frac{\\epsilon}{2} \\right)^{d+1}\\]\\<p>Step 4: Simplify the expression:</p>\\[\\mathbb{P}(E) ≤ c \\* (d \\* ln(1/ε) + ln(|T|))\\]",
+    "answerShort": "The probability is at most <i>c \\* (d \\* ln(1/ε) + ln(|T|))</i>\" },",
+    "commonMistakes": [
+      "Forgetting to use the union bound.",
+      "Not considering the size of the training set."
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:39:42.584Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "problem": {
+      "statementHtml": "Suppose we have a hypothesis class H with VC dimension d. Prove that if a learning algorithm is PAC-learnable for this class, then it must be able to generalize well.",
+      "hints": [
+        "Start by recalling the definition of PAC learnability.",
+        "Think about what it means for an algorithm to generalize well.",
+        "Use the fact that the VC dimension upper bounds the number of examples needed to learn a concept."
+      ],
+      "solutionHtml": "To prove this, we need to show that if H is PAC-learnable, then it must be able to generalize well. Let's start by recalling the definition of PAC learnability: an algorithm A is said to be PAC-learnable for a class H if there exists a probability distribution P over X such that for all concepts c in H, there exists a hypothesis h in H with error at most ε and confidence at least 1 - δ. Now, let's think about what it means for an algorithm to generalize well: it must be able to correctly classify new, unseen examples. We can use the fact that the VC dimension upper bounds the number of examples needed to learn a concept to show that if H is PAC-learnable, then it must be able to generalize well.",
+      "answerShort": "The answer is..."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the probability distribution P.",
+      "Not using the fact that VC dimension upper bounds the number of examples needed."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:01.629Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "problem": {
+      "statementHtml": "<p>Prove that the VC dimension of a set of linear functions is equal to the number of input features.</p>",
+      "hints": [
+        "Consider the simplest possible case: a single feature.",
+        "Think about what happens when you add more features.",
+        "Recall the definition of VC dimension."
+      ],
+      "solutionHtml": "<p>To prove this, we'll show that any set of linear functions with VC dimension <i>n</i> can be shattered by a set of at most <i>n</i> input features.</p>\n<p>Let's start with the simplest case: a single feature. In this case, the VC dimension is 1, and we can indeed shatter any set of examples using linear functions in one dimension.</p>\n<p>Now suppose we have <i>n</i> input features. We can show that any set of at most <i>n</i> linear functions in these dimensions can be shattered by a set of at most <i>n</i> examples.</p>",
+      "answerShort": "The VC dimension is equal to the number of input features."
+    },
+    "commonMistakes": [
+      "Forgetting that the VC dimension only depends on the set of functions, not their parameters.",
+      "Thinking that the VC dimension increases with the number of output classes."
+    ],
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:18.794Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_learning_theory_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "learning_theory",
+    "title": "VC Dimension and PAC Learning",
+    "problem": {
+      "statementHtml": "<p>Given a hypothesis class H and a probability distribution P over the input space X, show that with high probability, a randomly chosen hypothesis h from H will generalize well to unseen data.</p>",
+      "hints": [
+        "Consider the number of possible hypotheses in H.",
+        "Think about how this relates to the complexity of the hypothesis class.",
+        "Recall the definition of PAC learning."
+      ],
+      "solutionHtml": "<p>To prove this, we need to show that with high probability, a randomly chosen hypothesis h from H will have a low error rate on unseen data.</p><p>We can do this by bounding the expected error using the VC dimension and then applying the union bound.</p>",
+      "answerShort": "The answer is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "specialized",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:40:30.826Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

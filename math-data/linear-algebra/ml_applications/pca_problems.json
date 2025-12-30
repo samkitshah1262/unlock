@@ -1,0 +1,113 @@
+[
+  {
+    "id": "la_prb_pca_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "problem": {
+      "statementHtml": "Given a dataset with covariance matrix <i>C</i>, find the first two principal components that explain at least 80% of the variance.",
+      "hints": [
+        "Start by computing the eigenvectors and eigenvalues of <i>C</i>",
+        "The top two eigenvalues should account for most of the variance",
+        "Use the corresponding eigenvectors to define your principal components"
+      ],
+      "solutionHtml": "<p>Let's compute the eigenvectors and eigenvalues of <i>C</i>. We can do this using the power iteration method or a library like NumPy.</p><p>Once we have the top two eigenvalues, we can use them to define our principal components.</p>",
+      "answerShort": "The first two principal components are..."
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:15:59.179Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pca_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with covariance matrix Σ, find the first two principal components using PCA.</p>",
+    "hints": [
+      "Start by standardizing the data.",
+      "Compute the eigenvectors and eigenvalues of Σ.",
+      "Select the top two eigenvectors as the principal components."
+    ],
+    "solutionHtml": "<p>To solve this problem, we first standardize the data to have zero mean and unit variance.</p>\\n<p>Next, we compute the eigenvectors and eigenvalues of Σ using the formula:</p>\\n\\[ \\mathbf{v}_i = \\frac{\\mathbf{u}_i}{\\sqrt{\\lambda_i} } \\]\\n<p>where λi is the ith eigenvalue.</p>\\n<p>We then select the top two eigenvectors as the principal components.</p>\",",
+    "answerShort": "The first two principal components are...\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:16:13.901Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pca_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "problem": {
+      "statementHtml": "<p>Given a dataset with covariance matrix Σ, find the first two principal components using PCA.</p>",
+      "hints": [
+        "Start by finding the eigenvectors and eigenvalues of Σ.",
+        "The eigenvectors corresponding to the largest eigenvalues will be the principal components.",
+        "Use the fact that the variance explained by each component is given by its corresponding eigenvalue."
+      ],
+      "solutionHtml": "<p>To find the first two principal components, we need to find the eigenvectors and eigenvalues of Σ. Let λ1, ..., λn be the eigenvalues and v1, ..., vn be the corresponding eigenvectors.</p><p>We can do this by solving the equation (Σ - λI)v = 0 for each λ.</p><p>The first two principal components are then given by the eigenvectors corresponding to the largest eigenvalues.</p>",
+      "answerShort": "The first two principal components are the eigenvectors corresponding to the largest eigenvalues."
+    },
+    "commonMistakes": [
+      "Forgetting that the variance explained by each component is given by its corresponding eigenvalue.",
+      "Not normalizing the eigenvectors to have length 1."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:16:30.584Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pca_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "pca",
+    "problem": {
+      "statementHtml": "<p>Given a dataset with covariance matrix Σ, find the first two principal components using PCA.</p>",
+      "hints": [
+        "Start by computing the eigenvectors and eigenvalues of Σ.",
+        "The eigenvectors corresponding to the largest eigenvalues will be the principal components.",
+        "Use these principal components to transform your data into a lower-dimensional space."
+      ],
+      "solutionHtml": "<p>To find the first two principal components, we need to compute the eigenvectors and eigenvalues of Σ. This can be done by solving the characteristic equation <i>Σv = λv</i>, where v is an eigenvector and λ is an eigenvalue.</p><p>The eigenvectors corresponding to the largest eigenvalues will be the principal components. Let's denote these as w1 and w2.</p><p>We can use these principal components to transform our data into a lower-dimensional space by projecting it onto w1 and w2.</p>",
+      "answerShort": "The first two principal components are w1 and w2."
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the eigenvectors.",
+      "Using the wrong method to compute the eigenvectors and eigenvalues."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:16:47.361Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

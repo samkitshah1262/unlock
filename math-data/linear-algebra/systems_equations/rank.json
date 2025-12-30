@@ -1,0 +1,374 @@
+[
+  {
+    "id": "la_con_rank_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, the rank of a matrix is a fundamental concept that helps us understand its properties and behavior.</p><p>Intuitively, the rank of a matrix represents the maximum number of independent rows or columns it has. This idea might seem abstract, but it's crucial in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[\\text{Row Rank} = \\max_{i} \\left|\\mathbf{r}_i\\right|, \\\\ \\text{Column Rank} = \\max_{j} \\left|\\mathbf{c}_j\\right|\\]",
+      "name": "Rank Formula"
+    },
+    "intuition": "Think of the rank as the number of 'directions' a matrix can point in. A matrix with low rank has limited directions, while one with high rank has more.",
+    "realWorldApplications": [
+      "In ML/AI, understanding matrix rank is essential for tasks like dimensionality reduction and feature selection."
+    ],
+    "commonMistakes": [
+      "Don't confuse row rank with column rank; they're not always equal."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:41:11.912Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_rank_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Understanding Row and Column Ranks",
+    "contentHtml": "<p>In linear algebra, the rank of a matrix is a fundamental concept that helps us understand the relationships between its rows and columns.</p><p>Intuitively, the row rank of a matrix represents the maximum number of independent rows it has. Similarly, the column rank represents the maximum number of independent columns.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) = \\min\\{\\text{row rank}, \\text{column rank}\\}\\)\",",
+    "name": "Matrix Rank Formula\" },",
+    "intuition": "Think of a matrix as a collection of vectors. The row rank represents the number of linearly independent vectors in its rows, while the column rank represents the number of linearly independent vectors in its columns.",
+    "realWorldApplications": [
+      "In machine learning, understanding matrix rank is crucial for tasks like dimensionality reduction and feature selection."
+    ],
+    "commonMistakes": [
+      "Don't confuse row rank with column rank; they're not always equal."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:41:27.726Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_rank_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Understanding Row and Column Ranks",
+    "contentHtml": "<p>In linear algebra, matrix rank is a fundamental concept that helps us understand the relationships between rows and columns in a matrix.</p><p>Intuitively, the row rank of a matrix represents the number of independent rows it has, while the column rank represents the number of independent columns. This concept is crucial for solving systems of linear equations and understanding the properties of matrices.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\text{Row Rank} = \\\\text{Column Rank}\\]\",",
+    "name": "Rank Equality\" },",
+    "intuition": "Think of a matrix as a collection of vectors. The row rank represents how many unique directions these vectors span, while the column rank represents how many unique directions they can be combined to span.",
+    "realWorldApplications": [
+      "In machine learning, understanding matrix rank is essential for dimensionality reduction techniques like PCA and SVD."
+    ],
+    "commonMistakes": [
+      "Don't confuse row rank with column rank! They're not always equal."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:41:43.452Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_rank_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, the rank of a matrix is a fundamental concept that helps us understand the number of independent rows or columns in the matrix.</p>",
+    "formula": {
+      "latex": "\\[\\text{rank}(A) = \\min\\{\\text{row rank}, \\text{column rank}\\} \\]",
+      "name": "Rank Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\text{Row Rank Theorem: }\\text{rank}(A) = \\text{row rank}(A) \\]",
+      "proofSketch": "The proof involves showing that the row rank is an upper bound for the column rank, and then using a similar argument to show that the column rank is an upper bound for the row rank."
+    },
+    "intuition": "In essence, the rank of a matrix represents the maximum number of linearly independent rows or columns. This concept has significant implications in machine learning, as it helps us understand the dimensionality of our data and the number of features that are relevant to our model.",
+    "realWorldApplications": [
+      "Dimensionality reduction in PCA",
+      "Feature selection in ML"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:00.842Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_rank_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank Theorem",
+    "contentHtml": "<p>The matrix rank theorem is a fundamental concept in linear algebra that helps us understand the relationship between row and column ranks of a matrix.</p>",
+    "formula": {
+      "latex": "\\[ \\text{rank}(A) = \\min\\{\\text{row rank}(A), \\text{col rank}(A)\\} \\]"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{Let } A \\in \\mathbb{R}^{m \\times n}. \\\\ \\text{Then, } \\text{rank}(A) = \\min\\{\\text{row rank}(A), \\text{col rank}(A)\\}. \\]"
+    },
+    "intuition": "The theorem states that the rank of a matrix is equal to the minimum of its row rank and column rank. This means that if we have multiple linearly independent rows or columns, the rank will be the number of these independent components.",
+    "realWorldApplications": [
+      "In machine learning, this theorem has applications in dimensionality reduction, feature selection, and data compression."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:17.899Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_rank_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix A = <br>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \\\\ 7 &amp; 8 &amp; 9 \\end{bmatrix} \\] and show that it is equal to the rank of its transpose.\",",
+    "hints": [
+      "Think about the relationship between row operations and matrix transformations.",
+      "Consider using Gaussian elimination to find the row echelon form of A.",
+      "The rank of a matrix is the maximum number of linearly independent rows (or columns)."
+    ],
+    "solutionHtml": "<p>Step 1: Use Gaussian elimination to transform A into its row echelon form.</p>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 0 &amp; 1 &amp; 1.5 \\\\ 0 &amp; 0 &amp; 4.5 \\end{bmatrix} \\]<p>Step 2: Count the number of linearly independent rows.</p>\\[ \\text{Rank}(A) = 2, since the first two rows are linearly independent. \\]</p>\",",
+    "answerShort": "The rank is 2.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:38.135Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_rank_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix <code>\\[ A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\]</code>.\",",
+    "hints": [
+      "Check if any row or column is a multiple of another.",
+      "Try to find the maximum number of linearly independent rows (or columns).",
+      "Use the fact that rank(A) = rank(AT)"
+    ],
+    "solutionHtml": "<p>To find the rank, we can use the fact that <code>\\[ \\text{rank}(A) = \\text{rank}(\\mathbf{a}_1, \\ldots, \\mathbf{a}_n)\\]</code> where <code>\\[\\mathbf{a}_i\\]</code> are the rows of A. In this case, we can see that the first two rows are linearly dependent, but the third row is not a multiple of any of the previous ones. Therefore, the rank is 2.</p>\",",
+    "answerShort": "Rank = 2\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:42:56.762Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_rank_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "problem": "{",
+    "statementHtml": "Find the rank of the matrix <br/> \\[A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\] and determine if it has a unique solution, no solution, or infinitely many solutions.\",",
+    "hints": [
+      "Check the row echelon form of A",
+      "Look for linearly independent rows in A",
+      "Consider the number of pivot elements in A"
+    ],
+    "solutionHtml": "<p>To find the rank of A, we can perform Gaussian elimination:</p><br/> \\[A = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\] becomes <br/> \\[\\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 2 \\\\ 0 &amp; 0 \\end{bmatrix}\\]</p><br/><p>The rank of A is the number of pivot elements, which is 1.</p>\",",
+    "answerShort": "The rank of A is 1\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:43:15.448Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, the rank of a matrix is crucial in understanding the solvability of systems of linear equations.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) = r(A^T)\\)\",",
+    "name": "Matrix Rank Equality\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given the matrix A:</p>\\[A = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\]<p>Finding the rank of A.</p>\",",
+    "hints": [
+      "Hint: Use row operations to transform A into its row-echelon form."
+    ],
+    "solutionHtml": "<p>To find the rank, we'll perform row operations on A:</p><ul><li>Swap rows 1 and 2 to get:</li>\\[A = \\begin{bmatrix}3 & 4 \\\\ 1 & 2\\end{bmatrix}\\]<li>Subtract 3 times row 1 from row 2:</li>\\[A = \\begin{bmatrix}3 & 4 \\\\ 0 & -2\\end{bmatrix}\\]</ul><p>The resulting matrix is in row-echelon form. The leading entries are the ones that have a non-zero value.</p>\",",
+    "answerShort": "The rank of A is 1.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix B:</p>\\[B = \\begin{bmatrix}1 & 0 \\\\ 2 & 3\\end{bmatrix}\\]<p>Finding the column rank of B.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Perform row operations on B to transform it into its row-echelon form.\", \"mathHtml\": \"\\[B = \\begin{bmatrix}1 & 0 \\\\ 2 & 3\\end{bmatrix}\\]\", \"explanation\": \"This helps us identify the leading entries.\"}, {\"stepNumber\": 2, \"description\": \"Subtract twice row 1 from row 2 to get:\", \"mathHtml\": \"\\[B = \\begin{bmatrix}1 & 0 \\\\ 0 & 3\\end{bmatrix}\\]\", \"explanation\": \"Now the leading entries are clear.\"}, {\"stepNumber\": 3, \"description\": \"The column rank is equal to the number of linearly independent columns.\", \"mathHtml\": \"\", \"explanation\": \"In this case, we have two columns, but one is a multiple of the other. So, the column rank is 1.\"} ],",
+    "finalAnswer": "The column rank of B is 1.\" },",
+    "intuition": "Understanding row and column rank helps in determining the solvability of systems of linear equations.",
+    "visualDescription": "A diagram showing the transformation of a matrix into its row-echelon form could be helpful.",
+    "commonMistakes": [
+      "Mistaking the number of rows for the rank."
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding the rank of a matrix is crucial in dimensionality reduction techniques like PCA."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:43:55.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Solving Systems of Linear Equations",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to compute the rank of a matrix and relate it to the number of solutions in a system of linear equations.</p>",
+    "formula": {
+      "latex": "\\[\\text{rank}(A) = \\min\\{\\text{row rank}, \\text{col rank}\\}\\]",
+      "name": "Matrix Rank Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the matrix A = \\[\\begin{array}{cc}1 & 2 \\\\ 3 & 4\\end{array}\\], compute its rank and relate it to the number of solutions in the system Ax = b.</p>",
+      "hints": [
+        "Hint: Use row operations to find the row echelon form"
+      ],
+      "solutionHtml": "<p>We'll use row operations to transform A into its row echelon form:</p><ul><li>Swap rows 1 and 2: \\[\\begin{array}{cc}3 & 4 \\\\ 1 & 2\\end{array}\\]</li><li>Subtract 3 times row 1 from row 2: \\[\\begin{array}{cc}3 & 4 \\\\ 0 & -8\\end{array}\\]</li></ul>",
+      "answerShort": "The rank of A is 1, and there is exactly one solution."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the rank of the matrix B = \\[\\begin{array}{ccc}1 & 0 & 2 \\\\ 0 & 1 & 3 \\\\ 2 & 1 & 4\\end{array}\\] and relate it to the number of solutions in the system Bx = c.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the row echelon form of B",
+          "mathHtml": "\\[\\begin{array}{ccc}1 & 0 & 2 \\\\ 0 & 1 & 3 \\\\ 0 & 1 & -1\\end{array}\\]",
+          "explanation": "We use row operations to transform B into its row echelon form."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Count the number of linearly independent rows",
+          "mathHtml": "\\[\\text{rank}(B) = 2, \\text{since there are two linearly independent rows}",
+          "explanation": "The rank of B is equal to the number of linearly independent rows in its row echelon form."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Relate the rank to the number of solutions",
+          "mathHtml": "\\[\\text{rank}(B) = \\min\\{\\text{row rank}, \\text{col rank}\\} = 2, \\text{so there is exactly one solution}",
+          "explanation": "Since the rank of B is equal to its row rank and column rank, we know that there is exactly one solution."
+        }
+      ],
+      "finalAnswer": "The rank of B is 2, and there is exactly one solution."
+    },
+    "intuition": "Understanding the relationship between matrix rank and the number of solutions in a system of linear equations is crucial for many machine learning and artificial intelligence applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:44:36.842Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "rank",
+    "title": "Matrix Rank: Row and Column Rank",
+    "contentHtml": "<p>In linear algebra, we often encounter matrices that represent systems of equations. The matrix rank is a fundamental concept in understanding these systems.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) = \\min\\{\\text{rank}(A|b): b \\in \\mathbb{R}^n\\}\\)\",",
+    "name": "Matrix Rank Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vectors b, c, determine whether the systems Ax = b and Ax = c have unique solutions.</p>",
+    "hints": [
+      "Hint: Consider the rank of the augmented matrix"
+    ],
+    "solutionHtml": "<p>Solution steps:</p><ul><li>We first find the row echelon form (REF) of A.</li>\\[ \\text{REF}(A) = \\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 3 \\end{bmatrix}\\]</li><li>Next, we compute the rank of the REF.</li>\\(r(\\text{REF}(A)) = 2\\)</li><li>We then augment A with b and c to form the augmented matrix.</li>\\[ \\begin{bmatrix} 1 &amp; 2 &amp; 4 \\\\ 0 &amp; 3 &amp; 5 \\end{bmatrix}\\]</li><li>Finally, we check if the rank of the augmented matrix is equal to the number of variables minus one.</li>\\(r(\\text{augmented matrix}) = 2 < 3\\)</li></ul>\",",
+    "answerShort": "No unique solutions\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a matrix A and vectors b, c, determine whether the systems Ax = b and Ax = c have unique solutions.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the REF of A\", \"mathHtml\": \"\\[ \\text{REF}(A) = \\begin{bmatrix} 1 &amp; 2 \\\\ 0 &amp; 3 \\end{bmatrix}\\]\", \"explanation\": \"This step helps us identify the linearly independent rows in A.\"}, {\"stepNumber\": 2, \"description\": \"Compute the rank of the REF\", \"mathHtml\": \"\\(r(\\text{REF}(A)) = 2\\)\", \"explanation\": \"The rank tells us how many linearly independent equations we have.\"} ],",
+    "finalAnswer": "No unique solutions\" },",
+    "intuition": "Matrix rank is crucial in understanding the solvability of systems. A system has a unique solution if and only if its augmented matrix has the same rank as the coefficient matrix.",
+    "visualDescription": "A diagram showing the REF of A, the augmented matrix, and the concept of linear independence would be helpful.",
+    "commonMistakes": [
+      "Forgetting to check the rank of the augmented matrix"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding matrix rank is essential for tasks like dimensionality reduction and feature selection."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations",
+      "system of equations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:45:15.738Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "stat_prb_mle_examples_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimator (MLE) for a given distribution.</p>",
+    "hints": [
+      "<p>The MLE is the value that maximizes the probability of observing the data.</p>",
+      "<p>Start by finding the log-likelihood function and then take its derivative with respect to the parameter.</p>",
+      "<p>Equate the derivative to zero and solve for the parameter.</p>"
+    ],
+    "solutionHtml": "<p>To find the MLE for a normal distribution, we can start by writing down the probability density function (PDF):</p>\\[ f(x | \\mu, \\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}.\\] <p>The log-likelihood function is then:</p>\\[ l(\\mu, \\sigma) = \\sum_{i=1}^n \\log f(x_i | \\mu, \\sigma).\\] <p>Taking the derivative with respect to $\\mu$ and setting it equal to zero gives us:</p>\\[ \\frac{\\partial l}{\\partial \\mu} = 0.\\] <p>Solving for $\\mu$, we get:</p>\\[ \\hat{\\mu} = \\bar{x}.\\] <p>Similarly, taking the derivative with respect to $\\sigma$ and setting it equal to zero gives us:</p>\\[ \\frac{\\partial l}{\\partial \\sigma} = 0.\\] <p>Solving for $\\sigma$, we get:</p>\\[ \\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2.\\]",
+    "answerShort": "The MLEs are $\\hat{\\mu} = \\bar{x}$ and $\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2$.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:36:43.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the MLE of a normal distribution with mean $\\mu$ and variance $\\sigma^2$, given i.i.d. samples $x_1, \\ldots, x_n$.</p>\",",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how to find the maximum of this function.",
+      "Use the fact that the MLE is the value that maximizes the likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p>\\n\\[L(\\mu, \\sigma^2 | x_1, \\ldots, x_n) = \\frac{1}{\\sqrt{(2\\pi)^n \\sigma^{2n}}} e^{-\\frac{1}{2} \\sum_{i=1}^n (x_i - \\mu)^2 / \\sigma^2}\\]\\n<p>We can do this by taking the logarithm of both sides:</p>\\n\\[l(\\mu, \\sigma^2 | x_1, \\ldots, x_n) = -\\frac{n}{2} \\log(2\\pi) - n \\log(\\sigma) - \\frac{1}{2} \\sum_{i=1}^n (x_i - \\mu)^2 / \\sigma^2\\]\\n<p>Now we can find the partial derivatives:</p>\\n\\[l_\\mu = \\frac{\\partial l}{\\partial \\mu} = \\frac{1}{\\sigma^2} \\sum_{i=1}^n (x_i - \\mu)\\]\\n\\[l_\\sigma^2 = \\frac{\\partial l}{\\partial (\\sigma^2)} = -\\frac{n}{2\\sigma^2} + \\frac{1}{2\\sigma^4} \\sum_{i=1}^n (x_i - \\mu)^2\\]\\n<p>Setting these equal to zero and solving for $\\mu$ and $\\sigma^2$, we find the MLE:</p>\\n\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\\n\\[\\hat{\\sigma}^2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - \\hat{\\mu})^2\\]\\n<p>The final answer is:</p>\\n<code>$\\boxed{\\left(\\hat{\\mu}, \\hat{\\sigma}^2\\right)}$</code>\",",
+    "answerShort": "<code>$\\left(\\frac{1}{n} \\sum_{i=1}^n x_i, \\frac{1}{n} \\sum_{i=1}^n (x_i - \\frac{1}{n} \\sum_{j=1}^n x_j)^2\\right)$</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:37:17.120Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the maximum likelihood estimate (MLE) of a parameter in each of the following distributions: normal, exponential, Poisson, Bernoulli.</p>",
+    "hints": [
+      "Think about the probability density function (PDF) for each distribution.",
+      "For continuous distributions, find the value that maximizes the PDF. For discrete distributions, find the value with the highest probability.",
+      "Use the given data to plug into your MLE formula."
+    ],
+    "solutionHtml": "<p>To find the MLE of a normal distribution parameter μ, we need to maximize the normal density function <i>p(x | μ) = (1/σ√(2π)) \\* e<sup>-(x-μ)^2/(2σ^2)</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: μ = &sum; x_i / n.</p><p>The MLE of an exponential distribution parameter λ is found by maximizing the exponential density function <i>p(x | λ) = λ \\* e<sup>-λx</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: λ = &sum; x_i / ∑(1).</p><p>The MLE of a Poisson distribution parameter λ is found by maximizing the Poisson density function <i>p(x | λ) = (e<sup>-λ</sup> \\* (λ^x)) / x!</i>. Taking the derivative and setting it equal to 0 gives us the MLE: λ = &sum; x_i.</p><p>The MLE of a Bernoulli distribution parameter p is found by maximizing the Bernoulli density function <i>p(x | p) = p^x \\* (1-p)<sup>1-x</sup></i>. Taking the derivative and setting it equal to 0 gives us the MLE: p = &sum; x_i / n.</p>\",",
+    "answerShort": "The MLEs are μ, λ, λ, and p respectively.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:37:43.209Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": {
+      "statementHtml": "<p>Find the Maximum Likelihood Estimator (MLE) for a given distribution.</p>",
+      "hints": [
+        "Start by identifying the likelihood function.",
+        "Think about how to find the maximum of this function.",
+        "Use calculus or numerical methods to maximize the likelihood."
+      ],
+      "solutionHtml": "<p>To find the MLE, we need to identify the probability density function (PDF) for each distribution and then find the value that maximizes it.</p>\n<p><i>Normal Distribution:</i> The PDF is \\(\\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x-\\mu)^2/2\\sigma^2}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\mu} = \\bar{x}\\) and \\(\\hat{\\sigma} = s\\), where \\(s^2 = \\frac{1}{n-1}\\sum_{i=1}^n (x_i - \\bar{x})^2\\).</p>\n<p><i>Exponential Distribution:</i> The PDF is \\(\\lambda e^{-\\lambda x}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\lambda} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>\n<p><i>Poisson Distribution:</i> The PDF is \\(\\frac{e^{-\\lambda}\\lambda^x}{x!}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{\\lambda} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>\n<p><i>Bernoulli Distribution:</i> The PDF is \\((1-p) p^x + (1-(1-p))^{1-x}\\). To find the MLE, we take the derivative of this function and set it to 0. This gives us \\(\\hat{p} = \\frac{1}{n}\\sum_{i=1}^n x_i\\).</p>",
+      "answerShort": "The MLE for each distribution is given by the corresponding formula."
+    },
+    "commonMistakes": [
+      "Forgetting to take the derivative of the likelihood function.",
+      "Not recognizing that the MLE is the value that maximizes the likelihood function."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:38:11.916Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_mle_examples_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "mle_examples",
+    "problem": "{",
+    "statementHtml": "<p>Find the Maximum Likelihood Estimator (MLE) for a Bernoulli distribution with probability <i>p</i>.</p>",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how to find the value of <i>p</i> that maximizes this function.",
+      "Use the fact that the log-likelihood is equivalent to the likelihood."
+    ],
+    "solutionHtml": "<p>To find the MLE, we need to maximize the likelihood function:</p>\\(\\mathcal{L}(p) = (y \\cdot \\log(p) + (1-y) \\cdot \\log(1-p))^n\\)<p>where <i>y</i> is the observed value and <i>n</i> is the number of observations.</p><p>We can rewrite this as:</p>\\(\\mathcal{L}(p) = n \\cdot \\log(p) + (n-y) \\cdot \\log(1-p)\\)<p>To find the MLE, we set the derivative of the log-likelihood to zero:</p>\\(\\frac{\\partial}{\\partial p} (\\log(\\mathcal{L}(p))) = 0\\)<p>This gives us:</p>\\(\\frac{n}{p} - \\frac{n-y}{1-p} = 0\\)<p>Solving for <i>p</i>, we get:</p>\\(p = \\frac{y}{n}\\)<p>This is the MLE of the Bernoulli distribution.</p>\",",
+    "answerShort": "<i>y/n</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:38:32.902Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

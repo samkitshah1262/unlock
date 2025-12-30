@@ -1,0 +1,523 @@
+[
+  {
+    "id": "stat_con_p_values_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: A Critical Concept in Hypothesis Testing",
+    "contentHtml": "<p>A p-value is a statistical measure that indicates the probability of observing a result as extreme or more extreme than what was actually observed, assuming that the null hypothesis is true.</p><p>Intuitively, it represents the likelihood of obtaining the observed data (or even more extreme data) under the assumption that there is no real effect. The smaller the p-value, the stronger the evidence against the null hypothesis.</p>",
+    "formula": "{",
+    "latex": "\\(p\\)-value \\(=\\) \\(\\mathbb{P}(\\text{Data} | H_0)\\)\",",
+    "name": "p-value formula\" },",
+    "intuition": "Think of a p-value as the probability that your observed result is just a fluke, assuming there's no real effect. If the p-value is low, it's unlikely to be just a coincidence, and you have strong evidence against the null hypothesis.",
+    "realWorldApplications": [
+      "In machine learning, p-values are used in statistical testing for feature selection and model evaluation."
+    ],
+    "commonMistakes": [
+      "Don't confuse the p-value with the probability of the alternative hypothesis being true. The p-value only tells you how likely it is to observe the data assuming the null hypothesis is true."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:49:43.738Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_p_values_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: A Measure of Statistical Significance",
+    "contentHtml": "<p>In statistics, a p-value is a probability that measures the strength of evidence against a null hypothesis. It's a crucial concept in hypothesis testing, helping us determine whether our findings are due to chance or not.</p><p>Imagine you're conducting an experiment and want to know if a new treatment has a significant effect on patients. You collect data and calculate the p-value, which represents the probability of observing your results (or more extreme) assuming the null hypothesis is true.</p>",
+    "formula": "{",
+    "latex": "\\(p\\)-value: \\(P(X \\geq x | H_0)\\)\",",
+    "name": "p-value formula\" },",
+    "intuition": "The p-value gives you a sense of how unlikely it is to observe your results by chance, if the null hypothesis holds true. A low p-value (typically below 0.05) suggests that the observed difference is statistically significant.",
+    "realWorldApplications": [
+      "In machine learning, p-values are used in statistical tests for feature selection and model evaluation."
+    ],
+    "commonMistakes": [
+      "Don't confuse the p-value with the probability of the null hypothesis being true; it's actually a measure of evidence against the null"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:50:00.280Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_p_values_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: A Critical Concept in Hypothesis Testing",
+    "contentHtml": "<p>A p-value is a statistical measure that indicates the probability of observing a result at least as extreme as the one you've obtained, assuming that the null hypothesis is true.</p><p>In other words, it's the probability of obtaining your observed results (or more extreme results) by chance, if there's no real effect or relationship between variables.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\text{observed result} | H_0)\\)\",",
+    "name": "P-value formula\" },",
+    "intuition": "Think of the p-value as a 'probability of coincidence'. If the p-value is low, it's unlikely that the observed difference or relationship is due to chance alone.",
+    "visualDescription": "A diagram showing a distribution with a small area (low p-value) vs. a large area (high p-value) would help illustrate this concept",
+    "commonMistakes": [
+      "Confusing p-values with confidence intervals",
+      "Ignoring the context of the null hypothesis"
+    ],
+    "realWorldApplications": [
+      "In machine learning, p-values are used to evaluate the significance of features and models in regression analysis"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:50:16.159Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_p_values_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><p>A p-value is the probability of observing a result as extreme or more extreme than what was actually observed, assuming that the null hypothesis is true.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\text{observed data} | H_0)\\)\",",
+    "name": "P-Value Formula\" },",
+    "intuition": "Think of a p-value as the probability of getting your observed result (or something even more extreme) if there's no real effect. If it's low, you're likely to reject the null hypothesis.",
+    "realWorldApplications": [
+      "In machine learning, p-values are used in statistical tests for feature selection and model evaluation."
+    ],
+    "tags": [
+      "hypothesis testing",
+      "statistical inference"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:50:29.305Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_p_values_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><p>A p-value represents the probability of observing a test statistic at least as extreme as the one we obtained, assuming that the null hypothesis is true.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\text{Type I Error}) = P(U \\leq t)\\)\",",
+    "name": "P-Value Formula\" },",
+    "intuition": "Think of a p-value as the probability of getting a result at least as extreme as what you observed, assuming the null hypothesis is true. The lower the p-value, the more evidence against the null hypothesis.",
+    "realWorldApplications": [
+      "In machine learning, p-values are used to evaluate the significance of features in a dataset."
+    ],
+    "tags": [
+      "hypothesis testing",
+      "p-values"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:50:42.168Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_p_values_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><p>A p-value represents the probability of observing a test statistic at least as extreme as the one observed, assuming that the null hypothesis is true.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\text{Type I error} | H_0) = P(U \\leq t)\\)\",",
+    "name": "P-value formula\" },",
+    "intuition": "Think of a p-value as the probability that your test result is due to chance, assuming the null hypothesis is true.",
+    "visualDescription": "A diagram showing the relationship between the p-value and the null hypothesis would be helpful",
+    "commonMistakes": [
+      "Misinterpreting the p-value as the probability of the alternative hypothesis"
+    ],
+    "realWorldApplications": [
+      "In machine learning, p-values can be used to evaluate the significance of features in a model"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "p-values"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:50:56.415Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_p_values_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><p>A p-value is the probability of observing a test statistic at least as extreme as the one observed, assuming that the null hypothesis is true.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\text{Type I error} | H_0) = \\alpha\\)\",",
+    "name": "Null Hypothesis Significance\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test the claim that a new treatment has no effect on patient outcomes. We observe a p-value of 0.03.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the significance level\", \"mathHtml\": \"\\(P(\\text{Type I error} | H_0) = \\alpha\\)\", \"explanation\": \"We set alpha to a common value like 0.05.\"}, {\"stepNumber\": 2, \"description\": \"Compare the p-value to the significance level\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is less than alpha, we reject the null hypothesis.\"} ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "P-values help us determine whether our results are due to chance or a real effect.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:51:14.150Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_p_values_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "problem": "{",
+    "statementHtml": "Calculate the p-value associated with a test statistic of 2.5 and a sample size of 100.<br>Assume the null hypothesis is true.",
+    "hints": [
+      "Start by recalling the formula for the p-value.",
+      "Think about how the test statistic relates to the standard normal distribution.",
+      "Use your calculator or computer to find the desired probability."
+    ],
+    "solutionHtml": "<p>To calculate the p-value, we need to find P(Z &gt; 2.5) where Z is a standard normal random variable.</p><p>We can use our calculator or computer to find this probability:</p>\\(\\text{P(Z > 2.5)} = \\frac{\\text{area to the right of }Z=2.5}{\\text{total area under the standard normal curve}} = 0.9938.\\)<p>Therefore, the p-value is approximately 0.9938.</p>\",",
+    "answerShort": "The p-value is approximately 0.9938.\" },",
+    "commonMistakes": [
+      "Forgetting to account for the continuity correction when calculating the p-value."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:51:29.977Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_p_values_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "problem": {
+      "statementHtml": "A statistical test yields a p-value of 0.03. Does the data provide strong evidence against the null hypothesis?",
+      "hints": [
+        "Think about what a small p-value means.",
+        "Consider the alternative hypothesis.",
+        "Don't forget to set your significance level."
+      ],
+      "solutionHtml": "<p>To interpret this p-value, recall that it represents the probability of observing the test statistic or more extreme values under the null hypothesis. Since 0.03 is less than our chosen significance level (usually 0.05), we reject the null hypothesis.</p>",
+      "answerShort": "Reject the null hypothesis"
+    },
+    "commonMistakes": [
+      "Failing to consider the alternative hypothesis",
+      "Misinterpreting a large p-value as strong evidence for the null"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:51:42.325Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_p_values_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "problem": {
+      "statementHtml": "Given a hypothesis test with a p-value of <i>p</i>, interpret its significance.",
+      "hints": [
+        "Consider what a small p-value indicates about the null hypothesis.",
+        "Think about how the p-value relates to the type I error rate.",
+        "Recall that a p-value is not the probability of the observed result, but rather the probability of observing something more extreme under the null hypothesis."
+      ],
+      "solutionHtml": "<p>To interpret the significance of the p-value, recall that it represents the probability of observing a result at least as extreme as the one we obtained, assuming the null hypothesis is true.</p><p>Since <i>p</i> &lt; 0.05, we reject the null hypothesis and conclude that there is statistically significant evidence against it.</p>",
+      "answerShort": "<i>p</i> &lt; 0.05"
+    },
+    "commonMistakes": [
+      "Confusing the p-value with the probability of the observed result.",
+      "Ignoring the fact that a small p-value does not necessarily mean the alternative hypothesis is true."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:51:57.104Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_p_values_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "problem": {
+      "statementHtml": "<p>Consider a statistical test with a p-value of 0.03. What does this value tell us about our null hypothesis?</p>",
+      "hints": [
+        "Think about the probability of observing the data (or more extreme data) under the null hypothesis.",
+        "The p-value is not the probability that the null hypothesis is true, but rather the probability of observing the data assuming the null hypothesis is true.",
+        "If the p-value is below a certain significance level (usually 0.05), we reject the null hypothesis."
+      ],
+      "solutionHtml": "<p>To interpret the p-value, imagine flipping a coin and getting heads 3 times in a row. The probability of this occurring by chance is low, so we would not expect to see these results if the null hypothesis were true.</p>",
+      "answerShort": "Reject the null hypothesis"
+    },
+    "commonMistakes": [
+      "Misinterpreting the p-value as the probability that the null hypothesis is true",
+      "Not considering the significance level in rejecting or failing to reject the null hypothesis"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:52:12.196Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in hypothesis testing. They provide a measure of the probability of observing the data (or more extreme data) under the null hypothesis.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test whether the average height of students in a class is different from 170 cm. We collect a random sample of 30 students and find that the mean height is 172 cm with a standard deviation of 5 cm.</p>",
+      "hints": [
+        "Hint: Use a two-sample t-test"
+      ],
+      "solutionHtml": "<p>...</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We want to test whether the average score on a math test is different from 80. We collect a random sample of 50 students and find that the mean score is 82 with a standard deviation of 10.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[ t = \\frac{\\bar{x} - 80}{s/\\sqrt{n}} \\]",
+          "explanation": "We're using a two-sample t-test to compare our sample mean to the hypothesized value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[ p = P(t &gt; |t|) \\]",
+          "explanation": "The p-value represents the probability of observing a test statistic at least as extreme as ours, assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Interpret the result",
+          "mathHtml": "\\[ ... \\]",
+          "explanation": "If our p-value is below a certain significance level (e.g., 0.05), we reject the null hypothesis and conclude that the average score is different from 80."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare to the significance level",
+          "mathHtml": "\\[ ... \\]",
+          "explanation": "If our p-value is below the significance level, we can conclude that our result is statistically significant."
+        }
+      ],
+      "finalAnswer": "The average score on a math test is different from 80."
+    },
+    "intuition": "P-values help us determine whether our results are due to chance or if there's a real effect.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:52:39.903Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing. They represent the probability of observing the test statistic (or more extreme) under the null hypothesis.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to test whether the average height of students in a class is different from 170 cm, with a sample mean of 172 cm and standard deviation of 5 cm. We have n = 30 observations.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[ t = \\frac{172 - 170}{5 / \\sqrt{30}} \\]",
+          "explanation": "We're using a one-sample t-test to compare our sample mean to the known population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[ p = P(t > t_{observed} | H_0) \\]",
+          "explanation": "The p-value represents the probability of observing a test statistic at least as extreme as our observed value, assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compare the p-value to the significance level",
+          "mathHtml": "\\[ \\alpha = 0.05 \\]",
+          "explanation": "If the p-value is less than alpha, we reject the null hypothesis; otherwise, we fail to reject."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "Since our p-value (0.02) is less than alpha (0.05), we reject the null hypothesis and conclude that the average height of students in the class is likely different from 170 cm."
+        }
+      ],
+      "finalAnswer": "Reject H_0: μ = 170 cm"
+    },
+    "intuition": "P-values provide a way to quantify the evidence against the null hypothesis. A low p-value indicates strong evidence against the null, while a high p-value suggests that the data is consistent with the null.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:04.450Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><ul><li>We'll explore their definition, interpretation, and common misconceptions.</li></ul>",
+    "problem": "{",
+    "statementHtml": "<p>Given a test statistic with a p-value of 0.03, what can we conclude?</p>",
+    "hints": [
+      "Think about the null hypothesis",
+      "Consider the alternative"
+    ],
+    "solutionHtml": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A study claims that a new treatment increases patient satisfaction by 10%. The p-value is 0.02. What do we conclude?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Understand the null hypothesis\", \"mathHtml\": \"\", \"explanation\": \"The null hypothesis states that there's no significant difference in patient satisfaction.\"}, {\"stepNumber\": 2, \"description\": \"Interpret the p-value\", \"mathHtml\": \"\\(p = 0.02\\)\", \"explanation\": \"A small p-value indicates strong evidence against the null hypothesis.\"}, {\"stepNumber\": 3, \"description\": \"Draw conclusions\", \"mathHtml\": \"\", \"explanation\": \"Since the p-value is below a typical significance level (e.g., 0.05), we reject the null hypothesis and conclude that the treatment has a significant effect on patient satisfaction.\"}, {\"stepNumber\": 4, \"description\": \"Consider the alternative hypothesis\", \"mathHtml\": \"\", \"explanation\": \"The alternative hypothesis states that the treatment increases patient satisfaction by 10%, which is supported by the data.\"} ],",
+    "finalAnswer": "Reject the null hypothesis and conclude the treatment has a significant effect.\" },",
+    "intuition": "P-values represent the probability of observing the test statistic (or more extreme values) under the assumption that the null hypothesis is true.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:27.308Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "problem": {
+      "statementHtml": "A study claims that a new medication reduces blood pressure by an average of 5 mmHg with a standard deviation of 2 mmHg. We want to test the null hypothesis that the true mean reduction is zero against a two-sided alternative.",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we observe a sample mean reduction of 4 mmHg with a standard error of 1.5 mmHg. What is the p-value for this test?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the standardized difference",
+          "mathHtml": "\\[z = \\frac{\\bar{x}}{\\sigma} = \\frac{4}{1.5}\\]",
+          "explanation": "This step standardizes the observed effect size."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Look up the z-score in a standard normal distribution table or use a calculator",
+          "mathHtml": "\\[z = 2.67\\]",
+          "explanation": "We're finding the probability of observing this extreme result (or more extreme) assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the p-value by integrating the standard normal distribution up to our z-score",
+          "mathHtml": "\\[p = P(Z \\leq 2.67)\\]",
+          "explanation": "The p-value represents the probability of observing this extreme result (or more extreme) assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the p-value to a significance level",
+          "mathHtml": "\\[p = 0.004\\]",
+          "explanation": "If the p-value is below our chosen significance level (e.g., \\alpha = 0.05), we reject the null hypothesis."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "Since the p-value is very small, we conclude that there is strong evidence to support the alternative hypothesis that the true mean reduction is not zero."
+        }
+      ],
+      "finalAnswer": "p = 0.004"
+    },
+    "intuition": "P-values represent the probability of observing a result as extreme or more extreme than what you actually observed, assuming the null hypothesis is true.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:55.337Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

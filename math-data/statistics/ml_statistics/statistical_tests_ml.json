@@ -1,0 +1,503 @@
+[
+  {
+    "id": "stat_con_statistical_tests_ml_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests for Machine Learning: McNemar and Paired t-test",
+    "contentHtml": "<p>In machine learning, it's crucial to evaluate the performance of classifiers on paired data, such as before-and-after scenarios or comparisons between different models.</p><p>Two essential statistical tests for this purpose are the McNemar test and the paired t-test. The McNemar test is used when we have binary outcomes (e.g., 0/1 or yes/no), while the paired t-test is more versatile, applicable to continuous or categorical data.</p>",
+    "formula": {
+      "latex": "\\[ \\text{McNemar Test}: \\frac{|a+b-c-d|}{\\sqrt{(a+c)(b+d)}} \\\\ \\text{Paired t-test}: \\bar{x} - \\bar{y} = \\frac{1}{n} \\sum_{i=1}^n (x_i-y_i) \\]",
+      "name": "McNemar and Paired t-test Formulas",
+      "variants": []
+    },
+    "intuition": "These tests help us determine whether the differences between paired data are statistically significant, which is vital in machine learning to avoid overfitting or misinterpreting results.",
+    "realWorldApplications": [
+      "Comparing model performance on different datasets",
+      "Evaluating the effectiveness of a new feature"
+    ],
+    "tags": [
+      "statistical-tests",
+      "machine-learning",
+      "paired-data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:14:53.759Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_statistical_tests_ml_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests in Machine Learning",
+    "contentHtml": "<p>In machine learning, statistical tests help evaluate the performance of models and make informed decisions about their use. This concept is crucial because it enables us to quantify uncertainty and make data-driven choices.</p><p>Imagine you're building a classifier that separates dogs from cats based on images. You want to know if your model is truly accurate or just lucky. Statistical tests, like the McNemar test, help you determine whether the difference between your model's predictions and actual labels is statistically significant.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\text{McNemar Test}: \\sum_{i=1}^n (a_i+b_i) = 0 \\\\]\",",
+    "name": "McNemar Test Formula\" },",
+    "intuition": "Statistical tests provide a way to quantify the uncertainty in your model's predictions, helping you make informed decisions about its use.",
+    "realWorldApplications": [
+      "Evaluating the performance of image classification models"
+    ],
+    "commonMistakes": [
+      "Failing to account for chance when evaluating model performance"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:09.126Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_statistical_tests_ml_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Statistical Tests for Machine Learning",
+    "contentHtml": "<p>In machine learning, statistical tests are crucial for evaluating model performance and making informed decisions.</p><p>Three fundamental tests are McNemar's test, paired t-test for classifiers, and Wilcoxon rank-sum test. These tests help us determine whether there's a statistically significant difference between two datasets or models.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{McNemar's test: } p = \\frac{\\abs{a+b-c-d}}{n} \\]\",",
+    "name": "McNemar's Test",
+    "variants": "[ {\"latex\": \"\\[ \\text{Paired t-test for classifiers: } t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p/\\sqrt{n}} \\]\",",
+    "description": "For non-parametric tests\" } ] },",
+    "intuition": "These statistical tests provide a way to quantify the uncertainty in our results, ensuring that we don't overfit or misinterpret our data.",
+    "realWorldApplications": [
+      "Comparing model performance on different datasets",
+      "Evaluating the effectiveness of feature engineering"
+    ],
+    "commonMistakes": [
+      "Failing to account for confounding variables",
+      "Not considering the distribution of the data"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:28.521Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test",
+    "contentHtml": "<p>McNemar's test is a non-parametric statistical test used to compare the proportion of successes in two related samples.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{|n_1 - n_2|}{n_1 + n_2} \\leq \\frac{\\chi^2}{n_1 + n_2} \\]\" },",
+    "intuition": "McNemar's test is useful when you have paired data and want to determine if the proportion of successes in one sample differs significantly from another.",
+    "realWorldApplications": [
+      "Comparing the performance of two classifiers on a validation set"
+    ],
+    "tags": [
+      "statistical tests",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:40.767Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers",
+    "contentHtml": "<p>The paired t-test is a statistical test used to compare the performance of two classifiers on the same dataset.</p>",
+    "formula": "{",
+    "latex": "\\[t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}\\]\",",
+    "name": "Paired t-test formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two classifiers, A and B, that predict the same dataset. We want to test if there's a significant difference in their accuracy.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the mean accuracy for each classifier",
+        "mathHtml": "\\[\\bar{x}_1 = \\frac{1}{n_1} \\sum_{i=1}^{n_1} y_i\\]",
+        "explanation": "We calculate the mean accuracy for each classifier by taking the average of their predictions."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the pooled standard deviation",
+        "mathHtml": "\\[s_p = \\sqrt{\\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}}\\]",
+        "explanation": "We calculate the pooled standard deviation by combining the variances of each classifier's accuracy."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Calculate the t-statistic",
+        "mathHtml": "\\[t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}\\]",
+        "explanation": "We calculate the t-statistic by dividing the difference in means by the pooled standard deviation and adjusting for sample sizes."
+      }
+    ],
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The paired t-test helps us determine if there's a statistically significant difference between two classifiers' performance on the same dataset.",
+    "tags": [
+      "machine learning",
+      "statistical testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:06.969Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test for Paired Comparisons",
+    "contentHtml": "<p>McNemar's test is a statistical test used to compare paired observations between two conditions or treatments.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{(b+a)-1}{2} > 0 \\]\",",
+    "name": "McNemar's Test Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to compare the accuracy of two machine learning models on a paired dataset.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct and incorrect predictions for each model.\", \"mathHtml\": \"\", \"explanation\": \"\"}, {\"stepNumber\": 2, \"description\": \"Apply McNemar's test to determine if the difference in accuracy is statistically significant.\", \"mathHtml\": \"\\[ \\frac{(b+a)-1}{2} > 0 \\]\", \"explanation\": \"This test helps us avoid making Type I errors by accounting for the paired nature of the data.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "<p>McNemar's test is a powerful tool for evaluating the performance of machine learning models on paired datasets.</p>",
+    "realWorldApplications": [
+      "Comparing the accuracy of two classification models on a dataset with paired instances"
+    ],
+    "tags": [
+      "machine learning",
+      "paired comparisons",
+      "statistical testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:25.703Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test for Paired Classifiers",
+    "contentHtml": "<p>When evaluating the performance of a classifier on paired data (e.g., before-and-after scenarios), McNemar's test provides a powerful tool to assess whether the changes are statistically significant.</p>",
+    "formula": {
+      "latex": "\\[\\frac{|a+b-c-d|}{a+b+c+d} \\leq \\alpha\\]",
+      "name": "McNemar's Test Statistic"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a classifier that predicts whether a customer will churn or not. We collect data on customers who received a promotional offer and those who did not. For each customer, we record their original class (churned or not) and the new class after receiving the offer.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Count the number of customers who churned in both scenarios",
+          "mathHtml": "\\[a\\]",
+          "explanation": "This represents the number of customers who would have churned regardless of the offer"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Count the number of customers who did not churn in both scenarios",
+          "mathHtml": "\\[d\\]",
+          "explanation": "This represents the number of customers who would not have churned regardless of the offer"
+        }
+      ],
+      "finalAnswer": "Compare the test statistic to the critical value or p-value to determine significance"
+    },
+    "intuition": "McNemar's test helps us identify whether the changes in class are due to the classifier's performance or random chance",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:46.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": "{",
+    "statementHtml": "The paired t-test is used to compare the performance of two classifiers on a test dataset. However, when the true labels are not available, how can we still evaluate their performance?",
+    "hints": [
+      "Think about the McNemar test and how it's used for comparing two binary classifiers.",
+      "Consider using the Wilcoxon rank-sum test as an alternative to the paired t-test."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the McNemar test. Let's assume we have two classifiers, A and B, and their predictions on a test dataset.</p><p>We can create a contingency table with the true labels as rows and the predicted labels as columns:</p>\\[ \\begin{array}{c|cc} & A & B \\\\ \\hline 0 & a & b \\\\ 1 & c & d \\end{array}\\] <p>The McNemar test statistic is then calculated as:</p>\\( T = \\frac{(a+d) - (b+c)}{\\sqrt{(a+b)(c+d)}} \\)<p>Finally, we can use the Wilcoxon rank-sum test to compare the performance of the two classifiers.</p>\",",
+    "answerShort": "Use the McNemar test\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:05.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": "{",
+    "statementHtml": "<p>Compare two classifiers using a paired t-test.</p>",
+    "hints": [
+      "Start by calculating the difference between predicted labels.",
+      "Think about how to account for the pairing in your calculation.",
+      "Don't forget to adjust for multiple comparisons if you're doing many tests."
+    ],
+    "solutionHtml": "<p>Let's say we have two classifiers, A and B. We want to compare their performance using a paired t-test.</p>\\n<p>First, calculate the difference in predicted labels:</p>\\n\\[d_i = y_{Ai} - y_{Bi}\\]\\n<p>Next, calculate the mean of these differences:</p>\\n\\[\\bar{d} = \\frac{\\sum d_i}{n}\\]\\n<p>Then, calculate the standard deviation of these differences:</p>\\n\\[s_d = \\sqrt{\\frac{\\sum (d_i - \\bar{d})^2}{n-1}}\\]\\n<p>Finally, use this information to calculate the t-statistic and p-value.</p>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:21.302Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": {
+      "statementHtml": "<p>Compare two binary classifiers using a paired t-test.</p>",
+      "hints": [
+        "Check if your data is normally distributed.",
+        "Consider transforming your data to meet assumptions.",
+        "Use the Wilcoxon signed-rank test as an alternative."
+      ],
+      "solutionHtml": "<p>To perform a paired t-test for classifiers, first calculate the differences between each pair of predictions. Then, calculate the mean and standard deviation of these differences.</p><p>Next, use the calculated values to determine if there is a significant difference in the means.</p>",
+      "answerShort": "Reject null hypothesis"
+    },
+    "commonMistakes": [
+      "Forgetting to correct for multiple comparisons.",
+      "Not checking data distribution."
+    ],
+    "realWorldApplications": [
+      "Evaluating the performance of two different classification algorithms on the same dataset."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:33.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar Test for Paired Classifiers",
+    "problem": "{",
+    "statementHtml": "Given two classifiers <i>A</i> and <i>B</i>, we want to test whether they make different predictions on the same instances.",
+    "hints": [
+      "Start by calculating the number of instances where both classifiers agree or disagree.",
+      "Notice that this is a paired data problem, so you can use the McNemar test to compare the proportion of agreements and disagreements.",
+      "The null hypothesis is that the proportion of agreements equals the proportion of disagreements."
+    ],
+    "solutionHtml": "\\[Let's denote the number of agreements as <i>a</i>, the number of disagreements as <i>b</i>, and the total number of instances as <i>n</i>. The McNemar test statistic is given by: \\(χ^2 = \\frac{(|a - b| - 0.5n)^2}{n}\\). If χ^2 > χ^2_{1-\\alpha} (where α is the significance level), we reject the null hypothesis and conclude that the classifiers make different predictions.\\]\",",
+    "answerShort": "Reject the null hypothesis if χ^2 > χ^2_{1-\\alpha}\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:51.291Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: McNemar's Test",
+    "contentHtml": "<p>In machine learning, we often evaluate the performance of classifiers on paired data (e.g., same dataset with different preprocessing methods). The paired t-test is a statistical test to determine if there's a significant difference between the two classifiers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have two image classification models, A and B. We want to compare their performance on the same set of images.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct predictions for each model\", \"mathHtml\": \"\\(\\sum_{i=1}^n y_i = \\sum_{i=1}^n a_i + \\sum_{i=1}^n b_i\\)\", \"explanation\": \"We count the number of correct predictions for both models.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of disagreements between the two models\", \"mathHtml\": \"\\(\\Delta = \\sum_{i=1}^n |a_i - b_i|\\)\", \"explanation\": \"We calculate the number of instances where the two models disagree.\"}, {\"stepNumber\": 3, \"description\": \"Use McNemar's test to determine if there's a significant difference between the two classifiers\", \"mathHtml\": \"\\(\\chi^2 = \\frac{(\\Delta - n)^2}{n}\\)\", \"explanation\": \"We use McNemar's test to determine if the number of disagreements is significantly different from what we'd expect by chance.\"}, {\"stepNumber\": 4, \"description\": \"Compare the p-value to a significance level (e.g., 0.05)\", \"mathHtml\": \"\\(p = P(\\chi^2 > \\chi^2_0)\\)\", \"explanation\": \"We compare the p-value to our chosen significance level to determine if we reject the null hypothesis.\"}, {\"stepNumber\": 5, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below our significance level, we conclude that there's a significant difference between the two classifiers.\"} ],",
+    "finalAnswer": "Reject the null hypothesis if the p-value is below the chosen significance level\" },",
+    "intuition": "McNemar's test helps us determine if there's a statistically significant difference between the performance of two classifiers on paired data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:18:20.287Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: A Step-by-Step Guide",
+    "problem": "{",
+    "statementHtml": "<p>Given a classifier model with true labels and predicted labels, how do we determine if there's a significant difference between the two?</p>",
+    "hints": [],
+    "solutionHtml": "<p>To solve this problem, follow these steps:</p>",
+    "answerShort": "The p-value indicates significance.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a classifier model that predicts whether an email is spam or not. We collect true labels and predicted labels for 100 emails.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct predictions\", \"mathHtml\": \"\\\\[\\\\text{Correct} = \\\\sum_{i=1}^{n} I(y_i = y^{\\prime}_i)\\\\]\", \"explanation\": \"We count the number of emails where our predicted label matches the true label.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of incorrect predictions\", \"mathHtml\": \"\\\\[\\\\text{Incorrect} = \\\\sum_{i=1}^{n} I(y_i \\neq y^{\\prime}_i)\\\\]\", \"explanation\": \"We count the number of emails where our predicted label does not match the true label.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the McNemar statistic\", \"mathHtml\": \"\\\\[\\\\text{McNemar} = \\\\frac{(\\\\text{Incorrect})^2}{(\\\\text{Correct})(n-\\\\text{Correct})}\\\\]\", \"explanation\": \"We use this formula to calculate a statistic that measures the difference between our predicted labels and true labels.\"}, {\"stepNumber\": 4, \"description\": \"Compare the McNemar statistic to a critical value\", \"mathHtml\": \"\\\\[p = \\\\frac{1}{2} \\cdot (1 + \\\\text{erf}(\\\\sqrt{\\\\text{McNemar}}/\\\\sqrt{(n-1)/12})\\\\]\", \"explanation\": \"We compare our calculated statistic to a critical value, which depends on the sample size and significance level.\"}, {\"stepNumber\": 5, \"description\": \"Determine if the p-value is below a certain threshold\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below our chosen significance level (e.g., 0.05), we reject the null hypothesis that there's no difference between our predicted labels and true labels.\"} ],",
+    "finalAnswer": "The p-value indicates whether there's a significant difference between our predicted labels and true labels.\" },",
+    "intuition": "The paired t-test helps us determine if our classifier is making accurate predictions by comparing the number of correct and incorrect predictions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:18:52.535Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: A Worked Example",
+    "contentHtml": "<p>In this example, we'll apply the paired t-test to evaluate the performance of a classifier.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of labeled images and want to compare the accuracy of two different classifiers: <i>Classifier A</i> and <i>Classifier B</i>. We'll use the paired t-test to determine if there's a statistically significant difference in their performance.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Determine the p-value",
+    "mathHtml": "\\[ p = P(|t| > |t_{obs}|) \\]\",",
+    "explanation": "The p-value represents the probability of observing our observed mean difference (or more extreme) assuming there's no real difference between the classifiers.\" } ],",
+    "finalAnswer": "If the p-value is below a certain significance level (e.g., 0.05), we reject the null hypothesis that both classifiers have equal accuracy, and conclude that there's a statistically significant difference in their performance.\" },",
+    "intuition": "The paired t-test helps us determine if the observed difference between two classifier accuracies is due to chance or if it's a real difference.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:19:25.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": {
+      "statementHtml": "<p>Given two binary classifiers A and B, we want to test whether they are equivalent or not.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a dataset of labeled examples where each example is classified by both classifier A and B. The goal is to determine if the two classifiers are equivalent.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the number of correct classifications for both classifiers.",
+          "mathHtml": "\\[n_{AA} + n_{BB} = \\sum_{i=1}^N I(y_i=A) + \\sum_{i=1}^N I(y_i=B)\\]",
+          "explanation": "This is the total number of correctly classified examples."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the number of misclassifications for both classifiers.",
+          "mathHtml": "\\[n_{AB} + n_{BA} = \\sum_{i=1}^N I(y_i=A, y_p=B) + \\sum_{i=1}^N I(y_i=B, y_p=A)\\]",
+          "explanation": "This is the total number of misclassified examples."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the McNemar statistic.",
+          "mathHtml": "\\[T = \\frac{(n_{AB} + n_{BA}) - (n_{AA} + n_{BB})}{\\sqrt{n_{AA} + n_{BB}}}\\]",
+          "explanation": "This is a measure of the difference between the two classifiers."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the p-value.",
+          "mathHtml": "\\[p = \\int_0^T \\frac{1}{2}\\left(1 + erf\\left(\\frac{T - t}{\\sqrt{2}}\\right)\\right) dt\\]",
+          "explanation": "This is the probability that we would observe a McNemar statistic at least as extreme as the one we observed, assuming that the two classifiers are equivalent."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Reject the null hypothesis if the p-value is below a certain significance level.",
+          "mathHtml": "",
+          "explanation": "If the p-value is below our chosen significance level, we reject the null hypothesis and conclude that the two classifiers are not equivalent."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "Comparing the performance of different machine learning models"
+    ],
+    "tags": [
+      "McNemar test",
+      "classifier comparison"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:19:56.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

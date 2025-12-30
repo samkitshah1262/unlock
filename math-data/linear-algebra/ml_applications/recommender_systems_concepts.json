@@ -1,0 +1,94 @@
+[
+  {
+    "id": "la_con_recommender_systems_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "title": "Matrix Factorization for Recommendations",
+    "contentHtml": "<p>In collaborative filtering, we often encounter large matrices representing user-item interactions. Matrix factorization is a powerful technique to compress these matrices while preserving important patterns.</p><p>Given an interaction matrix <span class=\"math\">R ∈ ℝ^{m × n}</span>, where <span class=\"math\">m</span> is the number of users and <span class=\"math\">n</span> is the number of items, our goal is to find two lower-dimensional matrices <span class=\"math\">P ∈ ℝ^{m × k}</span> and <span class=\"math\">Q ∈ ℝ^{n × k}</span>, where <span class=\"math\">k</span> is the factor dimension.</p>",
+    "formula": {
+      "latex": "\\[ P \\cdot Q^T ≈ R \\]",
+      "name": "Factorization"
+    },
+    "intuition": "Matrix factorization helps us identify underlying patterns in user preferences and item characteristics, which can be used to make personalized recommendations.",
+    "realWorldApplications": [
+      "SVD-based recommendation systems"
+    ],
+    "commonMistakes": [
+      "Not considering the sparsity of interaction matrices",
+      "Ignoring the importance of factor dimension selection"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:49:54.925Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_recommender_systems_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "title": "Matrix Factorization for Recommendations",
+    "contentHtml": "<p>When dealing with large datasets of user-item interactions, matrix factorization is a powerful technique to reduce dimensionality and improve recommendation systems.</p><p>In this context, we'll focus on Singular Value Decomposition (SVD) and Non-negative Matrix Factorization (NMF), which are widely used in collaborative filtering and content-based recommendations.</p>",
+    "formula": {
+      "latex": "\\[ U\\Sigma V^T \\]",
+      "name": "SVD decomposition"
+    },
+    "intuition": "Matrix factorization works by approximating the original matrix with a lower-dimensional representation, preserving the essential structure of the data. This allows for faster computation and improved performance in recommendation systems.",
+    "realWorldApplications": [
+      "Content-based recommendations",
+      "Collaborative filtering"
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between SVD and NMF",
+      "Overlooking the importance of dimensionality reduction"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:50:10.879Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_recommender_systems_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "title": "Matrix Factorization for Recommendations",
+    "contentHtml": "<p>Matrix factorization is a powerful technique in linear algebra that has far-reaching implications in machine learning and recommendation systems.</p><p>In essence, it's a way to compress a large matrix into two smaller matrices, each representing the latent factors or hidden patterns within the original data.</p>",
+    "formula": "{",
+    "latex": "\\\\[ U \\Sigma V^T \\\\]\",",
+    "name": "SVD Decomposition\" },",
+    "intuition": "Think of it like this: imagine you're trying to recommend movies to a friend based on their past preferences. You could create a matrix where the rows represent movies, columns represent users, and cells contain ratings. Matrix factorization would help you identify patterns in user behavior (e.g., 'user A likes action movies') and movie characteristics (e.g., 'movie X has a strong plot'). By compressing this massive matrix into smaller ones, you can make more accurate recommendations.",
+    "realWorldApplications": [
+      "Collaborative filtering for personalized product recommendations",
+      "SVD-based recommender systems in music streaming services"
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between SVD and NMF; thinking MF is just a fancy name for PCA"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:50:30.911Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

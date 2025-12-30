@@ -1,0 +1,104 @@
+[
+  {
+    "id": "stat_con_diagnostics_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Understanding Residual Plots and Leverage",
+    "contentHtml": "<p>In regression analysis, it's crucial to assess the quality of our model by examining residuals and influential points. This card introduces you to residual plots, leverage, and Cook's distance – essential concepts for identifying potential issues in your model.</p>",
+    "formula": {
+      "latex": "\\[ y = a + bx \\]",
+      "name": "Simple Linear Regression"
+    },
+    "intuition": "Think of residuals as the 'errors' between our predicted values and actual observations. Leverage measures how much each data point contributes to these errors.",
+    "visualDescription": "A scatter plot with a regression line, showing residual plots",
+    "commonMistakes": [
+      "Failing to check for outliers or influential points",
+      "Ignoring residuals as they're 'small'"
+    ],
+    "realWorldApplications": [
+      "Identifying biases in predictive models (ML/AI)"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:20.262Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_diagnostics_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics",
+    "contentHtml": "<p>Regression diagnostics help identify potential issues in a linear regression model by examining residuals, leverage, and influential points.</p><p>A residual plot shows the relationship between predicted values and actual values, helping to detect non-linear relationships or outliers. Leverage measures how much each data point contributes to the overall fit of the model. Influential points are those that have an unusually large impact on the regression line.</p>",
+    "formula": {
+      "latex": "\\[r_i = y_i - \\hat{y}_i\\]",
+      "name": "Residual",
+      "variants": [
+        {
+          "latex": "\\[h_i = x_i^T (X^T X)^{-1} X^T x_i\\]",
+          "description": "Leverage"
+        }
+      ]
+    },
+    "intuition": "Regression diagnostics provide a way to validate the assumptions of linear regression and identify potential issues that may affect model performance.",
+    "realWorldApplications": [
+      "Identifying and addressing biases in machine learning models"
+    ],
+    "commonMistakes": [
+      "Ignoring residuals and assuming the model is correct",
+      "Not considering leverage when evaluating outliers"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:36.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_diagnostics_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics",
+    "contentHtml": "<p>Regression diagnostics help you identify and address issues in your regression model.</p><p>A good regression model should have residuals that are randomly distributed around zero, with no patterns or trends. But what if your residuals don't look like this? That's where regression diagnostics come in.</p>",
+    "formula": "{",
+    "latex": "\\(y = \\beta_0 + \\beta_1 x + \\epsilon\\)\" },",
+    "intuition": "Think of residual plots as a way to visualize the 'leftover' variation in your data that isn't explained by the model. If you see patterns or outliers, it's like finding a hidden message - something's not quite right.",
+    "visualDescription": "A scatterplot with residuals on the y-axis and fitted values on the x-axis would be helpful to visualize residual plots.",
+    "commonMistakes": [
+      "Not checking for multicollinearity",
+      "Ignoring influential points"
+    ],
+    "realWorldApplications": [
+      "Identifying issues in predictive models used in ML/AI applications, such as anomaly detection or recommendation systems"
+    ],
+    "tags": [
+      "regression",
+      "diagnostics",
+      "ML/AI"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:51.802Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

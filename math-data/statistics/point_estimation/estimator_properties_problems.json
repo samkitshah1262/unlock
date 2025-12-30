@@ -1,0 +1,113 @@
+[
+  {
+    "id": "stat_prb_estimator_properties_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": "{",
+    "statementHtml": "<p>Consider an estimator <i>T</i>(X) that maps a random variable X to a real number. Prove that if <i>T</i>(X) is unbiased for θ, then it is also consistent.</p>",
+    "hints": [
+      "<p>If the estimator is unbiased, it's expected value equals the true parameter θ.</p>",
+      "<p>Consistency means that as the sample size increases, the estimator converges to the true parameter θ.</p>",
+      "<p>Use these two properties to show that an unbiased estimator must be consistent.</p>"
+    ],
+    "solutionHtml": "<p>To prove consistency, we need to show that <i>T</i>(X) converges in probability to θ as the sample size increases. Since <i>T</i>(X) is unbiased, its expected value equals θ:</p>\\[\\mathbb{E}[T(X)] = \\theta\\]<p>Now, let's consider the difference between the estimator and the true parameter:</p>\\[D = T(X) - \\theta\\]\"\\[\\mathbb{E}[D] = 0\\]\"<p>This means that the expected value of the difference is zero. Since we're dealing with a random variable, we can use the law of large numbers to show that as the sample size increases, the average of the differences converges to zero:</p>\\[\\frac{\\sum_{i=1}^n D_i}{n} \\rightarrow 0\\]\"<p>This is equivalent to saying that <i>T</i>(X) converges in probability to θ. Therefore, an unbiased estimator must be consistent.</p>\",",
+    "answerShort": "The estimator is consistent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:14.136Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "problem": {
+      "statementHtml": "<p>Let X1, ..., Xn be a random sample from a population with mean μ and variance σ^2. Consider an estimator T(X) for μ.</p>",
+      "hints": [
+        "<p>Think about what it means for an estimator to be unbiased.</p>",
+        "<p>How does the consistency of an estimator relate to its ability to converge to the true value?</p>",
+        "<p>Efficiency is often linked to variance. How can you use this intuition to approach the problem?</p>"
+      ],
+      "solutionHtml": "<p>To show that T(X) is unbiased, we need to show that E[T(X)] = μ.</p><p>... (steps omitted for brevity)</p>",
+      "answerShort": "The estimator is unbiased."
+    },
+    "commonMistakes": [
+      "Forgetting to check the consistency of an estimator",
+      "Assuming efficiency implies small variance"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:27.201Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": {
+      "statementHtml": "Let X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub> be a random sample from a population with mean μ and variance σ<sup>2</sup>. Consider the estimator <i>ŷ</i> = (1/n)Σ<i>x</i><sub>i</sub>. Is it unbiased, consistent, efficient, or sufficient?",
+      "hints": [
+        "Think about the expected value of the estimator.",
+        "Consider what happens as n → ∞.",
+        "Compare <i>ŷ</i> to other possible estimators."
+      ],
+      "solutionHtml": "To show that <i>ŷ</i> is unbiased, we need to prove E[<i>ŷ</i>] = μ. This follows from the linearity of expectation and the fact that each X<sub>i</sub> has mean μ.<br><br>To demonstrate consistency, we can use the law of large numbers (LLN) to show that <i>ŷ</i> converges in probability to μ as n → ∞. This is because the LLN states that the sample mean will converge to the population mean with increasing sample size.<br><br>Efficiency is a more complex property, but we can use the Cramér-Rao bound to show that <i>ŷ</i> achieves the minimum variance among all unbiased estimators. Finally, sufficiency follows from the fact that <i>ŷ</i> is a function of the sample mean, which is sufficient for estimating μ.",
+      "answerShort": "Unbiased, consistent, efficient, and sufficient"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the expected value of the estimator.",
+      "Assuming that <i>ŷ</i> is always more efficient than other estimators."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:48.506Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": "{",
+    "statementHtml": "Consider an estimator <i>&#x3B4;</i> of a population parameter <i>&#x3C0;</i>. Prove that if <i>&#x3B4;</i> is unbiased, then it is also consistent.",
+    "hints": [
+      "Start by recalling the definition of an unbiased estimator.",
+      "Use the fact that consistency implies convergence in probability.",
+      "Think about what happens to the expected value of <i>&#x3B4;</i> as the sample size increases."
+    ],
+    "solutionHtml": "<p>To prove consistency, we need to show that <i>&#x3B4;</i> converges in probability to <i>&#x3C0;</i>. Since <i>&#x3B4;</i> is unbiased, its expected value is equal to <i>&#x3C0;</i>.</p><p>We can write the difference between <i>&#x3B4;</i> and <i>&#x3C0;</i> as:</p><p>\\[&#x3B4;(X_1, ..., X_n) - &#x3C0; = \\frac{1}{n} \\sum_{i=1}^n (X_i - &#x3C0;)\\]</p><p>Now, we can use the fact that the sample mean is a consistent estimator of the population mean:</p><p>\\[&#x3B4;(X_1, ..., X_n) \\rightarrow_d N(0, \\sigma^2/n) as n → ∞\\]</p><p>This implies that <i>&#x3B4;</i> converges in probability to 0 as the sample size increases.</p>\",",
+    "answerShort": "The estimator is consistent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:15:11.199Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "la_prb_linear_independence_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "<p>Consider a set of vectors \\{\\mathbf{v}_1, ..., \\mathbf{v}_n\\} in a vector space V. Determine whether these vectors are linearly independent.</p>\",",
+    "hints": [
+      "<p>If one vector is a linear combination of the others, they're not independent.</p>",
+      "<p>Check if any vector can be expressed as a sum of scalar multiples of the others.</p>",
+      "<p>Use the fact that a set of vectors is independent if and only if the only linear combination equal to zero is the trivial one (i.e., all coefficients are zero).</p>"
+    ],
+    "solutionHtml": "<p>To test for independence, we can use the following steps:</p><ol><li>\\(\\mathbf{v}_1 = c_1\\mathbf{v}_2 + \\cdots + c_k\\mathbf{v}_n\\) implies \\(c_1 = 0\\).</li><li>If this is true for all vectors, then the set is independent.</li></ol>\",",
+    "answerShort": "Independent if no non-trivial linear combination equals zero\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:45:56.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "Determine whether the set of vectors \\(\\{\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3\\}\\) is linearly independent.\",",
+    "hints": [
+      "Check if any vector can be written as a combination of the others.",
+      "If you find a non-trivial solution to the homogeneous equation, it's not independent.",
+      "Use the definition: a set of vectors is linearly independent if none of them can be expressed as a linear combination of the others."
+    ],
+    "solutionHtml": "<p>To test for linear independence, we can use the following steps:</p><ol><li>Write down the augmented matrix \\([A|I]\\), where \\(A\\) is the matrix whose columns are the vectors in the set and \\(I\\) is the identity matrix.</li><li>If the rank of \\(A\\) is equal to the number of columns, then the set is linearly independent.</li></ol>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:11.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "Determine whether the set of vectors \\[v_1 = (1, 0), v_2 = (0, 1), v_3 = (1, 1)\\] is linearly independent.\",",
+    "hints": [
+      "Check if any vector can be expressed as a combination of the others.",
+      "Think about the geometric meaning: are these vectors pointing in different directions?",
+      "Use the definition of linear independence to guide your approach."
+    ],
+    "solutionHtml": "To test for linear independence, we can use the following steps:\\n\\ 1. Show that no vector is a zero vector.\\n\\ \\[v_1 = (1, 0) \\neq (0, 0), v_2 = (0, 1) \\neq (0, 0), v_3 = (1, 1) \\neq (0, 0)\\]\\n\\ 2. Show that the vectors are not proportional.\\n\\ For any scalar \\(c\\), if\\n\\ \\(cv_1 + v_2 = cv_1 + cv_2 + cv_3\\), then\\n\\ \\(v_2 - v_1 = (0, 1) \\neq (0, 0)\\) and similarly for \\(v_3\\).\\n\\ Therefore, the vectors are linearly independent.\",",
+    "answerShort": "The set of vectors is linearly independent.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:32.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "<p>Consider a set of vectors <code>\\{\\mathbf{v}_1, \\mathbf{v}_2, ..., \\mathbf{v}_n\\}</code>. Determine whether they are linearly independent or not.</p>\",",
+    "hints": [
+      "Check if any vector is a scalar multiple of another.",
+      "If you find a vector that can be expressed as a combination of the others, try to express it in terms of those vectors.",
+      "If none of the above works, think about whether the vectors span the entire space."
+    ],
+    "solutionHtml": "<p>To test for linear independence, we can use the following steps:</p><ol><li><p>Assume that <code>\\mathbf{v}_1</code> is a linear combination of the other vectors.</p></li><li><p>This means there exist scalars <code>c_2, c_3, ..., c_n</code> such that</p><p><code>\\mathbf{v}_1 = c_2 \\mathbf{v}_2 + c_3 \\mathbf{v}_3 + ... + c_n \\mathbf{v}_n</code>.</p></li><li><p>This is a contradiction, since we assumed that <code>\\mathbf{v}_1</code> was not a linear combination of the other vectors.</p></li><li><p>Therefore, our assumption must be false, and <code>\\mathbf{v}_1</code> is indeed linearly independent from the others.</p></li></ol>\",",
+    "answerShort": "The set of vectors is linearly independent if no vector can be expressed as a combination of the others.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:55.624Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

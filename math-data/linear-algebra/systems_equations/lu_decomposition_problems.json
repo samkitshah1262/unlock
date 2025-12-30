@@ -1,0 +1,76 @@
+[
+  {
+    "id": "la_prb_lu_decomposition_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "lu_decomposition",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and a vector b, factorize A into L and U such that Ax = LUx.</p>",
+    "hints": [
+      "Start by finding the first row of L.",
+      "Use the fact that U is upper triangular to simplify the calculation."
+    ],
+    "solutionHtml": "<p>Step 1: Find the first row of L. This corresponds to the first row of A.</p>\\[L_{i, 1} = A_{i, 1}\\]<p>Step 2: Calculate the rest of the rows in L. For each row i > 0:</p>\\[L_{i, j} = A_{i, j} - \\frac{A_{i, 1} * L_{1, j}}{L_{1, 1}}\\]<p>Step 3: Calculate U by subtracting the contribution of each row in L from the corresponding row in A.</p>\\[U_{ij} = A_{ij} - \\sum_{k=1}^{i-1} L_{ik} * U_{kj}\\]<p>The final answer is LUx = Ax.</p>\",",
+    "answerShort": "LU\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:47:56.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_lu_decomposition_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "lu_decomposition",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and a vector b, use LU decomposition to solve the system of linear equations Ax = b.</p>",
+    "hints": [
+      "Start by finding the lower triangular matrix L.",
+      "Use the upper triangular matrix U to find the solution.",
+      "Make sure to avoid dividing by zero!"
+    ],
+    "solutionHtml": "<p>Let's break it down step-by-step:</p><ul><li>Find the LU decomposition of A: \\(A = LU\\)</li><li>Solve Ly = b for y: \\(\\begin{bmatrix} l_{11} & 0 \\\\ l_{21} & l_{22}\\end{bmatrix} \\begin{bmatrix} y_1 \\\\ y_2 \\end{bmatrix} = \\begin{bmatrix} b_1 \\\\ b_2 \\end{bmatrix}\\)</li><li>Solve Ux = y: \\(\\begin{bmatrix} u_{11} & u_{12} \\\\ 0 & u_{22}\\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} y_1 \\\\ y_2 \\end{bmatrix}\\)</li></ul><p>Now, combine the results to find the solution: \\(x = U^{-1}y\\)</p>\",",
+    "answerShort": "The solution is x = U^(-1)y.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:48:18.542Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_lu_decomposition_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "systems_equations",
+    "topic": "lu_decomposition",
+    "problem": "{",
+    "statementHtml": "Given a system of linear equations <code>Ax = b</code>, factorize the coefficient matrix A into LU form using partial pivoting. Then, solve the system.",
+    "hints": [
+      "Start by finding the pivot element in each row.",
+      "Use the pivot element to partition the matrix and perform the elimination step.",
+      "The upper triangular matrix U is the result of the elimination process."
+    ],
+    "solutionHtml": "<p>Step 1: Find the pivot element in the first row. If it's zero, swap with another row.</p><p>\\[L_{11} = a_{11}, U_{11} = a_{12}/a_{11}\\]</p><p>Step 2: Eliminate the first column from the rest of the matrix.</p><p>\\[L_{21} = a_{21} - a_{22} \\* L_{11}, U_{21} = a_{23} / a_{22}\\]</p><p>...</p>\",",
+    "answerShort": "LU form\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:48:35.501Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

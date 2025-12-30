@@ -1,0 +1,98 @@
+[
+  {
+    "id": "stat_con_hierarchical_models_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors and Partial Pooling",
+    "contentHtml": "<p>In traditional statistical modeling, we often assume that each data point is independent and identically distributed (i.i.d.). However, in many real-world scenarios, this assumption doesn't hold. Hierarchical models address this issue by introducing multi-level priors and partial pooling.</p><p>Imagine a dataset of student test scores, where each student belongs to a specific school. We can model the relationship between students within the same school as well as across schools using hierarchical models.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{y} | \\\\theta \\sim N(0, \\\\sigma^2 I)\\\\]\",",
+    "name": "Student Test Scores",
+    "variants": "[] },",
+    "intuition": "Hierarchical models allow us to capture complex relationships between data points by sharing information across groups (e.g., schools). This leads to more accurate predictions and better model interpretability.",
+    "realWorldApplications": [
+      "Education: predicting student performance",
+      "Healthcare: modeling patient outcomes"
+    ],
+    "commonMistakes": [
+      "Failing to account for group-level structure in the data"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:45:41.847Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_hierarchical_models_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models in Bayesian Statistics",
+    "contentHtml": "<p>Hierarchical models are a fundamental concept in Bayesian statistics that allow us to model complex systems with multiple levels of structure. This is achieved by introducing multi-level priors and random effects, which enable partial pooling across different groups or clusters.</p><p>Imagine you're trying to predict the average height of students in different schools. A traditional approach would be to fit a separate model for each school, but this ignores the shared underlying structure between schools. Hierarchical models allow us to capture this shared structure by modeling the variation between schools as random effects.</p>",
+    "formula": {
+      "latex": "\\[ y_{ij} | \\mu_i, \\sigma^2 = N(\\mu_i, \\sigma^2) \\\\ \\mu_i | \\mu_0, \\sigma^2_0 = N(\\mu_0, \\sigma^2_0) \\]",
+      "name": "Student height model"
+    },
+    "intuition": "Hierarchical models help us account for the shared underlying structure between different groups or clusters, which is essential in many real-world applications.",
+    "realWorldApplications": [
+      "Predicting student performance across schools"
+    ],
+    "commonMistakes": [
+      "Not accounting for random effects",
+      "Ignoring the shared structure between groups"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:45:58.762Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_hierarchical_models_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models in Bayesian Statistics",
+    "contentHtml": "<p>In traditional Bayesian statistics, we model each observation independently using a prior distribution. However, in many cases, we have multiple observations that share similar characteristics or are grouped together naturally. Hierarchical models allow us to capture these relationships by introducing multi-level priors and partial pooling.</p><p>By doing so, we can borrow strength across groups or levels, which is particularly useful when dealing with small sample sizes or sparse data.</p>",
+    "formula": "{",
+    "latex": "\\\\[ p(y|\\\\theta) = \\\\prod_{i=1}^n p(y_i|\\\\theta_i) \\]\" },",
+    "intuition": "Hierarchical models enable us to model complex relationships between observations and their group-level characteristics, leading to more robust and accurate inferences.",
+    "visualDescription": "A diagram showing multiple levels of grouping (e.g., students within classes within schools) with arrows indicating the flow of information from higher to lower levels.",
+    "commonMistakes": [
+      "Failing to account for group-level relationships",
+      "Ignoring the importance of partial pooling"
+    ],
+    "realWorldApplications": [
+      "Modeling student performance across different classrooms and schools in education research",
+      "Analyzing customer behavior across different demographics and geographic regions in marketing"
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Hierarchical Models",
+      "Partial Pooling"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:46:16.254Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

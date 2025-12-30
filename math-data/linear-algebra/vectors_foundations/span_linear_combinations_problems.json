@@ -1,0 +1,76 @@
+[
+  {
+    "id": "la_prb_span_linear_combinations_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "span_linear_combinations",
+    "problem": "{",
+    "statementHtml": "Find the span of the vectors <p>\\(\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}\\)</p> and <p>\\(\\mathbf{v}_2 = \\begin{bmatrix} 4 \\\\ 5 \\\\ 6 \\end{bmatrix}\\)</p>. Is it the smallest subspace containing these vectors?\",",
+    "hints": [
+      "Think about what linear combinations of these vectors can produce.",
+      "Consider the geometric interpretation of span as a set of all possible vector sums.",
+      "You might need to find the basis for this span."
+    ],
+    "solutionHtml": "<p>To find the span, we first generate some linear combinations:</p><p>\\(\\mathbf{w}_1 = 2\\mathbf{v}_1 + \\mathbf{v}_2 = \\begin{bmatrix} 6 \\\\ 7 \\\\ 9 \\end{bmatrix}\\)</p><p>\\(\\mathbf{w}_2 = -3\\mathbf{v}_1 + 2\\mathbf{v}_2 = \\begin{bmatrix} -3 \\\\ -4 \\\\ -5 \\end{bmatrix}\\)</p><p>The span is the set of all such linear combinations. Can you see why these two vectors are enough to generate any other vector in this span?</p>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:41:36.767Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_span_linear_combinations_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "span_linear_combinations",
+    "problem": "{",
+    "statementHtml": "Find the span of the set <code>\\{v_1 = (1, 0), v_2 = (0, 1)\\}</code> in <code>R^2</code>.\",",
+    "hints": [
+      "Think about what vectors can be written as linear combinations of these two.",
+      "Consider the geometric interpretation: which directions are spanned by these vectors?",
+      "Use the definition of span to find the smallest subspace containing these vectors."
+    ],
+    "solutionHtml": "<p>To find the span, we need to determine all possible linear combinations of <code>v_1</code> and <code>v_2</code>. We can write any vector in the form <code>c_1v_1 + c_2v_2 = (c_1, c_2)</code>, where <code>c_1, c_2 \\in R</code>.</p><p>The span contains all vectors that can be written as linear combinations of these two. This includes all possible directions and points in the plane.</p>\",",
+    "answerShort": "The span is the entire plane <code>R^2</code>.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:41:54.850Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_span_linear_combinations_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "span_linear_combinations",
+    "problem": "{",
+    "statementHtml": "Find the span of the set S = {(1, 0), (0, 1)} in ℝ².",
+    "hints": [
+      "Think about what vectors can be written as linear combinations of these two vectors.",
+      "Consider the geometric interpretation: which directions are possible?",
+      "Use the definition of span to narrow down your answer."
+    ],
+    "solutionHtml": "<p>To find the span, we need to determine the set of all linear combinations of S.</p><p>Let's start with a general vector (x, y) in ℝ². We can write it as:</p>\\[ (x, y) = c_1(1, 0) + c_2(0, 1) \\]\\n<p>for some scalars c_1 and c_2.</p><p>This means that any vector in the span must have its x-coordinate proportional to the first vector's x-coordinate (i.e., 1) and its y-coordinate proportional to the second vector's y-coordinate (i.e., 1).</p><p>Geometrically, this means that all vectors in the span lie on a line passing through the origin.</p><p>The answer is then the subspace of ℝ² consisting of all such vectors:</p>\\[ \\text{Span}(S) = \\{(x, y) \\in ℝ² : x = c_1, y = c_2\\} \\]",
+    "answerShort": "The span is the set of all vectors (x, y) with x = 0 or y = 0.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:42:16.804Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

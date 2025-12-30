@@ -1,0 +1,196 @@
+[
+  {
+    "id": "stat_wex_model_selection_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and ensure a reliable model.</p>",
+    "formula": {
+      "latex": "\\[R^2 = 1 - \\frac{SS_{res}}{SS_{tot}}\\]",
+      "name": "Coefficient of Determination"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two models with different R² values, how do you decide which one to use?</p>",
+      "hints": [
+        "Consider the adjusted R²",
+        "Think about overfitting"
+      ],
+      "solutionHtml": "<p>To make a decision, we'll explore four metrics: R², adjusted R², AIC, and BIC.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose you have two models with the following R² values:</p><ul><li>Model A: R² = 0.8</li><li>Model B: R² = 0.95</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the adjusted R² for each model",
+          "mathHtml": "\\[\\text{adj. }R^2_\\text{A} = \\frac{R^2_\\text{A} - (p / n)}{1 - (p / n)}\\]",
+          "explanation": "The adjusted R² adjusts for the number of parameters."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the AIC and BIC for each model",
+          "mathHtml": "\\[\\text{AIC}_\\text{A} = -2 \\log(L) + 2k_\\text{A}, \\\\ \\text{BIC}_\\text{A} = -2 \\log(L) + k_\\text{A} \\log(n)\\]",
+          "explanation": "The AIC and BIC penalize models for complexity."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use cross-validation to evaluate the models",
+          "mathHtml": "",
+          "explanation": "Cross-validation provides a more robust estimate of model performance."
+        }
+      ],
+      "finalAnswer": "Model B"
+    },
+    "intuition": "When choosing between two models, consider both R² and adjusted R². If one model has a significantly higher R² but many parameters, the adjusted R² may be lower due to overfitting.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:55:01.950Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and choose a suitable model.</p>",
+    "formula": "{",
+    "latex": "\\(adj.\\ R^2 = 1 - \\frac{\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2}{\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\\)\",",
+    "name": "R²",
+    "variants": "[ {",
+    "description": "Compare R² values and choose the best model",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X and target y, select the best model between linear regression and polynomial regression of degree 3.</p>",
+    "hints": [
+      "Check the residuals for normality",
+      "Compare R² values"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with features X1 and X2, and target y. We want to select the best model between linear regression and polynomial regression of degree 3.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "mathHtml": "",
+    "explanation": "The model with the higher R² value is likely to be a better fit\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "Model selection is crucial in regression analysis as it helps avoid overfitting and choose a suitable model.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Not considering the complexity of models",
+      "Not checking for multicollinearity"
+    ],
+    "realWorldApplications": [
+      "Selecting the best model in machine learning pipelines",
+      "Choosing the right features for a regression problem"
+    ],
+    "tags": [
+      "model selection",
+      "regression analysis"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:55:37.710Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, model selection is crucial to avoid overfitting and ensure generalizability.</p>",
+    "formula": {
+      "latex": "\\[R^2 = 1 - \\frac{SS_{res}}{SS_{tot}}\\]",
+      "name": "Coefficient of Determination"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset with features X and target variable y, how do we choose the best model?</p>",
+      "hints": [
+        "Consider R²",
+        "Think about overfitting"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset with features X1, X2, and target variable y. We want to choose the best model between linear regression models using only X1 or both X1 and X2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate R² for each model",
+          "mathHtml": "\\[R^2_\\text{X1} = \\frac{SS_{reg}}{SS_{tot}}\\]",
+          "explanation": "This gives us an idea of how well each model explains the data"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate adjusted R² for each model",
+          "mathHtml": "\\[\\text{adj}R^2_\\text{X1} = 1 - \\frac{SS_{res}}{SS_{tot}-k}\\]",
+          "explanation": "This adjusts for the number of features"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate AIC and BIC for each model",
+          "mathHtml": "\\[AIC_\\text{X1} = \\text{const} + k \\ln(SS_{res})\\]",
+          "explanation": "These metrics penalize models with more parameters"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use cross-validation to evaluate each model",
+          "mathHtml": "",
+          "explanation": "This gives us a more robust estimate of the model's performance"
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Model selection is about finding the sweet spot between complexity and generalizability.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:56:03.869Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_selection_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "title": "Model Selection: R², Adjusted R², AIC, BIC, and Cross-Validation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to select the best model using different metrics.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset with features X1, X2, and target variable y, which model is better: linear or polynomial?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Fit both models using OLS\", \"mathHtml\": \"\\[ \\text{Linear Model}: y = \\beta_0 + \\beta_1 X_1 + \\epsilon\\]\\n\\[ \\text{Polynomial Model}: y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_1^2 + \\epsilon\\]\", \"explanation\": \"We'll use ordinary least squares (OLS) to fit both models.\"}, {\"stepNumber\": 2, \"description\": \"Calculate R² for each model\", \"mathHtml\": \"\\[ R^2_\\text{Linear} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\\n\\[ R^2_\\text{Polynomial} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\", \"explanation\": \"R² measures the proportion of variance explained by each model.\"}, {\"stepNumber\": 3, \"description\": \"Calculate adjusted R² for each model\", \"mathHtml\": \"\\[ \\text{adj. } R^2_\\text{Linear} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\cdot\\frac{n-1}{n-k-1}\\]\\n\\[ \\text{adj. } R^2_\\text{Polynomial} = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\cdot\\frac{n-1}{n-k-1}\\]\", \"explanation\": \"Adjusted R² penalizes for the number of parameters in each model.\"}, {\"stepNumber\": 4, \"description\": \"Calculate AIC and BIC for each model\", \"mathHtml\": \"\\[ \\text{AIC}_\\text{Linear} = -2\\log(L) + 2k\\]\\n\\[ \\text{BIC}_\\text{Linear} = -2\\log(L) + k\\log(n)\\]\\n\\[ \\text{AIC}_\\text{Polynomial} = -2\\log(L) + 2(k+1)\\]\\n\\[ \\text{BIC}_\\text{Polynomial} = -2\\log(L) + (k+1)\\log(n)\\]\", \"explanation\": \"AIC and BIC are information criteria that balance model fit with complexity.\"}, {\"stepNumber\": 5, \"description\": \"Perform cross-validation for each model\", \"mathHtml\": \"\", \"explanation\": \"We'll use k-fold cross-validation to evaluate the models' generalization performance.\"} ],",
+    "finalAnswer": "Based on the metrics, the polynomial model is preferred.\" },",
+    "intuition": "Model selection is crucial in regression analysis. By considering multiple metrics, we can choose the best model that balances fit and complexity.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:56:45.702Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

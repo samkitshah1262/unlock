@@ -1,0 +1,76 @@
+[
+  {
+    "id": "stat_prb_multicollinearity_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "<p>Detect multicollinearity in a linear regression model.</p>",
+    "hints": [
+      "Check variance inflation factors (VIFs) for each predictor.",
+      "Look for high correlations between predictors (> 0.7).",
+      "Consider using principal component regression or dimensionality reduction techniques."
+    ],
+    "solutionHtml": "<p>To detect multicollinearity, calculate the VIF for each predictor:</p>\\(VIF = \\frac{1}{1 - R^2}\\) where \\(R^2\\) is the coefficient of determination. If any VIF exceeds 5, it may indicate multicollinearity.</p><p>For example, suppose we have two predictors X and Y with a correlation of 0.8:</p>\\[\\text{VIF}_X = \\frac{1}{1 - 0.8^2} = 5\\] This suggests that X is highly correlated with the other predictor(s) in the model.</p><p>To remedy multicollinearity, we can try:</p> <ul><li>Removing one or more highly correlated predictors,</li><li>Standardizing the data,</li><li>Using a different regression technique, such as ridge regression or the lasso.</li></ul>\",",
+    "answerShort": "VIF > 5\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:04.904Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multicollinearity_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "Multicollinearity in regression analysis can be a significant issue when two or more predictor variables are highly correlated. Detecting and addressing multicollinearity is crucial to ensure accurate model performance. Consider the following dataset: <br><table border=1><tr><th>Predictor 1</th><th>Predictor 2</th><th>Response Variable</th></tr><tr><td>0.5</td><td>0.8</td><td>10</td></tr><tr><td>0.3</td><td>0.9</td><td>12</td></tr><tr><td>0.1</td><td>0.7</td><td>15</td></tr></table>",
+    "hints": [
+      "Check the variance inflation factor (VIF) for each predictor variable.",
+      "If VIF is high, it may indicate multicollinearity.",
+      "Consider using techniques like principal component regression or ridge regression to address multicollinearity."
+    ],
+    "solutionHtml": "<p>Step 1: Calculate the variance inflation factor (VIF) for each predictor variable.</p><p>\\[ VIF = \\frac{1}{1 - R^2} \\]</p><p>where \\(R^2\\) is the coefficient of determination.</p><p>Step 2: Check if any VIF values are greater than 5. If so, it may indicate multicollinearity.</p><p>Step 3: Consider using techniques like principal component regression or ridge regression to address multicollinearity.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:25.885Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multicollinearity_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "<p>Detect and diagnose multicollinearity in a linear regression model.</p>",
+    "hints": [
+      "Check the variance inflation factor (VIF) for each predictor.",
+      "Look at the correlation matrix to identify highly correlated predictors.",
+      "Consider using principal component regression or dimensionality reduction techniques."
+    ],
+    "solutionHtml": "<p>To detect multicollinearity, calculate the VIF for each predictor:</p>\\(VIF = \\frac{1}{1 - R^2}\\), where \\(R^2\\) is the coefficient of determination from a regression of the predictor on all other predictors. If any VIF values are greater than 5 or 10, it may indicate multicollinearity.</p><p>Consequences of multicollinearity include:</p>\\(1.\\) Unstable coefficients and standard errors,\\(2.\\) Poor model performance,\\(3.\\) Overfitting.\\(<br>\\)</p>\",",
+    "answerShort": "VIF values greater than 5 or 10 indicate multicollinearity.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:41.745Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

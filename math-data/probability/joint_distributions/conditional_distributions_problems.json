@@ -1,0 +1,111 @@
+[
+  {
+    "id": "prob_prb_conditional_distributions_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": {
+      "statementHtml": "Given a joint distribution <i>P(X,Y)</i>, find the conditional probability density function (PDF) <i>P(Y|X)</i>.",
+      "hints": [
+        "Start by recalling the definition of conditional probability: <i>P(A|B) = P(A ∩ B) / P(B)</i>",
+        "Recognize that <i>P(Y|X)</i> is a function of <i>X</i>, so you'll need to marginalize out <i>X</i> in the joint distribution",
+        "Use the chain rule to reorganize the terms"
+      ],
+      "solutionHtml": "To find <i>P(Y|X)</i>, we can use Bayes' theorem: \\[ P(Y|X) = \\frac{P(X,Y)}{P(X)} \\] First, marginalize out <i>X</i> in the joint distribution: \\[ P(X,Y) = \\int P(X,Y|x) dx \\] Then, substitute this expression into Bayes' theorem: \\[ P(Y|X) = \\frac{\\int P(X,Y|x) dx}{P(X)} \\] Finally, recognize that <i>P(X)</i> is a normalization constant, so we can drop it.",
+      "answerShort": "The conditional PDF is <i>P(Y|X) = \\frac{\\int P(X,Y|x) dx}{P(X)}</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to marginalize out <i>X</i> in the joint distribution",
+      "Not recognizing that <i>P(X)</i> is a normalization constant"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:53:20.854Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be random variables with joint PDF f(x,y). Define P(Y|X) as the conditional distribution of Y given X. Show that P(Y|X) is a valid probability density function (PDF).</p>",
+    "hints": [
+      "<p>Start by recalling the definition of conditional probability.</p>",
+      "<p>Use the fact that f(x,y) is a joint PDF to relate it to the marginal distributions.</p>",
+      "<p>Apply Bayes' theorem to update P(Y|X) given some new information.</p>"
+    ],
+    "solutionHtml": "<p>To show that P(Y|X) is a valid PDF, we need to verify two conditions: non-negativity and normalization.</p><p>\\[P(Y|X) \\geq 0\\] is trivially true since f(x,y) ≥ 0 for all x, y.</p><p>To show normalization, we integrate P(Y|X) over the support of X:</p><p>\\[\\int_{-\\infty}^{\\infty} P(Y|X) dx = \\int_{-\\infty}^{\\infty} f(x,y) dx / f_X(x) = 1\\]</p>\",",
+    "answerShort": "P(Y|X) is a valid PDF\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:53:42.319Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and a conditional event <i>E</i> = {<i>x</i> | <i>x</i> ∈ ℝ}, find the conditional PDF <i>P</i>(<i>Y</i>|<i>E</i>).",
+    "hints": [
+      "Recall that the joint PDF factors into a product of marginal and conditional PDFs.",
+      "Use the definition of conditional probability to relate the joint PDF to the desired conditional PDF.",
+      "Apply Bayes' theorem for updating probabilities given new information."
+    ],
+    "solutionHtml": "<p>To find the conditional PDF, we can use Bayes' theorem:</p>\\[\\frac{P(Y|E) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>First, we need to compute the numerator:</p>\\[P(Y|E) = \\frac{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}{\\int_{-\\infty}^{\\infty} P(x|E) dx}\\] <p>Now, we can substitute this expression back into Bayes' theorem:</p>\\[\\frac{P(Y|E) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx} = \\frac{\\left(\\frac{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}{\\int_{-\\infty}^{\\infty} P(x|E) dx}\\right) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>Simplifying, we get:</p>\\[P(Y|E) = \\frac{P(Y|x) \\cdot P(x|E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>This is the desired conditional PDF.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:54:13.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": {
+      "statementHtml": "Given a joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and a conditional event <i>E</i> = {<i>x</i> | <i>x</i> &isin; [0, 1]}, find the conditional PDF <i>P</i>(<i>Y</i>|<i>E</i>).",
+      "hints": [
+        "Start by recalling Bayes' theorem: <i>P</i>(<i>A</i>|<i>B</i>) = <i>P</i>(<i>A</i>&<i>B</i>) / <i>P</i>(<i>B</i>).",
+        "Identify the event of interest as <i>E</i> = {<i>x</i> | <i>x</i> &isin; [0, 1]}.",
+        "Use the definition of conditional probability to relate <i>P</i>(<i>Y</i>|<i>E</i>) to <i>P</i>(<i>Y</i>, <i>E</i>)."
+      ],
+      "solutionHtml": "To find the conditional PDF, we can apply Bayes' theorem: \\[P(Y|E) = P(E|Y)P(Y) / P(E).\\] Since we are given the joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and the event <i>E</i>, we can rewrite this as \\[P(Y|E) = P(X &isin; [0, 1]|Y)P(Y) / P(E).\\] Now, we need to find the numerator and denominator. The numerator is simply the probability of the event given <i>Y</i>: \\[P(X &isin; [0, 1]|Y) = \\int_{x=0}^{1} P(X=x|Y) dx.\\] For the denominator, we can use the definition of conditional probability: \\[P(E) = P(X &isin; [0, 1]) = \\int_{x=0}^{1} P(X=x) dx.\\] Finally, we can substitute these expressions into Bayes' theorem to obtain the conditional PDF: \\[P(Y|E) = (\\frac{1}{1})P(Y) / P(E).\\]",
+      "answerShort": "The conditional PDF is <i>P</i>(<i>Y</i>|<i>E</i>) = <i>P</i>(<i>Y</i>) / <i>P</i>(<i>E</i>)."
+    },
+    "commonMistakes": [
+      "Forgetting to apply Bayes' theorem",
+      "Not recognizing the event of interest as {<i>x</i> | <i>x</i> &isin; [0, 1]}"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:54:51.292Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

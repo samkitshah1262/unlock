@@ -1,0 +1,150 @@
+[
+  {
+    "id": "stat_wex_chi_squared_distribution_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution: Worked Example",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the chi-squared distribution.</p>",
+    "formula": {
+      "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 10 is taken from a normal distribution with mean 5 and standard deviation 1. Calculate the chi-squared statistic for this sample.</p>",
+      "hints": [
+        "Hint: Use the formula for the chi-squared statistic"
+      ],
+      "solutionHtml": "<p>We'll solve this problem step-by-step:</p><ul><li>Step 1: Calculate the expected values under the null hypothesis</li><li>Step 2: Calculate the observed values and their deviations from the expected values</li><li>Step 3: Calculate the chi-squared statistic using the formula</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 10 is taken from a normal distribution with mean 5 and standard deviation 1. Calculate the chi-squared statistic for this sample.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected values under the null hypothesis",
+          "mathHtml": "\\[E_i = (10)(5) = 50\\]",
+          "explanation": "We're assuming a normal distribution with mean 5 and standard deviation 1."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the observed values and their deviations from the expected values",
+          "mathHtml": "\\[O_1 = \\ldots = O_{10} = 50\\]",
+          "explanation": "We'll assume all observations are equal to the mean for simplicity."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the chi-squared statistic using the formula",
+          "mathHtml": "\\[\\chi^2 = \\frac{(O_1 - E_1)^2}{E_1} + \\ldots + \\frac{(O_{10} - E_{10})^2}{E_{10}}\\]",
+          "explanation": "We'll plug in the values and calculate the chi-squared statistic."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The chi-squared distribution is used to test hypotheses about the mean of a normal distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:03:14.184Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_distribution_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution: Worked Example",
+    "contentHtml": "<p>In this worked example, we'll apply the chi-squared distribution to a common problem in statistical testing.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test if there's an association between the type of coffee and the number of hours studied by students. We have a table showing the counts for each combination:</p><ul><li>Coffee A: 10, 15, 20</li><li>Coffee B: 5, 8, 12</li></ul>",
+      "hints": [
+        "Hint: Use the chi-squared distribution to test the null hypothesis"
+      ],
+      "solutionHtml": "<p>We'll follow these steps:</p>",
+      "answerShort": "The p-value is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given a contingency table with counts for each combination of coffee type and hours studied, calculate the chi-squared statistic.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected frequencies under the null hypothesis",
+          "mathHtml": "\\[ E_{ij} = \\frac{(R_i)(C_j)}{N} \\]",
+          "explanation": "We're assuming independence between coffee type and hours studied."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the chi-squared statistic",
+          "mathHtml": "\\[ χ^2 = \\sum_{i,j} \\frac{(O_{ij} - E_{ij})^2}{E_{ij}} \\]",
+          "explanation": "We're measuring the difference between observed and expected frequencies."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the degrees of freedom",
+          "mathHtml": "\\[ df = (r-1)(c-1) \\]",
+          "explanation": "The number of independent pieces of information in our contingency table."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Look up the p-value from a chi-squared distribution table or calculate it using software",
+          "mathHtml": "\\[ P(χ^2 > χ^2_{observed}) \\]",
+          "explanation": "We're determining the probability of observing our data (or more extreme) under the null hypothesis."
+        }
+      ],
+      "finalAnswer": "The p-value is..."
+    },
+    "intuition": "The chi-squared distribution helps us test whether observed frequencies are significantly different from expected frequencies.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:03:41.382Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_distribution_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Solving Chi-Squared Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a chi-squared distribution problem.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a sample of size <i>n</i> from a population with a known proportion <i>p</i>. We want to test the null hypothesis that the true proportion is equal to <i>p</i> against the alternative that it's different. The chi-squared statistic is calculated as:</p><p>\\[\\chi^2 = \\sum_{i=1}^{k} \\frac{(O_i - E_i)^2}{E_i}\\]</p>\",",
+    "hints": [
+      "Make sure to calculate the expected frequencies first"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a sample of size <i>n</i> = 100 from a population with a known proportion <i>p</i> = 0.5. We observe <i>O_1</i> = 55 successes and <i>O_2</i> = 45 failures. The expected frequencies are:</p><p>\\[E_1 = np = 50, E_2 = n(1-p) = 50\\]</p>\",",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Compare the calculated chi-squared statistic to the critical value",
+    "mathHtml": "\\[\\chi^2 > \\chi^2_{0.95}(1)\\]\",",
+    "explanation": "If our calculated chi-squared statistic is greater than the critical value, we reject the null hypothesis.\" } ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The key insight here is that the chi-squared distribution is used to test hypotheses about the proportion of successes in a sample.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:04:30.859Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,474 @@
+[
+  {
+    "id": "la_con_matrix_inverse_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>A matrix inverse is a matrix that, when multiplied by the original matrix, yields the identity matrix. This concept is crucial in linear algebra and has numerous applications in machine learning and artificial intelligence.</p><p>Intuitively, think of an inverse as a 'reversal' operation. If you multiply a matrix by its inverse, you're essentially 'undoing' the transformation performed by the original matrix.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^{-1} = \\frac{1}{\\det(\\mathbf{A})} \\text{adj}(\\mathbf{A}) \\]",
+      "name": "Matrix Inverse Formula"
+    },
+    "intuition": "The key insight is that the inverse matrix can be used to 'undo' a transformation performed by the original matrix, making it a powerful tool for solving systems of linear equations.",
+    "realWorldApplications": [
+      "Inverting matrices is essential in neural networks and natural language processing."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:21:07.693Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_matrix_inverse_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>A matrix inverse is a fundamental concept in linear algebra that allows us to 'undo' the effects of matrix multiplication. Given a square matrix A, its inverse A<sup>-1</sup> satisfies AA<sup>-1</sup> = I, where I is the identity matrix.</p><p>This property makes inverses useful for solving systems of linear equations and finding the solution to a matrix equation.</p>",
+    "formula": {
+      "latex": "\\[A^{-1} A = I\\]",
+      "name": "Matrix Inverse Property"
+    },
+    "intuition": "Think of the inverse as a 'reversal' operation that undoes the effects of multiplying by the original matrix. This is particularly important in machine learning, where we often need to invert matrices to compute things like model parameters or likelihoods.",
+    "realWorldApplications": [
+      "Computing model parameters in neural networks"
+    ],
+    "commonMistakes": [
+      "Assuming the inverse exists for all square matrices (it doesn't!)"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:21:23.141Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_matrix_inverse_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>A matrix inverse is a fundamental concept in linear algebra that allows us to solve systems of equations and find the unique solution.</p><p>Given a square matrix A, its inverse A^(-1) satisfies AA^(-1) = I, where I is the identity matrix. This property makes it possible to 'undo' the effect of multiplying A by some other matrix B, effectively canceling out the transformation.</p>",
+    "formula": "{",
+    "latex": "\\\\[A^{-1} = \\\\frac{1}{\\\\det(A)} \\\\begin{bmatrix} a & b \\\\\\\\ c & d \\\\end{bmatrix}^{-1}\\]\",",
+    "name": "2x2 Inverse Formula\" },",
+    "intuition": "The matrix inverse is like the 'opposite' of the original matrix. It reverses the transformation, allowing us to find the unique solution.",
+    "realWorldApplications": [
+      "In machine learning, we often use matrix inverses to compute the coefficients in linear regression models."
+    ],
+    "commonMistakes": [
+      "Don't forget that not all matrices have an inverse!"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:21:39.542Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_matrix_inverse_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>The matrix inverse is a fundamental concept in linear algebra, allowing us to solve systems of equations and find the unique solution.</p><p>Given a square matrix A, its inverse A^(-1) satisfies AA^(-1) = I, where I is the identity matrix.</p>",
+    "formula": "{",
+    "latex": "\\[A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\]\",",
+    "name": "Matrix Inverse Formula",
+    "variants": "[ {\"latex\": \"\\[A^(-1)_{ij} = \\frac{\\text{minor}_{ij}}{\\det(A)}\\]\", \"description\": \"2x2 matrix inverse formula\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the inverse of the 2x2 matrix A = [[a, b], [c, d]].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the determinant\", \"mathHtml\": \"\\\\[ \\det(A) = ad - bc \\\\]\", \"explanation\": \"The determinant is used to normalize the inverse.\"} ],",
+    "finalAnswer": "A^(-1) = [[d/c, -b/c], [-c*d/a, a/d]]\" },",
+    "intuition": "The matrix inverse allows us to 'undo' the effect of multiplying by A, making it a crucial tool for solving systems and finding unique solutions.",
+    "realWorldApplications": [
+      "In machine learning, the matrix inverse is used in algorithms like Gaussian mixture models."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:22:02.179Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_matrix_inverse_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>The matrix inverse is a fundamental concept in linear algebra, allowing us to solve systems of equations and find the unique solution.</p><p>Given a square matrix A, its inverse A^(-1) satisfies AA^(-1) = I, where I is the identity matrix.</p>",
+    "formula": "{",
+    "latex": "\\[A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\]\",",
+    "name": "Matrix Inverse Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the inverse of the matrix A = [[2, 3], [4, 5]].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the determinant\", \"mathHtml\": \"\\\\[ \\det(A) = 2*5 - 3*4 = 10 \\\\]\", \"explanation\": \"The determinant is used to normalize the inverse.\"}, {\"stepNumber\": 2, \"description\": \"Find the adjugate (adj(A))\", \"mathHtml\": \"\\\\[ \\text{adj}(A) = [[-5, 3], [4, -2]] \\\\]\", \"explanation\": \"The adjugate is the transpose of the cofactor matrix.\"}, {\"stepNumber\": 3, \"description\": \"Compute the inverse\", \"mathHtml\": \"\\\\[ A^{-1} = \\frac{1}{10} [[-5, 3], [4, -2]] \\\\]\", \"explanation\": \"The inverse is computed by multiplying the adjugate by the reciprocal of the determinant.\"} ],",
+    "finalAnswer": "\\\\[ A^{-1} = [[-0.5, 0.3], [0.4, -0.2]] \\\\]\" },",
+    "intuition": "The matrix inverse allows us to 'undo' the effects of a transformation represented by the original matrix.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:22:27.315Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_matrix_inverse_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>The matrix inverse is a fundamental concept in linear algebra, allowing us to solve systems of equations and find the unique solution.</p><p>In this formula, we'll explore how to compute the inverse of a 2x2 matrix.</p>",
+    "formula": "{",
+    "latex": "\\[A^{-1} = \\frac{1}{\\det(A)} \\begin{pmatrix}a & b\\\\ c & d\\end{pmatrix}\\]\",",
+    "name": "Matrix Inverse Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the inverse of the matrix A = [[2, 3], [1, 1]].</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the determinant",
+        "mathHtml": "\\[\\det(A) = 2*1 - 3*1 = -1\\]",
+        "explanation": "The determinant is used to normalize the inverse."
+      }
+    ],
+    "finalAnswer": "A^{-1} = [[-1, 3], [1, -2]]\" },",
+    "intuition": "The matrix inverse is a way to 'undo' the effect of multiplying by the original matrix. This is useful in machine learning for tasks like feature scaling and dimensionality reduction.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:22:45.821Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_matrix_inverse_007",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse Theorem",
+    "contentHtml": "<p>The matrix inverse theorem states that a square matrix has an inverse if and only if its determinant is non-zero.</p>",
+    "formula": {
+      "latex": "\\[A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\]",
+      "name": "Matrix Inverse Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\text{If } A \\in \\mathbb{R}^{n \\times n} \\text{ has a non-zero determinant, then there exists an inverse matrix } A^{-1} \\in \\mathbb{R}^{n \\times n}.\\]",
+      "proofSketch": "The proof involves showing that the product of the original matrix and its inverse is the identity matrix."
+    },
+    "intuition": "This theorem provides a crucial condition for the existence of an inverse matrix, which is essential in many linear algebra applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "Inverting matrices is a fundamental step in many ML/AI algorithms, such as neural network training and natural language processing."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:23:03.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_matrix_inverse_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse Theorem",
+    "contentHtml": "<p>The matrix inverse theorem states that a square matrix has an inverse if and only if its determinant is non-zero.</p>",
+    "formula": {
+      "latex": "\\[A^{-1} = \\frac{1}{\\det(A)} (\\text{adj}(A))\\]",
+      "name": "Matrix Inverse Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\det(A) \\neq 0 \\Rightarrow A^{-1} \\text{ exists}\\]",
+      "proofSketch": "The proof involves showing that if the determinant is non-zero, then the matrix is invertible and vice versa."
+    },
+    "intuition": "This theorem provides a crucial condition for a square matrix to have an inverse. It's essential in many applications, including machine learning where matrices represent transformations.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:23:16.990Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_inverse_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "problem": "{",
+    "statementHtml": "<p>Find the inverse of the following 2×2 matrix:</p>\\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\]\",",
+    "hints": [
+      "<p>Use the formula for the determinant.</p>",
+      "<p>Think about how to modify the original matrix to make it easier to invert.</p>",
+      "<p>Recall that the inverse of a 2×2 matrix is a special case.</p>"
+    ],
+    "solutionHtml": "<p>To find the inverse, we need to compute the determinant and then use the formula:</p>\\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{\\det(A)} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}\\]<p>First, we compute the determinant:</p>\\[\\det(A) = ad - bc\\]<p>Then, we use the formula:</p>\\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}\\]<p>Finally, we simplify the expression:</p>\\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}\\]\",",
+    "answerShort": "<p>The answer is the simplified expression.</p>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:23:41.166Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_inverse_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "problem": "{",
+    "statementHtml": "<p>Find the inverse of a given 2x2 matrix.</p>",
+    "hints": [
+      "Remember that the determinant of the original matrix is used in the formula.",
+      "The formula involves swapping rows and columns, but only for the inverse.",
+      "You can use the formula to find the inverse without actually computing it."
+    ],
+    "solutionHtml": "<p>To find the inverse of a 2x2 matrix <code>A</code>, we need to compute its determinant <code>\\(\\det(A) = a_{11}a_{22} - a_{12}a_{21}\\)</code>. If the determinant is non-zero, we can use the formula:</p><p><code>\\[\\mathbf{A}^{-1} = \\frac{1}{\\det(A)} \\begin{bmatrix} a_{22} & -a_{12} \\\\ -a_{21} & a_{11} \\end{bmatrix}\\]</code></p>\",",
+    "answerShort": "<code>\\[\\mathbf{A}^{-1} = \\frac{1}{\\det(A)} \\begin{bmatrix} a_{22} & -a_{12} \\\\ -a_{21} & a_{11} \\end{bmatrix}\\]</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:24:00.488Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_inverse_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "problem": "{",
+    "statementHtml": "<p>Find the inverse of a given 2×2 matrix.</p>",
+    "hints": "[ \"<p>The determinant of the original matrix is crucial in finding its inverse.</p>\", \"<p>You can use the formula for the inverse of a 2×2 matrix to get started.</p>\", \"<p>Make sure to check your answer by verifying that it satisfies the identity <code>\\(A \\cdot A^{-1} = I\\)</code>.</p>\" ],",
+    "solutionHtml": "<p>To find the inverse of a given 2×2 matrix, we can use the formula:</p><p>\\[\\left(\\begin{array}{cc} a & b \\\\ c & d \\end{array}\\right)^{-1} = \\frac{1}{ad - bc} \\left(\\begin{array}{cc} d & -b \\\\ -c & a \\end{array}\\right]\\]</p><p>For example, let's say we have the matrix <code>\\(\\left(\\begin{array}{cc} 2 & 3 \\\\ 4 & 5 \\end{array}\\right)\\)</code>. We can plug in the values and simplify:</p><p>\\[\\frac{1}{(2)(5) - (3)(4)} \\left(\\begin{array}{cc} 5 & -3 \\\\ -4 & 2 \\end{array}\\right] = \\left(\\begin{array}{cc} \\frac{2}{13} & -\\frac{3}{13} \\\\ -\\frac{4}{13} & \\frac{2}{13} \\end{array}\\right]\\]</p>\",",
+    "answerShort": "<code>\\(\\left(\\begin{array}{cc} \\frac{2}{13} & -\\frac{3}{13} \\\\ -\\frac{4}{13} & \\frac{2}{13} \\end{array}\\right]\\)</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:24:27.835Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_inverse_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse: Definition and Computation",
+    "contentHtml": "<p>In linear algebra, finding the inverse of a matrix is crucial in solving systems of equations and many machine learning algorithms.</p>",
+    "formula": {
+      "latex": "\\[ A^{-1}A = AA^{-1} = I \\]",
+      "name": "Matrix Inverse Property"
+    },
+    "problem": {
+      "statementHtml": "<p>Compute the inverse of the following 2x2 matrix:</p><br/>\\[ \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\]",
+      "hints": [
+        "Check if the determinant is zero",
+        "Use the formula for 2x2 inverse"
+      ],
+      "solutionHtml": "<p>To compute the inverse, we can use the following steps:</p><br/>\\[ <ol> <li>Find the determinant: det(A) = ad - bc </li> <li>If det(A) is not zero, proceed with the computation</li> <li>Compute the matrix of minors and cofactors</li> <li>Use the formula for 2x2 inverse:</li> \\[ \\begin{bmatrix} d/c & -b/c \\\\ -(d/c)/a & (ad - bc)/a \\end{bmatrix} \\] </ol> ]",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the inverse of the following 2x2 matrix:</p><br/>\\[ \\begin{bmatrix} 3 & 1 \\\\ 4 & 2 \\end{bmatrix} \\]",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the determinant",
+          "mathHtml": "\\[ ad - bc = 6 - 4 = 2 \\]",
+          "explanation": "We need to find the determinant to check if the matrix is invertible"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the matrix of minors and cofactors",
+          "mathHtml": "\\[ \\begin{bmatrix} 2 & -1 \\\\ -(4)/3 & (6-4)/3 \\end{bmatrix} \\] ",
+          "explanation": "We need to compute the matrix of minors and cofactors to use the formula for 2x2 inverse"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the formula for 2x2 inverse",
+          "mathHtml": "\\[ \\begin{bmatrix} (2)/2 & -1/2 \\\\ -(4)/6 & (6-4)/6 \\end{bmatrix} \\] ",
+          "explanation": "Now we can use the formula for 2x2 inverse to compute the inverse matrix"
+        }
+      ],
+      "finalAnswer": "\\[ \\begin{bmatrix} 3/2 & -1/2 \\\\ -(4)/6 & (1)/3 \\end{bmatrix} \\]"
+    },
+    "intuition": "The key insight is that finding the inverse of a matrix is crucial in many machine learning algorithms, such as linear regression and neural networks.",
+    "visualDescription": "A diagram showing the computation of the matrix inverse would be helpful",
+    "commonMistakes": [
+      "Forgetting to check if the determinant is zero",
+      "Not using the correct formula for 2x2 inverse"
+    ],
+    "realWorldApplications": [
+      "Linear Regression",
+      "Neural Networks"
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:25:09.932Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_inverse_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse",
+    "contentHtml": "<p>In this worked example, we'll explore how to compute the inverse of a 2x2 matrix.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} sgn(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Compute the inverse of the matrix A = [[2, 3], [1, -1]].</p>",
+      "hints": [
+        "Check if the determinant is zero",
+        "Use the formula for a 2x2 inverse"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the inverse of the matrix A = [[2, 3], [1, -1]].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the determinant",
+          "mathHtml": "\\[\\det(A) = |2(-1)-3(1)| = |-5| = 5\\]",
+          "explanation": "We need to find the determinant before computing the inverse."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check if the matrix is invertible",
+          "mathHtml": "\\[\\det(A) \\neq 0, so A is invertible\\]",
+          "explanation": "Since the determinant is non-zero, we can proceed with computing the inverse."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the adjugate (cofactor matrix)",
+          "mathHtml": "\\[\\begin{bmatrix} (-1)(-1) & (-1)(3) \\\\ 1(-1) & 1(-1) \\end{bmatrix} = \\begin{bmatrix} 1 & -3 \\\\ -1 & 1 \\end{bmatrix}\\]",
+          "explanation": "The adjugate is the transpose of the cofactor matrix."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compute the inverse",
+          "mathHtml": "\\[\\frac{1}{\\det(A)} \\begin{bmatrix} 1 & -3 \\\\ -1 & 1 \\end{bmatrix} = \\frac{1}{5}\\begin{bmatrix} 1 & -3 \\\\ -1 & 1 \\end{bmatrix}\\]",
+          "explanation": "Finally, we divide the adjugate by the determinant to get the inverse."
+        }
+      ],
+      "finalAnswer": "\\[\\left(\\begin{array}{cc}2 & 3 \\\\ 1 & -1\\end{array}\\right)^{-1} = \\frac{1}{5}\\left(\\begin{array}{cc}-1 & 3 \\\\ 1 & -1\\end{array}\\right)"
+    },
+    "intuition": "The key insight is that the inverse of a matrix can be computed using the formula for a 2x2 matrix, which involves finding the determinant and then dividing by it.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:25:46.895Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_inverse_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_inverse",
+    "title": "Matrix Inverse: Definition and Computation",
+    "contentHtml": "<p>In this worked example, we'll explore the definition of a matrix inverse, its uniqueness property, and how to compute it for a 2x2 matrix.</p>",
+    "workedExample": "{",
+    "problemHtml": "Compute the inverse of the following 2x2 matrix:<br />\\[\\begin{bmatrix}a & b\\\\ c & d\\end{bmatrix}\\] where <i>a, b, c, d</i> are constants.\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the determinant of the given matrix.\", \"mathHtml\": \"\\[ \\det(A) = ad - bc \\]\", \"explanation\": \"The determinant is crucial in computing the inverse. We'll use it to find the value of <i>a</i>, <i>b</i>, <i>c</i>, and <i>d</i>.\"}, {\"stepNumber\": 2, \"description\": \"Find the adjugate (or classical adjugate) of the given matrix.\", \"mathHtml\": \"\\[ \\text{adj}(A) = \\begin{bmatrix} d & -b\\\\ -c & a\\end{bmatrix}\\]\", \"explanation\": \"The adjugate is the transpose of the cofactor matrix, which we'll use to compute the inverse.\"}, {\"stepNumber\": 3, \"description\": \"Compute the inverse by dividing the adjugate by the determinant.\", \"mathHtml\": \"\\[ A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A) \\]\", \"explanation\": \"This is the final step in computing the inverse. We'll use this formula to find the value of <i>A</i>'s inverse.\"}, {\"stepNumber\": 4, \"description\": \"Verify that the product of the original matrix and its inverse equals the identity matrix.\", \"mathHtml\": \"\\[ AA^{-1} = I \\]\", \"explanation\": \"This step ensures our computation is correct. We'll use this verification to check our answer.\"} ],",
+    "finalAnswer": "The final answer will be a 2x2 matrix representing the inverse of the original matrix.\" },",
+    "intuition": "Understanding the concept of an inverse matrix is crucial in many machine learning and artificial intelligence applications, such as linear regression and neural networks.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:26:16.458Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

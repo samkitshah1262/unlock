@@ -1,0 +1,70 @@
+[
+  {
+    "id": "stat_thm_causal_inference_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Potential Outcomes Theorem",
+    "contentHtml": "<p>The Potential Outcomes Theorem is a fundamental concept in causal inference that helps us understand how to reason about potential outcomes under different treatment assignments.</p>",
+    "formula": "{",
+    "latex": "\\\\[Y_i(y) = Y_i(0) + (y - 0) \\cdot T_i\\\\]\",",
+    "name": "Potential Outcomes\" },",
+    "theorem": "{",
+    "statement": "\\[P(Y_1(0) = y, Y_2(0) = z | X) = P(Y_1(y) = y, Y_2(z) = z | X)\\]",
+    "proofSketch": "The proof involves showing that the potential outcomes are conditionally independent given the confounding variables.\" },",
+    "intuition": "This theorem helps us understand how to reason about potential outcomes under different treatment assignments. It's essential for causal inference and has significant implications for machine learning applications.",
+    "realWorldApplications": [
+      "Estimating treatment effects in medical trials"
+    ],
+    "tags": [
+      "causal inference",
+      "potential outcomes",
+      "treatment effect estimation"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:28:11.676Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_causal_inference_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Rosenbaum's Causal Identification Theorem",
+    "contentHtml": "<p>Rosenbaum's theorem provides a framework for identifying causal effects in observational studies.</p>",
+    "formula": {
+      "latex": "\\[Y_i(0) = E[Y | X, Z]\\]",
+      "name": "Potential outcomes"
+    },
+    "theorem": {
+      "statement": "\\[\\text{If }P(y_1, y_0 | x, z) \\text{ is a causal model for the treatment effect, then}\\] \n\\[\\text{there exists a propensity score }e(x) \\text{ such that }Y_i(1) = E[Y | X=x, Z=1]\\]",
+      "proofSketch": "The proof involves showing that the propensity score can be used to reweight the data to mimic an experiment."
+    },
+    "intuition": "This theorem provides a way to identify causal effects in observational studies by using the propensity score to adjust for confounding variables.",
+    "realWorldApplications": [
+      "Estimating the effect of a new marketing campaign on sales"
+    ],
+    "tags": [
+      "causal inference",
+      "propensity scores"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:28:27.194Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

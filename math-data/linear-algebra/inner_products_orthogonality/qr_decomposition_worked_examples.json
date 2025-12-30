@@ -1,0 +1,121 @@
+[
+  {
+    "id": "la_wex_qr_decomposition_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "title": "QR Decomposition: Orthogonal × Upper Triangular",
+    "problem": "{",
+    "statementHtml": "Given a matrix A ∈ ℝ^(m×n), find an orthogonal matrix Q ∈ ℝ^(m×m) and an upper triangular matrix R ∈ ℝ^(n×n) such that A = QR.",
+    "hints": [
+      "Hint: Start with the Gram-Schmidt process"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use the Gram-Schmidt process to orthogonalize the columns of A. We'll then construct Q and R.</p>",
+    "answerShort": "Q and R exist\" },",
+    "workedExample": "{",
+    "problemHtml": "Consider the matrix A = \\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\].\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the first orthogonal vector\", \"mathHtml\": \"\\[q_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|} = \\frac{\\begin{bmatrix}1 \\\\ 3\\end{bmatrix}}{\\sqrt{10}}\\]\", \"explanation\": \"We normalize the first column of A.\"}, {\"stepNumber\": 2, \"description\": \"Find the second orthogonal vector\", \"mathHtml\": \"\\[q_2 = \\frac{\\mathbf{a}_2 - \\text{proj}_{q_1}(\\mathbf{a}_2)}{\\|\\mathbf{a}_2 - \\text{proj}_{q_1}(\\mathbf{a}_2)\\|}\\]\", \"explanation\": \"We subtract the projection of the second column onto the first orthogonal vector.\"}, {\"stepNumber\": 3, \"description\": \"Construct Q and R\", \"mathHtml\": \"\\[Q = \\begin{bmatrix}q_1 & q_2\\end{bmatrix}, R = \\begin{bmatrix}5 & 3 \\\\ 0 & 1\\end{bmatrix}\\]\", \"explanation\": \"We combine the orthogonal vectors to form Q, and the remaining columns of A form R.\"}, {\"stepNumber\": 4, \"description\": \"Verify QR decomposition\", \"mathHtml\": \"\\[A = QR = \\begin{bmatrix}q_1 & q_2\\end{bmatrix}\\begin{bmatrix}5 & 3 \\\\ 0 & 1\\end{bmatrix} = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\]\", \"explanation\": \"We verify that A is equal to the product of Q and R.\"}, ],",
+    "finalAnswer": "Q = \\[\\begin{bmatrix}\\frac{1}{\\sqrt{10}} & \\frac{-2}{\\sqrt{13}} \\\\ \\frac{3}{\\sqrt{10}} & \\frac{1}{\\sqrt{13}}\\end{bmatrix}, R = \\begin{bmatrix}5 & 3 \\\\ 0 & 1\\end{bmatrix}\" },",
+    "intuition": "QR decomposition is a powerful tool for orthogonalizing vectors and upper-triangularizing matrices. It has numerous applications in machine learning, such as principal component analysis (PCA) and singular value decomposition (SVD).",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:23:53.467Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_qr_decomposition_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "title": "QR Decomposition: Orthogonal × Upper Triangular",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem step-by-step using QR decomposition.</p>",
+    "formula": {
+      "latex": "\\[Q R = \\begin{bmatrix} q_{11} & q_{12} \\\\ q_{21} & q_{22} \\end{bmatrix} \\begin{bmatrix} r_{11} & r_{12} \\\\ 0 & r_{22} \\end{bmatrix}\\]",
+      "name": "QR Decomposition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, find the orthogonal matrix Q and upper triangular matrix R such that A = QR.</p>",
+      "hints": [
+        "Hint: Use Gram-Schmidt process"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Step 1: Normalize the first column of A to get q_{11}. Math: \\(q_{11} = \\frac{a_{11}}{|a_{11}|}\\). Why: This ensures that Q is orthogonal.</li><li>Step 2: Subtract the projection of the second column onto the first column from the second column. Math: \\(r_{12} = a_{12} - q_{11}^T a_{22}\\). Why: This eliminates the inner product between the columns, making R upper triangular.</li><li>Step 3: Repeat Steps 1 and 2 for each subsequent column until all columns are processed.</li></ul>",
+      "answerShort": "QR = ?"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given A = \\[\\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}\\], find Q and R such that A = QR.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Normalize the first column",
+          "mathHtml": "\\(q_{11} = \\frac{a_{11}}{|a_{11}|}\\)",
+          "explanation": "This ensures Q is orthogonal"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Eliminate inner product between columns",
+          "mathHtml": "\\(r_{12} = a_{12} - q_{11}^T a_{22}\\)",
+          "explanation": "This makes R upper triangular"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Repeat for subsequent columns",
+          "mathHtml": "",
+          "explanation": "Until all columns are processed"
+        }
+      ],
+      "finalAnswer": "QR = ?"
+    },
+    "intuition": "QR decomposition is a powerful tool for solving systems of linear equations and computing eigenvalues.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:24:28.205Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_qr_decomposition_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "title": "QR Decomposition: Orthogonal × Upper Triangular",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem step-by-step using QR decomposition.</p>",
+    "formula": "{",
+    "latex": "\\[Q\\mathbf{R} = \\mathbf{A}\\]",
+    "name": "QR Decomposition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given the matrix A, decompose it into a product of an orthogonal matrix Q and an upper triangular matrix R.</p>",
+    "hints": [
+      "Hint: Use Gram-Schmidt process"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Decompose the matrix A = \\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\] into Q and R.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the first column of Q\", \"mathHtml\": \"\\\\[q_1 = \\\\frac{a_{1,1}}{||a_{:,1}||}\\\\]\", \"explanation\": \"We normalize the first column to ensure it has length 1.\"}, {\"stepNumber\": 2, \"description\": \"Find the second column of Q\", \"mathHtml\": \"\\\\[q_2 = a_{2,1} - \\\\frac{a_{2,1}}{||a_{:,1}||}\\\\cdot q_1\\\\]\", \"explanation\": \"We subtract the projection of the second column onto the first to ensure orthogonality.\"}, {\"stepNumber\": 3, \"description\": \"Find R\", \"mathHtml\": \"\\\\[R = Q^T A\\\\]\", \"explanation\": \"We compute R by multiplying Q transpose with A.\"}, {\"stepNumber\": 4\", \"description\": \"Verify the decomposition\", \"mathHtml\": \"\", \"explanation\": \"We can verify that QT R = A by computing the product and comparing it to the original matrix.\"} ],",
+    "finalAnswer": "\\\\[Q\\\\mathbf{R} = \\\\begin{bmatrix}0.2679 & 0.5346 \\\\\\\\ -0.5346 & 0.2679\\\\end{bmatrix}\\\\begin{bmatrix}1 & 2.5 \\\\\\\\ 0 & 1.5\\\\end{bmatrix}\\\\]\" },",
+    "intuition": "QR decomposition is a powerful tool for solving systems of linear equations and computing eigenvalues.",
+    "visualDescription": "A diagram showing the QR decomposition process would be helpful in visualizing the steps.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:25:00.616Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

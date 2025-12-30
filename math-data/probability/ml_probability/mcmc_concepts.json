@@ -1,0 +1,109 @@
+[
+  {
+    "id": "prob_con_mcmc_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo",
+    "contentHtml": "<p>Markov chain Monte Carlo (MCMC) is a powerful probabilistic technique used to sample from complex distributions. It's essential in machine learning for tasks like Bayesian inference and approximate posterior estimation.</p><p>In this context, we'll focus on Metropolis-Hastings and Gibbs sampling, two popular MCMC algorithms.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{\\pi(x)}{q(x | y)} \\]"
+    },
+    "intuition": "MCMC works by iteratively updating a proposal distribution based on the current state. The key insight is that this process converges to the target distribution, allowing us to approximate complex integrals and make predictions.",
+    "visualDescription": "A simple MCMC chain diagram showing the iteration process",
+    "commonMistakes": [
+      "Forgetting to normalize the proposal distribution"
+    ],
+    "realWorldApplications": [
+      "Bayesian neural networks",
+      "Variational inference in deep learning"
+    ],
+    "tags": [
+      "Markov Chain Monte Carlo",
+      "Metropolis-Hastings",
+      "Gibbs Sampling"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:20:35.234Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_mcmc_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>Markov chain Monte Carlo (MCMC) is a powerful tool in Bayesian inference for approximating complex integrals. Two popular algorithms are Metropolis-Hastings and Gibbs sampling.</p><p>In this card, we'll explore the intuition behind these methods and their applications in machine learning.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{f(x) g(y)}{f(y) g(x)} \\]",
+      "name": "Acceptance Ratio",
+      "variants": []
+    },
+    "intuition": "MCMC algorithms work by iteratively proposing new values for a target distribution, then accepting or rejecting them based on the ratio of their probabilities. This allows us to sample from complex distributions that are difficult to compute directly.",
+    "visualDescription": "A diagram showing the iterative process of MCMC: proposal, acceptance ratio calculation, and updating the current state.",
+    "commonMistakes": [
+      "Not understanding the importance of convergence diagnostics"
+    ],
+    "realWorldApplications": [
+      "Bayesian neural networks",
+      "Variational inference in deep learning"
+    ],
+    "tags": [
+      "Markov Chain Monte Carlo",
+      "Metropolis-Hastings",
+      "Gibbs Sampling",
+      "Bayesian Inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:20:54.817Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_mcmc_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "contentHtml": "<p>In Markov chain Monte Carlo (MCMC) methods, we use random sampling to explore complex probability distributions. Two fundamental techniques are Metropolis-Hastings and Gibbs sampling.</p><p>Metropolis-Hastings is a general-purpose MCMC algorithm that can be used for any target distribution. It works by iteratively proposing new values from a proposal distribution and accepting or rejecting them based on the ratio of the target distribution to the proposal distribution.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{P(x)q(y|x)}{P(y)q(x|y)} \\geq 1 \\]",
+      "name": "Metropolis-Hastings acceptance probability",
+      "variants": []
+    },
+    "intuition": "MCMC methods allow us to sample from complex distributions by iteratively proposing and accepting new values. This is particularly useful in machine learning, where we often need to explore high-dimensional spaces.",
+    "realWorldApplications": [
+      "Bayesian inference in neural networks"
+    ],
+    "commonMistakes": [
+      "Not understanding the acceptance probability",
+      "Ignoring convergence diagnostics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:21:13.090Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

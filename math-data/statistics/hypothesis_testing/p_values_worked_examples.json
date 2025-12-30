@@ -1,0 +1,200 @@
+[
+  {
+    "id": "stat_wex_p_values_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in hypothesis testing. They provide a measure of the probability of observing the data (or more extreme data) under the null hypothesis.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test whether the average height of students in a class is different from 170 cm. We collect a random sample of 30 students and find that the mean height is 172 cm with a standard deviation of 5 cm.</p>",
+      "hints": [
+        "Hint: Use a two-sample t-test"
+      ],
+      "solutionHtml": "<p>...</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We want to test whether the average score on a math test is different from 80. We collect a random sample of 50 students and find that the mean score is 82 with a standard deviation of 10.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[ t = \\frac{\\bar{x} - 80}{s/\\sqrt{n}} \\]",
+          "explanation": "We're using a two-sample t-test to compare our sample mean to the hypothesized value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[ p = P(t &gt; |t|) \\]",
+          "explanation": "The p-value represents the probability of observing a test statistic at least as extreme as ours, assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Interpret the result",
+          "mathHtml": "\\[ ... \\]",
+          "explanation": "If our p-value is below a certain significance level (e.g., 0.05), we reject the null hypothesis and conclude that the average score is different from 80."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare to the significance level",
+          "mathHtml": "\\[ ... \\]",
+          "explanation": "If our p-value is below the significance level, we can conclude that our result is statistically significant."
+        }
+      ],
+      "finalAnswer": "The average score on a math test is different from 80."
+    },
+    "intuition": "P-values help us determine whether our results are due to chance or if there's a real effect.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:52:39.903Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing. They represent the probability of observing the test statistic (or more extreme) under the null hypothesis.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to test whether the average height of students in a class is different from 170 cm, with a sample mean of 172 cm and standard deviation of 5 cm. We have n = 30 observations.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[ t = \\frac{172 - 170}{5 / \\sqrt{30}} \\]",
+          "explanation": "We're using a one-sample t-test to compare our sample mean to the known population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[ p = P(t > t_{observed} | H_0) \\]",
+          "explanation": "The p-value represents the probability of observing a test statistic at least as extreme as our observed value, assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compare the p-value to the significance level",
+          "mathHtml": "\\[ \\alpha = 0.05 \\]",
+          "explanation": "If the p-value is less than alpha, we reject the null hypothesis; otherwise, we fail to reject."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "Since our p-value (0.02) is less than alpha (0.05), we reject the null hypothesis and conclude that the average height of students in the class is likely different from 170 cm."
+        }
+      ],
+      "finalAnswer": "Reject H_0: μ = 170 cm"
+    },
+    "intuition": "P-values provide a way to quantify the evidence against the null hypothesis. A low p-value indicates strong evidence against the null, while a high p-value suggests that the data is consistent with the null.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:04.450Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "contentHtml": "<p>P-values are a fundamental concept in statistical hypothesis testing.</p><ul><li>We'll explore their definition, interpretation, and common misconceptions.</li></ul>",
+    "problem": "{",
+    "statementHtml": "<p>Given a test statistic with a p-value of 0.03, what can we conclude?</p>",
+    "hints": [
+      "Think about the null hypothesis",
+      "Consider the alternative"
+    ],
+    "solutionHtml": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A study claims that a new treatment increases patient satisfaction by 10%. The p-value is 0.02. What do we conclude?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Understand the null hypothesis\", \"mathHtml\": \"\", \"explanation\": \"The null hypothesis states that there's no significant difference in patient satisfaction.\"}, {\"stepNumber\": 2, \"description\": \"Interpret the p-value\", \"mathHtml\": \"\\(p = 0.02\\)\", \"explanation\": \"A small p-value indicates strong evidence against the null hypothesis.\"}, {\"stepNumber\": 3, \"description\": \"Draw conclusions\", \"mathHtml\": \"\", \"explanation\": \"Since the p-value is below a typical significance level (e.g., 0.05), we reject the null hypothesis and conclude that the treatment has a significant effect on patient satisfaction.\"}, {\"stepNumber\": 4, \"description\": \"Consider the alternative hypothesis\", \"mathHtml\": \"\", \"explanation\": \"The alternative hypothesis states that the treatment increases patient satisfaction by 10%, which is supported by the data.\"} ],",
+    "finalAnswer": "Reject the null hypothesis and conclude the treatment has a significant effect.\" },",
+    "intuition": "P-values represent the probability of observing the test statistic (or more extreme values) under the assumption that the null hypothesis is true.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:27.308Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_p_values_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "p_values",
+    "title": "P-Values: Definition and Interpretation",
+    "problem": {
+      "statementHtml": "A study claims that a new medication reduces blood pressure by an average of 5 mmHg with a standard deviation of 2 mmHg. We want to test the null hypothesis that the true mean reduction is zero against a two-sided alternative.",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we observe a sample mean reduction of 4 mmHg with a standard error of 1.5 mmHg. What is the p-value for this test?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the standardized difference",
+          "mathHtml": "\\[z = \\frac{\\bar{x}}{\\sigma} = \\frac{4}{1.5}\\]",
+          "explanation": "This step standardizes the observed effect size."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Look up the z-score in a standard normal distribution table or use a calculator",
+          "mathHtml": "\\[z = 2.67\\]",
+          "explanation": "We're finding the probability of observing this extreme result (or more extreme) assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the p-value by integrating the standard normal distribution up to our z-score",
+          "mathHtml": "\\[p = P(Z \\leq 2.67)\\]",
+          "explanation": "The p-value represents the probability of observing this extreme result (or more extreme) assuming the null hypothesis is true."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the p-value to a significance level",
+          "mathHtml": "\\[p = 0.004\\]",
+          "explanation": "If the p-value is below our chosen significance level (e.g., \\alpha = 0.05), we reject the null hypothesis."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "Since the p-value is very small, we conclude that there is strong evidence to support the alternative hypothesis that the true mean reduction is not zero."
+        }
+      ],
+      "finalAnswer": "p = 0.004"
+    },
+    "intuition": "P-values represent the probability of observing a result as extreme or more extreme than what you actually observed, assuming the null hypothesis is true.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:53:55.337Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

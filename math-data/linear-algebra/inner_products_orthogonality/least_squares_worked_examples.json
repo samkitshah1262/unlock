@@ -1,0 +1,185 @@
+[
+  {
+    "id": "la_wex_least_squares_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll solve an overdetermined least squares problem using normal equations.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vector b, find the coefficients x that minimize the sum of squared errors in the equation Ax ≈ b.</p>",
+    "hints": [
+      "Hint: Use the geometric view to understand the problem.",
+      "Hint: The normal equations will help you solve it."
+    ],
+    "solutionHtml": "<p>To start, we'll use the normal equations to rewrite the problem as a system of linear equations:</p><ul><li>We'll take the transpose of A and multiply it by b.</li><li>This gives us the matrix equation ATb ≈ AtAx.</li></ul>\", },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have the following overdetermined system:</p><p>\\[ \\begin{align*} &1.2x_0 + 2.5x_1 - 3.8x_2 = 4.7 \\\\ &-0.9x_0 + 1.2x_1 + 2.1x_2 = 3.6 \\\\ &2.1x_0 - 1.8x_1 + 0.5x_2 = 5.1 \\end{align*}\\]</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Take the transpose of A and multiply it by b.\", \"mathHtml\": \"\\\\[ (A^T)^{-1}A^Tb \\\\]\", \"explanation\": \"This helps us to get a system of linear equations that we can solve.\" }, {\"stepNumber\": 2, \"description\": \"Multiply both sides by A\", \"mathHtml\": \"\\\\[ A(A^T)^{-1}A^Tb = Ab \\\\]\", \"explanation\": \"This simplifies the equation and gets rid of the transpose.\" }, {\"stepNumber\": 3, \"description\": \"Solve for x\", \"mathHtml\": \"\\\\[ x = (A^T)^{-1}Ab \\\\]\", \"explanation\": \"Now we can solve for the coefficients x that minimize the sum of squared errors.\" }, {\"stepNumber\": 4, \"description\": \"Plug in values and simplify\", \"mathHtml\": \"\\\\[ \\begin{align*} &x_0 = ... \\\\ &x_1 = ... \\\\ &x_2 = ... \\\\ \\end{align*}\\]\", \"explanation\": \"Now we can plug in the values and simplify to get our final answer.\" } ],",
+    "finalAnswer": "The coefficients x that minimize the sum of squared errors are...\" },",
+    "intuition": "In this example, we used the normal equations to solve an overdetermined least squares problem. This is a common technique in machine learning and statistics.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:30:18.195Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve an overdetermined least squares problem using normal equations.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{A}^T \\\\mathbf{A} \\\\mathbf{x} = \\\\mathbf{A}^T \\\\mathbf{b}\\]\",",
+    "name": "Normal Equations\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vector b, find the coefficients x that minimize the squared error between Ax and b.</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a system of linear equations:</p><ul><li>Ax = b</li></ul><p>where A is an m x n matrix, x is the coefficient vector, and b is the target vector. If m > n (overdetermined), how do we find the best-fitting coefficients?</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Verify that the solution minimizes the squared error",
+    "mathHtml": "\\\\[\\\\left\\\\| \\\\mathbf{A} \\\\mathbf{x} - \\\\mathbf{b}\\\\right\\\\|^2 = \\\\min_{x}\\]\",",
+    "explanation": "The solution x indeed minimizes the squared error, as we can verify by plugging it back into the original equation.\" } ],",
+    "finalAnswer": "\\\\[\\\\mathbf{x} = (\\\\mathbf{A}^T \\\\mathbf{A})^{-1} \\\\mathbf{A}^T \\\\mathbf{b}\\]\" },",
+    "intuition": "The key insight is that the normal equations represent the condition for minimizing the squared error.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:30:52.891Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Solving Overdetermined Systems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a least squares problem using normal equations.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A}\\mathbf{x} = \\mathbf{A}^T\\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A and vector b, find the least squares solution x that minimizes the squared error ||Ax - b||^2.</p>",
+      "hints": [
+        "Hint: Use normal equations to solve the problem."
+      ],
+      "solutionHtml": "<p>We'll use the normal equations formula:</p><ul><li>Take the transpose of A, denoted as AT.</li><li>Multiply AT by A to get AA^T.</li><li>Multiply AA^T by x to get the left-hand side.</li><li>Multiply AT by b to get the right-hand side.</li></ul><p>The resulting equation is:</p><p>\\[ \\mathbf{A}^T\\mathbf{A}\\mathbf{x} = \\mathbf{A}^T\\mathbf{b} \\]</p>",
+      "answerShort": "The least squares solution x"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a matrix A and vector b:</p><p>A = \\[ \\begin{array}{ccc} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \\end{array} \\], b = \\[ \\begin{array}{c} 10 \\\\ 20 \\end{array} \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Take the transpose of A",
+          "mathHtml": "\\[ \\mathbf{A}^T = \\begin{array}{cc} 1 &amp; 4 \\\\ 2 &amp; 5 \\\\ 3 &amp; 6 \\end{array} \\]",
+          "explanation": "This step is crucial in setting up the normal equations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply AT by A",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{A} = \\begin{array}{cc|c} 1 &amp; 4 &amp; | &amp; 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 5 &amp; | &amp; 4 &amp; 5 &amp; 6 \\end{array} \\]",
+          "explanation": "This step helps us to simplify the normal equations."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply AA^T by x",
+          "mathHtml": "\\[ (\\mathbf{A}^T\\mathbf{A})\\mathbf{x} = \\begin{array}{cc|c} 1 &amp; 4 &amp; | &amp; 1x_1 + 2x_2 + 3x_3 \\\\ 2 &amp; 5 &amp; | &amp; 4x_1 + 5x_2 + 6x_3 \\end{array} \\]",
+          "explanation": "This step helps us to set up the linear system."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply AT by b",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{b} = \\begin{array}{c} 10 \\\\ 20 \\end{array} \\]",
+          "explanation": "This step helps us to set up the right-hand side of the linear system."
+        }
+      ],
+      "finalAnswer": "The least squares solution x"
+    },
+    "intuition": "In this example, we used normal equations to solve an overdetermined system. This is a fundamental concept in linear algebra and has many applications in machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:31:43.557Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve an overdetermined least squares problem using normal equations.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A and vector b, find the least squares solution x that minimizes ||Ax - b||.</p>",
+      "hints": [
+        "Hint: Use normal equations"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a matrix A = \\[\\begin{array}{ccc} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{array}\\] and vector b = [10, 20, 30]^T. Find the least squares solution x that minimizes ||Ax - b||.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the product A^T A",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{A} = \\begin{bmatrix} 30 & 60 & 90 \\\\ 60 & 130 & 210 \\\\ 90 & 210 & 330 \\end{bmatrix} \\]",
+          "explanation": "This step sets the stage for our normal equations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the product A^T b",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{b} = [150, 300, 450]^T \\]",
+          "explanation": "This step provides the right-hand side for our normal equations."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve the normal equations",
+          "mathHtml": "\\[ (\\mathbf{A}^T\\mathbf{A})^{-1}(\\mathbf{A}^T\\mathbf{b}) \\]",
+          "explanation": "This step uses our previous computations to find the least squares solution."
+        }
+      ],
+      "finalAnswer": "[5, 10, 15]^T"
+    },
+    "intuition": "The key insight is that overdetermined systems can be solved by minimizing the squared error.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:32:15.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

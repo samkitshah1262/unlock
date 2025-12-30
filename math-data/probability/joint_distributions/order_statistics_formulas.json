@@ -1,0 +1,106 @@
+[
+  {
+    "id": "prob_for_order_statistics_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>The distribution of order statistics is a fundamental concept in probability theory.</p><p>Given a random sample from a continuous distribution, we can define the <i>k</i>th order statistic as the <i>k</i>th smallest value. This card explores the distribution of min, max, and kth order statistic.</p>",
+    "formula": "{",
+    "latex": "\\\\[F_{k}(x) = \\\\frac{1}{(n-k+1)!} \\\\sum_{j=0}^{k-1} (-1)^j \\\\binom{k-1}{j} (F(x))^{k-j-1} (1-F(x))^{j}\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we draw a random sample of size 5 from a uniform distribution on the interval [0,1]. Find the distribution of the maximum value.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Identify the underlying distribution",
+        "mathHtml": "",
+        "explanation": "The uniform distribution is continuous and increasing."
+      }
+    ],
+    "finalAnswer": "The maximum value follows a beta distribution with parameters (4,1)\" },",
+    "intuition": "Understanding the distribution of order statistics is crucial in many applications, including statistical inference and machine learning. This concept is particularly useful when dealing with outliers or extreme values.",
+    "realWorldApplications": [
+      "Identifying anomalies in financial data"
+    ],
+    "tags": [
+      "probability",
+      "order statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:24:36.484Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_order_statistics_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>Understanding the distribution of order statistics is crucial in probability theory and has numerous applications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[F_k(x) = \\sum_{i=0}^k {k \\choose i} F^{(i)}(x) (1-F(x))^k\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the distribution of the kth order statistic for a sample from the uniform distribution U[0,1].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize that the problem is equivalent to finding the cumulative distribution function (CDF) of the kth order statistic.\", \"mathHtml\": \"\", \"explanation\": \"\"}, {\"stepNumber\": 2, \"description\": \"Use the formula for the CDF of the kth order statistic and substitute the uniform distribution.\", \"mathHtml\": \"\\[F_k(x) = \\sum_{i=0}^k {k \\choose i} x^i (1-x)^{k-i}\\]\", \"explanation\": \"This step requires applying the formula for the CDF of the kth order statistic and substituting the uniform distribution.\"} ],",
+    "finalAnswer": "The final answer is the calculated CDF.\" },",
+    "intuition": "Order statistics are a fundamental concept in probability theory, allowing us to analyze and understand the behavior of random variables.",
+    "realWorldApplications": [
+      "Estimating the median of a dataset",
+      "Identifying outliers"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:00.365Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_order_statistics_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "order_statistics",
+    "title": "Order Statistics: Distribution of min, max, kth order statistic",
+    "contentHtml": "<p>The distribution of order statistics is a fundamental concept in probability theory.</p><p>Given a random sample from a continuous distribution, we can define the <i>k</i>th order statistic as the <i>k</i>th smallest (or largest) value. Understanding the distribution of these order statistics is crucial in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[F_{k:n}(x) = \\sum_{i=k}^{n} {n \\choose i} F(x)^{i} (1-F(x))^{n-i}\\]\",",
+    "name": "Order Statistic Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of size 10 from a uniform distribution on the interval [0,1]. Find the probability that the 5th order statistic is less than 0.7.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the event\", \"mathHtml\": \"\", \"explanation\": \"We want to find P(X_{(5)} < 0.7)\"}, {\"stepNumber\": 2, \"description\": \"Use the formula for order statistic distribution\", \"mathHtml\": \"\\[F_{k:n}(x) = ... \\]\", \"explanation\": \"Plug in k=5 and n=10\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Understanding the distribution of order statistics helps us make informed decisions in machine learning, such as selecting the most informative features or identifying outliers.",
+    "realWorldApplications": [
+      "Identifying anomalies in financial transactions"
+    ],
+    "tags": [
+      "order statistics",
+      "probability theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:25:27.607Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

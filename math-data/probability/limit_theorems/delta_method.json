@@ -1,0 +1,482 @@
+[
+  {
+    "id": "prob_con_delta_method_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "contentHtml": "<p>The Delta method is a powerful tool in probability theory that allows us to approximate the asymptotic distribution of a function g(X̄) of the sample mean X̄. This is particularly useful when we're interested in understanding the behavior of a statistic under repeated sampling.</p><p>Intuitively, the Delta method says that if we can find the derivative of g at the true population mean μ, then the distribution of g(X̄) will be approximately normal with mean 0 and variance equal to the square of the derivative multiplied by the variance of X̄.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{\\partial g}{\\partial x} |_{x=\\mu} = \\frac{g'(X̄)}{n} \\]",
+      "name": "Delta Method Formula"
+    },
+    "intuition": "The Delta method is a way to stabilize the variance of a statistic by using its derivative. This allows us to make inferences about the population parameter based on the sample mean.",
+    "realWorldApplications": [
+      "In machine learning, the Delta method can be used to derive the asymptotic distribution of statistics like the maximum likelihood estimator or the sample variance."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:00:54.919Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_delta_method_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "contentHtml": "<p>The Delta method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed. In essence, it provides an asymptotic distribution for g(X̄), which is crucial in many statistical applications.</p><p>Imagine you're trying to model the average height of a population using a Gaussian mixture model. You want to know how the distribution of heights changes as the mean and variance of the normal components change. The Delta method helps you do just that by providing an approximation of the distribution of the function g(X̄) = μ + σZ, where Z is a standard normal variable.</p>",
+    "formula": {
+      "latex": "\\[g(X\\bar) = \\mu + \\sigma Z\\]",
+      "name": "Delta Method Formula"
+    },
+    "intuition": "The Delta method works by approximating the distribution of g(X̄) using the delta method formula, which involves taking a first-order Taylor expansion of g around its mean. This allows us to reduce the problem to finding the asymptotic distribution of a linear combination of independent normals.",
+    "realWorldApplications": [
+      "In Gaussian mixture modeling, the Delta method can be used to approximate the distribution of the mean and variance components as they change."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the Delta method assumes X̄ is normally distributed"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:01:17.339Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_delta_method_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "contentHtml": "<p>The Delta method is a powerful tool in probability theory that allows us to approximate the asymptotic distribution of a function g(X̄) of the sample mean X̄. This is particularly useful when dealing with complex functions or when we need to stabilize the variance.</p>",
+    "formula": "{",
+    "latex": "\\\\[g(X\\\\bar) = \\\\frac{g'(x) |_{x=\\\\mu}}{\\\\sqrt{n} \\cdot \\\\sigma_g}\\]\",",
+    "name": "Delta Method Formula\" },",
+    "intuition": "The Delta method works by approximating the function g(X̄) with its linearization at the mean, which is a first-order Taylor expansion. This allows us to apply the central limit theorem (CLT) and obtain an asymptotic distribution.",
+    "realWorldApplications": [
+      "Stabilizing variance in machine learning model evaluation"
+    ],
+    "commonMistakes": [
+      "Failing to account for the bias introduced by linearization",
+      "Ignoring the effect of sample size on the approximation"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:01:35.440Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_delta_method_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed.</p>",
+    "formula": "{",
+    "latex": "\\[g(X̄) \\overset{\\mathcal{D}}{\\approx} N\\left(\\mu, \\sigma^2 \\cdot \\frac{\\partial g}{\\partial x} (x = \\mu)^2\\right)\\]\",",
+    "name": "Delta Method Formula\" },",
+    "intuition": "The Delta Method is a way to stabilize the variance of an estimator by using the derivative of the function at the mean. This is particularly useful when dealing with complex functions or non-normal distributions.",
+    "realWorldApplications": [
+      "In machine learning, the Delta Method can be used to approximate the distribution of a model's output, which is crucial for tasks like uncertainty estimation and robustness analysis."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:01:52.576Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_delta_method_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed.</p><p>This is particularly useful in machine learning, where we often need to make inferences about complex functions of random variables.</p>",
+    "formula": "{",
+    "latex": "\\[g(x) \\approx g(\\mu) + g'(\\mu)(x - \\mu)\\]\",",
+    "name": "Taylor Series Approximation\" },",
+    "intuition": "The Delta Method is essentially a Taylor series approximation of the function g at the mean μ. This allows us to linearize the function and apply the Central Limit Theorem (CLT) to approximate its distribution.",
+    "realWorldApplications": [
+      "Stabilizing variances in neural network outputs"
+    ],
+    "tags": [
+      "probability",
+      "limit theorems",
+      "delta method"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:02:08.121Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_delta_method_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed.</p><p>This is particularly useful in machine learning, where we often need to work with asymptotic distributions.</p>",
+    "formula": "{",
+    "latex": "\\[g(x) \\approx g(\\mu) + \\frac{1}{2}g''(\\mu)\\sigma^2\\]\",",
+    "name": "Delta Method Formula\" },",
+    "intuition": "The Delta Method is based on the idea that when X̄ is normally distributed, we can approximate the distribution of g(X̄) by linearizing g around its mean and then applying the Central Limit Theorem.",
+    "realWorldApplications": [
+      "Stabilizing variances in neural networks"
+    ],
+    "tags": [
+      "limit-theorems",
+      "probability-theory"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:02:23.855Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_delta_method_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a powerful tool in probability theory that allows us to approximate the distribution of a function g(X̄) when X̄ is normally distributed.</p>",
+    "formula": {
+      "latex": "\\[g(X̄) = \\frac{1}{\\sqrt{n}} \\sum_{i=1}^n x_i\\]",
+      "name": "Function g"
+    },
+    "theorem": {
+      "statement": "\\[\\sqrt{n} (g(X̄) - g(μ)) \\stackrel{d}{\\rightarrow} N(0, σ_g^2)\\]",
+      "proofSketch": "The proof involves showing that the standardized sum is asymptotically normal and then applying the continuous mapping theorem."
+    },
+    "intuition": "The Delta Method provides a way to stabilize the variance of g(X̄) when X̄ is normally distributed. This is particularly useful in machine learning, where we often need to work with functions of means.",
+    "realWorldApplications": [
+      "In Bayesian inference, the Delta Method can be used to approximate the posterior distribution of a function of the mean."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:02:43.174Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_delta_method_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method",
+    "contentHtml": "<p>The Delta Method is a fundamental limit theorem in probability theory that provides an asymptotic distribution of a function g(X̄) of the sample mean X̄.</p>",
+    "formula": {
+      "latex": "\\[g(X\\bar) = \\frac{g(\\mu)}{\\sqrt{n}} + \\frac{g'(\\mu)}{n} + o_p(1/\\sqrt{n})\\]",
+      "name": "Delta Method Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n → ∞} P\\left(\\frac{g(X\\bar) - g(\\mu)}{σ_g / \\sqrt{n}} ≤ x\\right) = Φ(x)\\]",
+      "proofSketch": "The proof involves showing that the standardized statistic has a limiting normal distribution using the Central Limit Theorem and Taylor series expansions."
+    },
+    "intuition": "The Delta Method provides a way to stabilize the variance of g(X̄) by subtracting off the leading term in its Taylor series expansion. This is useful in many applications, including confidence interval construction and hypothesis testing.",
+    "realWorldApplications": [
+      "In machine learning, the Delta Method is used to construct asymptotically valid confidence intervals for model parameters."
+    ],
+    "tags": [
+      "Probability Theory",
+      "Limit Theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:03.360Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_delta_method_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Recall that X̄ is the sample mean.",
+      "The Delta Method is used to find the asymptotic distribution of a function of a statistic.",
+      "Start by finding the first two moments of g(X̄)"
+    ],
+    "solutionHtml": "<p>To apply the Delta Method, we need to find the first two moments of g(X̄). Since X̄ is normally distributed with mean μ and variance σ²/n, we have:</p>\\n\\ \\[E[g(X̄)] = E[g(μ + (X̄ - μ)/\\sqrt{n})] = g(μ) + \\frac{1}{2}g''(μ) Var[(X̄ - μ)/\\sqrt{n}] = g(μ)\\]\\n\\ \\[Var[g(X̄)] = E[(g(X̄) - E[g(X̄)])²] = (g'(μ))² Var[(X̄ - μ)/\\sqrt{n}] = \\frac{(g'(μ))² σ²}{n}\\]\\n\\ <p>Now we can apply the Delta Method to find the asymptotic distribution of g(X̄). The result is a normal distribution with mean g(μ) and variance (g'(μ))² σ²/n.</p>\",",
+    "answerShort": "Normal distribution with mean g(μ) and variance (g'(μ))² σ²/n\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:28.579Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_delta_method_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Start by recognizing that g(X̄) is a function of the sample mean.",
+      "Use the Taylor series expansion to linearize g(X̄).",
+      "Apply the Delta Method formula."
+    ],
+    "solutionHtml": "<p>Let's denote the true population mean as μ. We can write g(X̄) as:</p>\\n\\ \\[g(\\overline{X}) = g(μ + \\frac{\\sqrt{n}}{\\sigma} Z)\\]\\n\\ <p>where Z is a standard normal variable.</p>\\n\\ <p>We'll use the Taylor series expansion to linearize g(X̄) around μ:</p>\\n\\ \\[\\left.\\frac{dg}{dX}\\right|_{X=μ} (X - μ) + O((X - μ)^2)\\]\\n\\ <p>Now, we can apply the Delta Method formula:</p>\\n\\ \\[g(\\overline{X}) \\overset{D}{\\to} N\\left(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2\\right)\\]\\n\\ <p>The final answer is:</p>\\n\\ \\[g(\\overline{X}) \\overset{D}{\\to} N(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2).\\]\",",
+    "answerShort": "N(g(μ), \\frac{\\sigma^2}{n} \\left.\\frac{dg}{dX}\\right|_{X=μ}^2)\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:03:55.335Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_delta_method_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the asymptotic distribution of g(X̄) using the Delta Method.</p>",
+    "hints": [
+      "Start by recognizing that g(X̄) is a function of X̄.",
+      "Use the Taylor series expansion to approximate g(X̄) around its mean.",
+      "Apply the Delta Method formula."
+    ],
+    "solutionHtml": "<p>Let's start by expanding g(X̄) using the Taylor series:</p>\\(\\mathbf{g}(\\mathbf{\\bar{x}}) \\approx \\mathbf{g}(\\mathbf{\\mu}) + (\\mathbf{x}-\\mathbf{\\mu})^T \\mathbf{J}\\)<br><p>where J is the Jacobian matrix.</p><p>Now, apply the Delta Method:</p>\\[\\sqrt{n}(\\mathbf{g}(\\mathbf{\\bar{x}}) - \\mathbf{g}(\\mathbf{\\mu})) \\xrightarrow{d} N(0, (\\mathbf{J}\\Sigma\\mathbf{J})^{-1})\\]<br><p>where Σ is the variance-covariance matrix.</p>\",",
+    "answerShort": "N(0, (JΣJ)^(-1))\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:04:17.170Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_delta_method_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "problem": "{",
+    "statementHtml": "Let $g(x) = \\frac{1}{\\sqrt{x}}$ and $X_1, X_2, ..., X_n$ be i.i.d. random variables with mean $\\mu$. Find the asymptotic distribution of $g(\\bar{X}_n)$.\",",
+    "hints": [
+      "Hint: Use the delta method to find the asymptotic distribution.",
+      "Think about the Taylor series expansion."
+    ],
+    "solutionHtml": "<p>To apply the delta method, we need to find the first two derivatives of $g(x)$. We have:</p><ul><li>$g'(x) = -\\frac{1}{2x^{3/2}}$</li><li>$g''(x) = \\frac{3}{4x^{5/2}}$</li></ul><p>Now, we can use the delta method:</p><ul><li>We have $\\sqrt{n}(\\bar{X}_n - \\mu) \\rightarrow N(0, 1)$.</li><li>The first derivative of $g(x)$ at $x = \\mu$ is $g'(\\mu) = -\\frac{1}{2\\sqrt{\\mu}}$.</li><li>We can plug in these values into the delta method formula:</li></ul>\\[ \\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\rightarrow N(0, (g'(\\mu))^2 \\cdot 1) = N(0, \\frac{1}{4\\mu}) \\] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of $n$ observations from a normal distribution with mean $\\mu$ and variance $\\sigma^2$. Find the asymptotic distribution of the sample standard deviation.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the first two derivatives of the function\", \"mathHtml\": \"\\[ g(x) = \\frac{1}{\\sqrt{x}} \\]\", \"explanation\": \"We need these for the delta method.\" }, {\"stepNumber\": 2, \"description\": \"Apply the delta method\", \"mathHtml\": \"\\[ \\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\rightarrow N(0, (g'(\\mu))^2 \\cdot 1) = N(0, \\frac{1}{4\\mu}) \\]\", \"explanation\": \"This gives us the asymptotic distribution of $g(X̄)$.\" }, {\"stepNumber\": 3, \"description\": \"Find the asymptotic distribution of the sample standard deviation\", \"mathHtml\": \"\\[ S_n = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (X_i - \\bar{X}_n)^2 } \\]\", \"explanation\": \"We can use the delta method to find the asymptotic distribution of $S_n$.\" }, {\"stepNumber\": 4, \"description\": \"Standardize the sample standard deviation\", \"mathHtml\": \"\\[ T_n = \\frac{S_n - E[S_n]}{\\sqrt{\\text{Var}[S_n]}} \\]\", \"explanation\": \"This gives us a standardized version of $S_n$.\" } ],",
+    "finalAnswer": "The asymptotic distribution is N(0, 1)\" },",
+    "intuition": "The delta method helps us find the asymptotic distribution of a function by using the first two derivatives and the central limit theorem.",
+    "realWorldApplications": [
+      "In machine learning, this method can be used to find the asymptotic distribution of various statistics, such as the sample mean or standard deviation."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:05:08.276Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_delta_method_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "contentHtml": "<p>The Delta method is a powerful tool in probability theory, allowing us to find the asymptotic distribution of a function g(X̄) when X̄ is normally distributed.</p>",
+    "formula": {
+      "latex": "\\[g(x) = \\frac{f'(x)}{\\sqrt{n}f''(x)}\\]",
+      "name": "Delta Method Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the asymptotic distribution of g(X̄) when X̄ ~ N(μ, σ^2).</p>",
+      "hints": [
+        "Hint: Use the Delta method formula"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Step 1: Plug in the values of μ and σ into the Delta method formula.</li><li>Step 2: Simplify the expression using the properties of the normal distribution.</li><li>Step 3: Recognize that the resulting distribution is a standard normal distribution.</li></ul>",
+      "answerShort": "N(0, 1)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a sample mean X̄ ~ N(5, 2^2). Find the asymptotic distribution of g(X̄) = (X̄ - 3)^2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in μ and σ into the Delta method formula",
+          "mathHtml": "\\[g(x) = \\frac{(x-3)^2}{\\sqrt{n}4}\\]",
+          "explanation": "We're using the given values of μ and σ to simplify the expression"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Simplify the expression using normal distribution properties",
+          "mathHtml": "\\[g(x) = \\frac{(x-3)^2}{8}\\]",
+          "explanation": "We're applying the properties of the normal distribution to further simplify the expression"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Recognize that the resulting distribution is standard normal",
+          "mathHtml": "\\[g(x) ~ N(0, 1)\\]",
+          "explanation": "The final distribution is a standard normal distribution"
+        }
+      ],
+      "finalAnswer": "N(0, 1)"
+    },
+    "intuition": "The Delta method helps us find the asymptotic distribution of g(X̄) by recognizing that the resulting distribution will be a standard normal distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:05:43.510Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_delta_method_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "delta_method",
+    "title": "Delta Method: Asymptotic Distribution of g(X̄)",
+    "contentHtml": "<p>The Delta method is a powerful tool in probability theory that allows us to find the asymptotic distribution of a function g(X̄) when X̄ is normally distributed.</p>",
+    "formula": {
+      "latex": "\\[g(x) = \\frac{1}{\\sqrt{n}} \\sum_{i=1}^n x_i\\]",
+      "name": "Function g"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the asymptotic distribution of g(X̄) when X̄ is normally distributed.</p>",
+      "hints": [
+        "Hint: Use the Delta method"
+      ],
+      "solutionHtml": "<p>Solution steps:</p><ul><li>We need to find the first two moments of g(X̄).</li><li>The mean is \\(\\mathbb{E}[g(X̄)] = 0\\).</li><li>The variance is \\(\\text{Var}[g(X̄)] = \\frac{1}{n}\\).</li><li>Now we can apply the Delta method.</li></ul>",
+      "answerShort": "Normal distribution with mean 0 and variance \\(\\frac{1}{n}\\)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a sample of n = 10 observations from a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Find the asymptotic distribution of g(X̄) = \\(\\frac{1}{\\sqrt{10}} \\sum_{i=1}^{10} x_i\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the first two moments of g(X̄)",
+          "mathHtml": "\\[\\mathbb{E}[g(X̄)] = 0\\]",
+          "explanation": "The mean is zero because we're averaging out the noise"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the variance",
+          "mathHtml": "\\[\\text{Var}[g(X̄)] = \\frac{1}{n}\\]",
+          "explanation": "The variance is \\(\\frac{1}{n}\\) because we're taking a sample average"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the Delta method",
+          "mathHtml": "\\[Z = \\frac{g(X̄) - 0}{\\sqrt{\\text{Var}[g(X̄)]}}\\]",
+          "explanation": "We standardize g(X̄) by subtracting its mean and dividing by its standard deviation"
+        }
+      ],
+      "finalAnswer": "Normal distribution with mean 0 and variance \\(\\frac{1}{n}\\)"
+    },
+    "intuition": "The Delta method is a powerful tool for finding the asymptotic distribution of a function g(X̄) when X̄ is normally distributed.",
+    "visualDescription": "A diagram showing the standardization of g(X̄)",
+    "commonMistakes": [
+      "Forgetting to standardize g(X̄)",
+      "Not recognizing that the Delta method applies"
+    ],
+    "realWorldApplications": [
+      "In machine learning, we often use the Delta method to find the asymptotic distribution of a function g(X̄) when X̄ is normally distributed."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems",
+      "Delta method"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:06:28.374Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

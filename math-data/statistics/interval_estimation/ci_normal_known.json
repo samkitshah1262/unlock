@@ -1,0 +1,462 @@
+[
+  {
+    "id": "stat_con_ci_normal_known_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean with Known Variance",
+    "contentHtml": "<p>In statistics, we often want to estimate a population mean based on a sample of data. When the population variance is known, we can use Z-intervals to construct a confidence interval (CI) for the true mean.</p><p>A Z-interval is a type of interval estimation that uses the standard normal distribution (Z-distribution) to calculate the margin of error. This approach is particularly useful when the sample size is large and the population variance is known.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} \\pm Z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\",",
+    "name": "Z-interval formula\" },",
+    "intuition": "The key insight here is that when we know the population variance, we can use the standard normal distribution to calculate the margin of error. This allows us to construct a CI for the true mean with a specific level of confidence.",
+    "realWorldApplications": [
+      "In machine learning, Z-intervals are used in hypothesis testing and confidence intervals for model performance metrics."
+    ],
+    "commonMistakes": [
+      "Failing to account for the known population variance when constructing the CI"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:04:48.332Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_normal_known_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "Confidence Intervals for Mean with Known Variance",
+    "contentHtml": "<p>We're going to explore confidence intervals (CIs) for the mean of a population when we know the variance. This is a fundamental concept in statistical inference, and it has numerous applications in machine learning and artificial intelligence.</p><p>In particular, we'll focus on Z-intervals, which are widely used in practice due to their simplicity and accuracy.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\bar{x} \\pm Z \\\\cdot \\\\sqrt{\\\\frac{\\\\sigma^2}{n}} \\\\]\",",
+    "name": "Z-Interval Formula\" },",
+    "intuition": "The key insight is that the CI for the mean is a range of values within which we're confident (1 - α) that the true population mean lies. The Z-score plays a crucial role in determining this interval.",
+    "visualDescription": "A diagram showing the distribution of sample means and the confidence interval would help illustrate the concept.",
+    "commonMistakes": [
+      "Failing to account for the known variance",
+      "Using an incorrect Z-score or α-value"
+    ],
+    "realWorldApplications": [
+      "Estimating the average user rating in a recommendation system",
+      "Determining the mean response time of a machine learning model"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:05:04.873Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_normal_known_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "Confidence Intervals for Mean with Known Variance",
+    "contentHtml": "<p>In statistics, we often want to estimate a population mean based on a sample of data. When the variance is known, we can construct a confidence interval (CI) using the Z-interval method.</p><p>The CI provides a range of values within which the true population mean is likely to lie. The width of the interval represents our uncertainty in the estimation process.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = \\bar{x} \\pm Z \\cdot \\frac{\\sigma}{\\sqrt{n}}\\]",
+      "name": "Z-interval formula"
+    },
+    "intuition": "Think of the CI as a 'window' around our sample mean. The width of this window depends on the known variance and the confidence level we choose.",
+    "realWorldApplications": [
+      "In machine learning, CIs are used to quantify the uncertainty in model predictions."
+    ],
+    "commonMistakes": [
+      "Don't forget to account for the known variance when constructing the CI."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:05:19.542Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_known_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean with Known Variance",
+    "contentHtml": "<p>The Z-interval is a fundamental concept in statistical inference used to construct confidence intervals (CIs) for the population mean when the variance is known.</p><p>This formula provides a precise estimate of the population mean within a certain margin of error.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} \\pm Z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\",",
+    "name": "Z-interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the average height of adults in a certain city, with known variance. We take a random sample of size 36 and calculate the mean height to be 175.2 cm.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the parameters\", \"mathHtml\": \"\\(n = 36, \\bar{x} = 175.2, \\sigma = 5.4\\)\", \"explanation\": \"We know the sample size, mean height, and variance from our data.\"} ],",
+    "finalAnswer": "The estimated population mean is between 173.8 cm and 176.6 cm\" },",
+    "intuition": "The Z-interval formula provides a way to quantify the uncertainty in our estimate of the population mean by incorporating the known variance.",
+    "realWorldApplications": [
+      "In machine learning, this concept is crucial for constructing confidence intervals around model predictions."
+    ],
+    "tags": [
+      "interval estimation",
+      "confidence interval"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:05:39.248Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_known_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean (Known Variance)",
+    "contentHtml": "<p>The Z-interval is a widely used method for constructing confidence intervals for the population mean when the variance is known.</p><p>This formula provides a way to calculate the margin of error and construct the interval.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} \\pm Z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\",",
+    "name": "Z-interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the average height of a population with known variance. We take a random sample of size 25 and get an average height of 175 cm.</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the margin of error",
+    "mathHtml": "\\frac{\\sigma}{\\sqrt{n}} = \\frac{5}{5} = 1 cm",
+    "explanation": "\" } ],",
+    "finalAnswer": "The estimated average height is between 174 and 176 cm\" },",
+    "intuition": "This formula provides a way to quantify the uncertainty in our estimate of the population mean.",
+    "realWorldApplications": [
+      "Estimating the average height of a population"
+    ],
+    "tags": [
+      "confidence intervals",
+      "mean estimation"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:05:58.610Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_known_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean (Known Variance)",
+    "contentHtml": "<p>The Z-interval provides a way to construct an interval estimate of the population mean when the variance is known.</p>",
+    "formula": "{",
+    "latex": "\\[ \\left| \\frac{\\bar{x} - \\mu}{\\frac{\\sigma}{\\sqrt{n}}} \\right| \\leq Z \\]\",",
+    "name": "Z-interval",
+    "variants": "[ {",
+    "description": "Calculate the margin of error",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with known variance. We want to construct a 95% CI for the population mean score.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "mathHtml": "\\[ ME = Z \\cdot \\frac{\\sigma}{\\sqrt{n}} = 1.96 \\cdot \\frac{5}{\\sqrt{25}} = 2 \\]\",",
+    "explanation": "This is the maximum distance from the sample mean to the true population mean\" } ],",
+    "finalAnswer": "The 95% CI for the population mean score is [78, 82]\" },",
+    "intuition": "The Z-interval provides a way to construct an interval estimate of the population mean when the variance is known. It's like taking a snapshot of where our sample mean might be in relation to the true population mean.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:06:26.260Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_normal_known_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean (Known Variance)",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean μ when σ is known.</p>",
+    "hints": [
+      "<p>Start by standardizing the sample mean x̄.</p>",
+      "<p>Use the standard normal distribution to find the critical value z.</p>",
+      "<p>Combine the standardized sample mean with the critical value to get the interval bounds.</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate of μ, we first standardize the sample mean x̄:</p>\\n\\ \\[ \\frac{\\bar{x} - \\mu}{\\sigma / \\sqrt{n}} = z.\\]\\n\\ <p>Next, we find the critical value z corresponding to our desired confidence level (1 - α).</p>\\n\\ <p>Finally, we combine the standardized sample mean with the critical value to get the interval bounds:</p>\\n\\ \\[ \\bar{x} + z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\quad \\text{and} \\quad \\bar{x} - z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]\\n\\ <p>The margin of error is half the width of the interval:</p>\\n\\ \\[ \\frac{2z \\cdot \\sigma}{\\sqrt{n}}.\\]\\n\\ <p>Thus, our CI for μ is:</p>\\n\\ \\[ \\bar{x} - z \\cdot \\frac{\\sigma}{\\sqrt{n}}, \\quad \\bar{x} + z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]\",",
+    "answerShort": "The Z-interval estimate of μ is\" },",
+    "commonMistakes": [
+      "Forgetting to standardize the sample mean",
+      "Using the wrong critical value"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:06:49.029Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_normal_known_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean with known variance.</p>",
+    "hints": [
+      "<p>The interval will be centered at what statistic?</p>",
+      "<p>What is the standard error in this case?</p>",
+      "<p>How does the margin of error relate to the confidence level?</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate, we first need to calculate the sample mean \\(\\bar{x}\\) and the sample variance \\(s^2\\). Given that the population variance is known (\\(\\sigma^2\\)), we can use this information to find the standard error:</p>\\n\\[SE = \\frac{\\sigma}{\\sqrt{n}}.\\]\\n<p>Next, we calculate the Z-score using the standard error and the margin of error (ME):</p>\\n\\[Z = \\frac{\\bar{x} - \\mu_0}{SE}.\\]\\n<p>The interval is then constructed as:</p>\\n\\[CI = (\\bar{x} + Z \\cdot SE, \\bar{x} - Z \\cdot SE).\\]</p>\",",
+    "answerShort": "The answer is the calculated CI\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:07:06.161Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_normal_known_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean with known variance.</p>",
+    "hints": [
+      "<p>If you're unsure about the formula, recall that it's based on the standard normal distribution.</p>",
+      "<p>Think about how to apply the margin of error concept.</p>",
+      "<p>Check your work by verifying that the interval is symmetric around the sample mean.</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate, we need to find the critical value from the standard normal distribution. Let's denote the sample mean as $\\bar{x}$ and the known variance as $\\sigma^2$. The margin of error is given by</p>\\[M = Z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]<p>Now, we can write the interval estimate as follows:</p>\\[\\bar{x} - M \\leq \\mu \\leq \\bar{x} + M.\\]",
+    "answerShort": "The Z-interval estimate is given by $\\bar{x} \\pm M$.\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:07:22.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_known_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "Interval Estimation for Mean with Known Variance",
+    "contentHtml": "<p>In this worked example, we'll derive a Z-interval estimate for the population mean when the sample variance is known.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{Z} = \\frac{\\bar{x} - \\mu}{\\sigma / \\sqrt{n}} \\]",
+      "name": "Standardized Normal Variable"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 36 is taken from a normal distribution with known variance 4. The sample mean is 12. Construct a 95% confidence interval for the population mean.</p>",
+      "hints": [
+        "Hint: Use the Z-interval formula"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>We want to construct a 95% confidence interval for the population mean, \\mu. We know the sample variance is 4 and the sample size is 36.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the Z-statistic",
+          "mathHtml": "\\[ \\mathbf{Z} = \\frac{12 - \\mu}{\\sqrt{4/36}} \\]",
+          "explanation": "We're standardizing the sample mean by subtracting the population mean and dividing by the standard error."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Look up the Z-score in a standard normal distribution table or use a calculator",
+          "mathHtml": "\\[ \\mathbf{Z} = ? \\]",
+          "explanation": "We're finding the corresponding Z-score for our calculated value."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the margin of error",
+          "mathHtml": "\\[ \\text{MOE} = Z \\cdot \\sqrt{\\frac{4}{36}} \\]",
+          "explanation": "The margin of error is the product of the Z-score and the standard error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the confidence interval bounds",
+          "mathHtml": "\\[ \\text{CI} = (12 - \\text{MOE}, 12 + \\text{MOE}) \\]",
+          "explanation": "We're constructing the confidence interval by adding and subtracting the margin of error from the sample mean."
+        }
+      ],
+      "finalAnswer": "(11.43, 12.57)"
+    },
+    "intuition": "The Z-interval is a powerful tool for estimating population means when the sample variance is known.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:07:51.622Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_known_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean with Known Variance",
+    "contentHtml": "<p>In this worked example, we'll derive and apply a Z-interval to estimate the mean of a population given known variance.</p>",
+    "formula": {
+      "latex": "\\[\\bar{x} \\pm Z \\cdot \\frac{\\sigma}{\\sqrt{n}}\\]",
+      "name": "Z-interval"
+    },
+    "problem": {
+      "statementHtml": "<p>A manufacturing process claims a mean defect rate of 2.5% with known variance of 0.1%. A random sample of 36 products yields an average defect rate of 2.3%. Construct a 95% confidence interval for the true mean defect rate.</p>",
+      "hints": [],
+      "solutionHtml": "<p>We'll use the Z-interval formula to solve this problem step-by-step.</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A manufacturing process claims a mean defect rate of 2.5% with known variance of 0.1%. A random sample of 36 products yields an average defect rate of 2.3%</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{23}{36}\\]",
+          "explanation": "We start by calculating the sample mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the standard error",
+          "mathHtml": "\\[SE = \\frac{0.1}{\\sqrt{36}}\\]",
+          "explanation": "Next, we calculate the standard error using the known variance and sample size."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the Z-score",
+          "mathHtml": "\\[Z = \\frac{2.3 - 2.5}{0.1/\\sqrt{36}}\\]",
+          "explanation": "We then find the Z-score by dividing the difference between the sample mean and claimed mean by the standard error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the margin of error",
+          "mathHtml": "\\[ME = Z \\cdot \\frac{0.1}{\\sqrt{36}}\\]",
+          "explanation": "Finally, we calculate the margin of error using the Z-score and standard error."
+        }
+      ],
+      "finalAnswer": "The 95% CI is (2.05%, 2.55%)"
+    },
+    "intuition": "The Z-interval provides a way to estimate the true mean defect rate while accounting for uncertainty in the sample mean.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:08:21.294Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_normal_known_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean with Known Variance",
+    "contentHtml": "<p>In this worked example, we'll derive the Z-interval formula for estimating a population mean when the sample variance is known.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = \\bar{x} \\pm Z \\cdot \\sqrt{\\frac{s^2}{n}}\\]",
+      "name": "Z-Interval Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to estimate the average height of a population with known sample variance. We have a random sample of size 36 and mean height 175 cm, with standard deviation 5 cm.</p>",
+      "hints": [
+        "Hint: Use the Z-interval formula"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find a 95% confidence interval for the population mean height using the given data.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the known values",
+          "mathHtml": "\\[\\bar{x} = 175, s^2 = 25, n = 36\\]",
+          "explanation": "We know the sample mean, variance, and size."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the Z-score for the desired confidence level",
+          "mathHtml": "\\[Z = 1.96 (for 95% CI)\\]",
+          "explanation": "Look up the corresponding Z-value from a standard normal distribution table or use a calculator."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug in values into the formula",
+          "mathHtml": "\\[\\text{CI} = 175 \\pm 1.96 \\cdot \\sqrt{\\frac{25}{36}}\\]",
+          "explanation": "Substitute the given values and calculate the margin of error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the interval bounds",
+          "mathHtml": "\\[\\text{CI} = (175 - 3.42, 175 + 3.42)\\]",
+          "explanation": "Find the upper and lower bounds by adding and subtracting the margin of error from the sample mean."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The interval represents our estimate of the population mean height with a certain level of confidence."
+        }
+      ],
+      "finalAnswer": "(172.58, 177.42)"
+    },
+    "intuition": "The Z-interval formula provides an efficient way to estimate a population mean when the sample variance is known.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:08:51.418Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

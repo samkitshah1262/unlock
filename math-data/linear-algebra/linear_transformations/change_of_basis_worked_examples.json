@@ -1,0 +1,110 @@
+[
+  {
+    "id": "la_wex_change_of_basis_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "title": "Change of Basis: Transition Matrices",
+    "contentHtml": "<p>When working with linear transformations, it's often necessary to change between different coordinate systems.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the matrix representation of a linear transformation in a new basis.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the old and new bases.\", \"mathHtml\": \"\\[ \\mathbf{v} = [v_1, v_2]^T \\]\", \"explanation\": \"We need to specify both coordinate systems.\"}, {\"stepNumber\": 2, \"description\": \"Write the transformation matrix in the old basis.\", \"mathHtml\": \"\\[ A = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix} \\]\", \"explanation\": \"This is our original transformation.\"}, {\"stepNumber\": 3, \"description\": \"Find the transition matrix from the old basis to the new basis.\", \"mathHtml\": \"\\[ P = \\begin{bmatrix} p_{11} & p_{12} \\\\ p_{21} & p_{22} \\end{bmatrix} \\]\", \"explanation\": \"This is a standard change-of-basis matrix.\"}, {\"stepNumber\": 4, \"description\": \"Compute the transformation matrix in the new basis.\", \"mathHtml\": \"\\[ A' = P^{-1}AP \\]\", \"explanation\": \"We're essentially 'transforming' our original transformation to the new coordinate system.\"} ],",
+    "finalAnswer": "The resulting matrix represents the linear transformation in the new basis.\" },",
+    "intuition": "Think of changing bases as a series of rotations and reflections that align your old coordinates with the new ones.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:14:39.091Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_change_of_basis_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "title": "Change of Basis: Transition Matrices and Similarity",
+    "contentHtml": "<p>In linear algebra, we often encounter situations where we need to switch between different coordinate systems or bases.</p>",
+    "formula": {
+      "latex": "\\[T = [v_1 | v_2 | ... | v_n]\\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two bases \\(\\{e_1, e_2, ..., e_n\\}\\) and \\(\\{f_1, f_2, ..., f_n\\}\\), find the transition matrix \\(T\\) that transforms vectors from one basis to another.</p>",
+      "hints": [
+        "Hint: Think about how each basis vector is expressed in terms of the other"
+      ],
+      "solutionHtml": "<p>Let's consider a simple example. Suppose we have two bases:</p><ul><li>\\(e_1 = [1, 0]\\) and \\(e_2 = [0, 1]\\)</li><li>\\(f_1 = [1/√2, 1/√2]\\) and \\(f_2 = [-1/√2, 1/√2]\\)</li></ul><p>We want to find the transition matrix \\(T\\) that transforms vectors from \\((e_1, e_2)\\) to \\((f_1, f_2)\\).</p>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the transition matrix \\(T\\) that transforms vectors from \\((e_1, e_2)\\) to \\((f_1, f_2)\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Express each basis vector in terms of the other",
+          "mathHtml": "\\[f_1 = [1/√2, 1/√2] = (1/√2)e_1 + (1/√2)e_2\\]",
+          "explanation": "We're expressing each basis vector from \\((f_1, f_2)\\) in terms of the basis vectors from \\((e_1, e_2)\\)"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Do the same for the other basis vector",
+          "mathHtml": "\\[f_2 = [-1/√2, 1/√2] = (-1/√2)e_1 + (1/√2)e_2\\]",
+          "explanation": "We're expressing each basis vector from \\((e_1, e_2)\\) in terms of the basis vectors from \\((f_1, f_2)\\)"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Write down the transition matrix",
+          "mathHtml": "\\[T = [v_1 | v_2] = [(1/√2), (1/√2)]\\]",
+          "explanation": "The transition matrix \\(T\\) is simply the coefficients of the basis vectors from \\((e_1, e_2)\\) in terms of the basis vectors from \\((f_1, f_2)\\)"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify that \\(T\\) works",
+          "mathHtml": "\\[T\\cdot [x_1, x_2]^T = [y_1, y_2]^T\\]",
+          "explanation": "We can verify that the transition matrix \\(T\\) correctly transforms vectors from one basis to another"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The key insight here is that the transition matrix allows us to switch between different coordinate systems or bases.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:15:24.096Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_change_of_basis_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "title": "Change of Basis: Transition Matrices",
+    "contentHtml": "<p>In linear algebra, we often need to switch between different coordinate systems. This process is called a change of basis.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a matrix A and we want to express it in terms of another basis, say B. We can do this by finding the transition matrix T that transforms vectors from B to A.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the coordinates of A in both bases\", \"mathHtml\": \"\\[A_{\\text{B}} = \\begin{bmatrix} a_1 & a_2 \\\\ b_1 & b_2 \\end{bmatrix}\\]\", \"explanation\": \"We need to express A in terms of both B and A's own basis.\"}, {\"stepNumber\": 2, \"description\": \"Find the transition matrix T\", \"mathHtml\": \"\\[T = \\begin{bmatrix} t_{11} & t_{12} \\\\ t_{21} & t_{22} \\end{bmatrix}\\]\", \"explanation\": \"The transition matrix T transforms vectors from B to A.\"}, {\"stepNumber\": 3, \"description\": \"Express the coordinates of A in terms of B\", \"mathHtml\": \"\\[A = T \\cdot A_{\\text{B}}\\]\", \"explanation\": \"Now we can express A's coordinates in terms of B's basis.\"}, {\"stepNumber\": 4, \"description\": \"Verify that T is a linear transformation\", \"mathHtml\": \"\\[\\det(T) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} t_{i,\\sigma(i)}\\]\", \"explanation\": \"We need to show that the transition matrix T is indeed a linear transformation.\"}, {\"stepNumber\": 5, \"description\": \"Use the transition matrix to find similar matrices\", \"mathHtml\": \"\\[\\text{Similarity} = \\det(T) \\cdot T^{-1}\\]\", \"explanation\": \"Now we can use the transition matrix to find similar matrices.\"} ],",
+    "finalAnswer": "The transition matrix T is a linear transformation that allows us to express A's coordinates in terms of B's basis.\" },",
+    "intuition": "Think of the transition matrix as a 'dictionary' that translates between different coordinate systems.",
+    "visualDescription": "A diagram showing the relationship between the original and new bases, with arrows representing the transition matrix.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:15:54.992Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

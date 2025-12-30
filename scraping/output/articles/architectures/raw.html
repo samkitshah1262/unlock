@@ -1,0 +1,1193 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css" id="nanobarcss">.nanobar{width:100%;height:4px;z-index:9999;top:0}.bar{width:0;height:100%;transition:height .3s;background:#000}</style><style>#back-to-top{background:#fff;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;bottom:20px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);box-shadow:0 2px 5px 0 rgba(0,0,0,.26);color:#333;cursor:pointer;display:block;height:56px;opacity:1;outline:0;position:fixed;right:20px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-transition:bottom .2s,opacity .2s;-o-transition:bottom .2s,opacity .2s;-moz-transition:bottom .2s,opacity .2s;transition:bottom .2s,opacity .2s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:56px;z-index:1}#back-to-top svg{display:block;fill:currentColor;height:24px;margin:16px auto 0;width:24px}#back-to-top.hidden{bottom:-56px;opacity:0}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aman's AI Journal • NLP • Neural Architectures</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Aman's AI Journal | Course notes and learning material for Artificial Intelligence and Deep Learning Stanford classes.">
+  <link rel="canonical" href="https://aman.ai/primers/ai/architectures/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Google fonts -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/atom+xml" title="Aman’s AI Journal" href="/feed.xml">  
+  
+  <link href="https://aman.ai/favicon.jpg" rel="shortcut icon">
+
+  <!-- Google ads -->
+  <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202512100101/show_ads_impl.js"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5905744527956213" crossorigin="anonymous" data-checked-head="true"></script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-5905744527956213?href=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Farchitectures&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxVGTSywJS7sz4H2g0ft3Tk_6yzWudmjHcW9T8vEr8ruQXYpR7CM3vpSMNEf0OZ7UhJ7KKm1vKRRvryA_hogc0RIjGZdlBU01KNZD8Za5s_tGSkGdJ6UJZdyCU_ilRw3iUyTJJjfUQ==?fccs=W1siQUtzUm9sOHFOWXB3Y3NTZ09xSDlXWXVYQUkyWUpLN3V4aTBJaWUyYWR2TWctcHZMUXZPMjhPbzJoMGZ6cFRJSGtTWUJRbTAxNmhmMXFYOExHRTRna1lTSV95NHRKU2YwcUstY2hxNmNrSmxUUzcyOVY3c0dCYkJTNVhCeFQ1Z1dqaVRfMFN3dFhjNXNFMno4OXkxUmVDLXNONVFoQzk4OGJRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjIzNTQsNjM2MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL2FtYW4uYWkvcHJpbWVycy9haS9hcmNoaXRlY3R1cmVzLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUSK3lMFlz9fkh9z6t4BSIYfEaQGSJSIbB-Q1tBaTjm1MDr7CGXXCKbuy6AApZTxWx9oA8L0egzCR6X78F3lZNBwOvxo5lLwS3his59CibK-lde9V8O1KQp_5uMLJnYxvxwhwo0aA==?fccs=W1siQUtzUm9sOHFOWXB3Y3NTZ09xSDlXWXVYQUkyWUpLN3V4aTBJaWUyYWR2TWctcHZMUXZPMjhPbzJoMGZ6cFRJSGtTWUJRbTAxNmhmMXFYOExHRTRna1lTSV95NHRKU2YwcUstY2hxNmNrSmxUUzcyOVY3c0dCYkJTNVhCeFQ1Z1dqaVRfMFN3dFhjNXNFMno4OXkxUmVDLXNONVFoQzk4OGJRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjIzNTQsNzc4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDIsbnVsbCwiZW4iXSwiaHR0cHM6Ly9hbWFuLmFpL3ByaW1lcnMvYWkvYXJjaGl0ZWN0dXJlcy8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUf-KKJa3Mjg9OP7y2uSia-70iYunPW2wOSlKN-6tgRLOzIDtQqEaI8swF9Q5ATBP5Es_Tpp3qc5alIX0sQi7MAiGBWeH0jenEg3Wf3PvvzOU5960dXS1Ln_gL-LcIOgIuRUUL6Ig==?fccs=W1siQUtzUm9sOHFOWXB3Y3NTZ09xSDlXWXVYQUkyWUpLN3V4aTBJaWUyYWR2TWctcHZMUXZPMjhPbzJoMGZ6cFRJSGtTWUJRbTAxNmhmMXFYOExHRTRna1lTSV95NHRKU2YwcUstY2hxNmNrSmxUUzcyOVY3c0dCYkJTNVhCeFQ1Z1dqaVRfMFN3dFhjNXNFMno4OXkxUmVDLXNONVFoQzk4OGJRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjIzNTUsNjI1MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5LDZdLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL2FtYW4uYWkvcHJpbWVycy9haS9hcmNoaXRlY3R1cmVzLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script></head>
+
+
+    <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+      <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+      <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })</script><div id="back-to-top" class="hidden">Back to Top</div>
+      <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-family: sans-serif;
+          font-size: 14px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+      </style>   
+
+    <header class="site-header">
+
+  <a class="site-title" href="../">Distilled AI</a>
+
+  <a class="site-link" href="https://aman.ai">Back to aman.ai</a>
+
+  <!-- Html Elements for Search -->
+  <div id="search-container">
+  <input class="site-search-box" type="text" autocomplete="off" id="search-input" placeholder="search...">
+  <div id="results-container"></div>
+  </div>
+
+  <!-- Script pointing to aman-script.js -->
+  <script src="https://aman.ai/js/aman-search.min.js" type="text/javascript"></script>
+
+  <!-- Configuration -->
+  <script>
+  document.getElementById('search-input').value='';
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    exclude: ["cs231a"],
+    searchResultTemplate: '<div class="site-search-results"><a href="{url}">{title}</a></div>',
+    noResultsText: '<div class="site-search-results"><p>No results found</p></div>',
+    json: 'https://aman.ai/search.json',
+    limit: 5,
+    fuzzy: false,
+  })
+  </script>    
+
+</header>     
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>NLP • Neural Architectures</h1>
+  </header>
+
+  <article class="post-content">
+  <ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#recurrent-neural-networks-rnn" id="markdown-toc-recurrent-neural-networks-rnn">Recurrent Neural Networks (RNN)</a>    <ul>
+      <li><a href="#how-does-an-rnn-work-internally" id="markdown-toc-how-does-an-rnn-work-internally">How Does an RNN Work Internally?</a></li>
+      <li><a href="#what-tasks-are-rnns-used-for-in-nlp" id="markdown-toc-what-tasks-are-rnns-used-for-in-nlp">What Tasks are RNNs Used for in NLP?</a></li>
+      <li><a href="#benefits-of-rnns" id="markdown-toc-benefits-of-rnns">Benefits of RNNs</a></li>
+      <li><a href="#cons-of-rnns" id="markdown-toc-cons-of-rnns">Cons of RNNs</a></li>
+      <li><a href="#long-short-term-memory-lstm" id="markdown-toc-long-short-term-memory-lstm">Long Short-Term Memory (LSTM)</a></li>
+      <li><a href="#how-does-an-lstm-work-internally" id="markdown-toc-how-does-an-lstm-work-internally">How Does an LSTM Work Internally?</a></li>
+      <li><a href="#what-tasks-are-lstms-used-for-in-nlp" id="markdown-toc-what-tasks-are-lstms-used-for-in-nlp">What Tasks are LSTMs Used for in NLP?</a></li>
+      <li><a href="#benefits-of-lstms" id="markdown-toc-benefits-of-lstms">Benefits of LSTMs</a></li>
+      <li><a href="#cons-of-lstms" id="markdown-toc-cons-of-lstms">Cons of LSTMs</a></li>
+    </ul>
+  </li>
+  <li><a href="#gated-recurrent-units-gru" id="markdown-toc-gated-recurrent-units-gru">Gated Recurrent Units (GRU)</a>    <ul>
+      <li><a href="#how-does-a-gru-work-internally" id="markdown-toc-how-does-a-gru-work-internally">How Does a GRU Work Internally?</a></li>
+      <li><a href="#what-tasks-are-grus-used-for-in-nlp" id="markdown-toc-what-tasks-are-grus-used-for-in-nlp">What Tasks are GRUs Used for in NLP?</a></li>
+      <li><a href="#benefits-of-grus" id="markdown-toc-benefits-of-grus">Benefits of GRUs</a></li>
+      <li><a href="#cons-of-grus" id="markdown-toc-cons-of-grus">Cons of GRUs</a></li>
+    </ul>
+  </li>
+  <li><a href="#convolutional-neural-networks-cnn" id="markdown-toc-convolutional-neural-networks-cnn">Convolutional Neural Networks (CNN)</a>    <ul>
+      <li><a href="#how-does-a-cnn-work-internally" id="markdown-toc-how-does-a-cnn-work-internally">How Does a CNN Work Internally?</a></li>
+      <li><a href="#what-tasks-are-cnns-used-for-in-nlp" id="markdown-toc-what-tasks-are-cnns-used-for-in-nlp">What Tasks are CNNs Used for in NLP?</a></li>
+      <li><a href="#benefits-of-cnns" id="markdown-toc-benefits-of-cnns">Benefits of CNNs</a></li>
+      <li><a href="#cons-of-cnns" id="markdown-toc-cons-of-cnns">Cons of CNNs</a></li>
+    </ul>
+  </li>
+  <li><a href="#transformer-models" id="markdown-toc-transformer-models">Transformer Models</a>    <ul>
+      <li><a href="#how-does-a-transformer-work-internally" id="markdown-toc-how-does-a-transformer-work-internally">How Does a Transformer Work Internally?</a></li>
+      <li><a href="#what-tasks-are-transformers-used-for-in-nlp" id="markdown-toc-what-tasks-are-transformers-used-for-in-nlp">What Tasks are Transformers Used for in NLP?</a></li>
+      <li><a href="#benefits-of-transformers" id="markdown-toc-benefits-of-transformers">Benefits of Transformers</a></li>
+      <li><a href="#cons-of-transformers" id="markdown-toc-cons-of-transformers">Cons of Transformers</a></li>
+    </ul>
+  </li>
+  <li><a href="#bert-gpt-and-other-variants" id="markdown-toc-bert-gpt-and-other-variants">BERT, GPT, and Other Variants</a>    <ul>
+      <li><a href="#gpt-generative-pretrained-transformer" id="markdown-toc-gpt-generative-pretrained-transformer">GPT (Generative Pretrained Transformer)</a></li>
+    </ul>
+  </li>
+  <li><a href="#multilayer-perceptron" id="markdown-toc-multilayer-perceptron">Multilayer Perceptron</a></li>
+  <li><a href="#resnets" id="markdown-toc-resnets">ResNets</a></li>
+  <li><a href="#how-does-resnet-50-solve-the-vanishing-gradients-problem-of-vgg-16" id="markdown-toc-how-does-resnet-50-solve-the-vanishing-gradients-problem-of-vgg-16">How Does ResNet-50 Solve the Vanishing Gradients Problem of VGG-16?</a>    <ul>
+      <li><a href="#how-do-resnets-work" id="markdown-toc-how-do-resnets-work">How Do ResNets Work?</a></li>
+      <li><a href="#resnets-in-nlp" id="markdown-toc-resnets-in-nlp">ResNets in NLP</a></li>
+      <li><a href="#benefits-of-resnets" id="markdown-toc-benefits-of-resnets">Benefits of ResNets</a></li>
+      <li><a href="#cons-of-resnets" id="markdown-toc-cons-of-resnets">Cons of ResNets</a></li>
+      <li><a href="#vanishing-gradients" id="markdown-toc-vanishing-gradients">Vanishing Gradients</a></li>
+      <li><a href="#residual-connectionsskip-connections" id="markdown-toc-residual-connectionsskip-connections">Residual Connections/Skip Connections</a></li>
+    </ul>
+  </li>
+  <li><a href="#seq2seq-architecture-in-nlp" id="markdown-toc-seq2seq-architecture-in-nlp">Seq2Seq Architecture in NLP</a>    <ul>
+      <li><a href="#encoder" id="markdown-toc-encoder">Encoder</a></li>
+      <li><a href="#decoder" id="markdown-toc-decoder">Decoder</a></li>
+      <li><a href="#attention-mechanism" id="markdown-toc-attention-mechanism">Attention Mechanism</a></li>
+      <li><a href="#applications" id="markdown-toc-applications">Applications</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+<ul>
+  <li>The goal of NLP is to read, decipher, understand, and make sense of human language in a valuable way.</li>
+  <li>To achieve this, various machine learning models have been developed and utilized, each with its unique architecture and use-cases.</li>
+  <li>Let’s explore some prevalent neural architectures used in NLP.</li>
+</ul>
+
+<h2 id="recurrent-neural-networks-rnn">Recurrent Neural Networks (RNN)</h2>
+<ul>
+  <li>Recurrent Neural Networks, or RNNs, are a type of artificial neural network designed to recognize patterns in sequences of data, such as text, genomes, handwriting, or spoken words. A key feature of RNNs is their “memory”. Output from previous steps are fed into subsequent steps, allowing information to persist through the network, which can be particularly useful when dealing with sequences of words.</li>
+  <li>However, RNNs can suffer from problems like vanishing gradients, making them hard to train over long sequences. They also process data sequentially, which can be a disadvantage when dealing with large datasets because it’s difficult to parallelize the computations.</li>
+  <li>The image below <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network#/media/File:Recurrent_neural_network_unfold.svg">(source)</a> displays RNNs architecture.</li>
+</ul>
+
+<p><img src="/primers/ai/assets/architectures/1.webp" alt=""></p>
+
+<ul>
+  <li>A recurrent neural network (RNN) is a type of artificial neural network that allows connections between nodes to form cycles, enabling the output from certain nodes to influence subsequent inputs to those same nodes. This characteristic empowers RNNs to exhibit temporal dynamics, distinguishing them from traditional feedforward neural networks. By utilizing an internal state or memory, RNNs are capable of processing sequences of inputs with varying lengths. This feature makes them suitable for tasks like unsegmented, connected handwriting recognition or speech recognition. Notably, recurrent neural networks possess the property of Turing completeness, enabling them to execute arbitrary programs for processing diverse sequences of inputs.</li>
+  <li>The term “recurrent neural network” specifically refers to networks with an infinite impulse response, whereas “convolutional neural network” pertains to networks with a finite impulse response. Both types of networks display temporal dynamic behavior. A finite impulse recurrent network can be represented as a directed acyclic graph that can be unfolded and replaced with a strictly feedforward neural network. On the other hand, an infinite impulse recurrent network takes the form of a directed cyclic graph that cannot be unfolded.</li>
+  <li>Both finite impulse and infinite impulse recurrent networks can incorporate additional stored states, which can be directly controlled by the neural network. These storage elements can also be substituted with another network or graph that incorporates time delays or feedback loops. These controlled states are often referred to as gated states or gated memory and play a role in long short-term memory networks (LSTMs) and gated recurrent units. This architecture is sometimes known as a Feedback Neural Network (FNN).</li>
+  <li>Recurrent Neural Networks (RNN) are a type of artificial neural network that’s well-suited for processing sequential data. Unlike feedforward neural networks, which process inputs independently, RNNs possess a form of internal memory that allows them to take into account previous inputs in the sequence when producing the current output.</li>
+</ul>
+
+<h3 id="how-does-an-rnn-work-internally">How Does an RNN Work Internally?</h3>
+<ul>
+  <li>The key to an RNN’s design is a hidden state, which acts as the network’s memory. For each element in a sequence, the RNN performs a computation that includes both the current input and the previously computed hidden state. The result of this computation becomes the new hidden state, which gets passed on to the next step.</li>
+  <li>Mathematically, this can be described as:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code0"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code0">hidden_state_t = f(U*input_t + W*hidden_state_t-1)
+</code></pre></div></div>
+
+<ul>
+  <li>Where:</li>
+  <li><code class="language-plaintext highlighter-rouge">input_t</code> is the current input</li>
+  <li><code class="language-plaintext highlighter-rouge">hidden_state_t</code> is the current hidden state</li>
+  <li><code class="language-plaintext highlighter-rouge">hidden_state_t-1</code> is the previous hidden state</li>
+  <li><code class="language-plaintext highlighter-rouge">U</code> and <code class="language-plaintext highlighter-rouge">W</code> are weight matrices</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">f</code> is an activation function, such as tanh or ReLU</p>
+  </li>
+  <li>This structure forms a loop, or recurrence, that allows information to be carried across steps in the sequence.</li>
+</ul>
+
+<h3 id="what-tasks-are-rnns-used-for-in-nlp">What Tasks are RNNs Used for in NLP?</h3>
+<ul>
+  <li>Given their ability to process sequential data, RNNs are commonly used in many NLP tasks, including:
+    <ol>
+      <li><strong>Sentiment Analysis:</strong> RNNs can analyze sequences of words to determine the sentiment expressed in text, such as identifying whether a product review is positive or negative.</li>
+      <li><strong>Text Generation:</strong> RNNs can generate human-like text by predicting the next word in a sequence given the previous words.</li>
+      <li><strong>Machine Translation:</strong> RNNs can be used in systems that translate text from one language to another.</li>
+      <li><strong>Speech Recognition:</strong> RNNs can transcribe spoken language into written text.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="benefits-of-rnns">Benefits of RNNs</h3>
+<ol>
+  <li><strong>Ability to Handle Sequences:</strong> RNNs are designed to effectively handle sequential data, making them particularly well-suited for NLP tasks.</li>
+  <li><strong>Memory of Past Information:</strong> The hidden state acts as a form of memory, allowing an RNN to take into account prior context when making a decision.</li>
+</ol>
+
+<h3 id="cons-of-rnns">Cons of RNNs</h3>
+<ol>
+  <li><strong>Vanishing Gradient Problem:</strong> During training, RNNs can suffer from the vanishing gradient problem, where the contributions of information decay geometrically over time, making it difficult for the RNN to learn long-range dependencies.</li>
+  <li><strong>Difficulty with Long Sequences:</strong> Related to the vanishing gradient problem, RNNs can struggle with long sequences, as the information from early steps in the sequence can be diluted by the time it reaches the end.</li>
+  <li><strong>Computational Intensity:</strong> Because of their sequential nature, RNNs can be slow to train, as it’s difficult to parallelize the computations.
+    <ul>
+      <li>To address some of these issues, variants of RNNs like Long Short-Term Memory units (LSTM) and Gated Recurrent units (GRU) were developed. They introduce concepts of gating and memory cells that can control the flow of information and effectively capture long-term dependencies in the data.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="long-short-term-memory-lstm">Long Short-Term Memory (LSTM)</h3>
+<ul>
+  <li>LSTMs are a special kind of RNN, capable of learning long-term dependencies, which makes them exceptionally well-suited for many NLP tasks. They work on the principle of selectively remembering patterns over a duration of time.</li>
+  <li>Unlike traditional RNNs, LSTMs use a series of “gates” to control the flow of information into and out of the memory, mitigating the vanishing gradient problem and allowing the model to learn from data where relevant events are separated by large gaps.</li>
+  <li>Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) designed to learn from experience to classify, process, and predict time series when there are very long time lags of unknown size between important events. As a special kind of RNN, LSTMs are particularly well-suited for many NLP tasks.</li>
+  <li>The image below <a href="https://en.wikipedia.org/wiki/Long_short-term_memory#/media/File:LSTM_cell.svg">(source)</a>, displays the gates of LSTMs.</li>
+</ul>
+
+<p><img src="/primers/ai/assets/architectures/lstm.webp" alt=""></p>
+
+<h3 id="how-does-an-lstm-work-internally">How Does an LSTM Work Internally?</h3>
+<ul>
+  <li>The secret sauce of LSTMs is their ability to remember and recall information for an extended period. This capability is facilitated by a complex system of “gates”. An LSTM unit includes an input gate, forget gate, and output gate, each playing a specific role:</li>
+</ul>
+
+<ol>
+  <li><strong>Input Gate:</strong> Decides how much of the incoming information to store in the cell state.</li>
+  <li><strong>Forget Gate:</strong> Determines how much of the existing cell state to retain.</li>
+  <li><strong>Output Gate:</strong> Decides what information from the current cell state to output.</li>
+</ol>
+
+<ul>
+  <li>Mathematically, these operations are represented as:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code1"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code1">forget_gate = sigmoid(W_f*[h_t-1, x_t] + b_f)
+input_gate = sigmoid(W_i*[h_t-1, x_t] + b_i)
+output_gate = sigmoid(W_o*[h_t-1, x_t] + b_o)
+new_memory_cell = tanh(W_c*[h_t-1, x_t] + b_c)
+cell_state_t = forget_gate*cell_state_t-1 + input_gate*new_memory_cell
+hidden_state_t = output_gate*tanh(cell_state_t)
+</code></pre></div></div>
+
+<ul>
+  <li>Where:</li>
+  <li><code class="language-plaintext highlighter-rouge">h_t-1</code> is the previous hidden state</li>
+  <li><code class="language-plaintext highlighter-rouge">x_t</code> is the current input</li>
+  <li><code class="language-plaintext highlighter-rouge">cell_state_t</code> is the current cell state</li>
+  <li><code class="language-plaintext highlighter-rouge">W</code> and <code class="language-plaintext highlighter-rouge">b</code> are weight matrices and bias vectors</li>
+  <li><code class="language-plaintext highlighter-rouge">sigmoid</code> and <code class="language-plaintext highlighter-rouge">tanh</code> are activation functions</li>
+</ul>
+
+<h3 id="what-tasks-are-lstms-used-for-in-nlp">What Tasks are LSTMs Used for in NLP?</h3>
+<ul>
+  <li>LSTMs are well-suited for classifying, processing, and making predictions based on time series data, which makes them exceptionally useful for many NLP tasks, including:
+    <ol>
+      <li><strong>Machine Translation:</strong> LSTMs can be used in sequence-to-sequence prediction problems, such as translating English text to French text.</li>
+      <li><strong>Text Generation:</strong> LSTM’s ability to remember long sequences makes it excellent for generating sentences or even whole paragraphs of text.</li>
+      <li><strong>Speech Recognition:</strong> LSTMs are used in transcription services to convert spoken language into written form.</li>
+      <li><strong>Sentiment Analysis:</strong> LSTMs can analyze context over longer sequences, making them effective at understanding the sentiment expressed in sentences or even whole documents.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="benefits-of-lstms">Benefits of LSTMs</h3>
+<ol>
+  <li><strong>Long-Range Dependencies:</strong> LSTMs can capture long-term dependencies and patterns in sequence data due to the gating mechanism, which is not possible with traditional RNNs.</li>
+  <li><strong>Avoiding the Vanishing Gradient Problem:</strong> LSTMs tackle the vanishing gradient problem effectively, allowing them to learn from data where relevant events are separated by large time lags.</li>
+</ol>
+
+<h3 id="cons-of-lstms">Cons of LSTMs</h3>
+<ol>
+  <li><strong>Computational Complexity:</strong> Due to the complex gating mechanism, LSTMs require more computational resources and can be slower to train compared to simpler models like the basic RNN or GRU.</li>
+  <li><strong>Requires Large Datasets:</strong> To realize their full potential, LSTMs typically require large amounts of data and may not be suitable for tasks with limited data.</li>
+  <li><strong>Overfitting:</strong> Without careful design and regularization, LSTM models might overfit to the training data, especially when the dataset is small.
+    <ul>
+      <li>By addressing the shortcomings of basic RNNs and providing a way to capture long-term dependencies in sequence data, LSTMs represent a major advancement in the field of NLP and continue to be a key tool in many state-of-the-art systems.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="gated-recurrent-units-gru">Gated Recurrent Units (GRU)</h2>
+<ul>
+  <li>The GRU is the newer generation of Recurrent Neural networks and is pretty similar to an LSTM. GRUs, however, combine the forget and input gates into a single “update gate”. They also merge the cell state and hidden state, resulting in a simpler model. While this can make GRUs computationally more efficient than LSTMs, the choice between GRU and LSTM usually depends on the specific requirements of a task and the data available.</li>
+  <li>Gated Recurrent Units (GRU) is a type of recurrent neural network introduced by Kyunghyun Cho in 2014. They are similar to the more widely known Long Short-Term Memory (LSTM) units but are somewhat simpler and thus computationally more efficient.</li>
+</ul>
+
+<h3 id="how-does-a-gru-work-internally">How Does a GRU Work Internally?</h3>
+<ul>
+  <li>A GRU has two gates (update and reset) and two states (hidden state and new memory), compared to the LSTM’s three gates and two states. Here’s a breakdown of each component:
+    <ol>
+      <li><strong>Update Gate:</strong> Determines how much of the previous hidden state to keep around. If the update gate is close to 1, the previous hidden state is mostly passed along to the next time step.</li>
+      <li><strong>Reset Gate:</strong> Determines how much of the previous hidden state to forget.</li>
+    </ol>
+  </li>
+  <li>
+    <p>The main difference compared to LSTM is that in a GRU, the hidden state and cell state are combined into a single hidden state. The GRU’s hidden state can directly feed into the next layer of a neural network, which can make it more efficient.</p>
+  </li>
+  <li>Mathematically, these operations are represented as:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code2"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code2">update_gate = sigmoid(W_u*[h_t-1, x_t] + b_u)
+reset_gate = sigmoid(W_r*[h_t-1, x_t] + b_r)
+new_memory = tanh(W*[reset_gate*h_t-1, x_t] + b)
+hidden_state_t = (1 - update_gate)*new_memory + update_gate*h_t-1
+</code></pre></div></div>
+
+<ul>
+  <li>Where:</li>
+  <li><code class="language-plaintext highlighter-rouge">h_t-1</code> is the previous hidden state</li>
+  <li><code class="language-plaintext highlighter-rouge">x_t</code> is the current input</li>
+  <li><code class="language-plaintext highlighter-rouge">W</code> and <code class="language-plaintext highlighter-rouge">b</code> are weight matrices and bias vectors</li>
+  <li><code class="language-plaintext highlighter-rouge">sigmoid</code> and <code class="language-plaintext highlighter-rouge">tanh</code> are activation functions</li>
+</ul>
+
+<h3 id="what-tasks-are-grus-used-for-in-nlp">What Tasks are GRUs Used for in NLP?</h3>
+<ul>
+  <li>Like LSTMs, GRUs are used for a range of NLP tasks, including:
+    <ol>
+      <li><strong>Machine Translation:</strong> GRUs can translate text from one language to another by understanding the context of each word in a sentence.</li>
+      <li><strong>Sentiment Analysis:</strong> GRUs can analyze sequences of words to determine the sentiment expressed in the text.</li>
+      <li><strong>Text Generation:</strong> GRUs can generate human-like text by predicting the next word in a sequence given the previous words.</li>
+      <li><strong>Named Entity Recognition:</strong> GRUs can classify words in a sentence into pre-defined categories like person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="benefits-of-grus">Benefits of GRUs</h3>
+<ol>
+  <li><strong>Efficiency:</strong> The GRU’s simpler structure means it’s easier to modify and computationally more efficient than the LSTM. It uses fewer resources and trains faster.</li>
+  <li><strong>Performance:</strong> Despite its simplicity, the GRU can perform as well as the LSTM on many tasks and is sometimes the preferred choice when computational resources are limited.</li>
+</ol>
+
+<h3 id="cons-of-grus">Cons of GRUs</h3>
+<ol>
+  <li><strong>Lack of Flexibility:</strong> The GRU’s simpler design makes it less flexible than the LSTM, which may limit its performance on certain tasks.</li>
+  <li><strong>Requires Large Datasets:</strong> Like LSTMs, GRUs typically require large amounts of data to realize their full potential and may not be suitable for tasks with limited data.
+    <ul>
+      <li>In conclusion, while GRUs are simpler and faster to compute than LSTMs, the choice between the two often depends on the specific requirements of the task and the computational resources available. It’s often worth trying both to see which performs better on a given task.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="convolutional-neural-networks-cnn">Convolutional Neural Networks (CNN)</h2>
+<ul>
+  <li>While CNNs are usually associated with image processing, they’ve also proven useful for NLP tasks. CNNs use a technique called convolution to focus on local regions of the input, identifying patterns in each region. This architecture can be used to identify local word patterns or n-grams in a sentence, providing a more global understanding of the text.</li>
+  <li>Convolutional Neural Networks (CNN) are a class of deep learning models primarily used for processing grid-like data such as images. However, their ability to identify local and shift-invariant features also makes them well-suited for certain Natural Language Processing (NLP) tasks.</li>
+</ul>
+
+<h3 id="how-does-a-cnn-work-internally">How Does a CNN Work Internally?</h3>
+<ul>
+  <li>In an NLP context, a sentence is often treated as a 1D sequence, with each word or character represented as a multi-dimensional vector (a point in high-dimensional space). The fundamental operation in a CNN is the convolution, which involves a filter (also called a kernel) that scans across the sequence and produces a new sequence that represents the presence of certain features.</li>
+  <li>These features could be as simple as the presence of a certain word or as complex as a particular sequence of words with specific semantic or syntactic properties. By stacking multiple convolutional layers with non-linear activation functions, a CNN can learn to identify complex features in the input data.</li>
+  <li>Max-pooling is another common operation in CNNs, which reduces the dimensionality of the data while preserving the most salient features. This operation helps make the model more efficient and less prone to overfitting.</li>
+</ul>
+
+<h3 id="what-tasks-are-cnns-used-for-in-nlp">What Tasks are CNNs Used for in NLP?</h3>
+<ol>
+  <li><strong>Text Classification:</strong> CNNs are highly effective at text classification tasks, such as sentiment analysis or topic categorization, where local features, like certain sequences of words or phrases, are highly predictive of the class.</li>
+  <li><strong>Named Entity Recognition:</strong> CNNs can identify named entities in text, such as names of people, organizations, locations, expressions of times, quantities, percentages, etc.</li>
+  <li><strong>Sentence Modeling:</strong> CNNs can be used to encode sentences in a dense vector space, where semantically similar sentences are close together.</li>
+</ol>
+
+<h3 id="benefits-of-cnns">Benefits of CNNs</h3>
+<ol>
+  <li><strong>Efficiency:</strong> CNNs tend to be more computationally efficient than RNNs for certain tasks, particularly on tasks with fixed-length inputs.</li>
+  <li><strong>Capture Local Features:</strong> CNNs are excellent at identifying local and shift-invariant features. In the context of NLP, this means they can detect meaningful phrases or combinations of words irrespective of their position in the sentence.</li>
+</ol>
+
+<h3 id="cons-of-cnns">Cons of CNNs</h3>
+<ol>
+  <li><strong>Limited Contextual Understanding:</strong> Unlike RNNs or Transformers, CNNs have a fixed-size receptive field (determined by the kernel size), which means they cannot natively incorporate context from words farther away. While this can be mitigated to some extent with larger kernel sizes and multiple layers, CNNs fundamentally have a more limited contextual understanding compared to some other model architectures.</li>
+  <li><strong>Struggle with Long Sequences:</strong> CNNs can struggle to handle long sequences effectively, especially when important features are dispersed across the sequence.
+    <ul>
+      <li>In summary, while CNNs might not be the first choice for many NLP tasks in the era of Transformers, they can still be an effective tool in the NLP toolkit, particularly for tasks involving classification or where the identification of local features is important.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="transformer-models"><a href="../transformers">Transformer Models</a></h2>
+<ul>
+  <li>Transformer models, introduced in the paper “Attention is All You Need” by Vaswani et al., brought a revolution in NLP. They rely entirely on a mechanism called self-attention, forgoing recurrence and convolutions.</li>
+  <li>Transformers handle ordering by injecting position-specific information into the input and can process all elements of a sequence in parallel, making them much more scalable than RNNs or LSTMs.</li>
+  <li>The Transformer is a type of deep learning model introduced in 2017 in the paper “Attention is All You Need” by Vaswani et al. It marked a departure from the recurrent style of models like LSTMs and GRUs, instead using a self-attention mechanism to process data. Transformers have proven to be highly effective and are at the heart of many state-of-the-art models in NLP, including BERT, GPT-3, and T5.</li>
+</ul>
+
+<h3 id="how-does-a-transformer-work-internally">How Does a Transformer Work Internally?</h3>
+<ul>
+  <li>A Transformer consists of an encoder and a decoder. Each of them is composed of a stack of identical layers. The layers in the encoder process the input data simultaneously rather than sequentially, which makes them highly parallelizable.</li>
+  <li>The key innovation in the Transformer model is the self-attention mechanism, also known as scaled dot-product attention. This allows the model to weigh the importance of different words in a sentence when generating an encoding for a particular word.</li>
+  <li>In more technical terms, for each word, the transformer generates a Query, a Key, and a Value (Q, K, and V). These are vectors that are computed from the word’s embedding. The attention score for a given word is then calculated as the dot product of the Query with all Keys, followed by a softmax operation.</li>
+  <li>The final output of the attention layer for each word is a weighted sum of all Values, where the weights are the attention scores. This process allows the model to focus on different words to varying degrees when encoding each word.</li>
+</ul>
+
+<h3 id="what-tasks-are-transformers-used-for-in-nlp">What Tasks are Transformers Used for in NLP?</h3>
+<ul>
+  <li>Transformers have been successful across a wide range of NLP tasks:
+    <ol>
+      <li><strong>Machine Translation:</strong> Transformers have achieved state-of-the-art performance on tasks like translating English text to German and French.</li>
+      <li><strong>Text Summarization:</strong> Transformers can condense a long document into a short summary while maintaining the main points of the original text.</li>
+      <li><strong>Question Answering:</strong> Transformers can understand a passage of text and answer questions about its content.</li>
+      <li><strong>Sentiment Analysis:</strong> Transformers can classify text as expressing positive, negative, or neutral sentiment.</li>
+      <li><strong>Text Generation:</strong> Transformers can generate human-like text given some initial prompt.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="benefits-of-transformers">Benefits of Transformers</h3>
+<ol>
+  <li><strong>Parallelization:</strong> Unlike RNNs and their variants, Transformers don’t require sequential data processing, making them much more efficient on modern hardware, which is designed for parallel operations.</li>
+  <li><strong>Long-Range Dependencies:</strong> The self-attention mechanism allows Transformers to handle long-range dependencies in text more effectively than RNNs.</li>
+  <li><strong>Versatility:</strong> Transformers have proven to be highly effective on a wide range of NLP tasks, and are the backbone of many state-of-the-art NLP models.</li>
+</ol>
+
+<h3 id="cons-of-transformers">Cons of Transformers</h3>
+<ol>
+  <li><strong>Resource Intensive:</strong> Transformers can require significant computational resources and memory, particularly for longer sequences. This is due in part to the self-attention mechanism, which is quadratic in the sequence length.</li>
+  <li><strong>Overfitting:</strong> Like other deep learning models, Transformers can overfit to the training data, especially when the dataset is small.
+    <ul>
+      <li>Transformers have revolutionized the field of NLP and are likely to remain at the forefront of research in the coming years. Their success has also spurred interest in developing more efficient and powerful variants, such as the Transformer-XL and the Reformer.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="bert-gpt-and-other-variants">BERT, GPT, and Other Variants</h2>
+<ul>
+  <li>Building on the Transformer architecture, models like BERT (Bidirectional Encoder Representations from Transformers) and GPT (Generative Pretrained Transformer) have significantly improved performance on a wide range of NLP tasks.</li>
+  <li>BERT uses the Transformer’s encoder mechanism in a bidirectional manner to understand the context of each word in relation to all its surrounding words. On the other hand, GPT uses the Transformer’s decoder mechanism and learns to predict the next word in a sequence, gaining a comprehensive understanding of language syntax and semantics.</li>
+  <li>The choice of architecture often depends on the specific requirements of the task at hand, including the amount of data available, the complexity of the task, and the computational resources at one’s disposal. However, as the field continues to evolve, we can look forward to even more sophisticated models that push the boundaries of what’s possible in NLP.</li>
+  <li>BERT, introduced by Google in 2018, is a Transformer-based model that stands for Bidirectional Encoder Representations from Transformers. It is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context. This allows the model to learn the context of a word based on all of its surroundings (left and right of the word).</li>
+  <li>Unlike previous models, BERT is designed to pre-train deep bidirectional representations. This is achieved by using a novel technique called Masked Language Model (MLM) training. In this, some percentage of the input data is masked at random, and then the model is trained to predict the original dictionary id of the masked word based only on its context.</li>
+  <li>BERT has significantly improved the state-of-the-art performance on a wide array of NLP tasks, such as question answering, named entity recognition, and sentiment analysis.</li>
+  <li><strong>BERT Variants:</strong> Following the success of BERT, a number of variants have been introduced:</li>
+  <li><strong>RoBERTa (Robustly optimized BERT approach)</strong> is a variant of BERT that uses dynamic masking rather than static masking and trains on more data. It also removes the next sentence prediction task during pre-training and trains for longer, leading to improved performance.</li>
+  <li><strong>DistilBERT</strong> is a smaller, faster and lighter version of BERT that retains 95% of BERT’s performance while being 60% smaller and 6 times faster.</li>
+  <li><strong>ALBERT (A Lite BERT)</strong> reduces parameter redundancy by sharing parameters across layers. It also uses sentence-order prediction as an auxiliary task, leading to better performance on downstream tasks.</li>
+</ul>
+
+<h3 id="gpt-generative-pretrained-transformer">GPT (Generative Pretrained Transformer)</h3>
+<ul>
+  <li>GPT, introduced by OpenAI, is a Transformer-based model that is trained to predict the next word in a sequence of words. It is a unidirectional model, meaning that it uses only the left context (words to the left of the current word) during training.</li>
+  <li>The strength of GPT lies in its ability to generate coherent and contextually rich sentences. It has been widely used for tasks such as text generation, translation, and summarization.
+<strong>GPT Variants:</strong> There are several updated versions of GPT:</li>
+  <li><strong>GPT-2</strong> is an improved version of GPT that scales up the model size and training data. It has 1.5 billion parameters and has been found to generate impressively human-like text.</li>
+  <li><strong>GPT-3</strong> takes this scaling even further and has 175 billion parameters. It demonstrates strong performance even on tasks it has not been specifically trained on, which is a phenomenon known as “zero-shot learning.”</li>
+  <li><strong>GPT-4 (ChatGPT)</strong> is the model that you’re currently interacting with! As of my knowledge cutoff in September 2021, GPT-4 hasn’t been released yet. However, OpenAI has been regularly releasing updates and improvements to their models.</li>
+  <li>In conclusion, both BERT and GPT have significantly contributed to the advancement of NLP and have laid the groundwork for even more powerful and efficient models in the future.</li>
+</ul>
+
+<h2 id="multilayer-perceptron">Multilayer Perceptron</h2>
+<ul>
+  <li>A Multilayer Perceptron (MLP) is a class of feedforward artificial neural network that consists of at least three layers of nodes: an input layer, one or more hidden layers, and an output layer. Except for the input nodes, each node is a neuron that uses a nonlinear activation function.</li>
+  <li>In the context of Natural Language Processing (NLP), MLPs can be used, but they are not as common or effective as other architectures like RNNs, LSTMs, GRUs, CNNs, or Transformers for most tasks. This is primarily because MLPs do not handle sequential data well.</li>
+  <li>However, MLPs can be utilized effectively in certain NLP scenarios:
+    <ol>
+      <li><strong>Text Classification:</strong> MLPs can be used for document or text classification tasks. For example, an MLP can be trained to perform sentiment analysis, spam detection, or topic categorization. In this case, the input to the network is usually a fixed-length vector that represents a text document, which could be a bag-of-words vector, TF-IDF vector, or a vector produced by another method like word embeddings.</li>
+      <li><strong>Language Modeling:</strong> In the context of language modeling, MLPs can be used to predict the next word in a sentence given the previous words. However, in this case, the MLP is generally less effective than other types of networks like RNNs or transformers, which can model the temporal dynamics of language more accurately.</li>
+      <li><strong>Word Embeddings:</strong> MLPs can be used in the creation of word embeddings. For example, the Word2Vec algorithm uses a simplified form of a neural network, which can be considered an MLP, to create word embeddings.</li>
+    </ol>
+  </li>
+  <li>The primary limitation of MLPs for NLP is that they treat the input data as independent objects. In other words, they do not consider the sequential nature of the text (i.e., the order of the words), which is a fundamental characteristic of human language. This is why more advanced architectures like RNNs, LSTMs, GRUs, and Transformers, which can process sequential data, are typically preferred for NLP tasks.</li>
+</ul>
+
+<h2 id="resnets">ResNets</h2>
+<ul>
+  <li>ResNets, or Residual Networks, were first introduced in the paper “Deep Residual Learning for Image Recognition” by Kaiming He et al. in 2015 for image recognition tasks. The key innovation in ResNets is the introduction of “skip connections” (also known as “shortcuts” or “residual connections”) that allow the gradient to be directly backpropagated to earlier layers.</li>
+  <li>While originally developed for computer vision tasks, variations of ResNet architectures have been used for Natural Language Processing (NLP) tasks, although they are less common than recurrent architectures (like LSTMs and GRUs) or transformer architectures.</li>
+  <li>Skip connections or residual networks feed the output of a layer to the input of the subsequent layers, skipping intermediate operations.</li>
+  <li>They appear in the Transformer architecture, which is the base of GPT4 and other language models, and in most computer vision networks.</li>
+  <li>Residual connections have several advantages:
+    <ol>
+      <li>They reduce the vanishing gradient since the gradient value is transferred through the network.</li>
+      <li>They allow later layers to learn from features generated in the initial layers. Without the skip connection, that initial info would be lost.</li>
+      <li>They help to maintain the gradient surface smooth and without too many saddle points.</li>
+    </ol>
+  </li>
+  <li>This keeps gradient descent to get stuck in local minima, in other words, the optimization process is more robust and then we can use deeper networks.</li>
+  <li>ResNet paper was published at the end of 2015 and was very influential because, for the first time, a network with 152 layers surpassed the human performance in image classification.</li>
+  <li>Deep learning is based on two competing forces: the more layers, the higher the generalization power of the network, however, the more layers, the more difficult is to optimize.</li>
+  <li>In other words, the deeper the network, the better it models the real world in theory, however, it is very difficult to train in practice.</li>
+  <li>ResNet was a very important step to solve this problem.</li>
+</ul>
+
+<p><img src="/primers/ai/assets/interview/resnet.jpeg" alt=""></p>
+
+<h2 id="how-does-resnet-50-solve-the-vanishing-gradients-problem-of-vgg-16">How Does ResNet-50 Solve the Vanishing Gradients Problem of VGG-16?</h2>
+
+<ul>
+  <li>During the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) that with the increase in the number of layers the deep learning models will perform better because of more parameters. However, because of more number of layers, there was a problem with vanishing gradients. In fact, the authors of ResNet, in the original paper, noticed that neural networks without residual connections don’t learn as well as ResNets, although they are using batch normalization, which, in theory, ensures that gradients should not vanish.</li>
+  <li>Enter ResNet that utilize skip connections under-the-hood.</li>
+  <li>The skip connections allow information to skip layers, so, in the forward pass, information from layer l can directly be fed into layer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 2.034em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.669em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1001.67em, 2.398em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-4" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-5" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.122em; border-left: 0px solid; width: 0px; height: 1.003em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi><mo>+</mo><mi>t</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">l+t</script> (i.e., the activations of layer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-6" style="width: 0.315em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.263em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.26em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">l</script> are added to the activations of layer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;$&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-9" style="width: 4.794em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.961em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1003.96em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-10"><span class="mi" id="MathJax-Span-11" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-13" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="texatom" id="MathJax-Span-14"><span class="mrow" id="MathJax-Span-15"><span class="mo" id="MathJax-Span-16" style="font-family: STIXGeneral-Regular;">$</span></span></span><span class="mo" id="MathJax-Span-17" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-18" style="font-family: STIXGeneral-Italic; padding-left: 0.211em;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span><span class="mi" id="MathJax-Span-19" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-20" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi><mo>+</mo><mi>t</mi><mrow class="MJX-TeXAtom-ORD"><mo>$</mo></mrow><mo>,</mo><mi>f</mi><mi>o</mi><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">l+t$, for</script>t &gt;= 2<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-21" style="width: 35.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 29.898em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1029.9em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-22"><span class="mi" id="MathJax-Span-23" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-24" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-25" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mo" id="MathJax-Span-26" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-27" style="font-family: STIXGeneral-Italic; padding-left: 0.211em;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mi" id="MathJax-Span-28" style="font-family: STIXGeneral-Italic;">u</span><span class="mi" id="MathJax-Span-29" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-30" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-31" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-32" style="font-family: STIXGeneral-Italic;">g</span><span class="mi" id="MathJax-Span-33" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-34" style="font-family: STIXGeneral-Italic;">h</span><span class="mi" id="MathJax-Span-35" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-36" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span><span class="mi" id="MathJax-Span-37" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-38" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-39" style="font-family: STIXGeneral-Italic;">w</span><span class="mi" id="MathJax-Span-40" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-41" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-42" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mi" id="MathJax-Span-43" style="font-family: STIXGeneral-Italic;">p</span><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-45" style="font-family: STIXGeneral-Italic;">s</span><span class="mi" id="MathJax-Span-46" style="font-family: STIXGeneral-Italic;">s</span><span class="mo" id="MathJax-Span-47" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-48" style="font-family: STIXGeneral-Italic; padding-left: 0.211em;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-49" style="font-family: STIXGeneral-Italic;">h</span><span class="mi" id="MathJax-Span-50" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-51" style="font-family: STIXGeneral-Italic;">g</span><span class="mi" id="MathJax-Span-52" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-53" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-54" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mi" id="MathJax-Span-55" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-56" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-57" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-58" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-59" style="font-family: STIXGeneral-Italic;">s</span><span class="mi" id="MathJax-Span-60" style="font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-61" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-62" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-63" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-64" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-65" style="font-family: STIXGeneral-Italic;">s</span><span class="mi" id="MathJax-Span-66" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-67" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span><span class="mi" id="MathJax-Span-68" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-69" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-70" style="font-family: STIXGeneral-Italic;">w</span><span class="mi" id="MathJax-Span-71" style="font-family: STIXGeneral-Italic;">u</span><span class="mi" id="MathJax-Span-72" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-73" style="font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-74" style="font-family: STIXGeneral-Italic;">h</span><span class="mi" id="MathJax-Span-75" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-76" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-77" style="font-family: STIXGeneral-Italic;">g</span><span class="mi" id="MathJax-Span-78" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-79" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mi" id="MathJax-Span-80" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span><span class="mi" id="MathJax-Span-81" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-82" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-83" style="font-family: STIXGeneral-Italic;">m</span><span class="mi" id="MathJax-Span-84" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-85" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-86" style="font-family: STIXGeneral-Italic;">y</span><span class="mi" id="MathJax-Span-87" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-88" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mi>n</mi><mi>d</mi><mo>,</mo><mi>d</mi><mi>u</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>w</mi><mi>a</mi><mi>r</mi><mi>d</mi><mi>p</mi><mi>a</mi><mi>s</mi><mi>s</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>g</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>s</mi><mi>c</mi><mi>a</mi><mi>n</mi><mi>a</mi><mi>l</mi><mi>s</mi><mi>o</mi><mi>f</mi><mi>l</mi><mi>o</mi><mi>w</mi><mi>u</mi><mi>n</mi><mi>c</mi><mi>h</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>e</mi><mi>d</mi><mi>f</mi><mi>r</mi><mi>o</mi><mi>m</mi><mi>l</mi><mi>a</mi><mi>y</mi><mi>e</mi><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">and, during the forward pass, the gradients can also flow unchanged from layer</script>l+t<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-89" style="width: 3.388em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.815em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1002.82em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-90"><span class="mi" id="MathJax-Span-91" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-92" style="font-family: STIXGeneral-Italic;">o</span><span class="mi" id="MathJax-Span-93" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-94" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-95" style="font-family: STIXGeneral-Italic;">y</span><span class="mi" id="MathJax-Span-96" style="font-family: STIXGeneral-Italic;">e</span><span class="mi" id="MathJax-Span-97" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mi>o</mi><mi>l</mi><mi>a</mi><mi>y</mi><mi>e</mi><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-5">to layer</script>l$$. This prevents the vanishing gradient problem (VGP). Let’s explain how.</li>
+  <li>The VGP occurs when the elements of the gradient (the partial derivatives with respect to the parameters of the network) become exponentially small, so that the update of the parameters with the gradient becomes almost insignificant (i.e., if you add a very small number <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;mo&gt;&amp;lt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-98" style="width: 5.263em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.378em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1004.27em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-99"><span class="mn" id="MathJax-Span-100" style="font-family: STIXGeneral-Regular;">0</span><span class="mo" id="MathJax-Span-101" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">&lt;</span><span class="mi" id="MathJax-Span-102" style="font-family: STIXGeneral-Italic; padding-left: 0.315em;">ϵ</span><span class="mo" id="MathJax-Span-103" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">&lt;<span style="font-family: STIXGeneral-Regular; font-style: normal; font-weight: normal;">&lt;</span></span><span class="mn" id="MathJax-Span-104" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>&lt;</mo><mi>ϵ</mi><mo>&lt;&lt;</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-6">0 < \epsilon << 1</script> to another number <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;$&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-105" style="width: 1.565em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.305em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1001.25em, 2.503em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-106"><span class="mi" id="MathJax-Span-107" style="font-family: STIXGeneral-Italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="texatom" id="MathJax-Span-108"><span class="mrow" id="MathJax-Span-109"><span class="mo" id="MathJax-Span-110" style="font-family: STIXGeneral-Regular;">$</span></span></span><span class="mo" id="MathJax-Span-111" style="font-family: STIXGeneral-Regular;">,</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mrow class="MJX-TeXAtom-ORD"><mo>$</mo></mrow><mo>,</mo></math></span></span><script type="math/tex" id="MathJax-Element-7">d$,</script>d+\epsilon$$ is almost the same as d and, consequently, the network learns very slowly or not at all (considering also numerical errors).</li>
+  <li>Given that these partial derivatives are computed with the chain rule, this can easily occur, because you keep on multiplying small (finite-precision) numbers.</li>
+  <li>The deeper the network, the more likely the VGP can occur. This should be quite intuitive if you are familiar with the chain rule and the back-propagation algorithm (i.e. the chain rule).</li>
+  <li>By allowing information to skip layers, layer l+t receives information from both layer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-112" style="width: 3.909em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.232em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1003.13em, 2.503em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-113"><span class="mi" id="MathJax-Span-114" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-115" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-116" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-117" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">−</span><span class="mn" id="MathJax-Span-118" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi><mo>+</mo><mi>t</mi><mo>−</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-8">l+t−1</script> and layer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-119" style="width: 0.315em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.263em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.26em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-120"><span class="mi" id="MathJax-Span-121" style="font-family: STIXGeneral-Italic;">l<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi></math></span></span><script type="math/tex" id="MathJax-Element-9">l</script> (unchanged, i.e., you do not perform multiplications).</li>
+  <li>From the <a href="https://arxiv.org/abs/1605.06431">paper</a>: “Our results reveal one of the key characteristics that seem to enable the training of very deep networks: Residual networks avoid the vanishing gradient problem by introducing short paths which can carry gradient throughout the extent of very deep networks.”</li>
+</ul>
+
+<h3 id="how-do-resnets-work">How Do ResNets Work?</h3>
+<ul>
+  <li>A standard neural network processes data through a series of layers. In a ResNet, the main difference is that the input to a layer is not only processed and passed to the next layer, but it’s also added to the output of a later layer (typically 2-3 layers down the line). This is the “skip connection”.</li>
+  <li>These skip connections help to alleviate the “vanishing gradient” problem that can occur during backpropagation in very deep neural networks. This problem can lead to earlier layers learning very slowly, as they receive very little gradient information. By providing a path to earlier layers, skip connections allow these layers to learn more effectively.</li>
+</ul>
+
+<h3 id="resnets-in-nlp">ResNets in NLP</h3>
+<ul>
+  <li>In NLP tasks, the input data are typically sequences (i.e., sentences or documents) rather than images. However, some of the principles of ResNets can be applied to sequence data. For example, the idea of skip connections can be incorporated into recurrent architectures, creating what’s sometimes called a Residual LSTM or Residual GRU.</li>
+  <li>Also, convolutional layers (which are a key component of ResNets in the image domain) can be used to process sequence data by treating the sequence as a 1D “image”. In this case, the convolutional layers can extract local features (i.e., n-grams) from the sequence, and the ResNet architecture can allow for the learning of deeper representations.</li>
+  <li>However, it’s important to note that, while these architectures can be effective, they are less commonly used in NLP than in image processing. More commonly, researchers and practitioners in NLP use architectures like standard LSTMs/GRUs or Transformers, which are more naturally suited to sequence data.</li>
+</ul>
+
+<h3 id="benefits-of-resnets">Benefits of ResNets</h3>
+<ol>
+  <li><strong>Alleviate the vanishing gradient problem:</strong> The key advantage of ResNets is their ability to train very deep networks by alleviating the vanishing gradient problem through the use of skip connections.</li>
+  <li><strong>Ease of training:</strong> ResNets are easier to optimize and can gain accuracy from greatly increased depth.</li>
+</ol>
+
+<h3 id="cons-of-resnets">Cons of ResNets</h3>
+<ol>
+  <li><strong>Not naturally suited for sequence data:</strong> ResNets, as originally formulated, are not naturally suited to sequence data (like text), unlike RNNs or Transformer models.</li>
+  <li><strong>Complexity:</strong> While skip connections help to train deeper networks, they also add complexity to the model architecture.
+    <ul>
+      <li>In summary, while ResNets have proven hugely influential in image processing tasks, their application in NLP is less straightforward and less common. However, the principles of ResNets, such as skip connections, have been incorporated into other types of architectures used in NLP.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="vanishing-gradients">Vanishing Gradients</h3>
+<ul>
+  <li>The vanishing gradient problem occurs when the gradients used to update the weights during backpropagation diminish exponentially as they propagate through deep layers of a neural network. This can make it difficult for the network to learn and update the weights of early layers effectively.</li>
+  <li>When gradients become extremely small, the learning process slows down, and the network may struggle to converge or learn useful representations. The issue commonly arises in deep networks with many layers, such as recurrent neural networks (RNNs) or deep feedforward networks.</li>
+  <li>To mitigate the vanishing gradient problem, various techniques have been developed, including:
+    <ul>
+      <li>Activation functions: Replacing the sigmoid or hyperbolic tangent activation functions, which have a limited range of derivatives, with activation functions like ReLU (Rectified Linear Unit) that do not suffer from vanishing gradients.</li>
+      <li>Weight initialization: Properly initializing the weights of the network, such as using techniques like Xavier or He initialization, to ensure that the gradients neither vanish nor explode during backpropagation.</li>
+      <li>Gradient clipping: Limiting the magnitude of gradients during training to prevent them from becoming too large or too small.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="residual-connectionsskip-connections">Residual Connections/Skip Connections</h3>
+<ul>
+  <li>Residual connections, also known as skip connections, are a technique introduced in the “Deep Residual Learning for Image Recognition” paper by He et al. (2015). They address the problem of information degradation or loss in deep neural networks.</li>
+  <li>In a residual connection, the output of one layer (or a group of layers) is directly connected to the input of a subsequent layer. This creates a “shortcut” path that bypasses some of the layers. The key idea is to enable the network to learn residual functions that capture the difference between the desired output and the current representation.</li>
+  <li>By allowing the network to learn residual functions, the gradients have a shorter path to propagate through the network during backpropagation. This helps in mitigating the vanishing gradient problem and facilitates the training of very deep networks.</li>
+  <li>Residual connections have proven effective in improving the training and performance of deep neural networks, particularly in tasks such as image recognition, object detection, and natural language processing.</li>
+</ul>
+
+<h2 id="seq2seq-architecture-in-nlp">Seq2Seq Architecture in NLP</h2>
+<ul>
+  <li>Sequence-to-sequence (Seq2Seq) models are a type of model architecture used in the field of natural language processing (NLP) for tasks such as translation, summarization, and dialogue systems. As the name suggests, Seq2Seq models are designed to convert sequences from one domain (e.g., sentences in English) into sequences in another domain (e.g., the equivalent sentences in French).</li>
+  <li>A Seq2Seq model is made up of two main components: an encoder and a decoder.</li>
+</ul>
+
+<h3 id="encoder">Encoder</h3>
+<ul>
+  <li>The encoder processes the input sequence and compresses the information into a context vector, also known as the thought vector. Each element in the input sequence is typically represented as a one-hot vector or an embedded representation. The encoder processes the input sequence iteratively, updating its internal state at each step. The final state of the encoder is the context vector.</li>
+  <li>Encoder architectures often use recurrent neural networks (RNNs), with long short-term memory (LSTM) or gated recurrent unit (GRU) cells being popular choices due to their ability to handle long sequences and mitigate the vanishing gradient problem.</li>
+</ul>
+
+<h3 id="decoder">Decoder</h3>
+<ul>
+  <li>The decoder is responsible for generating the output sequence. It starts with the context vector produced by the encoder, and generates the output sequence one element at a time. At each step, the decoder is influenced by the context vector and its own internal state.</li>
+  <li>Like the encoder, the decoder often uses RNNs, LSTMs, or GRUs. However, instead of processing the entire input at once like the encoder, the decoder generates the output sequence step-by-step.</li>
+</ul>
+
+<h3 id="attention-mechanism">Attention Mechanism</h3>
+<ul>
+  <li>While not part of the original Seq2Seq architecture, the attention mechanism is now often incorporated into Seq2Seq models. The attention mechanism allows the model to focus on different parts of the input sequence at each step of output generation, providing a solution to the information bottleneck caused by trying to encode long sequences into a single context vector. The decoder uses the attention scores to weight the influence of the input sequence’s elements on each output element, helping the model handle long sequences more effectively.</li>
+</ul>
+
+<h3 id="applications">Applications</h3>
+
+<ul>
+  <li>Seq2Seq models have been used for numerous applications in NLP, including:
+    <ol>
+      <li><strong>Machine Translation</strong>: Translating text from one language to another.</li>
+      <li><strong>Text Summarization</strong>: Generating a short summary of a long text.</li>
+      <li><strong>Question Answering</strong>: Providing an answer to a question posed in natural language.</li>
+      <li><strong>Chatbots and Dialogue Systems</strong>: Generating responses to user inputs.
+        <ul>
+          <li>Seq2Seq models are a powerful tool in NLP, capable of transforming one sequence into another. With the addition of mechanisms like attention, they can handle tasks of increasing complexity and length.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+   <div align="center" class="wrap">
+      <div align="center" class="footer-col-1 column">
+         <ul>
+            <li>
+               
+               <span class="icon github">
+                  <a href="https://github.com/amanchadha">
+                     <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                           c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                           c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                           c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                           C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                           c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                           c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                           c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                           c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">amanchadha</span> -->
+                | 
+               <a href="https://citations.amanchadha.com/">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJoAAAVjBAMAAABzrVjQAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAElBMVEX///+xsLCxsLCxsLCx
+                        sLD///+bxiTSAAAABHRSTlMAAKP3FWDuDwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCa
+                        nBgAAAAHdElNRQfkBwQDMic2f+cwAAA03klEQVR42u2dW3IdOZJEu81mAcMqbOCacQMy0wImVNr/
+                        msZKKpVeuHkzEA8PIPx8douAh+MkkmKR1H/+QwghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQ
+                        QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIeQQ/vt2KOMzyeH/GtiE7rgP/3u+TQPdcRukgU3o
+                        jtsgb+fbNNAlt+GtgU3ojtsgDWxCd9yGT2/n2zTQJbfhrYFN6I7bIA1sGuiS2/DWwCZ0x214a2DT
+                        QJfcBelgE7rkNrw1sAndcRukgU0DXXIXvsl0tE3oktvwb+MH2zTQJXdBOtiELrkL32U62KaBbrkL
+                        P3R+rE1/oEvugnSwCV1yF/76sfRTbRrolrvwU+un2oQuuQvSwaaBbrkLP9d+qE3okrvwS+1n2jTQ
+                        LTdBOtj0J7rlLvxa/JE2oUvugnSwaaBbbsJvMh1pE7rlLvze/IE2DXTLTZAWNqFbbsKnSfXn2TTQ
+                        NTdh1v1xNg10y02QFjahW+7CtPzTbBrolpswb/80m9AtN0Fa2DTQNTfhSf2H2YRuuQmPFja9o2vu
+                        gTzr/yibBrrmJjw9gKNsQrfcBGlh00DX3IPnMh1lE7rmJlycwEE2DXTNPZAeNqFrbsLVEZxj00d0
+                        zT24PINjbBromnsgPWxC19yE60M4xaaBrrkHL07hFJvQNfdAetg00D334NUxHGITuuYeSA+b0DU3
+                        oYdNA11zE3rYhG65Cy1sGuiWu9DCJnTJbehg00CX3IYGNg10x31oYBO64kacb9NAV9yI821CN9yJ
+                        420a6IY7cbxN6IJbcbpNA11wKw63ib8YPJXDbULX24yzbRroeptxtk3odrtxtE0D3W43jrYJXW47
+                        TrbpHV1uOw62aaC77cfBNqGrbci5Ng10tQ051yZ0sx051qaBbrYjx9qELrYlp9qE7rUnh9o00L32
+                        5FCb0LU25UybBrrWppxpE7rVrhxp00C32pUjbUKX2pYTbfqILrUtB9o00J325UCb0JW2YEz/1/Ns
+                        GqpWyBIy5v/zcTahi27Bk2f2OJuGqhWyhDSx6Q900R2QtyY2oYtuwVsTm4aqFbKEdLEJXXQLnj+2
+                        Z9k0VK2QJS6aPssmdNEdkC42DVUtZImrqk+yaahaIUtIF5vQRXfgr8sn9yCbhqoWssR12QfZhC66
+                        A//qMq7/7+1tGqpayBIv2j7HJnTRHfhuy3jx/29u01DVQlaQV3WfYtNQ1UKWeNn3KTahi+7Aj66M
+                        l39iY5uGqhayxOvCD7EJXXQHPnSxaahqISvIjcbPsAnddAfuPL9H2PSObroBv4gy7vyhLW0aqlrI
+                        Erc6P8EmdNEdeHSxaahqISvIvdIPsAnddAduPsL72zRUtZAV5Gbr+9uEbroDd5/h7W1CF92BSe1j
+                        +gd3t2moaiEryO3ed7cJ3XQH7j/Fm9s0VLWQFeR+8ZvbhG66AZ8Uj/HeNg1VL2QFTfN724RuugFP
+                        BBmaP7yHTeimO/Ck+jH9wzvbNFS1kBVE1f3ONqGbbsBTPYbuj9e3aah6ISsoy9/YJnTTDXhux1D+
+                        +eo2DVUvZAVt+9vaxF8MHs+FHEP7AbVtQjfdgCs3hvojKts0VL2QFfT972oTuukGXKox9B9S16ah
+                        6oWssHAAm9qEbroBK4/znjYNVS9kAVk5gS1tGqpeyApLR7ClTeimG/DKi7H0URVtGqpeyAJ/rZ3B
+                        jjahq27A4hO9oU1D1QtZ4KUVb3+ufVw9m9BVN8BwBJvZNNBVn49YTuDyg6vZNG71QQy8kOnlx29k
+                        E7rqBpgPYBubBrrq8xHzATxfoZhN6Kob4HAAm9g00FWfj1wewLttjVo2oas+H3E5gC1sekd3fT7X
+                        BzBurvLMyUo23Z2FLCPXJ3B7nQ1sQlfdAK8TqG/TQFd9Pg+vE5DyNqGr/p1fAn5E57EiL05gWFeq
+                        Y9P9UVLYIqTLTN95v71SeZvQVd+tfaDDLSOOR1Dcpo/oru+XPtAJF3l5Bua1qthU5oReulQqrYbX
+                        Y5kXq2ITuur7ldfKe58bj4m5pyI2DXTXVx1N+dO+W7XZhnm1Ijahq/6C6DJ/ROf1Hm6Yl6thk2aO
+                        MPZM7TidZp7KNqGr/nzjR8yK5r7JnWmGYr3CNqGr/qx+yxVK7jfeMC9YwSbNFMi2N9bJ/Rzq2oSu
+                        2iBThfBu8w3zigVs0gyBLHtfnW7ON8xLFrAJ3bVNpgL5X3JzkGHuDG+TZoYQPlknQA/wCrk5xzCv
+                        CbcJ/4vB7TOgJ3AacCjWLGoTumoHmQo8EVfI3TGGeVG0TZoJQjhjigtuy3SATft0vatOMUOUtAl9
+                        Ck4yFf5RQMWEw7ws2CZ01+dM4jDhUCxb0SZNfnDVm+oUdRoFbUJ/x5mYJ1g8i5oTaiYoaBO4avOX
+                        LevrFDZAPZvQ9XvPAx5ngqjyD/PKSJu2qtr5NFJQfgegJn85m9DlnzeRcUJN/HI2gasW8wDlRjJO
+                        OMxr42zSZI/gxJlsE2rSy3QFmE3o4h8hU4GH+gnRhh/mxWE27Vb1HmP9gP7rH8PcH8omTfIITp3L
+                        MqEmu0xXQNkErlrMAxQdzDLhMC8PskkTPIJzJzNMqIku0xVANoGrFvMAZUczTDjM62NsQncdOZvm
+                        TMKQ6OTzDSA2oQtf6vo24OG+EH4s8wohNm3Z9T7jrT4uw7wDwiZN6jpd7zPf6uOiyT3vEGETumsx
+                        T1B8wMda7GHuEGCTJnQIp08oCbHnewBswladcDWhR1xNPcwl5tv0EVt1wtUEvpwkI/V8k3SboEWb
+                        ytaAHDDlaOYtptuE7NlWdtTBlJlPE1qmK2TbBKzZ3LYG2HiynllzNvNtsm2CtezQdtTJuJKUeV5j
+                        sk2wkj3aVgEaTwyRNYcz3yfXJvwvOrK0reIjZj5L5GHuMdcmTMOvWwhAczR+pEWe95hqE6Zhv7pV
+                        IKYTU2LN8cx3SrUJUbBn3WFn40Ve4nmRmTYh+r1VQgzbTac5n/lWmTbl1/sb0SOuHo4Lkhh4vlei
+                        Tent+vetI3u6zAOaN5lnkyZrFGKeovDE5uE0eeeb5dmUW+2c2Aktp1NhOE1ema6QZlNytYoK4kgd
+                        7kPqEc2rTLMptVlVBXFojqfAbJq48+2ybMos9imRA07ZazbNGcl0hSybkr1RNBCJ5nzws2nSzvdL
+                        simv1uDGlaTNln1I8y5zbNLkrN24ko87jaY5JZmukGNTvjkTlv6N+sQDMiDmoNqw8x1TbErqNKVy
+                        JTmj5R/TvMwUmxDuRFUeeELLiDmmOut8ywybUhp9TdR41yQM5vUK15yTTFfIsAlkz635w/kYP5lX
+                        1GFuM8Gmd4w99+YPR3NE4ME0UeebxtsUX+c9YqZ7zT6DaU5KpivE2wTTJ6r0wDNaQcwJV5LOdw23
+                        KbrM/NK1xM7l+I/saY5qXme4TUiDfuQRMh2+AcegQ7GtTFeItkmTcJfWK1Ug5nhrQef7RtsENegH
+                        nP/V1TIdeOYcin1lukKwTViFXk6fg+aUkGNpcs43jrUpsEclD//hCrQg5myrOec7x9qEdug7/rNV
+                        qME35lDsLNMVQm3SxAvGX5ECPYg52XLM+dahNqEVCus98Jg0AGPOC420KarEBcQ8jImYoR7A85oX
+                        GmkTWqEfcPcj7pyMB5qUcr55oE1og37E3Y8CXbiHHIrNZbpCnE2abNGIeRojW8ykObH57nE2oQ2K
+                        bT7woG6CDTlvNMymgP4qNa9lh5E0RybTFcJsQgsUXT24DjEn+p1h3j/KJk2yeAKqB/ch5kS2jPP9
+                        g2zC/2Lw6Oq1eM8UEHGYKw2yCe3PndFz8Z4pIOIwVxpjkyZXAhF2oCsRcyJTxPn2MTah9fmFCDvg
+                        nfgnHIrdZbpCiE2aWBnE6KGk/lCaY5PpCiE2oe25NXk2mrPCTKVJON89wibv3ur1vsKf5afSnNt8
+                        9wCbNKFS8O99Ce+x3ANqDm7eaYBNaHnia48/rPUDTQo439zfJu/S7MQJAi1GzIkMAeeb+9uEdud3
+                        4gTBNuOdbyj2lukK7jZpIuUg5pmceHcezDuf5ujmpbrbhHbn7uAANKeFGEyTb763t03ejRUsfZ3i
+                        g2nObr63s02aQFnEGqKh+GSaw5PpCs42oc1J6DzpuACTaeLJdAVfm7zrqth5oXrEnGg53nxrX5vQ
+                        4kyJdgTXj5gD/cQwb+1qkyZOGs6Vm3h3ns03neb45q262oQWRzE3Bs153QGXbt6qp03vaHEUc4Mo
+                        Pdsw7+xokyZMIr6NGyk9m+YA5zs72oTW5gkZkoQcWPpwmnAyXcHPJu+iShaeeWDpw2nCyXQFP5vQ
+                        1qQUbsZ5ODEH+oFh3tjNJk2UVJI0uYnzcGIOtHiE843dbEJLk9J37ollT6fJNt/Yyya0NDl9557Y
+                        HVDZ5rU62eRdkh9imCoC5/E8o2kOcV6rk01oZ7Rj4yg83jDv62OTJkcyiaIgqhJzoLVo8319bEIr
+                        c0GiKO5HljyfJppMV3Cxybuhom37UHc+zTHKdAUXm9DGJLXtQ935hmJbma7gYRNamKy2889s+VjD
+                        k823dbDJuZ6yZQPOLHdATbL5tg42oYXJKtuLsgMO87Z2mzQZ8nEs2wvnCf2CaU5y3qvdJrQvK1ND
+                        0RzaDTDB5r2abXLuxhtZGioU58Ywwea9Wm2q9YvB706NpeqEw7yr1Sa0La8AyJLcmZjzfGOYdzXa
+                        pAkAAWFLbmlizrOSa76r0Sa0LC9B2OJ5apkjanLJdAWbTc69BIDx5QVFR9ScpkxXsNmEdiWxak+K
+                        jjgUm8p0BZNNmu1BgHy5xndEMedZOM75phabvH+fegCfUMK4HdvqwQbHmm9qsQmtSmbTrmiOLXFG
+                        Taz5pgabfDuJwa1pX3yH9EqlOdB5sQab0KasDw3Hd0ivVMNc7LpNmr1hiG6mLHy7Q6SaF7tuE1oU
+                        w9BwNOf2GkSqebHLNvkWEoWoZkrDtzyvITWp5nuu2uTbRxheRXtTckjNmc73XLUJrUly0d6UHHKY
+                        91y0SbMxkgfUmaT+xBxHH2q+56JNaEvugnXG5+Be4vUFf00oma6wZpNrGZGgrckpEBBKpius2YSW
+                        JLtnfypOORRbynSFJZve0ZJk9+xPxSmHYkuZrrBik2ZXMGhpnlJxSs25ynSFFZvQiuT37I/m5BaP
+                        NjTTfMsFm1yLCAYtTU6JYo6jzjTfcsEmtCEa0NLktCjmNF8Y5i31Nmn2hIN25jmeU4o5jfpk51vq
+                        bUILogLtTE6NYk7zhWHeUm3TR7QgKtDO+BzdK/7KjyTTFbQ2eZaQANqZpCLzI8l0Ba1NaD0gNUeg
+                        ObqkMTWRZLqC0ibXDhJAO3NBvTE1hyvTFZQ2oe3A1BxCvTGHYkeZrqCzSbNfCdDKXFBvTM3pynQF
+                        nU1oOUA1h6A5u7WzjUw031FlE9oNPWhlnM5u7WwjE8131NjkOX8SaGWS2hRzGm2i+Y4am9BqLIBW
+                        5gLP3xgq5jR/M8w7KmzSbFYFtDJXOI4p5jDaA57vqLAJbcYKaGOS+hRzmL8Z5h3v26TZqwxoY65w
+                        HFPMYbQnPN/xtk2areqANiar0fRAMl3htk1oL4AtB6E5vJQ5NYFkusJdmzxHTwRtTFal6YFkusJd
+                        m9BaIFuOotqcQ7GhTFe4aZNmo0qghbmk2pyaQ5bpCjdtQlsBbTmKanMOxYYyXeGeTZp9SoEWxu30
+                        MubU5JHpCrds2uAXg0e2HIXm9F7wyM4j0xVu2YR2Yh20MG6n9wIxh1HmmW94xybHqbNBC+N2ei8Q
+                        cxhlnvmGd2xCK2EALcw1fnOKOctbkk2aTaqB9uUavznFnEV50PMNb9iENsIC2pdr/OYUc5a3HJve
+                        0UZYQPvid3zXiDmLMs58w5c2+U2MAO2L3/FdI+YsyjjzDV/ahPbBBtoXv+O7RsxZlHHmG76yyW9g
+                        CGhf/I7vGjFnUcaZb/jKJrQORtC+vMBtTjFHeUuwSbNBRdC6vKDWoEOxn0xXeGET2oYKJQdSa9Ch
+                        2E+mK1zbhJbBjLyVxm9QjzTDXOylTZrlayJvpfErODvNvNhLm9Au2JG30mjO75rsNPNir2zymxWG
+                        vJXGr+HsNPNir2xCq+CAvJVGc37XZKeZF3thk9+oOOStNm6DeoQZ5mIvbEKb4IG81cZtUI8ww1zs
+                        c5vQIrggrxoE4zaoR5hhLvapTZql60KbatiE9sCH6jZpDvCS2ja5jYmFNpWwCa2BE7Spgk1uU6JB
+                        60KbfH/DJxa0Lq+oNOdQ7KexCe2AH2hbaNM57znaVMAmtAKOoG2hTZpVq4O2hTahDfAEbYvnCUbP
+                        qcly2yavAUuAtqW7TV7z1QBtS3eb0Ofvi9ytkjZF2OQ1XhFoE9Qm9PE7U90mr75r2qRZcQdoE9Im
+                        9Ol7Q5uANmkW3ALahLNJs94e0CacTeiz96e8TZojvKCgTU6TlQJtS1+b0CcfAdqWtjY5DVYLtC1t
+                        bUIffAhoW7ra9D/ogw8BbctL6ow5FPu9tOm/6F5DekYPkTMlbfIcTjt2IWhTCrSJNvlBm2iTH7SJ
+                        NvnRxKZ32pRBE5t8xsxOMq/1eJvKf4mANm1Ucw+bPmUnkekKtAmNy5iSnWS+IW1CQ5v2qZk2xSSZ
+                        b0ib4NCmDJxscik6kjJD0ibaRJvch6NNyYXPN6RNcMoMSZtoE21yH+4K9ByvoE0Z0KbkGWnTATZ5
+                        zJkeRKYr0CY4tGmXlp8PXgfatEvLtCkoyLxU2gSHNu3SMm0KCjIvlTbBoU27tOxXdek5JT3IfEfa
+                        BIc2bdLyFjY5fDFc0guf70ib8NCmBNxs8uk6jioT0ibaRJvch2tu0yO98HmntAmPfcL8wueddrCp
+                        +qfhVQakTbSJNrkPR5uSC5fpCrQJT5UBaZNh9DJUmY820SbalNTyJja9F5mPNp1gk+YUadMqbjYV
+                        /zScNmVAm3LHo020iTbdw8+mD+hRLqFNGfjZJOYskdCmDGhT7nS0iTbRpnv42VT703DalAFtok11
+                        Wu5iEyKHTFdoYpOYwxSeE5FjXihtwkObdmiZNsXlmBfaxCaXf7+t6JyCyDHftIlNpT8Np00btEyb
+                        AnPMN6VNeGhTCo42uVUegNEmSI55n7QJD21KgTbRJj8cbar8iZPNJoHkmO9Km/DQphRoE23y493R
+                        Jr/S3bHZhMkxr7O0TbaaaVNgjnmdtAkPbdqg5rDWS40pmBzzbWkTHtpUv+YmNn3A5JDpCqVtcv0S
+                        gZjTRGGyCZRj3iZtwkObcvC0qe6rzmKTgHLM96VNeGhTDrSJNtXoObT4MlOicszLpE14aFP9nlvY
+                        5DoTbdKAniZgSkHlmG9Mm/DQpiRcbXKt3hGDTbAc8y5pEx7DSK45aFNvm3wnok0q0NO4DymuOY63
+                        STNgQ5twZct0hVY2iTlPCLQpCdpEm/z409Wmoq+6Kk/H8Ta1+DScNpVvesoDPY7vjM45aJMOMecJ
+                        QHOItAlU9fk2eU9Dm5Sgx3EdUYBB5nvTJjjLIyKDyHSF6jb94WuTmAP5Q5vyoE1ps9AmLehxJrzT
+                        pjTOt6nMKA1s0oy43AIU2pQHbUqbhDapQc/zO7SpftnH2+QfhDapEXMgZzRnSJus0KasOTrYtNj2
+                        U9DzOM33AZtEpivQJjSL84GTyHSF+jad/qp7LzMFbapxDvnjRUxBmxZAz+MyXkSSFjZphqRNSUXL
+                        dIWGNok5kSt1ZqBNC3xCD+Qw3Qd0FJmusIFNZ3/itGYTPIpMV+hok5gTObJkU8wEPWxaKpw2hUaZ
+                        J+hoU6lXXaEBaFOhw1hjJf9f+J5lusIONh39iVOh/LRpiUJfI9Cc4L8UyCLTFbawaalywHFkjVYg
+                        i0xX6GmTmCMhR4tK38Smgz9xWrGpQpZ5gz1tqvOqqxS+i03v3jY90BN9YyG7RGXpYpNmTuyJaFnI
+                        XqLleYF72OT8q3kjj0THymNSIoxMV9jDpmM/cVqwSUqEmafoapOYI7mwYFONMPP+NrFpoXXYoWjQ
+                        5w78Oj5tameT1Ch5HmMTm0591ZV6CmjTOuiJ/kZzfvEPQR+b9L2faVOVNDJdoa9NYs5kp9Yz0Mem
+                        M191tR6BRjZpRj3XpjIVy3SFxjaJOVP6TLGRG9l04qtObVOdODJdobNNj+1Gio3TySbNrJZGEikW
+                        mDaZ2G2iQnlkusI+NgW86sScyYTWpui4rWx6P80mbdzoPK1s0j7KBc7nmmrut7LptFed9ukoFWje
+                        XG+boJeT0iYpFWieZiebtA9zcZuUUaVUv/M0O9l02KuunPi0yQpuGM3Z5XjfzCblARQ5JJ9hiiWa
+                        97aVTf4/pBn1a9puUM/6Zjad9KrTHF1SzG42KY9gvZZqo6SkpE12QKMUDNnNpohXnZhDxU+Sk7Gd
+                        TZqB77LBIPUyyXSFzWwK+Fsd5lswVQklJ1M7m4551akSJmXqZ5Nm4mKHtTyGFAw1z7SbTYdcTu8V
+                        badNLtSeQrJCNbRJM3K581oaomSqeWXb2XTE5VRT9Y42fQyw6ZE8Q03TO9qkmdnWTYkREqN1tOmA
+                        V13RZC1t0gxtKyeKosFa2vRHgE2pl5Pm1KrmkukKG9oU8qoTc6qQ/Jmxmtqkmfo2NeOX7VWmK+xo
+                        0+aXk+LQ8kIpg51kk2bs26Slr5hJXatMV9jSpq0vJ8WZZUXSJ6NNr6iXPbnVrjZp5jYW5I3i6xuP
+                        wq3Oy9rTpo0vp/tHJtmltrVJM3it4ysm92qp8642tWnby+n+iUl6p31t0kxe6QBLqW3odF7VrjZt
+                        ejndPzDJr7SxTe8RNok51gsKif07jW3SjF7mDO+HluKVzvNta1PMq07MsZwyIxrtbJNm9iKneD+y
+                        VG90HnBfm2Iup9DfNVdE6me0tkkzvLWm5MCBIZwKnSfc2KaYyynwWiguU3ObNNNbe0qNu0Gf85Z2
+                        tmmzywnv8wua26QZH64Ten/fOmW6wtY2BV1OYs414f5RhWzvG/FMmzTzK4iIit3dvU2ZrrC3TUGX
+                        U8CB3j8pgZXZ3iZNAeauDNz/7a+f9ihz3tDmNu1yOeF2VkCbNA3gdLqfUjbpcp5zd5uiLicxB/sB
+                        xTEhq6RNYZeTmJN9ByRxZJXzoNvbFHU5OR6sYlNok7Qp7nJyO1lFQNmmyXnS/W2K+Q5xP500Z4Qt
+                        kjb9TZRNLoerOaIHtkfapG0hWyfNP1olG/U4z3qCTXGXk/kL06rf0YmukTapa8jVSbOX7FTjPOwR
+                        NsVdTjaddL89GF0ibfqHkF/6bNZJ9w99CrpE2rRShJakTOgKadN3Am1aPGelTIJukDatNZGikzYQ
+                        ukBlZJmucIpNcV8Rf97dFfE7+EObvhNpk/bq0JzLyvox0Ka1LhaQ+0l0f5fTrl6jwXngc2wK+Uc1
+                        V058ZW10d1+gTT8SbNO9Mw8VNRbatNpGjE+rCdDN6dPLdIWTbIr9e91ljV+IWDMT2vQzCTZ9nv/H
+                        Fs1J/Aa6toUZZLrCWTaZznRRAfueYpgY1d4881k2perkBrq0lfJkusJhNiW961wR89BO0KbfQLtB
+                        m06ySVNJDdCNLVUn0xWOs2k7ncQ8MaK5eerzbNrtXYeu6zu0aQbaDxViHtcN2mRtBQ66rMXeZLrC
+                        iTbtpJOYh8XUNs99pE0bvevQTf0IbXoCWpK7hP4jQVpo0zPQmpgOBQRt8mgGCLqm5c5kusKpNu2h
+                        k5jHRFU2T36sTVvohO5ovTGZrnCuTRvoBPxN89bCZLrCwTbV10nMI8L6mkc/2abyOqH7MdQl0xWO
+                        tqm4TmKeD9fWY7rC2TbV1gldjqWs+QqH21RaJ3Q3v0GbXlFXJ0FX8xu06SVldUIX8zu0ybekRIp9
+                        sUlZ1HyBDjbV1EnQrfzOsIZvYVNJndCdTKBN3j1lIeaZkC09Sd/Epno6iXmkAG6nf/LxXWwq97ZD
+                        12Hr6MnH97GpmE7oNkwVPfv7aCObSr3tBF2GqaFn6TvZVOl6Qjcx565NH558fC+b6lxP6CKeYEzf
+                        zKb43wN9D0HX8ARj+nY21XjdiXmKGAZtiqksFHQFT7Gl72hTAZ/QBZiakacf3dMmtE+CHt/Uy+Pp
+                        R3e1aenf1mlg051X3fMP7mvTG/DzcfTgFwzLo9DaJtgLDz32FZbwzW16gwgl6JktfVyFp01/c9uD
+                        Ty6vR0HPaynj6kNp0zdeOvD1j/1xvE3jMvvj6kNp00+8Pv3rru+BnvIFVyPK5UfSJiUNbLq4pl/8
+                        oA1tUuIgU3mb3laT0yYlDjIJeoblKV99GG3SMXrYNNfp5UfRJh1dbJoMeiM2bdLhYRN6hqVR5c6H
+                        0CYdDjLtYtMCtEkHbbqCNqnweNHRJvIVD5sEPUQctEkFbbqENqnweNEJeog4aJMK2nQJbVJBmy6h
+                        TRoGbbqENmlwsQk9RCC0SQNtuoY2afCQiTaRr9Cma2iTBtp0DW1SMGjTNbRJAW16AW1SQJteQJsU
+                        0KYX0CYFLjLRJvIF2vQC2qSANv3nNv9FRy0PbaJNbgzaRJvcoE20yQ8nmwQ9hwHa5AZtok1+0Cba
+                        5IePTLSJ/A1tok1+0Cba5IeTTTt/iYA2uUGbaJMftIk2uTG8bHqgJ1mHNnnhZpOgJ1mHNnlBm2iT
+                        H7SJNvnhZtPGn4bTJi9oE23yw88mQY+yDG3ygjbRJj/cZKJNxPNfKEePsgxt8oI20SY/HG0S9Cyr
+                        0CYvaBNt8sPRpm1fdbTJC9pEm/zwtEnQwyxCm7zwtOmTPQ4E2uSFp027vupokxeuNgl6mjVokxe0
+                        iTb54WrTpq862uSFr02CHmcJ2uQFbaJNfvjatOerjjZ54WyToOdZgTZ5QZtokx/ONm35qqNNXnjb
+                        JOiBFqBNXnjbtOPlRJu8ePe26YGeSA9t8mLwVUeb3HC3acNXHW3ywt8mQY+khjZ54W/TfpcTbfIi
+                        wCZBz6SFNnkRYNN2lxNt8iLCpg/ooZTQJjcCbBL0TEpokxsBNu32qqNNbkTYJOihdNAmNyJs2uxy
+                        ok1uhNgk6KlU0CY3Qmza63KiTW4MXk60yY0Ym7a6nGiTG0E2CXouBbTJjSCbdrqcaJMfQTYJeq77
+                        0CY/gmza6HKiTX5E2STowW5Dm/yIsmmfy4k2+THaX060yY8wm7a5nGiTH3E2CXq0m9AmP+Js2uVy
+                        ok2OxNkk6NHuQZscibNpk8uJNjkSaNMev4+eNjkyAnUS9HB3oE2ORNq0xbuONjkSapOgp7sBbfIk
+                        0qYdLifa5EmoTYKe7jW0yZP35pcTbfJkNL+caJMnsTbV14k2uRJrU/l3HW1yJdgmQc/3Atrkysfe
+                        lxNtcmX0vpxokyvRNhX/lfS0yZdom2q/62iTL+E2CXrCK2iTL6P15USbfIm3SdAjXkCbnAm3qbJO
+                        tMmZeJsKv+tokzPvnS8n2uTMSLicHughn0GbnMmwqey7jjZ5k2GToId8Am3yJsOmqpcTbfJmNNaJ
+                        NnnzR4pNgh5zCm1yJ8WmmpcTbXJn9NWJNrmTZJOg55xAm/zJsani5USb/EmyqaBOtMmfkWSToAf9
+                        DdrkT5ZN9S4n2hRAlk3ldKJNAXzMsknQk/4CbQpgdL2caFMEaTYV04k2RZBnk6BH/QnaFMFoejnR
+                        pggSbRL0rD9Cm0LIs6mUTrQphMTLqdK7jjaFkGmToIf9Dm2KIdGmQj8QRZtiyLyc6rzraFMMqTYJ
+                        etpv0KYgMm0qcznRpiBSL6cqOtGmIHJtEvS4X6FNUaTaVORyok1RdLycaFMUuTbV+KITbQoj16YS
+                        7zraFEby5SToed9oUyDJNlW4nGhTHMk2CXpe2hRJ9uUk6IFpUyTJNuHfdbQpkGybBD0wbQpkdLuc
+                        aFMk3S4n2hRJ+uX0ATsvbYok3Sbwu442hZJuk0DHpU2hNLucaFMsvS4n2hTLe6vLiTaFkfOPGpTS
+                        iTYF8CfIo68IbnDa5AvUI/jlRJu8GGiJ/kVgHdAmB+qI9BVYEbTJRjWRviCoNmjTOiVN+sID1Aht
+                        WqOuSV8AtUKbFkC78hrBFEOblAy0KPfAlEObNGyi0mfU5USbbvMRbYgKSEW06R5oOdQIoiXadAO0
+                        GUsgiqJNr0BbsYoAuqJNlwy0EwYe+XXRpudgv7HETn5jtOkZaBfsSHpntGnKQJvgQnpttGkC2gIv
+                        JLs42vQrqG/njiC7O9r0MwMtgCuS3B5t+pGzXPqcfjnRpu8c51L65USbvnGgS5+zLyfa9JUzXcq+
+                        nGjT35zq0ufky4k2He1S8uVEm452iTblgj7tcDLLbG4T+qgTkMQ6W9s00CedQmKhjW3q4VLq5dTX
+                        JvQh55HXaVebBvqIE5G0VpvahD7gXNJqbWkT+nSzeWQV29Cm3X94QI9kVdvPJvTRIsjqtptNJ32f
+                        7n0kqd1mNg30uYJIqreXTehDhfHI6beTTQN9pjgkp+FGNjWWKetV18em7PP79DTJANgkKR23sSnv
+                        4B638iQr9elWKCtNbEo6u4cmU65OKTX3sClBpoWHP9Umyei5hU1FT2qk6pRRdAebyp5Sqk4ZTTew
+                        KfCEpG4096x3ON6muO8Y8PhrUqZOCWWfbtOofTZh8WhTAEGnJW4BE23yC/2Us22Kkck1YqJO8X0f
+                        bVOETN5fVI7I+IRHeOEn2/TufyDinzJPp4Dwv3CwTbscR5pN8a+6c2366H0Wj6CgI82mqAn+5Vib
+                        vGWSuKhpOgXO8JVTbdrqHLJsCn/VHWrT+0YuJf6EX3TtZ9o0tjqDvHedBM9xpE2uhyMZiZNsin4w
+                        TrTJU6a/ciJnveuCxzjQJk+ZHjuGvkBipzjPJsfHPOdb87+SY1PwVXueTX7VPzJjjxydYoc4zia3
+                        3jMvpr/J0UlCZzjNpk1qD41Om5wYXq0jwqfoFDrBWTZ5ySRbp8eNdpZNOzy/8fFpU6XT2H4A2HQn
+                        2TTqP7wpE9CmMkch0BkSbIoc8BybfH4/KnoK2lSDI2TKeNcFpj/GJo9jEPQQbyE/aEObtJwiU8K7
+                        LnDMU2yq3bIGj+fimrjsh9jk0PEDPcM3wnWKi36GTQ4HgB7hB6JtkrDkR9h0lkzhl5OEJT/CprNk
+                        itcpLPgJNtnLR0/wK7QJxnkyReskUbEPsOlAmYLfdRIVe3+bzMWjB5gSalPYyNvbZJbpgZ5gDm3a
+                        sXVBD/AE81OCGHp3m6ylR/VqhzalY/2mpqhaPaBNmzWe/ROYKkagTkGR97bJWjg6/zW0aau+0fFf
+                        YH1WLpCYxFvbZKw7qNIy89GmxLKDGvUkzKaga3lnm0oW6orxeaFNaVWj49/iPcomCYm7sU0V6yw2
+                        JG26yyjYZrUpadNdbG2i0yeNmVzAtjbZHlpBx0+akzbdo2CXMQTpJBFZd7XJ1jE6vQraFI3tewdC
+                        mgzD9uDQpte8m5pEp1cSYlNICXva1OlqegvSKSLonjbV6zGUEWGTBATd0iZbu+j0C9CmQN6rtRiN
+                        7fGhTVfYPmtCp18iQqeAmDva9F7tkUyANpVsFh1+kUGbChYr6PSr+NsUUMWGNlV7IHMwPUO0KaTW
+                        gAazeKdNAZgaRIeHDZ5TxnY2jWKP4yaT06YpxfrbZnTaNMH0gAo6PXD2lDp2s6nYw7jR8LTpN0yP
+                        p397O01Pm37D1B46PHj8hEL2ssn0cAo6PXh+2uTZJjq8B7SpSJmCDu+B6XGiTX5dosP74GqTeKfb
+                        yiZLc6V/xeV9TA8UbfJq0r05ELSpQpHo8F6YHina9J1SxW3ZQvQjtpFNpqcSHb5IDbTpG5baBB2+
+                        SA+06R9Mz6SAw3vyTpvslKoNiemxin3Ietjk3dq+TdCmL5ieSGz0UlXQpr8xtYaNXqsL2sTPwf3K
+                        oE180f2Ml03ezexiU6XO8NAmE8NSmSCT16uDNlWqrAK0CdYeMngQgzaByhNg8DCcbHLuZg+bKj1/
+                        NTA9X7SJNv2E7Xd/trbJ9CA6F1YF2gRp7oHLHYnpCaNNq+BiFy6lsU2mx9C5rzr4XE6+mXawqdLT
+                        VwjalF8bLHU4LpeTb6QNbLK1hkpdvZeuNpnaElTq6sXQJtr0Ex6Xk2+i+jbZOgOFzoE2qTHZJKDQ
+                        G1QTUVB9mwqVVQ7apMT2/GEyp0GblNCmsHIa2mTq6pBfKBfUDm1CdlUQ8+Xk21B1m2x1+XZVENqU
+                        WBckciq0Ka8tSORUrJeTuKYpbpOtLN+qamK9nFzD0KbNoU1ZXSESZ2N73mgTbXKsqJNNxgcPkDgf
+                        2nQXm00CSLxbR51sshUlgMTbleQahTZtD226xyhUVF1sLblGoU3bQ5vuYZPpr/zAGGhTfE1dPm2i
+                        TfcYtCm+J9cktOkAaFNwSd49laZMS7TpAEaVlmjTAdCm2I4+d/q0yfQrVV2D0KYToE2RFdEm2uRX
+                        UTebBm16gfX3qyfHhUKbAhtqZ5PhHneNQZuOoEhNdW0yykSbaJNLQV84/tej/MSgTdcYbZLkuFho
+                        U1Q/tIk2+fXT0ab1m9w1RVmbjDLRJtrkUU9ES/Wp0RNtOoNRoqeqNv1Jm1TQppB2mtq0/F81XVPQ
+                        pkMo0VNVm95pk44SPVW1ySqTpKYtwOrj5xqCNh3CoE3PoU1KaJN/N7SJNvl109em1dvcNQNtOgXa
+                        9JSPtEkLbfKuprNNgzY9w2xTZtga0Kan0CY1tMm5mdY2LT6BrhFo0zEs9SSuEWjTMdCmJ9CmBd5p
+                        0xyzTB1tWnoExTUCbToG2vQE2rQAbXoCbcpqTVwT0KZzoE1TBm1agTZNoU1L4HuiTefwEd4TbTqH
+                        ldp8E9Cmc6BNUz7SphVo0xS7TLSJNn2DNi1Bm6bQpqzenH9zMW06CH1N4huANh0EbfJphTat9Sa+
+                        ASraNGjTGrRpAm1ahDZNoE2L6Gt6+AagTQehL845AG06CNrkUgptWizOOQBtOgja5FIKbVoszjlA
+                        RZscZKJNtxDnALTpIGjTBNq0CG2aQJsWoU0TPGzy7mkL1DY9nAPQpoNQ2+QdgDYdBG2aQJsWoU0T
+                        aNMitGkCbVpEa5N7SbTpIGjTBNq0CG2a4GFTyy9f0qYJtGkRrU3uAWjTQdCmCbRpEdo0gTYtQpsm
+                        0KZFlDaJe4BjbfKvqj60aQJtWoQ2TaBNiyhtergHoE0HobTJPwBtOgjaNMHFpo5/qaNNE2jTIjqb
+                        xD8AbToI2jSBNi1Cmyb42PRIy1uGj+jH7VybJC1vGXQFBQSgTQdBm8yl0Ka14iL6Odemhp+G0yZr
+                        KbRpsTgJCECbDgJeD206CHg9B9skaYGrQJuspdCmfxnwdmjTOdCmGU42/ZUWuAgqm0ISVLRJ1Up2
+                        YYWhTeZWaNNabyEJTrZJ0hLXQNNbTDe06Rzw3dCmc9B0E5PgZJu6feKEr4Y2nQO+Gtp0DopmJCZB
+                        RZv+9LIpqLOiaB7CoGYq2uT1xXDa9JSgCEfb1OtVR5vm0KYVFDZJUATadAy0aY6bTVGtlaRAL7Tp
+                        GBS9REUoadNw0ykvM54CtdCmY7jfikRFONymsN7qoSgtrBXadAqK0sIyHG5To1cdbbIXQ5u+cb8T
+                        CctQ0ia/LxE0etVV6IQ2ncL9TuIynG5Tn1ddhUpo0yGM241IXIiaNt2vBtldKWiTQzW0SV1ZYIjj
+                        beryqrvdx6fAELTpEG73IYEhatrk9nMGwe3V4f7zF5mipk2ef6nrcTnRpgtok5LbNklkigY2hfZX
+                        hRptFLXpnTbpuN1GaIqiNg3PyykzOIj7f20JjdHBJslMjuF2X7Fd0KYjuN1XbIyiNrl+Gt7gVVek
+                        ihY2SWp0BEWaoE0nMIo0UdWm2/3cIjU6gNttBefoYZOkZs+nSg+06QSq9FDVJt9PnA5/1d1+9KKD
+                        NLFJcsMnc9emyG+U+0ITm86+nMo8U2Vtuvu80ab7NoUH6WKT5KavWVV4krI2eX4z7+GX012bJDxJ
+                        WZu8P3GKrxJGnQeKNu0PbXrNcNYpOX69oiQ+Sh+bEsrEUOhxqmuT96fhx15ON8cP/9LlW2WbvD9x
+                        OvVyGoXGb2TToZfTe6HpC9t096G7zYfsCVIodDW1siml0KotpQxf2Ca+6u7wsdLsrWyS9BHKlJQz
+                        emWbBi8nt45y0vSySdJniKbWc1TZJv9X3XmXU63HqJlNSa2mMWo9RaVteufl9IJiD1Fpm+4+eW0v
+                        p7sFZU1d2qY//G0663KqNnRpmwI+cTrrcqo2c22bBi8nj3rSAvWzSQBzBFFu4to2Rbzqzrmcyl1N
+                        HW0SxCDIcvISFbfp7uOn4oGYBNeN5EXqaNMh77qC0xa3KeRVd8a7ruDV1NOmIy6nirNWt+nuE9ju
+                        crr73wlSR61uU9Dl9MAM48h7waupq03bv+tGyUHL23S7Nh2CmcaNmnOWt8n9B8iPuJxqXk31bYp6
+                        1e2tU82raQObbj+GSpKLxnSSnKuvTTvrVHXE+jaFver2fddVvZp2sCnsctpWp6pXU2+b0tv2oe7T
+                        soFNca+6PXW6/XTlT7eDTXGX05bvusLDNbdpQ51ujyb52XawKfBVt59O9x8tQLgtbLrfoB7BjbVE
+                        6cG2sCn0ckK0ntEEIh1t2kqnUXuqPWy6X+IKD+BkYT1A8u1hU+zltM9n4vdHEki+TWxSPJQH61R+
+                        Itq0j06KEgSTcBObgl91W+ikeaJAEXexSVPloTophhFQxF1sCr+cyuu0wyzb2DSa66SZRFAht7Ep
+                        6mdXNtFpj0G2sSn+VVdZp6EZQ2Ax97FJVegiD/CMPrPjcu5jU8blVPS/2e0i00426To9SCfd4MgJ
+                        NrIp5XIqqJPyKUJG3ckmZa2roMe0TS3IrLSpuE7aoaFhd7Ip51WHPpGf2UqmvWzSVruMoCddnRgc
+                        fCub0i4n9Kl8Q/34gPPuZZO63XXQoy6N+wAH3sumvMupgk4ftZEFnXgzm9RPqwEBz7rhA7CZTZmX
+                        E/h09HEf6MPZzqbRRKeFOQV9NvvZFPHvkBc8oQWZ8O+5DW3KfdeBzmiboL+wn00rj60FyR9xk5i/
+                        s59N2ZfT588fcucbKxk/oU/lCxvatNS2jczx6id8zoY25V9Oie+RsZbvA/pMvrKjTYuN7+BT6XCv
+                        2dGm5K8S5B3ZcjT0gXxjS5sQ77r4QxtFcynY06b14sv6dPdfVp0g6OP4lz1tQl1OcT4ZEgn6ML6z
+                        qU0JP0ee6ZMljqDP4gc2tQn3rgs4wHJyL7OrTcB3ne8ZGj5fKifTvjYNsE4+52gOIehz+IltbSqg
+                        k1UohwkEfQo/s69N6HfdPzwW0797bC7oM/iFjW1C/r3uJ/T//d5rZ/QR/MrGNpV4131Dbqd23BR9
+                        AL+xs01F3nX3jzd3NwBb21RPp3/466eUI2aTB7r939nbpqBz2gJBlz9hb5sa6yTo6mdsblPZd11L
+                        mba3qalOgq59zvY2DfTBUqbvbG9TS53QnT9jf5savuvQjT/lAJva6YTu+zkn2NRMJ3TbFxxh00Af
+                        MGX6yhE2ddIJXfUlZ9jURyd00dccYhPox38p08+cYlOLz8T/stcUyzE2NdCpxu9ouuIcm47XSdAF
+                        v+Ygmw7XSdD13uAkm6w/6FgaQbd7h5NsqvNTLE1lOsumc7/sJOhm73GWTafqhK71LofZdKZO6FJv
+                        c5pNJ+qErvQ+x9l0nk7oQhWcZ9NhOgm6Tg0H2nTUlzEF3aWKI206R6cHukkdZ9p0ik7oGrUcatMZ
+                        OqFLVHOqTQd8Li7oCvUca9P2Ogm6wAXOtWlzndDtLXGwTTt/8iTo6tY42qZtdRJ0cYucbdOmbzt0
+                        a8scbtOOOgm6s3VOt2m/tx26Lwvn27SXToJuy0QDm3Z626GrMtLBpm2uJ0H3ZKWHTXtcT+iS7DSx
+                        aQOdPqArcqCLTdXfdoKux4U+NpX+UWB0N040sqnu607QxXjRyqaarztBl+JHM5sKXk/oRjzpZlO1
+                        6wndhi/9bKrkE7oJbzraVOV19wHdgzstbSrhk6A7CKCpTfDXnaDnD6GtTVCfHujZg2hsE8wn9Nhx
+                        tLYJ8fmToEeOpLlN2b95FT1tMO1test74Ql60HBo098kfHuBoGfMgDb9w6BKdmjTd4KEEvRcedCm
+                        n3AX6gN6olRo02/4qYSeJB3aNIXvtyVo03N4J2mhTS/gjaSANt2DHt3hvk2EEEIIIYQQQgghhBBC
+                        CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCH/8P/T2g3wTNSy
+                        bgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wNy0wNFQwMzo1MDozOSswMzowMFesjGwAAAAldEVY
+                        dGRhdGU6bW9kaWZ5ADIwMjAtMDctMDRUMDM6NTA6MzkrMDM6MDAm8TTQAAAAAElFTkSuQmCC"></image>
+                  </svg>
+               </a>
+               | 
+               
+               <span class="icon twitter">
+                  <a href="https://twitter.com/i_amanchadha">
+                     <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                           c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                           c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                           c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                           C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                           c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                           c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">i_amanchadha</span> -->
+                | 
+               <a href="mailto:hi@aman.ai">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuBAMAAABTjO+8AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEWxsLDGxcW4t7esq6u+
+                        vr7Z2NiqqamxsLCvrq7Ozc2ysrK1tbWenZ2dnZ3////zevNgAAAAAXRSTlMAQObYZgAAAAFiS0dE
+                        Dm+9ME8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkBwQDLRvUSpUpAAALt0lEQVR42u2d
+                        PW8jyRGGR7Lk3XXEyNqQwAVKBewtiHMkwAfQoQ4L3B02ImCs98KVuFZzFfECm3Am4A7YDXmR/sQF
+                        /gHO7+94R6Somarq7qr+mGra/YZifzzsfmc4XdNdappcOvjixZcX2VrPpj+az1r8QxtDqp/MRmfa
+                        IDI93WKbxUgbRaS3D9zmUhtFolfmUUttGL6OOtjm+kIbh61Jl3t/nPLK9LXUBuLpAGDvi1NWkHs/
+                        nPKtwVprQ/l1QGDvg1NWFLf5URvLp28NrbUCy+sfzJB6MUqD/SoeRagkk/M0nkOqFA+Rx2+H5zY3
+                        8dzfK2CncIrGcBtztYfuvtdtJPdHJe7ZXtrEmPdx2MdK2OZ6P+1tzEUU9+/VuMdR3E/UuM/+L7lP
+                        9pR7um3lry+G0iQp93lUKxL9rnJX7spduSt35a7clbtyV+7KXbkrd+Wu3JW7clfuyl25K3flrtyV
+                        u3JX7spduSt35a7c+809Men0rnJX7spduSt35a7clVuiOzXuZQz2QyMK3POLcOzjHd/w3DEnBaa7
+                        xgH3z1+nE2h6xx3u8McmFNYN4U55dIkOd6hTpkaZO8wp3QaUuEOO93ZdosUdchC86xI1bvmvT7+6
+                        GrfUKX2X6HFLndJ3iSK3zCnoWJoet8Qp+EyxHrfEKSemIG6+U4jDi5rcXKdQJ881ublOwS5R5uad
+                        SiePuOpyc5xC5yfQ5eakIaFcos7td4rlILQ2t88ptiwW2tw+p9AuKYDb7RTrcXl9bpdT7LlO9Lld
+                        TrG5pAhuu1McSRVK4LY5xZURpwRu8y+6ht0lhXDTOSOcqTfK4KaSi7jzJpXBTTnF5RLE/eeEiRXO
+                        BNzYKX8wEu6JSad3NPeC5RSLS+ZTNe6XNBFwynPLMOtxnx3SxXtOsbjkjer7tE9k8a5TLC5ZKL8H
+                        pHvpOMWSg22kzH1EV9g55XhFfv6m0X7vSieP3CXL+97+sS63JVnn2jXcm9yFytxkctSHAadza82a
+                        ArgtTtnQ3FEfbRMAanPTcB/aT55Rn8xvC+E+WFF03YI9bWvpc9MuXjb4lUir3Ztafe7mlKjzgWZ4
+                        XMkVwA1fkd0D0j9Ky8bDnVF4vw9l5FvKP51IRQnclJPPmu8cLimEm3jse0fYft1ppQhuYsl+iROW
+                        9lYUZXDjZc0NujX0V3CFcCOnzBv4TcYlcjeHPu6/91sphRvmDUbcoHgx3E8qd+Wu3JW7cv9Pcpf6
+                        ezn1cLdBwQK54ZoHcy9K5EZrTMxtXhbIPTV+7h5jGdx4DUxxz0vjfrZicZuvCuM+NTzuzpqnBG4q
+                        JktzP64xC+C2RDYp7sc1fQHcd4bPvYuh6HPTkXsb90PMSp2bflNi5X6IEapzr4TcW6dYuH/9Tzr9
+                        28Vt+zdydu6NUyzcv5l0eufgPrBVsnNvdl0rc08CuHsvUXS47f8pz8XdOkWV+8heycXdvp1S5Z4E
+                        cn+uq8n9yVHJzT2/UOQ+dFVyc5srRe63Edxmosa9cFZC3H+iyw3P3dfio4f7jN7Zps09e+LjZp2D
+                        GZr7hhFn45w7Gph7MeLEB0+K437DimsyztUN8BzbUbufisFNVQXcGUV0PmJyExsQNLnbfYw8brxV
+                        RZF7E2hlceOAnCL3uYAbhbb0uLfhYSY3DCW+DOaQ6hQCiriRU4YacNjvWMgNw1uR/9+WKzjPu4Af
+                        m/vA1kJWWUeLzY1CLmM5hViwz3UANwxxhSR/EQrOcWdDoIAbBosYh6oj5RgpAbdj1vII9rfsfCbh
+                        hgGMzE6B89tLryDiPnK1lFzO60nEjQJ0Sz6FWK+cJDJuuJszo1Pg3IJkYULuQ3drCQWuJZicTciN
+                        gnRnPAqxfgL9zMDnUm7olJh0hg7Beb2CBcTc8KhgHqeA0VncRnOjPcwzP4VYn7x9yLlhWAKPRbTg
+                        nN7gInJu1OqVl0MoNDKjJNwogPUmMfdzRvsh3JzxiBAMSC6oQiHcqOWbJqFQWI8clSBuFMBK6RSe
+                        C8O4YQAroVPgXM7pYmHcKBqzaBIJueQ8KTcKYDGc8jNMxUsJOtAWYArlRnvhRh6g1+1AXvtKoSyJ
+                        toKh3CiQNG+c2q4C5u4hR4HfcXJutD/LGTLcrRXdKw3oPntwKZwb7YdzDeUdAwXPoeNLhnOjMIHD
+                        KV3bjqyl0DWztrcYwY2cYh3Knm3tt0zoEldgKYYb7XYaWwqe9ErZbplw/pyXQgw37okuBn8CR/Qo
+                        QJcsXV1HcaPdfOTMop9A+jEMus4dVIrjRjue1kShE1iIdAq6yi8ycqOgEuFJIucO8RiGrhVPx5Hc
+                        aK8Wcgq5nwIv7aDjfGGCWG6062kJCtD7V2agFHTJ4sLTbyw3ChkAp1gyM4EgALpOZr5uo7nRwfVL
+                        56e0UybOT/NwoxHtVrHv+euWglc3IyQTz40c3LmDOfb8uUoxFiEJuNEd4/FeYHOJuxQnPJCA2+4U
+                        +/7hVkuLl1iL7BTc6Bdxmw3IsX+41fbOE+KSRNzIKZv7wcTNvbnzoLq80EASbrxXb9bYzyL0nYJ+
+                        lzguScWNwgef72ToieP6G8Ip6Npg7mxJxI0W4jf4xMoaz8CPREKQQbnxNqi/wT+0q7g7+Ef4ddn7
+                        cVJxk2mlep5oC5Fn4uCXG5b7mQdpfF/Kc63ydxEl47ak0YMD6Z6WsQK3E2l3uTmnRbCjJSG3y7zn
+                        nGmRvO1PyO0wb/embJ+WtaCvlNz0UVQDbspUXrh7iXazJOW2Hdcb9UpZMjXL9oQk5bY4BT7gTclS
+                        S1FPabnJ46joAY8MTQj3PCXmJpxCLAOIox7S/SCJuYklDrUMOEGlpP2k5j6GQORiETlFvE04NTcc
+                        SctiET12S984J+ZGPDNLQbjMkb5xTsttWWhGlRyCG43irbUoWsbP2L0k50YsrtoobHLL7CU9N5z7
+                        9wlLZ+SGI+j5LRHNTkZuMQf8jZL8ZibknojnXV4jAzfjFRUUCiAuh+cOYgj4rqm5V6Ai77k0rFZC
+                        btHL9Ueh5971sNzB/Qd+31TccL75kZDAmmm4Q0etIaIu6+G4Ud9jNjZ7M0gO7jtQSXZWMKh2Cm60
+                        nUuEjUOG42G4Ub/nMu6g752A+xRUkZ89Dmghnlu4cZPSs4l4xqK5j+V9YuG0qtm5p6BC2BZ2cSux
+                        3Ik2gqNZG+XlFvdnE+swRjrukyQuCWgpjjvhwRLh4Zoo7qQHeWRjEMXNOdjEl6i1GO7EB9VEB/Yi
+                        uJMfDJSMQwR3+oOYghbDub1HaQPEn8FwbtBHkoPG/OPiwdx5DnazWw3l9hzLD9aEOYuh3KD9ZIkL
+                        uCkoArnzJYpgthzGnTMxB28mw7hXmVzSypn2JI47b+IZVush3LkT/XBmM4T7LqNL7scFgFPjEsCd
+                        Pz0Rowc59xCJw+CMpuD2txkv/9iIuW0J6tLKm1RNyg2DmF+xMOQ6hVyR3L72UsmXqFHIPVz6RE9P
+                        Mm4YnsqZrnLqnFkZN2grWVYISnCM+mEJETcMYo5ycrt7k3DDwEPq/DhQrtmVcJ8M6BLfOAm4QQAv
+                        cVYfSo4e+dxDu6QVmOFOqJPP/dzaRj7Zx4rNDYJ3GbKEUbL2yuWG33w2CDaa5V0wj8v9yVI/t2zj
+                        xeQGgbuBXEL1fCHifkv+dRCBmX4v4abrDiRyzFjcIDyVKTelTYdU7yzuiZ5LWoGQ4SWXm6o3qMC4
+                        LXncIDw1QP5sqCNMwOBe4W87tMDy/pLDDerkz/pNCYzd2s+t75JWiMLLfQe/qY7grPu4/1mCS1qB
+                        8Tv1cIP5UcP2HGH3cI/1uN1H2N3cw/yvCZtOQ7mzBQN5ch1hd3Kf63K7jrC7uIf73zU2nYZwK7uk
+                        lfUIu4v7XJu6sR5hd3FffV2CJmLuslW5K3flLk+Vu3JX7vJUuSt35S5P+8p9vafcc2/y1DJ1RWb8
+                        Kl8fmo/aCEE6sy/1i9bal9S4UDXu3Nelqn2B/Z02RIBmjT1pY8HahC5PtDHE2mxf8mXeLU4PkeKn
+                        8U0Nir2LFL9eabMIdN0JcB//5cW+6JcN8X8B85vetwnigQ8AAAAldEVYdGRhdGU6Y3JlYXRlADIw
+                        MjAtMDctMDRUMDM6NDU6MjcrMDM6MDDsnuMrAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA3LTA0
+                        VDAzOjQ1OjI3KzAzOjAwncNblwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+               | 
+               <a id="theme-toggle" onclick="modeSwitcher()" style="cursor: pointer;">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACYVBMVEU/PzpEREBBQT1CQj4/
+                        PztAQDtHR0NJSUU+PjpISERDQz9AQDw5OTRFRUE8PDhCQj1CQj89PTlKSkY+PjlNTUlLS0hEREBD
+                        Qz9aWleHh4WtrazBwcHCwsLCwsLCwsLAwMCurq2IiIZgYFxXV1Sbm5rFxcXCwsKgoKBkZGFERECX
+                        l5bExMSPj45LS0empqWpqahUVFCnp6axsbFTU09CQj6lpaSpqahISESRkZCNjYtUVFG/v7/FxcW7
+                        u7vExMVhYV6ampmTk5FXV1S3t7eenp1VVVHCwsOYmJd3d3XIyMjCwsJdXVqEhIKrq6uGhoSnp6aX
+                        l5aAgH6srKzAwMBdXVq8vLzCwsOZmZhNTUm3t7bDw8PCwsKYmJexsbCYmJawsK/CwsJOTkq2trXD
+                        w8K9vb1bW1jBwcK9vb2pqaiXl5aCgoCvr66AgH6jo6OGhoNYWFXAwMB9fXvIyMjGxsZeXluamplM
+                        TEi5ubmcnJteXlrCwsLGxsaTk5FDQz+dnZzJycljY2CJiYe+vr5bW1hUVFCcnJuVlZRGRkKmpqW4
+                        uLd8fHl/f33AwMCioqFFRUFQUEyurq6wsLCFhYNkZGBSUk9SUk9hYV6JiYenp6bHx8inp6ZKSkZP
+                        T0unp6bExMS6urm0tLSzs7O4uLjExMSioqGMjIrExMTKysuVlZRFRUFiYl6hoaDExMTIyMicnJtr
+                        a2hhYV6Li4qxsbDDw8O+vr2zs7KHh4VlZWPHx8fGxsbCwsLJycnIyMjDw8PKysvExMTKysrMzMzL
+                        y8vFxcXJycrFxcbGxsfHx8jIyMnExMX///9/oPL/AAAAuHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAA
+                        AAAAAQEYUJzK4+3kzJxYGSKE5+qSIgJe7GoGlqYMprcLAZapAl1uH/H70vMkhWYP1ZoW7G5G/fMb
+                        UbpinWtbrMsd1OVuBtfn7m3IbMnlBNTozhzz1Z5sVq5Yt2YW7zf48iCTD9CiH/DzZwWv9Ctp0QsQ
+                        rnABqNFKO82sAg22uF0fBwUfV7T7uw0Lp/PYycnV8qtu7/JxASeZ7vGgLh5hqebTrWUhilEqqgAA
+                        AAFiS0dEyvO0NuYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkCBYKLR1KuANWAAACD0lE
+                        QVQoz23TZXvUQBAA4CG7R09K4ZANFtwKFHcvTrHi0BZ3d5dCKe4uxd1d7jbZJCQFwr9ik1wud83N
+                        hyRP3uzOk5lZIE6IUK95i5atWktSm7bt2ncQQHTfg3MVUMdOnRNJ6kRS7tK1GxZSXEhIqH53SWE0
+                        HUzp0TMPe6txUS9Vo1nB1N59wi6HivrqNBByv/7Y5gGRgTmU+6DBAufwkF85kCczhoZFwMOGa0Ed
+                        MVKjbNRogOgYOahG8dhxJpXHx2DCxOBiY1I0f/IUykqmwjQllwpig+kJWjsDZiYCWop4yQpm6TQ5
+                        G+bkVhKaW8LYPJhfR9UFUafcaOEik5ZBebbqFa4SlLf4Ny2vw/oS5CqJRpbavCxr5wpPScPlK0y6
+                        ElZlNNJI5bUjtHoNY2th3R9f1/tKCjbINLkRNtWmdy5t5KsY2/yXWltg6zbNqxXylcS376Bs5y7A
+                        u+V0JX2N7dlrUmUfArz/gL384KFMDR8+olBWeTQOJH7M4N2vOp6PPIzi6hN8gIyTSASCTp3mz9qZ
+                        s43jYQEhAZoI587zPqkXLtrDRPClyzy9aV25eu1602Y3bt66fYen0+/WhNw5x/fuq8we/wcPHz1+
+                        8tSyW2w8q8HeKcGR5y8s/gHTTPOffVdevnodyzhE+M3bd7Lp1JeZ1vsPH53/KEwx/xX06fOXqq+S
+                        VPbt+4+fQjx1BP8DniGUSqIRNGsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMjJUMTA6NDU6
+                        MjkrMDM6MDBYVnojAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTIyVDEwOjQ1OjI5KzAzOjAw
+                        KQvCnwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div align="center" class="footer-col-1 column">
+         <a href="https://www.amanchadha.com/">www.amanchadha.com</a>
+      </div>
+      <!-- <div class="footer-col-2 column">
+         </div>
+         
+         <div class="footer-col-3 column">
+         
+         </div> -->
+   </div>
+   <!-- add permalinks to headers in kramdown -->
+   <!-- <script>
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML =
+              '<a href="#' + headings[i].id + '">' +
+                  headings[i].innerText +
+              '</a>';
+      }
+   </script>   -->
+
+   <!-- add title case to section headings -->
+   <script src="https://aman.ai/js/ap-style-title-case.js" type="text/javascript"></script>   
+   <script>
+      var headings = document.querySelectorAll("h1, h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML = titleCase(headings[i].innerHTML);
+      }
+      
+      var toc = document.querySelectorAll("a[id^='markdown-toc-']");
+      
+      for (var i = 0; i < toc.length; i++) {
+          toc[i].innerHTML = titleCase(toc[i].innerHTML);
+      }      
+   </script>        
+</footer>
+
+    <script src="https://aman.ai/js/nanobar.min.js"></script>
+    <script>
+    var options = {
+      classname: 'my-class',
+        id: 'my-id'
+    };
+    var nanobar = new Nanobar( options );
+    nanobar.go(100);
+    </script><div class="nanobar my-class" id="my-id" style="position: fixed;"><div class="bar"></div></div>     
+
+    <!-- Scroll bar -->
+    <div class="progress-bar"></div>
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+    var element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight',
+      progress = document.querySelector('.progress-bar'),
+      scroll;
+
+    document.addEventListener('scroll', function() {
+      scroll = (element[scrollTop]||body[scrollTop]) / ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+    });
+    </script>    
+    <!-- theme switcher -->
+    <script src="https://aman.ai/js/mode-switcher.js"></script>
+    <!-- mathjax -->
+<!--     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" id=""></script>
+    <!-- make mathjax responsive -->
+    <script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+       "HTML-CSS": { linebreaks: { automatic: true } },
+       "SVG": { linebreaks: { automatic: true } },
+      });
+    </script>
+    <!-- Copy button -->
+    <script src="https://aman.ai/js/clipboard.min.js"></script>
+    <script src="https://aman.ai/js/copy.js"></script>      
+    
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5905744527956213&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1766895470&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C8%3A128%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Farchitectures%2F&amp;pra=5&amp;wgl=1&amp;asro=0&amp;aiapm=0.1542&amp;aiapmd=0.1423&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1766922354160&amp;bpp=1&amp;bdt=56&amp;idt=39&amp;shv=r20251211&amp;mjsv=m202512100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=1894863773241&amp;frm=20&amp;pv=2&amp;u_tz=330&amp;u_his=10&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=31096041%2C95376242%2C95378599%2C95378750%2C95379902%2C42533294%2C95344788&amp;oid=2&amp;pvsid=6021515279585891&amp;tmod=112874479&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=22%2C22%2C22%2C22%2C800%2C0%2C756%2C556%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=33792&amp;bc=31&amp;bz=0.95&amp;psd=W251bGwsW251bGwsbnVsbCxudWxsLCJkZXByZWNhdGVkX2thbm9uIl1d&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=42" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: STIXSizeOneSym, sans-serif;"></div></div><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20251211/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>

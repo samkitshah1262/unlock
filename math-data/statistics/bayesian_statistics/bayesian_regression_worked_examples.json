@@ -1,0 +1,201 @@
+[
+  {
+    "id": "stat_wex_bayesian_regression_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "title": "Bayesian Linear Regression",
+    "contentHtml": "<p>In Bayesian linear regression, we model the relationship between a dependent variable and one or more predictor variables using Bayes' theorem.</p>",
+    "formula": {
+      "latex": "\\[y = X \\beta + \\epsilon\\]",
+      "name": "Linear Model"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset with features X and target y, we want to find the posterior distribution of the coefficients \\beta.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores (y) and hours studied (X). We want to find the posterior distribution of the coefficient \\beta.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior on \\beta",
+          "mathHtml": "\\[\\pi(\\beta) = N(0, 10^2)\\]",
+          "explanation": "We assume a normal distribution with mean 0 and variance 100."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Obtain the likelihood function",
+          "mathHtml": "\\[p(y | \\beta) = \\prod_{i} N(y_i, X_i \\beta + \\epsilon)\\]",
+          "explanation": "The likelihood is a product of normal distributions for each data point."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the posterior distribution",
+          "mathHtml": "\\[p(\\beta | y) = \\frac{\\pi(\\beta) p(y | \\beta)}{\\int \\pi(\\beta) p(y | \\beta) d\\beta}\\]",
+          "explanation": "We use Bayes' theorem to update the prior with the likelihood."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Make predictions",
+          "mathHtml": "\\[E[y | X] = X \\beta\\]",
+          "explanation": "The expected value of y given X is simply the product of X and the posterior mean of \\beta."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "Predicting student performance based on study habits"
+    ],
+    "tags": [
+      "Bayesian Linear Regression",
+      "Linear Model"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:44:26.479Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bayesian_regression_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "title": "Bayesian Linear Regression",
+    "contentHtml": "<p>In Bayesian linear regression, we model the relationship between a response variable and one or more predictor variables using a probabilistic framework.</p>",
+    "formula": {
+      "latex": "\\[ y = X\\beta + \\epsilon \\]",
+      "name": "Linear Model"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset of exam scores (y) and student characteristics (X), we want to predict the expected score for a new student based on their characteristics.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores and student characteristics:</p><ul><li>y: [80, 70, 85, 75]</li><li>X: [[1, 0], [0, 1], [1, 1], [0, 0]]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Specify a prior distribution for the coefficients",
+          "mathHtml": "\\[ \\beta | \\alpha = N(0, \\alpha^{-1} I) \\]",
+          "explanation": "We choose a normal-inverse-Wishart prior to reflect our uncertainty about the coefficients."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior with the likelihood",
+          "mathHtml": "\\[ p(y | X, \\beta) = N(X\\beta, \\sigma^2 I) \\]",
+          "explanation": "We use the likelihood function to update our prior beliefs about the coefficients."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the posterior distribution",
+          "mathHtml": "\\[ p(\\beta | y, X) = N(X^T (X \\alpha + y), \\sigma^2 I) \\]",
+          "explanation": "We use Bayes' theorem to compute the posterior distribution of the coefficients."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Make predictions using the posterior mean",
+          "mathHtml": "\\[ E[y | X] = X E[\\beta | y, X] \\]",
+          "explanation": "We use the posterior mean to make predictions for new data."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Bayesian linear regression provides a flexible and interpretable way to model complex relationships between variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:44:55.859Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bayesian_regression_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "title": "Bayesian Linear Regression",
+    "contentHtml": "<p>In Bayesian linear regression, we model the relationship between a response variable and one or more predictor variables using a probabilistic approach.</p>",
+    "formula": {
+      "latex": "\\[y_i = \\mathbf{x}_i^T \\beta + \\epsilon\\]",
+      "name": "Linear Regression Model",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a dataset of exam scores (response variable) and hours studied (predictor variable). We want to use Bayesian linear regression to predict the expected score for a student who has studied 5 hours.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a dataset of exam scores (y) and hours studied (x). The prior distribution on the coefficient \\beta is a normal distribution with mean 0 and standard deviation 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Specify the likelihood function",
+          "mathHtml": "\\[y_i | \\mathbf{x}_i, \\beta \\sim N(\\mathbf{x}_i^T \\beta, \\sigma^2)\\]",
+          "explanation": "The likelihood function describes the probability of observing each data point given the model parameters."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Specify the prior distribution on \\beta",
+          "mathHtml": "\\[\\beta \\sim N(0, 1)\\]",
+          "explanation": "We use a normal distribution with mean 0 and standard deviation 1 as our prior."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the posterior distribution using Bayes' theorem",
+          "mathHtml": "\\[p(\\beta | y) \\propto p(y | \\beta) p(\\beta)\\]",
+          "explanation": "We use Bayes' theorem to update our prior with the likelihood function."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Make predictions using the posterior distribution",
+          "mathHtml": "\\[E[y | x] = \\mathbf{x}^T E[\\beta | y]\\]",
+          "explanation": "We use the posterior distribution to make predictions for new data points."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "Predicting student performance based on study habits"
+    ],
+    "tags": [
+      "Bayesian Linear Regression",
+      "Linear Regression"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:45:25.722Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

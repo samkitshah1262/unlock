@@ -1,0 +1,527 @@
+[
+  {
+    "id": "stat_con_estimator_properties_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>In statistics, an estimator is a function that takes in data and produces an estimate of some population parameter.</p><p>There are three key properties of estimators: unbiasedness, consistency, and efficiency. These properties ensure that our estimates are reliable and accurate.</p>",
+    "formula": {
+      "latex": "\\(\\mathbf{\\hat{θ}} = \\frac{1}{n} \\sum_{i=1}^n x_i\\)",
+      "name": "Sample Mean"
+    },
+    "intuition": "Think of an estimator as a tool that helps us make predictions about the world. Unbiasedness ensures our tool doesn't have a built-in bias, consistency means it gets better with more data, and efficiency makes sure we're not wasting resources.",
+    "realWorldApplications": [
+      "In machine learning, these properties are crucial for developing reliable models."
+    ],
+    "commonMistakes": [
+      "Don't confuse unbiasedness with zero-bias; an estimator can be unbiased without being perfect."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:11:50.837Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_estimator_properties_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>Estimators are mathematical constructs used to approximate unknown parameters in statistical models. In this concept card, we'll explore three fundamental properties of estimators: unbiasedness, consistency, and efficiency.</p><p>Unbiasedness ensures that the expected value of an estimator is equal to the true parameter. Consistency means that as the sample size increases, the estimator converges to the true parameter. Efficiency measures how well an estimator performs relative to other possible estimators.</p>",
+    "formula": {
+      "latex": "\\( \\text{Bias} = E[\\hat{\\theta}] - \\theta \\) is minimized when the estimator is unbiased.",
+      "name": "Bias Formula",
+      "variants": []
+    },
+    "intuition": "These properties matter because they ensure that our estimators are reliable and accurate. In machine learning, we often rely on statistical models to make predictions or classify data. If our estimators are biased or inconsistent, our models will be flawed, leading to poor performance.",
+    "realWorldApplications": [
+      "In supervised learning, unbiasedness is crucial for avoiding systematic errors in model predictions."
+    ],
+    "commonMistakes": [
+      "Failing to check for bias in an estimator can lead to inaccurate results."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:06.776Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_estimator_properties_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>When working with statistical models, it's crucial to understand how our estimators behave. In this concept, we'll explore three fundamental properties: unbiasedness, consistency, and efficiency.</p><p>Unbiasedness ensures that the expected value of an estimator is equal to the true parameter. Consistency guarantees that as the sample size increases, the estimator converges to the true parameter. Efficiency measures how well an estimator performs relative to other possible estimators.</p>",
+    "formula": "{",
+    "latex": "\\(E[\\hat{\\theta}] = \\theta\\)\",",
+    "name": "Unbiasedness\" },",
+    "intuition": "Think of unbiasedness like a compass that always points towards the true north. Consistency is like having a GPS system that gets more accurate as you move away from your starting point. Efficiency is like comparing different routes to get to your destination – some are faster, while others might be more scenic.",
+    "realWorldApplications": [
+      "In machine learning, these properties ensure that our models make reliable predictions and adapt well to new data."
+    ],
+    "commonMistakes": [
+      "Don't confuse unbiasedness with consistency – they're not the same thing!"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:22.231Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>Estimators are used to approximate population parameters in statistical inference. Understanding their properties is crucial for making accurate conclusions.</p>",
+    "formula": {
+      "latex": "\\[ \text{Unbiasedness: } E(\\hat{\\theta}) = \\theta, \\\\ \text{Consistency: } P(\\hat{\\theta} \\to \\theta) = 1, \\\\ \text{Efficiency: } V(\\hat{\\theta}) \\leq V(\\hat{\\theta}_0), \\\\ \text{Sufficiency: } T(X) \\independent \\{X | \\theta \\} \\]",
+      "name": "Properties of Estimators"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to estimate the population mean (\\mu) using a sample mean (\\hat{\\mu}) from a normal distribution.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the estimator is unbiased",
+          "mathHtml": "\\[ E(\\hat{\\mu}) = \\frac{1}{n} \\sum_{i=1}^n X_i = \\mu \\]",
+          "explanation": "The expected value of the sample mean equals the population mean."
+        }
+      ],
+      "finalAnswer": "The estimator is unbiased."
+    },
+    "intuition": "Understanding these properties helps us choose the best estimator for a given problem.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:40.931Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>Estimators in mathematical statistics are used to approximate population parameters based on sample data. To ensure that these estimators are reliable and accurate, we need to understand their properties.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Unbiasedness: } E(\\hat{\\theta}) = \\theta \\]\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[ \\text{Consistency: } \\hat{\\theta} \\xrightarrow{p} \\theta \\]\",",
+    "description": "Consistent estimator converges to the true value as the sample size increases\" ] },",
+    "intuition": "Unbiasedness means that the expected value of an estimator is equal to the true parameter. Consistency ensures that the estimator gets closer to the true value as more data becomes available.",
+    "realWorldApplications": [
+      "In machine learning, unbiased estimators are crucial for avoiding bias in model training and evaluation"
+    ],
+    "tags": [
+      "estimation",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:12:55.766Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>Estimators in mathematical statistics are used to approximate population parameters from sample data. Understanding their properties is crucial for making informed decisions.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbb{E}(\\hat{\\theta}) = \\theta\\] (Unbiasedness)\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[\\text{Consistency: } \\lim_{n \\to \\infty} \\hat{\\theta}_n = \\theta\\]\",",
+    "description": "The estimator converges to the true value as the sample size increases\" ] },",
+    "intuition": "An unbiased estimator is one that, on average, returns the correct value. Consistency ensures that the estimator gets closer to the truth with larger datasets.",
+    "realWorldApplications": [
+      "In machine learning, an unbiased estimator can help prevent overfitting and improve model generalizability"
+    ],
+    "tags": [
+      "estimation",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:09.742Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_estimator_properties_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "contentHtml": "<p>In statistical inference, an estimator is a function that takes in data and produces an estimate of a population parameter.</p><p>Three key properties of estimators are unbiasedness, consistency, and efficiency.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Unbiased: } E(\\hat{\\theta}) = \\theta \\]\",",
+    "name": "Unbiased Estimator",
+    "variants": "[ {\"latex\": \"\\[ \\text{Consistent: } \\lim_{n\\to\\infty} \\hat{\\theta}_n = \\theta \\]\", \"description\": \"The estimator converges to the true value as the sample size increases.\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the population mean, μ.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Take a random sample of size n",
+        "mathHtml": "",
+        "explanation": "This is the starting point for our estimation."
+      }
+    ],
+    "finalAnswer": "The sample mean is an unbiased estimator of μ.\" },",
+    "intuition": "An unbiased estimator is one that, on average, produces the correct value. This ensures that our estimate is not systematically different from the true value.",
+    "realWorldApplications": [
+      "In machine learning, we often use unbiased estimators to ensure that our models are fair and do not favor certain groups."
+    ],
+    "tags": [
+      "estimation",
+      "unbiasedness"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:28.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_estimator_properties_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Unbiasedness and Consistency in Point Estimation",
+    "contentHtml": "<p>In point estimation, we often seek to find an estimator that is both unbiased and consistent.</p><p>Unbiasedness ensures our estimate is on average correct, while consistency guarantees the estimate converges to the true value as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{E}[\\hat{\\theta}] = \\theta \\]",
+      "name": "Unbiased Estimator"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{An estimator } \\hat{\\theta} \\text{ is unbiased if and only if } \\mathbf{E}[\\hat{\\theta}] = \\theta. \\]"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:39.855Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_estimator_properties_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Unbiasedness of Estimators",
+    "contentHtml": "<p>In statistics, an estimator is said to be unbiased if its expected value equals the true parameter being estimated.</p>",
+    "formula": {
+      "latex": "\\(\\mathbf{E}[\\hat{\\theta}] = \\theta\\)",
+      "name": "Unbiasedness"
+    },
+    "theorem": {
+      "statement": "\\[\\text{An estimator } \\hat{\\theta} \\text{ is unbiased if and only if } \\mathbf{E}[\\hat{\\theta}] = \\theta.\\]"
+    },
+    "intuition": "Unbiasedness ensures that our estimate has no systematic error, which is crucial in making predictions or drawing conclusions.",
+    "realWorldApplications": [
+      "In machine learning, unbiased estimators are essential for avoiding bias in model training and evaluation."
+    ],
+    "tags": [
+      "estimation",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:13:52.628Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": "{",
+    "statementHtml": "<p>Consider an estimator <i>T</i>(X) that maps a random variable X to a real number. Prove that if <i>T</i>(X) is unbiased for θ, then it is also consistent.</p>",
+    "hints": [
+      "<p>If the estimator is unbiased, it's expected value equals the true parameter θ.</p>",
+      "<p>Consistency means that as the sample size increases, the estimator converges to the true parameter θ.</p>",
+      "<p>Use these two properties to show that an unbiased estimator must be consistent.</p>"
+    ],
+    "solutionHtml": "<p>To prove consistency, we need to show that <i>T</i>(X) converges in probability to θ as the sample size increases. Since <i>T</i>(X) is unbiased, its expected value equals θ:</p>\\[\\mathbb{E}[T(X)] = \\theta\\]<p>Now, let's consider the difference between the estimator and the true parameter:</p>\\[D = T(X) - \\theta\\]\"\\[\\mathbb{E}[D] = 0\\]\"<p>This means that the expected value of the difference is zero. Since we're dealing with a random variable, we can use the law of large numbers to show that as the sample size increases, the average of the differences converges to zero:</p>\\[\\frac{\\sum_{i=1}^n D_i}{n} \\rightarrow 0\\]\"<p>This is equivalent to saying that <i>T</i>(X) converges in probability to θ. Therefore, an unbiased estimator must be consistent.</p>\",",
+    "answerShort": "The estimator is consistent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:14.136Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators",
+    "problem": {
+      "statementHtml": "<p>Let X1, ..., Xn be a random sample from a population with mean μ and variance σ^2. Consider an estimator T(X) for μ.</p>",
+      "hints": [
+        "<p>Think about what it means for an estimator to be unbiased.</p>",
+        "<p>How does the consistency of an estimator relate to its ability to converge to the true value?</p>",
+        "<p>Efficiency is often linked to variance. How can you use this intuition to approach the problem?</p>"
+      ],
+      "solutionHtml": "<p>To show that T(X) is unbiased, we need to show that E[T(X)] = μ.</p><p>... (steps omitted for brevity)</p>",
+      "answerShort": "The estimator is unbiased."
+    },
+    "commonMistakes": [
+      "Forgetting to check the consistency of an estimator",
+      "Assuming efficiency implies small variance"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:27.201Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": {
+      "statementHtml": "Let X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub> be a random sample from a population with mean μ and variance σ<sup>2</sup>. Consider the estimator <i>ŷ</i> = (1/n)Σ<i>x</i><sub>i</sub>. Is it unbiased, consistent, efficient, or sufficient?",
+      "hints": [
+        "Think about the expected value of the estimator.",
+        "Consider what happens as n → ∞.",
+        "Compare <i>ŷ</i> to other possible estimators."
+      ],
+      "solutionHtml": "To show that <i>ŷ</i> is unbiased, we need to prove E[<i>ŷ</i>] = μ. This follows from the linearity of expectation and the fact that each X<sub>i</sub> has mean μ.<br><br>To demonstrate consistency, we can use the law of large numbers (LLN) to show that <i>ŷ</i> converges in probability to μ as n → ∞. This is because the LLN states that the sample mean will converge to the population mean with increasing sample size.<br><br>Efficiency is a more complex property, but we can use the Cramér-Rao bound to show that <i>ŷ</i> achieves the minimum variance among all unbiased estimators. Finally, sufficiency follows from the fact that <i>ŷ</i> is a function of the sample mean, which is sufficient for estimating μ.",
+      "answerShort": "Unbiased, consistent, efficient, and sufficient"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the expected value of the estimator.",
+      "Assuming that <i>ŷ</i> is always more efficient than other estimators."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:14:48.506Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_estimator_properties_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "problem": "{",
+    "statementHtml": "Consider an estimator <i>&#x3B4;</i> of a population parameter <i>&#x3C0;</i>. Prove that if <i>&#x3B4;</i> is unbiased, then it is also consistent.",
+    "hints": [
+      "Start by recalling the definition of an unbiased estimator.",
+      "Use the fact that consistency implies convergence in probability.",
+      "Think about what happens to the expected value of <i>&#x3B4;</i> as the sample size increases."
+    ],
+    "solutionHtml": "<p>To prove consistency, we need to show that <i>&#x3B4;</i> converges in probability to <i>&#x3C0;</i>. Since <i>&#x3B4;</i> is unbiased, its expected value is equal to <i>&#x3C0;</i>.</p><p>We can write the difference between <i>&#x3B4;</i> and <i>&#x3C0;</i> as:</p><p>\\[&#x3B4;(X_1, ..., X_n) - &#x3C0; = \\frac{1}{n} \\sum_{i=1}^n (X_i - &#x3C0;)\\]</p><p>Now, we can use the fact that the sample mean is a consistent estimator of the population mean:</p><p>\\[&#x3B4;(X_1, ..., X_n) \\rightarrow_d N(0, \\sigma^2/n) as n → ∞\\]</p><p>This implies that <i>&#x3B4;</i> converges in probability to 0 as the sample size increases.</p>\",",
+    "answerShort": "The estimator is consistent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:15:11.199Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply these fundamental properties of estimators in mathematical statistics.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a random sample X_1, ..., X_n from a population with mean μ and variance σ^2. We want to estimate μ using the sample mean.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the estimator\", \"mathHtml\": \"\\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\", \"explanation\": \"We're defining our estimator as the sample mean.\"}, {\"stepNumber\": 2, \"description\": \"Show unbiasedness\", \"mathHtml\": \"\\(\\mathbb{E}[\\bar{X}] = \\frac{1}{n}\\sum_{i=1}^{n} \\mathbb{E}[X_i] = \\mu\\)\", \"explanation\": \"We're showing that the expected value of our estimator is equal to the population mean.\"}, {\"stepNumber\": 3, \"description\": \"Demonstrate consistency\", \"mathHtml\": \"\\(\\bar{X}_n \\rightarrow_p \\mu\\) as \\(n \\rightarrow \\infty\\)\", \"explanation\": \"We're demonstrating that our estimator converges in probability to the population mean as the sample size increases.\"}, {\"stepNumber\": 4, \"description\": \"Prove efficiency\", \"mathHtml\": \"\\(\\text{Var}[\\bar{X}] = \\frac{\\sigma^2}{n}\\)\", \"explanation\": \"We're showing that our estimator has minimal variance among all unbiased estimators.\"}, {\"stepNumber\": 5, \"description\": \"Show sufficiency\", \"mathHtml\": \"\\(\\bar{X}\\) is sufficient for μ given X_1, ..., X_n\\)\", \"explanation\": \"We're demonstrating that the sample mean contains all the information necessary to estimate the population mean.\"} ],",
+    "finalAnswer": "The sample mean \\(\\bar{X}\\) is an unbiased, consistent, efficient, and sufficient estimator of the population mean μ.\" },",
+    "intuition": "These properties ensure our estimator accurately represents the underlying population characteristic.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:15:37.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore how to identify and utilize these essential properties in point estimation.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to estimate the mean of a normal distribution with unknown parameters. We have a random sample <i>X_1, X_2, ..., X_n</i> from this population.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define an estimator\", \"mathHtml\": \"\\[ \\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i \\]\", \"explanation\": \"We choose the sample mean as our estimator because it's a natural choice for estimating the population mean.\"}, {\"stepNumber\": 2, \"description\": \"Check unbiasedness\", \"mathHtml\": \"\\[ E[\\bar{X}] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right] = \\mu \\]\", \"explanation\": \"To be an unbiased estimator, the expected value of our estimator should equal the true parameter. In this case, the expected value of the sample mean is the population mean.\"}, {\"stepNumber\": 3, \"description\": \"Verify consistency\", \"mathHtml\": \"\\[ P(\\bar{X} \\rightarrow \\mu) = 1 \\]\", \"explanation\": \"Consistency means that our estimator should converge to the true parameter as the sample size increases. In this case, the sample mean is a consistent estimator of the population mean.\"}, {\"stepNumber\": 4\", \"description\": \"Examine efficiency\", \"mathHtml\": \"\\[ Var(\\bar{X}) = \\frac{\\sigma^2}{n} \\]\", \"explanation\": \"Efficiency refers to how much information our estimator extracts from the data. In this case, the sample mean is an efficient estimator because its variance decreases as the sample size increases.\"}, {\"stepNumber\": 5\", \"description\": \"Check sufficiency\", \"mathHtml\": \"\\[ P(\\bar{X} | X_1, ..., X_n) = P(\\bar{X}) \\]\", \"explanation\": \"Sufficiency means that our estimator should not depend on any additional information beyond the data itself. In this case, the sample mean is sufficient because it only depends on the random sample and not on any external factors.\"} ],",
+    "finalAnswer": "The sample mean <i>\\\\bar{X}</i> is an unbiased, consistent, efficient, and sufficient estimator of the population mean.\" },",
+    "intuition": "In point estimation, we want our estimators to be as good as possible. Unbiasedness ensures our estimator doesn't systematically over- or under-estimate the true parameter. Consistency means it gets better with more data. Efficiency measures how much information it extracts from the data. Sufficiency guarantees it only depends on the data itself.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:09.369Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness",
+    "contentHtml": "<p>In this example, we'll explore how to determine if an estimator is unbiased.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random sample <i>X</i> from a population with mean μ. We want to estimate μ using the sample mean <i>&#x03BC;</i>. Is this estimator unbiased?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the estimator\", \"mathHtml\": \"\\[&#x03BC; = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\", \"explanation\": \"We're defining the sample mean as our estimator.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the expected value of the estimator\", \"mathHtml\": \"\\[E[&#x03BC;] = E[\\frac{1}{n} \\sum_{i=1}^n x_i]\\]\", \"explanation\": \"We're calculating the expected value of our estimator.\"}, {\"stepNumber\": 3, \"description\": \"Show that the expected value equals the population mean\", \"mathHtml\": \"\\[E[&#x03BC;] = E[\\frac{1}{n} \\sum_{i=1}^n x_i] = μ\\]\", \"explanation\": \"We're showing that our estimator is unbiased by demonstrating that its expected value equals the population mean.\"}, {\"stepNumber\": 4, \"description\": \"Conclude that the estimator is unbiased\", \"mathHtml\": \"\", \"explanation\": \"Since the expected value of our estimator equals the population mean, we can conclude that it's an unbiased estimator.\"} ],",
+    "finalAnswer": "The sample mean is an unbiased estimator for the population mean.\" },",
+    "intuition": "An unbiased estimator means that, on average, it produces the same result as the true value.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:31.678Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_estimator_properties_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "estimator_properties",
+    "title": "Properties of Estimators: Unbiasedness, Consistency, Efficiency, Sufficiency",
+    "contentHtml": "<p>In this worked example, we'll explore the properties of estimators in mathematical statistics.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to estimate the population mean <i>μ</i> using a random sample <i>x</i><sub>1</sub>, ..., <i>x</i><sub>n</sub>.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the estimator",
+          "mathHtml": "\\[ \\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]",
+          "explanation": "We choose a simple average as our estimator."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check for unbiasedness",
+          "mathHtml": "\\[ E(\\hat{\\mu}) = \\frac{1}{n} \\sum_{i=1}^n E(x_i) = \\mu \\]",
+          "explanation": "Unbiasedness ensures our estimator is not systematically off from the true value."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify consistency",
+          "mathHtml": "\\[ \\hat{\\mu} \\xrightarrow{P} \\mu \\]",
+          "explanation": "Consistency means that as the sample size increases, our estimator converges to the true population mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check for efficiency",
+          "mathHtml": "\\[ V(\\hat{\\mu}) = \\frac{\\sigma^2}{n} \\]",
+          "explanation": "Efficiency measures how well our estimator uses the available information to minimize variance."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Establish sufficiency",
+          "mathHtml": "\\[ \\hat{\\mu} \\perp x_{i+1} - x_i \\]",
+          "explanation": "Sufficiency ensures that our estimator only depends on the sufficient statistics, which are the minimal set of statistics needed to make inferences."
+        }
+      ],
+      "finalAnswer": "The estimator <i>\\hat{\\mu}</i> is unbiased, consistent, efficient, and sufficient."
+    },
+    "intuition": "In summary, a good estimator should be unbiased, consistent, efficient, and sufficient. These properties ensure that our estimates are reliable and accurate.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:16:58.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

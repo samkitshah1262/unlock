@@ -1,0 +1,77 @@
+[
+  {
+    "id": "la_prb_change_of_basis_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "problem": "{",
+    "statementHtml": "Find the transition matrix <i>P</i> that transforms vectors from basis <i>B1</i> to basis <i>B2</i>, given that <i>v1</i> in <i>B1</i> is mapped to <i>v2</i> in <i>B2</i>, and <i>v2</i> in <i>B2</i> is mapped to <i>v3</i> in <i>B1</i>",
+    "hints": [
+      "Start by writing the coordinates of <i>v1</i> and <i>v2</i> in both bases.",
+      "Use the fact that the transition matrix <i>P</i> satisfies <i>Pv1 = v2</i>.",
+      "You can use the given mapping information to find the first column of <i>P</i>"
+    ],
+    "solutionHtml": "<p>To find the transition matrix, we start by writing the coordinates of <i>v1</i> and <i>v2</i> in both bases:</p>\\n\\[v_1 = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix},\\quad v_2 = \\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}\\]\\n<p>In basis <i>B1</i>, we have:</p>\\n\\[v_1 = a_1 \\mathbf{i}_1 + a_2 \\mathbf{i}_2,\\quad v_2 = b_1 \\mathbf{i}_1 + b_2 \\mathbf{i}_2\\]\\n<p>In basis <i>B2</i>, we have:</p>\\n\\[v_2 = c_1 \\mathbf{j}_1 + c_2 \\mathbf{j}_2,\\quad v_3 = d_1 \\mathbf{j}_1 + d_2 \\mathbf{j}_2\\]\\n<p>We can use the given mapping information to find the first column of <i>P</i>:</p>\\n\\[P = \\begin{bmatrix} 3 & 0 \\\\ 4 & ? \\end{bmatrix}\\]\\n<p>To find the second column, we need to find the coordinates of <i>v3</i> in basis <i>B1</i>:</p>\\n\\[v_3 = e_1 \\mathbf{i}_1 + e_2 \\mathbf{i}_2\\]\\n<p>We can now write down the complete transition matrix:</p>\\n\\[P = \\begin{bmatrix} 3 & ? \\\\ 4 & ? \\end{bmatrix}\\]\\n<p>The final answer is:</p>\\n\\[P = \\boxed{\\begin{bmatrix} 3 & -2 \\\\ 4 & 3 \\end{bmatrix}}\\]\",",
+    "answerShort": "The transition matrix <i>P</i> is\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:13:20.027Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_change_of_basis_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "problem": "{",
+    "statementHtml": "Find the matrix representation of a linear transformation in a different basis.",
+    "hints": [
+      "Consider the definition of a linear transformation and its relationship to matrices.",
+      "Think about how the coordinates change when switching from one basis to another.",
+      "Use the properties of similar matrices to help you find the transition matrix."
+    ],
+    "solutionHtml": "\\[T_{\\mathbf{v}} = \\begin{bmatrix} 2 & 1 \\\\ 0 & 3 \\end{bmatrix}\\] in the standard basis, but we want it in the basis spanned by \\[\\mathbf{u}_1 = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}, \\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}\\].<br><br>First, find the coordinates of each basis vector in the standard basis:<br>\\[\\begin{align*} \\mathbf{u}_1 &= \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} = 1\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} + 1\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix},\\\\ \\mathbf{u}_2 &= \\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix} = 1\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} - 1\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}. \\end{align*}\\]<br><br>Now, find the transition matrix:<br>\\[\\mathbf{P} = \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}^{-1} = \\frac{1}{2}\\begin{bmatrix} -1 & 1 \\\\ 1 & 1 \\end{bmatrix}.\\]<br><br>Finally, find the matrix representation of the linear transformation in the new basis:<br>\\[T_{\\mathbf{v}} = \\mathbf{P}^{-1} T_{\\mathbf{v}} \\mathbf{P} = \\begin{bmatrix} 2 & 1 \\\\ 0 & 3 \\end{bmatrix}\\begin{bmatrix} -1/2 & 1/2 \\\\ 1/2 & 1/2 \\end{bmatrix} = \\boxed{\\begin{bmatrix} 1 & 1 \\\\ 0 & 4 \\end{bmatrix}}.\",",
+    "answerShort": "\\[\\begin{bmatrix} 1 & 1 \\\\ 0 & 4 \\end{bmatrix}\\]\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:13:55.553Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_change_of_basis_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "change_of_basis",
+    "problem": "{",
+    "statementHtml": "<p>Given a linear transformation <i>A</i>: ℝ<sup>n</sup> → ℝ<sup>m</sup>, find the matrix representation of <i>A</i> in a new basis.</p>",
+    "hints": [
+      "Think about how the new basis affects the coordinates.",
+      "Use the transition matrix to relate the old and new bases.",
+      "Consider the similarity between matrices."
+    ],
+    "solutionHtml": "<p>To change the basis, we need to find the transition matrix <i>T</i> that transforms the standard basis into the new basis. Then, we can use this matrix to transform any vector.</p><p><code>\\[T = \\begin{bmatrix} t_{11} &amp; \\cdots &amp; t_{1n} \\\\ \\vdots &amp; \\ddots &amp; \\vdots \\\\ t_{m1} &amp; \\cdots &amp; t_{mn} \\end{bmatrix}\\]</code></p><p>Now, we can find the matrix representation of <i>A</i> in the new basis:</p><p><code>\\[A' = T^{-1} A T\\]</code></p>\",",
+    "answerShort": "<code>A'</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:14:15.043Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,534 @@
+[
+  {
+    "id": "stat_con_multiple_testing_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>In many fields, including machine learning and artificial intelligence, we often perform multiple tests or experiments to validate hypotheses or identify patterns. However, as we increase the number of tests, the likelihood of obtaining false positives (Type I errors) also grows.</p><p>This is known as the Multiple Testing Problem (MTP), where we need to balance the desire for accurate results with the risk of incorrect conclusions.</p>",
+    "formula": {
+      "latex": "\\(FWER = P(Type~I~error)\\)",
+      "name": "Family-wise error rate",
+      "variants": []
+    },
+    "intuition": "The MTP is a fundamental challenge in statistical inference, as it highlights the tension between the number of tests and the desired level of significance.",
+    "realWorldApplications": [
+      "In machine learning, the MTP arises when we perform multiple feature selection steps or evaluate multiple models on the same dataset."
+    ],
+    "commonMistakes": [
+      "Failing to account for the MTP can lead to inflated false positive rates and incorrect conclusions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:05:55.398Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multiple_testing_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>When performing multiple hypothesis tests, we face a crucial challenge: controlling the family-wise error rate (FWER). The FWER is the probability of rejecting at least one true null hypothesis.</p><p>Intuitively, as we perform more tests, the likelihood of making at least one false positive increases. This is where Bonferroni, False Discovery Rate (FDR), and Benjamini-Hochberg come in – methods to adjust for multiple testing.</p>",
+    "formula": {
+      "latex": "\\[\\text{FWER} = P(\\text{at least one false positive}) \\]",
+      "name": "Family-wise error rate"
+    },
+    "intuition": "The key insight is that as the number of tests increases, the FWER grows exponentially. We need to adjust our significance level or use more robust methods to maintain a reasonable FWER.",
+    "realWorldApplications": [
+      "In machine learning, multiple testing arises when we perform feature selection or hyperparameter tuning."
+    ],
+    "commonMistakes": [
+      "Failing to account for multiple testing can lead to inflated false positive rates."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:06:10.544Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multiple_testing_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>When performing multiple hypothesis tests, it's crucial to consider the family-wise error rate (FWER) - the probability of rejecting at least one true null hypothesis.</p><p>The FWER is closely related to three key concepts: Bonferroni correction, False Discovery Rate (FDR), and Benjamini-Hochberg procedure.</p>",
+    "formula": {
+      "latex": "\\[\\text{FWER} = P(\\text{at least one false positive}) \\]",
+      "name": "Family-wise error rate"
+    },
+    "intuition": "The key insight is that as you perform more tests, the probability of at least one false positive increases. This is because each test has its own chance of error.",
+    "visualDescription": "A diagram showing multiple tests with increasing FWER",
+    "commonMistakes": [
+      "Not accounting for multiple testing",
+      "Using individual p-values without correction"
+    ],
+    "realWorldApplications": [
+      "Controlling the number of false positives in medical trials",
+      "Detecting anomalies in financial data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:06:25.048Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multiple_testing_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when conducting multiple statistical tests on a single dataset.</p><p>This can lead to an increased risk of false positives due to the family-wise error rate (FWER).</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{FWER} = P(\\text{at least one true null is rejected}) \\]\",",
+    "name": "Family-Wise Error Rate",
+    "variants": "[ {\"latex\": \"\\[ \\text{Bonferroni correction}: \\frac{\\alpha}{k} \\]\", \"description\": \"Adjust the significance level for each test\" }, {\"latex\": \"\\[ \\text{FDR (False Discovery Rate)}: \\frac{\\text{number of false positives}}{\\text{total number of rejections}} \\]\", \"description\": \"Control the expected proportion of false positives\" }, {\"latex\": \"\\[ \\text{Benjamini-Hochberg procedure}: \\max_{1\\le i\\le k} \\left( \\frac{i}{k}\\cdot\\alpha \\right) \\]\", \"description\": \"Sequentially reject tests with p-values below the adjusted threshold\" } ] },",
+    "intuition": "The key insight is to understand that multiple testing increases the risk of false positives, and controlling this risk requires adjusting the significance level or using alternative procedures.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:06:42.715Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multiple_testing_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when performing many hypothesis tests simultaneously.</p><p>This can lead to an inflated false discovery rate (FDR), making it essential to control for family-wise error rates.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{FWER} = P(\\text{at least one Type I error}) \\]\",",
+    "name": "Family-Wise Error Rate",
+    "variants": "[ {\"latex\": \"\\[ \\text{FDR} = P(\\text{false positives}) \\]\", \"description\": \"False Discovery Rate\" } ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test the means of 10 normally distributed variables.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Apply Bonferroni correction\", \"mathHtml\": \"\\[ P(\\text{Type I error}) \\leq \\frac{\\alpha}{k} \\]\", \"explanation\": \"To control FWER\" }, {\"stepNumber\": 2, \"description\": \"Adjust p-values accordingly\", \"mathHtml\": \"\", \"explanation\": \"By multiplying by the Bonferroni correction factor\" } ],",
+    "finalAnswer": "Adjusted p-values\" },",
+    "intuition": "The key insight is that when performing many tests, we need to account for the increased probability of false positives.",
+    "realWorldApplications": [
+      "Controlling FWER in genomic studies"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "multiple testing problem"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:07:02.041Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multiple_testing_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when conducting multiple hypothesis tests in a single study.</p><p>This can lead to an increased risk of Type I errors and false discoveries.</p>",
+    "formula": "{",
+    "latex": "\\[FWER = P(\\cup_{i=1}^k R_i)\\]\",",
+    "name": "Family-wise error rate",
+    "variants": "[ {\"latex\": \"\\[FDR = E(V/R)\\]\", \"description\": \"False discovery rate\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test the mean of 10 features in a dataset.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a significance level\", \"mathHtml\": \"\", \"explanation\": \"We set alpha = 0.05\"}, {\"stepNumber\": 2, \"description\": \"Apply the Bonferroni correction\", \"mathHtml\": \"\\[p-value \\* k\\]\", \"explanation\": \"To control FWER\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "The key insight is that we need to adjust our significance level to account for the multiple tests.",
+    "realWorldApplications": [
+      "Controlling false discoveries in genomics"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "multiple comparisons"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:07:19.464Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multiple_testing_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when conducting multiple hypothesis tests in a single study. The issue is that the family-wise error rate (FWER) can become inflated due to the increased number of tests.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{FWER} = P(\\text{at least one false positive}) \\]\",",
+    "name": "Family-Wise Error Rate",
+    "variants": "[ {\"latex\": \"\\[ \\text{FDR} = E(\\frac{\\text{number of false positives}}{\\text{total number of tests}}) \\]\", \"description\": \"False Discovery Rate\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we conduct 10 independent tests and the significance level is set to 0.05.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the Bonferroni-adjusted p-value\", \"mathHtml\": \"\\(p_{\\text{Bonf}} = p \\cdot 10\\)\"}, {\"stepNumber\": 2, \"description\": \"Compare to the significance level\", \"mathHtml\": \"\\(p_{\\text{Bonf}} < 0.005\\)\"} ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "The key insight is that we need to adjust our significance level to account for the increased number of tests.",
+    "realWorldApplications": [
+      "Controlling false positives in medical trials"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "multiple testing problem"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:07:38.918Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_multiple_testing_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when conducting multiple hypothesis tests simultaneously.</p><p>This can lead to an inflated false positive rate due to the lack of correction for the number of tests performed.</p>",
+    "formula": "{",
+    "latex": "\\(FWER = P(\\text{at least one true null}) \\)",
+    "name": "Family-wise error rate",
+    "variants": "[] },",
+    "theorem": "{",
+    "statement": "\\[FWER \\leq \\sum_{i=1}^k p_i\\]\",",
+    "proofSketch": "The proof involves showing that the union of k events is contained in the intersection of the individual events.\" },",
+    "intuition": "In essence, the multiple testing problem is about controlling the probability of making at least one false discovery when performing multiple tests.",
+    "realWorldApplications": [
+      "Controlling type I errors in genomic studies"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "multiple comparisons"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:07:53.772Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_multiple_testing_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem arises when conducting multiple hypothesis tests simultaneously.</p><p>This can lead to an inflated false positive rate, as each test has its own significance level.</p>",
+    "formula": "{",
+    "latex": "\\[FWER = P(\\text{at least one true null is rejected}) \\]",
+    "name": "Family-wise error rate",
+    "variants": "[] },",
+    "theorem": "{",
+    "statement": "\\\\[P(\\\\text{at least one true null is rejected}) \\\\leq \\alpha \\\\]\",",
+    "proofSketch": "The proof involves showing that the union of all rejection regions is a subset of the event that at least one true null is rejected.\" },",
+    "intuition": "In multiple testing, we need to control the family-wise error rate (FWER) to avoid false discoveries. This theorem provides a bound on FWER.",
+    "realWorldApplications": [
+      "Controlling FWER in genomic studies"
+    ],
+    "tags": [
+      "hypothesis-testing",
+      "multiple-testing-problem"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:08:09.027Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "When conducting multiple tests in a single study, we often face the <strong>multiple testing problem</strong>. This issue arises because each test has its own significance level, and the overall family-wise error rate (FWER) may exceed our desired threshold. Consider a scenario where we perform 10 independent tests with a nominal alpha of 0.05. What is the actual FWER?",
+    "hints": [
+      "Think about the probability of at least one false positive result.",
+      "Recall that the Bonferroni correction adjusts the significance level for each test.",
+      "The Benjamini-Hochberg procedure controls the FDR by adjusting the critical values."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use various methods to control the FWER or FDR. One approach is to apply the Bonferroni correction:</p>\\(FWER = 1 - (1 - \\alpha)^n\\)<p>where $n$ is the number of tests.</p><p>Another method is to employ the Benjamini-Hochberg procedure, which adjusts the critical values based on the rank of the test statistics.</p>\",",
+    "answerShort": "The actual FWER depends on the method used to control it.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:08:27.147Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "<p>When performing multiple tests, it's crucial to control the family-wise error rate (FWER) to avoid false discoveries. However, as the number of tests increases, the FWER can become prohibitively small. This problem explores three popular methods for controlling the FWER: Bonferroni, False Discovery Rate (FDR), and Benjamini-Hochberg.</p>",
+    "hints": [
+      "<p>Start by considering a single test with a desired significance level. How would you adjust this to accommodate multiple tests?</p>",
+      "<p>Think about the Bonferroni correction as a 'conservative' approach. What are its limitations, and how do FDR and Benjamini-Hochberg address these issues?</p>",
+      "<p>Visualize the p-value distribution for each test. How would you expect the FWER to change with increasing numbers of tests?</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll work through each method:</p><ul><li>Bonferroni: \\(\\mathbf{p} = \\frac{\\mathbf{i}}{\\mathbf{n}}\\)</li><li>FDR: \\(\\mathbf{q} = \\min(\\mathbf{p}, 1 - \\frac{\\mathbf{k}}{\\mathbf{n}})\\)</li><li>Benjamini-Hochberg: \\(\\mathbf{r} = \\max(0, 1 - \\frac{\\mathbf{i}}{\\mathbf{n}})\\)</li></ul>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:08:48.278Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": "{",
+    "statementHtml": "<p>Consider a multiple testing problem where we have <i>n</i> tests and want to control the family-wise error rate (FWER).</p>",
+    "hints": [
+      "Think about how many false positives you'd allow if all tests were independent.",
+      "Bonferroni's inequality can help us bound the FWER.",
+      "Benjamini-Hochberg's procedure is a more powerful alternative to Bonferroni."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use Bonferroni's inequality:</p>\\n\\[P(\\text{at least one false positive}) \\leq \\sum_{i=1}^k P(\\text{test } i \\text{ is a false positive})\\]\\n<p>Let <i>p</i> be the probability of a single test being a false positive. Then:</p>\\n\\[P(\\text{at least one false positive}) \\leq k \\cdot p\\]\\n<p>We can set this upper bound to our desired FWER, say <i>&alpha;</i>, and solve for <i>k</i>:</p>\\n\\[k \\geq -\\log(1-\\alpha) / \\log(p)\\]\\n<p>Now we have a procedure: reject all tests with p-value greater than the Bonferroni-corrected significance level.</p>\",",
+    "answerShort": "Bonferroni's inequality\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:09:07.597Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multiple_testing_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "problem": {
+      "statementHtml": "<p>Consider a scenario where you have to perform multiple tests on the same dataset. Each test has its own null hypothesis and significance level. However, the family-wise error rate (FWER) is of concern. How can you control FWER while still making decisions based on individual test results?</p>",
+      "hints": [
+        "<p>Think about how to adjust your significance levels.</p>",
+        "<p>Consider a method that takes into account the number of tests performed.</p>",
+        "<p>Look for a procedure that provides a better trade-off between false positives and false negatives.</p>"
+      ],
+      "solutionHtml": "<p>To control FWER, you can use the Bonferroni correction. This involves multiplying each test's p-value by the total number of tests performed. Then, compare the resulting values to your desired significance level. If any value is below this threshold, reject the null hypothesis.</p><p>Alternatively, you can use the Benjamini-Hochberg procedure, which provides a more conservative correction for multiple testing.</p>",
+      "answerShort": "Bonferroni or Benjamini-Hochberg"
+    },
+    "commonMistakes": [
+      "<p>Failing to account for the number of tests performed.</p>",
+      "<p>Using a single significance level without adjusting for multiple testing.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:09:24.267Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multiple_testing_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Solving Multiple Testing Problems",
+    "contentHtml": "<p>In this example, we'll walk through a step-by-step solution to a multiple testing problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>We have 10 tests with p-values: 0.01, 0.02, 0.03, ..., 0.09. We want to control the family-wise error rate (FWER) at 0.05.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Reject tests with corrected p-values below the threshold",
+    "mathHtml": "",
+    "explanation": "Since only one test has a corrected p-value below 0.05, we reject that test.\" } ],",
+    "finalAnswer": "We reject the first test and do not reject any others.\" },",
+    "intuition": "The key insight is to recognize that multiple testing problems require a correction factor to account for the increased likelihood of false positives.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:09:45.674Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multiple_testing_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Solving the Multiple Testing Problem",
+    "contentHtml": "<p>In hypothesis testing, we often need to perform multiple tests simultaneously. However, this can lead to an increased risk of false discoveries. The <strong>Multiple Testing Problem</strong> arises when we want to control the family-wise error rate (FWER) or the false discovery rate (FDR).</p>",
+    "problem": "{",
+    "statementHtml": "<p>We have a dataset with n features and m samples. We want to perform k independent tests, each testing a different null hypothesis. What is the probability that at least one of these tests rejects its null hypothesis when all null hypotheses are true?</p>",
+    "hints": [
+      "Hint: Think about the union bound.",
+      "Hint: Consider the Bonferroni correction."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the Bonferroni correction.</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with 10 features and 100 samples. We want to perform 5 independent tests to determine which features are significant at a 0.05 level.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the p-values for each test.\", \"mathHtml\": \"\\[p_1, \\ldots, p_5\\]\", \"explanation\": \"We need to calculate the probability of observing the data given that the null hypothesis is true.\" }, {\"stepNumber\": 2, \"description\": \"Correct the p-values using the Bonferroni correction.\", \"mathHtml\": \"\\[p_i \\cdot k\\]\", \"explanation\": \"The Bonferroni correction adjusts the p-value to account for the multiple tests being performed.\" }, {\"stepNumber\": 3, \"description\": \"Determine which features are significant at a 0.05 level.\", \"mathHtml\": \"\", \"explanation\": \"We compare each p-value to our desired significance level and reject any null hypotheses that have a p-value less than 0.05.\" }, {\"stepNumber\": 4, \"description\": \"Adjust the family-wise error rate (FWER) accordingly.\", \"mathHtml\": \"\\[1 - \\prod_{i=1}^k (1-p_i)\\]\", \"explanation\": \"We need to adjust our FWER to account for the multiple tests being performed.\" }, {\"stepNumber\": 5, \"description\": \"Repeat steps 2-4 for each test.\", \"mathHtml\": \"\", \"explanation\": \"We repeat these steps for each of the 5 independent tests.\" } ],",
+    "finalAnswer": "The Bonferroni correction helps us control the FWER by adjusting the p-values.\" },",
+    "intuition": "The key insight is that the Bonferroni correction provides a simple and effective way to adjust the p-values for multiple testing.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:10:16.978Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multiple_testing_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Solving the Multiple Testing Problem",
+    "contentHtml": "<p>The multiple testing problem is a common issue in statistical hypothesis testing.</p><ul><li>We often perform multiple tests to analyze data and make conclusions.</li><li>However, this increases the chance of Type I errors (false positives).</li></ul>",
+    "formula": {
+      "latex": "\\[ \\mathbf{P}(\\text{Type I error}) = 1 - \\mathbf{P}(\\text{correct rejection}) \\]",
+      "name": "Type I Error Probability"
+    },
+    "problem": {
+      "statementHtml": "<p>We have a dataset of exam scores and want to test the null hypothesis that the average score is less than or equal to 80.</p><p>We perform 10 independent tests, each testing a different aspect of the data.</p>",
+      "hints": [
+        "Hint: Use the Bonferroni correction"
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to adjust our significance level to account for the multiple tests.</p>",
+      "answerShort": "Use the Bonferroni correction"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a dataset of exam scores and want to test the null hypothesis that the average score is less than or equal to 80.</p><p>We perform 5 independent tests, each testing a different aspect of the data.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define our significance level",
+          "mathHtml": "\\[ \\alpha = 0.05 \\]",
+          "explanation": "We need to adjust our significance level to account for the multiple tests."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the adjusted p-value",
+          "mathHtml": "\\[ p_{adj} = \\frac{p}{k} \\]",
+          "explanation": "The Bonferroni correction adjusts the p-value by dividing it by the number of tests (k)."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compare the adjusted p-value to our significance level",
+          "mathHtml": "\\[ p_{adj} < \\alpha ? Reject H_0 : Fail to reject H_0 \\]",
+          "explanation": "If the adjusted p-value is less than our significance level, we reject the null hypothesis."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Repeat for each test",
+          "mathHtml": "",
+          "explanation": "We repeat this process for each of the 5 independent tests."
+        }
+      ],
+      "finalAnswer": "Reject H_0"
+    },
+    "intuition": "The Bonferroni correction helps us avoid false positives by adjusting our significance level to account for multiple tests.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:10:46.574Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multiple_testing_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Solving the Multiple Testing Problem",
+    "contentHtml": "<p>In hypothesis testing, we often perform multiple tests to validate our hypotheses. However, this can lead to an increased risk of false discoveries.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset with 10 features and want to test the null hypothesis that each feature is normally distributed. We run 10 statistical tests to verify this assumption.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the family-wise error rate (FWER) as the maximum probability of at least one false positive.\", \"mathHtml\": \"\\(FWER = \\sum_{i=1}^{10} P(\\text{false positive}_i)\\)\", \"explanation\": \"We want to control the overall probability of making a mistake.\"}, {\"stepNumber\": 2, \"description\": \"Apply the Bonferroni correction by multiplying each p-value by \\(10\\).\", \"mathHtml\": \"\\(p_\\text{Bonf} = p \\cdot 10\\)\", \"explanation\": \"This adjusts for the multiple testing issue by increasing the threshold.\"}, {\"stepNumber\": 3, \"description\": \"Use the Benjamini-Hochberg procedure to adjust the p-values.\", \"mathHtml\": \"\\[p_\\text{BH} = \\min(p, 1 - (10-k+1)^{-1})\\]\", \"explanation\": \"This method is more powerful than Bonferroni and takes into account the number of tests performed.\"}, {\"stepNumber\": 4, \"description\": \"Compare the adjusted p-values to our desired FWER.\", \"mathHtml\": \"\\(P(\\text{false positive}_i) \\leq FWER\\)\", \"explanation\": \"If any of the adjusted p-values are below the FWER, we reject the null hypothesis.\"}, {\"stepNumber\": 5, \"description\": \"Repeat steps 2-4 for each feature.\", \"mathHtml\": \"\", \"explanation\": \"We apply these corrections to all features to ensure a controlled FWER.\"} ],",
+    "finalAnswer": "After adjusting the p-values using the Benjamini-Hochberg procedure and controlling the FWER, we can confidently reject or fail to reject our hypotheses.\" },",
+    "intuition": "The key insight is that multiple testing issues arise from the accumulation of errors. By applying corrections like Bonferroni and Benjamini-Hochberg, we can control this error rate and make more informed decisions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:11:14.626Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

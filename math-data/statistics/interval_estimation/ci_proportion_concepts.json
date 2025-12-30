@@ -1,0 +1,106 @@
+[
+  {
+    "id": "stat_con_ci_proportion_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions",
+    "contentHtml": "<p>When estimating a population proportion, we often rely on interval estimation techniques to provide a range of plausible values. In this concept, we'll explore the basics of confidence intervals (CIs) for proportions and discuss the normal approximation method.</p><p>A CI for a proportion is a range of values within which the true population proportion lies with a certain level of confidence. This is particularly important in machine learning and AI applications where we need to quantify uncertainty and make informed decisions.</p>",
+    "formula": {
+      "latex": "\\[ \\text{CI} = \\left[\\frac{\\hat{p} + z^2/\\left(2n\\right)}{1 + z^2/n},\\frac{\\hat{p} - z^2/(2n)}{1 - z^2/n}\\right] \\]",
+      "name": "Normal Approximation CI"
+    },
+    "intuition": "The key insight is that the normal approximation method provides a simple and efficient way to construct CIs for proportions, especially when the sample size is large.",
+    "commonMistakes": [
+      "Failing to check assumptions",
+      "Using an incorrect confidence level"
+    ],
+    "realWorldApplications": [
+      "Estimating the effectiveness of a marketing campaign"
+    ],
+    "tags": [
+      "statistics",
+      "interval estimation",
+      "proportions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:19:08.755Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_proportion_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions",
+    "contentHtml": "<p>When estimating a population proportion, we often rely on interval estimation techniques to provide a range of plausible values.</p><p>The Wilson interval is a popular method that combines the normal approximation with continuity correction. In this card, we'll explore the intuition behind CI for proportions and its applications in machine learning.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = \\left(\\frac{\\hat{p}}{1+\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}} + z_{\\alpha/2}\\cdot\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}, - \\left(\\frac{\\hat{p}}{1+\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}} + z_{\\alpha/2}\\cdot\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\right]\\]",
+      "name": "Wilson Interval"
+    },
+    "intuition": "The Wilson interval cleverly adjusts the normal approximation to account for the discrete nature of proportions. By using a continuity correction, we ensure that our confidence intervals are more accurate and reliable.",
+    "realWorldApplications": [
+      "Estimating the effectiveness of A/B testing in machine learning"
+    ],
+    "commonMistakes": [
+      "Failing to consider the continuity correction when applying the Wilson interval"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:19:27.599Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_ci_proportion_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "ci_proportion",
+    "title": "Interval Estimation for Proportions",
+    "contentHtml": "<p>In statistics, we often need to estimate a population proportion based on a random sample from that population. One way to do this is by constructing an interval estimate, also known as a confidence interval (CI). The CI for proportions provides a range of values within which the true population proportion lies.</p><p>The normal approximation method and exact methods are two common approaches to construct CIs for proportions. The Wilson interval is another popular method that combines the strengths of both approaches.</p>",
+    "formula": {
+      "latex": "\\[ CI = \\left(\\frac{X}{n} + Z \\sqrt{\\frac{P(1-P)}{n}} , \\frac{X}{n} + (Z+1) \\sqrt{\\frac{P(1-P)}{n}} \\right] \\]",
+      "name": "Normal Approximation CI",
+      "variants": [
+        {
+          "latex": "\\[ CI = \\left(\\frac{X}{n} + Z \\sqrt{\\frac{P(1-P)}{n}} , \\frac{X}{n} + (Z+1) \\sqrt{\\frac{P(1-P)}{n}} \\right] \\]",
+          "description": "For large sample sizes"
+        }
+      ]
+    },
+    "intuition": "The CI for proportions provides a range of values within which the true population proportion lies. This helps us quantify our uncertainty and make more informed decisions.",
+    "realWorldApplications": [
+      "Estimating the effectiveness of a marketing campaign"
+    ],
+    "tags": [
+      "proportions",
+      "confidence intervals",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:19:47.673Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "stat_wex_sample_size_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "sample_size",
+    "title": "Sample Size Determination",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to determine the sample size required for a given margin of error and precision.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the average height of adult males in a population with a margin of error of 0.5 cm and precision of 95%. What is the minimum sample size needed?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the required parameters\", \"mathHtml\": \"\\(z = \\frac{0.5}{\\sqrt{\\frac{(1-0.95)}{2}}} \\approx 1.96\\)\", \"explanation\": \"We need to find the Z-score corresponding to our desired margin of error and precision.\"}, {\"stepNumber\": 2, \"description\": \"Use a standard normal distribution table or calculator\", \"mathHtml\": \"\\(z = 1.96 \\Rightarrow p = 0.025\\)\", \"explanation\": \"Look up the probability associated with our Z-score to find the critical value.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the sample size using the formula\", \"mathHtml\": \"\\(n = \\frac{z^2 \\cdot (1-0.95)}{(1-0.025)^2} \\approx 384\\)\", \"explanation\": \"Plug in our values to find the minimum required sample size.\"}, {\"stepNumber\": 4, \"description\": \"Rounded up to the nearest whole number\", \"mathHtml\": \"\\(n = 385\\)\", \"explanation\": \"Since we can't have a fraction of a person, round up to the nearest whole number.\"} ],",
+    "finalAnswer": "The minimum sample size required is approximately 385.\" },",
+    "intuition": "Sample size determination is crucial in statistical inference. A larger sample size generally leads to more accurate estimates, but it also increases costs and data collection time.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:33:07.242Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_size_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "sample_size",
+    "title": "Sample Size Determination for Interval Estimation",
+    "contentHtml": "<p>In interval estimation, we often need to determine the sample size required to achieve a certain level of precision.</p>",
+    "formula": {
+      "latex": "\\[\\text{Margin of Error} = \\frac{\\sigma}{\\sqrt{n}}\\]",
+      "name": "Margin of Error Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a population proportion p, we want to estimate the interval with a margin of error of at most 0.05 and confidence level of 95%. What is the minimum sample size required?</p>",
+      "hints": [
+        "Hint: Start by calculating the standard deviation"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to estimate the proportion of people who prefer a certain product with a margin of error of at most 0.05 and confidence level of 95%. If we know that the population proportion is approximately 0.6, what is the minimum sample size required?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the standard deviation",
+          "mathHtml": "\\[\\sigma = \\sqrt{p(1-p)}\\]",
+          "explanation": "We use the formula for the population standard deviation of a binomial distribution"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the margin of error formula",
+          "mathHtml": "\\[\\text{Margin of Error} = \\frac{0.05}{\\sqrt{n}}\\]",
+          "explanation": "We substitute the given values and solve for n"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify and solve for n",
+          "mathHtml": "\\[n > \\left(\\frac{0.05}{0.6-0.4}\\right)^2\\]",
+          "explanation": "We simplify the expression and solve for n"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Round up to the nearest integer",
+          "mathHtml": "\\[n > 384.64 \\rightarrow n = 385\\]",
+          "explanation": "We round up to ensure the sample size is an integer"
+        }
+      ],
+      "finalAnswer": "The minimum sample size required is at least 385."
+    },
+    "intuition": "Sample size determination is crucial in interval estimation, as it directly affects the precision of our estimates.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:33:36.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sample_size_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "sample_size",
+    "title": "Sample Size Determination for Interval Estimation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to determine the sample size required for a given precision and margin of error in interval estimation.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to estimate the mean height of adults with a margin of error of ±1.5 cm and a confidence level of 95%. We have a population standard deviation of σ = 3.2 cm. How many samples should we take?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the required parameters",
+          "mathHtml": "\\(Z_{\\alpha/2} \\cdot \\frac{\\sigma}{E} \\sqrt{\\frac{1}{n}} = 1.5\\)",
+          "explanation": "We need to find the sample size n that satisfies the margin of error equation."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the Z-score for the desired confidence level",
+          "mathHtml": "\\[Z_{0.025} = 1.96\\]",
+          "explanation": "We look up the Z-score corresponding to our desired confidence level (95%)"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the margin of error equation",
+          "mathHtml": "\\[n \\geq \\left( \\frac{1.96 \\cdot 3.2}{1.5} \\right)^2\\]",
+          "explanation": "We plug in our values and simplify the equation to get a quadratic formula"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Solve for n",
+          "mathHtml": "\\[n \\geq 92.53\\]",
+          "explanation": "We solve the quadratic formula to find the minimum sample size required"
+        }
+      ],
+      "finalAnswer": "At least 93 samples are needed"
+    },
+    "intuition": "The key insight is that the sample size required for a given precision and margin of error increases as the population standard deviation grows.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:01.344Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

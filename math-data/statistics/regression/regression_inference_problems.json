@@ -1,0 +1,108 @@
+[
+  {
+    "id": "stat_prb_regression_inference_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "problem": "{",
+    "statementHtml": "Construct a 95% confidence interval for the slope coefficient <i>&beta;</i> of a simple linear regression model.",
+    "hints": [
+      "Recall the formula for the sample variance.",
+      "Think about how to scale the standard error.",
+      "Use the inverse normal distribution function."
+    ],
+    "solutionHtml": "<p>To construct the confidence interval, we first need to calculate the standard error of the slope coefficient:</p>\\n\\n\\[se(\\hat{&beta;}) = \\sqrt{\\frac{1}{N-2} \\cdot \\frac{\\sum_{i=1}^N (x_i - \\bar{x})^2}{\\sum_{i=1}^N (x_i - \\bar{x})(y_i - \\bar{y})}}.\\]\\n\\n<p>Next, we use the inverse normal distribution function to find the critical value:</p>\\n\\n\\[z = \\Phi^{-1}(0.975) = 1.96.\\]\\n\\n<p>Finally, we construct the confidence interval:</p>\\n\\n\\[\\hat{&beta;} \\pm z \\cdot se(\\hat{&beta;}) = \\ldots.\\]\",",
+    "answerShort": "The answer is...\" },",
+    "commonMistakes": [
+      "Forgetting to scale the standard error.",
+      "Using the wrong critical value."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:26:48.845Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% confidence interval for the slope of a simple linear regression model.</p>",
+      "hints": [
+        "Recall that the standard error of the slope estimate is proportional to the variance of the residuals.",
+        "The t-distribution will be used to construct the confidence interval.",
+        "You can use the `tinv` function in your preferred programming language or software package."
+      ],
+      "solutionHtml": "<p>To construct a 95% confidence interval for the slope, we need to find the critical value from the t-distribution with <code>n-2</code> degrees of freedom.</p>\n<p><code>t = tinv(0.975, n-2)</code></p>\n<p>The margin of error is then:</p>\n<p><code>MRE = ts * sqrt((SS_res / (n-2)) / SS_x)</code></p>\n<p>The confidence interval is:</p>\n<p><code>CI = beta0 + MRE</code></p>",
+      "answerShort": "The 95% CI for the slope is [lower bound, upper bound]."
+    },
+    "commonMistakes": [
+      "Forgetting to adjust the degrees of freedom in the t-distribution.",
+      "Not accounting for the variance of the residuals."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:05.338Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the slope of a simple linear regression model.</p>",
+    "hints": [
+      "Start by identifying the sample mean and standard deviation of the residuals.",
+      "Use the t-distribution to find the critical value.",
+      "Recall that the slope is the coefficient in the linear equation."
+    ],
+    "solutionHtml": "<p>To construct a 95% confidence interval for the slope, we first need to calculate the sample mean and standard deviation of the residuals.</p>\\n\\ \\[ \\bar{r} = \\frac{\\sum r_i}{n-2}, \\quad s_r = \\sqrt{\\frac{\\sum (r_i - \\bar{r})^2}{n-2}}. \\]\\n\\ <p>Next, we use the t-distribution to find the critical value.</p>\\n\\ \\[ t_{\\alpha/2} = t_{0.025}. \\]\\n\\ <p>We can then construct the confidence interval as follows:</p>\\n\\ \\[ CI = (\\hat{\\beta}_0 - t_{\\alpha/2} \\frac{s_r}{\\sqrt{n-1}}, \\hat{\\beta}_0 + t_{\\alpha/2} \\frac{s_r}{\\sqrt{n-1}}). \\]\\n\\ <p>Finally, we can calculate the confidence interval using our sample data.</p>\",",
+    "answerShort": "The 95% confidence interval is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:24.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": "{",
+    "statementHtml": "<p>In a simple linear regression model, we want to construct a <i>confidence interval</i> for the slope coefficient β.</p>",
+    "hints": "[ \"<p>Start by recalling the formula for the sample slope:</p>\\(\\hat{\\beta} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\)\", \"<p>Next, think about how to standardize the slope estimate.</p>\", \"<p>Finally, consider the t-distribution and its relationship to the confidence interval.</p>\" ],",
+    "solutionHtml": "<p>To construct a <i>confidence interval</i> for β, we can use the following steps:</p>\\n <p><ol>\\n<li>Compute the sample slope \\(\\hat{\\beta}\\) using the formula above.</li>\\n<li>Standardize the slope estimate by dividing it by its standard error:</li>\\n\\[t = \\frac{\\hat{\\beta}}{s_\\hat{\\beta}}\\], where \\(s_\\hat{\\beta} = \\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n-2}}\\)</p>\\n<li>Use the t-distribution to find the critical value:</li>\\[t_{crit} = t_{\\alpha/2, n-2}\\]</p>\\n<li>Construct the confidence interval by multiplying the critical value by the standard error and adding/subtracting it from the sample slope:</li>\\[\\text{CI}(\\beta) = \\hat{\\beta} \\pm t_{crit} \\cdot s_\\hat{\\beta}\\]</p></ol>\",",
+    "answerShort": "<i>Confidence interval for β</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:48.329Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

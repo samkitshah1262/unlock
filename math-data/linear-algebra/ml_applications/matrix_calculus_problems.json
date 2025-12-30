@@ -1,0 +1,108 @@
+[
+  {
+    "id": "la_prb_matrix_calculus_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "matrix_calculus",
+    "problem": "{",
+    "statementHtml": "<p>Find the derivative of the matrix expression <span class='math'>\\( \\mathbf{A}^T \\mathbf{B} \\)</span>.</p>\",",
+    "hints": "[ \"Start by applying the chain rule to the transpose operation.\", \"Focus on the inner product between <span class='math'>\\( \\mathbf{a}_i \\)</span> and <span class='math'>\\( \\mathbf{b}_j \\)</span>.\", \"Use the fact that the derivative of a matrix is another matrix.\" ],",
+    "solutionHtml": "<p>To find the derivative, we'll apply the chain rule to the transpose operation:</p><ul><li>We know that <span class='math'>\\( \\frac{\\partial}{\\partial \\mathbf{A}} \\mathbf{A}^T \\)</span> is a matrix with entries <span class='math'>\\( \\frac{\\partial}{\\partial a_{ij}} a_{ji} \\)</span>.</li><li>Now, we'll focus on the inner product between <span class='math'>\\( \\mathbf{a}_i \\)</span> and <span class='math'>\\( \\mathbf{b}_j \\)</span>:</li></ul><p>The derivative of this expression is:</p><span class='math'>\\[ \\frac{\\partial}{\\partial \\mathbf{A}} \\( \\mathbf{A}^T \\mathbf{B} \\) = \\( \\mathbf{B}^T \\otimes \\mathbf{I}_n \\) \\]</span>\",",
+    "answerShort": "<span class='math'>\\( \\frac{\\partial}{\\partial \\mathbf{A}} \\( \\mathbf{A}^T \\mathbf{B} \\) = \\( \\mathbf{B}^T \\otimes \\mathbf{I}_n \\) \\)</span>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:28:43.751Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_calculus_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "matrix_calculus",
+    "problem": {
+      "statementHtml": "<p>Find the derivative of the matrix expression <i>M</i> = <i>A</i><sup>T</sup><i>B</i></p>",
+      "hints": [
+        "Start by applying the chain rule to the transpose operation.",
+        "Recall that the derivative of a product is the sum of products of derivatives and original terms.",
+        "Use the fact that the derivative of a matrix is another matrix."
+      ],
+      "solutionHtml": "<p>To find the derivative, we apply the chain rule:</p>\n<p><i>∂M/∂A</i> = <i>B</i><sup>T</sup></p>\n<p><i>∂M/∂B</i> = <i>A</i></p>",
+      "answerShort": "<i>M</i> = <i>A</i><sup>T</sup><i>B</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the chain rule when differentiating the transpose operation.",
+      "Not recognizing that the derivative of a matrix is another matrix."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:28:59.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_calculus_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "matrix_calculus",
+    "problem": {
+      "statementHtml": "<p>Find the derivative of the matrix expression <span class=\"latex\">\\(M = X^T Y \\)</span>, where <span class=\"latex\">\\(X \\in \\mathbb{R}^{n \\times d}\\)</span> and <span class=\"latex\">\\(Y \\in \\mathbb{R}^{m \\times d}\\)</span>.</p>",
+      "hints": [
+        "<p>Start by applying the chain rule to the expression.</p>",
+        "<p>Identify the derivative of the matrix product.</p>",
+        "<p>Use the fact that the derivative of a scalar is zero, unless it's with respect to one of its variables.</p>"
+      ],
+      "solutionHtml": "<p>To find the derivative, we'll use the chain rule and the fact that the derivative of a matrix product is the product of the derivatives of the matrices. We get:</p><p><span class=\"latex\">\\(\\frac{dM}{dX} = Y^T \\)</span>.</p>",
+      "answerShort": "<span class=\"latex\">\\(Y^T \\)</span>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the chain rule",
+      "Not identifying the derivative of the matrix product correctly"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:29:17.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_calculus_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "matrix_calculus",
+    "problem": "{",
+    "statementHtml": "<p>Find the derivative of the matrix expression <span class='latex'>\\mathbf{X}^T \\mathbf{A} \\mathbf{X}</span>, where <span class='latex'>\\mathbf{X}</span> is a column vector and <span class='latex'>\\mathbf{A}</span> is a square matrix.</p>\",",
+    "hints": [
+      "<p>The derivative of the dot product is given by the outer product.</p>",
+      "<p>Apply the chain rule to the matrix expression.</p>",
+      "<p>Use the fact that the derivative of a quadratic form is twice its Hessian.</p>"
+    ],
+    "solutionHtml": "<p>To find the derivative, we can use the chain rule:</p><ul><li>We differentiate the outer product <span class='latex'>\\mathbf{X}^T \\mathbf{A}</span> with respect to <span class='latex'>\\mathbf{X}</span>, which gives us <span class='latex'>\\mathbf{A}</span>.</li><li>We then multiply this result by <span class='latex'>\\mathbf{X}^T</span> to get the final derivative.</li></ul>\",",
+    "answerShort": "<p>The derivative is <span class='latex'>\\mathbf{X}^T \\mathbf{A}</span>.</p>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:29:39.254Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

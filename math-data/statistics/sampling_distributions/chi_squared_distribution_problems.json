@@ -1,0 +1,80 @@
+[
+  {
+    "id": "stat_prb_chi_squared_distribution_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a chi-squared random variable with <i>n</i> degrees of freedom. Show that the sum of <i>n</i> independent standard normal variables has the same distribution as X.",
+    "hints": [
+      "Recall the definition of a chi-squared distribution and its relationship to sums of squares.",
+      "Use the fact that the square of a standard normal variable is exponentially distributed with rate 1/2.",
+      "Apply the convolution formula for the sum of independent random variables."
+    ],
+    "solutionHtml": "\\[ \\begin{align*} \\chi^2 &= \\sum_{i=1}^{n} Z_i^2 \\\\ &= \\sum_{i=1}^{n} (N(0, 1))^2 \\\\ &= \\sum_{i=1}^{n} N^2(0, 1) \\\\ &\\sim \\chi^2(n) \\end{align*}\\] Final answer: The sum of <i>n</i> independent standard normal variables has the same distribution as X.\",",
+    "answerShort": "The chi-squared distribution\" },",
+    "commonMistakes": [
+      "Forgetting to apply the convolution formula",
+      "Not recognizing the relationship between chi-squared and sums of squares"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:04.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_distribution_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "<p>Consider a chi-squared statistic X<sup>2</sup> = Σ (O - E)<sup>2</sup>/E with k-1 degrees of freedom. Show that X<sup>2</sup> is the sum of k independent variables, each distributed as χ<sup>2</sup>(1).</p>",
+    "hints": [
+      "<p>The key insight lies in recognizing X<sup>2</sup> as a weighted sum of squared normal variables.</p>",
+      "<p>Use the fact that χ<sup>2</sup>(1) is the distribution of the square of a standard normal variable.</p>",
+      "<p>Apply the linearity property of the chi-squared distribution to each term in the sum.</p>"
+    ],
+    "solutionHtml": "<p>To show this, we can write X<sup>2</sup> as:</p><p>\\[X^2 = \\sum_{i=1}^{k} (O_i - E_i)^2/E_i\\]</p><p>Each term in the sum is a squared normal variable with mean 0 and variance E_i. By the chi-squared distribution property, this is equivalent to χ<sup>2</sup>(1) for each i.</p><p>Since these variables are independent, their sum also follows a chi-squared distribution with k-1 degrees of freedom.</p>\",",
+    "answerShort": "χ<sup>2</sup>(k-1)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:25.099Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_distribution_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable following a chi-squared distribution with <i>n</i> degrees of freedom. Find the expected value and variance of X.</p>",
+    "hints": [
+      "Recall that the chi-squared distribution is a sum of squared normals.",
+      "Think about how the expected value and variance of the individual normals contribute to those of the sum."
+    ],
+    "solutionHtml": "<p>To find the expected value, we can use the linearity property of expectation:</p>\\(E[X] = E\\left[\\sum_{i=1}^n \\chi_i^2\\right] = \\sum_{i=1}^n E[\\chi_i^2]\\)<p>Since each $\\chi_i$ is a standard normal, we have \\(E[\\chi_i^2] = 1\\). Therefore, the expected value of X is:</p>\\(E[X] = n\\)<p>To find the variance, we can use the fact that the chi-squared distribution is a sum of squared normals:</p>\\(\\text{Var}(X) = \\sum_{i=1}^n \\text{Var}(\\chi_i^2)\\)<p>Since each $\\chi_i$ is independent and has variance 1, we have:</p>\\(\\text{Var}(X) = n\\)</p>\",",
+    "answerShort": "E[X] = n, Var(X) = n\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:44.181Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "la_prb_spectral_theorem_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "spectral_theorem",
+    "problem": "{",
+    "statementHtml": "Let $A$ be a real symmetric matrix. Prove that $A$ can be orthogonally diagonalized if and only if it has distinct eigenvalues.",
+    "hints": [
+      "Start by considering the eigenvectors of $A$. What properties do they have?",
+      "Use the fact that $A$ is symmetric to relate its eigenvectors to each other.",
+      "Think about what happens when you take the dot product of two eigenvectors"
+    ],
+    "solutionHtml": "\\[Let $\\lambda_1, \\ldots, \\lambda_n$ be the distinct eigenvalues of $A$. Then, there exist orthogonal vectors $\\mathbf{v}_1, \\ldots, \\mathbf{v}_n$ such that $A\\mathbf{v}_i = \\lambda_i\\mathbf{v}_i.\\] To prove that these eigenvectors span the entire space, show that any vector $\\mathbf{x}$ can be written as a linear combination of them. Finally, use the fact that $A$ is symmetric to conclude that the eigenvectors are orthogonal.\",",
+    "answerShort": "The matrix has distinct eigenvalues.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:41:38.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_spectral_theorem_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "spectral_theorem",
+    "problem": "{",
+    "statementHtml": "<p>Find the eigenvalues and eigenvectors of a symmetric matrix <span class=\\\"math\\\">\\[A = \\begin{bmatrix} 2 & 1 \\\\ 1 & 4 \\end{bmatrix}\\]</span>.</p>\",",
+    "hints": [
+      "Check if the matrix is diagonalizable.",
+      "Look for orthogonal eigenvectors and real eigenvalues.",
+      "Use the fact that symmetric matrices are orthogonally diagonalizable."
+    ],
+    "solutionHtml": "<p>To find the eigenvalues, we can solve the characteristic equation:</p><p>\\[\\det(A - \\lambda I) = 0\\]</p><p>Solving for <span class=\\\"math\\\">\\\\lambda</span>, we get:</p><p>\\[(-1-\\lambda)(4-\\lambda) - 2 = 0\\]</p><p>This quadratic equation has solutions:</p><p>\\[\\lambda_1 = 3, \\lambda_2 = 1\\]</p><p>Now, we can find the corresponding eigenvectors:</p><p>We normalize the eigenvectors to have length 1.</p>\",",
+    "answerShort": "Eigenvalues: [3, 1], Eigenvectors: [[0.2679, 0.8660], [-0.8660, 0.2679]]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:41:57.837Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_spectral_theorem_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "spectral_theorem",
+    "problem": "{",
+    "statementHtml": "<p>Given a symmetric matrix A, prove that there exists an orthogonal diagonalization of the form P^T AP = &Lambda;.</p>",
+    "hints": [
+      "Start by considering the eigenvalues and eigenvectors of A.",
+      "Use the fact that symmetric matrices have real eigenvalues.",
+      "Think about how to construct the matrix P."
+    ],
+    "solutionHtml": "<p>To prove this, we need to show that there exists a matrix P such that P^T AP = &Lambda;.</p><p>Let's start by considering the eigenvectors of A. Since A is symmetric, its eigenvalues are real and its eigenvectors are orthogonal.</p><p>We can construct the matrix P as the column space of the eigenvectors.</p><p>Now, let's show that P^T AP = &Lambda;:</p>\\[\\left(P^T AP\\right)_{ij} = \\sum_k P_{ik} A_{kj} P_{jk}\\]",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:42:12.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_spectral_theorem_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "spectral_theorem",
+    "problem": "{",
+    "statementHtml": "Let $A$ be a real symmetric matrix. Prove that there exists an orthogonal matrix $P$ such that $P^TAP = \\Lambda$, where $\\Lambda$ is a diagonal matrix containing the eigenvalues of $A$.\",",
+    "hints": [
+      "Start by considering the eigenvectors of $A$.",
+      "Use the fact that eigenvectors corresponding to distinct eigenvalues are orthogonal.",
+      "Think about how you can use this property to construct an orthogonal matrix $P$."
+    ],
+    "solutionHtml": " To prove this, we first find the eigenvectors and eigenvalues of $A$. Let $\\lambda_i$ be the $i^{th}$ eigenvalue with corresponding eigenvector $\\mathbf{v}_i$. Since $A$ is symmetric, its eigenvectors are orthogonal. We can construct an orthogonal matrix $P$ whose columns are these eigenvectors: $$P = [\\mathbf{v}_1 | \\cdots | \\mathbf{v}_n].$$ Then, we have $$P^TAP = P^TA[\\mathbf{v}_1 | \\cdots | \\mathbf{v}_n] = [\\lambda_1\\mathbf{v}_1 | \\cdots | \\lambda_n\\mathbf{v}_n] = \\Lambda.$$\",",
+    "answerShort": "The matrix $P$ exists and satisfies the desired property.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:42:33.171Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

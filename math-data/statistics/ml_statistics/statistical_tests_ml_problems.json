@@ -1,0 +1,110 @@
+[
+  {
+    "id": "stat_prb_statistical_tests_ml_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": "{",
+    "statementHtml": "The paired t-test is used to compare the performance of two classifiers on a test dataset. However, when the true labels are not available, how can we still evaluate their performance?",
+    "hints": [
+      "Think about the McNemar test and how it's used for comparing two binary classifiers.",
+      "Consider using the Wilcoxon rank-sum test as an alternative to the paired t-test."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the McNemar test. Let's assume we have two classifiers, A and B, and their predictions on a test dataset.</p><p>We can create a contingency table with the true labels as rows and the predicted labels as columns:</p>\\[ \\begin{array}{c|cc} & A & B \\\\ \\hline 0 & a & b \\\\ 1 & c & d \\end{array}\\] <p>The McNemar test statistic is then calculated as:</p>\\( T = \\frac{(a+d) - (b+c)}{\\sqrt{(a+b)(c+d)}} \\)<p>Finally, we can use the Wilcoxon rank-sum test to compare the performance of the two classifiers.</p>\",",
+    "answerShort": "Use the McNemar test\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:05.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": "{",
+    "statementHtml": "<p>Compare two classifiers using a paired t-test.</p>",
+    "hints": [
+      "Start by calculating the difference between predicted labels.",
+      "Think about how to account for the pairing in your calculation.",
+      "Don't forget to adjust for multiple comparisons if you're doing many tests."
+    ],
+    "solutionHtml": "<p>Let's say we have two classifiers, A and B. We want to compare their performance using a paired t-test.</p>\\n<p>First, calculate the difference in predicted labels:</p>\\n\\[d_i = y_{Ai} - y_{Bi}\\]\\n<p>Next, calculate the mean of these differences:</p>\\n\\[\\bar{d} = \\frac{\\sum d_i}{n}\\]\\n<p>Then, calculate the standard deviation of these differences:</p>\\n\\[s_d = \\sqrt{\\frac{\\sum (d_i - \\bar{d})^2}{n-1}}\\]\\n<p>Finally, use this information to calculate the t-statistic and p-value.</p>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:21.302Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": {
+      "statementHtml": "<p>Compare two binary classifiers using a paired t-test.</p>",
+      "hints": [
+        "Check if your data is normally distributed.",
+        "Consider transforming your data to meet assumptions.",
+        "Use the Wilcoxon signed-rank test as an alternative."
+      ],
+      "solutionHtml": "<p>To perform a paired t-test for classifiers, first calculate the differences between each pair of predictions. Then, calculate the mean and standard deviation of these differences.</p><p>Next, use the calculated values to determine if there is a significant difference in the means.</p>",
+      "answerShort": "Reject null hypothesis"
+    },
+    "commonMistakes": [
+      "Forgetting to correct for multiple comparisons.",
+      "Not checking data distribution."
+    ],
+    "realWorldApplications": [
+      "Evaluating the performance of two different classification algorithms on the same dataset."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:33.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_statistical_tests_ml_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar Test for Paired Classifiers",
+    "problem": "{",
+    "statementHtml": "Given two classifiers <i>A</i> and <i>B</i>, we want to test whether they make different predictions on the same instances.",
+    "hints": [
+      "Start by calculating the number of instances where both classifiers agree or disagree.",
+      "Notice that this is a paired data problem, so you can use the McNemar test to compare the proportion of agreements and disagreements.",
+      "The null hypothesis is that the proportion of agreements equals the proportion of disagreements."
+    ],
+    "solutionHtml": "\\[Let's denote the number of agreements as <i>a</i>, the number of disagreements as <i>b</i>, and the total number of instances as <i>n</i>. The McNemar test statistic is given by: \\(χ^2 = \\frac{(|a - b| - 0.5n)^2}{n}\\). If χ^2 > χ^2_{1-\\alpha} (where α is the significance level), we reject the null hypothesis and conclude that the classifiers make different predictions.\\]\",",
+    "answerShort": "Reject the null hypothesis if χ^2 > χ^2_{1-\\alpha}\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:17:51.291Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

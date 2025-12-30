@@ -1,0 +1,102 @@
+[
+  {
+    "id": "stat_prb_ci_difference_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_difference",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval (CI) for the difference in means between two groups of paired data.</p>",
+    "hints": [
+      "Start by calculating the sample mean and standard deviation for each group.",
+      "Use the pooled variance to estimate the population variance.",
+      "Recall that the CI is based on the t-distribution with <i>n-1</i> degrees of freedom."
+    ],
+    "solutionHtml": "<p>To construct the CI, we can use the following formula:</p>\\n\\[CI = \\bar{x}_1 - \\bar{x}_2 \\pm t_{n-1} \\cdot s_p \\sqrt{\\frac{2}{n}}\\]\\n<p>where <i>n</i> is the total sample size, <i>s_p</i> is the pooled standard deviation, and <i>t_{n-1}</i> is the critical value from the t-distribution.</p>\",",
+    "answerShort": "The CI for the difference in means.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:27:04.961Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_difference_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_difference",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval (CI) for the difference between two population means, given paired data with sample sizes 15 and 20.</p>",
+    "hints": [
+      "Start by calculating the mean difference.",
+      "Use the standard error of the mean difference to construct the CI.",
+      "Recall that the sample size affects the width of the CI."
+    ],
+    "solutionHtml": "<p>To construct the CI, we first calculate the mean difference:</p>\\(\\bar{x}_1 - \\bar{x}_2 = 3.4\\)<p>Next, we calculate the standard error:</p>\\(SE = \\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}} = 0.7\\)<p>The critical value for a two-tailed test with α = 0.025 is approximately 1.96.</p><p>Now, we can construct the CI:</p>\\([3.4 - 1.96 \\cdot SE, 3.4 + 1.96 \\cdot SE] = [-2.5, 9.3]\\)<p>The final answer is:</p>\\([-2.5, 9.3]\\)\",",
+    "answerShort": "[−2.5, 9.3]\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:27:23.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_difference_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_difference",
+    "problem": "{",
+    "statementHtml": "Construct a <i>95%</i> confidence interval (CI) for the difference in means between two populations based on paired data.",
+    "hints": [
+      "Start by calculating the sample mean and standard deviation of the differences.",
+      "Use the paired t-test formula to find the test statistic.",
+      "Recall that the CI is constructed around the estimated difference."
+    ],
+    "solutionHtml": "<p>To construct the CI, we first calculate the sample mean and standard deviation of the differences:</p>\\n\\n\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - y_i) = 3.2,\\]\\n\\n\\[ s_x = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - y_i)^2 } = 4.5.\\]</p>\\n<p>Next, we use the paired t-test formula to find the test statistic:</p>\\n\\n\\[ t = \\frac{\\bar{x}}{s_x / \\sqrt{n}} = 0.7.\\]</p>\\n<p>The CI is constructed around the estimated difference:</p>\\n\\n\\[ CI = (\\bar{x} - z_{\\alpha/2} \\cdot \\frac{s_x}{\\sqrt{n}}, \\bar{x} + z_{\\alpha/2} \\cdot \\frac{s_x}{\\sqrt{n}}) = (-1.3, 7.7).\\]</p>\",",
+    "answerShort": "CI: [-1.3, 7.7]\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:27:44.051Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_difference_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_difference",
+    "problem": "{",
+    "statementHtml": "Construct a <i>95%</i> confidence interval (CI) for the difference in means between two groups of paired data.",
+    "hints": [
+      "Start by calculating the sample mean and standard deviation for each group.",
+      "Use the paired differences to calculate the sample mean and standard deviation of the differences.",
+      "Apply the <i>t</i>-distribution or <i>Z</i>-statistic, depending on whether you're using a small or large sample size."
+    ],
+    "solutionHtml": "<p>To construct the CI, we'll follow these steps:</p><ol><li>\\(t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p/\\sqrt{n}}\\)</li><li>Look up the critical value <i>t</i><sub>α/2,n-1</sub> in a t-table or calculate it using software.</li><li>\\(CI = (\\bar{x}_1 - \\bar{x}_2) \\pm t \\cdot s_p/\\sqrt{n}\\)</li></ol>\",",
+    "answerShort": "<i>95%</i> CI for the difference: (<i>lower bound</i>, <i>upper bound</i>)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:28:01.001Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

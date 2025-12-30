@@ -1,0 +1,82 @@
+[
+  {
+    "id": "la_prb_qr_decomposition_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "problem": "{",
+    "statementHtml": "Given a matrix A ∈ ℝ<sup>m×n</sup>, show that QR decomposition exists and provide an algorithm to compute it.",
+    "hints": [
+      "Think about the properties of orthogonal matrices.",
+      "Recall the Gram-Schmidt process for constructing an orthonormal basis.",
+      "The key is to find a sequence of orthogonal transformations."
+    ],
+    "solutionHtml": "<p>To prove existence, consider the following steps:</p><ol><li>\\(Q_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|}\\), where \\(\\mathbf{a}_1\\) is the first column of A.</li><li>For \\(k ≥ 2\\), define \\(Q_k\\) as the matrix that orthogonalizes the columns of \\(Q_{k-1}A\\).</li><li>The sequence converges to an orthogonal matrix Q.</li></ol><p>To compute QR, iterate:</p><ol><li>\\(R_0 = A\\)</li><li>For \\(k ≥ 1\\), update:</li><ul><li>\\(Q_k\\) as above</li><li>\\(R_{k+1} = R_k Q_k^T\\)</li></ul><p>The final answer is QR.</p>\",",
+    "answerShort": "QR decomposition exists and can be computed using the Gram-Schmidt process.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:22:36.946Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_qr_decomposition_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A, decompose it into an orthogonal matrix Q and an upper triangular matrix R.</p>",
+    "hints": [
+      "Start by considering the Gram-Schmidt process.",
+      "Think about how to preserve orthogonality during the decomposition.",
+      "Use the fact that QR = A."
+    ],
+    "solutionHtml": "<p>To decompose A into Q and R, we can use the Gram-Schmidt process.</p><p>Let's start with the first column of A. We'll normalize it to get the first column of Q:</p>\\(\\mathbf{q}_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|}\\)<p>Next, we'll subtract the projection of the second column onto the first column from the second column:</p>\\(\\mathbf{r}_2 = \\mathbf{a}_2 - \\proj_{\\mathbf{q}_1}(\\mathbf{a}_2)\\) <p>We can repeat this process for each subsequent column.</p>\",",
+    "answerShort": "The QR decomposition of A is Q and R.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:22:55.277Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_qr_decomposition_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "qr_decomposition",
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, decompose it into an orthogonal matrix Q and an upper triangular matrix R.</p>",
+      "hints": [
+        "Start by considering the Gram-Schmidt process for orthogonalization.",
+        "Think about how to modify the QR decomposition to ensure orthogonality.",
+        "Recall that the dot product of two vectors is 0 if they are orthogonal."
+      ],
+      "solutionHtml": "<p>To decompose A into Q and R, first compute the Gram-Schmidt process for the columns of A. This will give you an orthonormal basis for the column space of A.</p><p>Next, construct Q by stacking these orthonormal vectors as columns.</p><p>Finally, set R equal to the matrix whose columns are the original columns of A, but with each column normalized to have length 1.</p>",
+      "answerShort": "Q and R exist"
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the columns of R",
+      "Not ensuring that Q is an orthogonal matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:23:11.635Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

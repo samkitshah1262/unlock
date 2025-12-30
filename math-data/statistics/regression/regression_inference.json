@@ -1,0 +1,478 @@
+[
+  {
+    "id": "stat_con_regression_inference_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple linear regression, we're interested in making inferences about the relationship between a predictor variable and a response variable.</p><p>We'll focus on constructing confidence intervals for the slope coefficient (β) and performing hypothesis tests to determine if the slope is significantly different from zero.</p>",
+    "formula": "{",
+    "latex": "\\(y = \\beta x + \\epsilon\\)\",",
+    "name": "Simple Linear Regression Model\" },",
+    "intuition": "Inference in simple regression allows us to quantify our uncertainty about the relationship between variables and make informed decisions.",
+    "realWorldApplications": [
+      "Identifying the impact of marketing campaigns on sales"
+    ],
+    "commonMistakes": [
+      "Failing to account for the variability in the response variable",
+      "Assuming a linear relationship without checking"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:24:35.375Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_regression_inference_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple regression analysis, we often want to make statements about the population slope based on a sample of data. This is where inference comes in.</p><p>Given a sample of size n and a model that relates the response variable Y to the predictor X, our goal is to construct confidence intervals for the true population slope β and perform hypothesis tests to determine if the observed slope is significantly different from some hypothesized value.</p>",
+    "formula": "{",
+    "latex": "\\(H_0: \\beta = 0\\)\",",
+    "name": "Null Hypothesis\" },",
+    "intuition": "Inference in simple regression allows us to make probabilistic statements about the true population slope, which is crucial in many real-world applications, such as predicting the effect of a new marketing strategy on sales.",
+    "realWorldApplications": [
+      "Predicting the impact of a new feature on customer churn rates"
+    ],
+    "tags": [
+      "regression",
+      "inference",
+      "simple regression"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:24:49.351Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_regression_inference_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple regression, we're interested in making inferences about the relationship between a single predictor variable and an outcome variable.</p><p>We'll focus on constructing confidence intervals for the slope coefficient and performing hypothesis tests to determine if the slope is significantly different from zero.</p>",
+    "formula": "{",
+    "latex": "\\(b_1 = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\\)\",",
+    "name": "Simple Regression Slope\" },",
+    "intuition": "In simple regression, we're trying to understand the relationship between a single input variable and an output variable. By constructing confidence intervals for the slope coefficient, we can quantify our uncertainty about this relationship.",
+    "realWorldApplications": [
+      "Understanding how changes in temperature affect crop yields"
+    ],
+    "commonMistakes": [
+      "Failing to account for multiple testing when performing multiple hypothesis tests",
+      "Misinterpreting the direction of the relationship between variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:25:03.683Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regression_inference_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple linear regression, we're interested in making inferences about the slope of the relationship between two variables.</p><p>This is crucial for understanding cause-and-effect relationships and making predictions.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{\\sum_{i=1}^n (x_i-\\bar{x})(y_i-\\bar{y})}{\\sum_{i=1}^n (x_i-\\bar{x})^2} \\]\",",
+    "name": "Sample Slope Estimate\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're analyzing the relationship between hours studied and exam scores. We have a sample of n = 10 students with x-values ranging from 5 to 15 hours studied.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the mean hours studied and mean exam score",
+        "mathHtml": "\\(\\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}\\) and \\(\\bar{y} = \\frac{\\sum_{i=1}^n y_i}{n}\\)",
+        "explanation": "This sets the stage for our calculation."
+      }
+    ],
+    "finalAnswer": "The sample slope estimate is...\" },",
+    "intuition": "Inference in simple regression allows us to make statements about the population slope, not just the sample slope.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:25:22.231Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regression_inference_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple linear regression, we're interested in making inferences about the population slope (β) based on a sample of data.</p><ul><li>We'll use confidence intervals and hypothesis tests to draw conclusions about the true relationship between the predictor variable X and the response variable Y.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\bar{Y}_X - \\bar{Y} = b(X-\\bar{X}) \\]\",",
+    "name": "Simple Regression Line",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores (Y) and hours studied (X). We want to infer the true relationship between X and Y.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample slope (b)",
+        "mathHtml": "\\[ b = \\frac{\\sum(X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sum(X_i - \\bar{X})^2} \\]",
+        "explanation": "This is the slope of the best-fitting line through our sample data."
+      }
+    ],
+    "finalAnswer": "The estimated slope (b) is...\" },",
+    "intuition": "By making inferences about the population slope, we can gain insights into the true relationship between X and Y.",
+    "realWorldApplications": [
+      "In machine learning, simple regression is used as a baseline model for more complex models like linear regression."
+    ],
+    "tags": [
+      "Regression Analysis",
+      "Simple Linear Regression"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:25:41.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regression_inference_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple regression analysis, we're interested in making inferences about the slope of a linear relationship between two variables.</p><p>This is crucial in many real-world applications, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[b = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\]\",",
+    "name": "Simple Regression Slope Formula",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to investigate the relationship between hours studied and exam scores. We collect data on 10 students, with their study hours and corresponding scores.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the mean of both variables\", \"mathHtml\": \"\\(x̄ = \\frac{1}{n} \\sum_{i=1}^n x_i\\)\", \"explanation\": \"This helps us standardize our variables.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the deviations from the means\", \"mathHtml\": \"\\((x_i - x̄)\\) and \\((y_i - ȳ)\\)\"}, {\"stepNumber\": 3, \"description\": \"Multiply deviations by each other and sum them up\", \"mathHtml\": \"\\(b = \\frac{\\sum_{i=1}^n (x_i - x̄)(y_i - ȳ)}{\\sum_{i=1}^n (x_i - x̄)^2}\\)\"}, {\"stepNumber\": 4, \"description\": \"Divide by the sum of squared deviations\", \"mathHtml\": \"\\(b = \\frac{\\sum_{i=1}^n (x_i - x̄)(y_i - ȳ)}{\\sum_{i=1}^n (x_i - x̄)^2}\\)\"}, {\"stepNumber\": 5, \"description\": \"Calculate the final slope estimate\", \"mathHtml\": \"\\(b = \\frac{0.3}{0.05} = 6\\)\"} ],",
+    "finalAnswer": "The estimated slope is 6.\" },",
+    "intuition": "In simple regression, we're trying to understand how changes in one variable affect the other.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:26:09.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_regression_inference_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In simple linear regression, we're interested in making inferences about the population slope coefficient β.</p><p>This is crucial in machine learning and AI applications where we often want to generalize our models to unseen data.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{t} = \\frac{\\hat{\\beta} - \\beta_0}{\\frac{\\sigma_e}{\\sqrt{\\sum (x_i-\\bar{x})^2}} } \\]\",",
+    "name": "Student's t-statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores and hours studied, and we want to test the null hypothesis that there is no relationship between the two variables.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample slope coefficient\", \"mathHtml\": \"\\\\[ \\hat{\\\\beta} = \\\\frac{\\\\sum (x_i-y_i) }{\\\\sum (x_i-\\\\bar{x})^2} \\\\]\", \"explanation\": \"This is our best estimate of the population slope.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the standard error of the sample slope\", \"mathHtml\": \"\\\\[ \\frac{\\\\sigma_e}{\\sqrt{\\\\sum (x_i-\\\\bar{x})^2}} \\\\]\", \"explanation\": \"This measures the variability in our estimate.\" } ],",
+    "finalAnswer": "Reject or fail to reject the null hypothesis based on the calculated t-statistic\" },",
+    "intuition": "The student's t-statistic helps us determine whether our sample slope is significantly different from zero, allowing us to make inferences about the population slope.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:26:29.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "problem": "{",
+    "statementHtml": "Construct a 95% confidence interval for the slope coefficient <i>&beta;</i> of a simple linear regression model.",
+    "hints": [
+      "Recall the formula for the sample variance.",
+      "Think about how to scale the standard error.",
+      "Use the inverse normal distribution function."
+    ],
+    "solutionHtml": "<p>To construct the confidence interval, we first need to calculate the standard error of the slope coefficient:</p>\\n\\n\\[se(\\hat{&beta;}) = \\sqrt{\\frac{1}{N-2} \\cdot \\frac{\\sum_{i=1}^N (x_i - \\bar{x})^2}{\\sum_{i=1}^N (x_i - \\bar{x})(y_i - \\bar{y})}}.\\]\\n\\n<p>Next, we use the inverse normal distribution function to find the critical value:</p>\\n\\n\\[z = \\Phi^{-1}(0.975) = 1.96.\\]\\n\\n<p>Finally, we construct the confidence interval:</p>\\n\\n\\[\\hat{&beta;} \\pm z \\cdot se(\\hat{&beta;}) = \\ldots.\\]\",",
+    "answerShort": "The answer is...\" },",
+    "commonMistakes": [
+      "Forgetting to scale the standard error.",
+      "Using the wrong critical value."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:26:48.845Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% confidence interval for the slope of a simple linear regression model.</p>",
+      "hints": [
+        "Recall that the standard error of the slope estimate is proportional to the variance of the residuals.",
+        "The t-distribution will be used to construct the confidence interval.",
+        "You can use the `tinv` function in your preferred programming language or software package."
+      ],
+      "solutionHtml": "<p>To construct a 95% confidence interval for the slope, we need to find the critical value from the t-distribution with <code>n-2</code> degrees of freedom.</p>\n<p><code>t = tinv(0.975, n-2)</code></p>\n<p>The margin of error is then:</p>\n<p><code>MRE = ts * sqrt((SS_res / (n-2)) / SS_x)</code></p>\n<p>The confidence interval is:</p>\n<p><code>CI = beta0 + MRE</code></p>",
+      "answerShort": "The 95% CI for the slope is [lower bound, upper bound]."
+    },
+    "commonMistakes": [
+      "Forgetting to adjust the degrees of freedom in the t-distribution.",
+      "Not accounting for the variance of the residuals."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:05.338Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the slope of a simple linear regression model.</p>",
+    "hints": [
+      "Start by identifying the sample mean and standard deviation of the residuals.",
+      "Use the t-distribution to find the critical value.",
+      "Recall that the slope is the coefficient in the linear equation."
+    ],
+    "solutionHtml": "<p>To construct a 95% confidence interval for the slope, we first need to calculate the sample mean and standard deviation of the residuals.</p>\\n\\ \\[ \\bar{r} = \\frac{\\sum r_i}{n-2}, \\quad s_r = \\sqrt{\\frac{\\sum (r_i - \\bar{r})^2}{n-2}}. \\]\\n\\ <p>Next, we use the t-distribution to find the critical value.</p>\\n\\ \\[ t_{\\alpha/2} = t_{0.025}. \\]\\n\\ <p>We can then construct the confidence interval as follows:</p>\\n\\ \\[ CI = (\\hat{\\beta}_0 - t_{\\alpha/2} \\frac{s_r}{\\sqrt{n-1}}, \\hat{\\beta}_0 + t_{\\alpha/2} \\frac{s_r}{\\sqrt{n-1}}). \\]\\n\\ <p>Finally, we can calculate the confidence interval using our sample data.</p>\",",
+    "answerShort": "The 95% confidence interval is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:24.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regression_inference_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "problem": "{",
+    "statementHtml": "<p>In a simple linear regression model, we want to construct a <i>confidence interval</i> for the slope coefficient β.</p>",
+    "hints": "[ \"<p>Start by recalling the formula for the sample slope:</p>\\(\\hat{\\beta} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\\)\", \"<p>Next, think about how to standardize the slope estimate.</p>\", \"<p>Finally, consider the t-distribution and its relationship to the confidence interval.</p>\" ],",
+    "solutionHtml": "<p>To construct a <i>confidence interval</i> for β, we can use the following steps:</p>\\n <p><ol>\\n<li>Compute the sample slope \\(\\hat{\\beta}\\) using the formula above.</li>\\n<li>Standardize the slope estimate by dividing it by its standard error:</li>\\n\\[t = \\frac{\\hat{\\beta}}{s_\\hat{\\beta}}\\], where \\(s_\\hat{\\beta} = \\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n-2}}\\)</p>\\n<li>Use the t-distribution to find the critical value:</li>\\[t_{crit} = t_{\\alpha/2, n-2}\\]</p>\\n<li>Construct the confidence interval by multiplying the critical value by the standard error and adding/subtracting it from the sample slope:</li>\\[\\text{CI}(\\beta) = \\hat{\\beta} \\pm t_{crit} \\cdot s_\\hat{\\beta}\\]</p></ol>\",",
+    "answerShort": "<i>Confidence interval for β</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:27:48.329Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to constructing confidence intervals and performing hypothesis tests for the slope in simple linear regression.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores (X) and study hours (Y). We want to test whether there's a significant positive relationship between studying and scoring. Given our data, we estimate the simple linear regression model Y = 2 + 3X + ε.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the sample size (n) and mean of X.",
+          "mathHtml": "\\[ n = 30 \\]",
+          "explanation": "We need to know how many data points we have and what's the average value of X."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample variance (s^2) of X.",
+          "mathHtml": "\\[ s^2 = \\frac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n-1} \\]",
+          "explanation": "We need to know how spread out our data is, so we calculate the sample variance."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the t-statistic for the slope.",
+          "mathHtml": "\\[ t = \\frac{b_1 - \\beta_1}{s_e / \\sqrt{\\sum (X_i - \\bar{X})^2}} \\]",
+          "explanation": "We want to know how many standard errors away our estimated slope is from the true slope."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the t-distribution or a t-table to find the critical value (t*) for the desired confidence level.",
+          "mathHtml": "\\[ \\text{Critical Value} = t* \\]",
+          "explanation": "We need to know how many standard errors away from the true slope our estimated slope is, given our desired confidence level."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "Inference in simple regression helps us understand whether there's a statistically significant relationship between two variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:28:15.187Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to infer the slope of a simple linear regression model.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of exam scores and study hours for a class. We want to test whether there is a significant relationship between study hours and exam scores.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\\(H_0: \\beta = 0\\)\\), \\(H_a: \\beta \\neq 0\\)\", \"explanation\": \"We want to test whether there is a relationship between study hours and exam scores.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the sample slope\", \"mathHtml\": \"\\(b = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\\)\", \"explanation\": \"We use the formula for the sample slope to calculate our estimate.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the standard error of the sample slope\", \"mathHtml\": \"\\(SE(b) = \\sqrt{\\frac{SYY}{SSXX - SSXY^2}}\\)\", \"explanation\": \"We need the standard error to calculate the t-statistic.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the t-statistic\", \"mathHtml\": \"\\(t = \\frac{b}{SE(b)}\\)\", \"explanation\": \"The t-statistic measures how many standard errors our sample slope is away from zero.\"}, {\"stepNumber\": 5, \"description\": \"Determine the p-value and make a decision\", \"mathHtml\": \"\\(p = P(t > |t|)\\)\", \"explanation\": \"We compare our calculated p-value to a significance level (usually 0.05) to determine whether we reject or fail to reject the null hypothesis.\"} ],",
+    "finalAnswer": "Reject the null hypothesis if \\(p < 0.05\\), otherwise fail to reject.\" },",
+    "intuition": "Inference in simple regression is about using sample data to make conclusions about the population. We're testing whether our observed relationship between study hours and exam scores is due to chance or if it's a real pattern.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:28:42.198Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "subtitle": "Confidence intervals and hypothesis tests for slope",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to investigate the relationship between hours studied (x) and exam scores (y). We collect data and find that the slope of the regression line is 2.5 with a standard error of 0.3.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the critical value for the confidence interval\", \"mathHtml\": \"\\[t_{\\frac{\\alpha}{2}, n-2} = \\ldots\\]\", \"explanation\": \"We need to find the critical value from the t-distribution table.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the margin of error\", \"mathHtml\": \"\\[ME = t_{\\frac{\\alpha}{2}, n-2} \\cdot \\frac{s}{\\sqrt{n}} = \\ldots\\]\", \"explanation\": \"The margin of error is the critical value multiplied by the standard deviation and divided by the square root of the sample size.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the confidence interval\", \"mathHtml\": \"\\[CI = b_0 + ME = \\ldots\\]\", \"explanation\": \"The confidence interval is the slope plus or minus the margin of error.\"}, {\"stepNumber\": 4, \"description\": \"Perform a hypothesis test for the slope\", \"mathHtml\": \"\\[H_0: \\beta_1 = 0,\\ H_A: \\beta_1 > 0\\]\", \"explanation\": \"We want to test whether the slope is significantly different from zero.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the test statistic and p-value\", \"mathHtml\": \"\\[t = \\ldots,\\ p = \\ldots\\]\", \"explanation\": \"The test statistic is calculated as the ratio of the sample mean to the standard error, and the p-value represents the probability of observing a test statistic at least as extreme as the one we obtained, assuming that the null hypothesis is true.\"} ],",
+    "finalAnswer": "The confidence interval for the slope is (2.1, 3.0), and the p-value for the hypothesis test is 0.01.\" },",
+    "intuition": "Inference in simple regression allows us to make conclusions about the relationship between two variables.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:29:10.292Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regression_inference_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regression_inference",
+    "title": "Inference in Simple Regression",
+    "problem": {
+      "statementHtml": "<p>Given a simple linear regression model with slope β and intercept α, test the null hypothesis that the true slope is equal to 0.</p>",
+      "hints": [
+        "Consider the t-statistic",
+        "Think about the standard error"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores and study hours, with β = 2.5 and α = 10. Test the null hypothesis that the true slope is equal to 0.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean and standard deviation of the residuals.",
+          "mathHtml": "\\[\\bar{r} = \\frac{1}{n-2}\\sum_{i=3}^n (y_i - \\hat{y}_i)\\]",
+          "explanation": "This helps us estimate the standard error."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the t-statistic.",
+          "mathHtml": "\\[t = \\frac{\\beta}{s_β}\\]",
+          "explanation": "We're comparing our observed slope to the null hypothesis of a slope equal to 0."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Look up the critical value from the t-distribution table or use software.",
+          "mathHtml": "",
+          "explanation": "This gives us the threshold for rejecting the null hypothesis."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the calculated t-statistic to the critical value.",
+          "mathHtml": "",
+          "explanation": "If our t-statistic is greater than the critical value, we reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Inference in simple regression helps us determine if there's a statistically significant relationship between two variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:29:32.678Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

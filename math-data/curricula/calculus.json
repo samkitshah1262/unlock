@@ -1,0 +1,167 @@
+{
+  "subject": "calculus",
+  "title": "Calculus",
+  "description": "Comprehensive single and multivariable calculus with deep focus on optimization, neural network training, and numerical methods for ML",
+  "targetAudience": ["undergraduate", "graduate", "ML practitioners", "data scientists", "engineers"],
+  "totalEstimatedCards": 480,
+  "chapters": [
+    {
+      "id": "limits_continuity",
+      "title": "Limits and Continuity",
+      "description": "The foundation of calculus: limits and continuous functions",
+      "order": 1,
+      "topics": [
+        {"id": "limit_intuition", "title": "Intuition of Limits", "description": "Approaching a value, one-sided limits, graphical interpretation", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "limit_definition", "title": "Epsilon-Delta Definition", "description": "Precise definition, proving limits, working with the definition", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "limit_laws", "title": "Limit Laws", "description": "Sum, product, quotient rules, squeeze theorem", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "infinite_limits", "title": "Limits at Infinity", "description": "Horizontal asymptotes, limits as x→∞, growth rates", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "continuity_definition", "title": "Continuity", "description": "Definition, types of discontinuity, continuous functions", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "continuity_theorems", "title": "Continuity Theorems", "description": "IVT, EVT, continuous functions on closed intervals", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "differentiation_basics",
+      "title": "Differentiation",
+      "description": "Derivatives: definition, rules, and computation",
+      "order": 2,
+      "topics": [
+        {"id": "derivative_definition", "title": "Derivative Definition", "description": "Limit definition, rate of change, slope of tangent line", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "differentiability", "title": "Differentiability", "description": "Differentiable vs continuous, corners and cusps", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "basic_rules", "title": "Basic Differentiation Rules", "description": "Power rule, constant multiple, sum/difference rules", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "core"},
+        {"id": "product_quotient", "title": "Product and Quotient Rules", "description": "Product rule, quotient rule, derivations, examples", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "chain_rule", "title": "Chain Rule", "description": "Composite functions, chain rule statement, examples", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "exponential_log", "title": "Derivatives of Exponentials and Logs", "description": "e^x, ln(x), a^x, log_a(x), logarithmic differentiation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "trig_derivatives", "title": "Trigonometric Derivatives", "description": "sin, cos, tan, sec, csc, cot derivatives", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "inverse_functions", "title": "Derivatives of Inverse Functions", "description": "Inverse function theorem, arcsin, arctan derivatives", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "implicit_differentiation", "title": "Implicit Differentiation", "description": "Implicitly defined functions, technique, applications", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "higher_derivatives", "title": "Higher-Order Derivatives", "description": "Second derivatives, nth derivatives, notation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 10, "difficulty": 2, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "applications_derivatives",
+      "title": "Applications of Derivatives",
+      "description": "Using derivatives to analyze functions and solve problems",
+      "order": 3,
+      "topics": [
+        {"id": "related_rates", "title": "Related Rates", "description": "Implicit differentiation with respect to time, word problems", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "linear_approximation", "title": "Linear Approximation", "description": "Tangent line approximation, differentials, error estimation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "mean_value_theorem", "title": "Mean Value Theorem", "description": "Statement, proof, applications, Rolle's theorem", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "increasing_decreasing", "title": "Increasing/Decreasing Functions", "description": "First derivative test, finding intervals", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "extrema", "title": "Extrema of Functions", "description": "Local and global, critical points, first/second derivative tests", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "concavity", "title": "Concavity and Inflection Points", "description": "Second derivative test, concave up/down, inflection points", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "optimization", "title": "Optimization Problems", "description": "Word problems, finding optimal values, constraints", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "curve_sketching", "title": "Curve Sketching", "description": "Systematic approach using calculus tools", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "useful"},
+        {"id": "lhopital", "title": "L'Hôpital's Rule", "description": "Indeterminate forms, statement, applications", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "integration",
+      "title": "Integration",
+      "description": "Antiderivatives, definite integrals, and techniques",
+      "order": 4,
+      "topics": [
+        {"id": "antiderivatives", "title": "Antiderivatives", "description": "Definition, basic antiderivatives, indefinite integrals", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 1, "mlRelevance": "important"},
+        {"id": "riemann_sums", "title": "Riemann Sums", "description": "Left, right, midpoint sums, limit as n→∞", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "definite_integral", "title": "Definite Integral", "description": "Definition via Riemann sums, properties, interpretation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "ftc", "title": "Fundamental Theorem of Calculus", "description": "Both parts, proof ideas, applications", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "substitution", "title": "Integration by Substitution", "description": "U-substitution, change of variable, examples", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "integration_by_parts", "title": "Integration by Parts", "description": "Formula, LIATE rule, reduction formulas", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "trig_integrals", "title": "Trigonometric Integrals", "description": "Powers of sin/cos, trig substitution", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "partial_fractions", "title": "Partial Fractions", "description": "Decomposition, linear and quadratic factors", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "improper_integrals", "title": "Improper Integrals", "description": "Infinite limits, discontinuous integrands, convergence", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "sequences_series",
+      "title": "Sequences and Series",
+      "description": "Infinite sequences, series, and Taylor expansions",
+      "order": 5,
+      "topics": [
+        {"id": "sequences", "title": "Sequences", "description": "Definition, limits, convergence, boundedness", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "series_intro", "title": "Infinite Series", "description": "Definition, partial sums, convergence, geometric series", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 2, "mlRelevance": "important"},
+        {"id": "convergence_tests", "title": "Convergence Tests", "description": "Integral, comparison, ratio, root tests", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "alternating_series", "title": "Alternating Series", "description": "Alternating series test, error bounds", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "power_series", "title": "Power Series", "description": "Definition, radius of convergence, interval of convergence", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "taylor_series", "title": "Taylor and Maclaurin Series", "description": "Taylor polynomials, Taylor series, common expansions", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "taylor_applications", "title": "Applications of Taylor Series", "description": "Approximations, limits, integrals, error bounds", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "multivariable_calculus",
+      "title": "Multivariable Calculus",
+      "description": "Functions of multiple variables and their derivatives",
+      "order": 6,
+      "topics": [
+        {"id": "functions_several_vars", "title": "Functions of Several Variables", "description": "Definition, domains, graphs, level curves/surfaces", "cardTypes": ["concept", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 2, "mlRelevance": "core"},
+        {"id": "partial_derivatives", "title": "Partial Derivatives", "description": "Definition, computation, geometric interpretation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "higher_partials", "title": "Higher-Order Partial Derivatives", "description": "Mixed partials, Clairaut's theorem, Hessian matrix", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "gradient_vector", "title": "The Gradient", "description": "Definition, properties, direction of steepest ascent", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "directional_derivatives", "title": "Directional Derivatives", "description": "Definition, formula using gradient, interpretation", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "chain_rule_multi", "title": "Multivariable Chain Rule", "description": "Chain rule for compositions, tree diagrams", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "tangent_planes", "title": "Tangent Planes and Linear Approximation", "description": "Tangent plane equation, linearization, differentials", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "jacobian", "title": "The Jacobian Matrix", "description": "Definition, linear approximation, coordinate transformations", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "optimization_multi",
+      "title": "Multivariable Optimization",
+      "description": "Finding extrema of functions of several variables",
+      "order": 7,
+      "topics": [
+        {"id": "critical_points_multi", "title": "Critical Points", "description": "Finding critical points, nabla f = 0, singular points", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "second_derivative_test", "title": "Second Derivative Test", "description": "Hessian determinant, classifying critical points", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "global_extrema", "title": "Global Extrema", "description": "Closed bounded regions, boundary analysis", "cardTypes": ["concept", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "lagrange_multipliers", "title": "Lagrange Multipliers", "description": "Constrained optimization, one constraint", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "lagrange_multiple", "title": "Multiple Constraints", "description": "Several equality constraints, geometric interpretation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "convex_functions", "title": "Convex Functions", "description": "Definition, second derivative characterization, Jensen's inequality", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "kkt_conditions", "title": "KKT Conditions", "description": "Inequality constraints, complementary slackness", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 5, "mlRelevance": "core"}
+      ]
+    },
+    {
+      "id": "multiple_integrals",
+      "title": "Multiple Integrals",
+      "description": "Integration over regions in 2D and 3D",
+      "order": 8,
+      "topics": [
+        {"id": "double_integrals", "title": "Double Integrals", "description": "Definition, iterated integrals, Fubini's theorem", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 20, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "double_polar", "title": "Double Integrals in Polar", "description": "Polar coordinates, Jacobian r, applications", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "triple_integrals", "title": "Triple Integrals", "description": "Definition, order of integration, applications", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "cylindrical_spherical", "title": "Cylindrical and Spherical Coordinates", "description": "Coordinate systems, Jacobians, volume integrals", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "change_of_variables", "title": "Change of Variables", "description": "General substitution, Jacobian determinant", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"}
+      ]
+    },
+    {
+      "id": "vector_calculus",
+      "title": "Vector Calculus",
+      "description": "Calculus with vector fields",
+      "order": 9,
+      "topics": [
+        {"id": "vector_fields", "title": "Vector Fields", "description": "Definition, visualization, flow, examples", "cardTypes": ["concept", "problem"], "estimatedCards": 10, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "line_integrals", "title": "Line Integrals", "description": "Scalar and vector line integrals, work, circulation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "useful"},
+        {"id": "gradient_fields", "title": "Conservative Fields", "description": "Path independence, potential functions, fundamental theorem", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 3, "mlRelevance": "important"},
+        {"id": "divergence_curl", "title": "Divergence and Curl", "description": "Definitions, physical interpretation, identities", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "useful"},
+        {"id": "greens_theorem", "title": "Green's Theorem", "description": "Statement, proof sketch, applications", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "useful"},
+        {"id": "surface_integrals", "title": "Surface Integrals", "description": "Scalar and vector surface integrals, flux", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "useful"},
+        {"id": "stokes_divergence", "title": "Stokes' and Divergence Theorems", "description": "Generalizations of Green's theorem, applications", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 4, "mlRelevance": "specialized"}
+      ]
+    },
+    {
+      "id": "ml_calculus",
+      "title": "Calculus for Machine Learning",
+      "description": "Direct applications to ML, optimization, and neural networks",
+      "order": 10,
+      "topics": [
+        {"id": "gradient_descent", "title": "Gradient Descent", "description": "Algorithm, learning rate, convergence, variants (SGD, mini-batch)", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 25, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "gradient_descent_analysis", "title": "Convergence Analysis", "description": "Convergence rates, Lipschitz gradients, strong convexity", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "momentum", "title": "Momentum and Accelerated Methods", "description": "Momentum, Nesterov, Adam, RMSprop", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "backpropagation", "title": "Backpropagation", "description": "Chain rule in neural networks, computational graphs", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "automatic_diff", "title": "Automatic Differentiation", "description": "Forward mode, reverse mode, implementation", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "matrix_calculus", "title": "Matrix Calculus", "description": "Derivatives with respect to vectors/matrices, gradient of trace, chain rule", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 22, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "loss_functions", "title": "Loss Function Derivatives", "description": "MSE, cross-entropy, softmax gradients", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 18, "difficulty": 3, "mlRelevance": "core"},
+        {"id": "regularization_calculus", "title": "Regularization from Calculus Perspective", "description": "L1, L2 penalties, gradient effects, proximal operators", "cardTypes": ["concept", "formula", "theorem", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "core"},
+        {"id": "numerical_integration", "title": "Numerical Integration", "description": "Quadrature, Monte Carlo integration, importance sampling", "cardTypes": ["concept", "formula", "problem", "worked_example"], "estimatedCards": 15, "difficulty": 4, "mlRelevance": "important"},
+        {"id": "odes_intro", "title": "ODEs for Neural Networks", "description": "Neural ODEs, continuous-depth networks, adjoint method", "cardTypes": ["concept", "formula", "theorem", "problem"], "estimatedCards": 12, "difficulty": 5, "mlRelevance": "specialized"}
+      ]
+    }
+  ]
+}

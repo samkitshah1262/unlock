@@ -1,0 +1,121 @@
+[
+  {
+    "id": "prob_for_negative_binomial_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) models the number of failures until a specified number of successes is reached.</p><p>This distribution is related to the Geometric Distribution and can be used to model overdispersion in count data.</p>",
+    "formula": "{",
+    "latex": "\\[X \\sim NB(r, p) \\quad \\text{where } X = k\\] (number of failures until $k$ successes)\",",
+    "name": "Negative Binomial Distribution\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to model the number of attempts until a customer purchases an item. We know that on average, it takes 3 attempts for a customer to buy something.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Determine the number of successes (purchases) and failures (attempts without purchase)",
+        "mathHtml": "",
+        "explanation": "We can use the NBD to model this process."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The NBD is useful when modeling overdispersion in count data, where the variance exceeds the mean.",
+    "realWorldApplications": [
+      "Modeling customer purchase behavior"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:17:50.093Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_negative_binomial_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes are achieved.</p>",
+    "formula": "{",
+    "latex": "\\[X \\sim NB(r, p) \\quad\\text{where}\\quad P(X = k) = \\binom{k+r-1}{k} p^r (1-p)^{k}\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to model the number of attempts until a customer makes their 3rd purchase. Assume each attempt is an independent event with probability 0.2 of making a purchase.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the parameters\", \"mathHtml\": \"\", \"explanation\": \"We need to find r and p.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the probability\", \"mathHtml\": \"\\[P(X = k) = \\binom{k+2-1}{k} (0.2)^3 (0.8)^{k}\\]\", \"explanation\": \"Plug in the values and simplify.\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The NBD is useful for modeling overdispersion, where the variance of the number of successes exceeds the mean.",
+    "realWorldApplications": [
+      "Modeling customer purchase behavior",
+      "Analyzing quality control processes"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:18:12.226Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_negative_binomial_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "negative_binomial",
+    "title": "Negative Binomial Distribution",
+    "contentHtml": "<p>The Negative Binomial Distribution (NBD) is a discrete probability distribution that models the number of failures until a specified number of successes are achieved.</p><p>This distribution is closely related to the Geometric Distribution and can be used to model overdispersion in data.</p>",
+    "formula": {
+      "latex": "\\[X \\sim NB(r, p) \\quad \\text{where } X = k\\]",
+      "name": "Negative Binomial Distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to model the number of attempts until a student passes a difficult exam. We know that the student has a 0.8 probability of passing each attempt.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the parameters",
+          "mathHtml": "\\[r = 5, p = 0.8\\]",
+          "explanation": "We set the number of successes to 5 and the probability of success to 0.8"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the probability mass function",
+          "mathHtml": "\\[P(X=k) = \\frac{\\Gamma(r+k)}{k!\\Gamma(r)}p^r(1-p)^k\\]",
+          "explanation": "We use the formula for the NBD to calculate the probability of k failures"
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The NBD is useful when modeling overdispersion in data, where the variance is greater than the mean. This can occur in situations like the student passing a difficult exam.",
+    "realWorldApplications": [
+      "Modeling the number of attempts until a student passes a difficult exam"
+    ],
+    "tags": [
+      "probability",
+      "negative binomial distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:18:38.350Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

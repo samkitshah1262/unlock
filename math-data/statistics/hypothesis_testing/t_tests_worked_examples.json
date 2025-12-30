@@ -1,0 +1,253 @@
+[
+  {
+    "id": "stat_wex_t_tests_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "t_tests",
+    "title": "One-Sample T-Test: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll walk through a one-sample t-test to determine if the average height of students in a statistics class is different from the known population mean.</p>",
+    "workedExample": {
+      "problemHtml": "Is the average height of students in a statistics class significantly different from the known population mean of 175.5 cm?",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "\\(H_0: \\mu = 175.5\\) and \\(H_1: \\mu &lt; 175.5\\)",
+          "explanation": "We're testing if the sample mean is less than the population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample mean and standard deviation",
+          "mathHtml": "\\(\bar{x} = 172.1\\) and \\(s = 4.3\\)",
+          "explanation": "We need these values to compute the t-statistic."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the t-statistic",
+          "mathHtml": "\\(t = -2.5\\)",
+          "explanation": "The t-statistic measures how many standard errors away our sample mean is from the population mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\(p = 0.012\\)",
+          "explanation": "We'll use this value to determine if our result is statistically significant."
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis (p &lt; 0.05)"
+    },
+    "intuition": "The t-test helps us understand whether a sample mean is significantly different from a known population mean, taking into account the sample's variability.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:03:18.339Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_t_tests_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "t_tests",
+    "title": "One-Sample T-Test: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll walk through a one-sample t-test to determine if the average height of students in a statistics class is significantly different from the known population mean.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to test whether the average height of students in our statistics class (μ = 175.5 cm) is significantly different from the known population mean (μ0 = 172.1 cm). We have a random sample of n = 30 students with heights: 169, 170, 173, ..., 181.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean and standard deviation",
+          "mathHtml": "\\[\\bar{x} = \\frac{\\sum x_i}{n} = 176.2 cm, s = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n-1}} = 3.5 cm\\]",
+          "explanation": "We calculate the sample mean and standard deviation to understand our data's central tendency and variability."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the test statistic (t)",
+          "mathHtml": "\\[t = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}} = \\frac{176.2 - 172.1}{3.5/\\sqrt{30}} = 2.34\\]"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the critical value (t*)",
+          "mathHtml": "\\[t* = 2.045 (from a t-table or calculator)\\]"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the test statistic to the critical value",
+          "mathHtml": "\\[t > t*, reject H_0; t \\leq t*, fail to reject H_0\\]"
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis, suggesting that the average height of students in our statistics class is significantly different from the known population mean."
+    },
+    "intuition": "The one-sample t-test helps us determine if a sample's mean is statistically significant from a known population mean. By comparing the test statistic to the critical value, we can reject or fail to reject the null hypothesis.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:03:46.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_t_tests_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "t_tests",
+    "title": "One-Sample T-Test Worked Example",
+    "contentHtml": "<p>In this example, we'll apply a one-sample t-test to determine if the average height of students in a statistics class is significantly different from the known population mean.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we know that the average height of all college students is 175.5 cm with a standard deviation of 6.2 cm. We take a random sample of 25 students in our statistics class and find their heights to be:</p><ul><li>165.8 cm</li><li>170.1 cm</li><li>...</li></ul>",
+    "hints": [
+      "Check the assumptions",
+      "Consider the sample size"
+    ],
+    "solutionHtml": "<p>We'll follow the steps for a one-sample t-test.</p>",
+    "answerShort": "Reject H0\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Do the heights of our students differ significantly from the known population mean?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\", \"explanation\": \"We're testing whether the sample mean is equal to the population mean.\" }, {\"stepNumber\": 2, \"description\": \"Check the assumptions\", \"mathHtml\": \"\\(\\sigma\\) known and \\(\\bar{x}\\) is close to \\(\\mu\\)\", \"explanation\": \"The standard deviation of our sample is relatively small compared to the known population standard deviation.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the sample mean and standard error\", \"mathHtml\": \"\\(\\bar{x} = 171.2\\) cm, \\(\\text{SE} = 1.4\\) cm\", \"explanation\": \"We calculate the sample mean and standard error using our sample data.\" }, {\"stepNumber\": 4, \"description\": \"Calculate the t-statistic\", \"mathHtml\": \"\\(t = -3.2\\)\", \"explanation\": \"We use the calculated sample mean, standard error, and known population mean to calculate the t-statistic.\" } ],",
+    "finalAnswer": "The p-value is 0.002, so we reject H0\" },",
+    "intuition": "A one-sample t-test helps us determine if a sample mean is significantly different from a known population mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:04:13.964Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_t_tests_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "t_tests",
+    "title": "One-Sample T-Test: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll walk through a one-sample t-test problem step by step.</p>",
+    "problem": {
+      "statementHtml": "<p>Is the average height of students in a statistics class significantly different from the known population mean of 175.5 cm?</p>",
+      "hints": [
+        "Consider the null and alternative hypotheses",
+        "Think about the sample size"
+      ],
+      "solutionHtml": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of heights with a mean of 172.1 cm and a standard deviation of 5.2 cm.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "\\(H_0: \\mu = 175.5\\) vs. \\(H_a: \\mu &lt; 175.5\\)",
+          "explanation": "We're testing whether the sample mean is less than the known population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check the assumptions",
+          "mathHtml": "\\[\\text{Normality and independence assumed}\\]",
+          "explanation": "Our dataset appears to be normally distributed and we have a single sample."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[t = \\frac{172.1 - 175.5}{5.2 / \\sqrt{n}}\\]",
+          "explanation": "We're using the formula for the one-sample t-test."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[p = P(t &lt; t_{observed})\\]",
+          "explanation": "We'll use a statistical software or calculator to find the p-value."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The key insight is that we're comparing our sample mean to the known population mean, and the t-test helps us determine if there's sufficient evidence to reject the null hypothesis.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:04:39.109Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_t_tests_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "t_tests",
+    "title": "One-Sample T-Test: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll walk through a one-sample t-test to determine if the mean of a sample is significantly different from a known population mean.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test whether the average height of a random sample of students is significantly different from the known average height of all students in the country. We have a dataset with heights (in cm) for <i>n</i> = 30 students:</p><ul><li>H1: 162, H2: 170, ..., H30: 185</li></ul>",
+      "hints": [
+        "Check if the data is normally distributed",
+        "Verify that the sample size is sufficient"
+      ],
+      "solutionHtml": "<p>We'll follow these steps to perform a one-sample t-test:</p>",
+      "answerShort": "Reject the null hypothesis"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Assume the known average height of all students in the country is 175 cm. We want to test whether our sample mean is significantly different from this value.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{162 + 170 + ... + 185}{30}\\]",
+          "explanation": "We need to calculate the sample mean to compare it with the known population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[s_e = \\frac{s}{\\sqrt{n}}\\]",
+          "explanation": "The standard error represents the spread of our sample mean. We'll use this value to calculate the t-statistic."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the t-statistic",
+          "mathHtml": "\\[t = \\frac{\\bar{x} - 175}{s_e}\\]",
+          "explanation": "The t-statistic measures how many standard errors our sample mean is away from the known population mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[p = P(t > |t|)\\]",
+          "explanation": "We'll use the t-distribution to find the probability of observing a t-statistic as extreme or more extreme than ours."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Make a decision",
+          "mathHtml": "",
+          "explanation": "Based on our p-value, we can reject or fail to reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis"
+    },
+    "intuition": "The one-sample t-test helps us determine if our sample mean is significantly different from a known population mean. By comparing the sample mean to the population mean and considering the standard error, we can make an informed decision about whether our sample is representative of the larger population.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T11:05:12.073Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

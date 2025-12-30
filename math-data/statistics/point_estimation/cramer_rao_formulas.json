@@ -1,0 +1,91 @@
+[
+  {
+    "id": "stat_for_cramer_rao_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's used to determine the minimum achievable variance of an estimator and serves as a benchmark for evaluating the efficiency of different estimators.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n} I(\\theta) \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of size n from a normal distribution with mean θ and variance σ^2. We want to estimate θ using the sample mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the Fisher information\", \"mathHtml\": \"\\[ I(\\theta) = \\frac{1}{\\sigma^2} \\]\", \"explanation\": \"The Fisher information is a measure of how much information the data contains about the parameter.\"}, {\"stepNumber\": 2, \"description\": \"Use the Cramér-Rao lower bound\", \"mathHtml\": \"\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n} I(\\theta) = \\frac{\\sigma^2}{n} \\]\", \"explanation\": \"The Cramér-Rao lower bound provides a variance bound for the sample mean estimator.\"} ],",
+    "finalAnswer": "The minimum achievable variance of the sample mean estimator is σ^2/n\" },",
+    "intuition": "The Cramér-Rao lower bound shows that any unbiased estimator must have a variance greater than or equal to the reciprocal of the Fisher information.",
+    "realWorldApplications": [
+      "In machine learning, the Cramér-Rao lower bound can be used to evaluate the efficiency of different estimators and determine the minimum achievable variance for a given problem."
+    ],
+    "tags": [
+      "Point Estimation",
+      "Mathematical Statistics"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:18.614Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cramer_rao_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's a powerful tool for evaluating the efficiency of an estimator and determining whether it's the best possible choice.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{CRB}(\\hat{\\theta}) \\geq \\frac{1}{n} \\left( J^{-1} \\right)_{ii} \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Gaussian distribution with mean μ and variance σ^2. We want to estimate μ using the sample mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the Fisher information matrix J\", \"mathHtml\": \"\\[ J = \\frac{1}{\\sigma^2} \\]\", \"explanation\": \"The Fisher information matrix is a measure of the amount of information gained by observing a single data point.\"} ],",
+    "finalAnswer": "The Cramér-Rao lower bound for the sample mean is 1/n\" },",
+    "intuition": "The Cramér-Rao lower bound provides a fundamental limit on the variance of any unbiased estimator. It's a crucial concept in statistical inference and has important implications for machine learning and artificial intelligence.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:37.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cramer_rao_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's essential to understand the CR bound, as it helps determine the efficiency of an estimator and ensures that it's at least as good as another estimator.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n I(\\theta; X)^{-1}} \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "intuition": "The CR bound shows that the variance of an unbiased estimator is lower-bounded by the inverse of the Fisher information, which depends on the parameter being estimated and the data distribution.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound has implications for the efficiency of maximum likelihood estimators."
+    ],
+    "tags": [
+      "Cramér-Rao Lower Bound",
+      "Point Estimation",
+      "Mathematical Statistics"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:51.800Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

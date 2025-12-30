@@ -1,0 +1,130 @@
+[
+  {
+    "id": "stat_wex_experimental_design_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "title": "Experimental Design: Randomization and Blocking",
+    "contentHtml": "<p>Experimental design is a crucial aspect of statistics in machine learning. In this card, we'll explore randomization, blocking, and factorial designs.</p>",
+    "problem": "{",
+    "statementHtml": "<p>A researcher wants to compare the effectiveness of two different fertilizers on crop yields. They have 12 plots of land and want to divide them randomly into three groups: control, fertilizer A, and fertilizer B. How can they ensure that their design is fair and unbiased?</p>",
+    "hints": [
+      "Hint: Think about what could go wrong if the plots are not randomized.",
+      "Hint: Consider using blocking to account for any underlying differences in the plots."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use randomization to ensure that each group has an equal number of plots. We can then use blocking to account for any underlying differences between the plots.</p>",
+    "answerShort": "Randomize the plots and use blocking to account for underlying differences.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A farmer wants to compare the effectiveness of three different pesticides on a specific type of pest. They have 18 plots of land and want to divide them into three groups: control, pesticide A, and pesticide B. How can they ensure that their design is fair and unbiased?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Randomize the plots\", \"mathHtml\": \"\\(\\mathbf{a} \\cdot \\mathbf{b}\\) equals...\", \"explanation\": \"This ensures that each group has an equal number of plots.\"}, {\"stepNumber\": 2, \"description\": \"Block the plots by type\", \"mathHtml\": \"...\", \"explanation\": \"This accounts for any underlying differences between the plots.\"} ],",
+    "finalAnswer": "Randomize and block the plots to ensure a fair and unbiased design.\" },",
+    "intuition": "The key insight is that randomization helps to eliminate bias in the experimental design, while blocking helps to account for any underlying differences between the plots.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:35:24.080Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_experimental_design_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "title": "Experimental Design: Randomization and Blocking",
+    "contentHtml": "<p>Experimental design is crucial in machine learning to ensure the accuracy of our models. In this card, we'll explore randomization, blocking, and factorial designs.</p>",
+    "problem": {
+      "statementHtml": "<p>A researcher wants to compare the effectiveness of two different fertilizers on plant growth. They have 12 plots of land and want to randomly assign 6 plots to each fertilizer. How can they ensure a fair comparison?</p>",
+      "hints": [
+        "Think about what could go wrong if not done correctly"
+      ],
+      "solutionHtml": "<p>To avoid bias, the researcher should randomize the assignment of fertilizers to plots. This ensures that any differences between the two groups are due to the fertilizer itself and not some other factor.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A farmer wants to compare the yield of three different crop varieties on their land. They have 18 plots, each with a different combination of soil type, sunlight, and irrigation. How can they design an experiment to determine which variety performs best?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Divide the plots into blocks based on the factors that might affect yield",
+          "mathHtml": "",
+          "explanation": "This ensures that each block has a similar environment"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Randomly assign one of the three crop varieties to each plot within each block",
+          "mathHtml": "",
+          "explanation": "This prevents any bias in the assignment"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Measure and compare the yield of each variety across all blocks",
+          "mathHtml": "",
+          "explanation": "This allows us to see which variety performs best"
+        }
+      ],
+      "finalAnswer": "The farmer can use a factorial design to compare the three crop varieties while controlling for other factors that might affect yield."
+    },
+    "intuition": "Randomization and blocking are essential in experimental design to ensure that any differences between groups are due to the treatment itself, not some other factor.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:35:48.626Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_experimental_design_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "title": "Experimental Design: Randomization and Blocking",
+    "contentHtml": "<p>In experimental design, we aim to minimize confounding variables by using randomization and blocking techniques.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to compare the effectiveness of two different fertilizers on plant growth. We have 16 plots, and each plot will receive either Fertilizer A or Fertilizer B.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Randomize the plots\", \"mathHtml\": \"\\(\\text{Plot }i \\sim \\text{Uniform}(0,1)\\)\", \"explanation\": \"We assign a random number to each plot to ensure that both fertilizers are represented evenly.\"}, {\"stepNumber\": 2, \"description\": \"Block by soil type\", \"mathHtml\": \"\", \"explanation\": \"Since soil quality can affect plant growth, we group the plots into blocks based on their soil type. This helps reduce confounding variables.\"}, {\"stepNumber\": 3, \"description\": \"Assign fertilizers to plots\", \"mathHtml\": \"\\(\\text{Fertilizer }i = \\begin{cases} A & \\text{if } i \\le 8 \\\\ B & \\text{otherwise}\\end{cases}\\)\", \"explanation\": \"We assign Fertilizer A or B to each plot based on the randomization and blocking.\"}, {\"stepNumber\": 4, \"description\": \"Measure plant growth\", \"mathHtml\": \"\", \"explanation\": \"We measure the plant growth in each plot to compare the effectiveness of the two fertilizers.\"} ],",
+    "finalAnswer": "By using randomization and blocking, we can reduce confounding variables and obtain a more accurate comparison between the two fertilizers.\" },",
+    "intuition": "Randomization helps ensure that both groups are representative of the population, while blocking reduces the impact of extraneous variables.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:36:11.381Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_experimental_design_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "title": "Experimental Design: Randomization and Blocking",
+    "contentHtml": "<p>In experimental design, we aim to minimize confounding variables by randomly assigning participants or units to treatment groups.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a study investigating the effect of fertilizer on plant growth. We have 12 plots, and we want to randomly assign 4 plots to each of three fertilizer levels (control, low, high).",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the treatment groups\", \"mathHtml\": \"\\(\\text{Fertilizer Levels} = \\{\\text{Control}, \\text{Low}, \\text{High}\\}\\)\", \"explanation\": \"We clearly define the three fertilizer levels to ensure consistency.\" }, {\"stepNumber\": 2, \"description\": \"Randomly assign plots\", \"mathHtml\": \"\\(\\text{Plot Assignments} = \\{\\ldots\\}\\)\", \"explanation\": \"We use a random number generator or statistical software to randomly assign each plot to one of the three fertilizer levels.\" }, {\"stepNumber\": 3, \"description\": \"Check for balance\", \"mathHtml\": \"\\(\\text{Balance Check} = \\{\\ldots\\}\\)\", \"explanation\": \"To ensure our design is effective, we check that the plots are evenly distributed across the treatment groups.\" }, {\"stepNumber\": 4, \"description\": \"Analyze results\", \"mathHtml\": \"\\(\\text{Analysis} = \\{\\ldots\\}\\)\", \"explanation\": \"We analyze the plant growth data to determine if there's a significant difference between the fertilizer levels.\" } ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Randomization helps ensure that any observed differences between groups are due to the treatment, rather than other factors.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:36:33.504Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

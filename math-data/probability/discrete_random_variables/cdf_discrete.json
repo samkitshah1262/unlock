@@ -1,0 +1,362 @@
+[
+  {
+    "id": "prob_con_cdf_discrete_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) of a discrete random variable X is a function F(x) that gives the probability P(X ≤ x) for any value x.</p><p>In other words, it's the probability that the random variable takes on a value less than or equal to x. This concept matters because it helps us understand the distribution of a random variable and make predictions about future outcomes.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = P(X \\leq x)\\)\",",
+    "name": "\" },",
+    "intuition": "Think of the CDF as a staircase where each step represents a possible value of X. The height of each step corresponds to the probability of X taking on that value.",
+    "realWorldApplications": [
+      "In machine learning, the CDF is used in classification problems to determine the probability of an instance belonging to a particular class."
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between the CDF and the Probability Mass Function (PMF)"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:39:01.545Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_cdf_discrete_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function (CDF)",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) of a discrete random variable X is a function that gives the probability that X takes on a value less than or equal to a given value x. In other words, it's the probability that X is less than or equal to x.</p><p>Formally, the CDF is defined as F(x) = P(X ≤ x), where P is the probability measure.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\sum_{i=0}^{\\infty} P(X=i) \\mathbf{1}_{\\{x \\geq i\\}}\\)\",",
+    "name": "CDF definition\" },",
+    "intuition": "The CDF is like a bar chart of the probability mass function (PMF), but instead of showing the exact probabilities, it shows the cumulative probabilities up to each value.",
+    "realWorldApplications": [
+      "In machine learning, the CDF can be used to model the distribution of continuous features in a dataset."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:39:18.759Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_cdf_discrete_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function",
+    "contentHtml": "<p>The cumulative distribution function (CDF) of a discrete random variable X is a function that gives the probability that X takes on a value less than or equal to some number k.</p><p>In other words, it's the sum of the probabilities of all values up to and including k. This concept is crucial in understanding how to work with discrete random variables.</p>",
+    "formula": "{",
+    "latex": "\\[F_X(k) = \\sum_{x=0}^k P(X=x),\\]",
+    "name": "Cumulative Distribution Function\" },",
+    "intuition": "Think of the CDF as a histogram that shows the cumulative probability up to each value. It helps us visualize and work with these probabilities more effectively.",
+    "realWorldApplications": [
+      "In machine learning, we often use the CDF to model real-world phenomena like user engagement or purchase behavior."
+    ],
+    "commonMistakes": [
+      "Don't confuse the CDF with the PMF; they're related but distinct concepts."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:39:35.331Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_discrete_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) is a fundamental concept in probability theory that describes the probability of an event occurring at or below a certain value.</p>",
+    "formula": {
+      "latex": "\\[F(x) = P(X \\leq x) = \\sum_{k=1}^\\infty P(X=k) \\mathbf{1}_{[x, \\infty)}(k)\\]",
+      "name": "Cumulative Distribution Function"
+    },
+    "intuition": "The CDF represents the probability of an event occurring at or below a certain value. It's like asking 'what's the chance that my random variable is less than or equal to this value?'",
+    "realWorldApplications": [
+      "In machine learning, the CDF is used in tasks such as data preprocessing and feature engineering."
+    ],
+    "tags": [
+      "probability",
+      "random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:39:50.895Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_discrete_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function (CDF)",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) of a discrete random variable X is a function that gives the probability that X takes on a value less than or equal to x.</p><p>It's denoted as F(x) and is defined as:</p>\\(\\sum_{k=0}^{x} p_k\\)<p>where p_k is the probability mass function (PMF) of X, and k ranges over all possible values of X.</p>\",",
+    "formula": "{",
+    "latex": "\\(F(x) = \\sum_{k=0}^{x} p_k\\)\",",
+    "name": "Cumulative Distribution Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a discrete random variable X that can take on values 1, 2, or 3 with probabilities 0.4, 0.3, and 0.3 respectively.</p><p>Find the CDF of X at x = 2.</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the CDF",
+    "mathHtml": "\\(F(2) = \\sum_{k=0}^{2} p_k = p_1 + p_2 = 0.4 + 0.3 = 0.7\\)\",",
+    "explanation": "We sum up the probabilities of values less than or equal to 2\" } ],",
+    "finalAnswer": "F(2) = 0.7\" },",
+    "intuition": "The CDF gives us a sense of how likely it is that our random variable takes on a value within a certain range.",
+    "realWorldApplications": [
+      "In machine learning, the CDF can be used to model the probability distribution of a continuous random variable"
+    ],
+    "tags": [
+      "probability",
+      "discrete random variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:40:22.000Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_cdf_discrete_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function",
+    "contentHtml": "<p>The Cumulative Distribution Function (CDF) of a discrete random variable X is a function F(x) that gives the probability P(X ≤ x).</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\sum_{k=0}^{x} p_k\\)\",",
+    "name": "Cumulative Distribution Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of a random variable X that takes values {1, 2, 3} with probabilities {0.4, 0.3, 0.3}, respectively.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the probability for each value\", \"mathHtml\": \"\\(P(X=1) = 0.4\\)\", \"explanation\": \"We add up the probabilities\"}, {\"stepNumber\": 2, \"description\": \"Add up the probabilities for values less than or equal to x\", \"mathHtml\": \"\\(F(x) = P(X \\leq 1) + P(X=2)\\)\", \"explanation\": \"The CDF sums up the probabilities\"} ],",
+    "finalAnswer": "The final answer is \\(F(3) = 0.7\\)\" },",
+    "intuition": "The CDF helps us understand the probability of a random variable being less than or equal to a certain value.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:40:43.013Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_discrete_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": "{",
+    "statementHtml": "<p>Find the cumulative distribution function (CDF) of a discrete random variable X.</p>",
+    "hints": [
+      "Think about how the CDF is related to the probability mass function (PMF).",
+      "Consider what happens as the upper bound approaches infinity.",
+      "Use the definition of the CDF and the PMF to write an equation."
+    ],
+    "solutionHtml": "<p>To find the CDF, we sum up the probabilities of all values less than or equal to x:</p>\\n\\ \\[ F(x) = \\sum_{i=0}^{x} P(X=i) \\]\\n\\ <p>We can rewrite this as:</p>\\n\\ \\[ F(x) = 1 - \\sum_{i=x+1}^{\\infty} P(X=i) \\]\\n\\ <p>This is because the CDF sums up all probabilities less than or equal to x, so we subtract the sum of all probabilities greater than x.</p>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:40:59.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_discrete_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": "{",
+    "statementHtml": "<p>Find the cumulative distribution function (CDF) of a discrete random variable X.</p>",
+    "hints": [
+      "Think about how the CDF accumulates probabilities.",
+      "Consider a simple example to get started.",
+      "Use the definition of the CDF to write an equation."
+    ],
+    "solutionHtml": "<p>To find the CDF, F(x), we sum up the probabilities of all values less than or equal to x:</p>\\n\\[F(x) = \\sum_{k=0}^{x} P(X=k)\\]\\n<p>For a discrete random variable X with PMF p(k), this becomes:</p>\\n\\[F(x) = \\sum_{k=0}^{x} p(k)\\]\\n<p>In Python, you can implement the CDF as follows:</p>\\n``python\\nimport numpy as np\\ndef cdf(pmf, x):\\n    return np.sum(pmf[:x+1])\\n``\",",
+    "answerShort": "F(x) = \\sum_{k=0}^{x} p(k)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:41:18.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_discrete_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": {
+      "statementHtml": "Find the cumulative distribution function (CDF) of a discrete random variable X with probability mass function (PMF) <i>P</i>(x) = <i>p</i><sub>x</sub>.",
+      "hints": [
+        "Start by recalling that the CDF is defined as F(x) = P(X &le; x).",
+        "Think about how you can use the PMF to find the probability of X taking on values less than or equal to a given value x.",
+        "You may need to consider multiple cases depending on whether x is an integer or not."
+      ],
+      "solutionHtml": "<p>To find the CDF, we sum up the probabilities of all possible values of X that are less than or equal to x:</p><p>F(x) = ∑<sub>x' ≤ x</sub> P(X = x') = ∑<sub>x' ≤ x</sub> p<sub>x'</sub>.</p>",
+      "answerShort": "F(x)"
+    },
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:41:34.838Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_discrete_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function of Discrete Random Variables",
+    "contentHtml": "<p>The cumulative distribution function (CDF) of a discrete random variable X is a fundamental concept in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\sum_{k=-\\infty}^{x} P(X = k)\\)\",",
+    "name": "Cumulative Distribution Function\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the CDF of a discrete random variable X that takes values {0, 1, 2, 3, 4} with probabilities {0.2, 0.5, 0.15, 0.05, 0.01}, respectively.</p>",
+    "hints": [
+      "Hint: Start by calculating the probability mass function (PMF)"
+    ],
+    "solutionHtml": "<p>To find the CDF, we'll sum up the PMF values for all x ≤ 4:</p><ul><li>\\(P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) = 0.2 + 0.5 + 0.15 + 0.05 + 0.01 = 0.82\\)</li></ul>\",",
+    "answerShort": "F(4) = 0.82\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of a discrete random variable X that takes values {0, 1, 2} with probabilities {0.3, 0.5, 0.2}, respectively.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the PMF\", \"mathHtml\": \"\\(P(X = 0) = 0.3\\)\", \"explanation\": \"We start by calculating the probability mass function (PMF)\" }, {\"stepNumber\": 2, \"description\": \"Sum up the PMF values for all x ≤ 2\", \"mathHtml\": \"\\(P(X = 0) + P(X = 1) + P(X = 2) = 0.3 + 0.5 + 0.2 = 0.9\\)\", \"explanation\": \"We sum up the PMF values for all x ≤ 2 to find the CDF\" }, {\"stepNumber\": 3, \"description\": \"The final answer is\", \"mathHtml\": \"\\(F(2) = 0.9\\)\", \"explanation\": \"\" } ],",
+    "finalAnswer": "F(2) = 0.9\" },",
+    "intuition": "The CDF of a discrete random variable X represents the probability that X takes on a value less than or equal to x.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:42:12.315Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_discrete_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function of Discrete Random Variables",
+    "contentHtml": "<p>The cumulative distribution function (CDF) is a fundamental concept in probability theory that helps us understand how discrete random variables behave.</p>",
+    "formula": "{",
+    "latex": "\\(F(x) = \\sum_{i=0}^{\\infty} P(X=i) \\mathbf{1}_{\\{X \\leq x\\}}\\)\",",
+    "name": "Cumulative Distribution Function\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the CDF of a discrete random variable X that takes values {0, 1} with probabilities {0.4, 0.6}.</p>",
+    "hints": [
+      "Think about the probability mass function (PMF)"
+    ],
+    "solutionHtml": "<p>We can calculate the CDF by summing up the PMF values for all x ≤ x:</p>\\n<ul><li>For x = 0: \\(F(0) = P(X=0) = 0.4\\)</li><li>For x > 0: \\(F(x) = P(X \\leq x) = P(X=0) + P(X=1) = 0.4 + 0.6 = 1\\)</li></ul>\",",
+    "answerShort": "The CDF is F(0) = 0.4 and F(x) = 1 for x > 0\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the CDF of a discrete random variable X that takes values {0, 1} with probabilities {0.3, 0.7}.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the PMF\", \"mathHtml\": \"\\(P(X=0) = 0.3\\)\", \"explanation\": \"We start by finding the probability mass function (PMF)\" }, {\"stepNumber\": 2, \"description\": \"Find the CDF for x = 0\", \"mathHtml\": \"\\(F(0) = P(X=0) = 0.3\\)\", \"explanation\": \"For x = 0, we sum up the PMF values\" }, {\"stepNumber\": 3, \"description\": \"Find the CDF for x > 0\", \"mathHtml\": \"\\(F(x) = P(X \\leq x) = P(X=0) + P(X=1) = 0.3 + 0.7 = 1\\)\", \"explanation\": \"For x > 0, we sum up the PMF values for all x ≤ x\" }, {\"stepNumber\": 4, \"description\": \"Combine the results\", \"mathHtml\": \"\\(F(x) = \\begin{cases} 0.3 & x=0 \\\\ 1 & x>0 \\end{cases}\\)\", \"explanation\": \"We combine the results to get the final CDF\" } ],",
+    "finalAnswer": "The CDF is F(0) = 0.3 and F(x) = 1 for x > 0\" },",
+    "intuition": "The CDF helps us understand how likely it is that a discrete random variable takes on a value less than or equal to a given value.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:42:55.013Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_cdf_discrete_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "title": "Cumulative Distribution Function of Discrete Random Variables",
+    "contentHtml": "<p>In probability theory, the cumulative distribution function (CDF) is a fundamental concept that describes the probability of a discrete random variable taking on values less than or equal to a given value.</p>",
+    "formula": {
+      "latex": "\\[F(x) = \\sum_{k=-\\infty}^{x} P(X=k)\\]",
+      "name": "Cumulative Distribution Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the CDF of a discrete random variable X that takes on values 0, 1, and 2 with probabilities 0.4, 0.3, and 0.3 respectively.</p>",
+      "hints": [
+        "Hint: Start by calculating the probability mass function (PMF)"
+      ],
+      "solutionHtml": "<p>Step 1: Calculate the PMF</p><ul><li>\\[P(X=0) = 0.4\\]</li><li>\\[P(X=1) = 0.3\\]</li><li>\\[P(X=2) = 0.3\\]</li></ul><p>Step 2: Calculate the CDF</p><ul><li>\\[F(0) = P(X \\leq 0) = P(X=0) = 0.4\\]</li><li>\\[F(1) = P(X \\leq 1) = P(X=0) + P(X=1) = 0.4 + 0.3 = 0.7\\]</li><li>\\[F(2) = P(X \\leq 2) = P(X=0) + P(X=1) + P(X=2) = 0.4 + 0.3 + 0.3 = 1.0\\]</li></ul>",
+      "answerShort": "The CDF is F(x) = \\sum_{k=-\\infty}^{x} P(X=k)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the CDF of a discrete random variable X that takes on values 0, 1, and 2 with probabilities 0.4, 0.3, and 0.3 respectively.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the PMF",
+          "mathHtml": "\\[P(X=0) = 0.4\\]",
+          "explanation": "We start by calculating the probability mass function (PMF) of X."
+        }
+      ],
+      "finalAnswer": "The CDF is F(x) = \\sum_{k=-\\infty}^{x} P(X=k)"
+    },
+    "intuition": "The CDF provides a way to summarize the distribution of a discrete random variable, allowing us to calculate probabilities for all possible values.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:43:33.476Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

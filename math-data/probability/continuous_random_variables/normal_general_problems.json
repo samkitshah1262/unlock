@@ -1,0 +1,105 @@
+[
+  {
+    "id": "prob_prb_normal_general_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "normal_general",
+    "problem": "{",
+    "statementHtml": "Consider a random variable X following a general normal distribution with parameters μ and σ². Find the probability P(X &lt; k) given that μ = 2 and σ² = 4.",
+    "hints": [
+      "Start by standardizing the random variable.",
+      "Use the standardized normal distribution to find the z-score.",
+      "Look up the cumulative distribution function (CDF) of the standard normal distribution."
+    ],
+    "solutionHtml": "<p>To standardize X, we subtract μ and divide by σ:</p>\\(\\frac{X-2}{2}\\)<br><p>This has a mean of 0 and variance of 1. Now, find the z-score corresponding to k:</p>\\(z = \\frac{k-2}{2}\\)<br><p>Then, use the CDF of the standard normal distribution Φ(z) to find P(X &lt; k):</p>\\(P(X &lt; k) = Φ\\(\\frac{k-2}{2}\\)\\(<br><p>The final answer is:</p>\\(P(X &lt; k) = \\ldots\\)\",",
+    "answerShort": "P(X &lt; k) = Φ(z)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:16:48.673Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_normal_general_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "normal_general",
+    "problem": {
+      "statementHtml": "Consider a continuous random variable X with a general normal distribution <i>N(μ, σ²)</i>. Find the probability that X falls within one standard deviation of its mean.",
+      "hints": [
+        "Think about the properties of the normal distribution.",
+        "Recall how to standardize a normal random variable.",
+        "Use the given parameters μ and σ² to simplify your answer."
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use the fact that the probability density function (PDF) of a standard normal distribution is <i>φ(z)</i>. We first standardize X by subtracting its mean and dividing by its standard deviation:</p><p>X ~ N(μ, σ²) &Rightarrow; Z = \\frac{X - μ}{σ}</p><p>The probability we're looking for is then P(|Z| ≤ 1), which can be found using the PDF:</p><p>P(|Z| ≤ 1) = ∫_{-1}^{1} φ(z) dz</p><p>Simplify this integral to get your final answer.</p>",
+      "answerShort": "P(|Z| ≤ 1) = 0.6827"
+    },
+    "commonMistakes": [
+      "Forgetting that the normal distribution is symmetric, so |Z| can be replaced with Z.",
+      "Not simplifying the integral correctly."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:17:09.184Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_normal_general_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "normal_general",
+    "problem": "{",
+    "statementHtml": "Consider a random variable X with a general normal distribution <i>N(μ, σ²)</i>. Find the probability P(X &gt; k) given μ = 2 and σ² = 4.",
+    "hints": [
+      "Start by standardizing X to have mean 0 and variance 1.",
+      "Use the cumulative distribution function (CDF) of the standardized normal distribution."
+    ],
+    "solutionHtml": "<p>Standardize X:</p><p>\\[X' = \\frac{X - μ}{σ}\\]</p><p>Evaluate the CDF at k:</p><p>\\[P(X' &gt; k) = Φ(\\(k - μ\\) / σ)\\]</p><p>Substitute values:</p><p>\\[P(X' &gt; k) = Φ((\\(k - 2\\)) / √4)\\]</p>\",",
+    "answerShort": "Φ((\\(k - 2\\)) / √4)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:17:27.540Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_normal_general_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "normal_general",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with a general normal distribution <i>N</i>(μ, σ²). Find the probability density function (PDF) of X.</p>",
+    "hints": [
+      "<p>The PDF of a normal distribution is given by the formula...</p>",
+      "<p>Standardize the variable first...</p>",
+      "<p>Use the standard normal distribution table or calculator to find the value...</p>"
+    ],
+    "solutionHtml": "<p>To find the PDF, we need to standardize X:</p>\\n\\[f(x) = \\frac{1}{\\sigma} \\phi(\\frac{x-\\mu}{\\sigma})\\]\\n<p>where φ is the standard normal distribution function.</p>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:17:41.898Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

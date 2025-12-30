@@ -1,0 +1,82 @@
+[
+  {
+    "id": "la_prb_power_method_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "problem": {
+      "statementHtml": "Find the dominant eigenvalue of a matrix <i>A</i> using power iteration.",
+      "hints": [
+        "Start by initializing a random vector <i>v</i>.",
+        "Apply the transformation <i>T = A v</i> and normalize the result.",
+        "Repeat the process until convergence or a desired number of iterations."
+      ],
+      "solutionHtml": "Let's denote the initial guess as <i>v_0</i>. We'll apply the power iteration formula: \\[v_{k+1} = \frac{A v_k}{||A v_k||}.\\] Normalize the result to ensure <i>||v_{k+1}|| = 1</i>. Repeat this process until convergence. The dominant eigenvalue is then given by \\[λ = v^\top A v.\\]",
+      "answerShort": "The dominant eigenvalue"
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the vector at each iteration.",
+      "Not checking for convergence and repeating the process indefinitely."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:52:00.341Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_power_method_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "problem": "{",
+    "statementHtml": "Find the dominant eigenvalue of a matrix <i>A</i> using power iteration.",
+    "hints": [
+      "Start by normalizing the initial vector <i>v</i>",
+      "In each iteration, compute the Rayleigh quotient",
+      "Convergence is guaranteed for symmetric matrices"
+    ],
+    "solutionHtml": "<p>To apply power iteration, we initialize a random vector <i>v</i> and repeatedly update it according to <span class=\\\"latex\\\">\\\\[v_{k+1} = \\\\frac{Av_k}{||Av_k||}\\]</span>. We can stop when the difference between successive iterates is small.</p>\",",
+    "answerShort": "The dominant eigenvalue\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:52:13.105Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_power_method_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "power_method",
+    "problem": "{",
+    "statementHtml": "<p>Find the dominant eigenvalue of a matrix using power iteration.</p>",
+    "hints": [
+      "Start by computing the Rayleigh quotient.",
+      "Use the fact that the power method converges to the dominant eigenvector.",
+      "Check for convergence and stop when the difference between successive approximations is small."
+    ],
+    "solutionHtml": "<p>Let's say we have a matrix A. We want to find its dominant eigenvalue.</p><p>We can use the power iteration formula:</p>\\(\\mathbf{v}_{k+1} = \\frac{\\mathbf{A}\\mathbf{v}_k}{||\\mathbf{A}\\mathbf{v}_k||}\\)<p>where $\\mathbf{v}_0$ is an initial guess.</p><p>We can stop when the difference between successive approximations of the dominant eigenvector is small:</p>\\(||\\mathbf{v}_{k+1} - \\mathbf{v}_k|| < \\epsilon\\)<p>The dominant eigenvalue is then given by:</p>\\(\\lambda = \\frac{\\mathbf{A}\\mathbf{v}_k}{||\\mathbf{A}\\mathbf{v}_k||} \\cdot \\mathbf{v}_k^T\\)</p>\",",
+    "answerShort": "The dominant eigenvalue is the value that makes the Rayleigh quotient converge.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:52:33.343Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

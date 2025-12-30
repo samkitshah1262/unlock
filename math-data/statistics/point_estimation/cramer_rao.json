@@ -1,0 +1,469 @@
+[
+  {
+    "id": "stat_con_cramer_rao_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>Intuitively, the CR bound says that if we have an unbiased estimator of a parameter, its variance cannot be smaller than the reciprocal of the Fisher information. This means that as the Fisher information increases (i.e., more data is collected), the variance of our estimator decreases.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\text{Var}(\\hat{\\\\theta}) \\\\geq \\\\frac{1}{nI(\\\\theta)}\\\\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "intuition": "The CR bound provides a fundamental limit on the precision of any unbiased estimator, making it a crucial concept in statistical inference.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound is used to analyze the performance of different estimators and understand their limitations."
+    ],
+    "commonMistakes": [
+      "Not recognizing that the CR bound only applies to unbiased estimators"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:50:22.559Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cramer_rao_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>Intuitively, it states that the variance of an estimator cannot be smaller than the reciprocal of the Fisher information. This means that if you have a set of data and want to estimate some parameter, the CR bound gives you a lower limit on how precise your estimation can be.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\text{Var}(\\\\hat{\\\\theta}) \\geq \\\\frac{1}{nI(\\\\theta; X_1, \\\\ldots, X_n)} \\\\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "intuition": "The CR bound is like a speed limit for estimators. It sets a minimum variance that an estimator can achieve, given the amount of data and the underlying distribution.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound has applications in Bayesian inference and maximum likelihood estimation."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the CR bound is a lower bound, not an upper bound."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:50:38.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cramer_rao_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>Intuitively, the CR bound tells us that there exists an optimal way to estimate a parameter using a given set of data, and this optimal method will have a variance no greater than the CR bound.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\text{Var}[^\\\\theta](\\\\hat{\\\\theta}) \\geq \\\\frac{1}{nJ'(-nJ)^{-1}} \\\\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "intuition": "The CR bound provides a theoretical limit on the variance of an unbiased estimator, allowing us to evaluate the efficiency of different estimation methods.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound is used to analyze the performance of various estimators and to develop more efficient algorithms."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the CR bound only applies to unbiased estimators"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:50:53.847Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cramer_rao_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's used to determine the minimum achievable variance of an estimator and serves as a benchmark for evaluating the efficiency of different estimators.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n} I(\\theta) \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of size n from a normal distribution with mean θ and variance σ^2. We want to estimate θ using the sample mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the Fisher information\", \"mathHtml\": \"\\[ I(\\theta) = \\frac{1}{\\sigma^2} \\]\", \"explanation\": \"The Fisher information is a measure of how much information the data contains about the parameter.\"}, {\"stepNumber\": 2, \"description\": \"Use the Cramér-Rao lower bound\", \"mathHtml\": \"\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n} I(\\theta) = \\frac{\\sigma^2}{n} \\]\", \"explanation\": \"The Cramér-Rao lower bound provides a variance bound for the sample mean estimator.\"} ],",
+    "finalAnswer": "The minimum achievable variance of the sample mean estimator is σ^2/n\" },",
+    "intuition": "The Cramér-Rao lower bound shows that any unbiased estimator must have a variance greater than or equal to the reciprocal of the Fisher information.",
+    "realWorldApplications": [
+      "In machine learning, the Cramér-Rao lower bound can be used to evaluate the efficiency of different estimators and determine the minimum achievable variance for a given problem."
+    ],
+    "tags": [
+      "Point Estimation",
+      "Mathematical Statistics"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:18.614Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cramer_rao_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's a powerful tool for evaluating the efficiency of an estimator and determining whether it's the best possible choice.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{CRB}(\\hat{\\theta}) \\geq \\frac{1}{n} \\left( J^{-1} \\right)_{ii} \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Gaussian distribution with mean μ and variance σ^2. We want to estimate μ using the sample mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the Fisher information matrix J\", \"mathHtml\": \"\\[ J = \\frac{1}{\\sigma^2} \\]\", \"explanation\": \"The Fisher information matrix is a measure of the amount of information gained by observing a single data point.\"} ],",
+    "finalAnswer": "The Cramér-Rao lower bound for the sample mean is 1/n\" },",
+    "intuition": "The Cramér-Rao lower bound provides a fundamental limit on the variance of any unbiased estimator. It's a crucial concept in statistical inference and has important implications for machine learning and artificial intelligence.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:37.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cramer_rao_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p><p>It's essential to understand the CR bound, as it helps determine the efficiency of an estimator and ensures that it's at least as good as another estimator.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{n I(\\theta; X)^{-1}} \\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "intuition": "The CR bound shows that the variance of an unbiased estimator is lower-bounded by the inverse of the Fisher information, which depends on the parameter being estimated and the data distribution.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound has implications for the efficiency of maximum likelihood estimators."
+    ],
+    "tags": [
+      "Cramér-Rao Lower Bound",
+      "Point Estimation",
+      "Mathematical Statistics"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:51:51.800Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_cramer_rao_007",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound (CR bound) is a fundamental concept in point estimation that provides a variance bound for any unbiased estimator of a parameter.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Var}[^\\theta] \\geq \\frac{1}{nI(\\theta; X_1, \\ldots, X_n)} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{Let } \\hat{\\theta} \\text{ be an unbiased estimator of } \\theta. Then, }",
+      "proofSketch": "The proof involves showing that the CR bound is a lower bound for the variance of any unbiased estimator."
+    },
+    "intuition": "The CR bound provides a fundamental limit on the precision of any unbiased estimator, making it a crucial concept in point estimation.",
+    "realWorldApplications": [
+      "In machine learning, the CR bound has implications for the design of efficient algorithms and the analysis of statistical models."
+    ],
+    "tags": [
+      "Point Estimation",
+      "Cramér-Rao Lower Bound",
+      "Variance"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:52:08.195Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_cramer_rao_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>The Cramér-Rao lower bound is a fundamental concept in mathematical statistics that provides a variance bound for any unbiased estimator.</p>",
+    "formula": {
+      "latex": "\\[ \\text{CRB} = \\frac{1}{\\mathbf{E}[f'(x)^2]} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{If } \\hat{x} \\text{ is an unbiased estimator of } x, then } \\text{Var}(\\hat{x}) \\geq \\frac{1}{-E[f'(x)^2]} \\]",
+      "proofSketch": "The proof involves showing that the variance of any unbiased estimator must be greater than or equal to the reciprocal of the expected value of the squared derivative of the score function."
+    },
+    "intuition": "In essence, the Cramér-Rao lower bound states that there is a fundamental limit on how well we can estimate a parameter. Any unbiased estimator must have a variance at least as large as this bound.",
+    "realWorldApplications": [
+      "This concept has important implications in machine learning and artificial intelligence, where it is used to analyze the performance of various estimation algorithms."
+    ],
+    "tags": [
+      "Cramér-Rao Lower Bound",
+      "Point Estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:52:25.778Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cramer_rao_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "Find the Cramér-Rao Lower Bound (CRLB) for estimating a scalar parameter <i>θ</i> in a normal distribution with known mean <i>μ</i> and unknown variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by finding the Fisher information matrix.",
+      "Use the inverse of the Fisher information matrix to find the CRLB.",
+      "The CRLB is a lower bound on the variance of any unbiased estimator."
+    ],
+    "solutionHtml": "<p>To find the CRLB, we first need to calculate the Fisher information matrix. Let <i>y</i> be an observation from the normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>. Then, the log-likelihood function is:</p>\\n\\[ \\ell(\\theta) = -\\frac{1}{2σ^2} \\sum_{i=1}^{n} (y_i - μ)^2.\\]\\n<p>The Fisher information matrix is then:</p>\\n\\[ I(θ) = E[∂²ℓ/∂θ²] = \\frac{n}{σ^2}.\\]\\n<p>Now, we can find the CRLB by taking the inverse of the Fisher information matrix:</p>\\n\\[ Var(θ) ≥ 1/I(θ) = σ^2/n.\\]\",",
+    "answerShort": "σ<sup>2</sup>/n\" },",
+    "commonMistakes": [
+      "Forgetting to take the inverse of the Fisher information matrix.",
+      "Not recognizing that the CRLB is a lower bound on the variance."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:52:47.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cramer_rao_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "<p>Find the Cramér-Rao Lower Bound (CRLB) for estimating the mean of a normal distribution.</p>",
+    "hints": [
+      "<p>Start by recalling the definition of the CRLB.</p>",
+      "<p>Use the fact that the variance of an unbiased estimator is at least as large as the reciprocal of its Fisher information.</p>",
+      "<p>Apply the formula for the Fisher information in this case.</p>"
+    ],
+    "solutionHtml": "<p>To find the CRLB, we need to calculate the Fisher information. Let's denote the sample mean by $\\hat{\\mu}$. Then, the log-likelihood function is</p>\\[\\ell(\\mu) = -\\frac{n}{2}\\ln(2\\pi) - \\frac{1}{2}\\sum_{i=1}^n (x_i-\\mu)^2.\\]The Fisher information is</p>\\[I(\\mu) = E\\left[-\\frac{\\partial^2 \\ell}{\\partial \\mu^2}\\right] = \\frac{n}{\\sigma^2}.\\]Since the estimator $\\hat{\\mu}$ is unbiased, its variance is at least as large as the reciprocal of its Fisher information:</p>\\[\\text{Var}(\\hat{\\mu}) \\geq \\frac{1}{I(\\mu)} = \\frac{\\sigma^2}{n}.\\]This is the CRLB for estimating the mean.</p>\",",
+    "answerShort": "The CRLB is $\\frac{\\sigma^2}{n}$.\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:08.466Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cramer_rao_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "Find the Cramér-Rao Lower Bound (CRLB) for estimating a parameter <i>θ</i> in a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by finding the Fisher information matrix.",
+      "Use the inverse of the Fisher information matrix to find the CRLB.",
+      "Compare your answer to the sample variance."
+    ],
+    "solutionHtml": "\\[The Fisher information matrix is \\begin{bmatrix} 1/σ^2 & 0 \\\\ 0 & 1/(2σ^4) \\end{bmatrix}. The inverse of this matrix is \\begin{bmatrix} σ^2 & 0 \\\\ 0 & 2σ^4 \\end{bmatrix}. Therefore, the CRLB is <i>σ^2</i>.\",",
+    "answerShort": "<i>σ^2</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:23.659Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cramer_rao_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Cramér-Rao lower bound (CR bound) to a specific problem.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{\\mathbb{E}\\left[(\\hat{\\theta} - \\theta)^2\\right]}{\\Var(\\hat{\\theta})} \\\\geq \\frac{1}{nI(\\theta; X)} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a random sample of size n from a normal distribution with mean θ and variance σ^2. We want to find the minimum variance unbiased estimator (MVUE) for θ.</p>",
+      "hints": [
+        "Hint: Start by finding the MVUE"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the CR bound for the sample mean \\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the score function",
+          "mathHtml": "\\[ s(x; \\theta) = -\\frac{d}{d\\theta} \\log p(x | \\theta) \\\\= \\frac{x-\\theta}{\\sigma^2} \\]",
+          "explanation": "The score function measures how much the log likelihood changes when θ is perturbed."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the variance of the score",
+          "mathHtml": "\\[ V(s) = \\mathbb{E}\\left[(s(x; \\theta))^2\\right] \\\\= \\frac{1}{n\\sigma^4} \\]",
+          "explanation": "We're interested in the variance of the score, which will help us find the CR bound."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the CR bound",
+          "mathHtml": "\\[ \\Var(\\bar{x}) \\\\geq \\frac{1}{nI(\\theta; X)} \\\\= \\frac{\\sigma^2}{n} \\]",
+          "explanation": "Now we can apply the CR bound to find a lower bound for the variance of the sample mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the MVUE",
+          "mathHtml": "\\[ \\hat{\\theta} = \\bar{x} \\]",
+          "explanation": "Since we've found the CR bound, we can conclude that the sample mean is an MVUE for θ."
+        }
+      ],
+      "finalAnswer": "The CR bound for the sample mean is \\frac{\\sigma^2}{n}."
+    },
+    "intuition": "<p>The Cramér-Rao lower bound provides a fundamental limit on the precision of any unbiased estimator. By applying it to our problem, we've shown that the sample mean is an MVUE and has a minimum variance.</p>",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:58.816Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cramer_rao_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply the Cramér-Rao Lower Bound (CRB) to find a variance bound for an estimator.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\frac{1}{\\\\text{Var}[\\hat{\\\\theta}]} \\geq -E\\\\left[\\\\frac{\\\\partial}{\\\\partial \\\\theta} l(\\\\theta; x)\\\\right]^2 \\\\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random variable X ~ N(\\mu, \\sigma^2). We want to find the CRB for estimating \\mu.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the log-likelihood function\", \"mathHtml\": \"\\\\[ l(\\\\theta; x) = -\\\\frac{1}{2}\\\\log(2\\\\pi\\\\sigma^2) - \\\\frac{(x-\\\\mu)^2}{2\\\\sigma^2} \\\\]\", \"explanation\": \"This is the starting point for our CRB calculation.\" }, {\"stepNumber\": 2, \"description\": \"Take the derivative of the log-likelihood function with respect to \\\\theta\", \"mathHtml\": \"\\\\[ \\\\frac{\\\\partial}{\\\\partial \\\\mu} l(\\\\mu; x) = -\\\\frac{x-\\\\mu}{\\\\sigma^2} \\\\]\", \"explanation\": \"This gives us the score function.\" }, {\"stepNumber\": 3, \"description\": \"Find the expected value of the score function\", \"mathHtml\": \"\\\\[ E\\\\left[\\\\frac{\\\\partial}{\\\\partial \\\\mu} l(\\\\mu; X)\\\\right] = -E\\\\left[\\\\frac{X-\\\\mu}{\\\\sigma^2}\\\\right] \\\\]\", \"explanation\": \"This is the expected value of the score function, which we'll use in our CRB calculation.\" }, {\"stepNumber\": 4, \"description\": \"Use the CRB formula\", \"mathHtml\": \"\\\\[ \\\\frac{1}{\\\\text{Var}[\\hat{\\\\mu}]} \\geq E\\\\left[\\\\frac{(X-\\\\mu)^2}{\\\\sigma^2}\\\\right] \\\\]\", \"explanation\": \"This is our final answer, which gives us the CRB for estimating \\\\mu.\" } ],",
+    "finalAnswer": "\\\\[ \\\\text{Var}[\\hat{\\\\mu}] \\geq \\\\frac{\\\\sigma^2}{N} \\\\]\" },",
+    "intuition": "The Cramér-Rao Lower Bound provides a fundamental limit on the variance of any unbiased estimator, making it a crucial concept in statistical inference.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:54:30.375Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cramer_rao_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound: Variance Bound and Efficiency",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Cramér-Rao lower bound (CRB) to find a variance bound for an estimator.</p>",
+    "formula": {
+      "latex": "\\[ \\text{CRB}(\\hat{\\theta}) = \\frac{1}{n} + \\left(\\frac{1}{n^2}\\right) \\sum_{i=1}^{n-1} (i+1)^{-2} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a random sample X_1, ..., X_n from a normal distribution N(\\theta, 1). We want to find the variance bound for an unbiased estimator \\hat{\\theta}.</p>",
+      "hints": [
+        "Hint: Use the CRB formula"
+      ],
+      "solutionHtml": "<p>We'll use the CRB formula:</p><ul><li>Find the Fisher information matrix I(\\theta)</li><li>Evaluate the inverse of I(\\theta) at \\hat{\\theta}</li><li>Use the result to find the variance bound</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a random sample X_1, ..., X_n from N(\\theta, 1). We want to find the variance bound for the sample mean \\hat{\\theta} = (X_1 + ... + X_n)/n.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the Fisher information matrix I(\\theta)",
+          "mathHtml": "\\[ I(\\theta) = -E\\left[\\frac{\\partial^2 \\ln f(X; \\theta)}{\\partial \\theta^2}\\right] = n \\]",
+          "explanation": "The Fisher information matrix measures the amount of information about \\theta contained in the data."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the inverse of I(\\theta) at \\hat{\\theta}",
+          "mathHtml": "\\[ I^{-1}(\\hat{\\theta}) = \\frac{1}{n} \\]",
+          "explanation": "The inverse of the Fisher information matrix gives us the variance bound."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the result to find the variance bound",
+          "mathHtml": "\\[ \\text{CRB}(\\hat{\\theta}) = \\frac{1}{n} + \\left(\\frac{1}{n^2}\\right) \\sum_{i=1}^{n-1} (i+1)^{-2} \\]",
+          "explanation": "The CRB formula gives us the variance bound for the sample mean."
+        }
+      ],
+      "finalAnswer": "The variance bound is..."
+    },
+    "intuition": "The Cramér-Rao lower bound provides a fundamental limit on the precision of an estimator.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:55:05.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

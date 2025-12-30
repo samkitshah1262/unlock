@@ -1,0 +1,81 @@
+[
+  {
+    "id": "stat_prb_cramer_rao_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "Find the Cramér-Rao Lower Bound (CRLB) for estimating a scalar parameter <i>θ</i> in a normal distribution with known mean <i>μ</i> and unknown variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by finding the Fisher information matrix.",
+      "Use the inverse of the Fisher information matrix to find the CRLB.",
+      "The CRLB is a lower bound on the variance of any unbiased estimator."
+    ],
+    "solutionHtml": "<p>To find the CRLB, we first need to calculate the Fisher information matrix. Let <i>y</i> be an observation from the normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>. Then, the log-likelihood function is:</p>\\n\\[ \\ell(\\theta) = -\\frac{1}{2σ^2} \\sum_{i=1}^{n} (y_i - μ)^2.\\]\\n<p>The Fisher information matrix is then:</p>\\n\\[ I(θ) = E[∂²ℓ/∂θ²] = \\frac{n}{σ^2}.\\]\\n<p>Now, we can find the CRLB by taking the inverse of the Fisher information matrix:</p>\\n\\[ Var(θ) ≥ 1/I(θ) = σ^2/n.\\]\",",
+    "answerShort": "σ<sup>2</sup>/n\" },",
+    "commonMistakes": [
+      "Forgetting to take the inverse of the Fisher information matrix.",
+      "Not recognizing that the CRLB is a lower bound on the variance."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:52:47.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cramer_rao_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "<p>Find the Cramér-Rao Lower Bound (CRLB) for estimating the mean of a normal distribution.</p>",
+    "hints": [
+      "<p>Start by recalling the definition of the CRLB.</p>",
+      "<p>Use the fact that the variance of an unbiased estimator is at least as large as the reciprocal of its Fisher information.</p>",
+      "<p>Apply the formula for the Fisher information in this case.</p>"
+    ],
+    "solutionHtml": "<p>To find the CRLB, we need to calculate the Fisher information. Let's denote the sample mean by $\\hat{\\mu}$. Then, the log-likelihood function is</p>\\[\\ell(\\mu) = -\\frac{n}{2}\\ln(2\\pi) - \\frac{1}{2}\\sum_{i=1}^n (x_i-\\mu)^2.\\]The Fisher information is</p>\\[I(\\mu) = E\\left[-\\frac{\\partial^2 \\ell}{\\partial \\mu^2}\\right] = \\frac{n}{\\sigma^2}.\\]Since the estimator $\\hat{\\mu}$ is unbiased, its variance is at least as large as the reciprocal of its Fisher information:</p>\\[\\text{Var}(\\hat{\\mu}) \\geq \\frac{1}{I(\\mu)} = \\frac{\\sigma^2}{n}.\\]This is the CRLB for estimating the mean.</p>\",",
+    "answerShort": "The CRLB is $\\frac{\\sigma^2}{n}$.\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:08.466Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_cramer_rao_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "problem": "{",
+    "statementHtml": "Find the Cramér-Rao Lower Bound (CRLB) for estimating a parameter <i>θ</i> in a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by finding the Fisher information matrix.",
+      "Use the inverse of the Fisher information matrix to find the CRLB.",
+      "Compare your answer to the sample variance."
+    ],
+    "solutionHtml": "\\[The Fisher information matrix is \\begin{bmatrix} 1/σ^2 & 0 \\\\ 0 & 1/(2σ^4) \\end{bmatrix}. The inverse of this matrix is \\begin{bmatrix} σ^2 & 0 \\\\ 0 & 2σ^4 \\end{bmatrix}. Therefore, the CRLB is <i>σ^2</i>.\",",
+    "answerShort": "<i>σ^2</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:23.659Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

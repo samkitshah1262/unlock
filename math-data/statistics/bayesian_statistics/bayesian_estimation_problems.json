@@ -1,0 +1,82 @@
+[
+  {
+    "id": "stat_prb_bayesian_estimation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_estimation",
+    "problem": "{",
+    "statementHtml": "Find the posterior mean and MAP estimates for a normal distribution with prior <i>N(0,1)</i> and likelihood <i>f(x|θ) = N(θ, 2)</i>.",
+    "hints": [
+      "Start by finding the conjugate prior.",
+      "Use the fact that the posterior is also normally distributed.",
+      "Don't forget to normalize the MAP estimate."
+    ],
+    "solutionHtml": "<p>To find the posterior mean, we need to find the expected value of <i>θ</i> given the data.</p>\\[E[\\theta|x] = \\frac{\\int\\theta f(x|\\theta)N(\\theta|0,1)d\\theta}{\\int f(x|\\theta)N(\\theta|0,1)d\\theta]\\]<p>To find the MAP estimate, we need to find the value of <i>θ</i> that maximizes the posterior distribution.</p>\\[MAP = \\arg\\max_{\\theta} N(\\theta|0,1)f(x|\\theta)\\]</p>The final answer is:</p>\",",
+    "answerShort": "The posterior mean is 0.5 and the MAP estimate is 0.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:29:30.327Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_estimation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_estimation",
+    "problem": {
+      "statementHtml": "<p>Given a likelihood function <i>p(y | θ)</i>, find the posterior mean and MAP estimate of <i>θ</i>.</p>",
+      "hints": [
+        "Start by considering the Bayes' theorem formula.",
+        "Think about how to apply the prior distribution to the likelihood function.",
+        "Use the concept of expected value to derive the posterior mean."
+      ],
+      "solutionHtml": "<p>To find the posterior mean, we need to evaluate the integral <i>∫ p(θ | y) dθ</i>. We can do this by using the prior distribution and the likelihood function.</p><p>The MAP estimate is simply the value of <i>θ</i> that maximizes the posterior density <i>p(θ | y)</i>.</p>",
+      "answerShort": "The posterior mean is given by the expected value of the posterior distribution, while the MAP estimate is the mode."
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the posterior distribution.",
+      "Not considering the effect of the prior distribution on the posterior mean and MAP."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:29:45.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_estimation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_estimation",
+    "problem": "{",
+    "statementHtml": "<p>Estimate the posterior mean of a parameter given a prior and likelihood.</p>",
+    "hints": [
+      "Start by recalling Bayes' theorem.",
+      "Think about how to combine the prior and likelihood to get the posterior distribution.",
+      "Don't forget to normalize the posterior!"
+    ],
+    "solutionHtml": "<p>To find the posterior mean, we need to compute the expected value of the posterior distribution.</p>\\[ \\mu_{\\text{post}} = \\int x p(x | y) dx \\]\\n<p>Substituting our prior and likelihood, we get:</p>\\[ \\mu_{\\text{post}} = \\frac{\\int x p(y | x) p(x) dx}{\\int p(y | x) p(x) dx} \\]\\n<p>We can simplify this expression by recognizing it as the MAP estimate.</p>\",",
+    "answerShort": "The posterior mean is equal to the MAP estimate.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:30:00.282Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

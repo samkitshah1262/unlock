@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    .ttypography {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h3 {
+      color: #1a1a1a;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    h3 a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    h3 a:hover {
+      text-decoration: underline;
+    }
+    .spoiler {
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .spoiler-title {
+      display: block;
+      padding: 12px 15px;
+      background: #f0f0f0;
+      cursor: pointer;
+      font-weight: 600;
+      user-select: none;
+      border-bottom: 1px solid #ddd;
+    }
+    .spoiler-title:hover {
+      background: #e8e8e8;
+    }
+    .spoiler-title::before {
+      content: '▶ ';
+      font-size: 0.8em;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .spoiler.open .spoiler-title::before {
+      content: '▼ ';
+    }
+    .spoiler-content {
+      padding: 15px;
+      background: #fff;
+      display: none;
+    }
+    .spoiler.open .spoiler-content {
+      display: block;
+    }
+    pre, code {
+      background: #f5f5f5;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 0.85em;
+    }
+    pre {
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .MathJax {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Editorial</h1>
+  <p><a href="https://codeforces.com/blog/entry/146218" target="_blank">View on Codeforces →</a></p>
+  
+  <div class="ttypography"><p><a href="https://codeforces.com/contest/2140/problem/A" title="Codeforces Round 1049 (Div. 2)">2140A - Shift Sort</a> </p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a> Preparation: <a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/A" title="Codeforces Round 1049 (Div. 2)">2140A - Shift Sort</a></h3><div class="ttypography"><div class="problem-statement"><div><p>The minimum number of operations is equal to the number of misplaced $$$1$$$'s that are in the prefix of the string where $$$0$$$'s should be.</p><p>Let $$$c_0$$$ be the total count of zeros in the string $$$s$$$. In the sorted version, the first $$$c_0$$$ characters will be $$$0$$$'s. The number of operations needed is simply the count of $$$1$$$'s in the prefix $$$s[1 \dots c_0]$$$.</p><p>The number of $$$1$$$'s in the prefix $$$s[1 \dots c_0]$$$ (misplaced $$$1$$$'s) is equal to the number of $$$0$$$'s in the suffix $$$s[c_0+1 \dots n]$$$ (misplaced $$$0$$$'s). Let this count be $$$M$$$.</p><p>A single operation can fix one misplaced $$$1$$$ and one misplaced $$$0$$$. </p><ul> <li> Pick a misplaced $$$1$$$ at index $$$i$$$ and a misplaced $$$0$$$ at index $$$k$$$. </li><li> Pick any index $$$j$$$ between them ($$$i &lt; j &lt; k$$$). </li><li> The triplet of characters $$$(s_i, s_j, s_k)$$$ will be $$$(1, \text{bit}, 0)$$$. </li></ul><p>A cyclic shift can always turn this into $$$(0, \text{bit}, 1)$$$, correcting both $$$s_i$$$ and $$$s_k$$$. </p><ul> <li> If the triplet is $$$(1, 0, 0)$$$, a left shift results in $$$(0, 0, 1)$$$. </li><li> If the triplet is $$$(1, 1, 0)$$$, a right shift results in $$$(0, 1, 1)$$$. </li></ul><p>If there is no bit between the misplaced $$$1$$$ and $$$0$$$ then there has to be a $$$1$$$ to the right of misplaced $$$0$$$ or $$$0$$$ to the left of misplaced $$$1$$$ ($$$n \ge 3$$$). We can choose this bit and perform a left shift or right shift respectively.</p><p>Since each operation fixes one such pair, the answer is $$$M$$$.</p><p>Time Complexity: $$$O(n)$$$</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> ll </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pun">;</span><span class="pln">
+ 
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln">
+ 
+    </span><span class="kwd">int</span><span class="pln"> tt</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> tt</span><span class="pun">;</span><span class="pln">
+ 
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">tt</span><span class="pun">--){</span><span class="pln">
+ 
+        </span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">string</span><span class="pln"> s</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n </span><span class="pun">&gt;&gt;</span><span class="pln"> s</span><span class="pun">;</span><span class="pln">
+ 
+        </span><span class="kwd">int</span><span class="pln"> ans </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+ 
+        </span><span class="kwd">string</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">;</span><span class="pln">
+        sort</span><span class="pun">(</span><span class="pln">p</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(),</span><span class="pln"> p</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">());</span><span class="pln">
+ 
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">s</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> p</span><span class="pun">[</span><span class="pln">i</span><span class="pun">])</span><span class="pln"> ans</span><span class="pun">++;</span><span class="pln">
+ 
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> ans </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">'\n'</span><span class="pun">;</span><span class="pln">
+ 
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></div><p><a href="https://codeforces.com/contest/2140/problem/B" title="Codeforces Round 1049 (Div. 2)">2140B - Another Divisibility Problem</a></p><p>Idea: <a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a> Preparation: <a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/B" title="Codeforces Round 1049 (Div. 2)">2140B - Another Divisibility Problem</a></h3><div class="ttypography"><div class="problem-statement"><div><p>Let's assume that the number $$$y$$$ has $$$d (&gt;0)$$$ digits.</p><p>Now we try to express the number $$$x \# y$$$ in an algebraic form.</p><p>$$$x \# y = x\cdot10^d + y = x\cdot(10^d - 1) + (x + y)$$$.</p><p>For $$$x \# y$$$ to be divisible by $$$x + y$$$, we have that $$$x + y$$$ must be a factor of $$$x\cdot(10^d - 1)$$$.</p><p>Now that we know $$$d &gt; 0$$$, we can surely say that the number $$$3 \cdot x$$$ is a factor of $$$x\cdot(10^d - 1)$$$. Thus, if we make $$$x + y = 3 \cdot x$$$, the condition is satisfied.</p><p>So, we can just choose $$$y$$$ to be equal to $$$2 \cdot x$$$.</p><p>Time Complexity: $$$O(1)$$$ per testcase.</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+ 
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">t</span><span class="pun">--){</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> x</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> x</span><span class="pun">;</span><span class="pln">
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">*</span><span class="pln">x</span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">'\n'</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></div><p><a href="https://codeforces.com/contest/2140/problem/C" title="Codeforces Round 1049 (Div. 2)">2140C - Ultimate Value</a></p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a> Preparation: <a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/C" title="Codeforces Round 1049 (Div. 2)">2140C - Ultimate Value</a></h3><div class="ttypography"><div class="problem-statement"><div><p>Note that if Bob chooses two indices $$$l,r$$$ on his turn, then Alice can also choose the same indices $$$l,r$$$ on her next turn and this will increase the value of $$$f(a)$$$ ultimately.</p><p>So, it remains optimal for Bob to end the game on his first turn.</p><p>Now there are two possibilities: Alice can end the game on her first turn, and Alice can choose two indices and Bob ends the game.</p><p>For the first case, finding $$$f(a)$$$ is trivial.</p><p>Thus, we are left to find the maximum value of $$$f(a)$$$ that Alice can attain on her first turn by choosing two indices. There are only two types of swaps between even index values and odd index values:</p><ul> <li> We swap even with even index or odd with odd index. In this case, only cost increases by absolute difference in index. </li><li> We swap even with odd or vice versa. In this case, the total change is $$$| i-j | + 2\cdot(a_i-a_j)$$$ where $$$i \bmod 2=0$$$ and $$$j \bmod 2=1$$$. This can be solved by maintain prefix minimum over odd and even indexes. </li></ul><p>Time Complexity: $$$O(n)$$$</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> ll </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pun">;</span><span class="pln">
+ 
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln">
+ 
+    </span><span class="kwd">int</span><span class="pln"> tt</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> tt</span><span class="pun">;</span><span class="pln">
+ 
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">tt</span><span class="pun">--){</span><span class="pln">
+ 
+        </span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+ 
+        vector</span><span class="pun">&lt;</span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">(</span><span class="pln">n</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+            cin </span><span class="pun">&gt;&gt;</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+ 
+        ll ans </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">i </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> ans </span><span class="pun">-=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln"> ans </span><span class="pun">+=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+ 
+        ll init </span><span class="pun">=</span><span class="pln"> ans</span><span class="pun">;</span><span class="pln">
+ 
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> ans </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">ans</span><span class="pun">,</span><span class="pln"> init </span><span class="pun">+</span><span class="pln"> i </span><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pun">));</span><span class="pln">
+ 
+        ll min_even </span><span class="pun">=</span><span class="pln"> LLONG_MAX </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> min_odd </span><span class="pun">=</span><span class="pln"> LLONG_MAX </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">i </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pun">){</span><span class="pln">
+                ans </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">init </span><span class="pun">+</span><span class="pln"> i </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> min_even</span><span class="pun">,</span><span class="pln"> ans</span><span class="pun">);</span><span class="pln">
+                min_odd </span><span class="pun">=</span><span class="pln"> min</span><span class="pun">(</span><span class="pln">min_odd</span><span class="pun">,</span><span class="pln"> i </span><span class="pun">-</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pun">{</span><span class="pln">
+                ans </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">init </span><span class="pun">+</span><span class="pln"> i </span><span class="pun">-</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> min_odd</span><span class="pun">,</span><span class="pln"> ans</span><span class="pun">);</span><span class="pln">
+                min_even </span><span class="pun">=</span><span class="pln"> min</span><span class="pun">(</span><span class="pln">min_even</span><span class="pun">,</span><span class="pln"> i </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+ 
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> ans </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">'\n'</span><span class="pun">;</span><span class="pln">
+ 
+    </span><span class="pun">}</span><span class="pln">
+ 
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></div><p><a href="https://codeforces.com/contest/2140/problem/D" title="Codeforces Round 1049 (Div. 2)">2140D - A Cruel Segment's Thesis</a></p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a> Preparation: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/D" title="Codeforces Round 1049 (Div. 2)">2140D - A Cruel Segment's Thesis</a></h3><div class="ttypography"><div class="problem-statement"><div><p>The question has a greedy solution. Let's first handle the case when $$$n$$$ is even, and then we will extend the solution to odd $$$n$$$.</p><p>Since the lengths of the initial segments are fixed, we only need to maximize the contribution of the new segments formed. We will always set $$$x_i$$$ to the left end and $$$y_i$$$ to the right end to maximize the answer. This means the answer is:</p><p>$$$$$$ \sum_{i=1}^{\frac{n}{2}} r_i - \sum_{j=1}^{\frac{n}{2}} l_j, $$$$$$</p><p>where each segment contributes either its right end or its left end, but not both or neither.</p><p>A greedy approach is to initialize the answer as:</p><p>$$$$$$ \text{ans} = \sum_{i=1}^{n} r_i, $$$$$$</p><p>and then sort the values of $$$l_i + r_i$$$. Subtract the lowest $$$\frac{n}{2}$$$ values from the answer. This gives the best possible answer for even $$$n$$$. The sequence of segments selected can also form a valid balanced parenthesis sequence, and thus a valid pairing.</p><p>This works because the answer given by this method is the maximum possible when choosing a subset of $$$\frac{n}{2}$$$ segments to contribute their left ends. If the resulting sequence is not a valid balanced parenthesis sequence, then we can always improve it by swapping a segment from the left end to the right end and another from the right end to the left end.</p><p>For odd $$$n$$$, we can run the above algorithm for $$$\lfloor \frac{n}{2} \rfloor$$$ and then check each segment to be the one segment that is left out, taking the maximum answer over all such possibilities or you can directly find out the left out segment in $$$O(1)$$$. </p><p>Time Complexity: $$$O(n \log n)$$$</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+ 
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> ll</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> vector</span><span class="str">&lt;int&gt;</span><span class="pln"> vi</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> vector</span><span class="str">&lt;ll&gt;</span><span class="pln"> vl</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">set</span><span class="str">&lt;int&gt;</span><span class="pln"> si</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> pair</span><span class="pun">&lt;</span><span class="kwd">int</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pun">&gt;</span><span class="pln"> pi</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> pair</span><span class="pun">&lt;</span><span class="pln">ll</span><span class="pun">,</span><span class="pln"> ll</span><span class="pun">&gt;</span><span class="pln"> pl</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">#define</span><span class="pln"> fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ll i </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> b</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> F first
+</span><span class="com">#define</span><span class="pln"> S second
+</span><span class="com">#define</span><span class="pln"> pb push_back
+</span><span class="com">#define</span><span class="pln"> mp make_pair
+ 
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    cin</span><span class="pun">.</span><span class="pln">tie</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)-&gt;</span><span class="pln">sync_with_stdio</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+    cin</span><span class="pun">.</span><span class="pln">exceptions</span><span class="pun">(</span><span class="pln">cin</span><span class="pun">.</span><span class="pln">failbit</span><span class="pun">);</span><span class="pln">
+    ll T</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> T</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">T</span><span class="pun">--)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+        vector</span><span class="str">&lt;pl&gt;</span><span class="pln"> a</span><span class="pun">(</span><span class="pln">n</span><span class="pun">);</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln">cin </span><span class="pun">&gt;&gt;</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first </span><span class="pun">&gt;&gt;</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second</span><span class="pun">;</span><span class="pln">
+        ll ans </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln">ans </span><span class="pun">+=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second </span><span class="pun">-</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        ans </span><span class="pun">+=</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+        vector</span><span class="pun">&lt;</span><span class="pln">pair</span><span class="pun">&lt;</span><span class="pln">ll</span><span class="pun">,</span><span class="pln"> pl</span><span class="pun">&gt;&gt;</span><span class="pln"> b</span><span class="pun">(</span><span class="pln">n</span><span class="pun">);</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+            b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        sort</span><span class="pun">(</span><span class="pln">b</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(),</span><span class="pln"> b</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">());</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                ans </span><span class="pun">+=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                ans </span><span class="pun">-=</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            cout </span><span class="pun">&lt;&lt;</span><span class="pln"> ans </span><span class="pun">-</span><span class="pln"> n </span><span class="pun">-</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            ll k </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> w </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                w </span><span class="pun">+=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">second</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">+</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                w</span><span class="pun">-=</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">first</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                k </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">k</span><span class="pun">,</span><span class="pln"> w </span><span class="pun">+</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">S</span><span class="pun">.</span><span class="pln">F</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            w </span><span class="pun">+=</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">].</span><span class="pln">first</span><span class="pun">;</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                k </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">k</span><span class="pun">,</span><span class="pln"> w </span><span class="pun">-</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">S</span><span class="pun">.</span><span class="pln">S</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            cout </span><span class="pun">&lt;&lt;</span><span class="pln"> ans </span><span class="pun">+</span><span class="pln"> k  </span><span class="pun">-</span><span class="pln"> n </span><span class="pun">-</span><span class="pln"> n </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre></div></div><p><a href="https://codeforces.com/contest/2140/problem/E1" title="Codeforces Round 1049 (Div. 2)">2140E1 - Prime Gaming (Easy Version)</a></p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/Divine_Spark" title="Master Divine_Spark">Divine_Spark</a> Preparation: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/E1" title="Codeforces Round 1049 (Div. 2)">2140E1 - Prime Gaming (Easy Version)</a></h3><div class="ttypography"><div class="problem-statement"><div><p>For the case of $$$m=1$$$, there is only one possible valid configuration, the answer for which is $$$1$$$.</p><p>For the case $$$m=2$$$, To compute the answer for all possible starting states, we can reduce each state to a binary mask of length $$$n$$$. For each mask, we independently compute the winning player using a regular DP with complexity $$$O(n \cdot 2^n)$$$.</p><p>Alice will try to achieve $$$1$$$ and Bob will aim for $$$0$$$ in the following game where the meaning of:</p><ul> <li> bit $$$1$$$: $$$a_i = 2$$$ </li><li> bit $$$0$$$: $$$a_i = 1$$$ </li></ul><p>If the final value for some mask is $$$1$$$, it means $$$\text{ans} = 2$$$. This can be calculated using $$$dp[i][mask][p]$$$ which represents the value of a game with $$$i$$$ stones and configuration $$$mask$$$, where the current player to move is $$$p$$$ ($$$p=1$$$ for Alice and $$$p=0$$$ for Bob).</p><p>We can then iterate over off masks for games with $$$n$$$ stones and update answer accordingly.</p><p></p><table class="tex-tabular"><tbody><tr><td class="tex-tabular-text-align-left" colspan="3">For $$$mask = 0 \ldots 2^n-1$$$:</td></tr><tr><td class="tex-tabular-text-align-left"></td><td class="tex-tabular-text-align-left">$$$\text{Ans} \leftarrow \text{Ans} + 1+dp[n][mask][1]$$$</td></tr></tbody></table><p></p><p>Time Complexity: $$$O(n \cdot 2^n)$$$</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+ 
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> ll</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> removebit</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> bit</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> msk </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">22</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> filtermask </span><span class="pun">=</span><span class="pln"> msk </span><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> bit</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">((</span><span class="pln">n </span><span class="pun">&gt;&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> filtermask</span><span class="pun">)</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">&amp;</span><span class="pln"> </span><span class="pun">((</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> bit</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">const</span><span class="pln"> ll MOD </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1e9</span><span class="pun">+</span><span class="lit">7</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> mint
+</span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+    ll val</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> ll mod_exp</span><span class="pun">(</span><span class="pln">ll a</span><span class="pun">,</span><span class="pln"> ll b</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        ll res </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        a </span><span class="pun">=</span><span class="pln"> a </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+                res </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">res </span><span class="pun">*</span><span class="pln"> a</span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+            b </span><span class="pun">/=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+            a </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">a </span><span class="pun">*</span><span class="pln"> a</span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> res</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> ll gcdExtended</span><span class="pun">(</span><span class="pln">ll a</span><span class="pun">,</span><span class="pln"> ll b</span><span class="pun">,</span><span class="pln"> ll </span><span class="pun">*</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> ll </span><span class="pun">*</span><span class="pln">y</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">a </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="pun">*</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> b</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        ll x1</span><span class="pun">,</span><span class="pln"> y1</span><span class="pun">;</span><span class="pln">
+        ll gcd </span><span class="pun">=</span><span class="pln"> gcdExtended</span><span class="pun">(</span><span class="pln">b </span><span class="pun">%</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">x1</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">y1</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">*</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> y1 </span><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b </span><span class="pun">/</span><span class="pln"> a</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> x1</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">*</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> x1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> gcd</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> ll modInverse</span><span class="pun">(</span><span class="pln">ll a</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        ll x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">;</span><span class="pln">
+        ll g </span><span class="pun">=</span><span class="pln"> gcdExtended</span><span class="pun">(</span><span class="pln">a</span><span class="pun">,</span><span class="pln"> MOD</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">y</span><span class="pun">);</span><span class="pln">
+        g</span><span class="pun">++;</span><span class="pln">
+        ll res </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">x </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">res </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            res </span><span class="pun">+=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> res</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> val </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    mint</span><span class="pun">(</span><span class="pln">ll x</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">+=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">+=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">+=</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">&gt;=</span><span class="pln"> MOD</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">-=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">-=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">-=</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">+=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">*=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">*</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">/=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">*</span><span class="pln"> modInverse</span><span class="pun">(</span><span class="pln">other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">))</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">+(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">-(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">*(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">/(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">bool</span><span class="pln"> </span><span class="kwd">operator</span><span class="pun">==(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> val </span><span class="pun">==</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+ 
+    mint </span><span class="kwd">operator</span><span class="pun">++()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="pun">++</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">==</span><span class="pln"> MOD</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">++(</span><span class="kwd">int</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val</span><span class="pun">++;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">==</span><span class="pln"> MOD</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">val </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">--()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="pun">--</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">==</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">=</span><span class="pln"> MOD </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">--(</span><span class="kwd">int</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val</span><span class="pun">--;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">val </span><span class="pun">==</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            val </span><span class="pun">=</span><span class="pln"> MOD </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">val </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ 
+    </span><span class="com">// ^ has very low precedence, careful!!</span><span class="pln">
+ 
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">^=(</span><span class="kwd">const</span><span class="pln"> T </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> mod_exp</span><span class="pun">(</span><span class="pln">val</span><span class="pun">,</span><span class="pln"> other</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">^(</span><span class="kwd">const</span><span class="pln"> T </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">^=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+ 
+    mint </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">^=(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        val </span><span class="pun">=</span><span class="pln"> mod_exp</span><span class="pun">(</span><span class="pln">val</span><span class="pun">,</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">val</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    mint </span><span class="kwd">operator</span><span class="pun">^(</span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(*</span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">^=</span><span class="pln"> other</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+ 
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">explicit</span><span class="pln"> </span><span class="kwd">operator</span><span class="pln"> T</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">T</span><span class="pun">)</span><span class="pln">val</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> mint </span><span class="kwd">operator</span><span class="pun">+(</span><span class="pln">T other</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> M</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> mint </span><span class="kwd">operator</span><span class="pun">-(</span><span class="pln">T other</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> M</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> mint </span><span class="kwd">operator</span><span class="pun">*(</span><span class="pln">T other</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> M</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> mint </span><span class="kwd">operator</span><span class="pun">/(</span><span class="pln">T other</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> M</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">typename</span><span class="pln"> T</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> mint </span><span class="kwd">operator</span><span class="pun">^(</span><span class="pln">T other</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> mint</span><span class="pun">(</span><span class="pln">other</span><span class="pun">)</span><span class="pln"> </span><span class="pun">^</span><span class="pln"> M</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+ 
+    </span><span class="kwd">friend</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">ostream </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">&lt;&lt;(</span><span class="pln">std</span><span class="pun">::</span><span class="pln">ostream </span><span class="pun">&amp;</span><span class="pln">output</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> output </span><span class="pun">&lt;&lt;</span><span class="pln"> M</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">friend</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">istream </span><span class="pun">&amp;</span><span class="kwd">operator</span><span class="pun">&gt;&gt;(</span><span class="pln">std</span><span class="pun">::</span><span class="pln">istream </span><span class="pun">&amp;</span><span class="pln">input</span><span class="pun">,</span><span class="pln"> mint </span><span class="pun">&amp;</span><span class="pln">M</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        input </span><span class="pun">&gt;&gt;</span><span class="pln"> M</span><span class="pun">.</span><span class="pln">val</span><span class="pun">;</span><span class="pln">
+        M</span><span class="pun">.</span><span class="pln">val </span><span class="pun">%=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> input</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+ 
+</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> maxn </span><span class="pun">=</span><span class="pln"> </span><span class="lit">20</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> maxm </span><span class="pun">=</span><span class="pln"> </span><span class="lit">30</span><span class="pun">;</span><span class="pln">
+ 
+ll modpow</span><span class="pun">(</span><span class="pln">ll a </span><span class="pun">,</span><span class="pln"> ll b </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    ll res </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+    a </span><span class="pun">%=</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> b </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> b</span><span class="pun">&amp;</span><span class="lit">1</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> res </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> res</span><span class="pun">*</span><span class="pln">a </span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        a </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> a</span><span class="pun">*</span><span class="pln">a </span><span class="pun">)</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> MOD</span><span class="pun">;</span><span class="pln">
+        b </span><span class="pun">&gt;&gt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> res </span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ 
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">   </span><span class="kwd">int</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">t</span><span class="pun">--){</span><span class="pln">
+        </span><span class="kwd">bool</span><span class="pln"> pl </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">,</span><span class="pln"> m</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n </span><span class="pun">&gt;&gt;</span><span class="pln"> m</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">,</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> k</span><span class="pun">;</span><span class="pln">
+        vector</span><span class="str">&lt;int&gt;</span><span class="pln"> good</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">k</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++){</span><span class="pln">
+            cin </span><span class="pun">&gt;&gt;</span><span class="pln"> x</span><span class="pun">;</span><span class="pln">
+            good</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">x</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">m</span><span class="pun">==</span><span class="lit">1</span><span class="pun">){</span><span class="pln">
+            cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">continue</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;bool&gt;</span><span class="pun">&gt;&gt;</span><span class="pln"> dp</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;bool&gt;</span><span class="pun">&gt;(</span><span class="pln">n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> cntt </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+    
+            dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i</span><span class="pun">].</span><span class="pln">resize</span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+            dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i</span><span class="pun">].</span><span class="pln">resize</span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> j </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> j </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> j</span><span class="pun">++)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> k </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> k </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> k</span><span class="pun">++)</span><span class="pln">
+                    </span><span class="pun">{</span><span class="pln">
+                        dp</span><span class="pun">[</span><span class="pln">j</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">k</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> k</span><span class="pun">;</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> msk </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> msk </span><span class="pun">&lt;</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln"> msk</span><span class="pun">++)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">bool</span><span class="pln"> ans0 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">bool</span><span class="pln"> ans1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">auto</span><span class="pln"> x </span><span class="pun">:</span><span class="pln">good</span><span class="pun">)</span><span class="pln">
+                    </span><span class="pun">{</span><span class="pln">
+                        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">x </span><span class="pun">&lt;=</span><span class="pln"> i</span><span class="pun">)</span><span class="pln">
+                        </span><span class="pun">{</span><span class="pln">
+                            cntt</span><span class="pun">++;</span><span class="pln">
+                            </span><span class="kwd">int</span><span class="pln"> finmsk </span><span class="pun">=</span><span class="pln"> removebit</span><span class="pun">(</span><span class="pln">msk</span><span class="pun">,</span><span class="pln"> x </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+                            ans0 </span><span class="pun">&amp;=</span><span class="pln"> dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">][</span><span class="pln">finmsk</span><span class="pun">];</span><span class="pln">
+                            ans1 </span><span class="pun">|=</span><span class="pln"> dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">][</span><span class="pln">finmsk</span><span class="pun">];</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                        </span><span class="kwd">else</span><span class="pln">
+                        </span><span class="pun">{</span><span class="pln">
+                            </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                    dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">msk</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> ans0</span><span class="pun">;</span><span class="pln">
+                    dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">msk</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> ans1</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        mint finans </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> r </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> r </span><span class="pun">&lt;</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pun">&lt;&lt;</span><span class="pln">n</span><span class="pun">);</span><span class="pln"> r</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">   
+            finans </span><span class="pun">+=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">+</span><span class="pln">dp</span><span class="pun">[</span><span class="pln">pl</span><span class="pun">][</span><span class="pln">n</span><span class="pun">][</span><span class="pln">r</span><span class="pun">];</span><span class="pln">
+            
+        </span><span class="pun">}</span><span class="pln">
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> finans </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre></div></div><p><a href="https://codeforces.com/contest/2140/problem/E2" title="Codeforces Round 1049 (Div. 2)">2140E2 - Prime Gaming (Hard Version)</a></p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/Divine_Spark" title="Master Divine_Spark">Divine_Spark</a> Preparation:<a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a>, <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/E2" title="Codeforces Round 1049 (Div. 2)">2140E2 - Prime Gaming (Hard Version)</a></h3><div class="ttypography"><div class="problem-statement"><div><p>To compute the answer for all possible starting states, we can reduce each state to a binary mask of length $$$n$$$. For each mask, we independently compute the winning player using a regular DP with complexity $$$O(n \cdot 2^n)$$$.</p><p>Alice will try to achieve $$$1$$$ and Bob will aim for $$$0$$$ in the following game where the meaning of:</p><ul> <li> bit $$$1$$$: $$$a_i \geq k$$$ </li><li> bit $$$0$$$: $$$a_i &lt; k$$$ </li></ul><p>If the final value for some mask is $$$1$$$, it means $$$\text{ans} \geq k$$$. This can be calculated using $$$dp[i][mask][p]$$$ which represents the value of a game with $$$i$$$ stones and configuration $$$mask$$$, where the current player to move is $$$p$$$ ($$$p=1$$$ for Alice and $$$p=0$$$ for Bob).</p><p>For all $$$r = 1 \ldots n$$$, count the number of masks such that $$$r$$$ bits are on in the mask and the final answer is $$$1$$$. Let this count be $$$\text{cnt}[r]$$$. The final answer can be calculated as follows:</p><p></p><table class="tex-tabular"><tbody><tr><td class="tex-tabular-text-align-left" colspan="3">For $$$k = 1 \ldots m$$$:</td></tr><tr><td class="tex-tabular-text-align-left"></td><td class="tex-tabular-text-align-left" colspan="2">For $$$r = 1 \ldots n$$$:</td></tr><tr><td class="tex-tabular-text-align-left"></td><td class="tex-tabular-text-align-left"></td><td class="tex-tabular-text-align-left">$$$\text{Ans} \leftarrow \text{Ans} + (k-1)^{n-r} \cdot (m-k+1)^{r} \cdot \text{cnt}[r]$$$</td></tr></tbody></table><p></p><p>Time Complexity: $$$O(n \cdot 2^n + m \cdot n)$$$</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><br><span class="com">#include</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> ll</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">const</span><span class="pln"> ll MOD </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1000000007</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> removebit</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> bit</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> msk </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">22</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> filtermask </span><span class="pun">=</span><span class="pln"> msk </span><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> bit</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">((</span><span class="pln">n </span><span class="pun">&gt;&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> filtermask</span><span class="pun">)</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">&amp;</span><span class="pln"> </span><span class="pun">((</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> bit</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> maxn </span><span class="pun">=</span><span class="pln"> </span><span class="lit">20</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> maxm </span><span class="pun">=</span><span class="pln"> </span><span class="lit">30</span><span class="pun">;</span><span class="pln">
+ 
+ll binpow</span><span class="pun">(</span><span class="pln">ll a</span><span class="pun">,</span><span class="pln">ll b</span><span class="pun">,</span><span class="pln">ll m </span><span class="pun">=</span><span class="pln"> MOD</span><span class="pun">){</span><span class="pln">
+    ll res </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b</span><span class="pun">){</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b</span><span class="pun">&amp;</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> res </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">res</span><span class="pun">*</span><span class="pln">a</span><span class="pun">)%</span><span class="pln">m</span><span class="pun">;</span><span class="pln">
+        a </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">a</span><span class="pun">*</span><span class="pln">a</span><span class="pun">)%</span><span class="pln">m</span><span class="pun">;</span><span class="pln">
+        b</span><span class="pun">&gt;&gt;=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> res</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">   </span><span class="kwd">int</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">t</span><span class="pun">--){</span><span class="pln">
+        </span><span class="kwd">bool</span><span class="pln"> pl </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> n</span><span class="pun">,</span><span class="pln"> m</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n </span><span class="pun">&gt;&gt;</span><span class="pln"> m</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">,</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> k</span><span class="pun">;</span><span class="pln">
+        vector</span><span class="str">&lt;int&gt;</span><span class="pln"> good</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">k</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++){</span><span class="pln">
+            cin </span><span class="pun">&gt;&gt;</span><span class="pln"> x</span><span class="pun">;</span><span class="pln">
+            good</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">x</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;bool&gt;</span><span class="pun">&gt;&gt;</span><span class="pln"> dp</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;bool&gt;</span><span class="pun">&gt;(</span><span class="pln">n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+        vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;int&gt;</span><span class="pun">&gt;&gt;</span><span class="pln"> cnt</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> vector</span><span class="pun">&lt;</span><span class="pln">vector</span><span class="str">&lt;int&gt;</span><span class="pun">&gt;(</span><span class="pln">n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> vector</span><span class="str">&lt;int&gt;</span><span class="pun">(</span><span class="pln">n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">))));</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> cntt </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+    
+            dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i</span><span class="pun">].</span><span class="pln">resize</span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+            dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i</span><span class="pun">].</span><span class="pln">resize</span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> j </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> j </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> j</span><span class="pun">++)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> k </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> k </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> k</span><span class="pun">++)</span><span class="pln">
+                    </span><span class="pun">{</span><span class="pln">
+                        dp</span><span class="pun">[</span><span class="pln">j</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">k</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> k</span><span class="pun">;</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                    cnt</span><span class="pun">[</span><span class="pln">j</span><span class="pun">][</span><span class="lit">1</span><span class="pun">][</span><span class="lit">1</span><span class="pun">]++;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> msk </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> msk </span><span class="pun">&lt;</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> i</span><span class="pun">);</span><span class="pln"> msk</span><span class="pun">++)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">bool</span><span class="pln"> ans0 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">bool</span><span class="pln"> ans1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">auto</span><span class="pln"> x </span><span class="pun">:</span><span class="pln">good</span><span class="pun">)</span><span class="pln">
+                    </span><span class="pun">{</span><span class="pln">
+                        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">x </span><span class="pun">&lt;=</span><span class="pln"> i</span><span class="pun">)</span><span class="pln">
+                        </span><span class="pun">{</span><span class="pln">
+                            cntt</span><span class="pun">++;</span><span class="pln">
+                            </span><span class="kwd">int</span><span class="pln"> finmsk </span><span class="pun">=</span><span class="pln"> removebit</span><span class="pun">(</span><span class="pln">msk</span><span class="pun">,</span><span class="pln"> x </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+                            ans0 </span><span class="pun">&amp;=</span><span class="pln"> dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">][</span><span class="pln">finmsk</span><span class="pun">];</span><span class="pln">
+                            ans1 </span><span class="pun">|=</span><span class="pln"> dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">][</span><span class="pln">finmsk</span><span class="pun">];</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                        </span><span class="kwd">else</span><span class="pln">
+                        </span><span class="pun">{</span><span class="pln">
+                            </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                    dp</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">msk</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> ans0</span><span class="pun">;</span><span class="pln">
+                    dp</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">msk</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> ans1</span><span class="pun">;</span><span class="pln">
+                    cnt</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">__popcount</span><span class="pun">(</span><span class="pln">msk</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">+=</span><span class="pln"> ans0</span><span class="pun">;</span><span class="pln">
+                    cnt</span><span class="pun">[</span><span class="lit">1</span><span class="pun">][</span><span class="pln">i</span><span class="pun">][</span><span class="pln">__popcount</span><span class="pun">(</span><span class="pln">msk</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">+=</span><span class="pln"> ans1</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        ll finans </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> r </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> r </span><span class="pun">&lt;=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"> r</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">   
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> k</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">k</span><span class="pun">&lt;=</span><span class="pln">m</span><span class="pun">;</span><span class="pln">k</span><span class="pun">++){</span><span class="pln">
+                finans </span><span class="pun">+=</span><span class="pln"> </span><span class="pun">(((</span><span class="pln">binpow</span><span class="pun">(</span><span class="pln">k</span><span class="pun">-</span><span class="lit">1</span><span class="pun">,</span><span class="pln">n</span><span class="pun">-</span><span class="pln">r</span><span class="pun">)*</span><span class="pln">binpow</span><span class="pun">(</span><span class="pln">m</span><span class="pun">-</span><span class="pln">k</span><span class="pun">+</span><span class="lit">1</span><span class="pun">,</span><span class="pln">r</span><span class="pun">))%</span><span class="pln">MOD</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> </span><span class="pun">(</span><span class="pln">cnt</span><span class="pun">[</span><span class="pln">pl</span><span class="pun">][</span><span class="pln">n</span><span class="pun">][</span><span class="pln">r</span><span class="pun">]))%</span><span class="pln">MOD</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> finans</span><span class="pun">%</span><span class="pln">MOD </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></div> <div class="spoiler"><b class="spoiler-title">Bonus</b><div class="spoiler-content" style="display: block;"><p>Solve the problem when piles must have distinct stones, <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-1"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-2">m</span><span class="MJXp-mo" id="MJXp-Span-3" style="margin-left: 0.333em; margin-right: 0.333em;">≤</span><span class="MJXp-msubsup" id="MJXp-Span-4"><span class="MJXp-mn" id="MJXp-Span-5" style="margin-right: 0.05em;">10</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-6" style="vertical-align: 0.5em;">9</span></span></span></span><script type="math/tex" id="MathJax-Element-1">m \le 10^9</script> and there is no constraint on sum of <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-7"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-8">m</span></span></span><script type="math/tex" id="MathJax-Element-2">m</script>.</p></div></div><p><a href="https://codeforces.com/contest/2140/problem/F" title="Codeforces Round 1049 (Div. 2)">2140F - Sum Minimisation</a></p><p>Idea: <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a> Preparation: <a class="rated-user user-blue" href="https://codeforces.com/profile/wakanda-forever" title="Expert wakanda-forever">wakanda-forever</a>, <a class="rated-user user-orange" href="https://codeforces.com/profile/shorya1835" title="Master shorya1835">shorya1835</a></p> <div class="spoiler"><b class="spoiler-title">Solution</b><div class="spoiler-content" style="display: block;"><div><h3><a href="https://codeforces.com/contest/2140/problem/F" title="Codeforces Round 1049 (Div. 2)">2140F - Sum Minimisation</a></h3><div class="ttypography"><div class="problem-statement"><div><p>An operation involves selecting a subset of the array of size $$$i$$$ (where $$$2 \le i &lt; n$$$). This operation can cause a decrease in an element's value if and only if there exist at least two elements, $$$a_j$$$ and $$$a_k$$$, in the entire array such that they are not congruent modulo $$$i$$$. That is, $$$a_j \not\equiv a_k \pmod{i}$$$.</p><p>Let's prove this by contradiction:</p><ul> <li> Let's assume no operation on a subset of size $$$i$$$ can cause a decrease, yet there exists a pair $$$(a_j, a_k)$$$ such that $$$a_j \not\equiv a_k \pmod{i}$$$. </li><li> The assumption that no decrease is possible implies that for *any* subset of size $$$i$$$, its sum must be divisible by $$$i$$$. </li><li> Since $$$i &lt; n$$$, we can choose a subset $$$S$$$ of size $$$i$$$ that includes $$$a_j$$$ but excludes $$$a_k$$$. Let its sum be $$$\Sigma_S$$$. By our assumption, $$$\Sigma_S \equiv 0 \pmod{i}$$$. </li><li> Now, form a new subset $$$S'$$$ by swapping $$$a_j$$$ with $$$a_k$$$. The sum is $$$\Sigma_{S'} = \Sigma_S - a_j + a_k$$$. Again, by our assumption, this sum must also be divisible by $$$i$$$, so $$$\Sigma_{S'} \equiv 0 \pmod{i}$$$. </li><li> If both sums are congruent to 0 mod $$$i$$$, their difference must also be. $$$$$$ (\Sigma_S - a_j + a_k) - \Sigma_S \equiv 0 - 0 \pmod{i} \\ a_k - a_j \equiv 0 \pmod{i} \implies a_j \equiv a_k \pmod{i} $$$$$$ </li></ul><p>This contradicts our initial premise that $$$a_j \not\equiv a_k \pmod{i}$$$ and Thus, this condition is necessary. The sufficiency is left as an exercise for the reader.</p><p>Since, you want to decrease the array sum as much as possible, you will choose operations that lead to decreasing the array indefinitely, if possible. Assume array to be sorted.</p><p>Case $$$1$$$: In $$$a_2 \ldots a_n$$$, if there exists a pair $$$a_j \ne a_k \pmod{2}$$$, then you can perform the operations indefinitely by choosing $$$a_1$$$ and $$$a_y$$$ such that $$$a_1 \ne a_y \pmod{2}$$$.</p><p>Case $$$2$$$: If no such pair exists, then check $$$a_2 \ldots a_n$$$ for all $$$i$$$ from $$$3$$$ to $$$n-2$$$ or if sum of $$$a_2 \ldots a_n$$$ is divisible by $$$n-1$$$, if there exists some pair such that $$$a_j \ne a_k \pmod{i}$$$ or sum is not divisible, then we can perform a series of operations to convert the array to Case 1.</p><p>Now all $$$n-1$$$ elements are satisfied. So start considering smallest element.</p><p>Case $$$3.1$$$: Smallest element also satisfies the condition for all mod $$$i$$$ ($$$2$$$ to $$$n-1$$$) and sum of array is divisible by $$$n$$$, then no operation leads to a decrease and answer is $$$ \sum_{i=1}^{n} a_i$$$.</p><p>Case $$$3.2$$$: Smallest element doesn't satisfy a mod $$$i$$$ condition or sum of array is not divisible by $$$n$$$. If the difference in value between $$$a_1$$$ and $$$a_k$$$ $$$\pmod{i}$$$ or $$$ \sum_{i=1}^{n} a_i\pmod{n}$$$ is greater than $$$1$$$, then we can again perform an operation to convert to case $$$1$$$.</p><p>Case $$$3.3$$$: If the difference in value between $$$a_1$$$ and $$$a_k$$$ $$$\pmod{i}$$$ is equal to $$$1$$$, then all operations including $$$a_1$$$ will lead to a decrease of $$$1$$$ in $$$a_1$$$, after which no operation leads to a decrease and answer is $$$ \sum_{i=1}^{n} a_i-1$$$.</p><p>To implement this, an easy way is to check if no operation leads to a decrease for the original array or the array after you decrease first element. To do this, use Chinese remainder theorem and check congruency of values against mod of LCM of numbers from $$$1$$$ to $$$n-1$$$ and if sum of array is divisibly by $$$n$$$. This LCM is equivalent to checking if elements are equal for large $$$n$$$, since $$$a_i \le 10^9$$$.</p></div></div></div></div></div></div> <div class="spoiler"><b class="spoiler-title">Code</b><div class="spoiler-content" style="display: block;"><pre><code class="prettyprint prettyprinted" style=""><span class="com">#include</span><span class="pun">&lt;</span><span class="pln">bits</span><span class="pun">/</span><span class="pln">stdc</span><span class="pun">++.</span><span class="pln">h</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> ll</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> vector</span><span class="str">&lt;int&gt;</span><span class="pln"> vi</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> vector</span><span class="str">&lt;ll&gt;</span><span class="pln"> vl</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">set</span><span class="str">&lt;int&gt;</span><span class="pln"> si</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">typedef</span><span class="pln"> pair</span><span class="pun">&lt;</span><span class="pln">ll</span><span class="pun">,</span><span class="pln"> ll</span><span class="pun">&gt;</span><span class="pln"> pl</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ll i </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> b</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> pb push_back
+
+ll gcd</span><span class="pun">(</span><span class="pln">ll a</span><span class="pun">,</span><span class="pln">ll b</span><span class="pun">){</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">a</span><span class="pun">==</span><span class="lit">0</span><span class="pun">)</span><span class="kwd">return</span><span class="pln"> b</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> gcd</span><span class="pun">(</span><span class="pln">b</span><span class="pun">%</span><span class="pln">a</span><span class="pun">,</span><span class="pln">a</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+vl a</span><span class="pun">;</span><span class="pln">
+ll lc</span><span class="pun">,</span><span class="pln"> s</span><span class="pun">,</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">bool</span><span class="pln"> good</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">bool</span><span class="pln"> v</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">n</span><span class="pun">&gt;</span><span class="lit">23</span><span class="pun">){</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">n</span><span class="pun">){</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]!=</span><span class="pln">a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]){</span><span class="pln">
+                v</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pun">{</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="pln">n</span><span class="pun">){</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">j</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">n</span><span class="pun">){</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pun">((</span><span class="pln">a</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]%</span><span class="pln">i</span><span class="pun">)!=(</span><span class="pln">a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]%</span><span class="pln">i</span><span class="pun">)){</span><span class="pln">
+                    v</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    v</span><span class="pun">&amp;=(</span><span class="pln">s</span><span class="pun">%</span><span class="pln">n</span><span class="pun">==</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> v</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    cin</span><span class="pun">.</span><span class="pln">tie</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)-&gt;</span><span class="pln">sync_with_stdio</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+    cin</span><span class="pun">.</span><span class="pln">exceptions</span><span class="pun">(</span><span class="pln">cin</span><span class="pun">.</span><span class="pln">failbit</span><span class="pun">);</span><span class="pln">
+    ll T</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> T</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">T</span><span class="pun">--)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        cin </span><span class="pun">&gt;&gt;</span><span class="pln"> n</span><span class="pun">;</span><span class="pln">
+        a</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();</span><span class="pln">
+        a</span><span class="pun">.</span><span class="pln">resize</span><span class="pun">(</span><span class="pln">n</span><span class="pun">);</span><span class="pln">
+        s</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">n</span><span class="pun">){</span><span class="pln">
+            cin </span><span class="pun">&gt;&gt;</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+            s</span><span class="pun">+=</span><span class="pln">a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        sort</span><span class="pun">(</span><span class="pln">a</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(),</span><span class="pln">a</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">());</span><span class="pln">
+        lc</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">n</span><span class="pun">&gt;</span><span class="lit">23</span><span class="pun">){</span><span class="pln">
+            lc</span><span class="pun">=</span><span class="lit">1e10</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pun">{</span><span class="pln">
+            fo</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="pln">n</span><span class="pun">+</span><span class="lit">1</span><span class="pun">){</span><span class="pln">
+                lc</span><span class="pun">=(</span><span class="pln">lc</span><span class="pun">*</span><span class="pln">i</span><span class="pun">)/</span><span class="pln">gcd</span><span class="pun">(</span><span class="pln">lc</span><span class="pun">,</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">good</span><span class="pun">()){</span><span class="pln">
+            cout </span><span class="pun">&lt;&lt;</span><span class="pln"> s</span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">continue</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]--;</span><span class="pln">
+        s</span><span class="pun">--;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">good</span><span class="pun">()){</span><span class="pln">
+            cout </span><span class="pun">&lt;&lt;</span><span class="pln"> s</span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">continue</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+
+
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre></div></div><p>Thanks to <a class="rated-user user-orange" href="https://codeforces.com/profile/satyam343" title="Master satyam343">satyam343</a> for his help throughout the round.</p></div>
+
+    </div>
+
+
+        <div style="font-size: 1.1rem;line-height: 1.1rem;padding-bottom: 0.5em;">
+            <img src="https://codeforces.com//codeforces.com/codeforces.org/s/52448/images/icons/paperclip-16x16.png" style="vertical-align: middle;"> <span style="padding: 0 0.35em;">Tutorial of <a href="https://codeforces.com/contest/2140" class="notice" style="text-decoration: none;">Codeforces Round 1049 (Div. 2)</a> </span>
+        </div>
+        
+            
+
+  <script>
+    // Make all spoilers toggleable
+    document.querySelectorAll('.spoiler-title').forEach(title => {
+      title.addEventListener('click', function() {
+        const spoiler = this.closest('.spoiler');
+        spoiler.classList.toggle('open');
+      });
+    });
+    
+    // Open all spoilers by default for easier reading
+    document.querySelectorAll('.spoiler').forEach(spoiler => {
+      spoiler.classList.add('open');
+    });
+  </script>
+</body>
+</html>

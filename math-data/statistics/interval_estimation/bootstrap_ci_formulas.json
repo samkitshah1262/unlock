@@ -1,0 +1,169 @@
+[
+  {
+    "id": "stat_for_bootstrap_ci_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Estimating population parameters using a sample-based approach is crucial in many fields.</p><p>The bootstrap confidence interval provides a non-parametric way to construct an interval estimate for the population parameter.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{lower} = \\min\\left(\\{B(\\hat{\\theta}) : B \\in \\mathcal{B}\\}\\right), BCa_{upper} = \\max\\left(\\{B(\\hat{\\theta}) : B \\in \\mathcal{B}\\}\\right)\\]\",",
+    "name": "Bootstrap Confidence Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the mean height of a population using a sample-based approach.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Generate B bootstrap samples from the original dataset",
+        "mathHtml": "",
+        "explanation": "This step helps us understand how our sample estimate varies under different scenarios."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean for each bootstrap sample",
+        "mathHtml": "",
+        "explanation": "We're essentially creating a distribution of sample means."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The bootstrap confidence interval provides an adaptive way to construct an interval estimate by resampling from the original dataset.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:10.638Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>The Bootstrap confidence interval is a non-parametric method for constructing confidence intervals without assuming normality or any specific distribution.</p><p>This approach is particularly useful when dealing with small sample sizes, outliers, or complex distributions.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = [Q_{0.025}, Q_{0.975}]\\]\",",
+    "name": "Bootstrap Confidence Interval",
+    "variants": "[ {\"latex\": \"\\[E_1 = \\frac{1}{B}\\sum_{i=1}^B T(R_i)\\]\", \"description\": \"Estimate of the population parameter\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset of exam scores, construct a 95% confidence interval for the mean score using the Bootstrap method.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Resample with replacement\", \"mathHtml\": \"\\[R_i = \\{x_{i1}, x_{i2}, ..., x_{in}\\}\\]\", \"explanation\": \"This step creates a bootstrap sample.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the statistic of interest\", \"mathHtml\": \"\\[T(R_i) = \\bar{x}_i\\]\", \"explanation\": \"In this case, we're calculating the mean score.\"} ],",
+    "finalAnswer": "The final answer is the Bootstrap confidence interval\" },",
+    "intuition": "The Bootstrap method allows us to construct a confidence interval by repeatedly resampling from our original dataset and recalculating the statistic of interest.",
+    "realWorldApplications": [
+      "Constructing confidence intervals for complex distributions in machine learning"
+    ],
+    "tags": [
+      "Bootstrap",
+      "Confidence Intervals",
+      "Non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:32.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Bootstrap confidence intervals provide a non-parametric way to estimate population parameters without assuming normality or equal variances.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = \\text{quantile}(B) + \\frac{\\sigma}{\\sqrt{B}} \\cdot t_{\\alpha/2, B-1}\\]\",",
+    "name": "Bootstrap Confidence Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the mean of a population with unknown distribution.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Generate B bootstrap samples",
+        "mathHtml": "",
+        "explanation": "This is where the magic happens"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean for each bootstrap sample",
+        "mathHtml": "",
+        "explanation": "We're essentially re-sampling from our original data"
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Bootstrap confidence intervals work by resampling from your original data to create a distribution of possible values. The interval is then constructed based on this distribution.",
+    "realWorldApplications": [
+      "Estimating the mean of customer ratings in e-commerce"
+    ],
+    "tags": [
+      "bootstrap",
+      "confidence interval",
+      "non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:50.137Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Bootstrap confidence intervals provide a non-parametric way to estimate population parameters without assuming normality or equal variances.</p><p>This method is particularly useful when dealing with complex data distributions or small sample sizes.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = \\text{quantile}(B) + \\frac{\\text{se}}{\\sqrt{n}},\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the average height of adults in a city using a random sample of 30 individuals.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Collect data on heights",
+        "mathHtml": "",
+        "explanation": ""
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean and standard deviation",
+        "mathHtml": "",
+        "explanation": ""
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Bootstrap confidence intervals work by resampling with replacement from the original dataset to generate a distribution of possible estimates. This allows us to estimate the uncertainty in our estimate.",
+    "realWorldApplications": [
+      "Estimating population means in machine learning models"
+    ],
+    "tags": [
+      "bootstrap",
+      "confidence interval",
+      "non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:07.100Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

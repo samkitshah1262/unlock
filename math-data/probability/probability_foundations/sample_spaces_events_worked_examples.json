@@ -1,0 +1,136 @@
+[
+  {
+    "id": "prob_wex_sample_spaces_events_008",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "sample_spaces_events",
+    "title": "Sample Spaces and Events",
+    "contentHtml": "<p>In probability theory, a sample space is the set of all possible outcomes of an experiment.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Consider a coin flip with two possible outcomes: heads (H) or tails (T). Define the sample space Ω and describe the event E that represents getting at least one head.</p>",
+    "hints": [
+      "Think about the possible outcomes of the experiment",
+      "Use set notation to define the sample space"
+    ],
+    "solutionHtml": "<p>To solve this problem, we first need to define the sample space Ω. Since there are two possible outcomes (H or T), we can write:</p>\\(\\Omega = \\{H,T\\}\\)<p>Next, we define the event E that represents getting at least one head:</p>\\(E = \\{HH, HT, TH\\}\\) <p>This event includes all possible outcomes where at least one head is obtained.</p>\",",
+    "answerShort": "Ω = {H,T}, E = {HH,HT,TH}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a box containing three balls: two red and one blue. We randomly select one ball from the box. Define the sample space Ω and describe the event E that represents selecting a red ball.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the sample space Ω\", \"mathHtml\": \"\\(\\Omega = \\{R_1, R_2, B\\}\\)\", \"explanation\": \"We list all possible outcomes: two red balls and one blue ball.\"}, {\"stepNumber\": 2, \"description\": \"Define the event E that represents selecting a red ball\", \"mathHtml\": \"\\(E = \\{R_1, R_2\\}\\)\", \"explanation\": \"The event E includes all possible outcomes where we select a red ball.\"} ],",
+    "finalAnswer": "\\(\\Omega = \\{R_1, R_2, B\\}, E = \\{R_1, R_2\\}\\)\" },",
+    "intuition": "Understanding sample spaces and events is crucial in probability theory. It allows us to define the set of possible outcomes and identify specific events within that space.",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:31:04.293Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sample_spaces_events_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "sample_spaces_events",
+    "title": "Sample Spaces and Events",
+    "contentHtml": "<p>In probability theory, we start by defining a <strong>sample space</strong>, which is the set of all possible outcomes of an experiment.</p><p>A <strong>event</strong> is any subset of the sample space that can occur. We use event algebra to combine events in meaningful ways.</p>",
+    "formula": {
+      "latex": "\\(S = \\{s_1, s_2, \\ldots\\}\\)",
+      "name": "Sample Space",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we flip a fair coin three times. What is the sample space?</p>",
+      "hints": [
+        "Think about all possible outcomes"
+      ],
+      "solutionHtml": "<p>We have six possible outcomes: HHH, HHT, HTT, THH, THT, TTT.</p><p>This is our sample space!</p>",
+      "answerShort": "S = {HHH, HHT, HTT, THH, THT, TTT}"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the event 'at least one head' in the previous example. What is this event?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify all outcomes that satisfy the event",
+          "mathHtml": "\\(\\{HHH, HHT, HTT, THH, THT\\}\\)",
+          "explanation": "These are all the outcomes with at least one head"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Write this as a subset of the sample space",
+          "mathHtml": "\\(\\{HHH, HHT, HTT, THH, THT\\} \\subseteq S\\)",
+          "explanation": "This event is a subset of our sample space"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify that this event satisfies the conditions for an event",
+          "mathHtml": "\\(\\{HHH, HHT, HTT, THH, THT\\} \\in \\sigma(S)\\)",
+          "explanation": "This event is indeed a measurable subset of our sample space"
+        }
+      ],
+      "finalAnswer": "The event 'at least one head' is {HHH, HHT, HTT, THH, THT}"
+    },
+    "intuition": "Events are subsets of the sample space that can occur. This lets us define meaningful combinations and operations on events.",
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:31:37.566Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sample_spaces_events_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "sample_spaces_events",
+    "title": "Sample Spaces and Events",
+    "contentHtml": "<p>In probability theory, we start by defining sample spaces and events.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we flip a fair coin twice. What is the sample space?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the possible outcomes\", \"mathHtml\": \"\\(\\{HH, HT, TH, TT\\}\\)\", \"explanation\": \"We list all possible combinations of heads (H) and tails (T)\"}, {\"stepNumber\": 2, \"description\": \"Determine if these outcomes form a sample space\", \"mathHtml\": \"\", \"explanation\": \"These outcomes cover all possibilities, making them a sample space\"}, {\"stepNumber\": 3, \"description\": \"Define an event as a set of outcomes\", \"mathHtml\": \"\\(\\{HH, HT\\}\\)\", \"explanation\": \"An event is a subset of the sample space, in this case, both heads and at least one head\"}, {\"stepNumber\": 4, \"description\": \"Show that events can be combined using set operations\", \"mathHtml\": \"\", \"explanation\": \"We can combine events using union (∪), intersection (∩), and complement\"} ],",
+    "finalAnswer": "\\(\\{HH, HT\\}\\)\" },",
+    "intuition": "Sample spaces represent all possible outcomes of an experiment, while events are specific subsets of these outcomes.",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:31:58.420Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_sample_spaces_events_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "sample_spaces_events",
+    "title": "Sample Spaces and Events",
+    "contentHtml": "<p>In probability theory, we start by defining sample spaces and events.</p>",
+    "workedExample": "{",
+    "problemHtml": "Let's consider a coin toss experiment with two possible outcomes: heads (H) or tails (T).",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the sample space\", \"mathHtml\": \"\\(\\Omega = \\{H,T\\}\\)\", \"explanation\": \"The sample space represents all possible outcomes of the experiment.\"}, {\"stepNumber\": 2, \"description\": \"Define an event\", \"mathHtml\": \"\\(E = \\{H\\}\\)\", \"explanation\": \"An event is a set of outcomes that satisfy some condition. In this case, we're interested in the event 'heads'.\"}, {\"stepNumber\": 3, \"description\": \"Check if the event is well-defined\", \"mathHtml\": \"\", \"explanation\": \"We need to ensure that the event is a subset of the sample space.\"}, {\"stepNumber\": 4, \"description\": \"Verify the event's properties\", \"mathHtml\": \"\", \"explanation\": \"We can check if the event is countable, measurable, and satisfies certain conditions.\"} ],",
+    "finalAnswer": "The event E = {H} is well-defined and represents the outcome 'heads' in our coin toss experiment.\" },",
+    "intuition": "Sample spaces and events form the foundation of probability theory. Understanding these concepts helps us define meaningful experiments and analyze their outcomes.",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:32:20.996Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

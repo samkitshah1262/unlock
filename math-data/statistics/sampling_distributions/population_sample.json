@@ -1,0 +1,222 @@
+[
+  {
+    "id": "stat_con_population_sample_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "title": "Population and Sample: Understanding Parameters vs Statistics",
+    "contentHtml": "<p>In statistics, we often deal with two types of values: parameters and statistics. <i>Parameters</i> describe a population's characteristics, while <i>statistics</i> describe the characteristics of a sample drawn from that population.</p><p>The key difference lies in their scope: parameters are properties of the entire population, whereas statistics are properties of the sample.</p>",
+    "formula": {
+      "latex": "\\(\\mu_\\text{pop} = \\frac{1}{N} \\sum_{i=1}^N x_i\\)",
+      "name": "Population mean",
+      "variants": []
+    },
+    "intuition": "Understanding the distinction between parameters and statistics is crucial for making informed decisions about a population based on sample data.",
+    "realWorldApplications": [
+      "In machine learning, we often use samples to train models that generalize well to the entire population."
+    ],
+    "commonMistakes": [
+      "Failing to recognize the difference between parameters and statistics can lead to incorrect conclusions or biased results."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:48:18.413Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_population_sample_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "title": "Population and Sample: Parameters vs Statistics",
+    "contentHtml": "<p>In statistics, we often deal with two types of values: parameters and statistics.</p><p>Parameters are characteristics of a population, such as the average height of all humans or the proportion of people who prefer coffee over tea. Statistics, on the other hand, are values calculated from a sample of data, like the average height of a group of 100 people or the proportion of coffee drinkers in that same group.</p>",
+    "formula": "{",
+    "latex": "\\\\( \\mu = \\\\frac{1}{n} \\\\sum_{i=1}^n x_i \\\\)\" },",
+    "intuition": "Understanding the difference between parameters and statistics is crucial for making informed decisions. By using a sample to estimate population characteristics, we can make predictions about future data without having to collect the entire dataset.",
+    "realWorldApplications": [
+      "Machine learning models often rely on samples of training data to make predictions about new, unseen data."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that parameters are fixed for a given population, while statistics vary depending on the sample"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:48:33.268Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_population_sample_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "title": "Population and Sample: Parameters vs Statistics",
+    "contentHtml": "<p>In statistics, we often deal with two types of values: parameters and statistics.</p><p>Parameters are fixed values that describe a population, such as the average height of all humans. Statistics, on the other hand, are calculated values based on a sample from the population.</p>",
+    "formula": "{",
+    "latex": "\\\\( \\mu = \\\\frac{1}{n} \\\\sum_{i=1}^n x_i \\\\) (population mean)\",",
+    "name": "Population Mean",
+    "variants": "[] },",
+    "intuition": "Understanding the difference between parameters and statistics is crucial for making informed decisions. By using a sample to estimate population characteristics, we can make predictions about future data.",
+    "realWorldApplications": [
+      "In machine learning, we often use samples of data to train models that will be applied to larger populations."
+    ],
+    "commonMistakes": [
+      "Failing to recognize the distinction between parameters and statistics can lead to incorrect conclusions."
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:48:47.247Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_population_sample_004",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "problem": "{",
+    "statementHtml": "<p>Consider a population with mean μ and standard deviation σ. A random sample of size n is drawn from this population. What can we say about the sample mean x̄?</p>",
+    "hints": [
+      "<p>The sample mean x̄ is an unbiased estimator of the population mean μ.</p>",
+      "<p>However, the sample mean x̄ is not equal to the population mean μ due to sampling variability.</p>",
+      "<p>We can use the sample standard deviation s to estimate the population standard deviation σ.</p>"
+    ],
+    "solutionHtml": "<p>To see why the sample mean x̄ is an unbiased estimator of the population mean μ, consider that the expected value of the sample mean is:</p>\\(\\mathbb{E}[x̄] = \\mu\\)<p>This makes sense because if we were to draw many samples from the same population, the average of those samples would still be the true population mean.</p>\",",
+    "answerShort": "The sample mean x̄ is an unbiased estimator of the population mean μ.\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:49:03.612Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_population_sample_005",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "problem": {
+      "statementHtml": "<p>Let's say we want to estimate the average height of all adults in a country using a random sample of 100 people. We know that the true average height is approximately 175 cm.</p>",
+      "hints": [
+        "<p>We can use the sample mean as our estimator, but how do we ensure it's close to the true population mean?</p>",
+        "<p>What if our sample isn't representative of the entire population? How does that affect our estimation?</p>",
+        "<p>Can we use a different statistic, like the median, instead of the mean?</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to understand the difference between parameters and statistics.</p><p>A parameter is a characteristic of the population (e.g., the true average height), while a statistic is an estimate based on a sample from that population.</p>",
+      "answerShort": "The sample mean is our best guess for the true average height."
+    },
+    "commonMistakes": [
+      "Not accounting for sampling bias",
+      "Using the sample median instead of mean"
+    ],
+    "realWorldApplications": [
+      "Machine learning models often rely on random sampling to make predictions"
+    ],
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:49:18.836Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_population_sample_006",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "problem": "{",
+    "statementHtml": "Consider a population with mean μ and standard deviation σ. We want to estimate μ using a random sample of size n from this population. What is the relationship between the sample mean x̄ and the population mean μ?",
+    "hints": [
+      "Think about how the sample mean is calculated.",
+      "Recall that the sample mean is an unbiased estimator of the population mean.",
+      "Consider what happens when you take multiple samples of the same size from the same population."
+    ],
+    "solutionHtml": "<p>To see why the sample mean x̄ is a good estimator of μ, let's look at the expected value of x̄:</p>\\(\\mathbb{E}[x̄] = \\frac{1}{n} \\sum_{i=1}^n X_i = \\mu\\)<p>This makes sense because each sample is drawn randomly from the population, so the expected value of the sample mean should be equal to the population mean.</p>\",",
+    "answerShort": "The sample mean x̄ is an unbiased estimator of the population mean μ.\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:49:35.359Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_population_sample_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "problem": "{",
+    "statementHtml": "Suppose we want to estimate the average height of all college students in a country using a random sample of <i>n</i> students. Assume that the true average height is <i>\\(\\mu\\)</i>. Which of the following statements is TRUE?\",",
+    "hints": [
+      "Think about what it means for the sample mean to be an estimate of the population mean.",
+      "Consider how the sample size <i>n</i> affects our confidence in the estimate.",
+      "Recall that we're trying to make an inference about the entire population, not just the sample."
+    ],
+    "solutionHtml": "<p>To solve this problem, let's define the random variable <i>\\(X_i\\)</i> as the height of the <i>i</i>-th student in our sample. The sample mean is then given by <i>\\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i\\)</i>. We can think of this as an estimator for the population mean <i>\\(\\mu\\)</i>.</p><p>Now, we know that the sample mean is an unbiased estimator of the population mean if and only if the expected value of the sample mean is equal to the population mean:</p><p><i>\\(E[\\bar{X}] = \\mu\\)</i></p><p>This makes sense, because if our sample mean is not equal to the true average height on average, then we can't trust it as an estimate.</p>\",",
+    "answerShort": "TRUE\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:49:56.100Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_population_sample_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "population_sample",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to estimate the average height of all adults in a country using a random sample of <i>n</i> individuals. We know that the true average height is the population parameter <i>\\mu</i>. What statistics do we need to calculate, and how do we ensure our sample is representative?</p>\",",
+    "hints": [
+      "<p>The first step is to understand what parameters are.</p>",
+      "<p>We can use a random sampling method to select individuals for our sample.</p>",
+      "<p>Sampling bias occurs when the selection process favors certain types of individuals over others.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to calculate the sample mean <i>\\bar{x}</i> and use it as an estimate of the population parameter <i>\\mu</i>. We can do this by taking a random sample of size <i>n</i> from the population.</p><p>We then calculate the average height of each individual in the sample, which gives us the sample mean <i>\\bar{x}</i>.</p>\",",
+    "answerShort": "<i>\\mu \\approx \\bar{x}</i>\" },",
+    "difficulty": 1,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:50:13.072Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

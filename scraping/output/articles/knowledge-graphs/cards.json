@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ai-knowledge-graphs-ernie-enhanced-language-representation-with-inform-1",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Knowledge Graphs",
+    "articleSlug": "knowledge-graphs",
+    "chapter": "Entity Linking",
+    "title": "ERNIE: Enhanced Language Representation with Informative Entities",
+    "subtitle": "Entity Linking",
+    "contentHtml": "<ul>\n  <li>Pretrained Entity Embeddings: ERNIE leverages pretrained embeddings to represent entities.</li>\n  <li>Fusion Layer: This layer effectively combines different sources of information.</li>\n  <li>Text Encoder: ERNIE uses a multi-layer bidirectional Transformer encoder (BERT) to process the words within a sentence.</li>\n  <li>Knowledge Encoder: Consists of stacked blocks, including:\n    <ul>\n      <li>Two multi-headed attentions (MHAs) over both entity and token embeddings.</li>\n      <li>A fusion layer that combines the outputs of the MHAs, creating new word and entity embeddings.</li>\n    </ul>\n  </li>\n  <li>Pretraining Tasks: ERNIE is pretrained with three tasks:\n    <ul>\n      <li>Masked language modeling and next sentence prediction (common BERT tasks).</li>\n      <li>A knowledge pretraining task, where token-entity alignments are masked randomly, and the model predicts corresponding entities.</li>\n    </ul>\n  </li>\n  <li>Purpose of Fusion Layer: The fusion layer correlates word and entity embeddings, enabling the model to provide accurate answers.</li>\n</ul>\n<ul>\n      <li>Two multi-headed attentions (MHAs) over both entity and token embeddings.</li>\n      <li>A fusion layer that combines the outputs of the MHAs, creating new word and entity embeddings.</li>\n    </ul>\n<ul>\n      <li>Masked language modeling and next sentence prediction (common BERT tasks).</li>\n      <li>A knowledge pretraining task, where token-entity alignments are masked randomly, and the model predicts corresponding entities.</li>\n    </ul>",
+    "contentMarkdown": "*   Pretrained Entity Embeddings: ERNIE leverages pretrained embeddings to represent entities.\n*   Fusion Layer: This layer effectively combines different sources of information.\n*   Text Encoder: ERNIE uses a multi-layer bidirectional Transformer encoder (BERT) to process the words within a sentence.\n*   Knowledge Encoder: Consists of stacked blocks, including:\n    *   Two multi-headed attentions (MHAs) over both entity and token embeddings.\n    *   A fusion layer that combines the outputs of the MHAs, creating new word and entity embeddings.\n*   Pretraining Tasks: ERNIE is pretrained with three tasks:\n    *   Masked language modeling and next sentence prediction (common BERT tasks).\n    *   A knowledge pretraining task, where token-entity alignments are masked randomly, and the model predicts corresponding entities.\n*   Purpose of Fusion Layer: The fusion layer correlates word and entity embeddings, enabling the model to provide accurate answers.\n\n*   Two multi-headed attentions (MHAs) over both entity and token embeddings.\n*   A fusion layer that combines the outputs of the MHAs, creating new word and entity embeddings.\n\n*   Masked language modeling and next sentence prediction (common BERT tasks).\n*   A knowledge pretraining task, where token-entity alignments are masked randomly, and the model predicts corresponding entities.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms",
+      "transformer",
+      "attention",
+      "embedding",
+      "bert"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 189,
+      "contentLength": 1549
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/knowledge-graphs/#ernie:-enhanced-language-representation-with-informative-entities",
+    "scrapedAt": "2025-12-28T11:53:49.933Z"
+  },
+  {
+    "id": "ai-knowledge-graphs-knowbert-2",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Knowledge Graphs",
+    "articleSlug": "knowledge-graphs",
+    "chapter": "Entity Linking",
+    "title": "KnowBert",
+    "subtitle": "Entity Linking",
+    "contentHtml": "<ul>\n  <li>Integrating Entity Linking: The key idea is to pretrain an integrated entity linker as an extension to BERT.</li>\n  <li>Encoding Knowledge: Learning entity linking may lead to better knowledge encoding.</li>\n  <li>Fusion Layer: Similar to ERNIE, KnowBert utilizes a fusion layer to merge entity and context information, adding knowledge pretraining tasks.</li>\n</ul>",
+    "contentMarkdown": "*   Integrating Entity Linking: The key idea is to pretrain an integrated entity linker as an extension to BERT.\n*   Encoding Knowledge: Learning entity linking may lead to better knowledge encoding.\n*   Fusion Layer: Similar to ERNIE, KnowBert utilizes a fusion layer to merge entity and context information, adding knowledge pretraining tasks.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms",
+      "bert"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 52,
+      "contentLength": 377
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/knowledge-graphs/#knowbert",
+    "scrapedAt": "2025-12-28T11:53:49.933Z"
+  },
+  {
+    "id": "ai-knowledge-graphs-evaluating-knowledge-in-lms-3",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Knowledge Graphs",
+    "articleSlug": "knowledge-graphs",
+    "chapter": "KGLM",
+    "title": "Evaluating Knowledge in LMs",
+    "subtitle": "KGLM",
+    "contentHtml": "<ul>\n  <li>Language Model Analysis: LAMA probe assesses relational knowledge (both commonsense and factual) in off-the-shelf language models, without additional training or fine-tuning.</li>\n  <li>Limitations of LAMA Probe:\n    <ul>\n      <li>It’s challenging to understand why models perform well in certain situations.</li>\n      <li>Models like BERT large may rely on memorizing co-occurrence patterns rather than truly understanding the context or statements.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>It’s challenging to understand why models perform well in certain situations.</li>\n      <li>Models like BERT large may rely on memorizing co-occurrence patterns rather than truly understanding the context or statements.</li>\n    </ul>",
+    "contentMarkdown": "*   Language Model Analysis: LAMA probe assesses relational knowledge (both commonsense and factual) in off-the-shelf language models, without additional training or fine-tuning.\n*   Limitations of LAMA Probe:\n    *   It’s challenging to understand why models perform well in certain situations.\n    *   Models like BERT large may rely on memorizing co-occurrence patterns rather than truly understanding the context or statements.\n\n*   It’s challenging to understand why models perform well in certain situations.\n*   Models like BERT large may rely on memorizing co-occurrence patterns rather than truly understanding the context or statements.",
+    "order": 3,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms",
+      "bert",
+      "fine-tuning"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 89,
+      "contentLength": 743
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/knowledge-graphs/#evaluating-knowledge-in-lms",
+    "scrapedAt": "2025-12-28T11:53:49.933Z"
+  }
+]

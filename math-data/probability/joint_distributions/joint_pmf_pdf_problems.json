@@ -1,0 +1,121 @@
+[
+  {
+    "id": "prob_prb_joint_pmf_pdf_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "Let X and Y be discrete random variables with joint PMF p(x,y). Find the probability P(X=1,Y=3) given that p(1,1)=0.4, p(1,2)=0.3, p(1,3)=0.2, p(2,1)=0.1, and all other values are zero.",
+      "hints": [
+        "Start by identifying the possible values of X and Y",
+        "Use the definition of joint PMF to find P(X=1,Y=3)",
+        "Check if there's a shortcut using the given information"
+      ],
+      "solutionHtml": "To solve this problem, we first identify the possible values of X and Y: X can take on values 1 or 2, while Y can take on values 1, 2, or 3. Since p(1,1)=0.4, p(1,2)=0.3, and p(1,3)=0.2, we know that P(X=1,Y=3) = p(1,3) = 0.2.",
+      "answerShort": "P(X=1,Y=3) = 0.2"
+    },
+    "commonMistakes": [
+      "Forgetting to consider all possible values of X and Y",
+      "Not using the given information efficiently"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:47.659Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "Let <i>X</i> and <i>Y</i> be discrete random variables with joint PMF <i>P(x,y)</i>. Define the marginal PMFs as <i>P_X(x) = Σ_y P(x,y)</i> and <i>P_Y(y) = Σ_x P(x,y)</i>. Prove that <i>P_X(x)</i> and <i>P_Y(y)</i> are indeed probability distributions.",
+      "hints": [
+        "Start by considering the properties of a joint PMF. What does it mean for <i>P(x,y)</i> to be non-negative?",
+        "Think about how you can use the definition of marginalization to relate <i>P_X(x)</i> and <i>P_Y(y)</i> to <i>P(x,y)</i>",
+        "Use the fact that a probability distribution must have total mass 1 to conclude"
+      ],
+      "solutionHtml": "<p>To prove that <i>P_X(x)</i> is a probability distribution, we need to show it is non-negative and has total mass 1.</p><p>The first condition follows directly from the definition of a joint PMF: for any <i>x</i>, <i>P_X(x) = Σ_y P(x,y) ≥ 0</i>.</p><p>For the second condition, we have:</p><p><i>P_X(x) = Σ_y P(x,y)</i> ≤ Σ_x Σ_y P(x,y) = 1</i>,</p><p>since <i>P(x,y)</i> is a joint PMF.</p>",
+      "answerShort": "The marginal PMFs are probability distributions."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the non-negativity condition",
+      "Not recognizing that the total mass of a marginal PMF must be 1"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:42:13.232Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": "{",
+    "statementHtml": "<p>Consider a discrete random variable X with values in {0, 1} and a continuous random variable Y with density f(y). Define their joint probability mass function (PMF) and probability density function (PDF).</p>",
+    "hints": [
+      "Start by thinking about the PMF: what are its key properties?",
+      "Consider how the PMF relates to the marginal distributions of X and Y.",
+      "For the PDF, think about how it can be used to compute expectations"
+    ],
+    "solutionHtml": "<p>To define the joint PMF, we need to specify P(X=x, Y=y) for each possible combination of x and y. Since X is discrete, this boils down to a table of values.</p><p>For example:</p><p>\\[P(X=0, Y=0) = 0.3,\\]</p><p>\\[P(X=0, Y=1) = 0.2,\\]</p><p>\\[P(X=1, Y=0) = 0.4,\\]</p><p>\\[P(X=1, Y=1) = 0.1.\\]</p>\",",
+    "answerShort": "The joint PMF is defined by the table of values.\" },",
+    "commonMistakes": [
+      "Forgetting to consider all possible combinations of x and y",
+      "Not recognizing that X is discrete"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:42:34.364Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "<p>Let X and Y be discrete random variables with joint PMF <i>P(x,y)</i>. Define the marginal PMFs as <i>P_X(x) = ∑_y P(x,y)</i> and <i>P_Y(y) = ∑_x P(x,y)</i>. Prove that the product of these marginal PMFs equals the original joint PMF.</p>",
+      "hints": [
+        "<p>Start by considering a specific value x.</p>",
+        "<p>Use the definition of marginalization to write down an expression for <i>P_X(x)</i>.</p>",
+        "<p>Now, multiply this expression with <i>P_Y(y)</i> and sum over y. Compare this with the original joint PMF.</p>"
+      ],
+      "solutionHtml": "<p>To prove the equality, we can fix a value x and consider the marginal PMF <i>P_X(x)</i>. By definition, this is given by <i>P_X(x) = ∑_y P(x,y)</i>.</p><p>Now, multiplying this with the marginal PMF <i>P_Y(y)</i>, we get:</p><p><i>P_X(x)P_Y(y) = (∑_z P(x,z)) (∑_w P(w,y))</i></p><p>Simplifying the right-hand side, we obtain:</p><p><i>P_X(x)P_Y(y) = ∑_(z,w) P(x,z)P(w,y)</i></p><p>This is exactly the original joint PMF <i>P(x,y)</i>. The equality follows by summing over all possible values of x and y.</p>",
+      "answerShort": "<i>P_X(x)P_Y(y) = P(x,y)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to fix a value for x (or y)",
+      "Not simplifying the right-hand side correctly"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:43:01.424Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

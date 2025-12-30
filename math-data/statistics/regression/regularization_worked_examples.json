@@ -1,0 +1,272 @@
+[
+  {
+    "id": "stat_wex_regularization_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>Regularization is a powerful technique in regression analysis that helps mitigate overfitting by adding a penalty term to the loss function.</p>",
+    "formula": "{",
+    "latex": "\\[ \\min_{w} \\frac{1}{2n} ||Xw-y||^2 + \\alpha ||w||_p \\]\",",
+    "name": "Regularized Regression Loss\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X and target y, use regularization to find the optimal weights w that minimize the mean squared error.</p>",
+    "hints": [
+      "Hint: Start by defining the regularized loss function."
+    ],
+    "solutionHtml": "<p>Solution steps:</p><ul><li>Define the regularized loss function as shown above.</li><li>Minimize the loss function using gradient descent or another optimization method.</li><li>Compare the results with and without regularization to see how it affects the model's performance.</li></ul>",
+    "answerShort": "The optimal weights w that minimize the mean squared error.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of students' grades (y) and their hours studied per week (X). Use regularization to find the optimal relationship between studying and grades.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the regularized loss function\", \"mathHtml\": \"\\[ \\min_{w} \\frac{1}{2n} ||Xw-y||^2 + \\alpha ||w||_2 \\]\", \"explanation\": \"We add a penalty term to the loss function to prevent overfitting.\"}, {\"stepNumber\": 2, \"description\": \"Minimize the loss function using gradient descent\", \"mathHtml\": \"\\[ w_{t+1} = w_t - \\alpha \\cdot (X^T(Xw-y) + 2\\alpha w_t) \\]\", \"explanation\": \"We use gradient descent to update the weights.\"}, {\"stepNumber\": 3, \"description\": \"Compare results with and without regularization\", \"mathHtml\": \"\", \"explanation\": \"Regularization helps prevent overfitting and improves the model's generalizability.\"} ],",
+    "finalAnswer": "The optimal relationship between studying and grades is found using regularized regression.\" },",
+    "intuition": "Regularization helps balance the bias-variance tradeoff by adding a penalty term to the loss function, which prevents overfitting.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:01:28.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regularization_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Balancing Bias and Variance",
+    "contentHtml": "<p>In regression analysis, we often encounter situations where our model is either too complex or too simple.</p>",
+    "formula": {
+      "latex": "\\[\\hat{w} = \\arg\\min_\\mathbf{w} (1/2) ||y - X\\mathbf{w}||^2 + \\alpha ||\\mathbf{w}||^2\\]",
+      "name": "Regularized Regression"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a dataset of students' grades and their corresponding hours studied. We want to build a linear regression model that predicts the grade based on the number of hours studied.</p>",
+      "hints": [
+        "Hint: The model is too complex"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a dataset with two features, x1 and x2. We want to build a linear regression model that predicts the target variable y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the regularized loss function",
+          "mathHtml": "\\[L(\\mathbf{w}) = (1/2) ||y - X\\mathbf{w}||^2 + \\alpha ||\\mathbf{w}||^2\\]",
+          "explanation": "We add a regularization term to the original loss function to prevent overfitting."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the derivative of the regularized loss function",
+          "mathHtml": "\\[\\frac{dL}{d\\mathbf{w}} = -X^T(y - X\\mathbf{w}) + 2\\alpha \\mathbf{w}\\]",
+          "explanation": "We take the derivative to find the optimal weights."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve for the optimal weights",
+          "mathHtml": "\\[\\hat{\\mathbf{w}} = (X^T X + \\alpha I)^{-1} X^T y\\]",
+          "explanation": "We solve for the optimal weights by setting the derivative to zero."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the regularized and unregularized models",
+          "mathHtml": "",
+          "explanation": "Regularization helps prevent overfitting by adding a penalty term to the loss function."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Regularization balances the bias-variance tradeoff by adding a penalty term to the loss function, preventing the model from becoming too complex.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to add the regularization term"
+    ],
+    "realWorldApplications": [
+      "Feature selection in recommender systems"
+    ],
+    "tags": [
+      "Regularization",
+      "Bias-Variance Tradeoff"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:02:01.600Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regularization_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>Regularization is a powerful technique to prevent overfitting in regression models.</p>",
+    "formula": "{",
+    "latex": "\\\\[ (1 - \\\\alpha) \\* \\\\mathbf{w} + \\\\alpha \\\\* \\\\lambda \\\\* ||\\\\mathbf{w}||_2 \\\\]\",",
+    "name": "Ridge Regression",
+    "variants": "[ {\"latex\": \"\\\\[ ||\\\\mathbf{w}||_1 \\\\]\", \"description\": \"Lasso Regression\"} ] },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a linear regression model with 10 features and 1000 data points. How can we prevent overfitting?</p>",
+    "hints": [
+      "Hint: Think about the cost function"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a simple linear regression model with one feature and two data points.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the cost function",
+        "mathHtml": "\\[ J(\\mathbf{w}) = (1/2) \\* ||y - X \\* \\mathbf{w}||_2^2 \\]",
+        "explanation": "We want to minimize the mean squared error."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Add regularization term",
+        "mathHtml": "\\[ J(\\mathbf{w}) = (1/2) \\* ||y - X \\* \\mathbf{w}||_2^2 + \\alpha \\* ||\\mathbf{w}||_2^2 \\]",
+        "explanation": "The regularization term penalizes large weights."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Minimize the cost function",
+        "mathHtml": "\\[ \\nabla J(\\mathbf{w}) = 0 \\]",
+        "explanation": "We can use gradient descent or other optimization techniques to find the minimum."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Compare different regularization methods",
+        "mathHtml": "",
+        "explanation": "Ridge regression adds a squared L2 penalty, while lasso regression adds an absolute L1 penalty."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Regularization helps by adding a penalty term to the cost function that discourages large weights.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:02:29.510Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regularization_018",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>Regularization is a powerful technique to prevent overfitting in regression models.</p>",
+    "formula": {
+      "latex": "\\[\\hat{w} = \\arg\\min_{w}\\left(\\frac{1}{2n}\\sum_{i=1}^n (y_i - w^T x_i)^2 + \\alpha ||w||_p^p\\right)\\]",
+      "name": "Regularized Regression"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a linear regression model with $n$ training examples and $p$ features. How can we modify the cost function to prevent overfitting?</p>",
+      "hints": [
+        "Hint: Think about adding a penalty term"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given a dataset with $n=100$ examples and $p=10$ features, how do we apply Lasso regression to prevent overfitting?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the cost function",
+          "mathHtml": "\\[J(w) = \\frac{1}{2n}\\sum_{i=1}^n (y_i - w^T x_i)^2 + \\alpha ||w||_1\\]",
+          "explanation": "We add a penalty term to the original cost function"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Minimize the cost function",
+          "mathHtml": "\\[\\hat{w} = \\arg\\min_{w}\\left(J(w)\\right)\\]",
+          "explanation": "We find the values of $w$ that minimize the regularized cost function"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The coefficients $w_i$ will be shrunk towards zero"
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Regularization helps prevent overfitting by adding a penalty term to the cost function, which encourages smaller values for the model's weights.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:02:54.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_regularization_019",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, Elastic Net",
+    "contentHtml": "<p>Regularization is a crucial concept in regression analysis that helps mitigate overfitting by adding a penalty term to the loss function.</p>",
+    "formula": "{",
+    "latex": "\\[ \\lambda ||\\mathbf{w}||^2_2 \\]\",",
+    "name": "Ridge Regularization\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X and target variable y, how do we choose the best regularization strength λ for Ridge regression?</p>",
+    "hints": [
+      "Consider the bias-variance tradeoff",
+      "Think about the impact on model complexity"
+    ],
+    "solutionHtml": "<p>Solution steps:</p><ul><li>Step 1: Define the Ridge regression loss function with regularization term.</li><li>Step 2: Show that the optimal λ minimizes the mean squared error (MSE) between predicted and actual values.</li><li>Step 3: Derive the closed-form solution for the regularized coefficients.</li><li>Step 4: Discuss the implications of varying λ on model performance.</li></ul>",
+    "answerShort": "The optimal λ is chosen by minimizing the MSE.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with features X = [x1, x2] and target variable y. We want to fit a Ridge regression model with regularization strength λ = 0.5.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the loss function\", \"mathHtml\": \"\\[ L(\\mathbf{w}) = (1/2) ||\\mathbf{y} - X\\mathbf{w}||^2_2 + \\lambda ||\\mathbf{w}||^2_2 \\]\", \"explanation\": \"We add the regularization term to the original loss function.\"}, {\"stepNumber\": 2, \"description\": \"Minimize the loss\", \"mathHtml\": \"\\[ \\nabla L(\\mathbf{w}) = X^T(X\\mathbf{w} - \\mathbf{y}) + 2\\lambda \\mathbf{w} = 0 \\]\", \"explanation\": \"We take the derivative of the loss function and set it to zero.\"}, {\"stepNumber\": 3, \"description\": \"Solve for the coefficients\", \"mathHtml\": \"\\[ \\mathbf{w} = (X^T X + \\lambda I)^{-1} X^T \\mathbf{y} \\]\", \"explanation\": \"We solve for the regularized coefficients using the closed-form solution.\"}, {\"stepNumber\": 4, \"description\": \"Discuss the implications\", \"mathHtml\": \"\", \"explanation\": \"Varying λ affects model complexity and performance; we need to choose the right balance.\"} ],",
+    "finalAnswer": "The optimal λ is chosen by minimizing the MSE.\" },",
+    "intuition": "Regularization helps prevent overfitting by adding a penalty term that discourages large coefficients.",
+    "visualDescription": "A diagram showing the bias-variance tradeoff would be helpful in visualizing the concept.",
+    "commonMistakes": [
+      "Forgetting to include the regularization term",
+      "Not considering the impact on model complexity"
+    ],
+    "realWorldApplications": [
+      "Feature selection in text classification",
+      "Regularization techniques in neural networks"
+    ],
+    "tags": [
+      "regularization",
+      "ridge regression",
+      "lasso regression",
+      "elastic net"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:03:32.320Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "la_prb_determinant_inverse_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_inverse",
+    "problem": "{",
+    "statementHtml": "Find the inverse of matrix A if it exists, using the determinant and adjugate methods.",
+    "hints": [
+      "Check the determinant of A first.",
+      "The adjugate matrix is obtained by replacing each element with its cofactor.",
+      "If the determinant is zero, the matrix has no inverse."
+    ],
+    "solutionHtml": "\\[A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\] <p>Given matrix A:</p> \\(A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\) <p>Calculate the determinant:</p> \\[\\det(A) = ad - bc\\] <p>If det(A) is non-zero, calculate the adjugate matrix:</p> \\[adj(A) = \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}\\] <p>Now, multiply by 1/det(A):</p> \\(A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\) <p>The result is the inverse matrix.</p>\",",
+    "answerShort": "Inverse exists if det(A) ≠ 0\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:09:38.052Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_determinant_inverse_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_inverse",
+    "problem": "{",
+    "statementHtml": "Find the inverse of matrix A if it exists. If not, explain why.",
+    "hints": [
+      "Check the determinant of A first.",
+      "If the determinant is zero, what does that tell you about invertibility?",
+      "Think about the adjugate matrix and how it relates to the original matrix."
+    ],
+    "solutionHtml": "\\[A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\\] <p>To find the inverse, we need to check if the determinant is non-zero. If not, there is no inverse.</p> <p>Given that the determinant is non-zero, we can proceed with finding the adjugate matrix and multiplying it by the reciprocal of the determinant.</p>\",",
+    "answerShort": "The inverse exists only if det(A) ≠ 0.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:09:52.523Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_determinant_inverse_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_inverse",
+    "problem": "{",
+    "statementHtml": "<p>Given a square matrix A, determine whether it is invertible using its determinant and adjugate matrix.</p>",
+    "hints": [
+      "Check if the determinant of A is non-zero.",
+      "If the determinant is zero, calculate the adjugate matrix and check if it's singular.",
+      "If the adjugate matrix is singular, then A is not invertible."
+    ],
+    "solutionHtml": "<p>To determine whether a square matrix A is invertible, we can use its determinant and adjugate matrix. First, we calculate the determinant of A:</p>\\n\\[ \\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)} \\]\\n<p>If the determinant is zero, then A is not invertible.</p>\\n<p>However, if the determinant is non-zero, we can calculate the adjugate matrix:</p>\\n\\[ \\text{adj}(A) = (\\det(A))^{-1} \\cdot \\text{cofactor}(A) \\]\\n<p>If the adjugate matrix is singular, then A is not invertible. Otherwise, A is invertible.</p>\",",
+    "answerShort": "The matrix A is invertible if its determinant is non-zero and the adjugate matrix is nonsingular.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:10:12.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "stat_prb_ci_variance_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the population variance of exam scores given a sample mean of 75 and a sample standard deviation of 5.</p>",
+    "hints": [
+      "Start by finding the sample variance.",
+      "Use the chi-squared distribution to construct the CI.",
+      "Don't forget to adjust for degrees of freedom."
+    ],
+    "solutionHtml": "<p>To find the sample variance, we have:</p>\\(\\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{1}{9} \\sum_{i=1}^9 (x_i - 75)^2\\)<br><p>Now, we can use the chi-squared distribution to construct the CI:</p>\\[\\text{CI} = \\left(\\chi^2_{0.025;8}, \\chi^2_{0.975;8}\\right)\\] <br><p>Finally, we need to adjust for degrees of freedom:</p>\\[\\text{CI} = \\left(\\chi^2_{0.025;7}, \\chi^2_{0.975;7}\\right)\\] <br><p>The final answer is:</p>\\[\\text{CI} = (24.74, 35.42)\\],",
+    "answerShort": "CI: (24.74, 35.42)\" },",
+    "commonMistakes": [
+      "Forgetting to adjust for degrees of freedom",
+      "Using the wrong distribution"
+    ],
+    "realWorldApplications": [
+      "This concept is useful in machine learning when evaluating the variance of a dataset."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:16:36.058Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_variance_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "problem": "{",
+    "statementHtml": "Construct a 95% confidence interval for the population variance <i>&sigma;<sup>2</sup></i> using a chi-squared distribution.",
+    "hints": [
+      "Recall that the sample variance is an unbiased estimator of the population variance.",
+      "The chi-squared distribution has degrees of freedom equal to the number of independent observations minus one.",
+      "Use the inverse cumulative distribution function (quantile) to find the critical value."
+    ],
+    "solutionHtml": " To construct the interval, we need to find the critical value <i>z</i> such that:  \\\\[ P(\\chi^2_{k-1} &lt; \\chi^2 &lt; \\chi^2_{k-1}) = 0.95 \\\\]  where <i>k-1</i> is the degrees of freedom and <i>&chi;<sup>2</sup></i> is the chi-squared random variable.  Using a statistical software or calculator, we find that <i>z &asymp; 1.95996</i>. Then, the lower bound of the interval is:  \\\\[ \\frac{(n-1)S^2}{\\chi^2_{k-1}} \\\\]  where <i>S^2</i> is the sample variance.  The upper bound is similarly calculated using the upper critical value.  Finally, the 95% CI for the population variance is:  \\\\[ [L, U] \\\\] \",",
+    "answerShort": "The 95% CI for the population variance is [L, U].\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:16:57.483Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_variance_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "problem": {
+      "statementHtml": "Construct a <i>chi-squared</i> interval estimate for the population variance σ<sup>2</sup>.",
+      "hints": [
+        "Start by identifying the relevant distribution and parameters.",
+        "Recall that χ<sup>2</sup>(k) has k degrees of freedom.",
+        "Use the fact that χ<sup>2</sup>(k) is distributed as χ<sup>2</sup>(k) = Σ (X - μ)<sup>2</sup>/σ<sup>2>"
+      ],
+      "solutionHtml": "<p>To construct a <i>chi-squared</i> interval estimate for the population variance σ<sup>2</sup>, we first need to identify the relevant distribution and parameters. Since we are working with sample variances, we can use the χ<sup>2</sup>(k) distribution.</p><p>We then recall that χ<sup>2</sup>(k) has k degrees of freedom, where k is the number of independent observations minus 1.</p><p>Using this fact, we can write χ<sup>2</sup>(k) as χ<sup>2</sup>(k) = Σ (X - μ)<sup>2</sup>/σ<sup>2</sup>.</p>",
+      "answerShort": "χ<sup>2</sup>(k)"
+    },
+    "commonMistakes": [
+      "Forgetting to account for the degrees of freedom in χ<sup>2</sup>(k)"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding interval estimation is crucial for model evaluation and selection."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:17:17.048Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

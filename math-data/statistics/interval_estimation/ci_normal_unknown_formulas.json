@@ -1,0 +1,149 @@
+[
+  {
+    "id": "stat_for_ci_normal_unknown_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval Estimation for Mean (Unknown Variance)",
+    "contentHtml": "<p>The T-interval provides a way to construct an interval estimate for the population mean when the sample variance is unknown.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} - t_{n-1, \\alpha/2} \\cdot \\sqrt{\\frac{S^2}{n}} \\quad \\text{to} \\quad \\bar{x} + t_{n-1, \\alpha/2} \\cdot \\sqrt{\\frac{S^2}{n}},\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a sample of size 25 with mean 10.3 and standard deviation 0.5, construct a 95% T-interval estimate for the population mean.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Identify the sample statistics",
+        "mathHtml": "",
+        "explanation": ""
+      },
+      {
+        "stepNumber": 2,
+        "description": "Determine the degrees of freedom and confidence level",
+        "mathHtml": "",
+        "explanation": ""
+      },
+      {
+        "stepNumber": 3,
+        "description": "Look up the critical value from a T-distribution table or calculator",
+        "mathHtml": "",
+        "explanation": ""
+      }
+    ],
+    "finalAnswer": "The interval estimate is (9.43, 11.37)\" },",
+    "intuition": "The T-interval uses the sample mean and standard deviation to create an interval that has a certain probability of containing the true population mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:09:56.326Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_unknown_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval for Mean with Unknown Variance",
+    "contentHtml": "<p>The T-interval is a widely used method for constructing confidence intervals (CIs) for the population mean when the sample variance is unknown.</p><p>This approach is particularly important in machine learning and AI applications where we often deal with uncertain or noisy data.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} - t_{n-1, 1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\frac{S^2}{n}}, \\quad \\bar{x} + t_{n-1, 1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\frac{S^2}{n}} \\]\",",
+    "name": "T-Interval for Mean",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to construct a 95% CI for the population mean of exam scores with unknown variance, given a sample of size 25 and sample mean 80.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample standard deviation",
+        "mathHtml": "\\[ S = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n-1}} \\]",
+        "explanation": "We use the sample variance to estimate the unknown population variance."
+      }
+    ],
+    "finalAnswer": "The CI is [74.3, 85.7]\" },",
+    "intuition": "The T-interval provides a way to account for uncertainty in our estimates by incorporating the sampling distribution of the mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:10:16.286Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_unknown_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval for Mean with Unknown Variance",
+    "contentHtml": "<p>The T-interval is a widely used method for constructing confidence intervals (CI) for the mean of a population when the variance is unknown.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} - t_{n-1,\\alpha/2} \\cdot \\sqrt{\\frac{S^2}{n}} \\quad \\text{to} \\quad \\bar{x} + t_{n-1,\\alpha/2} \\cdot \\sqrt{\\frac{S^2}{n}},\\]\",",
+    "name": "T-Interval for Mean\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a sample of size 25 from a normal distribution with unknown mean and variance. We want to construct a 95% CI for the population mean.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\bar{x} = \\frac{\\sum x_i}{n}",
+        "explanation": "The sample mean is the average of our sample values."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample variance",
+        "mathHtml": "S^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1}",
+        "explanation": "We use the sample variance to estimate the population variance."
+      }
+    ],
+    "finalAnswer": "The 95% CI for the mean is [lower bound, upper bound].\" },",
+    "intuition": "The T-interval takes into account the uncertainty in our sample mean and uses the t-distribution to construct a confidence interval.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:10:37.066Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_normal_unknown_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_unknown",
+    "title": "T-Interval Estimation for Mean (Unknown Variance)",
+    "contentHtml": "<p>Estimating a population mean when the variance is unknown can be challenging. The T-interval provides a way to construct a confidence interval for the true mean.</p>",
+    "formula": "{",
+    "latex": "\\[ \\bar{x} \\pm t_{\\frac{\\alpha}{2}} \\cdot \\sqrt{\\frac{S^2}{n}} \\]\",",
+    "name": "T-Interval Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the mean weight of a population of adults, but we don't know the variance. We take a random sample of size 25 and calculate the sample mean to be 175 pounds with a sample standard deviation of 10 pounds.</p>",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Construct the confidence interval",
+    "mathHtml": "\\(175 \\pm 2.5\\approx (172.5, 177.5)\\)\",",
+    "explanation": "We add and subtract the margin of error from the sample mean to get our confidence interval\" } ],",
+    "finalAnswer": "(172.5, 177.5)\" },",
+    "intuition": "The T-interval provides a way to account for uncertainty in the variance when estimating a population mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:11:04.107Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

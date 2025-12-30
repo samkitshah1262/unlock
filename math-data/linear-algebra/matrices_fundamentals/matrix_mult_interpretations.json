@@ -1,0 +1,326 @@
+[
+  {
+    "id": "la_con_matrix_mult_interpretations_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpreting Matrix Multiplication",
+    "contentHtml": "<p>When we multiply two matrices together, it's essential to understand what's happening at a fundamental level.</p><p>In essence, matrix multiplication represents a linear combination of the columns of the first matrix, weighted by the rows of the second matrix. This might seem abstract, but it has significant implications for how we work with data in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\(\\mathbf{A} \\cdot (\\mathbf{BC}) = (\\mathbf{AB}) \\mathbf{C}\\)",
+      "name": "Associative Property of Matrix Multiplication"
+    },
+    "intuition": "Think of matrix multiplication as a way to combine the 'features' of the first matrix, using the 'coefficients' from the second matrix. This is particularly useful in machine learning, where we often need to transform or combine features to create new ones.",
+    "realWorldApplications": [
+      "Feature engineering in neural networks"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that matrix multiplication is not commutative",
+      "Assuming that matrix multiplication always results in a square matrix"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:09:23.733Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_matrix_mult_interpretations_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>Matrix multiplication is a fundamental operation in linear algebra, but its meaning can be unclear without proper interpretation.</p><p>In this concept card, we'll explore the different ways to think about matrix multiplication and how it relates to real-world applications.</p>",
+    "formula": "{",
+    "latex": "\\( \\mathbf{A} \\cdot \\mathbf{b} = \\sum_{i=1}^n a_{i} b_i \\)\",",
+    "name": "Scalar product\" },",
+    "intuition": "Matrix multiplication can be seen as a linear combination of the columns of the left matrix, where each column is scaled by the corresponding element in the right matrix.",
+    "visualDescription": "A diagram showing the dot products between the rows of the left matrix and the columns of the right matrix, highlighting the connection to scalar products.",
+    "commonMistakes": [
+      "Confusing matrix multiplication with vector dot product"
+    ],
+    "realWorldApplications": [
+      "Linear regression models in machine learning",
+      "Image processing techniques"
+    ],
+    "tags": [
+      "linear-algebra",
+      "matrix-multiplication"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:09:40.209Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_matrix_mult_interpretations_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>Matrix multiplication is a fundamental operation in linear algebra, but its meaning can be subtle. In this concept, we'll explore three key interpretations: linear combination of columns, dot products, and outer products.</p><p>These interpretations reveal the underlying structure of matrix multiplication, making it easier to understand and apply.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{C} = \\\\mathbf{A}\\\\mathbf{B}\\]\",",
+    "name": "Matrix Multiplication\" },",
+    "intuition": "Matrix multiplication is like a recipe: you take the columns of one matrix, mix them with the rows of another, and get a new matrix as the result.",
+    "visualDescription": "Imagine two matrices side by side, with their respective column and row indices aligned. The resulting matrix would have the same number of columns as the first matrix and the same number of rows as the second matrix.",
+    "commonMistakes": [
+      "Thinking matrix multiplication is just element-wise multiplication"
+    ],
+    "realWorldApplications": [
+      "In machine learning, matrix multiplication is used to compute the output of a neural network layer or to perform dimensionality reduction using PCA."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:09:57.231Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Given matrices A and B, find the matrix product C = AB.</p>",
+    "hints": "[ \"<p>Think about linear combinations of columns in A.</p>\", \"<p>What is the dot product \\(\\mathbf{a} \\cdot \\mathbf{b}\\) telling you?</p>\", \"<p>Block multiplication can be a helpful approach.</p>\" ],",
+    "solutionHtml": "<p>To find C, we'll multiply each column of A by B. For the first column of A:</p><p>\\[C(:, 1) = \\mathbf{a}_1 \\cdot \\mathbf{B}.\\]</p><p>Now, for the second column:</p><p>\\[C(:, 2) = \\mathbf{a}_2 \\cdot \\mathbf{B}.\\]</p>\",",
+    "answerShort": "The matrix product C is found by taking linear combinations of columns in A and dot products with B.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:14.480Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "Consider two matrices A and B with dimensions n x m and p x q respectively. What is the meaning of the matrix product C = AB?",
+    "hints": [
+      "Think about what each element in C represents.",
+      "Recall that matrix multiplication involves linear combinations of columns.",
+      "Dot products will play a crucial role."
+    ],
+    "solutionHtml": "<p>To understand the interpretation of the matrix product, let's consider a simple example.</p><p>Suppose A has two columns <math>\\mathbf{a}_1</math> and <math>\\mathbf{a}_2</math>, and B has two rows <math>\\mathbf{b}_1^T</math> and <math>\\mathbf{b}_2^T</math>. Then the element at the 2nd row and 1st column of C, namely <math>C_{21}</math>, can be written as:</p><p><math>C_{21} = \\mathbf{a}_2^T \\cdot \\mathbf{b}_1</math>.</p><p>This shows that <math>C_{21}</math> is the dot product of the 2nd column of A and the 1st row of B.</p>\",",
+    "answerShort": "<math>C = AB</math> represents a linear combination of columns of A, weighted by rows of B.\" },",
+    "commonMistakes": [
+      "Failing to recognize that matrix multiplication is not commutative."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:36.009Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Given matrices A and B, find the matrix product AB.</p>",
+    "hints": [
+      "<p>Think about what happens when you multiply a row of A by a column of B.</p>",
+      "<p>Consider the dot products involved in each entry of the resulting matrix.</p>",
+      "<p>Block multiplication can be helpful for larger matrices.</p>"
+    ],
+    "solutionHtml": "<p>To find AB, we need to compute the linear combination of columns of A using coefficients from B. This is equivalent to taking the dot product of each row in A with the corresponding column in B.</p><p>\\[AB = \\begin{bmatrix} a_{11} &amp; a_{12} \\\\ a_{21} &amp; a_{22} \\end{bmatrix}\\begin{bmatrix} b_{1} \\\\ b_{2} \\end{bmatrix} = \\begin{bmatrix} a_{11}b_{1} + a_{12}b_{2} \\\\ a_{21}b_{1} + a_{22}b_{2} \\end{bmatrix}\\]</p><p>As we can see, each entry in the resulting matrix is a linear combination of columns from A using coefficients from B.</p>\",",
+    "answerShort": "The product AB is the matrix with entries given by dot products.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:57.207Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Consider two matrices A and B. What is the interpretation of their product AB?</p>",
+    "hints": [
+      "Think about what happens when you multiply a vector by a matrix.",
+      "The columns of AB are linear combinations of the columns of A, scaled by the elements of B.",
+      "Dot products and outer products come into play here."
+    ],
+    "solutionHtml": "<p>To understand the product AB, let's consider a simple example. Suppose A is a 2x3 matrix representing three vectors in R^2:</p>\\n\\[A = \\begin{bmatrix}1 & 2 & 3\\\\4 & 5 & 6\\end{bmatrix}\\]\\n<p>Now, suppose B is a 3x2 matrix representing two vectors in R^3:</p>\\n\\[B = \\begin{bmatrix}1 & 0\\\\0 & 1\\\\2 & 3\\end{bmatrix}\\]\\n<p>The product AB will be a 2x2 matrix. Each entry in this matrix is the dot product of a column of A and a row of B:</p>\\n\\[AB = \\begin{bmatrix}(1, 4) \\cdot (1, 0) & (1, 4) \\cdot (0, 1)\\\\(2, 5) \\cdot (1, 0) & (2, 5) \\cdot (0, 1)\\end{bmatrix} = \\begin{bmatrix}1 & 4\\\\2 & 5\\end{bmatrix}\\]\\n<p>In this example, the columns of AB are linear combinations of the columns of A, scaled by the elements of B. This is the general interpretation of matrix multiplication.</p>\",",
+    "answerShort": "The product AB represents a linear combination of the columns of A, scaled by the elements of B.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:11:23.241Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_008",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore different interpretations of matrix multiplication.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} \\cdot \\mathbf{B} = \\sum_{i=1}^n a_{i} b_i\\]",
+      "name": "Scalar Product"
+    },
+    "problem": {
+      "statementHtml": "<p>Given two matrices A and B, compute the matrix product AB.</p>",
+      "hints": [
+        "Think about linear combinations of columns"
+      ],
+      "solutionHtml": "<p>We can interpret matrix multiplication in various ways:</p><ul><li>As a linear combination of columns: \\[\\mathbf{AB} = \\sum_{j=1}^m \\mathbf{a}_j b_j^T\\]</li><li>As a dot product between rows and columns: \\[\\mathbf{AB} = \\sum_{i=1}^n \\mathbf{a}_i (\\mathbf{B}\\mathbf{b}_i)^T\\]</li></ul>",
+      "answerShort": "The matrix product AB"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the matrix product \\[\\begin{bmatrix}1 &amp; 2 \\\\ 3 &amp; 4 \\end{bmatrix}\\] and \\[\\begin{bmatrix}5 \\\\ 6 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write the matrices as linear combinations of columns",
+          "mathHtml": "\\[\\mathbf{A} = 1\\mathbf{a}_1 + 2\\mathbf{a}_2, \\mathbf{B} = 5\\mathbf{b}_1 + 6\\mathbf{b}_2\\]",
+          "explanation": "This helps us see the linear combination of columns"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the dot products between rows and columns",
+          "mathHtml": "\\[\\mathbf{AB} = (1\\mathbf{a}_1 + 2\\mathbf{a}_2)(5\\mathbf{b}_1 + 6\\mathbf{b}_2)\\]",
+          "explanation": "This shows the dot product between rows and columns"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Expand the dot products",
+          "mathHtml": "\\[\\mathbf{AB} = 5\\mathbf{a}_1 \\mathbf{b}_1 + 6\\mathbf{a}_1 \\mathbf{b}_2 + 10\\mathbf{a}_2 \\mathbf{b}_1 + 12\\mathbf{a}_2 \\mathbf{b}_2\\]",
+          "explanation": "This gives us the final matrix product"
+        }
+      ],
+      "finalAnswer": "The resulting matrix is"
+    },
+    "intuition": "Matrix multiplication can be seen as a combination of linear combinations and dot products, allowing us to compute complex relationships between vectors.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:12:01.680Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpreting Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore how to interpret the result of matrix multiplication.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given two matrices A and B, compute the product C = AB.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the formula for matrix multiplication.\", \"mathHtml\": \"\\[C_{ij} = \\sum_k A_{ik}B_{kj}\\]\", \"explanation\": \"We're using the definition of matrix multiplication to compute each entry in C.\"}, {\"stepNumber\": 2, \"description\": \"Expand the formula for one entry in C.\", \"mathHtml\": \"\\[C_{11} = \\sum_k A_{1k}B_{k1}\\]\", \"explanation\": \"This helps us see that matrix multiplication is a linear combination of columns from B.\"}, {\"stepNumber\": 3, \"description\": \"Notice the dot product between rows in A and columns in B.\", \"mathHtml\": \"\\[C_{11} = \\sum_k (A_{1k} \\cdot B_{k1})\\]\", \"explanation\": \"This shows that matrix multiplication can be viewed as a collection of dot products.\"}, {\"stepNumber\": 4, \"description\": \"Consider the outer product of two vectors.\", \"mathHtml\": \"\\[C = uv^T\\]\", \"explanation\": \"We can think of matrix multiplication as a way to compute the outer product of each row in A with each column in B.\"}, {\"stepNumber\": 5, \"description\": \"Block multiply matrices.\", \"mathHtml\": \"\\[\\begin{bmatrix}A_1 & A_2\\end{bmatrix}\\begin{bmatrix}B_1 \\\\ B_2\\end{bmatrix} = \\begin{bmatrix}A_1B_1 + A_2B_2\\end{bmatrix}\\]\", \"explanation\": \"This illustrates how matrix multiplication can be used to combine matrices in a block-wise manner.\"} ],",
+    "finalAnswer": "The product C = AB is computed by iterating over the entries of the matrices and applying the formula.\" },",
+    "intuition": "Matrix multiplication is a way to combine information from multiple sources, allowing us to extract patterns and relationships between them.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:12:31.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "title": "Interpretations of Matrix Multiplication",
+    "contentHtml": "<p>In this worked example, we'll explore how to interpret matrix multiplication in terms of linear combinations of columns and dot products.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider the matrix product <code>\\[A \\cdot B = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} e & f \\\\ g & h \\end{bmatrix}\\]</code>. What does each entry in the resulting matrix represent?\",",
+    "steps": "[ {",
+    "stepNumber": "4\",",
+    "description": "The resulting matrix represents a linear combination of the columns of B, weighted by the rows of A",
+    "mathHtml": "<code>\\[A \\cdot B = \\text{linear combination of } B_{:,1}, B_{:,2}\\]</code>\",",
+    "explanation": "This is the key insight: matrix multiplication represents a linear combination of columns\" } ],",
+    "finalAnswer": "The resulting matrix represents a linear combination of the columns of B, weighted by the rows of A\" },",
+    "intuition": "Matrix multiplication can be thought of as computing the dot product between each row of the first matrix and each column of the second matrix. This allows us to combine and transform the columns of the second matrix in a flexible way.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:13:03.917Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_matrix_mult_interpretations_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "workedExample": "{",
+    "problemHtml": "Find the matrix product <code>A</code> × <code>B</code>, where <code>A</code> is a 2×3 matrix and <code>B</code> is a 3×4 matrix.",
+    "steps": "[ {",
+    "stepNumber": 5,
+    "description": "The final answer is the resulting matrix",
+    "mathHtml": "\\[C = A \\times B\\]\",",
+    "explanation": "\" } ],",
+    "finalAnswer": "The resulting matrix C\" },",
+    "intuition": "Matrix multiplication can be seen as a linear combination of columns in the first matrix, weighted by the rows of the second matrix. This is why we get a new matrix with dimensions that match the original matrices.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:13:30.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

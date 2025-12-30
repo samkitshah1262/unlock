@@ -1,0 +1,474 @@
+[
+  {
+    "id": "stat_con_testing_framework_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In statistics, hypothesis testing is a crucial framework for making inferences about populations based on samples. The core idea is to formulate a null hypothesis and an alternative hypothesis.</p><p>The null hypothesis (H0) represents the status quo or what we expect to happen, while the alternative hypothesis (H1) represents what we're interested in discovering.</p>",
+    "formula": "{",
+    "latex": "\\(H_0\\) vs \\(H_1\\)\",",
+    "name": "Null and Alternative Hypotheses\" },",
+    "intuition": "The framework helps us separate chance fluctuations from real effects, allowing us to draw conclusions about the world.",
+    "realWorldApplications": [
+      "In machine learning, hypothesis testing is used in model evaluation and selection."
+    ],
+    "commonMistakes": [
+      "Failing to specify a clear null and alternative hypothesis"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:40:09.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_testing_framework_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "subtitle": "Null vs alternative, one vs two-tailed, decision procedure",
+    "contentHtml": "<p>Hypothesis testing is a fundamental concept in mathematical statistics that helps us make informed decisions based on data.</p><p>We're going to explore the framework for hypothesis testing, including null and alternative hypotheses, one- and two-tailed tests, and the decision procedure.</p>",
+    "formula": {
+      "latex": "\\(H_0\\) vs \\(H_1\\)",
+      "name": "Null and Alternative Hypotheses",
+      "variants": [
+        {
+          "latex": "\\(t\\)-test",
+          "description": "One-sample t-test"
+        }
+      ]
+    },
+    "intuition": "Understanding the framework for hypothesis testing is crucial in machine learning and artificial intelligence, as it helps us evaluate the significance of our models and make data-driven decisions.",
+    "realWorldApplications": [
+      "Evaluating the effectiveness of a new marketing campaign"
+    ],
+    "commonMistakes": [
+      "Failing to specify the alternative hypothesis"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:40:24.001Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_testing_framework_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In statistics, hypothesis testing is a framework used to determine whether a given phenomenon or effect exists in a population based on data from a sample.</p><p>The core idea is to formulate a null hypothesis (usually denoted as H0) and an alternative hypothesis (denoted as H1). The null hypothesis typically states that there is no significant difference or relationship, while the alternative hypothesis suggests that there is a significant difference or relationship.</p>",
+    "formula": "{",
+    "latex": "\\(H_0\\) vs. \\(H_1\\)\",",
+    "name": "Null and Alternative Hypotheses",
+    "variants": "[] },",
+    "intuition": "This framework matters because it provides a systematic approach to testing hypotheses, which is crucial in many fields like medicine, social sciences, and business.",
+    "realWorldApplications": [
+      "In machine learning, hypothesis testing is used to evaluate the performance of different models and determine whether they are significantly better than others."
+    ],
+    "commonMistakes": [
+      "Failing to specify a clear null and alternative hypothesis"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:40:38.691Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_testing_framework_004",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "problem": "{",
+    "statementHtml": "<p>Consider a hypothesis testing framework with a null hypothesis $H_0$ and an alternative hypothesis $H_1$. Determine whether to use a one-tailed or two-tailed test.</p>",
+    "hints": [
+      "Think about the direction of the effect.",
+      "What would you expect if the null hypothesis were true?",
+      "Consider the research question being asked."
+    ],
+    "solutionHtml": "<p>To decide, we need to consider the alternative hypothesis $H_1$. If it's one-sided (e.g., $H_1: \\mu > 0$), a one-tailed test is appropriate. Otherwise, a two-tailed test is necessary.</p>\",",
+    "answerShort": "One-tailed or two-tailed test depends on the alternative hypothesis.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:40:52.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_testing_framework_005",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "problem": {
+      "statementHtml": "<p>Consider a hypothesis testing framework with a null hypothesis <i>H<sub>0</sub></i>:</p><p><i>H<sub>0</sub></i>: μ = μ<sub>0</sub></i>, where μ is the population mean and μ<sub>0</sub></i> is the known population mean.</p>",
+      "hints": [
+        "<p>Think about the alternative hypothesis <i>H<sub>a</sub></i>.</p>",
+        "<p>What are the possible outcomes of a two-tailed test?</p>",
+        "<p>How does the decision procedure change for one-tailed tests?</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to determine the type of test (one- or two-tailed) and decide whether to reject or fail to reject the null hypothesis.</p><p>We can start by considering the alternative hypothesis <i>H<sub>a</sub></i>:</p><p><i>H<sub>a</sub></i>: μ ≠ μ<sub>0</sub></i>.</p>",
+      "answerShort": "Reject or fail to reject"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the alternative hypothesis",
+      "Not distinguishing between one- and two-tailed tests"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:41:09.168Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_testing_framework_006",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "problem": {
+      "statementHtml": "<p>Consider a hypothesis testing framework with null and alternative hypotheses. Determine whether to use one-tailed or two-tailed tests based on the research question.</p>",
+      "hints": [
+        "Think about the direction of the effect.",
+        "Consider the type of test statistic used.",
+        "Check if the test is directional or non-directional."
+      ],
+      "solutionHtml": "<p>To decide between one-tailed and two-tailed tests, we need to determine the direction of the effect. If the alternative hypothesis states that the mean is greater than a certain value, we use a one-tailed test with the upper tail. If it states that the mean is less than or equal to a certain value, we use a one-tailed test with the lower tail. For non-directional tests, we use two-tailed tests.</p>",
+      "answerShort": "One-tailed (directional) or two-tailed (non-directional)"
+    },
+    "commonMistakes": [
+      "Failing to consider the direction of the effect.",
+      "Using a one-tailed test when the alternative hypothesis is non-directional."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:41:24.016Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_testing_framework_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "problem": {
+      "statementHtml": "<p>Consider a hypothesis testing framework with a null hypothesis <i>H<sub>0</sub></i>:</p><p><i>H<sub>0</sub></i>: μ = μ<sub>0</sub></i>, where μ is the population mean and μ<sub>0</sub></i> is the known population mean.</p>",
+      "hints": [
+        "<p>Think about the alternative hypothesis <i>H<sub>a</sub></i>. What would it look like?</p>",
+        "<p>Consider a one-tailed test versus a two-tailed test. Which would you choose and why?</p>",
+        "<p>What is the decision procedure for this test? Do you reject or fail to reject <i>H<sub>0</sub></i> based on the p-value?</p>"
+      ],
+      "solutionHtml": "<p>To perform the hypothesis test, follow these steps:</p><ul><li>State the null and alternative hypotheses.</li><li>Determine the test statistic and its distribution under <i>H<sub>0</sub></i>.</li><li>Calculate the p-value based on the test statistic and the sample data.</li><li>Evaluate the decision procedure: reject or fail to reject <i>H<sub>0</sub></i> based on the p-value.</li></ul>",
+      "answerShort": "<p>The null hypothesis is rejected if the p-value &lt; α, where α is the significance level.</p>"
+    },
+    "commonMistakes": [
+      "Failing to specify the alternative hypothesis",
+      "Not considering the type of test (one-tailed or two-tailed)"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:41:44.149Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_testing_framework_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "problem": {
+      "statementHtml": "<p>Consider a statistical test with null hypothesis H<sub>0</sub>: μ = 5 and alternative hypothesis H<sub>a</sub>: μ > 5, where μ is the population mean. The test statistic follows a standard normal distribution. Determine whether to use a one-tailed or two-tailed test.</p>",
+      "hints": [
+        "<p>Think about the direction of the alternative hypothesis.</p>",
+        "<p>Consider what kind of conclusion you want to make if the null hypothesis is rejected.</p>",
+        "<p>Look at the distribution of the test statistic.</p>"
+      ],
+      "solutionHtml": "<p>To determine the type of test, we need to consider the direction of the alternative hypothesis. Since H<sub>a</sub>: μ > 5, we want to make a conclusion about the population mean being greater than 5 if the null hypothesis is rejected. This suggests using a one-tailed test.</p>",
+      "answerShort": "One-tailed test"
+    },
+    "commonMistakes": [
+      "Failing to consider the direction of the alternative hypothesis",
+      "Assuming a two-tailed test without justification"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:41:59.993Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_testing_framework_009",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In statistics, hypothesis testing is a crucial framework for making informed decisions based on data.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to test whether the average height of students in a class is greater than 170 cm. We have a sample of 30 students with an average height of 172 cm and a standard deviation of 5 cm.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the null and alternative hypotheses",
+          "mathHtml": "",
+          "explanation": "We set up our hypotheses as H0: μ ≤ 170 cm vs. H1: μ > 170 cm."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a significance level",
+          "mathHtml": "",
+          "explanation": "We decide on a significance level α = 0.05."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Select a test statistic and its distribution",
+          "mathHtml": "",
+          "explanation": "For this problem, we use the t-test with a sample mean and standard deviation."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the p-value",
+          "mathHtml": "",
+          "explanation": "We calculate the p-value based on our test statistic and its distribution."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Make a decision",
+          "mathHtml": "",
+          "explanation": "If the p-value is less than α, we reject H0; otherwise, we fail to reject H0."
+        }
+      ],
+      "finalAnswer": "Reject H0: μ ≤ 170 cm in favor of H1: μ > 170 cm"
+    },
+    "intuition": "The key insight is that hypothesis testing provides a systematic way to evaluate the evidence from data and make informed decisions.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:42:22.238Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_testing_framework_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a hypothesis testing problem.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to test the claim that the average height of students in a certain major is greater than 5'8\". We have a sample of 25 students with heights: 5'6\", 5'9\", ..., 6'2\". What's our decision procedure?</p>\",",
+    "hints": [
+      "Think about what type of test we need.",
+      "Consider the null and alternative hypotheses."
+    ],
+    "solutionHtml": "<p>We'll follow the hypothesis testing framework:</p>",
+    "answerShort": "Two-sample t-test\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say our sample mean is 5'10\" with a standard deviation of 2 inches. What do we do?</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\", \"explanation\": \"We're trying to determine if the average height is greater than 5'8\".\"}, {\"stepNumber\": 2, \"description\": \"Choose a significance level\", \"mathHtml\": \"\", \"explanation\": \"Typically 0.05.\"}, {\"stepNumber\": 3, \"description\": \"Select a test statistic and its distribution\", \"mathHtml\": \"\", \"explanation\": \"We'll use the two-sample t-test with a t-distribution.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the test statistic and p-value\", \"mathHtml\": \"\", \"explanation\": \"This involves calculating the sample mean difference and standard error.\"} ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "The key insight is that we're not just testing a single value, but rather a range of values. This is why we use a two-tailed test.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:42:45.932Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_testing_framework_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In this worked example, we'll go through a step-by-step solution to a hypothesis testing problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to test the claim that the average height of students in a certain class is greater than 175.5 cm. We have a sample of 25 students with mean height 178.2 cm and standard deviation 4.3 cm.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Determine the p-value",
+    "mathHtml": "\\[p = P(t > t_{observed})\\]\",",
+    "explanation": "We use this value to determine how likely we are to observe a result as extreme or more extreme than ours if the null hypothesis is true.\" } ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "The key insight here is that by choosing our significance level and test statistic, we're setting up a framework for deciding whether to reject the null hypothesis based on the observed data.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:43:12.275Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_testing_framework_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In hypothesis testing, we're trying to decide whether a given phenomenon is due to chance or if there's something more going on.</p>",
+    "formula": {
+      "latex": "\\[ H_0: \\mu = \\mu_0 \\\\ H_1: \\mu \\neq \\mu_0 \\]",
+      "name": "Null and Alternative Hypotheses"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test whether the average height of students in a class is different from the overall average. We have a sample mean of 170 cm with a standard deviation of 5 cm.</p>",
+      "hints": [
+        "Think about what kind of test you would use"
+      ],
+      "solutionHtml": "<p>We need to decide between two hypotheses: the null hypothesis (H_0) that the true average height is 165 cm, and the alternative hypothesis (H_1) that it's different. We'll use a one-tailed test since we're interested in whether the average height is greater than 165 cm.</p>",
+      "answerShort": "One-sample t-test"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a sample of exam scores with a mean of 80 and standard deviation of 10. We want to test whether the true average score is different from 75.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "\\[ H_0: \\mu = 75 \\\\ H_1: \\mu \\neq 75 \\]",
+          "explanation": "We need to clearly define what we're testing."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a significance level",
+          "mathHtml": "",
+          "explanation": "This will determine the maximum probability of rejecting the null hypothesis when it's true."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the test statistic and p-value",
+          "mathHtml": "\\[ t = \\frac{80 - 75}{10/\\sqrt{n}} \\\\ p = P(t > |t|) \\]",
+          "explanation": "The test statistic is the difference between the sample mean and the null hypothesis value, divided by the standard error. The p-value represents the probability of observing a result at least as extreme as ours if the null hypothesis were true."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Make a decision",
+          "mathHtml": "",
+          "explanation": "If the p-value is below our chosen significance level, we reject the null hypothesis. Otherwise, we fail to reject it."
+        }
+      ],
+      "finalAnswer": "Reject H_0"
+    },
+    "intuition": "The key insight here is that hypothesis testing allows us to make probabilistic statements about a phenomenon based on a sample of data.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:43:44.533Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_testing_framework_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "testing_framework",
+    "title": "Hypothesis Testing Framework",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a hypothesis testing problem.</p>",
+    "problem": {
+      "statementHtml": "<p>Test the null hypothesis that the average height of students in a class is less than or equal to 170 cm against an alternative that it's greater than 170 cm. Use a two-tailed test with a significance level of 0.05.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's say we have sample data: n = 25, x̄ = 172 cm, s = 4.5 cm. We want to determine if the average height is greater than 170 cm.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "",
+          "explanation": "We need to clearly define what we're testing."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a significance level",
+          "mathHtml": "",
+          "explanation": "This sets the threshold for rejecting the null hypothesis."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the test statistic and p-value",
+          "mathHtml": "\\[t = \\frac{x̄ - 170}{s/\\sqrt{n}} = ...; p = ...\\]",
+          "explanation": "We'll use a t-test to calculate the test statistic and p-value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compare the p-value to the significance level",
+          "mathHtml": "",
+          "explanation": "If the p-value is less than the significance level, we reject the null hypothesis."
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis (p &lt; 0.05)"
+    },
+    "intuition": "The key insight is that hypothesis testing involves comparing a calculated test statistic to a critical value or p-value.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:44:08.373Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

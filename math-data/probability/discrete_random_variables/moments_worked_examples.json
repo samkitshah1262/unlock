@@ -1,0 +1,156 @@
+[
+  {
+    "id": "prob_wex_moments_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate higher moments of a discrete random variable using moment generating functions.</p>",
+    "formula": {
+      "latex": "\\[ M_G(X)(t) = E[e^{tX}] \\]",
+      "name": "Moment Generating Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a discrete random variable X with probability mass function p(x), calculate the third moment (mean of X cubed) using the moment generating function.</p>",
+      "hints": [
+        "Hint: Use the definition of M_G(X)(t)",
+        "Hint: Expand the exponential"
+      ],
+      "solutionHtml": "<p>We can start by expanding the exponential in the moment generating function:</p><ul><li>\\[ M_G(X)(t) = E[e^{tX}] \\] = ∑x p(x) e^(tx)</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose X has PMF p(x) = {0.2, 0.3, 0.5} for x = {-1, 0, 1}, respectively.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Expand the exponential",
+          "mathHtml": "\\[ M_G(X)(t) = ∑x p(x) e^(tx) \\]",
+          "explanation": "We're using the definition of the moment generating function."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sum",
+          "mathHtml": "\\[ M_G(X)(t) = 0.2e^(-t) + 0.3 + 0.5e^(t) \\]",
+          "explanation": "We're plugging in the values of p(x) and x."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the third moment",
+          "mathHtml": "\\[ E[X^3] = M_G(X)(-1/2)^3 \\]",
+          "explanation": "The third moment is the mean of X cubed, which we can find using the moment generating function."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the expression",
+          "mathHtml": "\\[ E[X^3] = (0.2e^(-1/2)^3 + 0.3 + 0.5e^(1/2)^3) \\]",
+          "explanation": "We're plugging in the value of t and evaluating the expression."
+        }
+      ],
+      "finalAnswer": "E[X^3] = ... (calculate the answer using the steps above)"
+    },
+    "intuition": "The moment generating function provides a powerful tool for calculating higher moments of a discrete random variable.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:00:32.425Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_moments_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate higher moments of a discrete random variable using its moment generating function (MGF).</p>",
+    "formula": "{",
+    "latex": "\\[ M_G(X)(t) = E[e^{tX}] \\]\",",
+    "name": "Moment Generating Function\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a discrete random variable X with probability mass function p(x). Calculate the third moment μ3 of X using its MGF.</p>",
+    "hints": [
+      "Hint: Use the definition of the MGF and its relationship to moments"
+    ],
+    "solutionHtml": "<p>We'll use the definition of the MGF:</p><ul><li>Find the derivative of the MGF with respect to t at t=0:</li></ul>\\[ \\frac{d}{dt}M_G(X)(t)|_{t=0} = E[X] \\]<ul><li>Take another derivative:</li></ul>\\[ \\frac{d^2}{dt^2}M_G(X)(t)|_{t=0} = E[X^2] \\]<ul><li>And one more:</li></ul>\\[ \\frac{d^3}{dt^3}M_G(X)(t)|_{t=0} = E[X^3] \\]<p>The third moment μ3 is the expected value of X cubed, which we've just calculated.</p>\",",
+    "answerShort": "μ3 = E[X^3]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the third moment μ3 of a discrete random variable X with probability mass function p(x) given by:</p><ul><li>p(0) = 1/2, p(1) = 1/4, and p(2) = 1/4.</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 7,
+    "description": "Evaluate the third derivative at t=0",
+    "mathHtml": "\\[ \\frac{d^3}{dt^3}M_G(X)(t)|_{t=0} = 1 + 2 = 3 \\]\",",
+    "explanation": "We're plugging in t=0 and simplifying the expression.\" } ],",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:01:36.372Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_moments_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>In probability theory, moments and moment generating functions (MGFs) are essential tools for understanding discrete random variables.</p>",
+    "formula": {
+      "latex": "\\[ E(X^n) = \\sum_{x} x^n P_X(x) \\]",
+      "name": "n-th Moment",
+      "variants": [
+        {
+          "latex": "\\[ M(t) = E(e^{tX}) \\]",
+          "description": "Moment Generating Function"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Find the first three moments of a discrete random variable X with probability mass function P_X(x) = (1/2)^x for x = 0, 1.</p>",
+      "hints": [
+        "Hint: Use the definition of expectation.",
+        "Hint: Simplify the sum."
+      ],
+      "solutionHtml": "<p>To find the first three moments, we need to calculate E(X), E(X^2), and E(X^3).</p><ul><li>Step 1: Calculate E(X) = \\( \\sum_{x=0}^1 x P_X(x) \\) = (0)(1/2) + (1)(1/2) = 1/2.</li><li>Step 2: Calculate E(X^2) = \\( \\sum_{x=0}^1 x^2 P_X(x) \\) = (0)^2(1/2) + (1)^2(1/2) = 1/2.</li><li>Step 3: Calculate E(X^3) = \\( \\sum_{x=0}^1 x^3 P_X(x) \\) = (0)^3(1/2) + (1)^3(1/2) = 1/2.</li></ul>",
+      "answerShort": "E(X) = 1/2, E(X^2) = 1/2, E(X^3) = 1/2"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the first three moments of a discrete random variable X with probability mass function P_X(x) = (1/2)^x for x = 0, 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate E(X)",
+          "mathHtml": "\\[ E(X) = \\sum_{x=0}^1 x P_X(x) \\]",
+          "explanation": "We're using the definition of expectation."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate E(X^2)",
+          "mathHtml": "\\[ E(X^2) = \\sum_{x=0}^1 x^2 P_X(x) \\]",
+          "explanation": "We're squaring both sides and summing."
+        }
+      ],
+      "finalAnswer": "E(X) = 1/2, E(X^2) = 1/2, E(X^3) = 1/2"
+    },
+    "intuition": "Moments capture the shape of a distribution, while MGFs provide a way to generate these moments.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:02:17.820Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

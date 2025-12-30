@@ -1,0 +1,479 @@
+[
+  {
+    "id": "prob_con_moments_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>Moments are a fundamental concept in probability theory, providing a way to summarize the distribution of a discrete random variable. The moment generating function (MGF) is a powerful tool for working with these moments.</p><p>Given a discrete random variable X, its k-th moment μk is defined as E[X^k], where E denotes expected value.</p>",
+    "formula": "{",
+    "latex": "\\( \\mu_k = E[X^k] \\)\",",
+    "name": "Moment",
+    "variants": "[] },",
+    "intuition": "Moments provide a way to quantify the shape of a distribution, with higher moments capturing more nuanced features.",
+    "realWorldApplications": [
+      "In machine learning, MGFs are used in Bayesian inference and Monte Carlo methods."
+    ],
+    "commonMistakes": [
+      "Not recognizing that MGFs are unique for distinct distributions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:56:18.654Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_moments_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>Moments are a fundamental concept in probability theory that help us understand the distribution of discrete random variables. The moment generating function (MGF) is a powerful tool for calculating moments.</p><p>Intuitively, moments represent the average value of a random variable raised to a power. For example, the first moment (mean) represents the average value of the variable itself, while higher moments capture more subtle features like skewness and kurtosis.</p>",
+    "formula": "{",
+    "latex": "\\(k\\)-th moment: \\(E[X^k] = \\sum_{x} x^k P(X = x)\\)\",",
+    "name": "Moment Formula",
+    "variants": "[] },",
+    "intuition": "Moments help us understand the shape and behavior of a distribution, making them crucial in machine learning and artificial intelligence applications.",
+    "realWorldApplications": [
+      "Estimating the mean and variance of a random variable is essential in natural language processing and speech recognition."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that higher moments can be used to capture more complex features"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:56:36.473Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_moments_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>A discrete random variable X has a moment of order k if its kth moment exists, i.e., E[X^k] is finite.</p><p>The moment generating function (MGF) of X is the function M(t) = E[e^(tX)] that encodes all moments of X.</p>",
+    "formula": "{",
+    "latex": "\\(M(t) = \\sum_{x} e^{tx} P(X=x)\\)\",",
+    "name": "Moment Generating Function\" },",
+    "intuition": "The MGF is a powerful tool for analyzing discrete random variables, as it allows us to easily compute moments and probability distributions.",
+    "realWorldApplications": [
+      "In machine learning, the MGF is used in statistical inference and hypothesis testing."
+    ],
+    "commonMistakes": [
+      "Don't confuse the MGF with the characteristic function; they're not the same thing."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:56:51.753Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_moments_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>The moment generating function (MGF) is a powerful tool in probability theory, allowing us to compute higher moments of discrete random variables.</p><p>Given a discrete random variable X with PMF p(x), the MGF is defined as:</p>\\(M(t) = E[e^{tX}] = \\sum_{x} e^{tx} p(x)\\)<p>The uniqueness of the MGF is crucial in many applications, including machine learning.</p>\",",
+    "formula": "{",
+    "latex": "\\(M(t) = E[e^{tX}] = \\sum_{x} e^{tx} p(x)\\)\",",
+    "name": "Moment Generating Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the MGF of a Bernoulli random variable X with probability mass function p(x) = 0.5 for x=0 and x=1.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Expand the sum\", \"mathHtml\": \"\\(M(t) = E[e^{tX}] = 0.5 e^{t \\cdot 0} + 0.5 e^{t \\cdot 1}\\)\", \"explanation\": \"We substitute the PMF into the MGF formula\"} ],",
+    "finalAnswer": "\\(M(t) = 0.5(e^t + e^t) = e^t\\)\" },",
+    "intuition": "The MGF is a way to encode the distribution of a random variable in a single function, which can be used to compute higher moments and make predictions.",
+    "realWorldApplications": [
+      "In machine learning, the MGF is used in maximum likelihood estimation and Bayesian inference."
+    ],
+    "tags": [
+      "probability",
+      "moment generating functions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:57:18.214Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_moments_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>The concept of higher moments and moment generating functions is crucial in understanding the properties of discrete random variables.</p><p>Higher moments provide a way to capture more complex characteristics of a distribution, while MGFs offer a powerful tool for analyzing these distributions.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{E}[X^n] = (MGF)^n|_{t=1} \\]\",",
+    "name": "Moment Generating Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random variable X with MGF M(t) = e^(2t + 3). Find the expected value of X^2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Differentiate the MGF twice\", \"mathHtml\": \"\\[ \\frac{d^2}{dt^2}M(t) = (2)(4)e^(2t+3) \\]\", \"explanation\": \"We're taking the second derivative to find the expected value of X^2.\"} ],",
+    "finalAnswer": "6\" },",
+    "intuition": "Higher moments and MGFs provide a way to capture more complex characteristics of a distribution, making them essential tools in probability theory.",
+    "realWorldApplications": [
+      "In machine learning, higher moments are used to develop robust models that can handle outliers."
+    ],
+    "tags": [
+      "probability",
+      "moment generating functions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:57:40.451Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_moments_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>The moment generating function (MGF) is a powerful tool in probability theory, allowing us to calculate higher moments of a discrete random variable.</p><p>Given a random variable X with PMF p(x), the MGF is defined as:</p>\\(M(t) = E[e^{tX}] = \\sum_{x} e^{tx} p(x)\\)<p>The uniqueness of the MGF is crucial in many applications, including machine learning.</p>\",",
+    "formula": "{",
+    "latex": "\\[M(t) = E[e^{tX}] = \\sum_{x} e^{tx} p(x)\\]\",",
+    "name": "Moment Generating Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random variable X that takes values 0 and 1 with probabilities 0.5 each.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the MGF\", \"mathHtml\": \"\\(M(t) = E[e^{tX}] = 0.5 e^{t0} + 0.5 e^{t1}\\)\", \"explanation\": \"We sum over all possible values of X\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The MGF is a way to encode the distribution of a random variable, allowing us to calculate higher moments and make predictions.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:58:01.824Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_moments_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>In probability theory, moments of a discrete random variable are used to describe its distribution. Higher moments provide more information about the shape of the distribution.</p><p>A moment generating function (MGF) is a cumulative distribution function that can be used to calculate any moment of the distribution.</p>",
+    "formula": {
+      "latex": "\\[ E(X^n) = \\int_{-\\infty}^{\\infty} x^n f(x) dx \\]",
+      "name": "Moment Formula"
+    },
+    "theorem": {
+      "statement": "\\[ M(t) = \\sum_{k=0}^\\infty e^{tk} P(X=k) \\] is the unique moment generating function for a discrete random variable X.",
+      "proofSketch": "The proof involves showing that the MGF uniquely determines the distribution and then using the uniqueness of the MGF to prove the theorem."
+    },
+    "intuition": "The MGF provides a way to calculate any moment of a distribution, making it a powerful tool for analyzing discrete random variables.",
+    "realWorldApplications": [
+      "Moment generating functions are used in machine learning to analyze the distribution of features and make predictions."
+    ],
+    "tags": [
+      "probability",
+      "moment generating function"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:58:22.030Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_moments_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>The moment generating function (MGF) of a discrete random variable is a powerful tool to analyze its higher moments.</p>",
+    "formula": {
+      "latex": "\\[ M_G(t) = E[e^{tX}] \\]",
+      "name": "Moment Generating Function"
+    },
+    "theorem": {
+      "statement": "\\[ M_G(t_1) = M_G(t_2) \\Rightarrow X \\sim F \\] if and only if all moments are finite",
+      "proofSketch": "The proof involves showing that the uniqueness of the MGF implies the same for its derivatives, which correspond to the moments."
+    },
+    "intuition": "The MGF encodes the distribution's moment information. Uniqueness ensures that a single distribution corresponds to each set of moments.",
+    "realWorldApplications": [
+      "In machine learning, MGFs are used in Bayesian inference and density estimation."
+    ],
+    "tags": [
+      "Probability Theory",
+      "Discrete Random Variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:58:38.571Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_moments_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function p(x) = {0.4, 0.3, 0.1, 0.2} for x = 1, 2, 3, and 4.</p>",
+    "hints": [
+      "<p>Start by finding the moment generating function (MGF). Recall that MGF is a cumulative sum of probabilities weighted by powers of t.</p>",
+      "<p>Use the definition of MGF to find its derivative with respect to t. This will help you identify the third moment.</p>",
+      "<p>Plug in the values of p(x) and x into your expression for the third moment.</p>"
+    ],
+    "solutionHtml": "<p>To find the third moment, we first need to compute the MGF:</p>\\n\\[M(t) = 0.4e^{t} + 0.3e^{2t} + 0.1e^{3t} + 0.2e^{4t}\\]\\n<p>Now, take the derivative of M(t) with respect to t:</p>\\n\\[\\frac{dM}{dt}(t) = 0.4e^{t} + 0.6e^{2t} + 0.3e^{3t} + 0.8e^{4t}\\]\\n<p>The third moment is given by the coefficient of t^3 in this expression:</p>\\n\\[\\mu_3 = \\frac{d^2M}{dt^2}(0) = (0.6)(2!) + (0.3)(3!) + (0.8)(4!) = 11.2</p>\",",
+    "answerShort": "The third moment is 11.2.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:06.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_moments_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function p(x) = \\(\\frac{1}{2}\\)\\[\\delta_{0,1} + \\frac{1}{4}\\]\\[\\delta_{2,3}\\].</p>\",",
+    "hints": [
+      "Start by calculating the first two moments.",
+      "Use the definition of moment generating functions (MGFs) to relate the MGF to the moments.",
+      "The third moment is a bit more involved, but you can still use the MGF to find it."
+    ],
+    "solutionHtml": "<p>To calculate the third moment, we first need to find the MGF. The MGF of X is</p>\\[\\mathcal{M}_X(t) = \\sum_{x} p(x) e^{tx}\\].<p>Substituting our values for p(x), we get</p>\\[\\mathcal{M}_X(t) = \\frac{1}{2}e^0 + \\frac{1}{4}(e^{2t}+e^{3t})\\].<p>The MGF is a polynomial in t, so the third moment is just the coefficient of the t^3 term.</p>\\[\\mathcal{M}_X(t) = 1 + \\frac{1}{2}t + \\frac{3}{4}t^2 + \\frac{3}{8}t^3 + O(t^4)\\].<p>The third moment is therefore \\(\\boxed{\\frac{3}{4}}\\).</p>\",",
+    "answerShort": "\\(\\frac{3}{4}\\)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:32.469Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_moments_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the third moment of a discrete random variable X with probability mass function P(X = k) = (1/4)^k \\* (3/2)^(−1) for k = 0, 1, 2.</p>\",",
+    "hints": [
+      "Recall that the moment generating function is used to find moments.",
+      "The third moment can be found by differentiating the MGF three times and evaluating at t = 0.",
+      "Use the fact that the MGF of a discrete random variable is a polynomial."
+    ],
+    "solutionHtml": "<p>To find the third moment, we first need to find the MGF.</p><p>MGF(s) = ∑<sub>k=0∞</sub> P(X = k) \\* e<sup>ks</sup> = (1/4)<sup>0</sup> \\* (3/2)<sup>-1</sup> + (1/4)<sup>1</sup> \\* (3/2)<sup>-1</sup> \\* e<sup>s</sup> + ...</p><p>Now, we differentiate the MGF three times and evaluate at t = 0:</p><p>Moment(3) = [d³/(ds³)]M(t)|<sub>t=0</sub> = ...</p>\",",
+    "answerShort": "Moment(3) = 1/2\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:59:55.105Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_moments_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Higher Moments and Moment Generating Functions",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate higher moments of a discrete random variable using moment generating functions.</p>",
+    "formula": {
+      "latex": "\\[ M_G(X)(t) = E[e^{tX}] \\]",
+      "name": "Moment Generating Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a discrete random variable X with probability mass function p(x), calculate the third moment (mean of X cubed) using the moment generating function.</p>",
+      "hints": [
+        "Hint: Use the definition of M_G(X)(t)",
+        "Hint: Expand the exponential"
+      ],
+      "solutionHtml": "<p>We can start by expanding the exponential in the moment generating function:</p><ul><li>\\[ M_G(X)(t) = E[e^{tX}] \\] = ∑x p(x) e^(tx)</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose X has PMF p(x) = {0.2, 0.3, 0.5} for x = {-1, 0, 1}, respectively.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Expand the exponential",
+          "mathHtml": "\\[ M_G(X)(t) = ∑x p(x) e^(tx) \\]",
+          "explanation": "We're using the definition of the moment generating function."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sum",
+          "mathHtml": "\\[ M_G(X)(t) = 0.2e^(-t) + 0.3 + 0.5e^(t) \\]",
+          "explanation": "We're plugging in the values of p(x) and x."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the third moment",
+          "mathHtml": "\\[ E[X^3] = M_G(X)(-1/2)^3 \\]",
+          "explanation": "The third moment is the mean of X cubed, which we can find using the moment generating function."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the expression",
+          "mathHtml": "\\[ E[X^3] = (0.2e^(-1/2)^3 + 0.3 + 0.5e^(1/2)^3) \\]",
+          "explanation": "We're plugging in the value of t and evaluating the expression."
+        }
+      ],
+      "finalAnswer": "E[X^3] = ... (calculate the answer using the steps above)"
+    },
+    "intuition": "The moment generating function provides a powerful tool for calculating higher moments of a discrete random variable.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:00:32.425Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_moments_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate higher moments of a discrete random variable using its moment generating function (MGF).</p>",
+    "formula": "{",
+    "latex": "\\[ M_G(X)(t) = E[e^{tX}] \\]\",",
+    "name": "Moment Generating Function\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a discrete random variable X with probability mass function p(x). Calculate the third moment μ3 of X using its MGF.</p>",
+    "hints": [
+      "Hint: Use the definition of the MGF and its relationship to moments"
+    ],
+    "solutionHtml": "<p>We'll use the definition of the MGF:</p><ul><li>Find the derivative of the MGF with respect to t at t=0:</li></ul>\\[ \\frac{d}{dt}M_G(X)(t)|_{t=0} = E[X] \\]<ul><li>Take another derivative:</li></ul>\\[ \\frac{d^2}{dt^2}M_G(X)(t)|_{t=0} = E[X^2] \\]<ul><li>And one more:</li></ul>\\[ \\frac{d^3}{dt^3}M_G(X)(t)|_{t=0} = E[X^3] \\]<p>The third moment μ3 is the expected value of X cubed, which we've just calculated.</p>\",",
+    "answerShort": "μ3 = E[X^3]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the third moment μ3 of a discrete random variable X with probability mass function p(x) given by:</p><ul><li>p(0) = 1/2, p(1) = 1/4, and p(2) = 1/4.</li></ul>",
+    "steps": "[ {",
+    "stepNumber": 7,
+    "description": "Evaluate the third derivative at t=0",
+    "mathHtml": "\\[ \\frac{d^3}{dt^3}M_G(X)(t)|_{t=0} = 1 + 2 = 3 \\]\",",
+    "explanation": "We're plugging in t=0 and simplifying the expression.\" } ],",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:01:36.372Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_moments_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "moments",
+    "title": "Moments and Moment Generating Functions",
+    "contentHtml": "<p>In probability theory, moments and moment generating functions (MGFs) are essential tools for understanding discrete random variables.</p>",
+    "formula": {
+      "latex": "\\[ E(X^n) = \\sum_{x} x^n P_X(x) \\]",
+      "name": "n-th Moment",
+      "variants": [
+        {
+          "latex": "\\[ M(t) = E(e^{tX}) \\]",
+          "description": "Moment Generating Function"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Find the first three moments of a discrete random variable X with probability mass function P_X(x) = (1/2)^x for x = 0, 1.</p>",
+      "hints": [
+        "Hint: Use the definition of expectation.",
+        "Hint: Simplify the sum."
+      ],
+      "solutionHtml": "<p>To find the first three moments, we need to calculate E(X), E(X^2), and E(X^3).</p><ul><li>Step 1: Calculate E(X) = \\( \\sum_{x=0}^1 x P_X(x) \\) = (0)(1/2) + (1)(1/2) = 1/2.</li><li>Step 2: Calculate E(X^2) = \\( \\sum_{x=0}^1 x^2 P_X(x) \\) = (0)^2(1/2) + (1)^2(1/2) = 1/2.</li><li>Step 3: Calculate E(X^3) = \\( \\sum_{x=0}^1 x^3 P_X(x) \\) = (0)^3(1/2) + (1)^3(1/2) = 1/2.</li></ul>",
+      "answerShort": "E(X) = 1/2, E(X^2) = 1/2, E(X^3) = 1/2"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the first three moments of a discrete random variable X with probability mass function P_X(x) = (1/2)^x for x = 0, 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate E(X)",
+          "mathHtml": "\\[ E(X) = \\sum_{x=0}^1 x P_X(x) \\]",
+          "explanation": "We're using the definition of expectation."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate E(X^2)",
+          "mathHtml": "\\[ E(X^2) = \\sum_{x=0}^1 x^2 P_X(x) \\]",
+          "explanation": "We're squaring both sides and summing."
+        }
+      ],
+      "finalAnswer": "E(X) = 1/2, E(X^2) = 1/2, E(X^3) = 1/2"
+    },
+    "intuition": "Moments capture the shape of a distribution, while MGFs provide a way to generate these moments.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:02:17.820Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

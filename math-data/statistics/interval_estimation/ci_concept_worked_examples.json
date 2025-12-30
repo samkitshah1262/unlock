@@ -1,0 +1,294 @@
+[
+  {
+    "id": "stat_wex_ci_concept_009",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_concept",
+    "title": "Confidence Interval Concept",
+    "contentHtml": "<p>A confidence interval is a range of values within which a population parameter is likely to lie.</p>",
+    "formula": "{",
+    "latex": "\\(1-\\alpha\\)\",",
+    "name": "Confidence Level\" },",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% confidence interval for the mean height of all students in a university, given a sample mean height of 175.5 cm with a standard deviation of 2.1 cm.</p>",
+    "hints": [
+      "Hint: Use the z-table"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Construct a 95% confidence interval for the mean height of all students in a university, given a sample mean height of 175.5 cm with a standard deviation of 2.1 cm.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the z-score\", \"mathHtml\": \"\\[z = \\frac{\\bar{x} - \\mu}{\\sigma / \\sqrt{n}}\\]\", \"explanation\": \"We're standardizing the sample mean to compare it to the population mean.\"}, {\"stepNumber\": 2, \"description\": \"Find the critical value from the z-table\", \"mathHtml\": \"\\[z = 1.96\\]\", \"explanation\": \"The critical value depends on the confidence level and the sample size.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the margin of error\", \"mathHtml\": \"\\[E = z \\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\", \"explanation\": \"The margin of error represents the maximum amount by which the true population mean may differ from the sample mean.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the upper and lower bounds\", \"mathHtml\": \"\\[L = \\bar{x} - E,\\; U = \\bar{x} + E\\]\", \"explanation\": \"The confidence interval is the range between these two values.\"} ],",
+    "finalAnswer": "The 95% confidence interval for the mean height of all students in a university is (173.4, 177.6) cm.\" },",
+    "intuition": "A confidence interval provides a range of values within which we can be confident that the true population parameter lies.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Mistaking the margin of error for the standard error"
+    ],
+    "realWorldApplications": [
+      "Estimating the average height of students in a university"
+    ],
+    "tags": [
+      "confidence interval",
+      "interval estimation"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:02:32.603Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_concept_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_concept",
+    "title": "Confidence Interval Concept",
+    "contentHtml": "<p>In statistics, a confidence interval is a range of values within which a population parameter (like a mean or proportion) lies with a certain level of confidence.</p>",
+    "formula": {
+      "latex": "\\[P(\\text{parameter } \\in [a, b]) = 1 - \\alpha\\]",
+      "name": "Confidence Interval Formula",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Construct a 95% confidence interval for the population mean of exam scores given a sample mean of 80 and standard deviation of 10.</p>",
+      "hints": [
+        "Hint: Use the t-distribution"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Construct a 95% confidence interval for the population mean of exam scores given a sample mean of 80 and standard deviation of 10.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample size",
+          "mathHtml": "\\[n = 25\\]",
+          "explanation": "We need to know how many samples we have"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the critical value from the t-distribution table",
+          "mathHtml": "\\[t_{0.975}(24) \\approx 2.06\\]",
+          "explanation": "This is used to determine the margin of error"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\frac{10}{\\sqrt{25}} \\approx 4\\]",
+          "explanation": "This represents the spread of our sample mean"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the margin of error",
+          "mathHtml": "\\[ME = t_{0.975}(24) \\cdot SE \\approx 8.16\\]",
+          "explanation": "This is the maximum amount by which our sample mean could differ from the true population mean"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Calculate the confidence interval",
+          "mathHtml": "\\[CI = (80 - ME, 80 + ME) \\approx (71.84, 88.16)\\]",
+          "explanation": "This is our range of values within which we are 95% confident the true population mean lies"
+        }
+      ],
+      "finalAnswer": "(71.84, 88.16)"
+    },
+    "intuition": "A confidence interval provides a range of plausible values for an unknown parameter, allowing us to make inferences about the population.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Mistaking a confidence interval with a prediction interval"
+    ],
+    "realWorldApplications": [
+      "Machine learning models often rely on confidence intervals to estimate model performance and uncertainty."
+    ],
+    "tags": [
+      "confidence interval",
+      "interval estimation",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:03:05.144Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_concept_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_concept",
+    "title": "Interval Estimation: Confidence Interval Concept",
+    "contentHtml": "<p>In statistical inference, a confidence interval is a range of values within which a population parameter is likely to lie.</p><p>It's a way to quantify the uncertainty associated with an estimate and provide a sense of how reliable it is.</p>",
+    "formula": "{",
+    "latex": "\\(1 - \\alpha\\)\",",
+    "name": "Confidence Level\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to estimate the average height of all adults in a country. We take a random sample of 100 people and calculate the mean height to be 175.2 cm with a standard deviation of 7.3 cm.</p><p>Construct a 95% confidence interval for the true average height.</p>",
+    "hints": [
+      "Remember the formula",
+      "Don't forget to adjust for the sample size"
+    ],
+    "solutionHtml": "<p>We'll use the sample mean and standard deviation to construct the interval.</p><ul><li>First, we need to calculate the margin of error:</li>\\[ \\text{Margin of Error} = Z \\times \\frac{\\sigma}{\\sqrt{n}} \\]</li><li>Next, we add and subtract the margin of error from the sample mean:</li>\\[ \\bar{x} - \\text{Margin of Error} \\leq \\mu \\leq \\bar{x} + \\text{Margin of Error} \\]</li></ul>\",",
+    "answerShort": "Answer: 172.2 cm to 178.2 cm\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Construct a 99% confidence interval for the true average height.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the margin of error\", \"mathHtml\": \"\\(Z \\times \\frac{\\sigma}{\\sqrt{n}}\\) = \\(2.576 \\times \\frac{7.3}{10}\\) = 2.43 cm\", \"explanation\": \"We use the Z-score corresponding to our desired confidence level and adjust for the sample size.\"}, {\"stepNumber\": 2, \"description\": \"Add and subtract the margin of error from the sample mean\", \"mathHtml\": \"\\(175.2 - 2.43) \\leq \\mu \\leq (175.2 + 2.43)\\)\", \"explanation\": \"This gives us our confidence interval.\"} ],",
+    "finalAnswer": "173.77 cm to 176.63 cm\" },",
+    "intuition": "A confidence interval is a way to quantify the uncertainty in an estimate and provide a sense of how reliable it is.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:03:35.279Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_concept_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_concept",
+    "title": "Confidence Interval Concept",
+    "contentHtml": "<p>A confidence interval is a range of values within which a population parameter is likely to lie.</p>",
+    "formula": {
+      "latex": "\\[P(\\text{parameter} \\in [a, b]) = 1 - \\alpha\\]",
+      "name": "Confidence Interval Formula",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Construct a 95% confidence interval for the population mean of exam scores given a sample mean of 80 and standard deviation of 10.</p>",
+      "hints": [
+        "Hint: Use the t-distribution"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Construct a 95% confidence interval for the population mean of exam scores given a sample mean of 80 and standard deviation of 10.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the critical t-value",
+          "mathHtml": "\\[t = 1.96\\]",
+          "explanation": "We use the t-distribution table or calculator to find the critical value for a 95% confidence interval with 19 degrees of freedom."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the margin of error",
+          "mathHtml": "\\[M = \\frac{10 \\cdot 1.96}{\\sqrt{20}} = 4.47\\]",
+          "explanation": "We use the sample standard deviation and the critical t-value to calculate the margin of error."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the upper and lower bounds",
+          "mathHtml": "\\[L = 80 - 4.47, U = 80 + 4.47\\]",
+          "explanation": "We subtract and add the margin of error to the sample mean to get the upper and lower bounds."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The confidence interval is [75.53, 84.47], indicating that we are 95% confident that the population mean lies within this range."
+        }
+      ],
+      "finalAnswer": "[75.53, 84.47]"
+    },
+    "intuition": "A confidence interval provides a range of values within which a parameter is likely to lie, while also accounting for the uncertainty in our estimate.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Not considering the margin of error",
+      "Using the wrong critical value"
+    ],
+    "realWorldApplications": [
+      "In machine learning, confidence intervals can be used to quantify the uncertainty in model predictions."
+    ],
+    "tags": [
+      "confidence interval",
+      "interval estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:04:05.938Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_concept_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_concept",
+    "title": "Confidence Interval Concept",
+    "contentHtml": "<p>A confidence interval is a range of values within which a population parameter is likely to lie.</p>",
+    "problem": {
+      "statementHtml": "<p>Find a 95% confidence interval for the mean height of all students in a school, given a sample of 36 students with an average height of 170.5 cm and a standard deviation of 6.2 cm.</p>",
+      "hints": [
+        "Hint: Use the sample mean and standard deviation.",
+        "Hint: Calculate the t-statistic."
+      ],
+      "solutionHtml": "<p>Solution...</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find a 95% confidence interval for the mean height of all students in a school, given a sample of 36 students with an average height of 170.5 cm and a standard deviation of 6.2 cm.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{\\sum x_i}{n}\\]",
+          "explanation": "We need to calculate the sample mean to estimate the population mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\frac{s}{\\sqrt{n}}\\]",
+          "explanation": "The standard error is used to determine the margin of error in our confidence interval."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the t-statistic",
+          "mathHtml": "\\[t = \\frac{\\bar{x} - \\mu}{SE}\\]",
+          "explanation": "We use the t-statistic to determine the critical value for our confidence interval."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the critical value and calculate the margin of error",
+          "mathHtml": "\\[t_{crit} = ...\\]",
+          "explanation": "The critical value is used to find the margin of error in our confidence interval."
+        }
+      ],
+      "finalAnswer": "95% CI: (169.1, 171.9)"
+    },
+    "intuition": "A confidence interval provides a range of values within which we can be confident that the true population mean lies.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:04:32.142Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

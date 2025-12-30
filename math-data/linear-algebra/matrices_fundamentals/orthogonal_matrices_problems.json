@@ -1,0 +1,81 @@
+[
+  {
+    "id": "la_prb_orthogonal_matrices_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "Think about what happens to dot products and lengths under rotation.",
+      "Consider the standard basis vectors in ℝ².",
+      "Recall the definition of orthogonality."
+    ],
+    "solutionHtml": "<p>To find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise, we can use the following steps:</p><ol><li>Let <span class=\\\"math\\\">R = \\begin{bmatrix}0 & -1\\\\ 1 & 0\\end{bmatrix}</span>. Then <span class=\\\"math\\\">R</span> is an orthogonal matrix.</li><li>We can verify that <span class=\\\"math\\\">R</span> satisfies the orthogonality condition:</li><ul><li><span class=\\\"math\\\">R^T R = I</span>.</li></ul><li>The determinant of <span class=\\\"math\\\">R</span> is -1, which means it represents a 90-degree counterclockwise rotation.</li></ol>\",",
+    "answerShort": "<span class=\\\"math\\\">R = \\begin{bmatrix}0 & -1\\\\ 1 & 0\\end{bmatrix}</span>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:31:43.462Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_matrices_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "<p>The key to finding an orthogonal matrix is to preserve the length of the original vector.</p>",
+      "<p>You can use trigonometry to find the sine and cosine values for the rotation.</p>",
+      "<p>Make sure your matrix has a determinant of 1, since it's an orthogonal matrix.</p>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal matrix, we'll start by defining the original vector <math>\\mathbf{v}</math>. We want to rotate it by 90 degrees counterclockwise, so we can use trigonometry to find the sine and cosine values:</p><p><math>\\sin(\\theta) = \\frac{\\sqrt{2}}{2}, \\cos(\\theta) = -\\frac{\\sqrt{2}}{2}</math></p><p>Now we can create our orthogonal matrix <math>A</math>:</p><p><math>A = \\begin{bmatrix} 0 & -1 \\\\ \\sqrt{2}/2 & \\sqrt{2}/2 \\end{bmatrix}</math></p><p>To show that this is indeed an orthogonal matrix, we can calculate its determinant:</p><p><math>\\det(A) = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2} = 1</math></p>\",",
+    "answerShort": "<math>A</math>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:32:05.300Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_matrices_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise.</p>",
+    "hints": [
+      "Think about how to preserve the length of the vector.",
+      "Consider what happens when you multiply a vector by its transpose.",
+      "Recall the definition of orthogonality."
+    ],
+    "solutionHtml": "<p>To find an orthogonal matrix that rotates a vector by 90 degrees counterclockwise, we can start with the standard basis vectors:</p>\\n\\[ \\mathbf{e}_1 = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}, \\quad \\mathbf{e}_2 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\]\\n<p>We want to find an orthogonal matrix <strong>R</strong> such that:</p>\\n\\[ R^T R = I, \\quad R \\mathbf{e}_1 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}, \\quad R \\mathbf{e}_2 = \\begin{bmatrix} -1 \\\\ 0 \\end{bmatrix}. \\]\\n<p>We can construct <strong>R</strong> as:</p>\\n\\[ R = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}, \\]\\n<p>This matrix satisfies the desired properties and is an example of an orthogonal rotation matrix.</p>\",",
+    "answerShort": "<code>R = [[0, -1], [1, 0]]</code>\" },",
+    "commonMistakes": [
+      "Forgetting to preserve the length of the vector",
+      "Not considering the transpose of the matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:32:28.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

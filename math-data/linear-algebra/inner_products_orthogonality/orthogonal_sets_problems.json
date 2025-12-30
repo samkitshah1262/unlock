@@ -1,0 +1,77 @@
+[
+  {
+    "id": "la_prb_orthogonal_sets_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_sets",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthonormal set of vectors that span a given subspace.</p>",
+    "hints": [
+      "Start with a basis for the subspace.",
+      "Use Gram-Schmidt process to orthogonalize the vectors.",
+      "Check that the resulting set is orthonormal."
+    ],
+    "solutionHtml": "<p>To find an orthonormal set of vectors, we can start with a basis for the subspace. Let's say our subspace is spanned by $\\mathbf{v}_1$ and $\\mathbf{v}_2$. We'll use Gram-Schmidt process to orthogonalize these vectors.</p>\\n<p>First, we normalize $\\mathbf{v}_1$:</p>\\n\\[ \\mathbf{u}_1 = \\frac{\\mathbf{v}_1}{\\|\\mathbf{v}_1\\|} \\]\\n<p>Then, we subtract the projection of $\\mathbf{v}_2$ onto $\\mathbf{u}_1$ from $\\mathbf{v}_2$:</p>\\n\\[ \\mathbf{v}_2^\\perp = \\mathbf{v}_2 - \\left(\\frac{\\mathbf{v}_2}{\\|\\mathbf{v}_2\\|} \\cdot \\mathbf{u}_1\\right) \\mathbf{u}_1 \\]\\n<p>We normalize the resulting vector:</p>\\n\\[ \\mathbf{u}_2 = \\frac{\\mathbf{v}_2^\\perp}{\\|\\mathbf{v}_2^\\perp\\|} \\]\\n<p>The resulting set $\\{\\mathbf{u}_1, \\mathbf{u}_2\\}$ is orthonormal.</p>\",",
+    "answerShort": "The orthonormal set of vectors that spans the subspace.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:02:04.981Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_sets_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_sets",
+    "problem": "{",
+    "statementHtml": "<p>Find an orthonormal basis for the subspace spanned by vectors \\(\\mathbf{a} = [1, 2, 3]\\) and \\(\\mathbf{b} = [4, -1, 0]\\).</p>\",",
+    "hints": [
+      "Start with the Gram-Schmidt process.",
+      "Use the inner product to normalize each vector.",
+      "Check that the resulting basis is orthonormal."
+    ],
+    "solutionHtml": "<p>To find an orthonormal basis for the subspace spanned by \\(\\mathbf{a}\\) and \\(\\mathbf{b}\\), we can use the Gram-Schmidt process.</p><ul><li>First, normalize \\(\\mathbf{a}\\): \\(\\hat{\\mathbf{a}} = [1/\\sqrt{14}, 2/\\sqrt{14}, 3/\\sqrt{14}]\\).</li><li>Next, subtract the projection of \\(\\mathbf{b}\\) onto \\(\\hat{\\mathbf{a}}\\) from \\(\\mathbf{b}\\): \\(\\tilde{\\mathbf{b}} = [4 - (2/7), -1 + (6/7), 0]\\).</li><li>Normalize \\(\\tilde{\\mathbf{b}}\\): \\(\\hat{\\mathbf{b}} = [\\sqrt{5/7}, -\\sqrt{1/7}, 0]\\).</li></ul><p>The orthonormal basis is then given by \\(\\{\\hat{\\mathbf{a}}, \\hat{\\mathbf{b}}\\}\\).</p>\",",
+    "answerShort": "The orthonormal basis is \\(\\{\\hat{\\mathbf{a}}, \\hat{\\mathbf{b}}\\}\\).\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:02:29.475Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_sets_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_sets",
+    "problem": "{",
+    "statementHtml": "Find a set of vectors that is both orthogonal and orthonormal.",
+    "hints": [
+      "Start by considering two vectors in the set.",
+      "Recall that orthogonality means dot products are zero, while orthonormality means magnitudes are 1.",
+      "Think about how you can use these properties to construct the desired set."
+    ],
+    "solutionHtml": " Let $\\mathbf{v}_1$ and $\\mathbf{v}_2$ be two vectors in the set. We want them to satisfy \\(\\mathbf{v}_1 \\cdot \\mathbf{v}_2 = 0\\) and \\(\\lVert \\mathbf{v}_1 \\rVert = \\lVert \\mathbf{v}_2 \\rVert = 1\\). Suppose we have a third vector $\\mathbf{v}_3$. We can write it as a linear combination of the first two: \\(\\mathbf{v}_3 = a_1 \\mathbf{v}_1 + a_2 \\mathbf{v}_2\\). Now, take the dot product with each of the first two vectors:\\begin{align*} 0 &= (\\mathbf{v}_3 \\cdot \\mathbf{v}_1) = (a_1 \\mathbf{v}_1 + a_2 \\mathbf{v}_2) \\cdot \\mathbf{v}_1\\\\ 0 &= (\\mathbf{v}_3 \\cdot \\mathbf{v}_2) = (a_1 \\mathbf{v}_1 + a_2 \\mathbf{v}_2) \\cdot \\mathbf{v}_2 \\end{align*}Simplifying, we get $a_1 (\\mathbf{v}_1 \\cdot \\mathbf{v}_1) = 0$ and $a_2 (\\mathbf{v}_2 \\cdot \\mathbf{v}_2) = 0$. Since $\\lVert \\mathbf{v}_1 \\rVert = \\lVert \\mathbf{v}_2 \\rVert = 1$, we have $(\\mathbf{v}_1 \\cdot \\mathbf{v}_1) = (\\mathbf{v}_2 \\cdot \\mathbf{v}_2) = 1$. Therefore, $a_1 = a_2 = 0$ and $\\mathbf{v}_3$ is orthogonal to both $\\mathbf{v}_1$ and $\\mathbf{v}_2$. By induction, we can show that any set of vectors satisfying these properties will be orthogonal and orthonormal. \",",
+    "answerShort": "Construct the set by considering linear combinations of two initial vectors.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:03:03.329Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

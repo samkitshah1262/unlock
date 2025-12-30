@@ -1,0 +1,76 @@
+[
+  {
+    "id": "prob_prb_marginal_distributions_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Find the marginal distribution of X given a joint distribution P(X,Y).</p>",
+    "hints": [
+      "<p>Start by recognizing that the marginal distribution is a sum/integral over all possible values of Y.</p>",
+      "<p>Use the definition of the joint distribution to rewrite the expression in terms of P(Y|X).</p>",
+      "<p>Simplify the expression by pulling out any constants and factoring out P(X).</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution, we sum/integrate over all possible values of Y:</p>\\n\\ \\[P(X) = \\int_{-\\infty}^{\\infty} P(X,Y) dY\\]\\n\\ <p>We can rewrite this expression using the definition of the joint distribution:</p>\\n\\ \\[P(X) = \\int_{-\\infty}^{\\infty} P(Y|X) P(X) dY\\]\\n\\ <p>Simplifying, we get:</p>\\n\\ \\[P(X) = P(X) \\int_{-\\infty}^{\\infty} P(Y|X) dY\\]\\n\\ <p>Factoring out P(X), we finally obtain:</p>\\n\\ \\[P(X) = P(X)\\]</p>\",",
+    "answerShort": "P(X)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:24.589Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_marginal_distributions_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <i>P(X,Y)</i>, find the marginal distribution of <i>X</i>.</p>",
+    "hints": [
+      "Start by recognizing that the marginal distribution is a sum (or integral) over all possible values of <i>Y</i>",
+      "Use the definition of conditional probability to relate the joint distribution to the marginal distribution",
+      "Don't forget to normalize the resulting distribution"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution, we sum out the <i>Y</i> variable:</p><p>\\[P_X(x) = \\sum_{y} P(X=x,Y=y)\\]</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:37.271Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_marginal_distributions_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <i>P(X,Y)</i>, find the marginal distribution of <i>X</i>.</p>",
+    "hints": [
+      "<p>Simplify the expression by summing/integrating out <i>Y</i>.</p>",
+      "<p>Use the definition of conditional probability to relate <i>P(X,Y)</i> and <i>P(Y)</i>.</p>",
+      "<p>Apply the marginalization property.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of <i>X</i>, we sum out <i>Y</i>:</p>\\[P_X(x) = \\sum_y P(X=x, Y=y)\\]<p>This is equivalent to taking the expected value of <i>P(Y|x)</i> with respect to <i>P(y)</i>.</p>\",",
+    "answerShort": "<code>P_X(x)</code>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:48:54.180Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

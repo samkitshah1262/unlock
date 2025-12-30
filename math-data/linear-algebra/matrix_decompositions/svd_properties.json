@@ -1,0 +1,273 @@
+[
+  {
+    "id": "la_con_svd_properties_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "title": "Properties of SVD",
+    "contentHtml": "<p>The Singular Value Decomposition (SVD) is a fundamental concept in linear algebra and has far-reaching implications in machine learning and artificial intelligence.</p><p>Given a matrix A, the SVD decomposes it into three components: the left singular vectors U, the diagonal matrix Σ, and the right singular vectors V. This decomposition reveals the rank, null space, and range of the original matrix.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T\\]",
+      "name": "SVD Decomposition"
+    },
+    "intuition": "The SVD provides a way to compress and represent complex data structures, making it an essential tool in many machine learning algorithms.",
+    "visualDescription": "A diagram showing the SVD decomposition of a matrix, with U, Σ, and V components",
+    "commonMistakes": [
+      "Confusing the null space with the range"
+    ],
+    "realWorldApplications": [
+      "Principal component analysis (PCA) for dimensionality reduction",
+      "Latent semantic analysis (LSA) in natural language processing"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:45:34.892Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_svd_properties_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "title": "Properties of SVD",
+    "contentHtml": "<p>The Singular Value Decomposition (SVD) is a powerful tool in linear algebra that helps us understand the structure of matrices.</p><p>In this concept card, we'll explore the properties of SVD and how they relate to eigenvalues, rank, null space, and range.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\sigma_1 \\geq ... \\geq \\\\sigma_r > 0, \\\\quad \\\\mathbf{U} \\\\in \\\\mathbb{R}^{m \\\\times r}, \\\\quad \\\\mathbf{\\Sigma} = \\\\text{diag}(\\\\sigma_1, ..., \\\\sigma_r), \\\\quad \\\\mathbf{V}^T \\\\in \\\\mathbb{R}^{n \\\\times r} \\\\]\",",
+    "name": "SVD decomposition\" },",
+    "intuition": "The SVD helps us identify the most important directions in a high-dimensional space by decomposing the matrix into three parts: left singular vectors, singular values, and right singular vectors. This allows us to reduce dimensionality while preserving the essential information.",
+    "realWorldApplications": [
+      "Principal component analysis (PCA) in ML/AI"
+    ],
+    "tags": [
+      "SVD",
+      "Linear Algebra",
+      "Dimensionality Reduction"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:45:52.333Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_svd_properties_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "title": "Properties of SVD",
+    "contentHtml": "<p>The Singular Value Decomposition (SVD) is a powerful tool in linear algebra that helps us understand the structure of matrices. In this concept card, we'll explore the properties of SVD and how they relate to eigenvalues.</p><p>When we decompose a matrix into its singular values, left-singular vectors, and right-singular vectors, we gain insights into the rank, null space, and range of the original matrix.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathrm{rank}(A) = k \\\\quad \\\\Rightarrow \\\\quad \\\\sigma_1 \\\\geq ... \\\\geq \\\\sigma_k > 0\\]\",",
+    "name": "Rank-Singular Value Relation\" },",
+    "intuition": "The SVD helps us identify the most important features of a matrix by highlighting its singular values, which represent the amount of information in each direction.",
+    "realWorldApplications": [
+      "Dimensionality reduction in ML/AI"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that SVD is not unique"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:46:07.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_svd_properties_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "title": "Properties of SVD",
+    "contentHtml": "<p>The Singular Value Decomposition (SVD) is a powerful tool in linear algebra, allowing us to decompose matrices into their constituent parts: the left and right singular vectors, and the corresponding singular values.</p>",
+    "formula": {
+      "latex": "\\[ U \\Sigma V^\\top \\]",
+      "name": "SVD Decomposition"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{Rank}(A) = k \\quad \\Rightarrow \\quad \\text{rank} (U_k \\Sigma_k V_k^\\top) = k \\]",
+      "proofSketch": "The proof involves showing that the rank of a matrix is equal to the number of non-zero singular values, and then using the SVD decomposition to bound this quantity."
+    },
+    "intuition": "This theorem highlights the connection between the rank of a matrix and its SVD decomposition. It shows that the rank is equal to the number of non-zero singular values, which can be useful in many applications, including dimensionality reduction and feature selection.",
+    "realWorldApplications": [
+      "Dimensionality reduction for image compression",
+      "Feature selection in recommender systems"
+    ],
+    "tags": [
+      "Singular Value Decomposition",
+      "Matrix Rank",
+      "Linear Algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:46:25.611Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_svd_properties_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "title": "Singular Value Decomposition Properties",
+    "contentHtml": "<p>The SVD decomposition of a matrix A is crucial in many machine learning and AI applications.</p><p>In this theorem, we explore some fundamental properties of SVD.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\sigma_1 \\geq ... \\geq \\\\sigma_r > 0, \\\\text{ where } r = rank(A) \\\\]\",",
+    "name": "Singular Value Ordering\" },",
+    "theorem": "{",
+    "statement": "\\[ A = U \\Sigma V^\\top \\]",
+    "proofSketch": "The proof involves showing that the SVD decomposition is unique and that the singular values are non-negative.\" },",
+    "intuition": "The SVD decomposition reveals the rank, null space, and range of a matrix. This theorem highlights the importance of the singular value ordering in understanding these properties.",
+    "realWorldApplications": [
+      "Dimensionality reduction",
+      "Principal component analysis"
+    ],
+    "tags": [
+      "Singular Value Decomposition",
+      "Matrix Decompositions",
+      "Linear Algebra"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:46:40.873Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_properties_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "problem": "{",
+    "statementHtml": "Find the rank and null space of a matrix A using its SVD decomposition.",
+    "hints": [
+      "Think about how the singular values relate to the matrix's rank.",
+      "The null space is spanned by the vectors in the left singular matrices.",
+      "Use the fact that the right singular vectors are orthonormal."
+    ],
+    "solutionHtml": " Suppose A has SVD decomposition $A = U \\Sigma V^T$. The rank of A is equal to the number of non-zero singular values. Therefore, the rank of A is $\\mathrm{rank}(A) = k$, where $k$ is the number of non-zero entries in $\\Sigma$.  The null space of A is spanned by the vectors in the left singular matrices. Since $U$ has orthonormal columns, its null space is trivial ($\\mathrm{nullity}(U) = 0$). Therefore, the null space of A is also trivial.  The range of A is equal to the column space of V (since $\\Sigma V^T$ is the product of two matrices with orthonormal columns). The dimension of this subspace is $k$, which is the rank of A. \",",
+    "answerShort": "Rank: k, Null Space: trivial\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:46:59.954Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_properties_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "problem": {
+      "statementHtml": "<p>Given a matrix A with SVD decomposition UΣV<sup>T</sup>, prove that the rank of A is equal to the number of non-zero singular values in Σ.</p>",
+      "hints": [
+        "Consider the definition of rank and the properties of SVD.",
+        "Think about how the null space and range of A relate to the columns of U and V.",
+        "Use the fact that Σ is a diagonal matrix to simplify your calculation."
+      ],
+      "solutionHtml": "<p>To prove this, we can start by recalling that the rank of A is equal to the dimension of its column space. From SVD, we know that the column space of A is spanned by the columns of V.</p><p>Since Σ is diagonal, it has no effect on the null space or range of A, so we can focus on the columns of V.</p><p>The rank of A is then equal to the number of non-zero singular values in Σ, since these correspond to the linearly independent columns of V.</p>",
+      "answerShort": "The answer is..."
+    },
+    "commonMistakes": [
+      "Forgetting that Σ is diagonal and only considering the null space or range.",
+      "Not recognizing that the number of non-zero singular values in Σ corresponds to the dimension of the column space."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:47:17.690Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_properties_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "problem": "{",
+    "statementHtml": "Find the rank and null space of a matrix <code>A</code> using its SVD decomposition.",
+    "hints": [
+      "Recall that the rank of a matrix is equal to the number of singular values greater than zero.",
+      "The null space of a matrix is spanned by the right-singular vectors corresponding to zero singular values.",
+      "Use the fact that the range of a matrix is spanned by its column vectors."
+    ],
+    "solutionHtml": "<p>Let <code>A</code> be an <code>m \\* n</code> matrix with SVD decomposition <code>A = U &Sigma; V<sup>T</sup></code>. The rank of <code>A</code> is equal to the number of singular values greater than zero, which is equal to the rank of <code>&Sigma;</code>.</p><p>The null space of <code>A</code> is spanned by the right-singular vectors corresponding to zero singular values. Since the diagonal entries of <code>&Sigma;</code> are the singular values, the null space of <code>A</code> is equal to the column space of <code>V</code>.</p><p>The range of <code>A</code> is spanned by its column vectors, which are the columns of <code>V</code>. Therefore, the range of <code>A</code> is equal to the column space of <code>V</code>.</p>\",",
+    "answerShort": "The rank and null space of <code>A</code> can be found from its SVD decomposition.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:47:40.236Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_svd_properties_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "svd_properties",
+    "problem": {
+      "statementHtml": "<p>Given a matrix A with SVD decomposition USV<sup>T</sup>, show that the rank of A is equal to the number of non-zero singular values.</p>",
+      "hints": [
+        "Think about the geometric interpretation of the SVD.",
+        "Consider the relationship between the null space and range of A.",
+        "Use the fact that the rank of a matrix is equal to the dimension of its column space."
+      ],
+      "solutionHtml": "<p>To prove this, we can start by noting that the rank of A is equal to the number of columns in U.</p><p>Since USV<sup>T</sup> is an SVD decomposition, we know that SV<sup>T</sup> has only non-zero singular values on its diagonal.</p><p>This means that the range of A (which is spanned by the columns of V) has dimension equal to the number of non-zero singular values.</p><p>By definition, this is also the rank of A.</p>",
+      "answerShort": "The rank of A is equal to the number of non-zero singular values."
+    },
+    "commonMistakes": [
+      "Forgetting that the SVD decomposition is unique up to permutation and scaling.",
+      "Not recognizing that the null space of A is orthogonal to its range."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:47:57.815Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

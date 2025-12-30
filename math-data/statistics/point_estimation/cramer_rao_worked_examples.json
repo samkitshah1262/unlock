@@ -1,0 +1,146 @@
+[
+  {
+    "id": "stat_wex_cramer_rao_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound: A Step-by-Step Guide",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Cramér-Rao lower bound (CR bound) to a specific problem.</p>",
+    "formula": {
+      "latex": "\\[ \\frac{\\mathbb{E}\\left[(\\hat{\\theta} - \\theta)^2\\right]}{\\Var(\\hat{\\theta})} \\\\geq \\frac{1}{nI(\\theta; X)} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a random sample of size n from a normal distribution with mean θ and variance σ^2. We want to find the minimum variance unbiased estimator (MVUE) for θ.</p>",
+      "hints": [
+        "Hint: Start by finding the MVUE"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the CR bound for the sample mean \\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the score function",
+          "mathHtml": "\\[ s(x; \\theta) = -\\frac{d}{d\\theta} \\log p(x | \\theta) \\\\= \\frac{x-\\theta}{\\sigma^2} \\]",
+          "explanation": "The score function measures how much the log likelihood changes when θ is perturbed."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the variance of the score",
+          "mathHtml": "\\[ V(s) = \\mathbb{E}\\left[(s(x; \\theta))^2\\right] \\\\= \\frac{1}{n\\sigma^4} \\]",
+          "explanation": "We're interested in the variance of the score, which will help us find the CR bound."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the CR bound",
+          "mathHtml": "\\[ \\Var(\\bar{x}) \\\\geq \\frac{1}{nI(\\theta; X)} \\\\= \\frac{\\sigma^2}{n} \\]",
+          "explanation": "Now we can apply the CR bound to find a lower bound for the variance of the sample mean."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the MVUE",
+          "mathHtml": "\\[ \\hat{\\theta} = \\bar{x} \\]",
+          "explanation": "Since we've found the CR bound, we can conclude that the sample mean is an MVUE for θ."
+        }
+      ],
+      "finalAnswer": "The CR bound for the sample mean is \\frac{\\sigma^2}{n}."
+    },
+    "intuition": "<p>The Cramér-Rao lower bound provides a fundamental limit on the precision of any unbiased estimator. By applying it to our problem, we've shown that the sample mean is an MVUE and has a minimum variance.</p>",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:53:58.816Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cramer_rao_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound",
+    "contentHtml": "<p>In this worked example, we'll explore how to apply the Cramér-Rao Lower Bound (CRB) to find a variance bound for an estimator.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\frac{1}{\\\\text{Var}[\\hat{\\\\theta}]} \\geq -E\\\\left[\\\\frac{\\\\partial}{\\\\partial \\\\theta} l(\\\\theta; x)\\\\right]^2 \\\\]\",",
+    "name": "Cramér-Rao Lower Bound\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random variable X ~ N(\\mu, \\sigma^2). We want to find the CRB for estimating \\mu.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the log-likelihood function\", \"mathHtml\": \"\\\\[ l(\\\\theta; x) = -\\\\frac{1}{2}\\\\log(2\\\\pi\\\\sigma^2) - \\\\frac{(x-\\\\mu)^2}{2\\\\sigma^2} \\\\]\", \"explanation\": \"This is the starting point for our CRB calculation.\" }, {\"stepNumber\": 2, \"description\": \"Take the derivative of the log-likelihood function with respect to \\\\theta\", \"mathHtml\": \"\\\\[ \\\\frac{\\\\partial}{\\\\partial \\\\mu} l(\\\\mu; x) = -\\\\frac{x-\\\\mu}{\\\\sigma^2} \\\\]\", \"explanation\": \"This gives us the score function.\" }, {\"stepNumber\": 3, \"description\": \"Find the expected value of the score function\", \"mathHtml\": \"\\\\[ E\\\\left[\\\\frac{\\\\partial}{\\\\partial \\\\mu} l(\\\\mu; X)\\\\right] = -E\\\\left[\\\\frac{X-\\\\mu}{\\\\sigma^2}\\\\right] \\\\]\", \"explanation\": \"This is the expected value of the score function, which we'll use in our CRB calculation.\" }, {\"stepNumber\": 4, \"description\": \"Use the CRB formula\", \"mathHtml\": \"\\\\[ \\\\frac{1}{\\\\text{Var}[\\hat{\\\\mu}]} \\geq E\\\\left[\\\\frac{(X-\\\\mu)^2}{\\\\sigma^2}\\\\right] \\\\]\", \"explanation\": \"This is our final answer, which gives us the CRB for estimating \\\\mu.\" } ],",
+    "finalAnswer": "\\\\[ \\\\text{Var}[\\hat{\\\\mu}] \\geq \\\\frac{\\\\sigma^2}{N} \\\\]\" },",
+    "intuition": "The Cramér-Rao Lower Bound provides a fundamental limit on the variance of any unbiased estimator, making it a crucial concept in statistical inference.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:54:30.375Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_cramer_rao_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "cramer_rao",
+    "title": "Cramér-Rao Lower Bound: Variance Bound and Efficiency",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Cramér-Rao lower bound (CRB) to find a variance bound for an estimator.</p>",
+    "formula": {
+      "latex": "\\[ \\text{CRB}(\\hat{\\theta}) = \\frac{1}{n} + \\left(\\frac{1}{n^2}\\right) \\sum_{i=1}^{n-1} (i+1)^{-2} \\]",
+      "name": "Cramér-Rao Lower Bound"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a random sample X_1, ..., X_n from a normal distribution N(\\theta, 1). We want to find the variance bound for an unbiased estimator \\hat{\\theta}.</p>",
+      "hints": [
+        "Hint: Use the CRB formula"
+      ],
+      "solutionHtml": "<p>We'll use the CRB formula:</p><ul><li>Find the Fisher information matrix I(\\theta)</li><li>Evaluate the inverse of I(\\theta) at \\hat{\\theta}</li><li>Use the result to find the variance bound</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a random sample X_1, ..., X_n from N(\\theta, 1). We want to find the variance bound for the sample mean \\hat{\\theta} = (X_1 + ... + X_n)/n.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the Fisher information matrix I(\\theta)",
+          "mathHtml": "\\[ I(\\theta) = -E\\left[\\frac{\\partial^2 \\ln f(X; \\theta)}{\\partial \\theta^2}\\right] = n \\]",
+          "explanation": "The Fisher information matrix measures the amount of information about \\theta contained in the data."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the inverse of I(\\theta) at \\hat{\\theta}",
+          "mathHtml": "\\[ I^{-1}(\\hat{\\theta}) = \\frac{1}{n} \\]",
+          "explanation": "The inverse of the Fisher information matrix gives us the variance bound."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the result to find the variance bound",
+          "mathHtml": "\\[ \\text{CRB}(\\hat{\\theta}) = \\frac{1}{n} + \\left(\\frac{1}{n^2}\\right) \\sum_{i=1}^{n-1} (i+1)^{-2} \\]",
+          "explanation": "The CRB formula gives us the variance bound for the sample mean."
+        }
+      ],
+      "finalAnswer": "The variance bound is..."
+    },
+    "intuition": "The Cramér-Rao lower bound provides a fundamental limit on the precision of an estimator.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:55:05.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

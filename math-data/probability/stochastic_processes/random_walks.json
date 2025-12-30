@@ -1,0 +1,373 @@
+[
+  {
+    "id": "prob_con_random_walks_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Random Walks",
+    "contentHtml": "<p>A random walk is a stochastic process that moves in discrete steps along a line or in space.</p><p>Imagine flipping a coin to decide whether to move left or right at each step, with equal probability of either outcome. This simple concept has far-reaching implications in many fields, including finance and machine learning.</p>",
+    "formula": {
+      "latex": "\\(x_n = x_{n-1} + \\epsilon\\)",
+      "name": "One-step transition",
+      "variants": []
+    },
+    "intuition": "Random walks are a great way to model real-world phenomena where uncertainty is involved. They can help us understand and predict the behavior of complex systems.",
+    "realWorldApplications": [
+      "Portfolio optimization in finance",
+      "Modeling user behavior in recommendation systems"
+    ],
+    "commonMistakes": [
+      "Assuming the walk always returns to its starting point",
+      "Ignoring the impact of boundary conditions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:37:21.850Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_random_walks_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Random Walks",
+    "subtitle": "Exploring chance and uncertainty",
+    "contentHtml": "<p>A random walk is a mathematical process that models a sequence of independent and identically distributed (i.i.d.) random steps. Each step can be thought of as moving either up or down by one unit, with equal probability.</p><p>This simple yet powerful concept has far-reaching implications in fields like finance, biology, and computer science.</p>",
+    "formula": {
+      "latex": "\\[ X_n = \\sum_{i=1}^n Y_i \\]",
+      "name": "Random Walk Formula",
+      "variants": []
+    },
+    "intuition": "Think of a random walk as a game where you flip a coin to decide whether to move up or down. The more steps you take, the more likely you are to be close to your starting point.",
+    "visualDescription": "A simple diagram showing a sequence of random steps could help illustrate this concept",
+    "commonMistakes": [
+      "Assuming the walk will always return to the origin"
+    ],
+    "realWorldApplications": [
+      "Simulating stock prices in finance",
+      "Modeling population growth in biology"
+    ],
+    "tags": [
+      "random processes",
+      "stochastic processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:37:40.239Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_random_walks_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Random Walks",
+    "contentHtml": "<p>A random walk is a stochastic process that moves in discrete steps along a line or in higher-dimensional space.</p><p>At each step, the walker has an equal chance of moving left or right (or up or down in higher dimensions). This simple process has many surprising properties and applications.</p>",
+    "formula": {
+      "latex": "\\[ S_n = \\sum_{i=1}^n X_i \\]",
+      "name": "Random Walk Sum"
+    },
+    "intuition": "The key insight is that the walker's position at any given step is a sum of independent random variables. This allows us to use tools from probability theory, like the Central Limit Theorem.",
+    "realWorldApplications": [
+      "Gambler's ruin problem in finance",
+      "Random walk models for stock prices"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that each step is an independent event"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:37:55.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_random_walks_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Random Walks: Reflection Principle",
+    "contentHtml": "<p>The reflection principle is a fundamental concept in random walks.</p>",
+    "formula": {
+      "latex": "\\[P(x_n = i) = \\frac{1}{2^{|x_0 - i|}}\\]",
+      "name": ""
+    },
+    "theorem": {
+      "statement": "\\[P(x_n = i | x_{n-1} = j) = \\begin{cases} P(x_1 = i | x_0 = j), & n > 1 \\\\ \\frac{1}{2}, & n = 1 \\end{cases}\\]",
+      "proofSketch": "The proof involves showing that the probability of reaching a given point is equal to the probability of reflecting back from that point."
+    },
+    "intuition": "The reflection principle states that the probability of moving forward or backward in a random walk is equal, given the current position. This has important implications for understanding the behavior of random walks.",
+    "realWorldApplications": [
+      "Gambler's ruin problem"
+    ],
+    "tags": [
+      "random walks",
+      "stochastic processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:38:13.322Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_random_walks_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Random Walk Theorem",
+    "contentHtml": "<p>The Random Walk Theorem states that the probability of a simple random walk returning to its starting point is 1.</p>",
+    "formula": "{",
+    "latex": "\\[ P(X_n = 0) = 1 \\]",
+    "name": "Simple Random Walk\" },",
+    "theorem": "{",
+    "statement": "\\\\[ P(X_n = 0) = 1, \\quad \\forall n \\in \\\\mathbb{N} \\\\]\",",
+    "proofSketch": "The proof involves showing that the probability of returning to the starting point is equal to the probability of not returning. This is done by considering the number of steps taken and using induction.\" },",
+    "intuition": "This theorem provides a fundamental understanding of random walks, which are used in many applications such as finance and computer networks.",
+    "realWorldApplications": [
+      "Gambler's Ruin Problem",
+      "Reflection Principle"
+    ],
+    "tags": [
+      "Random Walks",
+      "Probability Theory"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:38:30.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_random_walks_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "A gambler starts with $x$ units of money and repeatedly wins or loses $1 each time, until they either reach $0 (bankruptcy) or $y (riches). What is the probability that they will eventually reach $y$?",
+    "hints": [
+      "Think about the number of ways to get from $x$ to $y$.",
+      "Consider the reflection principle: what happens if we 'reflect' the walk at $0$?",
+      "Use the fact that each step is independent and identically distributed."
+    ],
+    "solutionHtml": "Let's define a random variable $S_n = x + \\sum_{i=1}^n X_i$, where $X_i$ are i.i.d. Bernoulli variables with $P(X_i = 1) = p$. We want to find the probability that $S_n = y$ for some $n$. By the reflection principle, this is equivalent to finding the probability that $-S_{2n} = -y$ for some $n$, which is the same as finding the probability that $S_{2n} = y$. This can be done using the formula for the expected value of a random walk.\",",
+    "answerShort": "The answer depends on the specific values of $x, y, p$, but it's generally a function of these parameters.\" },",
+    "commonMistakes": [
+      "Forgetting to use the reflection principle",
+      "Not considering the boundary cases"
+    ],
+    "realWorldApplications": [
+      "Understanding random walks is crucial in finance and economics for modeling stock prices and portfolio risk."
+    ],
+    "tags": [
+      "random walk",
+      "gambler's ruin",
+      "reflection principle"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:38:54.773Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_random_walks_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "<p>A random walker starts at position 0 and moves either +1 or -1 step at a time with equal probability. What is the expected value of the maximum distance from the origin after <i>n</i> steps?</p>",
+    "hints": [
+      "Think about the gambler's ruin problem.",
+      "Consider the reflection principle.",
+      "Use induction to prove the result for even <i>n</i>, then extend to odd <i>n</i>"
+    ],
+    "solutionHtml": "<p>To solve this, we can use the reflection principle. Let <i>M_n</i> be the maximum distance from the origin after <i>n</i> steps.</p>\\n<p>We have that <i>M_1 = 0</i>, and for <i>n > 1</i>, <i>M_n = \\max\\{M_{n-1} + 1, -M_{n-1} + 1\\}</i>.</p>\\n<p>Now, we can use induction to prove that the expected value of <i>M_n</i> is <i>n/2</i>. For the base case, <i>M_0 = 0</i>, so the expected value is 0.</p>\\n<p>For the inductive step, assume that the expected value of <i>M_{n-1}</i> is <i>(n-1)/2</i>. Then,</p>\\n<p><i>E[M_n] = E[\\max\\{M_{n-1} + 1, -M_{n-1} + 1\\}]</i>.</p>\\n<p>We can use the reflection principle to get that <i>E[M_n] = (1/2)E[M_{n-1} + 1] + (1/2)E[-M_{n-1} + 1]</i>.</p>\\n<p>Using our inductive hypothesis, we get</p>\\n<p><i>E[M_n] = (1/2)((n-1)/2) + (1/2)(-(n-1)/2) + 1</i>.</p>\\n<p>This simplifies to <i>E[M_n] = n/2</i>, as desired.</p>\",",
+    "answerShort": "<i>n/2</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:39:28.773Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_random_walks_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "A simple random walk starts at position 0 and moves either up or down by 1 unit at each step. What is the probability that it reaches a given target position after <i>n</i> steps?",
+    "hints": [
+      "Consider the probability of reaching the target from the starting point",
+      "Think about the reflection principle"
+    ],
+    "solutionHtml": "To solve this problem, we can use the reflection principle. Let's denote the event 'reaching the target' as <i>T</i>. We want to find P(<i>T</i>).<br><br>By the reflection principle, we have:<br>\\[P(T) = \\frac{1}{2} P(T | \\text{first step up}) + \\frac{1}{2} P(T | \\text{first step down})\\]<br><br>Now, let's consider the first step. If it's up, we're one step away from the target; if it's down, we're two steps away. We can use this to write down the conditional probabilities:<br>\\[P(T | \\text{first step up}) = P(T) = \\frac{1}{2} P(T | \\text{first step down}) + \\frac{1}{2}\\]<br><br>We can continue this process until we reach the target. The probability of reaching the target is then the product of these conditional probabilities.<br><br>For example, if the target is 3 steps away, the probability would be:<br>\\[\\left(\\frac{1}{2} \\cdot \\frac{1}{2}\\right) \\left(\\frac{1}{2} + \\frac{1}{2}\\right) = \\frac{1}{4}\\]<br><br>The final answer is then the sum of these probabilities for all possible paths to the target.\",",
+    "answerShort": "The probability is given by the product of conditional probabilities.\" },",
+    "commonMistakes": [
+      "Forgetting to use the reflection principle",
+      "Not considering the correct conditional probabilities"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:39:57.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_random_walks_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk Problem",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple random walk problem.</p>",
+    "problem": {
+      "statementHtml": "<p>A particle moves one step to the right with probability 0.5 and one step to the left with probability 0.5. What is the expected number of steps it takes for the particle to reach the origin?</p>",
+      "hints": [
+        "Think about the reflection principle.",
+        "Consider the gambler's ruin problem."
+      ],
+      "solutionHtml": "<p>We can solve this problem by using the reflection principle.</p>",
+      "answerShort": "The answer is 2."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A particle moves one step to the right with probability 0.5 and one step to the left with probability 0.5. What is the expected number of steps it takes for the particle to reach the origin?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the random variable X as the position of the particle after n steps.",
+          "mathHtml": "\\[X_n = \\sum_{i=1}^n Y_i\\]",
+          "explanation": "This represents the cumulative sum of the random variables Yi, which are either +1 or -1."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the reflection principle to find the expected value of X.",
+          "mathHtml": "\\[E[X_n] = E[Y_1 + \\cdots + Y_n]\\]",
+          "explanation": "We can use the reflection principle to find the expected value of each Yi and then sum them up."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the expected value of each Yi.",
+          "mathHtml": "\\[E[Y_i] = 0.5(1) + 0.5(-1) = 0\\]",
+          "explanation": "Each Yi is equally likely to be +1 or -1, so their expected values are both 0."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the expected value of X.",
+          "mathHtml": "\\[E[X_n] = E[Y_1 + \\cdots + Y_n] = n(0) = 0\\]",
+          "explanation": "Since each Yi has an expected value of 0, the expected value of their sum is also 0."
+        },
+        {
+          "stepNumber": 5,
+          "description": "However, we know that the particle will eventually reach the origin.",
+          "mathHtml": "\\[\\]\\]",
+          "explanations": "We can use this information to find the expected number of steps it takes for the particle to reach the origin."
+        }
+      ],
+      "finalAnswer": "The answer is 2."
+    },
+    "intuition": "In a random walk, the particle will eventually return to the starting point due to the reflection principle.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:40:36.463Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_random_walks_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk Problem",
+    "contentHtml": "<p>In this example, we'll walk through solving a simple random walk problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the probability that a simple random walk starting at position 0 reaches 5 in exactly 3 steps.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count the number of possible paths\", \"mathHtml\": \"\\[P(3) = \\sum_{i=0}^2 P(i)\\]\", \"explanation\": \"We need to count the total number of possible paths that reach position 5 in exactly 3 steps.\"}, {\"stepNumber\": 2, \"description\": \"Count the number of paths that don't reach 5\", \"mathHtml\": \"\\[P(0) + P(1) + P(2)\\]\", \"explanation\": \"We subtract the number of paths that don't reach position 5 in exactly 3 steps.\"}, {\"stepNumber\": 3, \"description\": \"Find the probability of a single step\", \"mathHtml\": \"\\[P(\\text{up}) = \\frac{1}{2}, P(\\text{down}) = \\frac{1}{2}\\]\", \"explanation\": \"We need to find the probability of moving up or down by 1 in each step.\"}, {\"stepNumber\": 4, \"description\": \"Combine probabilities\", \"mathHtml\": \"\\[P(3) = \\sum_{i=0}^2 P(i)\\left(\\frac{1}{2}\\right)^3\\]\", \"explanation\": \"We combine the probabilities of moving up or down by 1 in each step to find the total probability.\"} ],",
+    "finalAnswer": "\\[P(3) = \\frac{10}{8}\\]\" },",
+    "intuition": "The key insight is that we can break down the problem into smaller sub-problems and combine their probabilities.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:41:04.293Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_random_walks_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "title": "Solving a Simple Random Walk",
+    "contentHtml": "<p>In this example, we'll walk through solving a simple random walk problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Consider a simple random walk that starts at position 0. At each step, the walker moves either 1 unit to the right or 1 unit to the left with equal probability.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the recursive formula for the probability of being at position k after n steps.\", \"mathHtml\": \"\\[P_k(n) = \\frac{1}{2} P_{k-1}(n-1) + \\frac{1}{2} P_{k+1}(n-1)\\]\", \"explanation\": \"We're using the recursive formula to relate the probability of being at position k after n steps to the probabilities of being at positions k-1 and k+1 after n-1 steps.\"}, {\"stepNumber\": 2, \"description\": \"Find the base case for the recursion.\", \"mathHtml\": \"\\[P_0(0) = 1\\]\", \"explanation\": \"The walker starts at position 0, so the probability of being there is 1.\"}, {\"stepNumber\": 3, \"description\": \"Use induction to prove that the formula holds for all n.\", \"mathHtml\": \"\", \"explanation\": \"We'll assume the formula holds for some arbitrary n and show it also holds for n+1.\"}, {\"stepNumber\": 4, \"description\": \"Solve the recurrence relation using iteration or matrix exponentiation.\", \"mathHtml\": \"\\[P_k(n) = \\frac{1}{2^{n+1}} \\binom{n}{\\frac{k+n}{2}}\\]\", \"explanation\": \"We can solve the recurrence relation using iteration or matrix exponentiation to find a closed-form expression for the probability.\"} ],",
+    "finalAnswer": "The final answer is the probability distribution P_k(n) for all k and n.\" },",
+    "intuition": "The key insight here is that the random walk problem can be solved recursively, with each step building on the previous one.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:41:34.494Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

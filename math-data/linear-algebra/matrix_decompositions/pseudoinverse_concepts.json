@@ -1,0 +1,92 @@
+[
+  {
+    "id": "la_con_pseudoinverse_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra that helps us solve least squares problems.</p><p>Given a matrix A and a vector b, we want to find the best possible solution x that minimizes the squared error ||Ax - b||^2.</p>",
+    "formula": {
+      "latex": "\\[A^\\dagger = (A^T A)^{-1} A^T \\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "intuition": "The pseudoinverse is like a 'reverse' of the matrix, allowing us to solve for x in the least squares problem.",
+    "realWorldApplications": [
+      "Solving regression problems in machine learning"
+    ],
+    "commonMistakes": [
+      "Thinking the pseudoinverse always exists or is unique"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:53:32.663Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_pseudoinverse_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra that helps us solve least squares problems.</p><p>Given a matrix A and a vector b, we want to find the vector x that minimizes the squared error ||Ax - b||^2. The pseudoinverse A+ provides an efficient way to compute this solution.</p>",
+    "formula": "{",
+    "latex": "\\[A^+ = (A^T A)^{-1} A^T\\]\",",
+    "name": "Moore-Penrose Pseudoinverse\" },",
+    "intuition": "The pseudoinverse is like a 'best guess' for the inverse of A, even when A is singular or nearly singular.",
+    "realWorldApplications": [
+      "In machine learning, the pseudoinverse is used in regularization techniques to prevent overfitting."
+    ],
+    "commonMistakes": [
+      "Don't confuse the pseudoinverse with the true inverse; they're only equal if A is invertible."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:53:48.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_pseudoinverse_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a powerful tool in linear algebra that allows us to solve least squares problems and find the best approximate solution when an exact solution does not exist.</p><p>Given a matrix A, we can decompose it into its singular value decomposition (SVD), which consists of three matrices: U, Σ, and V. The Moore-Penrose pseudoinverse is then defined as Σ^+V^T, where Σ^+ is the pseudoinverse of Σ.</p>",
+    "formula": {
+      "latex": "\\[A^{\\dagger} = \\sigma^+ V^T\\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "intuition": "The Moore-Penrose pseudoinverse is like a 'best guess' solution when an exact solution doesn't exist. It's based on the SVD decomposition, which helps us understand the structure of the matrix and find the most accurate approximate solution.",
+    "realWorldApplications": [
+      "Solving ill-posed problems in computer vision",
+      "Finding the best approximate solution for linear regression"
+    ],
+    "commonMistakes": [
+      "Thinking the pseudoinverse is only used for solving systems of equations",
+      "Not understanding that it's an approximation, not an exact solution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:54:06.042Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

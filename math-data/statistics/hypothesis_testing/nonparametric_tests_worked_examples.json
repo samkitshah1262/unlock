@@ -1,0 +1,210 @@
+[
+  {
+    "id": "stat_wex_nonparametric_tests_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "title": "Wilcoxon Rank-Sum Test: A Step-by-Step Guide",
+    "contentHtml": "<p>The Wilcoxon rank-sum test is a nonparametric alternative to the two-sample t-test for comparing distributions between two groups.</p>",
+    "problem": "{",
+    "statementHtml": "Suppose we want to compare the distribution of exam scores between students who attended a workshop and those who did not. We have paired data, where each student has an exam score.",
+    "hints": [
+      "Make sure to rank the scores correctly.",
+      "The test is sensitive to outliers."
+    ],
+    "solutionHtml": "<p>To perform the Wilcoxon rank-sum test, follow these steps:</p>",
+    "answerShort": "Reject H0 if W &lt; 0 or W &gt;= W*\" },",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have the following paired data:",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Rank the scores from lowest to highest.\", \"mathHtml\": \"\\\\[R_1 = 2, R_2 = 3, ..., R_{n+1} = {n+1}\\]\", \"explanation\": \"This step is crucial for the test.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the sum of the ranks for each group.\", \"mathHtml\": \"\\\\[W_0 = \\\\sum_{i=1}^{m} R_i, W_1 = \\\\sum_{j=m+1}^{n+m} R_j\\\\]\", \"explanation\": \"This step is used to calculate the test statistic.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the critical region.\", \"mathHtml\": \"\\\\[W* = Φ^{-1}(1-α) \\\\cdot (n+1)\\\\]\", \"explanation\": \"The critical region depends on the significance level and sample size.\"} ],",
+    "finalAnswer": "Reject H0 if W &lt; 0 or W &gt;= W*\" },",
+    "intuition": "The Wilcoxon rank-sum test is a powerful tool for comparing distributions between two groups. By ranking the scores, we can identify any differences in the distribution of exam scores.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:15:42.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_nonparametric_tests_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "title": "Wilcoxon Rank-Sum Test",
+    "contentHtml": "<p>The Wilcoxon rank-sum test is a nonparametric statistical test used to compare two independent groups.</p>",
+    "formula": {
+      "latex": "\\[T = \\sum_{i=1}^{n_1} R_i + \\sum_{j=1}^{n_2} R_j\\]",
+      "name": "Wilcoxon Rank-Sum Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to compare the average ranking of two different treatments for a certain disease. We collect data on the rankings and want to determine if there is a significant difference between the two treatments.</p>",
+      "hints": [
+        "Hint: The Wilcoxon rank-sum test is used when the data are not normally distributed."
+      ],
+      "solutionHtml": "<p>To solve this problem, we will follow these steps:</p><ul><li>Rank the data from both groups together, giving each observation a unique ranking.</li><li>Calculate the sum of the rankings for each group.</li><li>Compare the sums using the Wilcoxon rank-sum statistic formula.</li></ul>",
+      "answerShort": "Reject the null hypothesis if T is significant."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have two groups of patients, one receiving treatment A and the other receiving treatment B. We collect data on their rankings for a certain symptom:</p><ul><li>Treatment A: 2, 4, 7, 9</li><li>Treatment B: 1, 3, 5, 8</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Rank the data from both groups together",
+          "mathHtml": "\\[1, 2, 3, 4, 5, 7, 8, 9\\]",
+          "explanation": "We rank the data to remove any differences in scales between the two treatments."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sum of the rankings for each group",
+          "mathHtml": "\\[T_A = 16, T_B = 15\\]",
+          "explanation": "We calculate the sum of the rankings for each group to compare them."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compare the sums using the Wilcoxon rank-sum statistic formula",
+          "mathHtml": "\\[T = T_A + T_B = 31\\]",
+          "explanation": "We use the Wilcoxon rank-sum statistic formula to compare the sums."
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis if T is significant."
+    },
+    "intuition": "The Wilcoxon rank-sum test helps us determine if there's a difference between two treatments, even when the data aren't normally distributed.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:16:16.728Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_nonparametric_tests_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "title": "Wilcoxon Rank-Sum Test: A Step-by-Step Guide",
+    "contentHtml": "<p>The Wilcoxon rank-sum test is a nonparametric alternative to the two-sample t-test for comparing distributions between two groups.</p>",
+    "problem": "{",
+    "statementHtml": "Suppose we want to compare the distribution of exam scores between students who received A's and those who received B's. We have the following data:<br><table><tr><td>A's</td><td>B's</td></tr><tr><td>75, 80, 85, 90</td><td>60, 65, 70, 75, 80, 85</td></tr></table>",
+    "hints": [
+      "Consider the ranks of the scores rather than their actual values.",
+      "The Wilcoxon test is robust to non-normality and outliers."
+    ],
+    "solutionHtml": "<p>To perform the Wilcoxon rank-sum test:</p><ol><li>Combine the two datasets into one.</li><math>\\[ \\]</math><li>Rank all the scores from lowest to highest, regardless of group membership.</li><math>\\[ \\]</math><li>Calculate the sum of the ranks for each group.</li><math>\\[ \\]</math><li>Compare the sums using a two-tailed test statistic and p-value.</li></ol>\",",
+    "answerShort": "Reject the null hypothesis if the p-value is below a certain significance level.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Using the data above, perform the Wilcoxon rank-sum test to determine whether there's a significant difference in exam scores between students who received A's and those who received B's.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Combine the two datasets\", \"mathHtml\": \"\", \"explanation\": \"This allows us to compare the distributions directly.\"}, {\"stepNumber\": 2, \"description\": \"Rank all the scores\", \"mathHtml\": \"\\(\\text{Ranks: } 1, 2, 3, \\ldots, 14\\)\", \"explanation\": \"We ignore group membership and focus on the relative positions of the scores.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the sum of ranks for each group\", \"mathHtml\": \"\\(\\text{A's: } 76 + 83 + \\ldots = 341\\)\", \"explanation\": \"This step is crucial in determining the test statistic.\"}, {\"stepNumber\": 4, \"description\": \"Compare the sums using a two-tailed test statistic and p-value\", \"mathHtml\": \"\", \"explanation\": \"The p-value will indicate whether the difference between the groups is statistically significant.\"} ],",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:16:47.835Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_nonparametric_tests_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "title": "Wilcoxon Rank-Sum Test: A Step-by-Step Guide",
+    "contentHtml": "<p>The Wilcoxon rank-sum test is a nonparametric alternative to the t-test that's particularly useful when dealing with ordinal or categorical data.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to compare the median scores of two groups: students who received treatment A and those who received treatment B. We have the following data:</p><ul><li>Treatment A: 4, 5, 6, 7, 8</li><li>Treatment B: 3, 4, 5, 6, 9</li></ul>",
+    "hints": [
+      "Consider the distribution of the scores"
+    ],
+    "solutionHtml": "<p>To perform the Wilcoxon rank-sum test, we'll follow these steps:</p>",
+    "answerShort": "Reject the null hypothesis\" },",
+    "workedExample": "{",
+    "problemHtml": "",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Combine the data into a single list\", \"mathHtml\": \"\\\\[4, 3, 5, 6, 7, 8, 9\\\\]\", \"explanation\": \"This helps us ignore any differences in scales between the two groups\"}, {\"stepNumber\": 2, \"description\": \"Rank the combined data\", \"mathHtml\": \"\\\\[1, 2, 3, 4, 5, 6, 7\\\\]\", \"explanation\": \"We're treating this as a single sample, so we can rank all the scores together\"}, {\"stepNumber\": 3, \"description\": \"Calculate the test statistic\", \"mathHtml\": \"\\\\[W = \\\\sum_{i=1}^n (R_i - \\\\frac{n+1}{2})\\\\]\", \"explanation\": \"The Wilcoxon rank-sum test statistic is the sum of the differences between each observation's rank and the median rank\"}, {\"stepNumber\": 4, \"description\": \"Determine the p-value\", \"mathHtml\": \"\\\\[p = \\\\text{Pr}(W \\leq w)\\\\]\", \"explanation\": \"We can use a statistical software or calculator to find the p-value for our test statistic\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "The Wilcoxon rank-sum test is useful when we have ordinal or categorical data and want to compare the distribution of scores between two groups.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:17:15.323Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_nonparametric_tests_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "nonparametric_tests",
+    "title": "Wilcoxon Rank-Sum Test: A Step-by-Step Guide",
+    "contentHtml": "<p>The Wilcoxon rank-sum test is a nonparametric statistical test used to compare two groups based on their ranks.</p>",
+    "formula": {
+      "latex": "\\[ T = \\sum_{i=1}^{n_1} R_i - \\frac{n_1 n_2}{n+1} \\]",
+      "name": "Wilcoxon Rank-Sum Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to compare the average ranks of two groups: a treatment group and a control group. We have the following data:</p><ul><li>Treatment Group: 2, 3, 5, 7</li><li>Control Group: 1, 4, 6, 8</li></ul>",
+      "hints": [
+        "Consider the ranks of the observations"
+      ],
+      "solutionHtml": "<p>To perform the Wilcoxon rank-sum test, we first need to combine the two groups and rank all the observations from lowest to highest:</p><ul><li>1. Control Group: 1, 4, 6, 8</li><li>2. Treatment Group: 2, 3, 5, 7</li></ul>",
+      "answerShort": "The test statistic is -10"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We will now go through the steps of the Wilcoxon rank-sum test:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Combine the two groups and rank all observations",
+          "mathHtml": "\\[ \\text{Ranks: } 1, 2, 3, 4, 5, 6, 7, 8 \\]",
+          "explanation": "This helps us to identify any differences between the two groups"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sum of the ranks for each group",
+          "mathHtml": "\\[ T_1 = 15 + 16 + 20 + 25 \\]",
+          "explanation": "The sum of the ranks for the treatment group is calculated separately from the control group"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the expected value of the test statistic",
+          "mathHtml": "\\[ E[T] = \\frac{n_1 n_2}{n+1} \\]",
+          "explanation": "The expected value of the test statistic is calculated based on the sample sizes and the total number of observations"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the test statistic",
+          "mathHtml": "\\[ T = 15 + 16 + 20 + 25 - \\frac{4*8}{9} \\]",
+          "explanation": "The test statistic is calculated by subtracting the expected value from the sum of the ranks for the treatment group"
+        }
+      ],
+      "finalAnswer": "Reject the null hypothesis"
+    },
+    "intuition": "The Wilcoxon rank-sum test helps us to identify any differences between two groups based on their ranks, without making assumptions about the underlying distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:17:49.438Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

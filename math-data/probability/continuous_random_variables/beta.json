@@ -1,0 +1,598 @@
+[
+  {
+    "id": "prob_con_beta_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The Beta distribution is a continuous probability distribution on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference.</p><p>Intuitively, the Beta distribution represents our uncertainty about the proportion of successes in a sequence of Bernoulli trials. The more data we collect, the more peaked the distribution becomes around the true success rate.</p>",
+    "formula": {
+      "latex": "\\beta(x|\\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}",
+      "name": "Beta density"
+    },
+    "intuition": "The Beta distribution is a natural choice for modeling proportions because it's bounded between 0 and 1, just like the proportion of successes.",
+    "realWorldApplications": [
+      "In Bayesian A/B testing, the Beta distribution serves as a prior for the success rate of each variant."
+    ],
+    "tags": [
+      "probability",
+      "Bayesian inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:25:36.728Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_beta_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference, particularly when modeling proportions or percentages.</p><p>Geometrically, the beta distribution can be thought of as a triangle with its apex at (0,0) and its base at (1,1). The mode of the distribution is located at the midpoint of this triangle.</p>",
+    "formula": {
+      "latex": "\\beta(x|\\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}",
+      "name": "Beta Distribution"
+    },
+    "intuition": "The beta distribution is a flexible model for proportions that can be used in a wide range of applications, from modeling user engagement to estimating the effectiveness of marketing campaigns.",
+    "realWorldApplications": [
+      "Estimating the proportion of users who will engage with an app after installing it"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the beta distribution is defined on [0,1]"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:25:54.560Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_beta_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference, particularly when modeling proportions or probabilities.</p><p>Geometrically, the beta distribution can be visualized as a triangle with its base at 0 and its apex at 1. The mode of the distribution is located at the center of the triangle, which makes sense since it's a symmetric distribution around 0.5.</p>",
+    "formula": {
+      "latex": "\\text{Beta}(x|\\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}",
+      "name": "Beta Density"
+    },
+    "realWorldApplications": [
+      "In natural language processing, the beta distribution is used to model the probability of a word being part-of-speech tagged as a noun or verb."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the mode is at the center"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:26:11.821Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_beta_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The Beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference and has numerous applications in machine learning.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of user preferences for two products. We want to model the probability that a user prefers product A over product B.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the parameters",
+          "mathHtml": "\\[\\alpha = \\text{number of users preferring A}, \\beta = \\text{number of users preferring B}\\]",
+          "explanation": "We need to specify the number of users with each preference."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the probability density",
+          "mathHtml": "\\[f(x | \\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]",
+          "explanation": "We use the Beta distribution to model the user preferences."
+        }
+      ],
+      "finalAnswer": "\\[f(x | \\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]"
+    },
+    "intuition": "The Beta distribution is a flexible model for continuous random variables on the interval [0,1]. It's particularly useful when modeling proportions or probabilities.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:26:37.980Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_beta_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)} \\]",
+      "name": "Beta Distribution Formula"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to model the probability of a user clicking on an ad. We have prior knowledge that 20% of users will click without seeing the ad.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Choose suitable values for \\alpha and \\beta",
+          "mathHtml": "\\[\\alpha = 2, \\beta = 5 \\]",
+          "explanation": "We want a skewed distribution with most mass near 0"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The beta distribution is useful when modeling proportions or probabilities that are constrained to the interval [0,1].",
+    "realWorldApplications": [
+      "Modeling user engagement in online advertising"
+    ],
+    "tags": [
+      "probability",
+      "Bayesian inference",
+      "conjugate prior"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:26:58.561Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_beta_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference.</p>",
+    "formula": {
+      "latex": "\\[ f(x | \\alpha, \\beta) = \\frac{1}{B(\\alpha, \\beta)} x^{\\alpha-1} (1-x)^{\\beta-1} \\]",
+      "name": "Beta Distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin with an unknown bias. We observe the outcome of 10 flips, and it's heads 7 times.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Update our prior distribution",
+          "mathHtml": "\\[ f(x | \\alpha_0, \\beta_0) = ... \\]",
+          "explanation": "We use Bayes' theorem to update the prior with the likelihood of observing 7 heads out of 10 flips."
+        }
+      ],
+      "finalAnswer": "The updated distribution is..."
+    },
+    "intuition": "The beta distribution captures our uncertainty about a probability value, and it's particularly useful when we have limited data.",
+    "realWorldApplications": [
+      "In natural language processing, the beta distribution can be used to model the prior distribution of word frequencies."
+    ],
+    "tags": [
+      "probability",
+      "Bayesian inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:27:21.111Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_beta_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Beta Distribution",
+    "contentHtml": "<p>The beta distribution is a continuous probability distribution defined on the interval [0,1]. It's often used as a conjugate prior in Bayesian inference.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]",
+      "name": "Beta Distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X that represents the proportion of positive reviews for a new product. We want to model this distribution.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the parameters",
+          "mathHtml": "",
+          "explanation": "We need to specify the values of \\alpha and \\beta."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a prior",
+          "mathHtml": "",
+          "explanation": "We can use the beta distribution as our prior since it's defined on [0,1]."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "<p>The beta distribution is useful when modeling proportions or percentages. It's also a conjugate prior for binomial data.</p>",
+    "realWorldApplications": [
+      "In natural language processing, the beta distribution can be used to model the proportion of positive/negative sentiments in text."
+    ],
+    "tags": [
+      "probability",
+      "bayesian inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:27:43.156Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with beta distribution Beta(&alpha;, &beta;). Find the probability density function (PDF) of X.</p>",
+    "hints": [
+      "<p>The PDF is proportional to the power of the numerator and denominator.</p>",
+      "<p>Use the definition of the beta distribution and the fact that the integral of the PDF over its support must equal 1.</p>",
+      "<p>Compare your answer with the standard form of the beta distribution's PDF.</p>"
+    ],
+    "solutionHtml": "<p>The PDF of X is given by</p>\\[f(x) \\propto x^{\\alpha - 1} (1-x)^{\\beta - 1}\\]<p>for <i>x &in; [0, 1]</i>.</p>\",",
+    "answerShort": "x^α-1(1-x)β-1\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:00.862Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": {
+      "statementHtml": "Find the expected value of a random variable X~Beta(α, β) on [0,1].",
+      "hints": [
+        "Recall that E[X] = ∫[0,1] x f(x) dx.",
+        "The Beta distribution has a density function f(x) = (x^(α-1)(1-x)^(β-1))/B(α, β).",
+        "Use the fact that B(α, β) is the beta function."
+      ],
+      "solutionHtml": "\nTo find the expected value, we integrate x times the Beta density function:\n\n\\[ E[X] = \\int_0^1 x \\frac{x^{\\alpha-1} (1-x)^{\\beta-1}}{B(\\alpha, \\beta)} dx \\]\n\nWe can rewrite this as:\n\n\\[ E[X] = \\frac{1}{B(\\alpha, \\beta)} \\int_0^1 x^{\\alpha} (1-x)^{\\beta-1} dx \\]\n\nThis is a beta function! So we have:\n\n\\[ E[X] = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)} \\]\n\nThe final answer is: <i>E[X]</i> = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)}.\n",
+      "answerShort": "<i>E[X]</i> = \\frac{B(x+1, \\beta)}{B(\\alpha, \\beta)}"
+    },
+    "commonMistakes": [
+      "Forgetting to use the beta function property.",
+      "Not recognizing the integral as a beta function."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:25.191Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "<p>Find the probability density function (PDF) of a beta distribution with parameters $α$ and $β$, denoted as <i>Beta(α, β)</i>.</p>",
+    "hints": [
+      "Remember that the beta distribution is defined on the interval [0, 1].",
+      "Think about how you can use the gamma function to simplify the expression.",
+      "Don't forget to normalize the PDF."
+    ],
+    "solutionHtml": "<p>To find the PDF of <i>Beta(α, β)</i>, we can use the following formula:</p><br />\\[\\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\\]<br /><p>where $B(\\alpha, \\beta)$ is the beta function.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:28:40.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_beta_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "problem": "{",
+    "statementHtml": "Find the expected value of a random variable X following a beta distribution <i>Beta(α, β)</i>.",
+    "hints": [
+      "Start by recalling the definition of the beta distribution and its parameters α and β.",
+      "Think about how to apply the expectation operator E[•] to the given density function.",
+      "Use the fact that the expected value is a weighted average of all possible values."
+    ],
+    "solutionHtml": "<p>To find the expected value, we integrate the product of the beta distribution density and its possible values:</p><p>\\(E[X] = \\int_0^1 x \\cdot f(x | α, β) dx\\)</p><p>where <i>f(x | α, β)</i> is the probability density function of the beta distribution.</p><p>Now, we can evaluate this integral using the definition of the beta distribution:</p><p>\\(E[X] = \\int_0^1 x \\cdot \\frac{x^(α-1) (1-x)^(β-1)}{B(α, β)} dx\\)</p>\",",
+    "answerShort": "The expected value is <i>E[X] = α / (α + β)</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:29:00.988Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\beta(x|a,b) = \\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}\\]",
+      "name": "Beta Distribution Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5.</p>",
+      "hints": [
+        "Hint: Use the formula for the beta distribution.",
+        "Hint: Find the normalizing constant first."
+      ],
+      "solutionHtml": "<p>Step 1: Define the problem</p><ul><li>We want to find P(X&gt;0.5) given that X follows a beta distribution with parameters a=2 and b=3.</li></ul><p>Step 2: Use the formula for the beta distribution</p><ul><li>\\[P(X&gt;0.5) = \\int_{0.5}^{1} \\frac{1}{B(2,3)}x^{2-1}(1-x)^{3-1} dx\\]</li></ul><p>Step 3: Find the normalizing constant</p><ul><li>B(a,b) = \\frac{\\Gamma(a+1) \\Gamma(b+1)}{\\Gamma(a+b+1)}\\]</li></ul><p>Step 4: Evaluate the integral</p><ul><li>We can evaluate this integral using numerical methods or by recognizing it as a standard distribution.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X&gt;0.5) given that X follows a beta distribution with parameters a=2 and b=3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the problem",
+          "mathHtml": "",
+          "explanation": "We want to find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the beta distribution",
+          "mathHtml": "\\[P(X&gt;0.5) = \\int_{0.5}^{1} \\frac{1}{B(2,3)}x^{2-1}(1-x)^{3-1} dx\\]",
+          "explanation": "We can use the formula for the beta distribution to find the probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the normalizing constant",
+          "mathHtml": "\\[B(a,b) = \\frac{\\Gamma(a+1) \\Gamma(b+1)}{\\Gamma(a+b+1)}\\]",
+          "explanation": "We need to find the normalizing constant B(2,3) before we can evaluate the integral."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the integral",
+          "mathHtml": "",
+          "explanation": "We can evaluate this integral using numerical methods or by recognizing it as a standard distribution."
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "The key insight here is that we can use the formula for the beta distribution to find the probability.",
+    "visualDescription": "A diagram showing the beta distribution and the region where X &gt; 0.5 would be helpful.",
+    "commonMistakes": [
+      "Not recognizing the integral as a standard distribution.",
+      "Forgetting to find the normalizing constant."
+    ],
+    "realWorldApplications": [
+      "Machine learning models often use the beta distribution as a prior for Bayesian inference."
+    ],
+    "tags": [
+      "probability",
+      "beta distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:29:52.643Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\beta(x|a,b) = \\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}\\]",
+      "name": "Beta Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a=2 and b=3, given that X &gt; 0.5.</p>",
+      "hints": [
+        "Hint: Use the definition of the beta distribution"
+      ],
+      "solutionHtml": "<p>We can use the definition of the beta distribution to solve this problem:</p><ul><li> Plug in x = 0.5 into the formula for the beta distribution.</li><li>Evaluate the expression and simplify.</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X &gt; 0.5 | a=2, b=3).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in x = 0.5 into the formula for the beta distribution",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^{2-1}(1-0.5)^{3-1}\\]",
+          "explanation": "We're substituting x=0.5 into the formula for the beta distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the expression and simplify",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^1(0.5)^2\\]",
+          "explanation": "We're evaluating the expression by plugging in x=0.5 and simplifying."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify further if possible",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^3\\]",
+          "explanation": "We're simplifying the expression as much as possible."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the definition of B(a,b)",
+          "mathHtml": "\\[\\beta(0.5|2,3) = \\frac{1}{B(2,3)}(0.5)^3 = \\frac{(2-1)! (3-1)!}{B(2,3)}(0.5)^3\\]",
+          "explanation": "We're using the definition of B(a,b) to simplify further."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Mistake: Forgetting to plug in x=0.5 into the formula"
+    ],
+    "realWorldApplications": [
+      "Application: Using the beta distribution to model user engagement in a recommendation system"
+    ],
+    "tags": [
+      "beta distribution",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:30:36.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a problem involving the beta distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the probability density function (PDF) of X ∼ Beta(α, β), given that E[X] = 0.5 and Var[X] = 1/12.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize the problem as a constrained optimization\", \"mathHtml\": \"\\[P(X) \\propto X^{\\alpha-1} (1-X)^{\\beta-1}\\]\", \"explanation\": \"We're looking for the PDF of a beta distribution, which is proportional to the product of two power functions.\" }, {\"stepNumber\": 2, \"description\": \"Use the constraints to find the normalizing constant\", \"mathHtml\": \"\\[P(X) = \\frac{1}{B(\\alpha, \\beta)} X^{\\alpha-1} (1-X)^{\\beta-1}\\]\", \"explanation\": \"We can use the fact that E[X] = 0.5 and Var[X] = 1/12 to find the normalizing constant B(α, β).\" }, {\"stepNumber\": 3, \"description\": \"Apply the constraints\", \"mathHtml\": \"\\[E[X] = \\int_{0}^{1} x P(X) dx = 0.5\\]\", \"explanation\": \"We can set up an integral equation using the definition of expectation and solve for B(α, β).\" }, {\"stepNumber\": 4, \"description\": \"Solve for the normalizing constant\", \"mathHtml\": \"\\[B(\\alpha, \\beta) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)}\\]\", \"explanation\": \"We can use the definition of the beta function and the gamma function to solve for B(α, β).\" } ],",
+    "finalAnswer": "The final PDF is P(X) = \\frac{1}{B(\\alpha, \\beta)} X^{\\alpha-1} (1-X)^{\\beta-1}\" },",
+    "intuition": "The beta distribution is a conjugate prior for the binomial distribution, making it useful in Bayesian inference.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:31:07.831Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_beta_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "beta",
+    "title": "Solving Beta Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the beta distribution.</p>",
+    "formula": {
+      "latex": "\\[\\text{Beta}(x|a,b) = \\frac{x^{a-1} (1-x)^{b-1}}{\\int_0^1 x^{a-1} (1-x)^{b-1} dx}\\]",
+      "name": "beta distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the probability that a random variable X follows the beta distribution with parameters a = 2 and b = 3, given that X &lt; 0.7.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the desired probability",
+          "mathHtml": "\\[P(X&lt;0.7) = \\int_0^{0.7} \\text{Beta}(x|2,3) dx\\]",
+          "explanation": "We want to find the probability that X is less than 0.7."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Substitute the beta distribution formula",
+          "mathHtml": "\\[P(X&lt;0.7) = \\int_0^{0.7} \\frac{x^{2-1} (1-x)^{3-1}}{\\int_0^1 x^{2-1} (1-x)^{3-1} dx} dx\\]",
+          "explanation": "We substitute the beta distribution formula with parameters a = 2 and b = 3."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[P(X&lt;0.7) = \\frac{1}{B(2,3)} \\int_0^{0.7} x^{2-1} (1-x)^{3-1} dx\\]",
+          "explanation": "We evaluate the integral by recognizing it as a beta distribution with different parameters."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify and find the answer",
+          "mathHtml": "\\[P(X&lt;0.7) = \\frac{1}{B(2,3)} \\int_0^{0.7} x^{2-1} (1-x)^{3-1} dx\\] = 0.6",
+          "explanation": "We simplify the expression and find the final answer."
+        }
+      ],
+      "finalAnswer": "P(X&lt;0.7) = 0.6"
+    },
+    "intuition": "The beta distribution is a conjugate prior for binomial distributions, making it useful in Bayesian inference.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:31:44.732Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

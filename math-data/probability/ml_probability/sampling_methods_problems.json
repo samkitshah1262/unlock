@@ -1,0 +1,137 @@
+[
+  {
+    "id": "prob_prb_sampling_methods_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "problem": {
+      "statementHtml": "Suppose we want to estimate the area under a curve using Monte Carlo integration. We have a function <i>f(x)</i> and a bounding box <i>[a, b]</i>. How can we use rejection sampling to improve our estimation?",
+      "hints": [
+        "Think about how you would sample points uniformly within the bounding box.",
+        "Consider what happens when your function values are very small or large compared to the average value.",
+        "Don't forget to account for the area of the bounding box in your final estimate."
+      ],
+      "solutionHtml": "<p>To apply rejection sampling, we first generate a random point <i>x</i> within the bounding box. Then, we check if <i>f(x) &gt;= 0</i>. If it is, we accept the sample and move on to the next iteration. Otherwise, we reject the sample and try again.</p><p>This process continues until we have a sufficient number of accepted samples. Finally, we estimate the area under the curve by averaging the function values at these accepted points and multiplying by the area of the bounding box.</p>",
+      "answerShort": "The estimated area is <i>\\frac{1}{N} \\sum_{i=1}^N f(x_i) (b-a)</i>, where <i>N</i> is the number of accepted samples."
+    },
+    "commonMistakes": [
+      "Forgetting to account for the bounding box area",
+      "Not understanding why rejection sampling improves estimation"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:16:03.796Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_sampling_methods_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "problem": {
+      "statementHtml": "Suppose we want to estimate the area under a complex curve using Monte Carlo integration. We are given a probability distribution <i>P(x)</i> and a target function <i>f(x)</i>. Describe how you would use rejection sampling to obtain an unbiased estimate of the integral.",
+      "hints": [
+        "Start by generating random samples from the distribution <i>P(x)</i>",
+        "Use these samples to compute the ratio <i>f(x) / P(x)</i> for each point",
+        "Reject points where this ratio is below a certain threshold"
+      ],
+      "solutionHtml": "To use rejection sampling, we first generate <i>n</i> random samples from the distribution <i>P(x)</i>. Then, compute the ratio <i>f(x) / P(x)</i> for each point. If the ratio is above a predetermined value <i>c</i>, accept the sample and store it in our dataset. The accepted points will be distributed according to the target function <i>f(x)</i>. Finally, estimate the integral by averaging the values of the target function at these accepted points.",
+      "answerShort": "The estimated integral is given by the average value of <i>f(x)</i> at the accepted points."
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the weights of the accepted samples",
+      "Using a threshold that is too low, leading to biased estimates"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:16:25.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_sampling_methods_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "problem": "{",
+    "statementHtml": "Suppose we want to estimate the probability of a rare event in a dataset. We can use Monte Carlo methods to generate samples from the underlying distribution and then calculate the proportion of samples that satisfy the condition.",
+    "hints": [
+      "Think about how you would simulate drawing random samples from a distribution.",
+      "Recall that importance sampling helps us focus on regions where we're most interested in estimating the probability.",
+      "Rejection sampling can be useful when we have a complex proposal distribution."
+    ],
+    "solutionHtml": "To solve this problem, we can use Monte Carlo integration. Let's say we want to estimate the probability of a rare event $P(A)$. We generate $N$ random samples from the underlying distribution and calculate the proportion of samples that satisfy the condition $A$. The estimated probability is then $\\hat{P}(A) = \\frac{\\text{number of samples satisfying } A}{N}.$\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:16:42.565Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_sampling_methods_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "problem": "{",
+    "statementHtml": "<p>Given a target distribution <i>P(y)</i>, design a sampling method to approximate the expectation of some function <i>f(y)</i>.</p>",
+    "hints": [
+      "Start by considering the definition of expectation.",
+      "Think about how you can use Monte Carlo methods to estimate the integral.",
+      "Don't forget to account for the importance of each sample."
+    ],
+    "solutionHtml": "<p>One common approach is to use importance sampling. Let <i>q(y)</i> be a proposal distribution that's easy to sample from. We can rewrite the expectation as:</p>\\n\\[ \\int f(y) P(y) dy = \\int f(y) q(y) / Q dy, where Q = \\\\int q(y) dy.\\]\\n<p>We then use Monte Carlo methods to estimate this integral:</p>\\n\\[ \\frac{1}{N} \\sum_{i=1}^N f(y_i) q(y_i) / Q \\approx \\int f(y) P(y) dy,\\]\\n<p>where <i>y_1, ..., y_N</i> are i.i.d. samples from <i>q(y)</i>.</p>\",",
+    "answerShort": "Importance sampling with Monte Carlo methods\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:17:02.987Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_sampling_methods_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "sampling_methods",
+    "problem": "{",
+    "statementHtml": "<p>Use Monte Carlo or importance sampling to estimate the area under a curve.</p>",
+    "hints": [
+      "Start by generating random points in the region of interest.",
+      "Consider using stratified sampling for increased efficiency.",
+      "Don't forget to account for any boundaries or constraints."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use Monte Carlo integration.</p>\\n<p>First, generate <i>N</i> random points in the region of interest:</p>\\n\\[x_1, y_1\\], \\[x_2, y_2\\], ..., \\[x_N, y_N\\]\\n<p>Then, calculate the area under the curve by averaging the function values at these points:</p>\\n\\\\[A] = \\\\frac{1}{N} \\sum_{i=1}^N f(x_i, y_i)\\n<p>The final answer is:</p>\\n\\[A\\]\",",
+    "answerShort": "\\\\[A]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:17:21.156Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

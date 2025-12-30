@@ -1,0 +1,86 @@
+[
+  {
+    "id": "la_prb_composition_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "composition",
+    "problem": "{",
+    "statementHtml": "Let <i>A</i> and <i>B</i> be linear transformations from <i>V</i> to <i>V</i>. Prove that the composition of these transformations is associative: (<i>AB</i>)<i>C</i> = <i>A</i>(<i>BC</i>).",
+    "hints": [
+      "Check if the order matters by considering a specific example.",
+      "Use the definition of matrix multiplication to expand the product.",
+      "Show that the associativity holds for any linear transformation <i>C</i>"
+    ],
+    "solutionHtml": "<p>To prove the associativity, we can use the definition of matrix multiplication:</p><p>\\( (AB)C = A(BC) \\)</p><p>Expanding the product on the right-hand side, we get:</p><p>\\( A(B \\cdot C) = A(\\sum_{i} B \\cdot c_i e_i) \\)</p><p>Using the linearity of <i>A</i>, we can rewrite this as:</p><p>\\( \\sum_{i} (AB) \\cdot c_i e_i \\)</p><p>This is equal to:</p><p>\\( (AB)C = \\sum_{i} (AB) \\cdot c_i e_i \\)</p><p>Thus, we have shown that the composition of linear transformations is associative.</p>\",",
+    "answerShort": "Associative\" },",
+    "commonMistakes": [
+      "Forgetting to check if the order matters",
+      "Not expanding the product correctly"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:55:31.923Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_composition_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "composition",
+    "problem": {
+      "statementHtml": "Let T1 and T2 be linear transformations from ℝ^n to ℝ^m. Prove that the composition of these transformations, denoted as (T2 ∘ T1), can be represented by the matrix product A2A1, where A1 and A2 are the matrices representing T1 and T2 respectively.",
+      "hints": [
+        "Start by considering a vector v in ℝ^n. Apply T1 to get Av, then apply T2 to get (T2 ∘ T1)v.",
+        "Think about how matrix multiplication works for vectors.",
+        "Use the properties of linear transformations to relate the composition to the matrices"
+      ],
+      "solutionHtml": "\nTo prove that the composition (T2 ∘ T1) can be represented by the matrix product A2A1, we start with a vector v in ℝ^n. We apply T1 to get Av, then apply T2 to get (T2 ∘ T1)v.\n\nBy definition of linear transformation, we have:\n\n(T2 ∘ T1)v = T2(T1v) = T2(Av)\n\nNow, since T2 is a linear transformation, we can represent it by a matrix A2. So, we have:\n\n(T2 ∘ T1)v = A2Av\n\nNext, we apply the properties of linear transformations to relate this composition to the matrices. Specifically, we know that applying T1 to v and then applying A2 to the result is equivalent to applying A2A1 to v.\n\nSo, we can write:\n\n(T2 ∘ T1)v = (A2A1)v\n\nThis shows that the composition of linear transformations (T2 ∘ T1) can be represented by the matrix product A2A1.\n",
+      "answerShort": "(T2 ∘ T1) = A2A1"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the transformation twice, once for each composition step",
+      "Not recognizing that the order of transformations matters"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:55:57.336Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_composition_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "linear_transformations",
+    "topic": "composition",
+    "problem": "{",
+    "statementHtml": "<p>Given two linear transformations <i>A</i> and <i>B</i>, find the composition of these transformations as a matrix product.</p>",
+    "hints": [
+      "Think about the order in which you multiply matrices.",
+      "Use the definition of matrix multiplication to help you compute the result.",
+      "Check your answer by verifying that it satisfies the expected properties."
+    ],
+    "solutionHtml": "<p>To find the composition <i>AB</i>, we need to multiply the matrices representing <i>A</i> and <i>B</i>. The order of multiplication matters, so we do this:</p>\\n\\[AB = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix}\\begin{bmatrix} b_{11} & b_{12} \\\\ b_{21} & b_{22} \\end{bmatrix}\\]\\n<p>The resulting matrix is the product of the two matrices:</p>\\n\\[AB = \\begin{bmatrix} a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\\\ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \\end{bmatrix}\\]\\n<p>The final answer is the matrix product <i>AB</i>.</p>\",",
+    "answerShort": "The composition of linear transformations as a matrix product\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:56:20.122Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,269 @@
+[
+  {
+    "id": "la_wex_gaussian_elimination_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "gaussian_elimination",
+    "title": "Gaussian Elimination: Solving Systems of Linear Equations",
+    "contentHtml": "<p>Gaussian elimination is a powerful technique to solve systems of linear equations.</p>",
+    "formula": {
+      "latex": "\\[ A = \\begin{bmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{bmatrix} \\]",
+      "name": "Matrix A"
+    },
+    "problem": {
+      "statementHtml": "<p>Solve the system of linear equations:</p><ul><li>2x + 3y = 5</li><li>x - 2y = -3</li></ul>",
+      "hints": [
+        "Start by applying Gaussian elimination"
+      ],
+      "solutionHtml": "<p>To solve this system, we'll use Gaussian elimination.</p><ol><li>We'll add the second equation multiplied by 2 to the first equation:</li><p>\\( 4x + 6y = 8 \\)</p><li>This eliminates y from the first equation. Now we can solve for x:</li><p>\\( x = 1 \\)</p><li>We'll then substitute this value back into one of the original equations to find y:</li><p>\\( y = 1 \\)</p>",
+      "answerShort": "x = 1, y = 1"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Solve the system:</p><ul><li>x + 2y = 4</li><li>3x - 2y = 5</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Add the second equation multiplied by (-1/3) to the first equation",
+          "mathHtml": "\\[ \\frac{-1}{3} (3x - 2y = 5) + x + 2y = 4 \\]",
+          "explanation": "This eliminates x from the first equation"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Add the resulting equation to the second equation",
+          "mathHtml": "\\[ 2y = 1 \\]",
+          "explanation": "This eliminates y from the second equation"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve for x and then substitute back into one of the original equations to find y",
+          "mathHtml": "\\[ x = 1, y = 1 \\]",
+          "explanation": "Now we can solve for both variables"
+        }
+      ],
+      "finalAnswer": "x = 1, y = 1"
+    },
+    "intuition": "Gaussian elimination is a powerful technique to solve systems of linear equations by transforming the matrix into row echelon form.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:27:40.804Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_gaussian_elimination_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "gaussian_elimination",
+    "title": "Gaussian Elimination: Solving Systems of Linear Equations",
+    "contentHtml": "<p>In this worked example, we'll apply Gaussian elimination to solve a system of linear equations.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}\\mathbf{x} = \\mathbf{b}\\]",
+      "name": "Linear System"
+    },
+    "problem": {
+      "statementHtml": "<p>Solve the system of linear equations:</p><ul><li>2x + 3y - z = 5</li><li>x - 2y + 3z = -3</li><li>4x + y + 2z = 7</li></ul>",
+      "hints": [
+        "Start by performing row operations to get the system in row echelon form"
+      ],
+      "solutionHtml": "<p>To solve this system, we'll use Gaussian elimination.</p>",
+      "answerShort": "The solution is x = 1, y = 2, z = 3"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Solve the following system:</p><ul><li>2x + 3y - z = 5</li><li>x - 2y + 3z = -3</li><li>4x + y + 2z = 7</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Perform row operations to get the system in row echelon form.",
+          "mathHtml": "\\[\\begin{array}{ccccc} 2x + 3y - z &=& 5 \\\\ x - 2y + 3z &=& -3 \\\\ 4x + y + 2z &=& 7 \\[-0.5ex] \\[-1ex] \\[-1ex]\\end{array}\\]",
+          "explanation": "We want to eliminate variables and make the system easier to solve."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Add -2 times row 1 to row 2 to eliminate x.",
+          "mathHtml": "\\[\\begin{array}{ccccc} 2x + 3y - z &=& 5 \\\\ -4x - 6y + 7z &=& -13 \\\\ 4x + y + 2z &=& 7 \\[-0.5ex] \\[-1ex]\\end{array}\\]",
+          "explanation": "This eliminates x from the second equation."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Add -4 times row 1 to row 3 to eliminate x.",
+          "mathHtml": "\\[\\begin{array}{ccccc} 2x + 3y - z &=& 5 \\\\ -4x - 6y + 7z &=& -13 \\\\ 0x + y + 6z &=& 11 \\[-0.5ex] \\[-1ex]\\end{array}\\]",
+          "explanation": "This eliminates x from the third equation."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Add -3 times row 2 to row 1 to eliminate y.",
+          "mathHtml": "\\[\\begin{array}{ccccc} 8x + 0y - 7z &=& 17 \\\\ -4x - 6y + 7z &=& -13 \\\\ 0x + y + 6z &=& 11 \\[-0.5ex] \\[-1ex]\\end{array}\\]",
+          "explanation": "This eliminates y from the first equation."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Add row 3 to row 1 to eliminate z.",
+          "mathHtml": "\\[\\begin{array}{ccccc} 8x + 0y - 7z &=& 17 \\\\ -4x - 6y + 7z &=& -13 \\[-0.5ex] \\[-1ex]\\end{array}\\]",
+          "explanation": "This eliminates z from the first equation."
+        }
+      ],
+      "finalAnswer": "The solution is x = 1, y = 2, z = 3"
+    },
+    "intuition": "Gaussian elimination helps us solve systems of linear equations by performing row operations to get the system in row echelon form.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:28:32.951Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_gaussian_elimination_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "gaussian_elimination",
+    "title": "Gaussian Elimination: Solving Systems of Linear Equations",
+    "contentHtml": "<p>Gaussian elimination is a popular method for solving systems of linear equations.</p>",
+    "formula": "{",
+    "latex": "\\(Ax = b\\)\",",
+    "name": "Linear System\" },",
+    "problem": "{",
+    "statementHtml": "<p>Solve the system:</p>\\[ \\begin{align*} x + 2y - z &= 1 \\\\ 3x - y + 2z &= 0 \\\\ 4x + 3y + z &= 2 \\end{align*}\\]\",",
+    "hints": [
+      "Rearrange equations to eliminate variables",
+      "Use row operations"
+    ],
+    "solutionHtml": "<p>We'll use Gaussian elimination to solve the system.</p>",
+    "answerShort": "See worked example\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Solve the system:</p>\\[ \\begin{align*} x + 2y - z &= 1 \\\\ 3x - y + 2z &= 0 \\\\ 4x + 3y + z &= 2 \\end{align*}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Rearrange the equations to eliminate variables\", \"mathHtml\": \"\\(R_1 - 2R_2\\)\", \"explanation\": \"This eliminates y from the first equation\"}, {\"stepNumber\": 2, \"description\": \"Use row operations to eliminate x from the second equation\", \"mathHtml\": \"\\(R_2 - \\frac{3}{4} R_1\\)\", \"explanation\": \"This eliminates x from the second equation\"}, {\"stepNumber\": 3, \"description\": \"Eliminate z from the third equation using the first two equations\", \"mathHtml\": \"\\(R_3 - 4R_1 + 3R_2\\)\", \"explanation\": \"This eliminates z from the third equation\"} ],",
+    "finalAnswer": "x = 1, y = 0, z = 0\" },",
+    "intuition": "Gaussian elimination is a systematic way to eliminate variables and solve systems of linear equations.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:29:00.224Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_gaussian_elimination_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "gaussian_elimination",
+    "title": "Gaussian Elimination: Solving Systems of Linear Equations",
+    "contentHtml": "<p>Gaussian elimination is a popular method for solving systems of linear equations.</p>",
+    "formula": "{",
+    "latex": "\\(A \\mathbf{x} = \\mathbf{b}\\)\",",
+    "name": "Linear System\" },",
+    "problem": "{",
+    "statementHtml": "<p>Solve the system:</p><ul><li>\\(2x_1 + x_2 = 4\\)</li><li>\\(x_1 + 3x_2 = 7\\)</li></ul>\",",
+    "hints": [
+      "Try to eliminate one variable"
+    ],
+    "solutionHtml": "<p>We'll use Gaussian elimination to solve this system.</p>",
+    "answerShort": "The solution is \\(\\mathbf{x} = [1, 1]\\)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Solve the system:</p><ul><li>\\(3x_1 + x_2 = 5\\)</li><li>\\(2x_1 - 2x_2 = -3\\)</li></ul>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write the augmented matrix\", \"mathHtml\": \"\\[\\begin{bmatrix} 3 & 1 \\\\ 2 & -2 \\end{bmatrix} | \\begin{bmatrix} 5 \\\\ -3 \\end{bmatrix}\\]\"}, {\"stepNumber\": 2, \"description\": \"Eliminate the second row's first element\", \"mathHtml\": \"\\[\\begin{bmatrix} 3 & 1 \\\\ 0 & -\\frac{1}{2} \\end{bmatrix} | \\begin{bmatrix} 5 \\\\ -\\frac{7}{2} \\end{bmatrix}\\]\"}, {\"stepNumber\": 3, \"description\": \"Back-substitute to find the solution\", \"mathHtml\": \"\\[\\mathbf{x} = [1, 1]\\]\"}, {\"stepNumber\": 4, \"description\": \"Verify the solution\", \"mathHtml\": \"\"} ],",
+    "finalAnswer": "The solution is \\(\\mathbf{x} = [1, 1]\\)\" },",
+    "intuition": "Gaussian elimination works by transforming the augmented matrix into row echelon form and then back-substituting to find the solution.",
+    "visualDescription": "A helpful diagram could show the step-by-step process of Gaussian elimination.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:29:31.626Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_gaussian_elimination_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "systems_equations",
+    "topic": "gaussian_elimination",
+    "title": "Gaussian Elimination: Solving Systems of Linear Equations",
+    "contentHtml": "<p>Gaussian elimination is a popular method for solving systems of linear equations.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A}\\mathbf{x} = \\mathbf{b}\\]",
+    "name": "Linear System\" },",
+    "problem": "{",
+    "statementHtml": "<p>Solve the system:</p><p>\\\\begin{align*} 2x + y &= 5, \\\\\\ x - 3y &= -1. \\\\end{align*}</p>\",",
+    "hints": [
+      "Start by eliminating a variable"
+    ],
+    "solutionHtml": "<p>To solve this system using Gaussian elimination, we'll first write it in augmented matrix form:</p><p>\\\\[\\\\begin{bmatrix} 2 & 1 & | & 5 \\\\\\ 1 & -3 & | & -1 \\\\end{bmatrix}\\\\]</p>\",",
+    "answerShort": "x = 1, y = 2\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Solve the system:</p><p>\\\\begin{align*} 3x + 2y &= 7, \\\\\\ x - 4y &= -3. \\\\end{align*}</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Write the augmented matrix",
+        "mathHtml": "\\[\\begin{bmatrix} 3 & 2 & | & 7 \\\\ 1 & -4 & | & -3 \\end{bmatrix}\\]",
+        "explanation": "This is the standard form for Gaussian elimination."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Eliminate a variable",
+        "mathHtml": "\\[\\begin{align*} r_1' &= r_1 + 4r_2 \\\\ \\end{align*}\\]",
+        "explanation": "We'll eliminate y by adding -4 times the second equation to the first."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Repeat elimination",
+        "mathHtml": "\\[\\begin{align*} r_1'' &= r_1' + 2r_2' \\\\ \\end{align*}\\]",
+        "explanation": "Now we'll eliminate x by adding -2 times the second equation to the first."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Back substitute",
+        "mathHtml": "\\[\\begin{align*} x &= (-3)/7, \\\\ y &= (1)/7. \\end{align*}\\]",
+        "explanation": "Now we can find the values of x and y by back substituting."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Check the solution",
+        "mathHtml": "\\[\\begin{align*} 3x + 2y &= 7 \\\\ (1)/7 + 2(1)/7 = 7 \\end{align*}\\]",
+        "explanation": "We can check our solution by plugging it back into the original equations."
+      }
+    ],
+    "finalAnswer": "x = (-3)/7, y = (1)/7\" },",
+    "intuition": "Gaussian elimination is a powerful tool for solving systems of linear equations. By repeatedly eliminating variables and back substituting, we can find the solution.",
+    "visualDescription": "A diagram showing the steps of Gaussian elimination",
+    "commonMistakes": [
+      "Forgetting to check the solution"
+    ],
+    "realWorldApplications": [
+      "Solving problems in computer vision, robotics"
+    ],
+    "tags": [
+      "Gaussian Elimination",
+      "Linear Algebra"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:30:14.640Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

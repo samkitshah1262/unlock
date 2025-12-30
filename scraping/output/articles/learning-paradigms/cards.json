@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ai-learning-paradigms-ssl-tasks-1",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Learning Paradigms",
+    "articleSlug": "learning-paradigms",
+    "chapter": "Self-supervised Learning (SSL)",
+    "title": "SSL Tasks",
+    "subtitle": "Self-supervised Learning (SSL)",
+    "contentHtml": "<h4 id=\"the-cloze-task--masked-language-modeling\">The Cloze Task / Masked Language Modeling</h4>\n<ul>\n  <li>The Cloze task is more commonly referred to as the masked language modeling (MLM) objective. Here, the language model takes a sequence of textual tokens (i.e., a sentence) as input. To train the model, we mask out (i.e., set to a special “mask” token) ~10% of tokens in the input and train the model to predict these masked tokens. Using this approach, we can train a language model over an unlabeled textual corpus, as the “labels” that we predict are just tokens that are already present in the text itself. This objective is used to pretrain language models like BERT and T5.</li>\n</ul>\n<h4 id=\"next-token-prediction\">Next Token Prediction</h4>\n<ul>\n  <li>Next token prediction is the workhorse of modern generative language models like ChatGPT and PaLM. After downloading a large amount of raw textual data from the internet, we can repeatedly i) sample a sequence of text and ii) train the language model to predict the next token given preceding tokens as input. This happens in parallel for all tokens in the sequence. Again, all the “labels” that we learn to predict are already present in the raw textual data. Pretraining (and finetuning) via next token prediction is universal used by all generative language models.</li>\n</ul>\n<h4 id=\"visual-summary\">Visual Summary</h4>\n<p><img src=\"/primers/ai/assets/learning-paradigms/learning-paradigms.jpeg\" alt=\"\"></p>",
+    "contentMarkdown": "#### The Cloze Task / Masked Language Modeling\n\n*   The Cloze task is more commonly referred to as the masked language modeling (MLM) objective. Here, the language model takes a sequence of textual tokens (i.e., a sentence) as input. To train the model, we mask out (i.e., set to a special “mask” token) ~10% of tokens in the input and train the model to predict these masked tokens. Using this approach, we can train a language model over an unlabeled textual corpus, as the “labels” that we predict are just tokens that are already present in the text itself. This objective is used to pretrain language models like BERT and T5.\n\n#### Next Token Prediction\n\n*   Next token prediction is the workhorse of modern generative language models like ChatGPT and PaLM. After downloading a large amount of raw textual data from the internet, we can repeatedly i) sample a sequence of text and ii) train the language model to predict the next token given preceding tokens as input. This happens in parallel for all tokens in the sequence. Again, all the “labels” that we learn to predict are already present in the raw textual data. Pretraining (and finetuning) via next token prediction is universal used by all generative language models.\n\n#### Visual Summary\n\n![](/primers/ai/assets/learning-paradigms/learning-paradigms.jpeg)",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "datatraining",
+      "bert",
+      "gpt"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": true,
+      "wordCount": 214,
+      "contentLength": 1478
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/learning-paradigms/#ssl-tasks",
+    "scrapedAt": "2025-12-28T11:48:32.365Z"
+  },
+  {
+    "id": "ai-learning-paradigms-transformers-2",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Learning Paradigms",
+    "articleSlug": "learning-paradigms",
+    "chapter": "Learning Process",
+    "title": "Transformers",
+    "subtitle": "Learning Process",
+    "contentHtml": "<ul>\n  <li>Most recent generative language models are based upon the transformer architecture. Although the transformer was originally proposed with two modules (i.e., an encoder and a decoder), generative LLMs use a decoder-only variant of this architecture. This architecture takes as input a sequence of tokens (i.e., words or subwords) that have been embedded into a corresponding vector representation and transforms them via masked self-attention and feed-forward transformations.</li>\n</ul>",
+    "contentMarkdown": "*   Most recent generative language models are based upon the transformer architecture. Although the transformer was originally proposed with two modules (i.e., an encoder and a decoder), generative LLMs use a decoder-only variant of this architecture. This architecture takes as input a sequence of tokens (i.e., words or subwords) that have been embedded into a corresponding vector representation and transforms them via masked self-attention and feed-forward transformations.",
+    "order": 2,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining",
+      "transformer",
+      "attention",
+      "llm"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 67,
+      "contentLength": 497
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/learning-paradigms/#transformers",
+    "scrapedAt": "2025-12-28T11:48:32.365Z"
+  },
+  {
+    "id": "ai-learning-paradigms-pretraining-3",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Learning Paradigms",
+    "articleSlug": "learning-paradigms",
+    "chapter": "Learning Process",
+    "title": "Pretraining",
+    "subtitle": "Learning Process",
+    "contentHtml": "<ul>\n  <li>\n    <p>The most commonly-used objective for pretraining is next token prediction, also known as the standard language modeling objective. Interestingly, this objective—despite being quite simple to understand—is the core of all generative language models. To pretrain a generative language model, we curate a large corpus of raw text and iteratively perform the following steps:</p>\n\n    <ol>\n      <li>Sample a sequence of raw text from the dataset.</li>\n      <li>Pass this textual sequence through the decoder-only transformer.</li>\n      <li>Train the model to accurately predict the next token at each position within the sequence.</li>\n    </ol>\n  </li>\n</ul>\n<p>The most commonly-used objective for pretraining is next token prediction, also known as the standard language modeling objective. Interestingly, this objective—despite being quite simple to understand—is the core of all generative language models. To pretrain a generative language model, we curate a large corpus of raw text and iteratively perform the following steps:</p>\n<ol>\n      <li>Sample a sequence of raw text from the dataset.</li>\n      <li>Pass this textual sequence through the decoder-only transformer.</li>\n      <li>Train the model to accurately predict the next token at each position within the sequence.</li>\n    </ol>",
+    "contentMarkdown": "*   The most commonly-used objective for pretraining is next token prediction, also known as the standard language modeling objective. Interestingly, this objective—despite being quite simple to understand—is the core of all generative language models. To pretrain a generative language model, we curate a large corpus of raw text and iteratively perform the following steps:\n    \n    1.  Sample a sequence of raw text from the dataset.\n    2.  Pass this textual sequence through the decoder-only transformer.\n    3.  Train the model to accurately predict the next token at each position within the sequence.\n\nThe most commonly-used objective for pretraining is next token prediction, also known as the standard language modeling objective. Interestingly, this objective—despite being quite simple to understand—is the core of all generative language models. To pretrain a generative language model, we curate a large corpus of raw text and iteratively perform the following steps:\n\n1.  Sample a sequence of raw text from the dataset.\n2.  Pass this textual sequence through the decoder-only transformer.\n3.  Train the model to accurately predict the next token at each position within the sequence.",
+    "order": 3,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining",
+      "transformer"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 177,
+      "contentLength": 1320
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/learning-paradigms/#pretraining",
+    "scrapedAt": "2025-12-28T11:48:32.365Z"
+  },
+  {
+    "id": "ai-learning-paradigms-alignment-4",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Learning Paradigms",
+    "articleSlug": "learning-paradigms",
+    "chapter": "Learning Process",
+    "title": "Alignment",
+    "subtitle": "Learning Process",
+    "contentHtml": "<ul>\n  <li>After pretraining, the LLM can accurately perform next token prediction, but its output is oftentimes repetitive and uninteresting. The alignment process teaches a language model how to generate text that aligns with the desires of a human user. To align a language model, we define a set of alignment criteria (e.g., helpful and harmless) and finetune the model (using SFT and RLHF) based on these criteria.</li>\n</ul>",
+    "contentMarkdown": "*   After pretraining, the LLM can accurately perform next token prediction, but its output is oftentimes repetitive and uninteresting. The alignment process teaches a language model how to generate text that aligns with the desires of a human user. To align a language model, we define a set of alignment criteria (e.g., helpful and harmless) and finetune the model (using SFT and RLHF) based on these criteria.",
+    "order": 4,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining",
+      "llm"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 67,
+      "contentLength": 430
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/learning-paradigms/#alignment",
+    "scrapedAt": "2025-12-28T11:48:32.365Z"
+  },
+  {
+    "id": "ai-learning-paradigms-visual-summary-5",
+    "domain": "ai_primers",
+    "category": "Data/Training",
+    "article": "Learning Paradigms",
+    "articleSlug": "learning-paradigms",
+    "chapter": "Learning Process",
+    "title": "Visual Summary",
+    "subtitle": "Learning Process",
+    "contentHtml": "<p><img src=\"/primers/ai/assets/learning-paradigms/learning-paradigms2.jpeg\" alt=\"\"></p>",
+    "contentMarkdown": "![](/primers/ai/assets/learning-paradigms/learning-paradigms2.jpeg)",
+    "order": 5,
+    "orderInChapter": 4,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "datatraining"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": true,
+      "wordCount": 1,
+      "contentLength": 88
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/learning-paradigms/#visual-summary",
+    "scrapedAt": "2025-12-28T11:48:32.365Z"
+  }
+]

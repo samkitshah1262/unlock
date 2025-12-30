@@ -1,0 +1,117 @@
+[
+  {
+    "id": "stat_prb_sufficient_statistics_006",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "problem": "{",
+    "statementHtml": "Let X be a random variable with probability density function (PDF) f(x). Find the minimal sufficient statistic T(X) for the parameter θ.",
+    "hints": [
+      "Start by considering the factorization theorem: f(x|θ) = g(t|x,θ)h(x), where t is some function of x.",
+      "Think about what information from X would be necessary to uniquely determine the value of θ.",
+      "Use the concept of minimal sufficiency to find the simplest possible sufficient statistic."
+    ],
+    "solutionHtml": "\\[T(X) = \\sum_{i=1}^n X_i\\] is a sufficient statistic for θ. To see why, note that the factorization theorem implies f(x|θ) = g(t|x,θ)h(x), where t = T(X). Since θ only appears in the denominator of h(x), it follows that the minimal sufficient statistic must be T(X).\",",
+    "answerShort": "\\[T(X) = \\sum_{i=1}^n X_i\\]\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:31.956Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable with probability density function (PDF) f(x). Given i.i.d. samples x1, ..., xn from X, find the minimal sufficient statistic T(x).</p>",
+    "hints": [
+      "Consider the factorization theorem.",
+      "Think about what information is preserved when we condition on T(x).",
+      "Use the concept of minimal sufficiency to justify your answer."
+    ],
+    "solutionHtml": "<p>To apply the factorization theorem, we need to find a statistic T(x) that preserves all the information in f(x).</p><p>We can write the joint PDF as:</p>\\[f(x1, ..., xn) = \\prod_{i=1}^n f(xi | x1, ..., xi-1).\\]<p>Now, consider the conditional PDF:</p>\\[f(x1, ..., xn | T(x)) = \\frac{f(x1, ..., xn)}{\\int f(x1, ..., xn) dx}.\\]<p>The factorization theorem states that we can write this as:</p>\\[f(x1, ..., xn | T(x)) = g(T(x)) \\* h(x - E[T(x)]).\\]<p>This shows that the information in f(x) is preserved when we condition on T(x). Therefore, T(x) is a minimal sufficient statistic.</p>\",",
+    "answerShort": "T(x) = (x1 + ... + xn, n)\" },",
+    "commonMistakes": [
+      "Forgetting to apply the factorization theorem.",
+      "Not considering the concept of minimal sufficiency."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:52.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "problem": {
+      "statementHtml": "<p>Let X be a random variable with probability distribution P(x). Prove that if T(X) is a sufficient statistic for θ, then there exists a function g such that T(X) = g(Y), where Y is another random variable.</p>",
+      "hints": [
+        "<p>If you're stuck, try thinking about the definition of sufficiency and what it means for T(X) to be sufficient.</p>",
+        "<p>Consider the factorization theorem and how it relates to this problem.</p>",
+        "<p>Think about the minimal sufficiency condition and how it affects the solution.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we can use the factorization theorem. Let's assume that T(X) = g(Y), where Y is another random variable. Then, by the definition of sufficiency, P(X|θ) = P(X|T(X)).</p><p>We can now apply Bayes' rule to get:</p><p>P(θ|X) = P(θ|T(X))P(T(X)|X)/P(T(X)).</p><p>Since T(X) is sufficient, the right-hand side only depends on T(X). This means that we can write:</p><p>P(θ|X) = h(T(X)), where h is some function.</p>",
+      "answerShort": "<p>The answer is yes, there exists a function g such that T(X) = g(Y).</p>"
+    },
+    "commonMistakes": [
+      "<p>Students often forget to apply the factorization theorem correctly.</p>",
+      "<p>They may also struggle with the minimal sufficiency condition and how it affects the solution.</p>"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:57:13.059Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable with probability distribution P(x). Show that Y = ∑xP(x) is a sufficient statistic for θ.</p>",
+    "hints": [
+      "Start by recognizing that Y is a function of X.",
+      "Use the factorization theorem to relate the joint density of X and Y to the marginal density of X.",
+      "Conclude that Y contains all the information about θ that X does."
+    ],
+    "solutionHtml": "<p>To show that Y is sufficient, we need to prove that P(x|y) = P(x) for all x and y.</p><p>Using the factorization theorem, we can write:</p>\\[\\frac{P(x,y)}{\\int_x P(x) dx} = \\frac{P(x)P(y|x)}{\\int_x P(x) dx}\\]\\[= \\frac{P(x)P(y|\\sum_x P(x)x)}{\\int_x P(x) dx}\\]\\[= \\frac{P(x)P(y|Y)}{\\int_x P(x) dx}\\]\\[= P(x)\\]\\[= P(x)\\]</p><p>This shows that Y contains all the information about θ that X does, making it a sufficient statistic.</p>\",",
+    "answerShort": "Y is a sufficient statistic for θ.\" },",
+    "commonMistakes": [
+      "Forgetting to use the factorization theorem.",
+      "Not recognizing that Y is a function of X."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:57:31.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

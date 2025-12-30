@@ -1,0 +1,1258 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css" id="nanobarcss">.nanobar{width:100%;height:4px;z-index:9999;top:0}.bar{width:0;height:100%;transition:height .3s;background:#000}</style><style>#back-to-top{background:#fff;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;bottom:20px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);box-shadow:0 2px 5px 0 rgba(0,0,0,.26);color:#333;cursor:pointer;display:block;height:56px;opacity:1;outline:0;position:fixed;right:20px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-transition:bottom .2s,opacity .2s;-o-transition:bottom .2s,opacity .2s;-moz-transition:bottom .2s,opacity .2s;transition:bottom .2s,opacity .2s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:56px;z-index:1}#back-to-top svg{display:block;fill:currentColor;height:24px;margin:16px auto 0;width:24px}#back-to-top.hidden{bottom:-56px;opacity:0}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aman's AI Journal • Primers • Batchnorm</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Aman's AI Journal | Course notes and learning material for Artificial Intelligence and Deep Learning Stanford classes.">
+  <link rel="canonical" href="https://aman.ai/primers/ai/batchnorm/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Google fonts -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/atom+xml" title="Aman’s AI Journal" href="/feed.xml">  
+  
+  <link href="https://aman.ai/favicon.jpg" rel="shortcut icon">
+
+  <!-- Google ads -->
+  <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202512100101/show_ads_impl.js?bust=95377246"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5905744527956213" crossorigin="anonymous" data-checked-head="true"></script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-5905744527956213?href=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fbatchnorm&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUalRbY4BJ-9gJmVdoz1EqWk9AFPYQ58nRPqYuBCaJXducVkLpb8HGOupM86gcTaGh3LbyOUe_jJSlSVmJag2jvyKPsbAXysptTaXiSqefn0nJIOJQyRlOjyUt7NqA0k6w2bJUn7g==?fccs=W1siQUtzUm9sOWp6ZmQyWU9nRG83RDRub0wza2dSQzdHN0gxV0ltMEJpLW9fYzQzaVF4bzdhZ0l4LUFGN1d5QzdYeTRBLXRlbVo0aE5aOUxiZ0VQMFZyeDkzRzk3SkRWQ3JsTlhTNXo2NFhoWUFrdWNhWENmVEpWOHJPSkVIWFZrdTUyTWRrQV9TSTNaWElMYm5uUS1sTkZvdWd4MmF3X29ualRnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI1NjAsNjcwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3XV0sImh0dHBzOi8vYW1hbi5haS9wcmltZXJzL2FpL2JhdGNobm9ybS8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxVv_rniHTKWl2pGMu8r8wwbX5BcxkNl_Z4S5pgEJVFR9uFFH3f1YWp0Y3c0uVBU1hAut0Q8stvLoxoUIR1RLh5VN9bJwWFFNj3kpQ5UXhz8s5gwwZoY0qqy8fnq1ZPhdUOGcqlkXA==?fccs=W1siQUtzUm9sOWp6ZmQyWU9nRG83RDRub0wza2dSQzdHN0gxV0ltMEJpLW9fYzQzaVF4bzdhZ0l4LUFGN1d5QzdYeTRBLXRlbVo0aE5aOUxiZ0VQMFZyeDkzRzk3SkRWQ3JsTlhTNXo2NFhoWUFrdWNhWENmVEpWOHJPSkVIWFZrdTUyTWRrQV9TSTNaWElMYm5uUS1sTkZvdWd4MmF3X29ualRnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI1NjAsMTkyMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDIsbnVsbCwiZW4iXSwiaHR0cHM6Ly9hbWFuLmFpL3ByaW1lcnMvYWkvYmF0Y2hub3JtLyIsbnVsbCxbWzgsInNDaE5INU9zYWswIl0sWzksImVuLVVTIl0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUtjELuwxgFO2nhif-20hq_9Hc32ITJhfB4syZcggvZcogA-JvVH_sV-SYYkosnL_GXofNzq4jOQK96U8VmQeewsnJy-asqbPoOsL-cizBNrCKuBNm8qjfVrO2KvqyPb26ct0pwJQ==?fccs=W1siQUtzUm9sOWp6ZmQyWU9nRG83RDRub0wza2dSQzdHN0gxV0ltMEJpLW9fYzQzaVF4bzdhZ0l4LUFGN1d5QzdYeTRBLXRlbVo0aE5aOUxiZ0VQMFZyeDkzRzk3SkRWQ3JsTlhTNXo2NFhoWUFrdWNhWENmVEpWOHJPSkVIWFZrdTUyTWRrQV9TSTNaWElMYm5uUS1sTkZvdWd4MmF3X29ualRnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3NjY5MjI1NjEsNDQwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3LDksNl0sbnVsbCwyLG51bGwsImVuIixudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vYW1hbi5haS9wcmltZXJzL2FpL2JhdGNobm9ybS8iLG51bGwsW1s4LCJzQ2hOSDVPc2FrMCJdLFs5LCJlbi1VUyJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ"></script></head>
+
+
+    <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+      <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+      <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })</script><div id="back-to-top" class="hidden">Back to Top</div>
+      <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-family: sans-serif;
+          font-size: 14px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+      </style>   
+
+    <header class="site-header">
+
+  <a class="site-title" href="../">Distilled AI</a>
+
+  <a class="site-link" href="https://aman.ai">Back to aman.ai</a>
+
+  <!-- Html Elements for Search -->
+  <div id="search-container">
+  <input class="site-search-box" type="text" autocomplete="off" id="search-input" placeholder="search...">
+  <div id="results-container"></div>
+  </div>
+
+  <!-- Script pointing to aman-script.js -->
+  <script src="https://aman.ai/js/aman-search.min.js" type="text/javascript"></script>
+
+  <!-- Configuration -->
+  <script>
+  document.getElementById('search-input').value='';
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    exclude: ["cs231a"],
+    searchResultTemplate: '<div class="site-search-results"><a href="{url}">{title}</a></div>',
+    noResultsText: '<div class="site-search-results"><p>No results found</p></div>',
+    json: 'https://aman.ai/search.json',
+    limit: 5,
+    fuzzy: false,
+  })
+  </script>    
+
+</header>     
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Primers • Batchnorm</h1>
+  </header>
+
+  <article class="post-content">
+  <ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#the-problem-of-internal-covariate-shift" id="markdown-toc-the-problem-of-internal-covariate-shift">The Problem of Internal Covariate Shift</a></li>
+  <li><a href="#standardize-layer-inputs" id="markdown-toc-standardize-layer-inputs">Standardize Layer Inputs</a></li>
+  <li><a href="#how-to-standardize-layer-inputs" id="markdown-toc-how-to-standardize-layer-inputs">How to Standardize Layer Inputs</a></li>
+  <li><a href="#examples-of-using-batch-normalization" id="markdown-toc-examples-of-using-batch-normalization">Examples of Using Batch Normalization</a></li>
+  <li><a href="#summary-batchnorm-during-training-vs-testinginference" id="markdown-toc-summary-batchnorm-during-training-vs-testinginference">Summary: BatchNorm During Training vs. Testing/Inference</a>    <ul>
+      <li><a href="#batchnorm-during-training" id="markdown-toc-batchnorm-during-training">BatchNorm During Training:</a></li>
+      <li><a href="#batchnorm-during-testing-inference" id="markdown-toc-batchnorm-during-testing-inference">BatchNorm During Testing (Inference):</a></li>
+      <li><a href="#why-the-distinction" id="markdown-toc-why-the-distinction">Why the Distinction?</a></li>
+    </ul>
+  </li>
+  <li><a href="#tips-for-using-batch-normalization" id="markdown-toc-tips-for-using-batch-normalization">Tips for Using Batch Normalization</a>    <ul>
+      <li><a href="#use-with-different-network-types" id="markdown-toc-use-with-different-network-types">Use with Different Network Types</a></li>
+      <li><a href="#probably-use-before-the-activation" id="markdown-toc-probably-use-before-the-activation">Probably Use Before the Activation</a></li>
+      <li><a href="#use-large-learning-rates" id="markdown-toc-use-large-learning-rates">Use Large Learning Rates</a></li>
+      <li><a href="#less-sensitive-to-weight-initialization" id="markdown-toc-less-sensitive-to-weight-initialization">Less Sensitive to Weight Initialization</a></li>
+      <li><a href="#alternate-to-data-preparation" id="markdown-toc-alternate-to-data-preparation">Alternate to Data Preparation</a></li>
+      <li><a href="#dont-use-with-dropout" id="markdown-toc-dont-use-with-dropout">Don’t Use with Dropout</a></li>
+    </ul>
+  </li>
+  <li><a href="#rmsnorm" id="markdown-toc-rmsnorm">RMSNorm</a></li>
+  <li><a href="#faqs" id="markdown-toc-faqs">FAQs</a>    <ul>
+      <li><a href="#does-batchnorm-lead-to-a-standard-normal-distribution-among-layer-outputs" id="markdown-toc-does-batchnorm-lead-to-a-standard-normal-distribution-among-layer-outputs">Does BatchNorm Lead to a Standard Normal Distribution Among Layer Outputs?</a></li>
+      <li><a href="#related-does-layernorm-seek-to-obtain-a-normal-distribution-at-the-output-of-a-layer" id="markdown-toc-related-does-layernorm-seek-to-obtain-a-normal-distribution-at-the-output-of-a-layer">Related: Does LayerNorm Seek to Obtain a Normal Distribution at the Output of a Layer?</a></li>
+      <li><a href="#does-batchnorm-normalize-at-a-per-feature-level" id="markdown-toc-does-batchnorm-normalize-at-a-per-feature-level">Does BatchNorm Normalize at a “per-feature” Level?</a></li>
+    </ul>
+  </li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a>    <ul>
+      <li><a href="#books" id="markdown-toc-books">Books</a></li>
+      <li><a href="#papers" id="markdown-toc-papers">Papers</a></li>
+      <li><a href="#articles" id="markdown-toc-articles">Articles</a></li>
+    </ul>
+  </li>
+  <li><a href="#key-takeaways" id="markdown-toc-key-takeaways">Key Takeaways</a></li>
+  <li><a href="#citation" id="markdown-toc-citation">Citation</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<ul>
+  <li>
+    <p>Training deep neural networks with tens of layers is challenging as they can be sensitive to the initial random weights and configuration of the learning algorithm.</p>
+  </li>
+  <li>
+    <p>One possible reason for this difficulty is the distribution of the inputs to layers deep in the network may change after each mini-batch when the weights are updated. This can cause the learning algorithm to forever chase a moving target. This change in the distribution of inputs to layers in the network is referred to the technical name “internal covariate shift.”</p>
+  </li>
+  <li>
+    <p>Batch normalization (BatchNorm) is a popular technique in deep learning for training very deep neural networks that standardizes the inputs to a layer for each mini-batch (in other words, normalizes the activations of neurons in a network). This has the effect of stabilizing the learning process and speeding up the convergence of training by dramatically reducing the number of training epochs required to train deep networks.</p>
+  </li>
+  <li>
+    <p>In this article, you will discover the batch normalization method used to accelerate the training of deep learning neural networks.</p>
+  </li>
+</ul>
+
+<h2 id="the-problem-of-internal-covariate-shift">The Problem of Internal Covariate Shift</h2>
+
+<ul>
+  <li>
+    <p>Training deep neural networks, e.g. networks with tens of hidden layers, is challenging.</p>
+  </li>
+  <li>
+    <p>One aspect of this challenge is that the model is updated layer-by-layer backward from the output to the input using an estimate of error that assumes the weights in the layers prior to the current layer are fixed.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Very deep models involve the composition of several functions or layers. The gradient tells how to update each parameter, under the assumption that the other layers do not change. In practice, we update all of the layers simultaneously. — Page 317, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Because all layers are changed during an update, the update procedure is forever chasing a moving target.</p>
+  </li>
+  <li>
+    <p>For example, the weights of a layer are updated given an expectation that the prior layer outputs values with a given distribution. This distribution is likely changed after the weights of the prior layer are updated.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Training Deep Neural Networks is complicated by the fact that the distribution of each layer’s inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>The authors of the paper introducing batch normalization refer to change in the distribution of inputs during training as “internal covariate shift.”</li>
+</ul>
+
+<blockquote>
+  <p>We refer to the change in the distributions of internal nodes of a deep network, in the course of training, as Internal Covariate Shift. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<h2 id="standardize-layer-inputs">Standardize Layer Inputs</h2>
+
+<ul>
+  <li>Batch normalization, or batchnorm for short, proposed in <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a> by Ioffe and Szegedy (2015) as a technique to help coordinate the update of multiple layers in the model.</li>
+</ul>
+
+<blockquote>
+  <p>Batch normalization provides an elegant way of reparametrizing almost any deep network. The reparametrization significantly reduces the problem of coordinating updates across many layers. — Page 318, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<ul>
+  <li>It does this scaling the output of the layer, specifically by standardizing the activations of each input variable per mini-batch, such as the activations of a node from the previous layer. Recall that standardization refers to rescaling data to have a mean of zero and a standard deviation of one, e.g. a standard Gaussian.</li>
+</ul>
+
+<blockquote>
+  <p>Batch normalization reparametrizes the model to make some units always be standardized by definition. — Page 319, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<ul>
+  <li>This process is also called “whitening” when applied to images in computer vision.</li>
+</ul>
+
+<blockquote>
+  <p>By whitening the inputs to each layer, we would take a step towards achieving the fixed distributions of inputs that would remove the ill effects of the internal covariate shift. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>Standardizing the activations of the prior layer means that assumptions the subsequent layer makes about the spread and distribution of inputs during the weight update will not change, at least not dramatically. This has the effect of stabilizing and speeding-up the training process of deep neural networks.</li>
+</ul>
+
+<blockquote>
+  <p>Batch normalization acts to standardize only the mean and variance of each unit in order to stabilize learning, but allows the relationships between units and the nonlinear statistics of a single unit to change. - Page 320, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<ul>
+  <li>Normalizing the inputs to the layer has an effect on the training of the model, dramatically reducing the number of epochs required. It can also have a regularizing effect, reducing generalization error much like the use of activation regularization.</li>
+</ul>
+
+<blockquote>
+  <p>Batch normalization can have a dramatic effect on optimization performance, especially for convolutional networks and networks with sigmoidal nonlinearities. — Page 425, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<ul>
+  <li>Although reducing “internal covariate shift” was a motivation in the development of the method, there is some suggestion that instead batch normalization is effective because it smooths and, in turn, simplifies the optimization function that is being solved when training the network.</li>
+</ul>
+
+<blockquote>
+  <p>… BatchNorm impacts network training in a fundamental way: it makes the landscape of the corresponding optimization problem be significantly more smooth. This ensures, in particular, that the gradients are more predictive and thus allow for use of larger range of learning rates and faster network convergence. — How Does Batch Normalization Help Optimization? (No, It Is Not About Internal Covariate Shift), 2018.</p>
+</blockquote>
+
+<h2 id="how-to-standardize-layer-inputs">How to Standardize Layer Inputs</h2>
+
+<ul>
+  <li>
+    <p>Batch normalization can be implemented during training by calculating the mean and standard deviation of each input variable to a layer per mini-batch and using these statistics to perform the standardization.</p>
+  </li>
+  <li>
+    <p>Alternately, a running average of mean and standard deviation can be maintained across mini-batches, but may result in unstable training.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>It is natural to ask whether we could simply use the moving averages […] to perform the normalization during training […]. This, however, has been observed to lead to the model blowing up. — Batch Renormalization: Towards Reducing Minibatch Dependence in Batch-Normalized Models, 2017.</p>
+</blockquote>
+
+<ul>
+  <li>After training, the mean and standard deviation of inputs for the layer can be set as mean values observed over the training dataset. The Batchnorm algorithm is as shown below (diagram taken from <a href="https://arxiv.org/abs/1502.03167">Ioffe and Szegedy</a>, 2015).</li>
+</ul>
+
+<p><img src="/primers/ai/assets/batchnorm/batchnorm.png" alt=""></p>
+
+<ul>
+  <li>For small mini-batch sizes or mini-batches that do not contain a representative distribution of examples from the training dataset, the differences in the standardized inputs between training and inference (using the model after training) can result in noticeable differences in performance. This can be addressed with a modification of the method called Batch Renormalization (or BatchRenorm for short) that makes the estimates of the variable mean and standard deviation more stable across mini-batches.</li>
+</ul>
+
+<blockquote>
+  <p>Batch Renormalization extends batchnorm with a per-dimension correction to ensure that the activations match between the training and inference networks. — Batch Renormalization: Towards Reducing Minibatch Dependence in Batch-Normalized Models, 2017.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>This standardization of inputs may be applied to input variables for the first hidden layer or to the activations from a hidden layer for deeper layers.</p>
+  </li>
+  <li>
+    <p>In practice, it is common to allow the layer to learn two new parameters, namely a new mean and standard deviation, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: STIXGeneral-Italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">\beta</script> and <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mi" id="MathJax-Span-6" style="font-family: STIXGeneral-Italic;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">\gamma</script> respectively, that allow the automatic scaling and shifting of the standardized layer inputs. These parameters are learned by the model as part of the training process.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note that simply normalizing each input of a layer may change what the layer can represent. […] These parameters are learned along with the original model parameters, and restore the representation power of the network. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Importantly the backpropagation algorithm is updated to operate upon the transformed inputs, and error is also used to update the new scale and shifting parameters learned by the model.</p>
+  </li>
+  <li>
+    <p>The standardization is applied to the inputs to the layer, namely the input variables or the output of the activation function from the prior layer. Given the choice of activation function, the distribution of the inputs to the layer may be quite non-Gaussian. In this case, there may be benefit in standardizing the summed activation before the activation function in the previous layer.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>We add the BN transform immediately before the nonlinearity […] We could have also normalized the layer inputs <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-7" style="width: 0.604em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.512em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.576em, 1000.47em, 2.317em, -999.998em); top: -2.174em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mi" id="MathJax-Span-9" style="font-family: STIXGeneral-Italic;">u</span></span><span style="display: inline-block; width: 0px; height: 2.178em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.669em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">u</script>, but since <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-10" style="width: 0.604em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.512em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.576em, 1000.47em, 2.317em, -999.998em); top: -2.174em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mi" id="MathJax-Span-12" style="font-family: STIXGeneral-Italic;">u</span></span><span style="display: inline-block; width: 0px; height: 2.178em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.669em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">u</script> is likely the output of another nonlinearity, the shape of its distribution is likely to change during training, and constraining its first and second moments would not eliminate the covariate shift. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<h2 id="examples-of-using-batch-normalization">Examples of Using Batch Normalization</h2>
+
+<ul>
+  <li>
+    <p>This section provides a few examples of milestone papers and popular models that make use of batch normalization.</p>
+  </li>
+  <li>
+    <p>In the 2015 paper that introduced the technique titled “<a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>,” the authors Sergey Ioffe and Christian Szegedy from Google demonstrated a dramatic speedup of an Inception-based convolutional neural network for photo classification over a baseline method.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>By only using Batch Normalization […], we match the accuracy of Inception in less than half the number of training steps.</p>
+</blockquote>
+
+<ul>
+  <li>Kaiming He, et al. in their 2015 paper titled <a href="https://arxiv.org/abs/1512.03385">“Deep Residual Learning for Image Recognition”</a> used batch normalization after the convolutional layers in their very deep model referred to as ResNet and achieve then state-of-the-art results on the ImageNet dataset, a standard photo classification task.</li>
+</ul>
+
+<blockquote>
+  <p>We adopt batch normalization (BN) right after each convolution and before activation …</p>
+</blockquote>
+
+<ul>
+  <li>Christian Szegedy, et al. from Google in their 2016 paper titled <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/Szegedy_Rethinking_the_Inception_CVPR_2016_paper.html">“Rethinking the Inception Architecture for Computer Vision”</a> used batch normalization in their updated inception model referred to as GoogleNet Inception-v3, achieving then state-of-the-art results on the ImageNet dataset.</li>
+</ul>
+
+<blockquote>
+  <p>BN-auxiliary refers to the version in which the fully connected layer of the auxiliary classifier is also batch-normalized, not just the convolutions.</p>
+</blockquote>
+
+<ul>
+  <li>Dario Amodei from Baidu in their 2016 paper titled <a href="http://proceedings.mlr.press/v48/amodei16.html">“Deep Speech 2 : End-to-End Speech Recognition in English and Mandarin”</a> use a variation of batch normalization recurrent neural networks in their end-to-end deep model for speech recognition.</li>
+</ul>
+
+<blockquote>
+  <p>… we find that when applied to very deep networks of RNNs on large data sets, the variant of BatchNorm we use substantially improves final generalization error in addition to accelerating training.</p>
+</blockquote>
+
+<h2 id="summary-batchnorm-during-training-vs-testinginference">Summary: BatchNorm During Training vs. Testing/Inference</h2>
+
+<ul>
+  <li>To summarize how BatchNorm operates differs between the training and testing (or inference) phases. Let’s break down these differences:</li>
+</ul>
+
+<h3 id="batchnorm-during-training">BatchNorm During Training:</h3>
+
+<ul>
+  <li><strong>Compute Mean and Variance</strong>: For each feature in the mini-batch, compute the mean and variance.
+    <ul>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mfrac&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13" style="width: 8.284em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.878em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.419em, 1006.88em, 3.596em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-14"><span class="msubsup" id="MathJax-Span-15"><span style="display: inline-block; position: relative; width: 2.19em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-16" style="font-family: STIXGeneral-Italic;">μ</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-17"><span class="mrow" id="MathJax-Span-18"><span class="mi" id="MathJax-Span-19" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">b</span><span class="mi" id="MathJax-Span-20" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-21" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-22" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-23" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-24" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mfrac" id="MathJax-Span-25" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.18em, 1000.42em, 4.169em, -999.997em); top: -4.685em; left: 50%; margin-left: -0.258em;"><span class="mn" id="MathJax-Span-26" style="font-family: STIXGeneral-Regular;">1</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.44em, 1000.73em, 4.169em, -999.997em); top: -3.331em; left: 50%; margin-left: -0.362em;"><span class="mi" id="MathJax-Span-27" style="font-family: STIXGeneral-Italic;">m</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.84em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.836em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span><span class="munderover" id="MathJax-Span-28" style="padding-left: 0.211em;"><span style="display: inline-block; position: relative; width: 1.305em; height: 0px;"><span style="position: absolute; clip: rect(2.867em, 1001.2em, 4.638em, -999.997em); top: -4.008em; left: 0em;"><span class="mo" id="MathJax-Span-29" style="font-family: STIXSizeOneSym; vertical-align: -0.518em;">∑</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.94em, 4.273em, -999.997em); top: -2.862em; left: 0.107em;"><span class="texatom" id="MathJax-Span-30"><span class="mrow" id="MathJax-Span-31"><span class="mi" id="MathJax-Span-32" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-33" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-34" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.44em, 1000.52em, 4.169em, -999.997em); top: -5.206em; left: 0.419em;"><span class="texatom" id="MathJax-Span-35"><span class="mrow" id="MathJax-Span-36"><span class="mi" id="MathJax-Span-37" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">m</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-38" style="padding-left: 0.211em;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-39" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-40" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.559em; border-left: 0px solid; width: 0px; height: 3.566em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>μ</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>m</mi></mrow></munderover><msub><mi>x</mi><mi>i</mi></msub></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-5">\mu_{batch} = \frac{1}{m} \sum_{i=1}^{m} x_i</script>
+      </li>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msubsup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msubsup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mfrac&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-41" style="width: 13.284em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.044em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.419em, 1011.04em, 3.596em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-42"><span class="msubsup" id="MathJax-Span-43"><span style="display: inline-block; position: relative; width: 2.138em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.52em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.42em, 4.169em, -999.997em); top: -4.372em; left: 0.576em;"><span class="mn" id="MathJax-Span-45" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1001.67em, 4.169em, -999.997em); top: -3.695em; left: 0.523em;"><span class="texatom" id="MathJax-Span-46"><span class="mrow" id="MathJax-Span-47"><span class="mi" id="MathJax-Span-48" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">b</span><span class="mi" id="MathJax-Span-49" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-50" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-51" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-52" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-53" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mfrac" id="MathJax-Span-54" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.18em, 1000.42em, 4.169em, -999.997em); top: -4.685em; left: 50%; margin-left: -0.258em;"><span class="mn" id="MathJax-Span-55" style="font-family: STIXGeneral-Regular;">1</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.44em, 1000.73em, 4.169em, -999.997em); top: -3.331em; left: 50%; margin-left: -0.362em;"><span class="mi" id="MathJax-Span-56" style="font-family: STIXGeneral-Italic;">m</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.84em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.836em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span><span class="munderover" id="MathJax-Span-57" style="padding-left: 0.211em;"><span style="display: inline-block; position: relative; width: 1.305em; height: 0px;"><span style="position: absolute; clip: rect(2.867em, 1001.2em, 4.638em, -999.997em); top: -4.008em; left: 0em;"><span class="mo" id="MathJax-Span-58" style="font-family: STIXSizeOneSym; vertical-align: -0.518em;">∑</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.94em, 4.273em, -999.997em); top: -2.862em; left: 0.107em;"><span class="texatom" id="MathJax-Span-59"><span class="mrow" id="MathJax-Span-60"><span class="mi" id="MathJax-Span-61" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-62" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-63" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.44em, 1000.52em, 4.169em, -999.997em); top: -5.206em; left: 0.419em;"><span class="texatom" id="MathJax-Span-64"><span class="mrow" id="MathJax-Span-65"><span class="mi" id="MathJax-Span-66" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">m</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-67" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-68"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-69" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-70" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-71" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">−</span><span class="msubsup" id="MathJax-Span-72" style="padding-left: 0.263em;"><span style="display: inline-block; position: relative; width: 2.19em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-73" style="font-family: STIXGeneral-Italic;">μ</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-74"><span class="mrow" id="MathJax-Span-75"><span class="mi" id="MathJax-Span-76" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">b</span><span class="mi" id="MathJax-Span-77" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-78" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-79" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-80" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-81"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px;"><span style="position: absolute; clip: rect(3.18em, 1000.26em, 4.326em, -999.997em); top: -4.008em; left: 0em;"><span class="mo" id="MathJax-Span-82" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -4.424em; left: 0.315em;"><span class="mn" id="MathJax-Span-83" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.559em; border-left: 0px solid; width: 0px; height: 3.566em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msubsup><mi>σ</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>m</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><msub><mi>μ</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi></mrow></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-6">\sigma_{batch}^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu_{batch})^2</script>
+      </li>
+    </ul>
+
+    <p>where <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-84" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.565em, 1000.73em, 2.451em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-85"><span class="msubsup" id="MathJax-Span-86"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-87" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-88" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 0.816em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mi>i</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-7">x_i</script> is the feature vector of a single data point, and <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-89" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-90"><span class="mi" id="MathJax-Span-91" style="font-family: STIXGeneral-Italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></span></span><script type="math/tex" id="MathJax-Element-8">m</script> is the number of data points in the mini-batch.</p>
+  </li>
+  <li><strong>Normalize</strong>: Normalize the activations using the computed mean and variance:
+    <ul>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;msqrt&gt;&lt;msubsup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msubsup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;/msqrt&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-92" style="width: 8.596em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.138em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.836em, 1007.14em, 4.169em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-93"><span class="msubsup" id="MathJax-Span-94"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="texatom" id="MathJax-Span-95"><span class="mrow" id="MathJax-Span-96"><span class="munderover" id="MathJax-Span-97"><span style="display: inline-block; position: relative; width: 0.471em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-98" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -4.06em; left: 0.107em;"><span style="height: 0em; vertical-align: 0em; width: 0.367em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-99" style="font-family: STIXGeneral-Regular;">̂&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.258em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-100" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-101" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mfrac" id="MathJax-Span-102" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 5.003em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.284em, 1004.12em, 4.378em, -999.997em); top: -4.685em; left: 50%; margin-left: -2.029em;"><span class="mrow" id="MathJax-Span-103"><span class="msubsup" id="MathJax-Span-104"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-105" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-106" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-107" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">−</span><span class="msubsup" id="MathJax-Span-108" style="padding-left: 0.263em;"><span style="display: inline-block; position: relative; width: 2.19em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-109" style="font-family: STIXGeneral-Italic;">μ</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-110"><span class="mrow" id="MathJax-Span-111"><span class="mi" id="MathJax-Span-112" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">b</span><span class="mi" id="MathJax-Span-113" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-114" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-115" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-116" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.659em, 1004.9em, 4.846em, -999.997em); top: -2.862em; left: 50%; margin-left: -2.445em;"><span class="msqrt" id="MathJax-Span-117"><span style="display: inline-block; position: relative; width: 4.898em; height: 0px;"><span style="position: absolute; clip: rect(3.023em, 1003.8em, 4.482em, -999.997em); top: -4.008em; left: 1.044em;"><span class="mrow" id="MathJax-Span-118"><span class="msubsup" id="MathJax-Span-119"><span style="display: inline-block; position: relative; width: 2.138em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.52em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-120" style="font-family: STIXGeneral-Italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.42em, 4.169em, -999.997em); top: -4.372em; left: 0.576em;"><span class="mn" id="MathJax-Span-121" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1001.67em, 4.169em, -999.997em); top: -3.695em; left: 0.523em;"><span class="texatom" id="MathJax-Span-122"><span class="mrow" id="MathJax-Span-123"><span class="mi" id="MathJax-Span-124" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">b</span><span class="mi" id="MathJax-Span-125" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-126" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-127" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">c</span><span class="mi" id="MathJax-Span-128" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-129" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-130" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">ϵ</span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.023em, 1003.86em, 3.388em, -999.997em); top: -4.372em; left: 1.044em;"><span style="display: inline-block; position: relative; width: 3.857em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 0em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 3.336em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.419em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.836em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.253em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.669em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.086em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.503em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.919em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.294em, 1001.1em, 4.482em, -999.997em); top: -3.643em; left: 0em;"><span style="font-family: STIXSizeOneSym;">√</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1005em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 5.003em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -2.247em; border-left: 0px solid; width: 0px; height: 3.753em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><msub><mi>μ</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi></mrow></msub></mrow><msqrt><msubsup><mi>σ</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi></mrow><mn>2</mn></msubsup><mo>+</mo><mi>ϵ</mi></msqrt></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-9">\hat{x}_i = \frac{x_i - \mu_{batch}}{\sqrt{\sigma_{batch}^2 + \epsilon}}</script>
+      </li>
+    </ul>
+
+    <p>where <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-131" style="width: 0.523em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.419em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.42em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-132"><span class="mi" id="MathJax-Span-133" style="font-family: STIXGeneral-Italic;">ϵ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ϵ</mi></math></span></span><script type="math/tex" id="MathJax-Element-10">\epsilon</script> is a small constant added for numerical stability.</p>
+  </li>
+  <li><strong>Scale and Shift</strong>: This is a crucial step which allows the model to learn the optimal scale and mean for each feature. Two learnable parameters, gamma (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-134" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-135"><span class="mi" id="MathJax-Span-136" style="font-family: STIXGeneral-Italic;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math></span></span><script type="math/tex" id="MathJax-Element-11">\gamma</script>) and beta (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-137" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-138"><span class="mi" id="MathJax-Span-139" style="font-family: STIXGeneral-Italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-12">\beta</script>), are introduced.
+    <ul>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;msub&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-140" style="width: 5.836em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.846em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1004.85em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-141"><span class="msubsup" id="MathJax-Span-142"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-143" style="font-family: STIXGeneral-Italic;">y</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-144" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-145" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mi" id="MathJax-Span-146" style="font-family: STIXGeneral-Italic; padding-left: 0.315em;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="msubsup" id="MathJax-Span-147"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="texatom" id="MathJax-Span-148"><span class="mrow" id="MathJax-Span-149"><span class="munderover" id="MathJax-Span-150"><span style="display: inline-block; position: relative; width: 0.471em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-151" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -4.06em; left: 0.107em;"><span style="height: 0em; vertical-align: 0em; width: 0.367em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-152" style="font-family: STIXGeneral-Regular;">̂&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.258em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-153" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-154" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-155" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mi>γ</mi><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo>+</mo><mi>β</mi></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-13">y_i = \gamma \hat{x}_i + \beta</script>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Update Running Statistics</strong>: To use during inference, maintain a running mean and variance (usually via an exponential moving average) of the features during training. These statistics are updated every time a batch is processed.</li>
+</ul>
+
+<h3 id="batchnorm-during-testing-inference">BatchNorm During Testing (Inference):</h3>
+
+<ul>
+  <li>
+    <p><strong>Use Running Statistics</strong>: Instead of computing the mean and variance for the current batch of data (which might not make sense, especially if you’re processing one example at a time), use the running mean and variance statistics computed during training.</p>
+  </li>
+  <li><strong>Normalize</strong>: Normalize the activations using the running mean and variance:
+    <ul>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;msqrt&gt;&lt;msubsup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msubsup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;/msqrt&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-156" style="width: 9.378em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.815em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.732em, 1007.82em, 4.169em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-157"><span class="msubsup" id="MathJax-Span-158"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="texatom" id="MathJax-Span-159"><span class="mrow" id="MathJax-Span-160"><span class="munderover" id="MathJax-Span-161"><span style="display: inline-block; position: relative; width: 0.471em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-162" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -4.06em; left: 0.107em;"><span style="height: 0em; vertical-align: 0em; width: 0.367em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-163" style="font-family: STIXGeneral-Regular;">̂&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.258em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-164" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-165" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mfrac" id="MathJax-Span-166" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 5.68em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.284em, 1004.79em, 4.482em, -999.997em); top: -4.789em; left: 50%; margin-left: -2.393em;"><span class="mrow" id="MathJax-Span-167"><span class="msubsup" id="MathJax-Span-168"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-169" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-170" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-171" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">−</span><span class="msubsup" id="MathJax-Span-172" style="padding-left: 0.263em;"><span style="display: inline-block; position: relative; width: 2.867em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-173" style="font-family: STIXGeneral-Italic;">μ</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.523em;"><span class="texatom" id="MathJax-Span-174"><span class="mrow" id="MathJax-Span-175"><span class="mi" id="MathJax-Span-176" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-177" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">u</span><span class="mi" id="MathJax-Span-178" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-179" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-180" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-181" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-182" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">g</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.711em, 1005.58em, 4.898em, -999.997em); top: -2.914em; left: 50%; margin-left: -2.758em;"><span class="msqrt" id="MathJax-Span-183"><span style="display: inline-block; position: relative; width: 5.576em; height: 0px;"><span style="position: absolute; clip: rect(3.023em, 1004.48em, 4.638em, -999.997em); top: -4.008em; left: 1.044em;"><span class="mrow" id="MathJax-Span-184"><span class="msubsup" id="MathJax-Span-185"><span style="display: inline-block; position: relative; width: 2.815em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.52em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-186" style="font-family: STIXGeneral-Italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.42em, 4.169em, -999.997em); top: -4.372em; left: 0.576em;"><span class="mn" id="MathJax-Span-187" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1002.35em, 4.326em, -999.997em); top: -3.695em; left: 0.523em;"><span class="texatom" id="MathJax-Span-188"><span class="mrow" id="MathJax-Span-189"><span class="mi" id="MathJax-Span-190" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-191" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">u</span><span class="mi" id="MathJax-Span-192" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-193" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-194" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-195" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-196" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">g</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-197" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-198" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">ϵ</span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.023em, 1004.53em, 3.388em, -999.997em); top: -4.268em; left: 1.044em;"><span style="display: inline-block; position: relative; width: 4.534em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 0em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 4.013em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.419em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.888em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.305em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.773em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.242em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.659em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 3.128em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 3.544em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.294em, 1001.1em, 4.482em, -999.997em); top: -3.591em; left: 0em;"><span style="font-family: STIXSizeOneSym;">√</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1005.68em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 5.68em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -2.247em; border-left: 0px solid; width: 0px; height: 3.878em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><msub><mi>μ</mi><mrow class="MJX-TeXAtom-ORD"><mi>r</mi><mi>u</mi><mi>n</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow></msub></mrow><msqrt><msubsup><mi>σ</mi><mrow class="MJX-TeXAtom-ORD"><mi>r</mi><mi>u</mi><mi>n</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow><mn>2</mn></msubsup><mo>+</mo><mi>ϵ</mi></msqrt></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-14">\hat{x}_i = \frac{x_i - \mu_{running}}{\sqrt{\sigma_{running}^2 + \epsilon}}</script>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Scale and Shift</strong>: Use the learned gamma (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-199" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-200"><span class="mi" id="MathJax-Span-201" style="font-family: STIXGeneral-Italic;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math></span></span><script type="math/tex" id="MathJax-Element-15">\gamma</script>) and beta (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-202" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-203"><span class="mi" id="MathJax-Span-204" style="font-family: STIXGeneral-Italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-16">\beta</script>) values from training to scale and shift the normalized activations:
+    <ul>
+      <li>
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;msub&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-205" style="width: 5.836em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.846em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1004.85em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-206"><span class="msubsup" id="MathJax-Span-207"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.42em, 4.378em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-208" style="font-family: STIXGeneral-Italic;">y</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-209" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-210" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mi" id="MathJax-Span-211" style="font-family: STIXGeneral-Italic; padding-left: 0.315em;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="msubsup" id="MathJax-Span-212"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="texatom" id="MathJax-Span-213"><span class="mrow" id="MathJax-Span-214"><span class="munderover" id="MathJax-Span-215"><span style="display: inline-block; position: relative; width: 0.471em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-216" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -4.06em; left: 0.107em;"><span style="height: 0em; vertical-align: 0em; width: 0.367em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-217" style="font-family: STIXGeneral-Regular;">̂&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.258em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; top: -3.852em; left: 0.471em;"><span class="mi" id="MathJax-Span-218" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-219" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-220" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mi>γ</mi><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo>+</mo><mi>β</mi></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-17">y_i = \gamma \hat{x}_i + \beta</script>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="why-the-distinction">Why the Distinction?</h3>
+
+<ul>
+  <li>
+    <p>BatchNorm’s behavior difference between training and testing ensures a few things:</p>
+
+    <ul>
+      <li>
+        <p><strong>Stability</strong>: Using running statistics during inference ensures that the network behaves more predictably. If we were to normalize using batch statistics during inference, the network’s output could vary significantly based on the composition and size of the input batch.</p>
+      </li>
+      <li>
+        <p><strong>Scalability</strong>: During inference, you might not always have a “batch” of data. Sometimes, you might want to make predictions for a single data point. Using running statistics from training allows you to do this without any issues.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In frameworks like TensorFlow and PyTorch, the distinction between training and inference for BatchNorm is handled automatically as long as you appropriately set the model’s mode (<code class="language-plaintext highlighter-rouge">model.train()</code> vs. <code class="language-plaintext highlighter-rouge">model.eval()</code> in PyTorch, for instance).</p>
+  </li>
+</ul>
+
+<h2 id="tips-for-using-batch-normalization">Tips for Using Batch Normalization</h2>
+
+<ul>
+  <li>This section provides tips and suggestions for using batch normalization with your own neural networks.</li>
+</ul>
+
+<h3 id="use-with-different-network-types">Use with Different Network Types</h3>
+
+<ul>
+  <li>
+    <p>Batch normalization is a general technique that can be used to normalize the inputs to a layer.</p>
+  </li>
+  <li>
+    <p>It can be used with most network types, such as Multilayer Perceptrons, Convolutional Neural Networks and Recurrent Neural Networks.</p>
+  </li>
+</ul>
+
+<h3 id="probably-use-before-the-activation">Probably Use Before the Activation</h3>
+
+<ul>
+  <li>
+    <p>Batch normalization may be used on the inputs to the layer before or after the activation function in the previous layer.</p>
+  </li>
+  <li>
+    <p>It may be more appropriate <strong>after</strong> the activation function if for s-shaped functions like the hyperbolic tangent and logistic function.</p>
+  </li>
+  <li>
+    <p>It may be appropriate <strong>before</strong> the activation function for activations that may result in non-Gaussian distributions like the rectified linear activation function (ReLU), the modern default for most network types.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>The goal of Batch Normalization is to achieve a stable distribution of activation values throughout training, and in our experiments we apply it before the nonlinearity since that is where matching the first and second moments is more likely to result in a stable distribution. - <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>Perhaps test both approaches with your network.</li>
+</ul>
+
+<h3 id="use-large-learning-rates">Use Large Learning Rates</h3>
+
+<ul>
+  <li>
+    <p>Using batch normalization makes the network more stable during training.</p>
+  </li>
+  <li>
+    <p>This may require the use of much larger than normal learning rates, that in turn may further speed up the learning process.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>In a batch-normalized model, we have been able to achieve a training speedup from higher learning rates, with no ill side effects — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>The faster training also means that the decay rate used for the learning rate may be increased.</li>
+</ul>
+
+<h3 id="less-sensitive-to-weight-initialization">Less Sensitive to Weight Initialization</h3>
+
+<ul>
+  <li>
+    <p>Deep neural networks can be quite sensitive to the technique used to initialize the weights prior to training.</p>
+  </li>
+  <li>
+    <p>The stability to training brought by batch normalization can make training deep networks less sensitive to the choice of weight initialization method.</p>
+  </li>
+</ul>
+
+<h3 id="alternate-to-data-preparation">Alternate to Data Preparation</h3>
+
+<ul>
+  <li>
+    <p>Batch normalization could be used to standardize raw input variables that have differing scales.</p>
+  </li>
+  <li>
+    <p>If the mean and standard deviations calculated for each input feature are calculated over the mini-batch instead of over the entire training dataset, then the batch size must be sufficiently representative of the range of each variable.</p>
+  </li>
+  <li>
+    <p>It may not be appropriate for variables that have a data distribution that is highly non-Gaussian, in which case it might be better to perform data scaling as a pre-processing step.</p>
+  </li>
+</ul>
+
+<h3 id="dont-use-with-dropout">Don’t Use with Dropout</h3>
+
+<ul>
+  <li>Batch normalization offers some regularization effect, reducing generalization error, perhaps no longer requiring the use of dropout for regularization.</li>
+</ul>
+
+<blockquote>
+  <p>Removing Dropout from Modified BN-Inception speeds up training, without increasing overfitting. — <a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Further, it may not be a good idea to use batch normalization and dropout in the same network.</p>
+  </li>
+  <li>
+    <p>The reason is that the statistics used to normalize the activations of the prior layer may become noisy given the random dropping out of nodes during the dropout procedure.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Batch normalization also sometimes reduces generalization error and allows dropout to be omitted, due to the noise in the estimate of the statistics used to normalize each variable. — Page 425, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016.</p>
+</blockquote>
+
+<h2 id="rmsnorm">RMSNorm</h2>
+
+<ul>
+  <li>RMSNorm is a normalization technique designed for deep networks. Like other normalization methods such as Batch Normalization and Layer Normalization, the goal of RMSNorm is to stabilize and potentially accelerate the training of deep neural networks.</li>
+  <li>RMSNorm works by normalizing the root mean square (RMS) of the activations. The key formula for RMSNorm is:</li>
+</ul>
+
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mrow&gt;&lt;msqrt&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mfrac&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/munderover&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msubsup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;/msqrt&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-221" style="width: 12.919em; display: inline-block;"><span style="display: inline-block; position: relative; width: 10.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.94em, 1010.73em, 4.169em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-222"><span class="mi" id="MathJax-Span-223" style="font-family: STIXGeneral-Italic;">y</span><span class="mo" id="MathJax-Span-224" style="font-family: STIXGeneral-Regular; padding-left: 0.315em;">=</span><span class="mfrac" id="MathJax-Span-225" style="padding-left: 0.315em;"><span style="display: inline-block; position: relative; width: 8.805em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.685em; left: 50%; margin-left: -0.206em;"><span class="mi" id="MathJax-Span-226" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.659em, 1008.65em, 4.794em, -999.997em); top: -2.81em; left: 50%; margin-left: -4.32em;"><span class="mrow" id="MathJax-Span-227"><span class="msqrt" id="MathJax-Span-228"><span style="display: inline-block; position: relative; width: 6.982em; height: 0px;"><span style="position: absolute; clip: rect(2.919em, 1005.89em, 4.534em, -999.997em); top: -4.008em; left: 1.044em;"><span class="mrow" id="MathJax-Span-229"><span class="mfrac" id="MathJax-Span-230"><span style="display: inline-block; position: relative; width: 0.628em; height: 0px; margin-right: 0.107em; margin-left: 0.107em;"><span style="position: absolute; clip: rect(3.388em, 1000.26em, 4.169em, -999.997em); top: -4.424em; left: 50%; margin-left: -0.154em;"><span class="mn" id="MathJax-Span-231" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.52em, 4.169em, -999.997em); top: -3.643em; left: 50%; margin-left: -0.258em;"><span class="mi" id="MathJax-Span-232" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.63em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.628em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span><span class="munderover" id="MathJax-Span-233" style="padding-left: 0.211em;"><span style="display: inline-block; position: relative; width: 2.034em; height: 0px;"><span style="position: absolute; clip: rect(3.076em, 1000.84em, 4.43em, -999.997em); top: -4.008em; left: 0em;"><span class="mo" id="MathJax-Span-234" style="font-family: STIXGeneral-Regular; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.58em, 4.169em, -999.997em); top: -4.477em; left: 0.94em;"><span class="mi" id="MathJax-Span-235" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1001.1em, 4.169em, -999.997em); top: -3.695em; left: 0.94em;"><span class="texatom" id="MathJax-Span-236"><span class="mrow" id="MathJax-Span-237"><span class="mi" id="MathJax-Span-238" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-239" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-240" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-241" style="padding-left: 0.211em;"><span style="display: inline-block; position: relative; width: 0.94em; height: 0px;"><span style="position: absolute; clip: rect(3.44em, 1000.47em, 4.169em, -999.997em); top: -4.008em; left: 0em;"><span class="mi" id="MathJax-Span-242" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.42em, 4.169em, -999.997em); top: -4.372em; left: 0.523em;"><span class="mn" id="MathJax-Span-243" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.388em, 1000.26em, 4.169em, -999.997em); top: -3.695em; left: 0.471em;"><span class="mi" id="MathJax-Span-244" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-245" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-246" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">ϵ</span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(3.023em, 1005.94em, 3.388em, -999.997em); top: -4.372em; left: 1.044em;"><span style="display: inline-block; position: relative; width: 5.94em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 0em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -4.008em; left: 5.419em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.419em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 0.836em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.253em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 1.669em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.086em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.503em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 2.919em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 3.336em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 3.753em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 4.169em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 4.586em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -4.008em; left: 5.003em;">‾<span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(2.294em, 1001.1em, 4.482em, -999.997em); top: -3.695em; left: 0em;"><span style="font-family: STIXSizeOneSym;">√</span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span></span></span><span class="mo" id="MathJax-Span-247" style="font-family: STIXGeneral-Regular; padding-left: 0.263em;">+</span><span class="mi" id="MathJax-Span-248" style="font-family: STIXGeneral-Italic; padding-left: 0.263em;">b</span></span><span style="display: inline-block; width: 0px; height: 4.013em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1008.8em, 1.201em, -999.997em); top: -1.247em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 8.805em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.044em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -2.247em; border-left: 0px solid; width: 0px; height: 3.628em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>y</mi><mo>=</mo><mfrac><mi>x</mi><mrow><msqrt><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><mi>ϵ</mi></msqrt><mo>+</mo><mi>b</mi></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-18">y=\frac{x}{\sqrt{\frac{1}{N} \sum_{i=1}^N x_i^2+\epsilon}+b}</script>
+
+<ul>
+  <li>where:
+    <ul>
+      <li><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-249" style="width: 0.628em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.523em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.52em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-250"><span class="mi" id="MathJax-Span-251" style="font-family: STIXGeneral-Italic;">y</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">y</script> is the output after normalization.</li>
+      <li><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-252" style="width: 0.628em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.523em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.52em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-253"><span class="mi" id="MathJax-Span-254" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-20">x</script> is the input activation.</li>
+      <li><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-21-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-255" style="width: 0.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.784em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.78em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-256"><span class="mi" id="MathJax-Span-257" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-21">N</script> is the number of elements in $x$.</li>
+      <li><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-22-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-258" style="width: 0.523em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.419em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.42em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-259"><span class="mi" id="MathJax-Span-260" style="font-family: STIXGeneral-Italic;">ϵ</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.691em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ϵ</mi></math></span></span><script type="math/tex" id="MathJax-Element-22">\epsilon</script> is a small constant to prevent division by zero.</li>
+      <li><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-23-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-261" style="width: 0.628em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.523em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.47em, 2.346em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-262"><span class="mi" id="MathJax-Span-263" style="font-family: STIXGeneral-Italic;">b</span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi></math></span></span><script type="math/tex" id="MathJax-Element-23">b</script> is a bias term.</li>
+    </ul>
+  </li>
+  <li>This normalization technique is relatively simple and does not require maintaining moving averages like in Batch Normalization, making the implementation straightforward. The method scales the activations by the inverse of their RMS value, which can help in stabilizing the magnitudes of activations throughout the network.</li>
+  <li>When considering RMSNorm or any other normalization technique, it’s essential to test it in the context of your specific application and compare its performance to other methods to determine its suitability.</li>
+</ul>
+
+<h2 id="faqs">FAQs</h2>
+
+<h3 id="does-batchnorm-lead-to-a-standard-normal-distribution-among-layer-outputs">Does BatchNorm Lead to a Standard Normal Distribution Among Layer Outputs?</h3>
+
+<ul>
+  <li>Batch Normalization (BatchNorm) in deep learning does not directly lead to a standard normal distribution among layer outputs, but it does move the outputs closer to a normal distribution. The primary purpose of BatchNorm is to normalize the inputs of each layer, i.e., to shift and scale the inputs so that they have a mean of zero and a standard deviation of one. This is somewhat similar to a standard normal distribution.</li>
+  <li>Here’s a breakdown of how BatchNorm works and its effects:
+    <ol>
+      <li>
+        <p><strong>Normalizing Layer Inputs:</strong> BatchNorm normalizes the inputs for each mini-batch. This normalization is done per feature (i.e., independently for each channel in the case of CNNs or each feature in fully connected layers). The normalization ensures that the mean of the inputs is close to 0 and the variance is close to 1.</p>
+      </li>
+      <li>
+        <p><strong>Learnable Parameters:</strong> After normalization, BatchNorm introduces two learnable parameters for each feature: a scale factor (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-24-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B3;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-264" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.617em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-265"><span class="mi" id="MathJax-Span-266" style="font-family: STIXGeneral-Italic;">γ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>γ</mi></math></span></span><script type="math/tex" id="MathJax-Element-24">\gamma</script>) and a shift factor (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-25-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-267" style="width: 0.732em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.576em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.357em, 1000.58em, 2.555em, -999.997em); top: -2.185em; left: 0em;"><span class="mrow" id="MathJax-Span-268"><span class="mi" id="MathJax-Span-269" style="font-family: STIXGeneral-Italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.19em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-25">\beta</script>). These parameters allow the network to scale and shift the normalized feature and even to undo the normalization if that is what the learned behavior dictates, providing flexibility to learn if normalization is beneficial for that specific feature. This means the layer can learn the optimal scale and mean of the inputs for the activations.</p>
+      </li>
+      <li>
+        <p><strong>Improving Training Stability:</strong> By normalizing the inputs, BatchNorm helps in stabilizing the learning process and reduces the sensitivity of the network to the initial weights and learning rate.</p>
+      </li>
+      <li>
+        <p><strong>Effect on Distribution:</strong> While BatchNorm makes the inputs to a layer more normalized, it does not force them to strictly follow a standard normal distribution (mean 0, variance 1). The actual distribution of layer outputs can vary depending on the data, the network architecture, and the stage of training. BatchNorm ensures that the distribution of the inputs to each layer does not change drastically during training, which is known as reducing internal covariate shift.</p>
+      </li>
+      <li>
+        <p><strong>Impact on Training and Activation Functions:</strong> BatchNorm helps in stabilizing the learning process by ensuring that the distribution of inputs to each layer does not change drastically during training, a concept known as reducing internal covariate shift. BatchNorm can also make non-linear activation functions (like sigmoid or tanh) work more effectively by preventing the inputs from falling into the saturated regions of the function.</p>
+      </li>
+    </ol>
+  </li>
+  <li>In summary, BatchNorm helps in normalizing the inputs to each layer, making them have properties similar to a standard normal distribution, but it does not enforce a strict standard normal distribution. The learnable parameters in BatchNorm give the network flexibility to learn the most effective distribution of inputs for each layer.</li>
+</ul>
+
+<h3 id="related-does-layernorm-seek-to-obtain-a-normal-distribution-at-the-output-of-a-layer">Related: Does LayerNorm Seek to Obtain a Normal Distribution at the Output of a Layer?</h3>
+
+<ul>
+  <li>Layer Normalization (LayerNorm) does not specifically seek to obtain a normal distribution at the output of a layer. Instead, its primary goal is to normalize the inputs across the features for each data sample independently. This means that for each sample in a batch, LayerNorm computes the mean and variance used for normalization across the features (i.e., across the neurons in a layer).</li>
+  <li>The normalization process involves subtracting the mean and dividing by the standard deviation, which could make the data more normally distributed in a statistical sense. However, the main intent of LayerNorm is to stabilize the learning process and to help with faster convergence during training of deep neural networks, rather than enforcing a strict normal distribution of the layer outputs.</li>
+  <li>This stabilization is achieved by reducing the internal covariate shift, which refers to the change in the distribution of network activations due to the change in network parameters during training. LayerNorm, like other normalization techniques, makes the training process less sensitive to the learning rate and other hyper-parameters and can lead to improved generalization performance in deep learning models.</li>
+</ul>
+
+<h3 id="does-batchnorm-normalize-at-a-per-feature-level">Does BatchNorm Normalize at a “per-feature” Level?</h3>
+
+<ul>
+  <li>BatchNorm normalizes is indeed applied normalization is done per feature” in the context of Batch Normalization (BatchNorm) in deep learning, it refers to how the normalization process is applied independently to each feature within a batch of data.</li>
+  <li>To elaborate:
+    <ol>
+      <li><strong>Definition of a Feature:</strong> In deep learning, a “feature” typically refers to a single measurable property or characteristic of the data. For instance:
+        <ul>
+          <li>In a Convolutional Neural Network (CNN), a “feature” typically refers to the output of a filter applied to the input. When working with images, these features correspond to different aspects of the image, such as edges, textures, or colors. Specifically, in the context of image data, a feature often corresponds to a specific channel at a particular layer. For example, in an RGB image, there are three primary channels: Red, Green, and Blue.</li>
+          <li>In a fully connected layer, a feature refers to an individual neuron’s input or output.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Treating Channels as Features in Image Data:</strong> In the case of image data in CNNs, treating each channel output of a filter as a feature for BatchNorm is more effective than treating each individual pixel as a feature. This approach maintains the spatial structure of image data and recognizes the importance of spatial correlations.</p>
+      </li>
+      <li><strong>Normalization Process:</strong> BatchNorm normalizes the data for each feature (or channel) separately. This means that for each filter output (channel at that layer), BatchNorm calculates the mean and variance across the mini-batch. The steps are:
+        <ul>
+          <li><strong>Compute Mean and Variance:</strong> For a given feature, calculate the mean and variance across all the samples in the mini-batch. This calculation is not across the entire dataset but just the current batch of data being processed.</li>
+          <li><strong>Normalize:</strong> Subtract the mean and divide by the standard deviation (derived from the variance) for each feature. This step ensures that this particular feature (across all the samples in the batch) now has a mean close to zero and a standard deviation close to one.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Per Feature Processing:</strong> This per-feature processing means that each feature (like each filter/channel output in an image or each neuron in a layer) is normalized independently of other features. This is crucial because different features can have different scales and ranges. Normalizing them individually allows the model to treat each feature on a comparable scale.</p>
+      </li>
+      <li>
+        <p><strong>Batch Dependent:</strong> The normalization is dependent on the batch, which means it can vary from one batch of data to the next. During training, this can add a form of noise to the learning process, which can actually help with generalization.</p>
+      </li>
+      <li><strong>Learnable Parameters:</strong> After normalization, BatchNorm introduces two learnable parameters for each feature: a scale factor and a shift factor. These parameters allow the network to scale and shift the normalized feature, thus providing the flexibility for the network to learn if it actually benefits from the normalization or not.</li>
+    </ol>
+  </li>
+  <li>This per-feature normalization is a key aspect of BatchNorm and is instrumental in stabilizing the training process, accelerating convergence, and improving the overall performance of deep neural networks.</li>
+</ul>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li>This section provides more resources on the topic if you are looking to go deeper.</li>
+</ul>
+
+<h3 id="books">Books</h3>
+
+<ul>
+  <li>Section – 8.7.1 Batch Normalization, <a href="https://amzn.to/2NJW3gE">Deep Learning</a>, 2016</li>
+  <li>Section 7.3.1. Advanced architecture patterns, <a href="https://amzn.to/2wVqZDq">Deep Learning With Python</a>, 2017</li>
+</ul>
+
+<h3 id="papers">Papers</h3>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>, 2015</li>
+  <li><a href="https://arxiv.org/abs/1702.03275">Batch Renormalization: Towards Reducing Minibatch Dependence in Batch-Normalized Models</a>, 2017</li>
+  <li><a href="https://arxiv.org/abs/1805.11604">How Does Batch Normalization Help Optimization? (No, It Is Not About Internal Covariate Shift)</a>, 2018</li>
+</ul>
+
+<h3 id="articles">Articles</h3>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Batch_normalization">Batch normalization, Wikipedia</a></li>
+  <li><a href="https://www.youtube.com/watch?v=nUUqwaxLnWs">Why Does Batch Norm Work?, deeplearning.ai</a>, Video</li>
+  <li><a href="https://www.youtube.com/watch?v=Xogn6veSyxA">Batch Normalization</a>, OpenAI, 2016</li>
+  <li><a href="https://www.reddit.com/r/MachineLearning/comments/67gonq/d_batch_normalization_before_or_after_relu/">Batch Normalization before or after ReLU?, Reddit</a></li>
+</ul>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>
+    <p>In this post, you discovered the batch normalization method used to accelerate the training of deep learning neural networks.</p>
+  </li>
+  <li>
+    <p>Specifically, you learned:</p>
+
+    <ul>
+      <li>Deep neural networks are challenging to train, not least because the input from prior layers can change after weight updates.</li>
+      <li>Batch normalization is a technique to standardize the inputs to a network, applied to ether the activations of a prior layer or inputs directly.</li>
+      <li>Batch normalization accelerates training, in some cases by halving the epochs or better, and provides some regularization, reducing generalization error.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="citation">Citation</h2>
+
+<p>If you found our work useful, please cite it as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><div><button class="btn-copy" data-clipboard-action="copy" data-clipboard-target="#code0"><img src="https://aman.ai/images/copy.png" style="margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;"></button></div><code id="code0">@article{Chadha2020DistilledBatchNorm,
+  title   = {Batchnorm},
+  author  = {Chadha, Aman},
+  journal = {Distilled AI},
+  year    = {2020},
+  note    = {\url{https://aman.ai}}
+}
+</code></pre></div></div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+   <div align="center" class="wrap">
+      <div align="center" class="footer-col-1 column">
+         <ul>
+            <li>
+               
+               <span class="icon github">
+                  <a href="https://github.com/amanchadha">
+                     <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                           c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                           c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                           c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                           C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                           c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                           c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                           c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                           c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">amanchadha</span> -->
+                | 
+               <a href="https://citations.amanchadha.com/">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJoAAAVjBAMAAABzrVjQAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAElBMVEX///+xsLCxsLCxsLCx
+                        sLD///+bxiTSAAAABHRSTlMAAKP3FWDuDwAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCa
+                        nBgAAAAHdElNRQfkBwQDMic2f+cwAAA03klEQVR42u2dW3IdOZJEu81mAcMqbOCacQMy0wImVNr/
+                        msZKKpVeuHkzEA8PIPx8douAh+MkkmKR1H/+QwghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQ
+                        QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIeQQ/vt2KOMzyeH/GtiE7rgP/3u+TQPdcRukgU3o
+                        jtsgb+fbNNAlt+GtgU3ojtsgDWxCd9yGT2/n2zTQJbfhrYFN6I7bIA1sGuiS2/DWwCZ0x214a2DT
+                        QJfcBelgE7rkNrw1sAndcRukgU0DXXIXvsl0tE3oktvwb+MH2zTQJXdBOtiELrkL32U62KaBbrkL
+                        P3R+rE1/oEvugnSwCV1yF/76sfRTbRrolrvwU+un2oQuuQvSwaaBbrkLP9d+qE3okrvwS+1n2jTQ
+                        LTdBOtj0J7rlLvxa/JE2oUvugnSwaaBbbsJvMh1pE7rlLvze/IE2DXTLTZAWNqFbbsKnSfXn2TTQ
+                        NTdh1v1xNg10y02QFjahW+7CtPzTbBrolpswb/80m9AtN0Fa2DTQNTfhSf2H2YRuuQmPFja9o2vu
+                        gTzr/yibBrrmJjw9gKNsQrfcBGlh00DX3IPnMh1lE7rmJlycwEE2DXTNPZAeNqFrbsLVEZxj00d0
+                        zT24PINjbBromnsgPWxC19yE60M4xaaBrrkHL07hFJvQNfdAetg00D334NUxHGITuuYeSA+b0DU3
+                        oYdNA11zE3rYhG65Cy1sGuiWu9DCJnTJbehg00CX3IYGNg10x31oYBO64kacb9NAV9yI821CN9yJ
+                        420a6IY7cbxN6IJbcbpNA11wKw63ib8YPJXDbULX24yzbRroeptxtk3odrtxtE0D3W43jrYJXW47
+                        TrbpHV1uOw62aaC77cfBNqGrbci5Ng10tQ051yZ0sx051qaBbrYjx9qELrYlp9qE7rUnh9o00L32
+                        5FCb0LU25UybBrrWppxpE7rVrhxp00C32pUjbUKX2pYTbfqILrUtB9o00J325UCb0JW2YEz/1/Ns
+                        GqpWyBIy5v/zcTahi27Bk2f2OJuGqhWyhDSx6Q900R2QtyY2oYtuwVsTm4aqFbKEdLEJXXQLnj+2
+                        Z9k0VK2QJS6aPssmdNEdkC42DVUtZImrqk+yaahaIUtIF5vQRXfgr8sn9yCbhqoWssR12QfZhC66
+                        A//qMq7/7+1tGqpayBIv2j7HJnTRHfhuy3jx/29u01DVQlaQV3WfYtNQ1UKWeNn3KTahi+7Aj66M
+                        l39iY5uGqhayxOvCD7EJXXQHPnSxaahqISvIjcbPsAnddAfuPL9H2PSObroBv4gy7vyhLW0aqlrI
+                        Erc6P8EmdNEdeHSxaahqISvIvdIPsAnddAduPsL72zRUtZAV5Gbr+9uEbroDd5/h7W1CF92BSe1j
+                        +gd3t2moaiEryO3ed7cJ3XQH7j/Fm9s0VLWQFeR+8ZvbhG66AZ8Uj/HeNg1VL2QFTfN724RuugFP
+                        BBmaP7yHTeimO/Ck+jH9wzvbNFS1kBVE1f3ONqGbbsBTPYbuj9e3aah6ISsoy9/YJnTTDXhux1D+
+                        +eo2DVUvZAVt+9vaxF8MHs+FHEP7AbVtQjfdgCs3hvojKts0VL2QFfT972oTuukGXKox9B9S16ah
+                        6oWssHAAm9qEbroBK4/znjYNVS9kAVk5gS1tGqpeyApLR7ClTeimG/DKi7H0URVtGqpeyAJ/rZ3B
+                        jjahq27A4hO9oU1D1QtZ4KUVb3+ufVw9m9BVN8BwBJvZNNBVn49YTuDyg6vZNG71QQy8kOnlx29k
+                        E7rqBpgPYBubBrrq8xHzATxfoZhN6Kob4HAAm9g00FWfj1wewLttjVo2oas+H3E5gC1sekd3fT7X
+                        BzBurvLMyUo23Z2FLCPXJ3B7nQ1sQlfdAK8TqG/TQFd9Pg+vE5DyNqGr/p1fAn5E57EiL05gWFeq
+                        Y9P9UVLYIqTLTN95v71SeZvQVd+tfaDDLSOOR1Dcpo/oru+XPtAJF3l5Bua1qthU5oReulQqrYbX
+                        Y5kXq2ITuur7ldfKe58bj4m5pyI2DXTXVx1N+dO+W7XZhnm1Ijahq/6C6DJ/ROf1Hm6Yl6thk2aO
+                        MPZM7TidZp7KNqGr/nzjR8yK5r7JnWmGYr3CNqGr/qx+yxVK7jfeMC9YwSbNFMi2N9bJ/Rzq2oSu
+                        2iBThfBu8w3zigVs0gyBLHtfnW7ON8xLFrAJ3bVNpgL5X3JzkGHuDG+TZoYQPlknQA/wCrk5xzCv
+                        CbcJ/4vB7TOgJ3AacCjWLGoTumoHmQo8EVfI3TGGeVG0TZoJQjhjigtuy3SATft0vatOMUOUtAl9
+                        Ck4yFf5RQMWEw7ws2CZ01+dM4jDhUCxb0SZNfnDVm+oUdRoFbUJ/x5mYJ1g8i5oTaiYoaBO4avOX
+                        LevrFDZAPZvQ9XvPAx5ngqjyD/PKSJu2qtr5NFJQfgegJn85m9DlnzeRcUJN/HI2gasW8wDlRjJO
+                        OMxr42zSZI/gxJlsE2rSy3QFmE3o4h8hU4GH+gnRhh/mxWE27Vb1HmP9gP7rH8PcH8omTfIITp3L
+                        MqEmu0xXQNkErlrMAxQdzDLhMC8PskkTPIJzJzNMqIku0xVANoGrFvMAZUczTDjM62NsQncdOZvm
+                        TMKQ6OTzDSA2oQtf6vo24OG+EH4s8wohNm3Z9T7jrT4uw7wDwiZN6jpd7zPf6uOiyT3vEGETumsx
+                        T1B8wMda7GHuEGCTJnQIp08oCbHnewBswladcDWhR1xNPcwl5tv0EVt1wtUEvpwkI/V8k3SboEWb
+                        ytaAHDDlaOYtptuE7NlWdtTBlJlPE1qmK2TbBKzZ3LYG2HiynllzNvNtsm2CtezQdtTJuJKUeV5j
+                        sk2wkj3aVgEaTwyRNYcz3yfXJvwvOrK0reIjZj5L5GHuMdcmTMOvWwhAczR+pEWe95hqE6Zhv7pV
+                        IKYTU2LN8cx3SrUJUbBn3WFn40Ve4nmRmTYh+r1VQgzbTac5n/lWmTbl1/sb0SOuHo4Lkhh4vlei
+                        Tent+vetI3u6zAOaN5lnkyZrFGKeovDE5uE0eeeb5dmUW+2c2Aktp1NhOE1ema6QZlNytYoK4kgd
+                        7kPqEc2rTLMptVlVBXFojqfAbJq48+2ybMos9imRA07ZazbNGcl0hSybkr1RNBCJ5nzws2nSzvdL
+                        simv1uDGlaTNln1I8y5zbNLkrN24ko87jaY5JZmukGNTvjkTlv6N+sQDMiDmoNqw8x1TbErqNKVy
+                        JTmj5R/TvMwUmxDuRFUeeELLiDmmOut8ywybUhp9TdR41yQM5vUK15yTTFfIsAlkz635w/kYP5lX
+                        1GFuM8Gmd4w99+YPR3NE4ME0UeebxtsUX+c9YqZ7zT6DaU5KpivE2wTTJ6r0wDNaQcwJV5LOdw23
+                        KbrM/NK1xM7l+I/saY5qXme4TUiDfuQRMh2+AcegQ7GtTFeItkmTcJfWK1Ug5nhrQef7RtsENegH
+                        nP/V1TIdeOYcin1lukKwTViFXk6fg+aUkGNpcs43jrUpsEclD//hCrQg5myrOec7x9qEdug7/rNV
+                        qME35lDsLNMVQm3SxAvGX5ECPYg52XLM+dahNqEVCus98Jg0AGPOC420KarEBcQ8jImYoR7A85oX
+                        GmkTWqEfcPcj7pyMB5qUcr55oE1og37E3Y8CXbiHHIrNZbpCnE2abNGIeRojW8ykObH57nE2oQ2K
+                        bT7woG6CDTlvNMymgP4qNa9lh5E0RybTFcJsQgsUXT24DjEn+p1h3j/KJk2yeAKqB/ch5kS2jPP9
+                        g2zC/2Lw6Oq1eM8UEHGYKw2yCe3PndFz8Z4pIOIwVxpjkyZXAhF2oCsRcyJTxPn2MTah9fmFCDvg
+                        nfgnHIrdZbpCiE2aWBnE6KGk/lCaY5PpCiE2oe25NXk2mrPCTKVJON89wibv3ur1vsKf5afSnNt8
+                        9wCbNKFS8O99Ce+x3ANqDm7eaYBNaHnia48/rPUDTQo439zfJu/S7MQJAi1GzIkMAeeb+9uEdud3
+                        4gTBNuOdbyj2lukK7jZpIuUg5pmceHcezDuf5ujmpbrbhHbn7uAANKeFGEyTb763t03ejRUsfZ3i
+                        g2nObr63s02aQFnEGqKh+GSaw5PpCs42oc1J6DzpuACTaeLJdAVfm7zrqth5oXrEnGg53nxrX5vQ
+                        4kyJdgTXj5gD/cQwb+1qkyZOGs6Vm3h3ns03neb45q262oQWRzE3Bs153QGXbt6qp03vaHEUc4Mo
+                        Pdsw7+xokyZMIr6NGyk9m+YA5zs72oTW5gkZkoQcWPpwmnAyXcHPJu+iShaeeWDpw2nCyXQFP5vQ
+                        1qQUbsZ5ODEH+oFh3tjNJk2UVJI0uYnzcGIOtHiE843dbEJLk9J37ollT6fJNt/Yyya0NDl9557Y
+                        HVDZ5rU62eRdkh9imCoC5/E8o2kOcV6rk01oZ7Rj4yg83jDv62OTJkcyiaIgqhJzoLVo8319bEIr
+                        c0GiKO5HljyfJppMV3Cxybuhom37UHc+zTHKdAUXm9DGJLXtQ935hmJbma7gYRNamKy2889s+VjD
+                        k823dbDJuZ6yZQPOLHdATbL5tg42oYXJKtuLsgMO87Z2mzQZ8nEs2wvnCf2CaU5y3qvdJrQvK1ND
+                        0RzaDTDB5r2abXLuxhtZGioU58Ywwea9Wm2q9YvB706NpeqEw7yr1Sa0La8AyJLcmZjzfGOYdzXa
+                        pAkAAWFLbmlizrOSa76r0Sa0LC9B2OJ5apkjanLJdAWbTc69BIDx5QVFR9ScpkxXsNmEdiWxak+K
+                        jjgUm8p0BZNNmu1BgHy5xndEMedZOM75phabvH+fegCfUMK4HdvqwQbHmm9qsQmtSmbTrmiOLXFG
+                        Taz5pgabfDuJwa1pX3yH9EqlOdB5sQab0KasDw3Hd0ivVMNc7LpNmr1hiG6mLHy7Q6SaF7tuE1oU
+                        w9BwNOf2GkSqebHLNvkWEoWoZkrDtzyvITWp5nuu2uTbRxheRXtTckjNmc73XLUJrUly0d6UHHKY
+                        91y0SbMxkgfUmaT+xBxHH2q+56JNaEvugnXG5+Be4vUFf00oma6wZpNrGZGgrckpEBBKpius2YSW
+                        JLtnfypOORRbynSFJZve0ZJk9+xPxSmHYkuZrrBik2ZXMGhpnlJxSs25ynSFFZvQiuT37I/m5BaP
+                        NjTTfMsFm1yLCAYtTU6JYo6jzjTfcsEmtCEa0NLktCjmNF8Y5i31Nmn2hIN25jmeU4o5jfpk51vq
+                        bUILogLtTE6NYk7zhWHeUm3TR7QgKtDO+BzdK/7KjyTTFbQ2eZaQANqZpCLzI8l0Ba1NaD0gNUeg
+                        ObqkMTWRZLqC0ibXDhJAO3NBvTE1hyvTFZQ2oe3A1BxCvTGHYkeZrqCzSbNfCdDKXFBvTM3pynQF
+                        nU1oOUA1h6A5u7WzjUw031FlE9oNPWhlnM5u7WwjE8131NjkOX8SaGWS2hRzGm2i+Y4am9BqLIBW
+                        5gLP3xgq5jR/M8w7KmzSbFYFtDJXOI4p5jDaA57vqLAJbcYKaGOS+hRzmL8Z5h3v26TZqwxoY65w
+                        HFPMYbQnPN/xtk2areqANiar0fRAMl3htk1oL4AtB6E5vJQ5NYFkusJdmzxHTwRtTFal6YFkusJd
+                        m9BaIFuOotqcQ7GhTFe4aZNmo0qghbmk2pyaQ5bpCjdtQlsBbTmKanMOxYYyXeGeTZp9SoEWxu30
+                        MubU5JHpCrds2uAXg0e2HIXm9F7wyM4j0xVu2YR2Yh20MG6n9wIxh1HmmW94xybHqbNBC+N2ei8Q
+                        cxhlnvmGd2xCK2EALcw1fnOKOctbkk2aTaqB9uUavznFnEV50PMNb9iENsIC2pdr/OYUc5a3HJve
+                        0UZYQPvid3zXiDmLMs58w5c2+U2MAO2L3/FdI+YsyjjzDV/ahPbBBtoXv+O7RsxZlHHmG76yyW9g
+                        CGhf/I7vGjFnUcaZb/jKJrQORtC+vMBtTjFHeUuwSbNBRdC6vKDWoEOxn0xXeGET2oYKJQdSa9Ch
+                        2E+mK1zbhJbBjLyVxm9QjzTDXOylTZrlayJvpfErODvNvNhLm9Au2JG30mjO75rsNPNir2zymxWG
+                        vJXGr+HsNPNir2xCq+CAvJVGc37XZKeZF3thk9+oOOStNm6DeoQZ5mIvbEKb4IG81cZtUI8ww1zs
+                        c5vQIrggrxoE4zaoR5hhLvapTZql60KbatiE9sCH6jZpDvCS2ja5jYmFNpWwCa2BE7Spgk1uU6JB
+                        60KbfH/DJxa0Lq+oNOdQ7KexCe2AH2hbaNM57znaVMAmtAKOoG2hTZpVq4O2hTahDfAEbYvnCUbP
+                        qcly2yavAUuAtqW7TV7z1QBtS3eb0Ofvi9ytkjZF2OQ1XhFoE9Qm9PE7U90mr75r2qRZcQdoE9Im
+                        9Ol7Q5uANmkW3ALahLNJs94e0CacTeiz96e8TZojvKCgTU6TlQJtS1+b0CcfAdqWtjY5DVYLtC1t
+                        bUIffAhoW7ra9D/ogw8BbctL6ow5FPu9tOm/6F5DekYPkTMlbfIcTjt2IWhTCrSJNvlBm2iTH7SJ
+                        NvnRxKZ32pRBE5t8xsxOMq/1eJvKf4mANm1Ucw+bPmUnkekKtAmNy5iSnWS+IW1CQ5v2qZk2xSSZ
+                        b0ib4NCmDJxscik6kjJD0ibaRJvch6NNyYXPN6RNcMoMSZtoE21yH+4K9ByvoE0Z0KbkGWnTATZ5
+                        zJkeRKYr0CY4tGmXlp8PXgfatEvLtCkoyLxU2gSHNu3SMm0KCjIvlTbBoU27tOxXdek5JT3IfEfa
+                        BIc2bdLyFjY5fDFc0guf70ib8NCmBNxs8uk6jioT0ibaRJvch2tu0yO98HmntAmPfcL8wueddrCp
+                        +qfhVQakTbSJNrkPR5uSC5fpCrQJT5UBaZNh9DJUmY820SbalNTyJja9F5mPNp1gk+YUadMqbjYV
+                        /zScNmVAm3LHo020iTbdw8+mD+hRLqFNGfjZJOYskdCmDGhT7nS0iTbRpnv42VT703DalAFtok11
+                        Wu5iEyKHTFdoYpOYwxSeE5FjXihtwkObdmiZNsXlmBfaxCaXf7+t6JyCyDHftIlNpT8Np00btEyb
+                        AnPMN6VNeGhTCo42uVUegNEmSI55n7QJD21KgTbRJj8cbar8iZPNJoHkmO9Km/DQphRoE23y493R
+                        Jr/S3bHZhMkxr7O0TbaaaVNgjnmdtAkPbdqg5rDWS40pmBzzbWkTHtpUv+YmNn3A5JDpCqVtcv0S
+                        gZjTRGGyCZRj3iZtwkObcvC0qe6rzmKTgHLM96VNeGhTDrSJNtXoObT4MlOicszLpE14aFP9nlvY
+                        5DoTbdKAniZgSkHlmG9Mm/DQpiRcbXKt3hGDTbAc8y5pEx7DSK45aFNvm3wnok0q0NO4DymuOY63
+                        STNgQ5twZct0hVY2iTlPCLQpCdpEm/z409Wmoq+6Kk/H8Ta1+DScNpVvesoDPY7vjM45aJMOMecJ
+                        QHOItAlU9fk2eU9Dm5Sgx3EdUYBB5nvTJjjLIyKDyHSF6jb94WuTmAP5Q5vyoE1ps9AmLehxJrzT
+                        pjTOt6nMKA1s0oy43AIU2pQHbUqbhDapQc/zO7SpftnH2+QfhDapEXMgZzRnSJus0KasOTrYtNj2
+                        U9DzOM33AZtEpivQJjSL84GTyHSF+jad/qp7LzMFbapxDvnjRUxBmxZAz+MyXkSSFjZphqRNSUXL
+                        dIWGNok5kSt1ZqBNC3xCD+Qw3Qd0FJmusIFNZ3/itGYTPIpMV+hok5gTObJkU8wEPWxaKpw2hUaZ
+                        J+hoU6lXXaEBaFOhw1hjJf9f+J5lusIONh39iVOh/LRpiUJfI9Cc4L8UyCLTFbawaalywHFkjVYg
+                        i0xX6GmTmCMhR4tK38Smgz9xWrGpQpZ5gz1tqvOqqxS+i03v3jY90BN9YyG7RGXpYpNmTuyJaFnI
+                        XqLleYF72OT8q3kjj0THymNSIoxMV9jDpmM/cVqwSUqEmafoapOYI7mwYFONMPP+NrFpoXXYoWjQ
+                        5w78Oj5tameT1Ch5HmMTm0591ZV6CmjTOuiJ/kZzfvEPQR+b9L2faVOVNDJdoa9NYs5kp9Yz0Mem
+                        M191tR6BRjZpRj3XpjIVy3SFxjaJOVP6TLGRG9l04qtObVOdODJdobNNj+1Gio3TySbNrJZGEikW
+                        mDaZ2G2iQnlkusI+NgW86sScyYTWpui4rWx6P80mbdzoPK1s0j7KBc7nmmrut7LptFed9ukoFWje
+                        XG+boJeT0iYpFWieZiebtA9zcZuUUaVUv/M0O9l02KuunPi0yQpuGM3Z5XjfzCblARQ5JJ9hiiWa
+                        97aVTf4/pBn1a9puUM/6Zjad9KrTHF1SzG42KY9gvZZqo6SkpE12QKMUDNnNpohXnZhDxU+Sk7Gd
+                        TZqB77LBIPUyyXSFzWwK+Fsd5lswVQklJ1M7m4551akSJmXqZ5Nm4mKHtTyGFAw1z7SbTYdcTu8V
+                        badNLtSeQrJCNbRJM3K581oaomSqeWXb2XTE5VRT9Y42fQyw6ZE8Q03TO9qkmdnWTYkREqN1tOmA
+                        V13RZC1t0gxtKyeKosFa2vRHgE2pl5Pm1KrmkukKG9oU8qoTc6qQ/Jmxmtqkmfo2NeOX7VWmK+xo
+                        0+aXk+LQ8kIpg51kk2bs26Slr5hJXatMV9jSpq0vJ8WZZUXSJ6NNr6iXPbnVrjZp5jYW5I3i6xuP
+                        wq3Oy9rTpo0vp/tHJtmltrVJM3it4ysm92qp8642tWnby+n+iUl6p31t0kxe6QBLqW3odF7VrjZt
+                        ejndPzDJr7SxTe8RNok51gsKif07jW3SjF7mDO+HluKVzvNta1PMq07MsZwyIxrtbJNm9iKneD+y
+                        VG90HnBfm2Iup9DfNVdE6me0tkkzvLWm5MCBIZwKnSfc2KaYyynwWiguU3ObNNNbe0qNu0Gf85Z2
+                        tmmzywnv8wua26QZH64Ten/fOmW6wtY2BV1OYs414f5RhWzvG/FMmzTzK4iIit3dvU2ZrrC3TUGX
+                        U8CB3j8pgZXZ3iZNAeauDNz/7a+f9ihz3tDmNu1yOeF2VkCbNA3gdLqfUjbpcp5zd5uiLicxB/sB
+                        xTEhq6RNYZeTmJN9ByRxZJXzoNvbFHU5OR6sYlNok7Qp7nJyO1lFQNmmyXnS/W2K+Q5xP500Z4Qt
+                        kjb9TZRNLoerOaIHtkfapG0hWyfNP1olG/U4z3qCTXGXk/kL06rf0YmukTapa8jVSbOX7FTjPOwR
+                        NsVdTjaddL89GF0ibfqHkF/6bNZJ9w99CrpE2rRShJakTOgKadN3Am1aPGelTIJukDatNZGikzYQ
+                        ukBlZJmucIpNcV8Rf97dFfE7+EObvhNpk/bq0JzLyvox0Ka1LhaQ+0l0f5fTrl6jwXngc2wK+Uc1
+                        V058ZW10d1+gTT8SbNO9Mw8VNRbatNpGjE+rCdDN6dPLdIWTbIr9e91ljV+IWDMT2vQzCTZ9nv/H
+                        Fs1J/Aa6toUZZLrCWTaZznRRAfueYpgY1d4881k2perkBrq0lfJkusJhNiW961wR89BO0KbfQLtB
+                        m06ySVNJDdCNLVUn0xWOs2k7ncQ8MaK5eerzbNrtXYeu6zu0aQbaDxViHtcN2mRtBQ66rMXeZLrC
+                        iTbtpJOYh8XUNs99pE0bvevQTf0IbXoCWpK7hP4jQVpo0zPQmpgOBQRt8mgGCLqm5c5kusKpNu2h
+                        k5jHRFU2T36sTVvohO5ovTGZrnCuTRvoBPxN89bCZLrCwTbV10nMI8L6mkc/2abyOqH7MdQl0xWO
+                        tqm4TmKeD9fWY7rC2TbV1gldjqWs+QqH21RaJ3Q3v0GbXlFXJ0FX8xu06SVldUIX8zu0ybekRIp9
+                        sUlZ1HyBDjbV1EnQrfzOsIZvYVNJndCdTKBN3j1lIeaZkC09Sd/Epno6iXmkAG6nf/LxXWwq97ZD
+                        12Hr6MnH97GpmE7oNkwVPfv7aCObSr3tBF2GqaFn6TvZVOl6Qjcx565NH558fC+b6lxP6CKeYEzf
+                        zKb43wN9D0HX8ARj+nY21XjdiXmKGAZtiqksFHQFT7Gl72hTAZ/QBZiakacf3dMmtE+CHt/Uy+Pp
+                        R3e1aenf1mlg051X3fMP7mvTG/DzcfTgFwzLo9DaJtgLDz32FZbwzW16gwgl6JktfVyFp01/c9uD
+                        Ty6vR0HPaynj6kNp0zdeOvD1j/1xvE3jMvvj6kNp00+8Pv3rru+BnvIFVyPK5UfSJiUNbLq4pl/8
+                        oA1tUuIgU3mb3laT0yYlDjIJeoblKV99GG3SMXrYNNfp5UfRJh1dbJoMeiM2bdLhYRN6hqVR5c6H
+                        0CYdDjLtYtMCtEkHbbqCNqnweNHRJvIVD5sEPUQctEkFbbqENqnweNEJeog4aJMK2nQJbVJBmy6h
+                        TRoGbbqENmlwsQk9RCC0SQNtuoY2afCQiTaRr9Cma2iTBtp0DW1SMGjTNbRJAW16AW1SQJteQJsU
+                        0KYX0CYFLjLRJvIF2vQC2qSANv3nNv9FRy0PbaJNbgzaRJvcoE20yQ8nmwQ9hwHa5AZtok1+0Cba
+                        5IePTLSJ/A1tok1+0Cba5IeTTTt/iYA2uUGbaJMftIk2uTG8bHqgJ1mHNnnhZpOgJ1mHNnlBm2iT
+                        H7SJNvnhZtPGn4bTJi9oE23yw88mQY+yDG3ygjbRJj/cZKJNxPNfKEePsgxt8oI20SY/HG0S9Cyr
+                        0CYvaBNt8sPRpm1fdbTJC9pEm/zwtEnQwyxCm7zwtOmTPQ4E2uSFp027vupokxeuNgl6mjVokxe0
+                        iTb54WrTpq862uSFr02CHmcJ2uQFbaJNfvjatOerjjZ54WyToOdZgTZ5QZtokx/ONm35qqNNXnjb
+                        JOiBFqBNXnjbtOPlRJu8ePe26YGeSA9t8mLwVUeb3HC3acNXHW3ywt8mQY+khjZ54W/TfpcTbfIi
+                        wCZBz6SFNnkRYNN2lxNt8iLCpg/ooZTQJjcCbBL0TEpokxsBNu32qqNNbkTYJOihdNAmNyJs2uxy
+                        ok1uhNgk6KlU0CY3Qmza63KiTW4MXk60yY0Ym7a6nGiTG0E2CXouBbTJjSCbdrqcaJMfQTYJeq77
+                        0CY/gmza6HKiTX5E2STowW5Dm/yIsmmfy4k2+THaX060yY8wm7a5nGiTH3E2CXq0m9AmP+Js2uVy
+                        ok2OxNkk6NHuQZscibNpk8uJNjkSaNMev4+eNjkyAnUS9HB3oE2ORNq0xbuONjkSapOgp7sBbfIk
+                        0qYdLifa5EmoTYKe7jW0yZP35pcTbfJkNL+caJMnsTbV14k2uRJrU/l3HW1yJdgmQc/3Atrkysfe
+                        lxNtcmX0vpxokyvRNhX/lfS0yZdom2q/62iTL+E2CXrCK2iTL6P15USbfIm3SdAjXkCbnAm3qbJO
+                        tMmZeJsKv+tokzPvnS8n2uTMSLicHughn0GbnMmwqey7jjZ5k2GToId8Am3yJsOmqpcTbfJmNNaJ
+                        NnnzR4pNgh5zCm1yJ8WmmpcTbXJn9NWJNrmTZJOg55xAm/zJsani5USb/EmyqaBOtMmfkWSToAf9
+                        DdrkT5ZN9S4n2hRAlk3ldKJNAXzMsknQk/4CbQpgdL2caFMEaTYV04k2RZBnk6BH/QnaFMFoejnR
+                        pggSbRL0rD9Cm0LIs6mUTrQphMTLqdK7jjaFkGmToIf9Dm2KIdGmQj8QRZtiyLyc6rzraFMMqTYJ
+                        etpv0KYgMm0qcznRpiBSL6cqOtGmIHJtEvS4X6FNUaTaVORyok1RdLycaFMUuTbV+KITbQoj16YS
+                        7zraFEby5SToed9oUyDJNlW4nGhTHMk2CXpe2hRJ9uUk6IFpUyTJNuHfdbQpkGybBD0wbQpkdLuc
+                        aFMk3S4n2hRJ+uX0ATsvbYok3Sbwu442hZJuk0DHpU2hNLucaFMsvS4n2hTLe6vLiTaFkfOPGpTS
+                        iTYF8CfIo68IbnDa5AvUI/jlRJu8GGiJ/kVgHdAmB+qI9BVYEbTJRjWRviCoNmjTOiVN+sID1Aht
+                        WqOuSV8AtUKbFkC78hrBFEOblAy0KPfAlEObNGyi0mfU5USbbvMRbYgKSEW06R5oOdQIoiXadAO0
+                        GUsgiqJNr0BbsYoAuqJNlwy0EwYe+XXRpudgv7HETn5jtOkZaBfsSHpntGnKQJvgQnpttGkC2gIv
+                        JLs42vQrqG/njiC7O9r0MwMtgCuS3B5t+pGzXPqcfjnRpu8c51L65USbvnGgS5+zLyfa9JUzXcq+
+                        nGjT35zq0ufky4k2He1S8uVEm452iTblgj7tcDLLbG4T+qgTkMQ6W9s00CedQmKhjW3q4VLq5dTX
+                        JvQh55HXaVebBvqIE5G0VpvahD7gXNJqbWkT+nSzeWQV29Cm3X94QI9kVdvPJvTRIsjqtptNJ32f
+                        7n0kqd1mNg30uYJIqreXTehDhfHI6beTTQN9pjgkp+FGNjWWKetV18em7PP79DTJANgkKR23sSnv
+                        4B638iQr9elWKCtNbEo6u4cmU65OKTX3sClBpoWHP9Umyei5hU1FT2qk6pRRdAebyp5Sqk4ZTTew
+                        KfCEpG4096x3ON6muO8Y8PhrUqZOCWWfbtOofTZh8WhTAEGnJW4BE23yC/2Us22Kkck1YqJO8X0f
+                        bVOETN5fVI7I+IRHeOEn2/TufyDinzJPp4Dwv3CwTbscR5pN8a+6c2366H0Wj6CgI82mqAn+5Vib
+                        vGWSuKhpOgXO8JVTbdrqHLJsCn/VHWrT+0YuJf6EX3TtZ9o0tjqDvHedBM9xpE2uhyMZiZNsin4w
+                        TrTJU6a/ciJnveuCxzjQJk+ZHjuGvkBipzjPJsfHPOdb87+SY1PwVXueTX7VPzJjjxydYoc4zia3
+                        3jMvpr/J0UlCZzjNpk1qD41Om5wYXq0jwqfoFDrBWTZ5ySRbp8eNdpZNOzy/8fFpU6XT2H4A2HQn
+                        2TTqP7wpE9CmMkch0BkSbIoc8BybfH4/KnoK2lSDI2TKeNcFpj/GJo9jEPQQbyE/aEObtJwiU8K7
+                        LnDMU2yq3bIGj+fimrjsh9jk0PEDPcM3wnWKi36GTQ4HgB7hB6JtkrDkR9h0lkzhl5OEJT/CprNk
+                        itcpLPgJNtnLR0/wK7QJxnkyReskUbEPsOlAmYLfdRIVe3+bzMWjB5gSalPYyNvbZJbpgZ5gDm3a
+                        sXVBD/AE81OCGHp3m6ylR/VqhzalY/2mpqhaPaBNmzWe/ROYKkagTkGR97bJWjg6/zW0aau+0fFf
+                        YH1WLpCYxFvbZKw7qNIy89GmxLKDGvUkzKaga3lnm0oW6orxeaFNaVWj49/iPcomCYm7sU0V6yw2
+                        JG26yyjYZrUpadNdbG2i0yeNmVzAtjbZHlpBx0+akzbdo2CXMQTpJBFZd7XJ1jE6vQraFI3tewdC
+                        mgzD9uDQpte8m5pEp1cSYlNICXva1OlqegvSKSLonjbV6zGUEWGTBATd0iZbu+j0C9CmQN6rtRiN
+                        7fGhTVfYPmtCp18iQqeAmDva9F7tkUyANpVsFh1+kUGbChYr6PSr+NsUUMWGNlV7IHMwPUO0KaTW
+                        gAazeKdNAZgaRIeHDZ5TxnY2jWKP4yaT06YpxfrbZnTaNMH0gAo6PXD2lDp2s6nYw7jR8LTpN0yP
+                        p397O01Pm37D1B46PHj8hEL2ssn0cAo6PXh+2uTZJjq8B7SpSJmCDu+B6XGiTX5dosP74GqTeKfb
+                        yiZLc6V/xeV9TA8UbfJq0r05ELSpQpHo8F6YHina9J1SxW3ZQvQjtpFNpqcSHb5IDbTpG5baBB2+
+                        SA+06R9Mz6SAw3vyTpvslKoNiemxin3Ietjk3dq+TdCmL5ieSGz0UlXQpr8xtYaNXqsL2sTPwf3K
+                        oE180f2Ml03ezexiU6XO8NAmE8NSmSCT16uDNlWqrAK0CdYeMngQgzaByhNg8DCcbHLuZg+bKj1/
+                        NTA9X7SJNv2E7Xd/trbJ9CA6F1YF2gRp7oHLHYnpCaNNq+BiFy6lsU2mx9C5rzr4XE6+mXawqdLT
+                        VwjalF8bLHU4LpeTb6QNbLK1hkpdvZeuNpnaElTq6sXQJtr0Ex6Xk2+i+jbZOgOFzoE2qTHZJKDQ
+                        G1QTUVB9mwqVVQ7apMT2/GEyp0GblNCmsHIa2mTq6pBfKBfUDm1CdlUQ8+Xk21B1m2x1+XZVENqU
+                        WBckciq0Ka8tSORUrJeTuKYpbpOtLN+qamK9nFzD0KbNoU1ZXSESZ2N73mgTbXKsqJNNxgcPkDgf
+                        2nQXm00CSLxbR51sshUlgMTbleQahTZtD226xyhUVF1sLblGoU3bQ5vuYZPpr/zAGGhTfE1dPm2i
+                        TfcYtCm+J9cktOkAaFNwSd49laZMS7TpAEaVlmjTAdCm2I4+d/q0yfQrVV2D0KYToE2RFdEm2uRX
+                        UTebBm16gfX3qyfHhUKbAhtqZ5PhHneNQZuOoEhNdW0yykSbaJNLQV84/tej/MSgTdcYbZLkuFho
+                        U1Q/tIk2+fXT0ab1m9w1RVmbjDLRJtrkUU9ES/Wp0RNtOoNRoqeqNv1Jm1TQppB2mtq0/F81XVPQ
+                        pkMo0VNVm95pk44SPVW1ySqTpKYtwOrj5xqCNh3CoE3PoU1KaJN/N7SJNvl109em1dvcNQNtOgXa
+                        9JSPtEkLbfKuprNNgzY9w2xTZtga0Kan0CY1tMm5mdY2LT6BrhFo0zEs9SSuEWjTMdCmJ9CmBd5p
+                        0xyzTB1tWnoExTUCbToG2vQE2rQAbXoCbcpqTVwT0KZzoE1TBm1agTZNoU1L4HuiTefwEd4TbTqH
+                        ldp8E9Cmc6BNUz7SphVo0xS7TLSJNn2DNi1Bm6bQpqzenH9zMW06CH1N4huANh0EbfJphTat9Sa+
+                        ASraNGjTGrRpAm1ahDZNoE2L6Gt6+AagTQehL845AG06CNrkUgptWizOOQBtOgja5FIKbVoszjlA
+                        RZscZKJNtxDnALTpIGjTBNq0CG2aQJsWoU0TPGzy7mkL1DY9nAPQpoNQ2+QdgDYdBG2aQJsWoU0T
+                        aNMitGkCbVpEa5N7SbTpIGjTBNq0CG2a4GFTyy9f0qYJtGkRrU3uAWjTQdCmCbRpEdo0gTYtQpsm
+                        0KZFlDaJe4BjbfKvqj60aQJtWoQ2TaBNiyhtergHoE0HobTJPwBtOgjaNMHFpo5/qaNNE2jTIjqb
+                        xD8AbToI2jSBNi1Cmyb42PRIy1uGj+jH7VybJC1vGXQFBQSgTQdBm8yl0Ka14iL6Odemhp+G0yZr
+                        KbRpsTgJCECbDgJeD206CHg9B9skaYGrQJuspdCmfxnwdmjTOdCmGU42/ZUWuAgqm0ISVLRJ1Up2
+                        YYWhTeZWaNNabyEJTrZJ0hLXQNNbTDe06Rzw3dCmc9B0E5PgZJu6feKEr4Y2nQO+Gtp0DopmJCZB
+                        RZv+9LIpqLOiaB7CoGYq2uT1xXDa9JSgCEfb1OtVR5vm0KYVFDZJUATadAy0aY6bTVGtlaRAL7Tp
+                        GBS9REUoadNw0ykvM54CtdCmY7jfikRFONymsN7qoSgtrBXadAqK0sIyHG5To1cdbbIXQ5u+cb8T
+                        CctQ0ia/LxE0etVV6IQ2ncL9TuIynG5Tn1ddhUpo0yGM241IXIiaNt2vBtldKWiTQzW0SV1ZYIjj
+                        beryqrvdx6fAELTpEG73IYEhatrk9nMGwe3V4f7zF5mipk2ef6nrcTnRpgtok5LbNklkigY2hfZX
+                        hRptFLXpnTbpuN1GaIqiNg3PyykzOIj7f20JjdHBJslMjuF2X7Fd0KYjuN1XbIyiNrl+Gt7gVVek
+                        ihY2SWp0BEWaoE0nMIo0UdWm2/3cIjU6gNttBefoYZOkZs+nSg+06QSq9FDVJt9PnA5/1d1+9KKD
+                        NLFJcsMnc9emyG+U+0ITm86+nMo8U2Vtuvu80ab7NoUH6WKT5KavWVV4krI2eX4z7+GX012bJDxJ
+                        WZu8P3GKrxJGnQeKNu0PbXrNcNYpOX69oiQ+Sh+bEsrEUOhxqmuT96fhx15ON8cP/9LlW2WbvD9x
+                        OvVyGoXGb2TToZfTe6HpC9t096G7zYfsCVIodDW1siml0KotpQxf2Ca+6u7wsdLsrWyS9BHKlJQz
+                        emWbBi8nt45y0vSySdJniKbWc1TZJv9X3XmXU63HqJlNSa2mMWo9RaVteufl9IJiD1Fpm+4+eW0v
+                        p7sFZU1d2qY//G0663KqNnRpmwI+cTrrcqo2c22bBi8nj3rSAvWzSQBzBFFu4to2Rbzqzrmcyl1N
+                        HW0SxCDIcvISFbfp7uOn4oGYBNeN5EXqaNMh77qC0xa3KeRVd8a7ruDV1NOmIy6nirNWt+nuE9ju
+                        crr73wlSR61uU9Dl9MAM48h7waupq03bv+tGyUHL23S7Nh2CmcaNmnOWt8n9B8iPuJxqXk31bYp6
+                        1e2tU82raQObbj+GSpKLxnSSnKuvTTvrVHXE+jaFver2fddVvZp2sCnsctpWp6pXU2+b0tv2oe7T
+                        soFNca+6PXW6/XTlT7eDTXGX05bvusLDNbdpQ51ujyb52XawKfBVt59O9x8tQLgtbLrfoB7BjbVE
+                        6cG2sCn0ckK0ntEEIh1t2kqnUXuqPWy6X+IKD+BkYT1A8u1hU+zltM9n4vdHEki+TWxSPJQH61R+
+                        Itq0j06KEgSTcBObgl91W+ikeaJAEXexSVPloTophhFQxF1sCr+cyuu0wyzb2DSa66SZRFAht7Ep
+                        6mdXNtFpj0G2sSn+VVdZp6EZQ2Ax97FJVegiD/CMPrPjcu5jU8blVPS/2e0i00426To9SCfd4MgJ
+                        NrIp5XIqqJPyKUJG3ckmZa2roMe0TS3IrLSpuE7aoaFhd7Ip51WHPpGf2UqmvWzSVruMoCddnRgc
+                        fCub0i4n9Kl8Q/34gPPuZZO63XXQoy6N+wAH3sumvMupgk4ftZEFnXgzm9RPqwEBz7rhA7CZTZmX
+                        E/h09HEf6MPZzqbRRKeFOQV9NvvZFPHvkBc8oQWZ8O+5DW3KfdeBzmiboL+wn00rj60FyR9xk5i/
+                        s59N2ZfT588fcucbKxk/oU/lCxvatNS2jczx6id8zoY25V9Oie+RsZbvA/pMvrKjTYuN7+BT6XCv
+                        2dGm5K8S5B3ZcjT0gXxjS5sQ77r4QxtFcynY06b14sv6dPdfVp0g6OP4lz1tQl1OcT4ZEgn6ML6z
+                        qU0JP0ee6ZMljqDP4gc2tQn3rgs4wHJyL7OrTcB3ne8ZGj5fKifTvjYNsE4+52gOIehz+IltbSqg
+                        k1UohwkEfQo/s69N6HfdPzwW0797bC7oM/iFjW1C/r3uJ/T//d5rZ/QR/MrGNpV4131Dbqd23BR9
+                        AL+xs01F3nX3jzd3NwBb21RPp3/466eUI2aTB7r939nbpqBz2gJBlz9hb5sa6yTo6mdsblPZd11L
+                        mba3qalOgq59zvY2DfTBUqbvbG9TS53QnT9jf5savuvQjT/lAJva6YTu+zkn2NRMJ3TbFxxh00Af
+                        MGX6yhE2ddIJXfUlZ9jURyd00dccYhPox38p08+cYlOLz8T/stcUyzE2NdCpxu9ouuIcm47XSdAF
+                        v+Ygmw7XSdD13uAkm6w/6FgaQbd7h5NsqvNTLE1lOsumc7/sJOhm73GWTafqhK71LofZdKZO6FJv
+                        c5pNJ+qErvQ+x9l0nk7oQhWcZ9NhOgm6Tg0H2nTUlzEF3aWKI206R6cHukkdZ9p0ik7oGrUcatMZ
+                        OqFLVHOqTQd8Li7oCvUca9P2Ogm6wAXOtWlzndDtLXGwTTt/8iTo6tY42qZtdRJ0cYucbdOmbzt0
+                        a8scbtOOOgm6s3VOt2m/tx26Lwvn27SXToJuy0QDm3Z626GrMtLBpm2uJ0H3ZKWHTXtcT+iS7DSx
+                        aQOdPqArcqCLTdXfdoKux4U+NpX+UWB0N040sqnu607QxXjRyqaarztBl+JHM5sKXk/oRjzpZlO1
+                        6wndhi/9bKrkE7oJbzraVOV19wHdgzstbSrhk6A7CKCpTfDXnaDnD6GtTVCfHujZg2hsE8wn9Nhx
+                        tLYJ8fmToEeOpLlN2b95FT1tMO1test74Ql60HBo098kfHuBoGfMgDb9w6BKdmjTd4KEEvRcedCm
+                        n3AX6gN6olRo02/4qYSeJB3aNIXvtyVo03N4J2mhTS/gjaSANt2DHt3hvk2EEEIIIYQQQgghhBBC
+                        CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCH/8P/T2g3wTNSy
+                        bgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wNy0wNFQwMzo1MDozOSswMzowMFesjGwAAAAldEVY
+                        dGRhdGU6bW9kaWZ5ADIwMjAtMDctMDRUMDM6NTA6MzkrMDM6MDAm8TTQAAAAAElFTkSuQmCC"></image>
+                  </svg>
+               </a>
+               | 
+               
+               <span class="icon twitter">
+                  <a href="https://twitter.com/i_amanchadha">
+                     <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                        <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                           c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                           c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                           c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                           C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                           c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                           c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+                     </svg>
+                  </a>
+               </span>
+               <!-- <span class="username">i_amanchadha</span> -->
+                | 
+               <a href="mailto:hi@aman.ai">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuBAMAAABTjO+8AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEWxsLDGxcW4t7esq6u+
+                        vr7Z2NiqqamxsLCvrq7Ozc2ysrK1tbWenZ2dnZ3////zevNgAAAAAXRSTlMAQObYZgAAAAFiS0dE
+                        Dm+9ME8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkBwQDLRvUSpUpAAALt0lEQVR42u2d
+                        PW8jyRGGR7Lk3XXEyNqQwAVKBewtiHMkwAfQoQ4L3B02ImCs98KVuFZzFfECm3Am4A7YDXmR/sQF
+                        /gHO7+94R6Somarq7qr+mGra/YZifzzsfmc4XdNdappcOvjixZcX2VrPpj+az1r8QxtDqp/MRmfa
+                        IDI93WKbxUgbRaS3D9zmUhtFolfmUUttGL6OOtjm+kIbh61Jl3t/nPLK9LXUBuLpAGDvi1NWkHs/
+                        nPKtwVprQ/l1QGDvg1NWFLf5URvLp28NrbUCy+sfzJB6MUqD/SoeRagkk/M0nkOqFA+Rx2+H5zY3
+                        8dzfK2CncIrGcBtztYfuvtdtJPdHJe7ZXtrEmPdx2MdK2OZ6P+1tzEUU9+/VuMdR3E/UuM/+L7lP
+                        9pR7um3lry+G0iQp93lUKxL9rnJX7spduSt35a7clbtyV+7KXbkrd+Wu3JW7clfuyl25K3flrtyV
+                        u3JX7spduSt35a7c+809Men0rnJX7spduSt35a7clVuiOzXuZQz2QyMK3POLcOzjHd/w3DEnBaa7
+                        xgH3z1+nE2h6xx3u8McmFNYN4U55dIkOd6hTpkaZO8wp3QaUuEOO93ZdosUdchC86xI1bvmvT7+6
+                        GrfUKX2X6HFLndJ3iSK3zCnoWJoet8Qp+EyxHrfEKSemIG6+U4jDi5rcXKdQJ881ublOwS5R5uad
+                        SiePuOpyc5xC5yfQ5eakIaFcos7td4rlILQ2t88ptiwW2tw+p9AuKYDb7RTrcXl9bpdT7LlO9Lld
+                        TrG5pAhuu1McSRVK4LY5xZURpwRu8y+6ht0lhXDTOSOcqTfK4KaSi7jzJpXBTTnF5RLE/eeEiRXO
+                        BNzYKX8wEu6JSad3NPeC5RSLS+ZTNe6XNBFwynPLMOtxnx3SxXtOsbjkjer7tE9k8a5TLC5ZKL8H
+                        pHvpOMWSg22kzH1EV9g55XhFfv6m0X7vSieP3CXL+97+sS63JVnn2jXcm9yFytxkctSHAadza82a
+                        ArgtTtnQ3FEfbRMAanPTcB/aT55Rn8xvC+E+WFF03YI9bWvpc9MuXjb4lUir3Ztafe7mlKjzgWZ4
+                        XMkVwA1fkd0D0j9Ky8bDnVF4vw9l5FvKP51IRQnclJPPmu8cLimEm3jse0fYft1ppQhuYsl+iROW
+                        9lYUZXDjZc0NujX0V3CFcCOnzBv4TcYlcjeHPu6/91sphRvmDUbcoHgx3E8qd+Wu3JW7cv9Pcpf6
+                        ezn1cLdBwQK54ZoHcy9K5EZrTMxtXhbIPTV+7h5jGdx4DUxxz0vjfrZicZuvCuM+NTzuzpqnBG4q
+                        JktzP64xC+C2RDYp7sc1fQHcd4bPvYuh6HPTkXsb90PMSp2bflNi5X6IEapzr4TcW6dYuH/9Tzr9
+                        28Vt+zdydu6NUyzcv5l0eufgPrBVsnNvdl0rc08CuHsvUXS47f8pz8XdOkWV+8heycXdvp1S5Z4E
+                        cn+uq8n9yVHJzT2/UOQ+dFVyc5srRe63Edxmosa9cFZC3H+iyw3P3dfio4f7jN7Zps09e+LjZp2D
+                        GZr7hhFn45w7Gph7MeLEB0+K437DimsyztUN8BzbUbufisFNVQXcGUV0PmJyExsQNLnbfYw8brxV
+                        RZF7E2hlceOAnCL3uYAbhbb0uLfhYSY3DCW+DOaQ6hQCiriRU4YacNjvWMgNw1uR/9+WKzjPu4Af
+                        m/vA1kJWWUeLzY1CLmM5hViwz3UANwxxhSR/EQrOcWdDoIAbBosYh6oj5RgpAbdj1vII9rfsfCbh
+                        hgGMzE6B89tLryDiPnK1lFzO60nEjQJ0Sz6FWK+cJDJuuJszo1Pg3IJkYULuQ3drCQWuJZicTciN
+                        gnRnPAqxfgL9zMDnUm7olJh0hg7Beb2CBcTc8KhgHqeA0VncRnOjPcwzP4VYn7x9yLlhWAKPRbTg
+                        nN7gInJu1OqVl0MoNDKjJNwogPUmMfdzRvsh3JzxiBAMSC6oQiHcqOWbJqFQWI8clSBuFMBK6RSe
+                        C8O4YQAroVPgXM7pYmHcKBqzaBIJueQ8KTcKYDGc8jNMxUsJOtAWYArlRnvhRh6g1+1AXvtKoSyJ
+                        toKh3CiQNG+c2q4C5u4hR4HfcXJutD/LGTLcrRXdKw3oPntwKZwb7YdzDeUdAwXPoeNLhnOjMIHD
+                        KV3bjqyl0DWztrcYwY2cYh3Knm3tt0zoEldgKYYb7XYaWwqe9ErZbplw/pyXQgw37okuBn8CR/Qo
+                        QJcsXV1HcaPdfOTMop9A+jEMus4dVIrjRjue1kShE1iIdAq6yi8ycqOgEuFJIucO8RiGrhVPx5Hc
+                        aK8Wcgq5nwIv7aDjfGGCWG6062kJCtD7V2agFHTJ4sLTbyw3ChkAp1gyM4EgALpOZr5uo7nRwfVL
+                        56e0UybOT/NwoxHtVrHv+euWglc3IyQTz40c3LmDOfb8uUoxFiEJuNEd4/FeYHOJuxQnPJCA2+4U
+                        +/7hVkuLl1iL7BTc6Bdxmw3IsX+41fbOE+KSRNzIKZv7wcTNvbnzoLq80EASbrxXb9bYzyL0nYJ+
+                        lzguScWNwgef72ToieP6G8Ip6Npg7mxJxI0W4jf4xMoaz8CPREKQQbnxNqi/wT+0q7g7+Ef4ddn7
+                        cVJxk2mlep5oC5Fn4uCXG5b7mQdpfF/Kc63ydxEl47ak0YMD6Z6WsQK3E2l3uTmnRbCjJSG3y7zn
+                        nGmRvO1PyO0wb/embJ+WtaCvlNz0UVQDbspUXrh7iXazJOW2Hdcb9UpZMjXL9oQk5bY4BT7gTclS
+                        S1FPabnJ46joAY8MTQj3PCXmJpxCLAOIox7S/SCJuYklDrUMOEGlpP2k5j6GQORiETlFvE04NTcc
+                        SctiET12S984J+ZGPDNLQbjMkb5xTsttWWhGlRyCG43irbUoWsbP2L0k50YsrtoobHLL7CU9N5z7
+                        9wlLZ+SGI+j5LRHNTkZuMQf8jZL8ZibknojnXV4jAzfjFRUUCiAuh+cOYgj4rqm5V6Ai77k0rFZC
+                        btHL9Ueh5971sNzB/Qd+31TccL75kZDAmmm4Q0etIaIu6+G4Ud9jNjZ7M0gO7jtQSXZWMKh2Cm60
+                        nUuEjUOG42G4Ub/nMu6g752A+xRUkZ89Dmghnlu4cZPSs4l4xqK5j+V9YuG0qtm5p6BC2BZ2cSux
+                        3Ik2gqNZG+XlFvdnE+swRjrukyQuCWgpjjvhwRLh4Zoo7qQHeWRjEMXNOdjEl6i1GO7EB9VEB/Yi
+                        uJMfDJSMQwR3+oOYghbDub1HaQPEn8FwbtBHkoPG/OPiwdx5DnazWw3l9hzLD9aEOYuh3KD9ZIkL
+                        uCkoArnzJYpgthzGnTMxB28mw7hXmVzSypn2JI47b+IZVush3LkT/XBmM4T7LqNL7scFgFPjEsCd
+                        Pz0Rowc59xCJw+CMpuD2txkv/9iIuW0J6tLKm1RNyg2DmF+xMOQ6hVyR3L72UsmXqFHIPVz6RE9P
+                        Mm4YnsqZrnLqnFkZN2grWVYISnCM+mEJETcMYo5ycrt7k3DDwEPq/DhQrtmVcJ8M6BLfOAm4QQAv
+                        cVYfSo4e+dxDu6QVmOFOqJPP/dzaRj7Zx4rNDYJ3GbKEUbL2yuWG33w2CDaa5V0wj8v9yVI/t2zj
+                        xeQGgbuBXEL1fCHifkv+dRCBmX4v4abrDiRyzFjcIDyVKTelTYdU7yzuiZ5LWoGQ4SWXm6o3qMC4
+                        LXncIDw1QP5sqCNMwOBe4W87tMDy/pLDDerkz/pNCYzd2s+t75JWiMLLfQe/qY7grPu4/1mCS1qB
+                        8Tv1cIP5UcP2HGH3cI/1uN1H2N3cw/yvCZtOQ7mzBQN5ch1hd3Kf63K7jrC7uIf73zU2nYZwK7uk
+                        lfUIu4v7XJu6sR5hd3FffV2CJmLuslW5K3flLk+Vu3JX7vJUuSt35S5P+8p9vafcc2/y1DJ1RWb8
+                        Kl8fmo/aCEE6sy/1i9bal9S4UDXu3Nelqn2B/Z02RIBmjT1pY8HahC5PtDHE2mxf8mXeLU4PkeKn
+                        8U0Nir2LFL9eabMIdN0JcB//5cW+6JcN8X8B85vetwnigQ8AAAAldEVYdGRhdGU6Y3JlYXRlADIw
+                        MjAtMDctMDRUMDM6NDU6MjcrMDM6MDDsnuMrAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA3LTA0
+                        VDAzOjQ1OjI3KzAzOjAwncNblwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+               | 
+               <a id="theme-toggle" onclick="modeSwitcher()" style="cursor: pointer;">
+                  <svg version="1.1" class="mail-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                     <image id="image0" width="16" height="16" x="0" y="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                        AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACYVBMVEU/PzpEREBBQT1CQj4/
+                        PztAQDtHR0NJSUU+PjpISERDQz9AQDw5OTRFRUE8PDhCQj1CQj89PTlKSkY+PjlNTUlLS0hEREBD
+                        Qz9aWleHh4WtrazBwcHCwsLCwsLCwsLAwMCurq2IiIZgYFxXV1Sbm5rFxcXCwsKgoKBkZGFERECX
+                        l5bExMSPj45LS0empqWpqahUVFCnp6axsbFTU09CQj6lpaSpqahISESRkZCNjYtUVFG/v7/FxcW7
+                        u7vExMVhYV6ampmTk5FXV1S3t7eenp1VVVHCwsOYmJd3d3XIyMjCwsJdXVqEhIKrq6uGhoSnp6aX
+                        l5aAgH6srKzAwMBdXVq8vLzCwsOZmZhNTUm3t7bDw8PCwsKYmJexsbCYmJawsK/CwsJOTkq2trXD
+                        w8K9vb1bW1jBwcK9vb2pqaiXl5aCgoCvr66AgH6jo6OGhoNYWFXAwMB9fXvIyMjGxsZeXluamplM
+                        TEi5ubmcnJteXlrCwsLGxsaTk5FDQz+dnZzJycljY2CJiYe+vr5bW1hUVFCcnJuVlZRGRkKmpqW4
+                        uLd8fHl/f33AwMCioqFFRUFQUEyurq6wsLCFhYNkZGBSUk9SUk9hYV6JiYenp6bHx8inp6ZKSkZP
+                        T0unp6bExMS6urm0tLSzs7O4uLjExMSioqGMjIrExMTKysuVlZRFRUFiYl6hoaDExMTIyMicnJtr
+                        a2hhYV6Li4qxsbDDw8O+vr2zs7KHh4VlZWPHx8fGxsbCwsLJycnIyMjDw8PKysvExMTKysrMzMzL
+                        y8vFxcXJycrFxcbGxsfHx8jIyMnExMX///9/oPL/AAAAuHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAA
+                        AAAAAQEYUJzK4+3kzJxYGSKE5+qSIgJe7GoGlqYMprcLAZapAl1uH/H70vMkhWYP1ZoW7G5G/fMb
+                        UbpinWtbrMsd1OVuBtfn7m3IbMnlBNTozhzz1Z5sVq5Yt2YW7zf48iCTD9CiH/DzZwWv9Ctp0QsQ
+                        rnABqNFKO82sAg22uF0fBwUfV7T7uw0Lp/PYycnV8qtu7/JxASeZ7vGgLh5hqebTrWUhilEqqgAA
+                        AAFiS0dEyvO0NuYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfkCBYKLR1KuANWAAACD0lE
+                        QVQoz23TZXvUQBAA4CG7R09K4ZANFtwKFHcvTrHi0BZ3d5dCKe4uxd1d7jbZJCQFwr9ik1wud83N
+                        hyRP3uzOk5lZIE6IUK95i5atWktSm7bt2ncQQHTfg3MVUMdOnRNJ6kRS7tK1GxZSXEhIqH53SWE0
+                        HUzp0TMPe6txUS9Vo1nB1N59wi6HivrqNBByv/7Y5gGRgTmU+6DBAufwkF85kCczhoZFwMOGa0Ed
+                        MVKjbNRogOgYOahG8dhxJpXHx2DCxOBiY1I0f/IUykqmwjQllwpig+kJWjsDZiYCWop4yQpm6TQ5
+                        G+bkVhKaW8LYPJhfR9UFUafcaOEik5ZBebbqFa4SlLf4Ny2vw/oS5CqJRpbavCxr5wpPScPlK0y6
+                        ElZlNNJI5bUjtHoNY2th3R9f1/tKCjbINLkRNtWmdy5t5KsY2/yXWltg6zbNqxXylcS376Bs5y7A
+                        u+V0JX2N7dlrUmUfArz/gL384KFMDR8+olBWeTQOJH7M4N2vOp6PPIzi6hN8gIyTSASCTp3mz9qZ
+                        s43jYQEhAZoI587zPqkXLtrDRPClyzy9aV25eu1602Y3bt66fYen0+/WhNw5x/fuq8we/wcPHz1+
+                        8tSyW2w8q8HeKcGR5y8s/gHTTPOffVdevnodyzhE+M3bd7Lp1JeZ1vsPH53/KEwx/xX06fOXqq+S
+                        VPbt+4+fQjx1BP8DniGUSqIRNGsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDgtMjJUMTA6NDU6
+                        MjkrMDM6MDBYVnojAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA4LTIyVDEwOjQ1OjI5KzAzOjAw
+                        KQvCnwAAAABJRU5ErkJggg=="></image>
+                  </svg>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div align="center" class="footer-col-1 column">
+         <a href="https://www.amanchadha.com/">www.amanchadha.com</a>
+      </div>
+      <!-- <div class="footer-col-2 column">
+         </div>
+         
+         <div class="footer-col-3 column">
+         
+         </div> -->
+   </div>
+   <!-- add permalinks to headers in kramdown -->
+   <!-- <script>
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML =
+              '<a href="#' + headings[i].id + '">' +
+                  headings[i].innerText +
+              '</a>';
+      }
+   </script>   -->
+
+   <!-- add title case to section headings -->
+   <script src="https://aman.ai/js/ap-style-title-case.js" type="text/javascript"></script>   
+   <script>
+      var headings = document.querySelectorAll("h1, h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+      
+      for (var i = 0; i < headings.length; i++) {
+          headings[i].innerHTML = titleCase(headings[i].innerHTML);
+      }
+      
+      var toc = document.querySelectorAll("a[id^='markdown-toc-']");
+      
+      for (var i = 0; i < toc.length; i++) {
+          toc[i].innerHTML = titleCase(toc[i].innerHTML);
+      }      
+   </script>        
+</footer>
+
+    <script src="https://aman.ai/js/nanobar.min.js"></script>
+    <script>
+    var options = {
+      classname: 'my-class',
+        id: 'my-id'
+    };
+    var nanobar = new Nanobar( options );
+    nanobar.go(100);
+    </script><div class="nanobar my-class" id="my-id" style="position: fixed;"><div class="bar"></div></div>     
+
+    <!-- Scroll bar -->
+    <div class="progress-bar"></div>
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+    var element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight',
+      progress = document.querySelector('.progress-bar'),
+      scroll;
+
+    document.addEventListener('scroll', function() {
+      scroll = (element[scrollTop]||body[scrollTop]) / ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+    });
+    </script>    
+    <!-- theme switcher -->
+    <script src="https://aman.ai/js/mode-switcher.js"></script>
+    <!-- mathjax -->
+<!--     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" id=""></script>
+    <!-- make mathjax responsive -->
+    <script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+       "HTML-CSS": { linebreaks: { automatic: true } },
+       "SVG": { linebreaks: { automatic: true } },
+      });
+    </script>
+    <!-- Copy button -->
+    <script src="https://aman.ai/js/clipboard.min.js"></script>
+    <script src="https://aman.ai/js/copy.js"></script>      
+    
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5905744527956213&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1766895470&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C8%3A128%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Faman.ai%2Fprimers%2Fai%2Fbatchnorm%2F&amp;pra=5&amp;wgl=1&amp;asro=0&amp;aiapm=0.1542&amp;aiapmd=0.1423&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1766922559516&amp;bpp=1&amp;bdt=37&amp;idt=3&amp;shv=r20251211&amp;mjsv=m202512100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=1741539056332&amp;frm=20&amp;pv=2&amp;u_tz=330&amp;u_his=47&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=31093848%2C31095745%2C31096041%2C95376241%2C95376582%2C95378599%2C95378749%2C95379897%2C42533293%2C95377246&amp;oid=2&amp;pvsid=1071538857778554&amp;tmod=112874479&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=22%2C22%2C22%2C22%2C800%2C0%2C756%2C556%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=33792&amp;bc=31&amp;bz=0.95&amp;psd=W251bGwsW251bGwsbnVsbCxudWxsLCJkZXByZWNhdGVkX2thbm9uIl1d&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=7" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: STIXSizeOneSym, sans-serif;"></div></div><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20251211/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>

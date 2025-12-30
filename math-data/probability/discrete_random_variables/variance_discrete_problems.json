@@ -1,0 +1,88 @@
+[
+  {
+    "id": "prob_prb_variance_discrete_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "variance_discrete",
+    "problem": {
+      "statementHtml": "Find the variance and standard deviation of a discrete random variable X with probability mass function <p>P(X=k) = \\frac{1}{4} (for k=-2,-1,0,1,2)</p>",
+      "hints": [
+        "Recall that the variance is the expected value of the squared difference from the mean.",
+        "The standard deviation is the square root of the variance.",
+        "You can use the formula for the variance as a starting point."
+      ],
+      "solutionHtml": "<p>To find the mean, we sum up all possible values multiplied by their probabilities:</p><p>\\mu = \\sum_{k=-2}^2 kP(X=k) = -2\\cdot \\frac{1}{4} + (-1)\\cdot \\frac{1}{4} + 0 + 1\\cdot \\frac{1}{4} + 2\\cdot \\frac{1}{4} = 0</p><p>Now, we find the variance:</p><p>\\sigma^2 = E[(X-\\mu)^2] = \\sum_{k=-2}^2 (k-0)^2P(X=k) = 2\\cdot \\frac{1}{4} + 1\\cdot \\frac{1}{4} + 0</p><p>The standard deviation is the square root of the variance:</p><p>\\sigma = \\sqrt{\\sigma^2} = \\sqrt{2/4 + 1/4} = \\sqrt{3/4}</p>",
+      "answerShort": "\\sigma = \\sqrt{3/4}"
+    },
+    "commonMistakes": [
+      "Forgetting to subtract the mean from each value before squaring and summing.",
+      "Not recognizing that the probability mass function is symmetric about the mean."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:52:55.106Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_discrete_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "variance_discrete",
+    "problem": "{",
+    "statementHtml": "Find the variance and standard deviation of a discrete random variable X taking values {1, 2, ..., 6} with probabilities {1/6, 1/6, 1/6, 1/6, 1/6, 1/6}.",
+    "hints": [
+      "Recall the definition of variance and standard deviation.",
+      "Use the formula for variance: Var(X) = E[(X - E[X])^2].",
+      "Try to simplify the expression for E[(X - E[X])^2] using the given probabilities."
+    ],
+    "solutionHtml": "<p>To find the variance, we first need to calculate the mean:</p>\\(E[X] = \\frac{1}{6} (1 + 2 + ... + 6) = 7.\\)<p>Then, we can use the formula for variance:</p>\\[Var(X) = E[(X - E[X])^2] = E[(X - 7)^2].\\] <p>We can expand the expression and simplify it using the given probabilities:</p>\\[E[(X - 7)^2] = \\frac{1}{6} (1 + 4 + 9 + ... + 25) = \\frac{105}{6}.\\] <p>Finally, we take the square root to find the standard deviation:</p>\\[\\sigma(X) = \\sqrt{\\frac{105}{6}}.\\]",
+    "answerShort": "\\(\\sigma(X) = \\sqrt{\\frac{105}{6}}\\)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:53:20.223Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_discrete_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "variance_discrete",
+    "title": "Variance and Standard Deviation of Discrete Random Variables",
+    "problem": {
+      "statementHtml": "<p>Find the variance and standard deviation of a discrete random variable X with probability mass function P(X=k) = (1/6) for k=1,2,3.</p>",
+      "hints": [
+        "Recall that variance is the average squared difference from the mean.",
+        "Use the formula for variance: Var(X) = E[(X-E[X])^2].",
+        "You can use the definition of expected value to simplify the expression."
+      ],
+      "solutionHtml": "<p>To find the mean, we calculate:</p><ul><li>E[X] = ∑kP(X=k)k = (1/6)(1+2+3) = 10/6</li></ul><p>Then, we compute the variance:</p><ul><li>Var(X) = E[(X-E[X])^2] = E[(k-10/6)^2]</li></ul><p>Simplifying, we get:</p><ul><li>Var(X) = (1/6)((1-5/3)^2 + (2-5/3)^2 + (3-5/3)^2)</li></ul><p>The standard deviation is the square root of the variance.</p>",
+      "answerShort": "σ^2 = 35/36, σ ≈ √(35/36)"
+    },
+    "commonMistakes": [
+      "Forgetting to subtract the mean from each term in the variance formula",
+      "Not simplifying the expression correctly"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:53:42.412Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

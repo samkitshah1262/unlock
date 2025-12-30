@@ -1,0 +1,76 @@
+[
+  {
+    "id": "prob_prb_functions_multiple_rv_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be independent random variables with distributions F<sub>X</sub>(x) and F<sub>Y</sub>(y), respectively. Find the distribution of Z = X + Y.</p>",
+    "hints": [
+      "Think about the CDF of a sum of two RVs.",
+      "Use the fact that X and Y are independent to simplify your answer.",
+      "Recall the definition of convolution."
+    ],
+    "solutionHtml": "<p>To find the distribution of Z, we can use the convolution formula:</p>\\n\\[F_Z(z) = \\int_{-\\infty}^{\\infty} F_X(x) F_Y(z-x) dx.\\]\\n<p>Since X and Y are independent, their distributions are separable. We can rewrite the integral as:</p>\\n\\[\\int_{-\\infty}^{\\infty} F_X(x) F_Y(z-x) dx = \\left(\\int_{-\\infty}^{\\infty} F_X(x) dx\\right) \\cdot F_Y(z).\\]\\n<p>This is the CDF of Z, which implies that Z has a distribution.</p>\",",
+    "answerShort": "Z ∼ F_Z(z)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:32:33.600Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_functions_multiple_rv_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "<p>Find the sum and difference of two independent random variables X and Y.</p>",
+    "hints": [
+      "Start by recalling the definition of independence.",
+      "Think about how to apply this concept to find the desired sums and differences."
+    ],
+    "solutionHtml": "<p>To find the sum, we use the fact that the distribution of X+Y is the convolution of the distributions of X and Y:</p>\\[\\sum_{k} P(X=k)P(Y=k)\\]<p>Since X and Y are independent, this simplifies to:</p>\\[\\sum_{k} P(X=k) \\cdot 1 = P(X=x)</p><p>To find the difference, we can use a similar approach:</p>\\[X-Y = (X-E[X]) + (-Y+E[Y])\\]<p>Again, since X and Y are independent, this simplifies to:</p>\\[\\sum_{k} P(X=k) \\cdot 1 - \\sum_{l} P(Y=l) \\cdot 1</p><p>The final answer is the sum of two distributions.</p>\",",
+    "answerShort": "The sum and difference are both distributed as X\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:32:53.879Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_functions_multiple_rv_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "Let X and Y be independent random variables with probability distributions P(X) and P(Y). Find the distribution of Z = X + Y.",
+    "hints": [
+      "Start by recalling the definition of a convolution.",
+      "Think about how the sum of two independent RVs can be viewed as the combination of two separate events.",
+      "Use the fact that the probability density function (PDF) of the sum is the integral of the product of the PDFs with respect to the difference."
+    ],
+    "solutionHtml": " The distribution of Z = X + Y is given by P(Z = z) = \\(\\int_{-\\infty}^{\\infty} P(X = x)P(Y = z-x) dx\\). This is because the sum of two independent RVs can be viewed as the combination of two separate events, where one event occurs when X takes on a particular value and the other event occurs when Y takes on a particular value. The probability of this combined event is then given by the product of the probabilities of each individual event.  For example, if we have two independent RVs X and Y with PDFs P(X) = 1/2 \\(\\delta(x-1)\\) + 1/2 \\(\\delta(x+1)\\) and P(Y) = 1/3 \\(\\delta(y-1)\\) + 2/3 \\(\\delta(y+1)\\), then the distribution of Z = X + Y is given by:  P(Z = z) = \\(\\int_{-\\infty}^{\\infty} (1/2) \\delta(x-1) (1/3) \\delta(z-x-1) dx\\) + \\(\\int_{-\\infty}^{\\infty} (1/2) \\delta(x+1) (2/3) \\delta(z-x+1) dx\\)  Evaluating this integral, we get:  P(Z = z) = 1/6 \\(\\delta(z-0)\\) + 1/3 \\(\\delta(z-2)\\) + 1/3 \\(\\delta(z+2)\\) \",",
+    "answerShort": "The distribution of Z = X + Y is given by the convolution of P(X) and P(Y).\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:33:27.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

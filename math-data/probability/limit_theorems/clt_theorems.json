@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prob_thm_clt_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a cornerstone of probability theory.</p><p>It states that given certain conditions, the distribution of the mean of i.i.d. random variables will converge to a normal distribution as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\sim N(0, \\sigma^2) \\]",
+      "name": "CLT Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P \\left( \\frac{\\sum_{i=1}^n X_i - n\\mu}{\\sqrt{n}\\sigma} &lt; x \\right) = \\Phi(x) \\]",
+      "proofSketch": "The proof typically involves showing that the sum of i.i.d. random variables is asymptotically normal using characteristic functions or moment methods."
+    },
+    "intuition": "The CLT provides a powerful tool for modeling real-world phenomena, as many natural processes involve averaging over large numbers of observations.",
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of Gaussian distributions in modeling and inference."
+    ],
+    "tags": [
+      "CLT",
+      "Probability Theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:04.813Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_clt_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "contentHtml": "<p>The Central Limit Theorem (CLT) is a cornerstone of probability theory, stating that under certain conditions, the distribution of the mean of i.i.d. random variables converges to a normal distribution as the sample size increases.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\sim N(0, \\sigma^2)\\]",
+      "name": "CLT Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\lim_{n \\to \\infty} P \\left( \\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu) \\leq x \\right) = \\Phi \\left( \\frac{x}{\\sigma/\\sqrt{n}} \\right)\\]",
+      "proofSketch": "The proof involves showing that the sum of i.i.d. random variables is approximately normally distributed by applying the Lindeberg-Feller CLT and then using the Berry-Esseen theorem to establish the rate of convergence."
+    },
+    "intuition": "In essence, the CLT says that as you average more and more independent observations, the distribution of those averages becomes increasingly normal. This has far-reaching implications in statistics, machine learning, and data analysis.",
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of Gaussian distributions in modeling real-world phenomena."
+    ],
+    "tags": [
+      "probability",
+      "statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:28.151Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

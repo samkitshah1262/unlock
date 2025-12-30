@@ -1,0 +1,385 @@
+[
+  {
+    "id": "stat_con_multicollinearity_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated with each other.</p><p>This can lead to unstable and unreliable estimates of the coefficients, as well as inflated variances. In this card, we'll explore how to detect multicollinearity, its consequences, and some remedies.</p>",
+    "formula": "{",
+    "latex": "\\\\[VIF = \\\\frac{1}{1 - R^2}\\]\",",
+    "name": "Variance Inflation Factor (VIF)",
+    "variants": "[] },",
+    "intuition": "Think of it like trying to measure the length and width of a room with two rulers that are highly correlated. If one ruler is off by a little, both measurements will be affected.",
+    "realWorldApplications": [
+      "In machine learning, multicollinearity can lead to overfitting and poor generalization.",
+      "In finance, it can result in inaccurate risk assessments."
+    ],
+    "commonMistakes": [
+      "Not checking for multicollinearity",
+      "Assuming that correlation between predictors is always a problem"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:46:14.561Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multicollinearity_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity in Regression Analysis",
+    "contentHtml": "<p>When multiple predictor variables in a regression model are highly correlated with each other, it can lead to unstable and inaccurate estimates of their coefficients.</p><p>This phenomenon is known as multicollinearity. In this concept card, we'll explore how to detect and mitigate its effects.</p>",
+    "formula": {
+      "latex": "\\[ \\text{VIF} = \\frac{1}{1 - R^2_{ij}} \\]",
+      "name": "Variance Inflation Factor (VIF)"
+    },
+    "intuition": "Think of it like trying to pinpoint the exact contribution of each variable in a complex system. If multiple variables are highly correlated, it's like trying to separate identical twins – you can't accurately distinguish between them.",
+    "realWorldApplications": [
+      "In machine learning, multicollinearity can lead to overfitting and poor model performance."
+    ],
+    "commonMistakes": [
+      "Failing to check for multicollinearity before interpreting regression results"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:46:30.833Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multicollinearity_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity in Regression Analysis",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated with each other.</p><p>This can lead to unstable estimates of the regression coefficients and inflated variance of the coefficients.</p>",
+    "formula": {
+      "latex": "\\[ VIF = \\frac{1}{1 - R^2 } \\]",
+      "name": "Variance Inflation Factor (VIF)",
+      "variants": [
+        {
+          "latex": "\\[ Tolerance = 1 - R^2 \\]",
+          "description": "Tolerance is the reciprocal of VIF"
+        }
+      ]
+    },
+    "intuition": "Multicollinearity can be thought of as a 'crowding out' effect, where one predictor variable dominates the others, making it difficult to disentangle their individual effects.",
+    "realWorldApplications": [
+      "In machine learning, multicollinearity can lead to overfitting and poor model performance."
+    ],
+    "commonMistakes": [
+      "Not checking for multicollinearity in regression models"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:46:46.251Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multicollinearity_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Detecting Multicollinearity",
+    "subtitle": "A crucial concept in regression analysis",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated with each other.</p><p>This can lead to unstable estimates of coefficients and inflated variance.</p>",
+    "formula": "{",
+    "latex": "\\[VIF = \\frac{1}{1 - R^2}\\]\",",
+    "name": "Variance Inflation Factor (VIF)",
+    "variants": "[ {\"latex\": \"\\[Tolerance = 1 - R^2\\]\", \"description\": \"Alternative measure of multicollinearity\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with two predictor variables, x1 and x2. We calculate the correlation between them to be 0.8.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the VIF for each predictor variable\", \"mathHtml\": \"\\[VIF_{x1} = \\frac{1}{1 - 0.8^2}\\]\", \"explanation\": \"The higher the correlation, the higher the VIF\"}, {\"stepNumber\": 2, \"description\": \"Check if any VIF values exceed a certain threshold (e.g., 5)\", \"mathHtml\": \"\", \"explanation\": \"If yes, it indicates multicollinearity\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Multicollinearity can be a major issue in regression analysis, making it essential to detect and address it.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:47:06.877Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multicollinearity_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity Detection",
+    "contentHtml": "<p>When analyzing multiple regression models, it's crucial to detect multicollinearity between predictor variables. This phenomenon occurs when two or more predictors are highly correlated, leading to unstable and inaccurate model estimates.</p>",
+    "formula": {
+      "latex": "\\[VIF = \\frac{1}{1 - R^2_{ij}}\\]",
+      "name": "Variance Inflation Factor (VIF)",
+      "variants": []
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we're analyzing the relationship between house prices, number of bedrooms, and square footage. We find that the correlation between number of bedrooms and square footage is 0.8.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the variance inflation factor (VIF) for each predictor.",
+          "mathHtml": "\\[VIF_{bedrooms} = \\frac{1}{1 - 0.8^2}\\]",
+          "explanation": "This helps us identify which predictors are most affected by multicollinearity."
+        }
+      ],
+      "finalAnswer": "The VIF values indicate that the number of bedrooms and square footage are highly correlated, suggesting multicollinearity."
+    },
+    "intuition": "Multicollinearity can lead to inflated variance in model estimates, making it essential to detect and address this issue.",
+    "realWorldApplications": [
+      "In machine learning, detecting multicollinearity is crucial when selecting features for a model."
+    ],
+    "tags": [
+      "regression",
+      "multicollinearity"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:47:26.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_multicollinearity_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity Detection",
+    "contentHtml": "<p>When dealing with multiple regression models, multicollinearity can be a major issue. It occurs when two or more predictor variables are highly correlated.</p><p>This can lead to unstable coefficients and poor predictions.</p>",
+    "formula": "{",
+    "latex": "\\[VIF = \\frac{1}{1 - R^2_{ij}}\\]",
+    "name": "Variance Inflation Factor (VIF)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with three features: age, income, and education level. We want to build a regression model to predict the probability of buying a house.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the correlation matrix\", \"mathHtml\": \"\\\\[R = \\\\begin{bmatrix} 1 & 0.8 & 0.6 \\\\\\ 0.8 & 1 & 0.7 \\\\\\ 0.6 & 0.7 & 1 \\\\end{bmatrix}\\\\]\", \"explanation\": \"We can use this to identify highly correlated features\"} ],",
+    "finalAnswer": "The VIF for the education level feature is high, indicating multicollinearity\" },",
+    "intuition": "Multicollinearity occurs when features are too similar, making it difficult to estimate the true relationships between variables",
+    "tags": [
+      "multicollinearity",
+      "VIF"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:47:46.098Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multicollinearity_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "<p>Detect multicollinearity in a linear regression model.</p>",
+    "hints": [
+      "Check variance inflation factors (VIFs) for each predictor.",
+      "Look for high correlations between predictors (> 0.7).",
+      "Consider using principal component regression or dimensionality reduction techniques."
+    ],
+    "solutionHtml": "<p>To detect multicollinearity, calculate the VIF for each predictor:</p>\\(VIF = \\frac{1}{1 - R^2}\\) where \\(R^2\\) is the coefficient of determination. If any VIF exceeds 5, it may indicate multicollinearity.</p><p>For example, suppose we have two predictors X and Y with a correlation of 0.8:</p>\\[\\text{VIF}_X = \\frac{1}{1 - 0.8^2} = 5\\] This suggests that X is highly correlated with the other predictor(s) in the model.</p><p>To remedy multicollinearity, we can try:</p> <ul><li>Removing one or more highly correlated predictors,</li><li>Standardizing the data,</li><li>Using a different regression technique, such as ridge regression or the lasso.</li></ul>\",",
+    "answerShort": "VIF > 5\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:04.904Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multicollinearity_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "Multicollinearity in regression analysis can be a significant issue when two or more predictor variables are highly correlated. Detecting and addressing multicollinearity is crucial to ensure accurate model performance. Consider the following dataset: <br><table border=1><tr><th>Predictor 1</th><th>Predictor 2</th><th>Response Variable</th></tr><tr><td>0.5</td><td>0.8</td><td>10</td></tr><tr><td>0.3</td><td>0.9</td><td>12</td></tr><tr><td>0.1</td><td>0.7</td><td>15</td></tr></table>",
+    "hints": [
+      "Check the variance inflation factor (VIF) for each predictor variable.",
+      "If VIF is high, it may indicate multicollinearity.",
+      "Consider using techniques like principal component regression or ridge regression to address multicollinearity."
+    ],
+    "solutionHtml": "<p>Step 1: Calculate the variance inflation factor (VIF) for each predictor variable.</p><p>\\[ VIF = \\frac{1}{1 - R^2} \\]</p><p>where \\(R^2\\) is the coefficient of determination.</p><p>Step 2: Check if any VIF values are greater than 5. If so, it may indicate multicollinearity.</p><p>Step 3: Consider using techniques like principal component regression or ridge regression to address multicollinearity.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:25.885Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_multicollinearity_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "problem": "{",
+    "statementHtml": "<p>Detect and diagnose multicollinearity in a linear regression model.</p>",
+    "hints": [
+      "Check the variance inflation factor (VIF) for each predictor.",
+      "Look at the correlation matrix to identify highly correlated predictors.",
+      "Consider using principal component regression or dimensionality reduction techniques."
+    ],
+    "solutionHtml": "<p>To detect multicollinearity, calculate the VIF for each predictor:</p>\\(VIF = \\frac{1}{1 - R^2}\\), where \\(R^2\\) is the coefficient of determination from a regression of the predictor on all other predictors. If any VIF values are greater than 5 or 10, it may indicate multicollinearity.</p><p>Consequences of multicollinearity include:</p>\\(1.\\) Unstable coefficients and standard errors,\\(2.\\) Poor model performance,\\(3.\\) Overfitting.\\(<br>\\)</p>\",",
+    "answerShort": "VIF values greater than 5 or 10 indicate multicollinearity.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:48:41.745Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multicollinearity_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Detecting Multicollinearity",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated with each other.</p>",
+    "formula": {
+      "latex": "\\[ VIF = \\frac{1}{1 - R^2} \\]",
+      "name": "Variance Inflation Factor (VIF)"
+    },
+    "problem": {
+      "statementHtml": "<p>A company's sales data shows that the number of advertisements run and the price of each advertisement are highly correlated. How can this affect the regression model?</p>",
+      "hints": [
+        "Check for multicollinearity",
+        "Use a different metric"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>A dataset contains features X1, X2, and X3. The correlation matrix is:</p><ul><li>X1 &amp; X2: 0.8</li><li>X1 &amp; X3: 0.5</li><li>X2 &amp; X3: 0.7</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check the correlation matrix",
+          "mathHtml": "\\[ \\text{Correlation Matrix} \\]",
+          "explanation": "High correlations indicate multicollinearity"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the variance inflation factor (VIF)",
+          "mathHtml": "\\[ VIF = \\frac{1}{1 - R^2} \\]",
+          "explanation": "A high VIF indicates multicollinearity"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Consider using regularization techniques",
+          "mathHtml": "",
+          "explanation": "Regularization can help mitigate the effects of multicollinearity"
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Multicollinearity can lead to unstable regression models and inflated variance.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:49:05.481Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multicollinearity_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity Detection and Remedies",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset with three features: X1, X2, and X3. We want to build a linear regression model to predict the target variable Y.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the variance inflation factor (VIF) for each feature.\", \"mathHtml\": \"\\[ VIF_i = \\frac{\\sigma^2}{\\sigma_{ii}} \\]\", \"explanation\": \"The VIF measures how much each feature contributes to the overall variance of the model.\"}, {\"stepNumber\": 2, \"description\": \"Check the VIF values for features X1 and X2.\", \"mathHtml\": \"\", \"explanation\": \"If both VIFs are high (>5), it indicates multicollinearity.\"}, {\"stepNumber\": 3, \"description\": \"To address multicollinearity, we can try feature selection or dimensionality reduction techniques.\", \"mathHtml\": \"\", \"explanation\": \"These methods help reduce the correlation between features and improve model stability.\"} ],",
+    "finalAnswer": "The VIF values for X1 and X2 are both high (>5), indicating multicollinearity. We can use feature selection or dimensionality reduction to address this issue.\" },",
+    "intuition": "Multicollinearity can lead to unstable models with large standard errors and poor predictions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:49:24.943Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_multicollinearity_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "multicollinearity",
+    "title": "Multicollinearity Detection and Remedies",
+    "contentHtml": "<p>In regression analysis, multicollinearity occurs when two or more predictor variables are highly correlated with each other.</p><ul><li>This can lead to unstable coefficient estimates and poor model performance.</li></ul>",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with three features X1, X2, and X3, determine if multicollinearity exists between the predictors.</p>",
+    "hints": [
+      "Check for high correlations between pairs of features"
+    ],
+    "solutionHtml": "<p>To detect multicollinearity, we can calculate the variance inflation factor (VIF) for each predictor. A VIF greater than 5 or 10 indicates multicollinearity.</p><ul><li>VIF = \\(\\frac{1}{1-R^2}\\)</li></ul>\",",
+    "answerShort": "Calculate VIF values\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with X1 (age), X2 (income), and X3 (education level). Calculate the VIF for each predictor.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the correlation matrix\", \"mathHtml\": \"\\[ \\begin{bmatrix} 1 & 0.8 & 0.6 \\\\ 0.8 & 1 & 0.7 \\\\ 0.6 & 0.7 & 1 \\end{bmatrix}\\]\", \"explanation\": \"This shows high correlations between X1 and X2, as well as X2 and X3.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the VIF for each predictor\", \"mathHtml\": \"\\[ \\text{VIF}_{X1} = \\frac{1}{1-0.8^2} = 5\\]\", \"explanation\": \"The high correlation between X1 and X2 indicates multicollinearity.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the VIF for each predictor\", \"mathHtml\": \"\\[ \\text{VIF}_{X2} = \\frac{1}{1-0.7^2} = 5\\]\", \"explanation\": \"The high correlation between X2 and X3 also indicates multicollinearity.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the VIF for each predictor\", \"mathHtml\": \"\\[ \\text{VIF}_{X3} = \\frac{1}{1-0.6^2} = 5\\]\", \"explanation\": \"The high correlation between X1 and X3 also indicates multicollinearity.\"} ],",
+    "finalAnswer": "Multicollinearity exists among the predictors\" },",
+    "intuition": "Multicollinearity can lead to unstable coefficient estimates, making it essential to detect and address this issue in regression analysis.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:49:57.831Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

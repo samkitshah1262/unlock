@@ -1,0 +1,71 @@
+[
+  {
+    "id": "prob_thm_markov_classification_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification of Markov Chains",
+    "contentHtml": "<p>Markov chains are a fundamental concept in probability theory and stochastic processes.</p><p>In this theorem, we explore the different types of states that can occur in a Markov chain.</p>",
+    "formula": {
+      "latex": "\\[P(X_n = i | X_{n-1} = j) = P(i | j)\\]",
+      "name": "Transition Probability"
+    },
+    "theorem": {
+      "statement": "\\[A Markov chain is said to be transient, recurrent, or periodic depending on the classification of its states. A state is transient if it can be left with probability one, recurrent if it can return with probability one, and periodic if it always returns after a certain number of steps.\\]",
+      "proofSketch": "The proof involves analyzing the long-term behavior of the Markov chain using matrix theory."
+    },
+    "intuition": "Understanding the classification of states in a Markov chain is crucial for modeling real-world systems that exhibit random behavior.",
+    "realWorldApplications": [
+      "In machine learning, understanding the transient and recurrent properties of neural networks can help improve their performance."
+    ],
+    "tags": [
+      "Markov Chains",
+      "Stochastic Processes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:18:41.814Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_markov_classification_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification Theorem",
+    "contentHtml": "<p>In probability theory, a stochastic process is said to be irreducible if it cannot remain in any particular state indefinitely.</p><p>Formally, this means that for any two states <i>A</i> and <i>B</i>, there exists a positive integer <i>n</i> such that the transition matrix has a non-zero entry at row <i>A</i> and column <i>B</i> after <i>n</i> steps.</p>",
+    "formula": {
+      "latex": "\\[P(X_n = B | X_0 = A) > 0\\]",
+      "name": "Irreducibility Condition"
+    },
+    "theorem": {
+      "statement": "\\[A stochastic process is irreducible if and only if it is not transient or recurrent.\\]"
+    },
+    "intuition": "In other words, an irreducible process can move from any state to any other state in a finite number of steps.",
+    "realWorldApplications": [
+      "Markov chain Monte Carlo (MCMC) algorithms rely on irreducible processes for efficient sampling."
+    ],
+    "tags": [
+      "stochastic processes",
+      "irreducibility"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:00.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

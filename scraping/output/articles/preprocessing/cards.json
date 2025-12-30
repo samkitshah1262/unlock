@@ -1,0 +1,128 @@
+[
+  {
+    "id": "ai-preprocessing-the-porter-stemming-algorithm-1",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Preprocessing",
+    "articleSlug": "preprocessing",
+    "chapter": "Stemming",
+    "title": "The Porter Stemming Algorithm",
+    "subtitle": "Stemming",
+    "contentHtml": "<ul>\n  <li>The Porter Stemming algorithm, developed by Martin Porter in 1980, is one of the most widely used stemming algorithms. It processes words through a series of steps, each containing transformation rules that specify conditions under which a suffix should be removed or replaced. This iterative approach ensures that words are reduced to their root form in a systematic manner.</li>\n</ul>",
+    "contentMarkdown": "*   The Porter Stemming algorithm, developed by Martin Porter in 1980, is one of the most widely used stemming algorithms. It processes words through a series of steps, each containing transformation rules that specify conditions under which a suffix should be removed or replaced. This iterative approach ensures that words are reduced to their root form in a systematic manner.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 60,
+      "contentLength": 397
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/preprocessing/#the-porter-stemming-algorithm",
+    "scrapedAt": "2025-12-28T11:53:11.623Z"
+  },
+  {
+    "id": "ai-preprocessing-example-implementation-using-nltk-2",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Preprocessing",
+    "articleSlug": "preprocessing",
+    "chapter": "Stemming",
+    "title": "Example Implementation Using NLTK",
+    "subtitle": "Stemming",
+    "contentHtml": "<ul>\n  <li>To demonstrate the application of the Porter Stemming algorithm, we use the Natural Language Toolkit (NLTK) in Python. Below is an example of how to implement Porter’s Stemming:</li>\n</ul>\n<div class=\"language-python highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><div><button class=\"btn-copy\" data-clipboard-action=\"copy\" data-clipboard-target=\"#code0\"><img src=\"https://aman.ai/images/copy.png\" style=\"margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;\"></button></div><code id=\"code0\"><span class=\"c1\"># Import necessary modules\n</span><span class=\"kn\">import</span> <span class=\"nn\">nltk</span>\n<span class=\"n\">nltk</span><span class=\"p\">.</span><span class=\"n\">download</span><span class=\"p\">(</span><span class=\"s\">'punkt'</span><span class=\"p\">)</span>\n\n<span class=\"kn\">from</span> <span class=\"nn\">nltk.tokenize</span> <span class=\"kn\">import</span> <span class=\"n\">word_tokenize</span>\n<span class=\"kn\">from</span> <span class=\"nn\">nltk.stem</span> <span class=\"kn\">import</span> <span class=\"n\">PorterStemmer</span>\n\n<span class=\"c1\"># Instantiate a PorterStemmer object\n</span><span class=\"n\">stemmer</span> <span class=\"o\">=</span> <span class=\"n\">PorterStemmer</span><span class=\"p\">()</span>\n\n<span class=\"c1\"># Examples of stemming individual words\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"cat\"</span><span class=\"p\">))</span>     <span class=\"c1\"># -&gt; cat\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"cats\"</span><span class=\"p\">))</span>    <span class=\"c1\"># -&gt; cat\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"walking\"</span><span class=\"p\">))</span> <span class=\"c1\"># -&gt; walk\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"walked\"</span><span class=\"p\">))</span>  <span class=\"c1\"># -&gt; walk\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"achieve\"</span><span class=\"p\">))</span> <span class=\"c1\"># -&gt; achiev\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"am\"</span><span class=\"p\">))</span>      <span class=\"c1\"># -&gt; am\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"is\"</span><span class=\"p\">))</span>      <span class=\"c1\"># -&gt; is\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"are\"</span><span class=\"p\">))</span>     <span class=\"c1\"># -&gt; are\n</span>\n<span class=\"c1\"># Stemming all words in a text\n</span><span class=\"n\">text</span> <span class=\"o\">=</span> <span class=\"s\">\"The cats are sleeping. What are the dogs doing?\"</span>\n<span class=\"n\">tokens</span> <span class=\"o\">=</span> <span class=\"n\">word_tokenize</span><span class=\"p\">(</span><span class=\"n\">text</span><span class=\"p\">)</span>\n<span class=\"n\">tokens_stemmed</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"n\">token</span><span class=\"p\">)</span> <span class=\"k\">for</span> <span class=\"n\">token</span> <span class=\"ow\">in</span> <span class=\"n\">tokens</span><span class=\"p\">]</span>\n<span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">tokens_stemmed</span><span class=\"p\">)</span> <span class=\"c1\"># ['the', 'cat', 'are', 'sleep', '.', 'what', 'are', 'the', 'dog', 'do', '?']\n</span></code></pre></div></div>\n<pre class=\"highlight\"><div><button class=\"btn-copy\" data-clipboard-action=\"copy\" data-clipboard-target=\"#code0\"><img src=\"https://aman.ai/images/copy.png\" style=\"margin:0; border:none; padding:2px 0px; width:100%; height:18px; width:18px;\"></button></div><code id=\"code0\"><span class=\"c1\"># Import necessary modules\n</span><span class=\"kn\">import</span> <span class=\"nn\">nltk</span>\n<span class=\"n\">nltk</span><span class=\"p\">.</span><span class=\"n\">download</span><span class=\"p\">(</span><span class=\"s\">'punkt'</span><span class=\"p\">)</span>\n\n<span class=\"kn\">from</span> <span class=\"nn\">nltk.tokenize</span> <span class=\"kn\">import</span> <span class=\"n\">word_tokenize</span>\n<span class=\"kn\">from</span> <span class=\"nn\">nltk.stem</span> <span class=\"kn\">import</span> <span class=\"n\">PorterStemmer</span>\n\n<span class=\"c1\"># Instantiate a PorterStemmer object\n</span><span class=\"n\">stemmer</span> <span class=\"o\">=</span> <span class=\"n\">PorterStemmer</span><span class=\"p\">()</span>\n\n<span class=\"c1\"># Examples of stemming individual words\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"cat\"</span><span class=\"p\">))</span>     <span class=\"c1\"># -&gt; cat\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"cats\"</span><span class=\"p\">))</span>    <span class=\"c1\"># -&gt; cat\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"walking\"</span><span class=\"p\">))</span> <span class=\"c1\"># -&gt; walk\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"walked\"</span><span class=\"p\">))</span>  <span class=\"c1\"># -&gt; walk\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"achieve\"</span><span class=\"p\">))</span> <span class=\"c1\"># -&gt; achiev\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"am\"</span><span class=\"p\">))</span>      <span class=\"c1\"># -&gt; am\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"is\"</span><span class=\"p\">))</span>      <span class=\"c1\"># -&gt; is\n</span><span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"s\">\"are\"</span><span class=\"p\">))</span>     <span class=\"c1\"># -&gt; are\n</span>\n<span class=\"c1\"># Stemming all words in a text\n</span><span class=\"n\">text</span> <span class=\"o\">=</span> <span class=\"s\">\"The cats are sleeping. What are the dogs doing?\"</span>\n<span class=\"n\">tokens</span> <span class=\"o\">=</span> <span class=\"n\">word_tokenize</span><span class=\"p\">(</span><span class=\"n\">text</span><span class=\"p\">)</span>\n<span class=\"n\">tokens_stemmed</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">stemmer</span><span class=\"p\">.</span><span class=\"n\">stem</span><span class=\"p\">(</span><span class=\"n\">token</span><span class=\"p\">)</span> <span class=\"k\">for</span> <span class=\"n\">token</span> <span class=\"ow\">in</span> <span class=\"n\">tokens</span><span class=\"p\">]</span>\n<span class=\"k\">print</span><span class=\"p\">(</span><span class=\"n\">tokens_stemmed</span><span class=\"p\">)</span> <span class=\"c1\"># ['the', 'cat', 'are', 'sleep', '.', 'what', 'are', 'the', 'dog', 'do', '?']\n</span></code></pre>\n<ul>\n  <li>This implementation showcases how the Porter Stemming algorithm trims suffixes to achieve a common base form. The results illustrate the effectiveness of the algorithm in normalizing text for NLP applications.</li>\n</ul>",
+    "contentMarkdown": "*   To demonstrate the application of the Porter Stemming algorithm, we use the Natural Language Toolkit (NLTK) in Python. Below is an example of how to implement Porter’s Stemming:\n\n![](https://aman.ai/images/copy.png)\n\n`# Import necessary modules import nltk nltk.download('punkt')  from nltk.tokenize import word_tokenize from nltk.stem import PorterStemmer  # Instantiate a PorterStemmer object stemmer = PorterStemmer()  # Examples of stemming individual words print(stemmer.stem(\"cat\"))     # -> cat print(stemmer.stem(\"cats\"))    # -> cat print(stemmer.stem(\"walking\")) # -> walk print(stemmer.stem(\"walked\"))  # -> walk print(stemmer.stem(\"achieve\")) # -> achiev print(stemmer.stem(\"am\"))      # -> am print(stemmer.stem(\"is\"))      # -> is print(stemmer.stem(\"are\"))     # -> are # Stemming all words in a text text = \"The cats are sleeping. What are the dogs doing?\" tokens = word_tokenize(text) tokens_stemmed = [stemmer.stem(token) for token in tokens] print(tokens_stemmed) # ['the', 'cat', 'are', 'sleep', '.', 'what', 'are', 'the', 'dog', 'do', '?']`\n\n![](https://aman.ai/images/copy.png)\n\n`# Import necessary modules import nltk nltk.download('punkt')  from nltk.tokenize import word_tokenize from nltk.stem import PorterStemmer  # Instantiate a PorterStemmer object stemmer = PorterStemmer()  # Examples of stemming individual words print(stemmer.stem(\"cat\"))     # -> cat print(stemmer.stem(\"cats\"))    # -> cat print(stemmer.stem(\"walking\")) # -> walk print(stemmer.stem(\"walked\"))  # -> walk print(stemmer.stem(\"achieve\")) # -> achiev print(stemmer.stem(\"am\"))      # -> am print(stemmer.stem(\"is\"))      # -> is print(stemmer.stem(\"are\"))     # -> are # Stemming all words in a text text = \"The cats are sleeping. What are the dogs doing?\" tokens = word_tokenize(text) tokens_stemmed = [stemmer.stem(token) for token in tokens] print(tokens_stemmed) # ['the', 'cat', 'are', 'sleep', '.', 'what', 'are', 'the', 'dog', 'do', '?']`\n\n*   This implementation showcases how the Porter Stemming algorithm trims suffixes to achieve a common base form. The results illustrate the effectiveness of the algorithm in normalizing text for NLP applications.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 3,
+    "estimatedMinutes": 2,
+    "tags": [
+      "nlpllms",
+      "nlp"
+    ],
+    "metadata": {
+      "hasCode": true,
+      "hasMath": false,
+      "hasImages": true,
+      "wordCount": 266,
+      "contentLength": 8571
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/preprocessing/#example-implementation-using-nltk",
+    "scrapedAt": "2025-12-28T11:53:11.623Z"
+  },
+  {
+    "id": "ai-preprocessing-considerations-and-alternatives-3",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Preprocessing",
+    "articleSlug": "preprocessing",
+    "chapter": "Stemming",
+    "title": "Considerations and Alternatives",
+    "subtitle": "Stemming",
+    "contentHtml": "<ul>\n  <li>While Porter’s Stemming algorithm is efficient and widely used, it is important to recognize its limitations in terms of context and accuracy. For more advanced linguistic processing, lemmatization may be preferred as it considers the context and returns valid lemmas of words. Additionally, for languages other than English, the SnowballStemmer can be employed to perform stemming.</li>\n</ul>",
+    "contentMarkdown": "*   While Porter’s Stemming algorithm is efficient and widely used, it is important to recognize its limitations in terms of context and accuracy. For more advanced linguistic processing, lemmatization may be preferred as it considers the context and returns valid lemmas of words. Additionally, for languages other than English, the SnowballStemmer can be employed to perform stemming.",
+    "order": 3,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 57,
+      "contentLength": 404
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/preprocessing/#considerations-and-alternatives",
+    "scrapedAt": "2025-12-28T11:53:11.623Z"
+  },
+  {
+    "id": "ai-preprocessing-conclusion-4",
+    "domain": "ai_primers",
+    "category": "NLP/LLMs",
+    "article": "Preprocessing",
+    "articleSlug": "preprocessing",
+    "chapter": "Stemming",
+    "title": "Conclusion",
+    "subtitle": "Stemming",
+    "contentHtml": "<ul>\n  <li>Stemming is a critical preprocessing step in NLP that reduces the complexity of text data by converting words to their base forms. The Porter Stemming algorithm, with its rule-based approach, is a popular choice for this task. However, practitioners should be aware of its limitations and consider alternative methods when appropriate to ensure the accuracy and relevance of their NLP models.</li>\n  <li>For further reading and practical examples, refer to <a href=\"https://www.nlplanet.org/course-practical-nlp/01-intro-to-nlp/05-tokenization-stemming-lemmatization.html\">nlplanet.org</a>.</li>\n</ul>",
+    "contentMarkdown": "*   Stemming is a critical preprocessing step in NLP that reduces the complexity of text data by converting words to their base forms. The Porter Stemming algorithm, with its rule-based approach, is a popular choice for this task. However, practitioners should be aware of its limitations and consider alternative methods when appropriate to ensure the accuracy and relevance of their NLP models.\n*   For further reading and practical examples, refer to [nlplanet.org](https://www.nlplanet.org/course-practical-nlp/01-intro-to-nlp/05-tokenization-stemming-lemmatization.html).",
+    "order": 4,
+    "orderInChapter": 4,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "nlpllms",
+      "nlp"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 72,
+      "contentLength": 612
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/preprocessing/#conclusion",
+    "scrapedAt": "2025-12-28T11:53:11.623Z"
+  }
+]

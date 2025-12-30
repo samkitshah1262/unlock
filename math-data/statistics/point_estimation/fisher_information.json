@@ -1,0 +1,521 @@
+[
+  {
+    "id": "stat_con_fisher_information_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in mathematical statistics that measures the amount of information gained about an unknown parameter when observing a random variable.</p><p>In essence, it quantifies how well we can estimate the true value of a parameter based on the data.</p>",
+    "formula": {
+      "latex": "\\[ I(\\theta) = E\\left[- \\frac{d}{d\\theta} \\ln p(X | \\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "intuition": "Think of Fisher information as a measure of how much the data 'tells us' about the true value of the parameter. The more informative the data, the higher the Fisher information.",
+    "realWorldApplications": [
+      "In machine learning, Fisher information is used in Bayesian inference to update our knowledge about model parameters."
+    ],
+    "tags": [
+      "Fisher Information",
+      "Point Estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:45:25.614Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_fisher_information_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in mathematical statistics that measures the amount of information gained about a parameter when observing a random variable.</p><p>It's named after Ronald Fisher, who introduced it as a way to quantify the precision of an estimator. In essence, Fisher information tells us how well we can pinpoint the true value of a parameter given some data.</p>",
+    "formula": {
+      "latex": "\\[ I(\\theta) = E\\left[- \\frac{d}{d\\theta} \\ln p(X | \\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "intuition": "Think of Fisher information as a measure of how well we can 'pinpoint' the true value of a parameter. The more information we have, the better we can estimate it.",
+    "realWorldApplications": [
+      "In machine learning, Fisher information is used in optimization algorithms like gradient descent to determine the optimal step size."
+    ],
+    "commonMistakes": [
+      "Don't confuse Fisher information with entropy; they're related but distinct concepts."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:45:40.587Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_fisher_information_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in statistical inference that measures the amount of information an observation provides about a parameter.</p><p>Intuitively, it represents how well a given dataset constrains our understanding of the true value of a parameter.</p>",
+    "formula": "{",
+    "latex": "\\(I(\\theta) = E\\left[-\\frac{\\partial}{\\partial \\theta} \\log p(X|\\theta)\\right]\\)\",",
+    "name": "Fisher Information\" },",
+    "intuition": "Think of Fisher information as a measure of how 'sharp' our estimate is. A high value indicates that the data provides strong evidence about the true parameter, while a low value suggests that the data is less informative.",
+    "realWorldApplications": [
+      "In machine learning, Fisher information can be used to calculate the uncertainty of model predictions and optimize hyperparameters."
+    ],
+    "commonMistakes": [
+      "Don't confuse Fisher information with entropy; they're related but distinct concepts."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:45:54.665Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_fisher_information_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in statistical inference that measures the amount of information obtained from observing a random sample.</p><p>It's used to construct confidence intervals and test hypotheses.</p>",
+    "formula": "{",
+    "latex": "\\[ I(\\theta) = E\\left[- \\frac{\\partial^2}{\\partial \\theta^2} \\log p(X | \\theta) \\right]\\]\",",
+    "name": "Fisher Information\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of size n from a normal distribution with mean μ and variance σ^2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the log-likelihood function\", \"mathHtml\": \"\\[ \\log p(X | \\mu) = -\\frac{n}{2} \\log(2 \\pi \\sigma^2) - \\frac{1}{2 \\sigma^2} \\sum_{i=1}^{n} (x_i - \\mu)^2 \\]\", \"explanation\": \"The log-likelihood function is used to define the probability density of the data given the parameters.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Fisher information measures the curvature of the likelihood function, which determines how much information we gain from observing a sample.",
+    "realWorldApplications": [
+      "Constructing confidence intervals for population means in machine learning"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:46:13.831Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_fisher_information_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a measure of how much information an observable random variable contains about its parameter.</p><p>It's a fundamental concept in statistical inference and plays a crucial role in many statistical procedures, including maximum likelihood estimation and hypothesis testing.</p>",
+    "formula": "{",
+    "latex": "\\[ I(\\theta) = E\\left[- \\frac{\\partial^2}{\\partial \\theta^2} \\log p(X | \\theta)\\right]\\]\",",
+    "name": "Fisher Information\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random variable X ~ N(θ, 1) and want to estimate the parameter θ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Take the log-likelihood of the observed data\", \"mathHtml\": \"\\[ \\log p(X | \\theta) = -\\frac{1}{2} \\sum_{i=1}^n (x_i - θ)^2 \\]\", \"explanation\": \"This is the starting point for our calculation.\" }, {\"stepNumber\": 2, \"description\": \"Compute the second derivative of the log-likelihood\", \"mathHtml\": \"\\[ \\frac{\\partial^2}{\\partial θ^2} \\log p(X | θ) = -n \\]\", \"explanation\": \"This is where we apply the chain rule and compute the second derivative.\" }, {\"stepNumber\": 3, \"description\": \"Take the expectation of the second derivative\", \"mathHtml\": \"\\[ E\\left[\\frac{\\partial^2}{\\partial θ^2} \\log p(X | θ)\\right] = -nE[X^2] \\]\", \"explanation\": \"This is where we use the fact that X ~ N(θ, 1) to simplify the expression.\" } ],",
+    "finalAnswer": "The Fisher information for this example is I(θ) = n\" },",
+    "intuition": "Fisher information provides a way to quantify how much information an observable random variable contains about its parameter. It's a measure of the 'curvature' of the likelihood function, which is essential in maximum likelihood estimation and hypothesis testing.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:46:39.694Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_fisher_information_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in statistical inference that measures the amount of information an experiment provides about a parameter.</p><p>It's a crucial tool for point estimation and plays a key role in many statistical procedures, including maximum likelihood estimation and hypothesis testing.</p>",
+    "formula": "{",
+    "latex": "\\[ I(\\theta) = E\\left[-\\frac{\\partial^2 \\log p(X|\\theta)}{\\partial \\theta^2}\\right] \\]\",",
+    "name": "Fisher Information\" },",
+    "intuition": "Think of Fisher information as a measure of how well an experiment can pinpoint the true value of a parameter. It's like trying to find a specific book in a library - if you have a good map (the experiment), you'll be able to locate the book quickly and accurately.",
+    "realWorldApplications": [
+      "In machine learning, Fisher information is used to determine the optimal amount of regularization in linear regression models."
+    ],
+    "tags": [
+      "point estimation",
+      "statistical inference"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:46:54.157Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_fisher_information_007",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in mathematical statistics that measures the amount of information about a parameter gained by observing a random sample.</p>",
+    "formula": {
+      "latex": "\\[ I_F = E\\left[- \\frac{\\partial^2}{\\partial \\theta^2} \\log p(X | \\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "theorem": {
+      "statement": "\\[ I_F = -E\\left[ \\frac{\\partial^2}{\\partial \\theta^2} \\log p(X | \\theta) \\right] \\]"
+    },
+    "intuition": "In essence, Fisher information quantifies the precision of an estimator. The more information we have about a parameter, the better our estimates will be.",
+    "realWorldApplications": [
+      "Estimating model parameters in machine learning"
+    ],
+    "tags": [
+      "Fisher Information",
+      "Point Estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:08.302Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_fisher_information_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in mathematical statistics that measures the amount of information gained about an unknown parameter when observing a random variable.</p>",
+    "formula": {
+      "latex": "\\[ I(F, \\theta) = E\\left[-\\frac{\\partial^2}{\\partial \\theta^2} \\log p(X|\\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "theorem": {
+      "statement": "\\[ I(F, \\theta) = -E\\left[\\frac{\\partial^2}{\\partial \\theta^2} \\log p(X|\\theta) \\right] \\]"
+    },
+    "intuition": "Fisher information provides a way to quantify the amount of information gained about an unknown parameter when observing data. This is crucial in statistical inference, as it allows us to determine the precision of our estimates.",
+    "realWorldApplications": [
+      "Estimating model parameters in machine learning"
+    ],
+    "tags": [
+      "Mathematical Statistics",
+      "Point Estimation",
+      "Fisher Information"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:23.233Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_fisher_information_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": "{",
+    "statementHtml": "<p>Fisher information is a measure of how much information an observation provides about the parameter being estimated.</p>",
+    "hints": [
+      "Start by considering the likelihood function.",
+      "Think about how the observed data affects the posterior distribution.",
+      "Recall that Fisher information is related to the curvature of the log-likelihood function."
+    ],
+    "solutionHtml": "<p>To compute the Fisher information, we need to find the expected value of the second derivative of the log-likelihood function.</p>\\[\\mathcal{I}(\\theta) = \\mathbb{E}_{X\\sim p(x|\\theta)}\\left[-\\frac{\\partial^2}{\\partial\\theta^2}\\log p(X|\\theta)\\right]\\]\",",
+    "answerShort": "\\[\\mathcal{I}(\\theta)\\]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:37.343Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_fisher_information_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": {
+      "statementHtml": "<p>Compute the Fisher information matrix for a given probability distribution.</p>",
+      "hints": [
+        "Start by recalling the definition of the Fisher information matrix.",
+        "Think about how you would compute the expected value of the score function.",
+        "Consider the relationship between the score function and the log-likelihood ratio."
+      ],
+      "solutionHtml": "<p>To compute the Fisher information matrix, we need to find the expected value of the score function.</p>\n<p>The score function is given by <i>s(x) = ∂/∂θ log P(x | θ)</i>.</p>\n<p>Using the definition of the Fisher information matrix, we get:</p>\n<p><i>I(θ) = E[s(x)]</i>.</p>\n<p>To compute this expected value, we can use the probability distribution to find the expected value of each component.</p>\n<p>The final answer is:</p>\n<p><i>I(θ) = ∫[s(x) P(x | θ) dx]</i>.</p>",
+      "answerShort": "<i>I(θ)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to take the expected value of the score function.",
+      "Not considering the relationship between the score function and the log-likelihood ratio."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:47:54.015Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_fisher_information_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "problem": "{",
+    "statementHtml": "Compute the Fisher information matrix <i>I(θ)</i> for a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.",
+    "hints": [
+      "Start by recalling the definition of the Fisher information.",
+      "Use the fact that the normal density is given by <i>e<sup>-((x-μ)<sup>2</sup>/2σ<sup>2</sup>)</sup>/√(2πσ<sup>2</sup>)</i>",
+      "The derivative of the log likelihood with respect to <i>μ</i> will be useful."
+    ],
+    "solutionHtml": "<p>To compute the Fisher information matrix, we need to find the second derivatives of the log likelihood.</p><p>The log likelihood is given by:</p>\\[ \\ln L(\\mu,\\sigma^2|x) = -\\frac{1}{2}\\sum_{i=1}^n \\left( \\frac{x_i-\\mu}{\\sigma} \\right)^2 - \\frac{n}{2}\\ln 2\\pi\\sigma^2.\\]<p>Now, we can compute the second derivative with respect to <i>μ</i>:</p>\\[ I_{\\mu\\mu} = E\\left[ \\left( \\frac{\\partial}{\\partial\\mu} \\ln L(\\mu,\\sigma^2|x) \\right)^2 \\right] = E\\left[ \\left( -\\frac{1}{\\sigma} \\sum_{i=1}^n (x_i-\\mu) \\right)^2 \\right].\\]<p>Similarly, we can compute the second derivative with respect to <i>σ<sup>2</sup></i>:</p>\\[ I_{\\sigma^2\\sigma^2} = E\\left[ \\left( -\\frac{1}{2\\sigma^3} \\sum_{i=1}^n (x_i-\\mu)^2 + \\frac{n}{4\\sigma^2} \\right)^2 \\right].\\]<p>The observed Fisher information is the expected value of these second derivatives:</p>\\[ I(\\theta) = E[I_{\\mu\\mu}] = E[I_{\\sigma^2\\sigma^2}] = \\left( \\frac{1}{\\sigma^2} + \\frac{n}{2\\sigma^4} \\right).\\]",
+    "answerShort": "The Fisher information matrix is <i>I(θ) = (1/σ<sup>2</sup>) + (n/(2σ<sup>4</sup>))</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:48:25.146Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_fisher_information_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information: Definition and Computation",
+    "contentHtml": "<p>Fisher information is a crucial concept in statistical inference.</p>",
+    "formula": {
+      "latex": "\\[ I(F;\\theta) = E\\left[- \\frac{\\partial^2}{\\partial \\theta^2} \\log p(X|\\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with density p(x|\\theta), compute the Fisher information I(F;\\theta) for some parameter \\theta.</p>",
+      "hints": [
+        "Hint: Start by taking the derivative of the log likelihood"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let X be a random variable with density p(x|\\theta) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x-\\mu)^2/(2\\sigma^2)}.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Take the derivative of the log likelihood",
+          "mathHtml": "\\[ \\frac{d}{d\\theta} \\log p(x|\\theta) = ... \\]",
+          "explanation": "We're doing this to find the score function."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the second derivative",
+          "mathHtml": "\\[ \\frac{d^2}{d\\theta^2} \\log p(x|\\theta) = ... \\]",
+          "explanation": "This is crucial for finding the Fisher information."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the expectation",
+          "mathHtml": "\\[ E\\left[- \\frac{\\partial^2}{\\partial \\theta^2} \\log p(x|\\theta) \\right] = ... \\]",
+          "explanation": "This is where we use the given density to simplify the expression."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify and compute the Fisher information",
+          "mathHtml": "\\[ I(F;\\theta) = ... \\]",
+          "explanation": "Now we can plug in our values and find the final answer."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Fisher information measures how well a statistical model is able to estimate a parameter.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:48:53.060Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_fisher_information_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information",
+    "contentHtml": "<p>Fisher information is a fundamental concept in mathematical statistics that measures the amount of information an experiment provides about a parameter.</p>",
+    "formula": {
+      "latex": "\\[ I(\\theta) = E\\left[- \\frac{d}{d\\theta} \\ln p(X | \\theta) \\right] \\]",
+      "name": "Fisher Information"
+    },
+    "problem": {
+      "statementHtml": "<p>Compute the Fisher information for a binomial distribution with probability of success \\(p\\).</p>",
+      "hints": [
+        "Hint: Start by finding the log-likelihood"
+      ],
+      "solutionHtml": "<p>To compute the Fisher information, we first find the log-likelihood:</p><ul><li>\\[ \\ln p(X | p) = (x + 1) \\ln(\\frac{p}{1-p}) + (n-x) \\ln(1-p) \\]</li></ul><p>Then, we take the derivative with respect to \\(p\\):</p><ul><li>\\[ - \\frac{d}{dp} \\ln p(X | p) = \\frac{x+1}{p(1-p)} - \\frac{n-x}{(1-p)^2} \\]</li></ul><p>The Fisher information is the expectation of this derivative:</p><ul><li>\\[ I(p) = E\\left[- \\frac{d}{dp} \\ln p(X | p) \\right] \\]</li></ul>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin with probability of heads \\(0.5\\). We flip the coin \\(n=10\\) times and observe \\(x=6\\) heads.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the log-likelihood",
+          "mathHtml": "\\[ \\ln p(X | p) = (x + 1) \\ln(\\frac{p}{1-p}) + (n-x) \\ln(1-p) \\]",
+          "explanation": "This is the logarithmic likelihood function for a binomial distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Take the derivative with respect to \\(p\\)",
+          "mathHtml": "\\[ - \\frac{d}{dp} \\ln p(X | p) = \\frac{x+1}{p(1-p)} - \\frac{n-x}{(1-p)^2} \\]",
+          "explanation": "This is the derivative of the log-likelihood with respect to \\(p\\)."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the Fisher information",
+          "mathHtml": "\\[ I(p) = E\\left[- \\frac{d}{dp} \\ln p(X | p) \\right] \\]",
+          "explanation": "This is the expectation of the derivative, which gives us the Fisher information."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the Fisher information",
+          "mathHtml": "\\[ I(p) = ? \\]",
+          "explanation": "We can evaluate the Fisher information by plugging in the values we know and simplifying."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "Fisher information measures how much an experiment tells us about a parameter.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:49:30.296Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_fisher_information_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "fisher_information",
+    "title": "Fisher Information: Definition and Computation",
+    "contentHtml": "<p>Fisher information is a fundamental concept in statistical inference.</p>",
+    "formula": {
+      "latex": "\\[ I(F_\\theta) = E_{\\theta}[-\\nabla \\log p(X | \\theta)]^T [-\\nabla \\log p(X | \\theta)] \\]",
+      "name": "Fisher Information Matrix"
+    },
+    "problem": {
+      "statementHtml": "<p>Compute the Fisher information matrix for a normal distribution.</p>",
+      "hints": [
+        "Hint: Use the log-likelihood function"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random sample \\(X_1, X_2, \\ldots, X_n\\) from a normal distribution \\(N(\\mu, \\sigma^2)\\). Compute the Fisher information matrix.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the log-likelihood function",
+          "mathHtml": "\\[ \\log p(X | \\mu, \\sigma) = -\\frac{n}{2}\\log(2\\pi) - \\frac{1}{2}\\sum_{i=1}^n (X_i - \\mu)^2/\\sigma^2 \\]",
+          "explanation": "This is the log-likelihood function for a normal distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the derivative of the log-likelihood function",
+          "mathHtml": "\\[ \\frac{\\partial}{\\partial \\mu} \\log p(X | \\mu, \\sigma) = -\\frac{1}{\\sigma^2}\\sum_{i=1}^n (X_i - \\mu) \\]",
+          "explanation": "We take the derivative with respect to \\(\\mu\\), which gives us the score function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the expected value of the score function",
+          "mathHtml": "\\[ E_{\\mu}[-\\nabla \\log p(X | \\mu, \\sigma)] = -\\frac{1}{\\sigma^2}\\sum_{i=1}^n (X_i - \\mu) \\]",
+          "explanation": "We take the expected value of the score function, which gives us the expected value of the derivative."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Compute the Fisher information matrix",
+          "mathHtml": "\\[ I(F_\\theta) = E_{\\mu}[-\\nabla \\log p(X | \\mu, \\sigma)]^T [-\\nabla \\log p(X | \\mu, \\sigma)] \\]",
+          "explanation": "We compute the Fisher information matrix by taking the expected value of the score function and multiplying it by its transpose."
+        }
+      ],
+      "finalAnswer": "\\[ I(F_\\theta) = \\frac{n}{\\sigma^2} \\]"
+    },
+    "intuition": "Fisher information measures the amount of information that an experiment provides about a parameter.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to take the expected value"
+    ],
+    "realWorldApplications": [
+      "Maximum likelihood estimation in machine learning"
+    ],
+    "tags": [
+      "point estimation",
+      "statistical inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:50:06.975Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

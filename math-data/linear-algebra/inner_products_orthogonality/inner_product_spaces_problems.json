@@ -1,0 +1,106 @@
+[
+  {
+    "id": "la_prb_inner_product_spaces_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "inner_product_spaces",
+    "problem": "{",
+    "statementHtml": "Find the inner product of vectors <i>a</i> and <i>b</i> in the space ℝ<sup>3</sup>: <br><br> Given: <i>a</i> = (1, 2, 3) and <i>b</i> = (4, -5, 6)<br><br>",
+    "hints": [
+      "Recall that the inner product is a dot product.",
+      "Use the formula for the dot product: Σ<i>a</i><sub>i</sub>&bull;<i>b</i><sub>i</sub>.",
+      "Simplify your answer by combining like terms."
+    ],
+    "solutionHtml": "<p>To find the inner product, we use the formula:</p><br><p>\\(\\mathbf{a} \\cdot \\mathbf{b}\\) = (1)(4) + (2)(-5) + (3)(6) = 4 - 10 + 18 = <i>12</i></p>\",",
+    "answerShort": "<i>12</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:59:05.735Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inner_product_spaces_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "inner_product_spaces",
+    "problem": "{",
+    "statementHtml": "<p>Let <i>V</i> be an inner product space over the real numbers. Prove that if <i>v</i>, <i>w</i> ∈ <i>V</i> are orthogonal, then ||<i>v</i>|| = ||<i>w</i>||.</p>",
+    "hints": [
+      "<p>If two vectors are orthogonal, what does their inner product equal?</p>",
+      "<p>Use the definition of induced norm and the fact that the inner product is linear in one argument.</p>",
+      "<p>Expand the square of the induced norm using the definition of the inner product.</p>"
+    ],
+    "solutionHtml": "<p>To prove this, we start by expanding the square of the induced norm:</p>\\[||v||^2 = (v,v)\\]\\n<p>We know that <i>v</i> and <i>w</i> are orthogonal, so their inner product is zero:</p>\\[(v,w) = 0\\]\\n<p>This allows us to rewrite the square of the induced norm as:</p>\\[||v||^2 = (v,v) = ||w||^2\\]\\n<p>This shows that if two vectors are orthogonal, then their norms are equal.</p>\",",
+    "answerShort": "<i>v</i> and <i>w</i> have the same norm\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:59:26.303Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inner_product_spaces_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "inner_product_spaces",
+    "problem": "{",
+    "statementHtml": "<p>Let V be an inner product space and <i>a</i>, <i>b</i> ∈ V. Prove that <i>|a + b|² ≤ 2(|a|² + |b|²)</i>.</p>",
+    "hints": [
+      "Start by expanding the left-hand side.",
+      "Use the fact that <i>(a + b) · (a + b) = ||a||² + 2(a · b) + ||b||²</i>.",
+      "Apply the Cauchy-Schwarz inequality to the term <i>a · b</i>"
+    ],
+    "solutionHtml": "<p>To prove this, we first expand the left-hand side:</p><p>\\( |a + b|^2 = (a + b) \\cdot (a + b) \\) = \\( ||a||^2 + 2(a \\cdot b) + ||b||^2 \\)</p><p>Now we apply the Cauchy-Schwarz inequality:</p><p>\\( |a + b|^2 ≤ ||a||^2 + 2|a| |b| + ||b||^2 \\)</p><p>We can now simplify this expression:</p><p>\\( |a + b|^2 ≤ 2(||a||^2 + ||b||^2) \\)</p>\",",
+    "answerShort": "The final answer is true.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:59:46.778Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inner_product_spaces_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "inner_product_spaces",
+    "problem": "{",
+    "statementHtml": "<p>Prove that the inner product space <i>H</i> is complete.</p>",
+    "hints": [
+      "Consider a Cauchy sequence in <i>H</i>.",
+      "Use the fact that the norm induced by the inner product is complete.",
+      "Apply the Cauchy-Schwarz inequality to show convergence."
+    ],
+    "solutionHtml": "<p>To prove completeness, let's assume we have a Cauchy sequence <i>x<sub>n</sub></i> in <i>H</i>. We need to find its limit.</p><p>We know that the norm induced by the inner product is complete. This means that if <i>x<sub>n</sub></i> converges weakly, it also converges strongly.</p><p>Now, we can apply the Cauchy-Schwarz inequality:</p>\\[\\left|\\left<x_n,x_m\\right>\\right| \\leq \\|x_n\\| \\|x_m\\|,\\]\\[where <i>x_m</i> is any other vector in <i>H</i>. Since <i>x<sub>n</sub></i> is Cauchy, we can choose <i>m</i> large enough so that the right-hand side is arbitrarily small.</p><p>This implies that <i>x_n</i> converges strongly to some limit <i>x</i>. Therefore, <i>H</i> is complete.</p>\",",
+    "answerShort": "The inner product space H is complete.\" },",
+    "commonMistakes": [
+      "Forgetting the Cauchy-Schwarz inequality",
+      "Not applying the completeness of the induced norm"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:00:09.030Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "prob_prb_mcmc_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Consider a target distribution <i>p(x)</i> and a proposal distribution <i>q(x|x')</i>. Develop a Metropolis-Hastings algorithm to sample from <i>p(x)</i>.</p>",
+      "hints": [
+        "<p>Start by proposing a new state <i>x'</i> from the current state <i>x</i> using <i>q(x'|x)</i>.</p>",
+        "<p>Compute the acceptance probability <i>a = min(1, p(x')/p(x))</i>. If <i>a > U[0, 1]</i>, accept the proposal.</p>",
+        "<p>Otherwise, reject the proposal and stay at the current state <i>x</i>.</p>"
+      ],
+      "solutionHtml": "<p>To develop the Metropolis-Hastings algorithm:</p><ol><li><p>Propose a new state <i>x'</i> from the current state <i>x</i> using <i>q(x'|x)</i>.</p></li><li><p>Compute the acceptance probability <i>a = min(1, p(x')/p(x))</i>. If <i>a > U[0, 1]</i>, accept the proposal.</p></li><li><p>Otherwise, reject the proposal and stay at the current state <i>x</i>.</p></li></ol>",
+      "answerShort": "<i>The Metropolis-Hastings algorithm is a Markov chain Monte Carlo method for sampling from a target distribution <i>p(x)</i>. It uses a proposal distribution <i>q(x|x')</i> to generate new states and an acceptance probability based on the ratio of the target distributions.</i>"
+    },
+    "commonMistakes": [
+      "<i>Failing to properly normalize the proposal distribution</i>",
+      "<i>Not accounting for the possibility of infinite loops in the Markov chain</i>"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:23:30.139Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": "{",
+    "statementHtml": "<p>Given a target distribution <i>p(x)</i>, design a Metropolis-Hastings algorithm to sample from it.</p>",
+    "hints": [
+      "Start by proposing a new candidate sample <i>x'</i> from the proposal distribution <i>q(x|x')</i>",
+      "Calculate the acceptance probability using the target density and the current state",
+      "Update the current state with the proposed sample if the acceptance probability is greater than a random uniform variable"
+    ],
+    "solutionHtml": "<p>To implement Metropolis-Hastings, we need to specify the proposal distribution <i>q(x|x')</i>. For example, we can use a Gaussian distribution centered at the current state. Then, calculate the acceptance probability:</p>\\n\\[ \\alpha = \\min\\left( 1, \\frac{p(x')}{p(x)} \\right) \\]\\n<p>If the random uniform variable is less than <i>α</i>, update the current state to <i>x'</i>. Otherwise, keep the current state.</p>\",",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:23:47.472Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "title": "Markov Chain Monte Carlo: Metropolis-Hastings and Gibbs Sampling",
+    "problem": "{",
+    "statementHtml": "<p>Given a target distribution <i>p(x)</i>, use Markov chain Monte Carlo (MCMC) to sample from it. Implement the Metropolis-Hastings algorithm for this task.</p>",
+    "hints": [
+      "Start by proposing a new state <i>x'</i> based on the current state <i>x</i>.",
+      "Calculate the acceptance probability using the ratio of target densities.",
+      "Update the Markov chain accordingly."
+    ],
+    "solutionHtml": "<p>To implement Metropolis-Hastings, we need to define a proposal distribution <i>q(x|x')</i> and calculate the acceptance probability:</p>\\n\\ <p><i>p(x') / p(x) &gt; 1</i> ? accept <i>x'</i> : reject <i>x'</i></p>\",",
+    "answerShort": "Implement Metropolis-Hastings to sample from a target distribution.\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:05.679Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Given a target distribution <i>p</i>(<i>x</i>) and an initial state <i>x</i><sub>0</sub>, use Metropolis-Hastings to sample from the posterior distribution.</p>",
+      "hints": [
+        "Start by defining the proposal distribution <i>q</i>(<i>x</i>|<i>x</i><sub>0</sub>).",
+        "Use the acceptance probability formula: <i>a</i> = min(1, <i>p</i>(<i>x</i>')/<i>p</i>(<i>x</i>)).",
+        "Show that the Markov chain is ergodic and aperiodic."
+      ],
+      "solutionHtml": "<p>To solve this problem, we first need to define the proposal distribution. Let's assume it's a normal distribution with mean <i>x</i><sub>0</sub> and variance <i>&sigma;</i><sup>2</sup>. Then, we can calculate the acceptance probability using the formula above.</p>",
+      "answerShort": "The sampled state is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:23.599Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_mcmc_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "mcmc",
+    "problem": {
+      "statementHtml": "<p>Given a target distribution <i>p</i>(<i>x</i>) and an initial state <i>x</i><sub>0</sub>, design a Markov Chain Monte Carlo (MCMC) algorithm to sample from <i>p</i>(<i>x</i>). Use the Metropolis-Hastings algorithm.</p>",
+      "hints": [
+        "<p>Start by proposing a new state <i>x'</i> using a proposal distribution <i>q</i>(<i>x</i>|<i>x</i><sub>0</sub>) and then accept it with probability min(1, <i>p</i>(<i>x'</i>)/<i>p</i>(<i>x</i><sub>0</sub>)).</p>",
+        "<p>If the proposed state is rejected, set <i>x</i><sub>1</sub> = <i>x</i><sub>0</sub>. If accepted, set <i>x</i><sub>1</sub> = <i>x'</i>.</p>",
+        "<p>Repeat this process until convergence. How can you diagnose convergence?</p>"
+      ],
+      "solutionHtml": "<p>To ensure convergence, use a diagnostic tool such as the Gelman-Rubin statistic or the Brooks-Gelman-Rubin statistic.</p><p>Here's an example of how to implement the Metropolis-Hastings algorithm:</p>",
+      "answerShort": "The answer is..."
+    },
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:24:45.037Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

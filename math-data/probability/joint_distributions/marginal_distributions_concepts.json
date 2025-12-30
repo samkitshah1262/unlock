@@ -1,0 +1,98 @@
+[
+  {
+    "id": "prob_con_marginal_distributions_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Given a joint distribution <i>P(x, y)</i>, the marginal distribution of <i>x</i> (or <i>y</i>) is obtained by summing (or integrating) over all possible values of the other variable. This process effectively 'marginalizes' out the dependency between the variables.</p>",
+    "formula": "{",
+    "latex": "\\(P(x) = \\sum_y P(x, y)\\)\",",
+    "name": "Marginalization Formula",
+    "variants": "[ {\"latex\": \"\\(P(y) = \\int_x P(x, y) dx\\)\", \"description\": \"Continuous case\"} ] },",
+    "whyMatters": "<p>Marginal distributions are crucial in machine learning and artificial intelligence as they enable us to model complex relationships between variables while simplifying the underlying probability structure.</p>",
+    "geometricIntuition": "<p>Imagine a joint distribution represented by a 2D histogram. Marginalization is like taking a vertical slice (for <i>x</i>) or horizontal slice (for <i>y</i>) of this histogram, effectively collapsing the dependency between variables.</p>",
+    "commonMistakes": [
+      "Forgetting to normalize the resulting marginal distribution"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:22.310Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_marginal_distributions_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Imagine you're trying to calculate the probability of a specific outcome given some initial conditions. You can do this by considering all possible intermediate states and their corresponding probabilities, but this can be computationally expensive.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]",
+      "name": "Marginalization Formula",
+      "variants": [
+        {
+          "latex": "\\[ P(Y) = \\int P(X,Y) dX \\]",
+          "description": "Continuous case"
+        }
+      ]
+    },
+    "intuition": "Marginalization helps us focus on the variables that matter most, reducing the complexity of our calculations and making it easier to make predictions or decisions.",
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in Bayesian inference to update model parameters given new data."
+    ],
+    "commonMistakes": [
+      "Failing to recognize when marginalization can simplify a problem"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:39.973Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_marginal_distributions_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>Marginalization is a fundamental concept in probability theory that allows us to simplify complex joint distributions by summing or integrating out variables.</p><p>Imagine you have a large dataset with multiple features, and you want to analyze the distribution of one feature while ignoring the others. Marginalization enables you to do just that.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]"
+    },
+    "intuition": "Marginalization is like taking a snapshot of a joint distribution and focusing on one variable while discarding the others.",
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in topics such as feature selection and dimensionality reduction."
+    ],
+    "commonMistakes": [
+      "Don't confuse marginalization with conditioning; they're distinct concepts."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:46:54.667Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,219 @@
+[
+  {
+    "id": "stat_wex_method_of_moments_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The Method of Moments is a popular point estimation technique in mathematical statistics.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbb{E}[X] = \\int_{-\\infty}^{\\infty} x f(x) dx \\]",
+    "name": "Expected Value\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random variable X with probability density function (PDF) f(x). Find the method of moments estimator for its mean.</p>",
+    "hints": [
+      "Hint: Use the expected value formula"
+    ],
+    "solutionHtml": "<p>To apply the Method of Moments, we need to find the first moment (mean) and then equate it to the sample mean.</p>",
+    "answerShort": "The method of moments estimator for the mean is the sample mean\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let X be a random variable with PDF f(x) = \\frac{1}{2}e^{-|x-1|}. Find the method of moments estimator for its mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the expected value of X\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = \\\\int_{-\\\\infty}^{\\\\infty} x f(x) dx \\\\]\", \"explanation\": \"This is the first step in applying the Method of Moments\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = \\\\int_{0}^{1} (x+1) \\\\frac{1}{2}e^{-(x-1)} dx + \\\\int_{1}^{\\infty} (-x+1) \\\\frac{1}{2}e^{-(x-1)} dx \\\\]\", \"explanation\": \"Now we need to evaluate the integral to find the expected value\"}, {\"stepNumber\": 3, \"description\": \"Simplify and equate with the sample mean\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = 1 \\\\]\", \"explanation\": \"The expected value is equal to the sample mean. We can now use this result as our estimator\"}, {\"stepNumber\": 4, \"description\": \"Find the method of moments estimator for the variance\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X^2] = \\\\int_{-\\\\infty}^{\\\\infty} x^2 f(x) dx \\\\]\", \"explanation\": \"We can apply a similar process to find the method of moments estimator for the variance\"} ],",
+    "finalAnswer": "The method of moments estimator for the mean is 1\" },",
+    "intuition": "The Method of Moments is an intuitive way to estimate parameters by matching moments.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:01.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The Method of Moments is a popular technique in point estimation, allowing us to find the maximum likelihood estimator (MLE) without directly maximizing the likelihood function.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{M}_X = E[X]\\]",
+      "name": "Moment"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the method of moments estimator for the mean and variance of a normal distribution with known parameters.</p>",
+      "hints": [
+        "Hint: Use the moment equations"
+      ],
+      "solutionHtml": "<p>To find the MOME, we need to set up the moment equations:</p><ul><li>\\[E[X] = \\mu\\]</li><li>\\[E[(X-\\mu)^2] = \\sigma^2\\]</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset {1, 2, 3, 4} with unknown mean and variance. We want to use the method of moments to estimate these parameters.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{1+2+3+4}{4} = 2.5\\]",
+          "explanation": "This is our first moment equation"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample variance",
+          "mathHtml": "\\[s^2 = \\frac{(1-2.5)^2+(2-2.5)^2+(3-2.5)^2+(4-2.5)^2}{4} = 0.5\\]",
+          "explanation": "This is our second moment equation"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the moment equations to find the MOME",
+          "mathHtml": "\\[\\mu = \\bar{x} = 2.5\\] and \\[\\sigma^2 = s^2 = 0.5\\]",
+          "explanation": "Now we can plug in our sample values"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check the MOME",
+          "mathHtml": "\\[E[(X-\\mu)^2] = E[(X-2.5)^2] = \\sigma^2 = 0.5\\]",
+          "explanation": "This shows our MOME is correct"
+        }
+      ],
+      "finalAnswer": "The method of moments estimator for the mean and variance are \\[\\mu = 2.5\\] and \\[\\sigma^2 = 0.5\\]"
+    },
+    "intuition": "The method of moments allows us to find the MOME without directly maximizing the likelihood function, making it a useful technique in certain situations.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:33.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The method of moments is a popular technique in point estimation.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{m} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+      "name": "Sample Mean"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with finite moments, find the method of moments estimator for its mean.</p>",
+      "hints": [
+        "Hint: Use the sample mean"
+      ],
+      "solutionHtml": ""
+    },
+    "workedExample": {
+      "problemHtml": "",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the random variable X",
+          "mathHtml": "\\[X \\sim F\\]",
+          "explanation": "We start by defining the random variable X"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the population mean",
+          "mathHtml": "\\[\\mu = E[X]\\]",
+          "explanation": "The population mean is the expected value of X"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Estimate the population mean using the sample mean",
+          "mathHtml": "\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "We use the sample mean as an estimator for the population mean"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the method of moments estimator",
+          "mathHtml": "\\[\\hat{m} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "The method of moments estimator is simply the sample mean"
+        }
+      ],
+      "finalAnswer": "\\[\\hat{m}\\]"
+    },
+    "intuition": "The method of moments is a simple and intuitive way to estimate population parameters, especially when the data is limited.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:56.937Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The method of moments is a popular approach to point estimation in statistical inference.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+      "name": "Moment Estimator"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with known moments up to order k, find the point estimator for its mean.</p>",
+      "hints": [
+        "Hint: Use the method of moments"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X ~ N(\\mu, \\sigma^2) with known moments up to order 2. Find the point estimator for its mean.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the moment equations",
+          "mathHtml": "\\[\\mathbb{E}[X] = \\mu, \\\\ \\mathbb{E}[X^2] = \\sigma^2 + \\mu^2\\]",
+          "explanation": "We need to match the moments of the known distribution with those of the unknown distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve for the moment estimator",
+          "mathHtml": "\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "We use the known moments to estimate the unknown mean."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify the estimator",
+          "mathHtml": "\\[\\mathbb{E}[\\hat{\\mu}] = \\mu, \\\\ \\text{Var}([\\hat{\\mu}]) = \\frac{\\sigma^2}{n}\\]",
+          "explanation": "We verify that our estimator is unbiased and consistent."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "The point estimator for the mean is the sample mean."
+        }
+      ],
+      "finalAnswer": "\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i"
+    },
+    "intuition": "The method of moments works by matching the known moments with those of the unknown distribution, effectively estimating the parameters.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:27:25.176Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

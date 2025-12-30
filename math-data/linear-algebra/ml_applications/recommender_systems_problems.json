@@ -1,0 +1,86 @@
+[
+  {
+    "id": "la_prb_recommender_systems_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "problem": {
+      "statementHtml": "<p>Given a matrix <i>A</i> representing user-item interactions in a recommendation system, use Non-negative Matrix Factorization (NMF) to decompose it into two matrices <i>W</i> and <i>H</i>, where <i>W</i> captures the user factors and <i>H</i> captures the item factors.</p>",
+      "hints": [
+        "<p>NMF is a variant of matrix factorization that preserves the non-negativity constraint.</p>",
+        "<p>The goal is to find two lower-dimensional matrices that approximate the original interaction matrix.</p>",
+        "<p>You can use an algorithm like Alternating Least Squares (ALS) to optimize the factors.</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use NMF to decompose the interaction matrix <i>A</i> into two matrices <i>W</i> and <i>H</i>. We'll then use these factors to make recommendations for users.</p>",
+      "answerShort": "The recommended user-item interactions"
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:52:10.608Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_recommender_systems_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "problem": "{",
+    "statementHtml": "Given a matrix <i>A</i> representing user-item interactions in a recommendation system, use Non-negative Matrix Factorization (NMF) to decompose it into two matrices <i>W</i> and <i>H</i>, where <i>W</i> captures the user factors and <i>H</i> captures the item factors. What is the objective function for this NMF decomposition?",
+    "hints": [
+      "Start by considering a simple case: factorizing a matrix into two matrices with non-negative entries.",
+      "Think about how to measure the difference between the original matrix and its approximation.",
+      "Recall that NMF aims to preserve the non-negativity of the factors."
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to minimize the following objective function:</p><p>\\[F(W,H) = ||A - WH||_F^2 + \\alpha (||W||_F^2 + ||H||_F^2)\\]</p><p>where <i>α</i> is a regularization parameter.</p>\",",
+    "answerShort": "The objective function for NMF decomposition is F(W,H) = ||A - WH||_F^2 + α (||W||_F^2 + ||H||_F^2)\" },",
+    "commonMistakes": [
+      "Forgetting to include the regularization term.",
+      "Not considering the non-negativity constraint."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:52:40.478Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_recommender_systems_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "recommender_systems",
+    "problem": "{",
+    "statementHtml": "Given a user-item interaction matrix <i>R</i> with dimensions <i>m</i> × <i>n</i>, use non-negative matrix factorization (NMF) to recommend items for users.",
+    "hints": [
+      "Start by decomposing the interaction matrix into two lower-dimensional matrices: <i>W</i> and <i>H</i>.",
+      "Use the fact that NMF minimizes the reconstruction error between the original matrix and its factorized form.",
+      "You can use an algorithm like alternating least squares (ALS) to update <i>W</i> and <i>H</i> iteratively."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ol><li><p>Initialize the factorized matrices <i>W</i> and <i>H</i>.</p></li><li><p>Update <i>W</i> by minimizing the reconstruction error between <i>R</i> and <i>WH</i>.</p><math>\\[ \\min_{\\mathbf{w}_k} \\left\\lVert\\mathbf{R} - \\mathbf{W}\\mathbf{H}\\right\\rVert_F^2 \\]</math></li><li><p>Update <i>H</i> by minimizing the reconstruction error between <i>R</i> and <i>WH</i>.</p><math>\\[ \\min_{\\mathbf{h}_j} \\left\\lVert\\mathbf{R} - \\mathbf{W}\\mathbf{H}\\right\\rVert_F^2 \\]</math></li></ol><p>Repeat steps 2-3 until convergence.</p>\",",
+    "answerShort": "The recommended items for a user are the top-k items in the corresponding row of <i>WH</i>\" },",
+    "commonMistakes": [
+      "Forgetting to initialize the factorized matrices",
+      "Not iterating the ALS algorithm enough"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:53:15.246Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

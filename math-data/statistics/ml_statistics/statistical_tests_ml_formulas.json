@@ -1,0 +1,155 @@
+[
+  {
+    "id": "stat_for_statistical_tests_ml_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test",
+    "contentHtml": "<p>McNemar's test is a non-parametric statistical test used to compare the proportion of successes in two related samples.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{|n_1 - n_2|}{n_1 + n_2} \\leq \\frac{\\chi^2}{n_1 + n_2} \\]\" },",
+    "intuition": "McNemar's test is useful when you have paired data and want to determine if the proportion of successes in one sample differs significantly from another.",
+    "realWorldApplications": [
+      "Comparing the performance of two classifiers on a validation set"
+    ],
+    "tags": [
+      "statistical tests",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:15:40.767Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers",
+    "contentHtml": "<p>The paired t-test is a statistical test used to compare the performance of two classifiers on the same dataset.</p>",
+    "formula": "{",
+    "latex": "\\[t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}\\]\",",
+    "name": "Paired t-test formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two classifiers, A and B, that predict the same dataset. We want to test if there's a significant difference in their accuracy.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the mean accuracy for each classifier",
+        "mathHtml": "\\[\\bar{x}_1 = \\frac{1}{n_1} \\sum_{i=1}^{n_1} y_i\\]",
+        "explanation": "We calculate the mean accuracy for each classifier by taking the average of their predictions."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the pooled standard deviation",
+        "mathHtml": "\\[s_p = \\sqrt{\\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}}\\]",
+        "explanation": "We calculate the pooled standard deviation by combining the variances of each classifier's accuracy."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Calculate the t-statistic",
+        "mathHtml": "\\[t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}\\]",
+        "explanation": "We calculate the t-statistic by dividing the difference in means by the pooled standard deviation and adjusting for sample sizes."
+      }
+    ],
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The paired t-test helps us determine if there's a statistically significant difference between two classifiers' performance on the same dataset.",
+    "tags": [
+      "machine learning",
+      "statistical testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:06.969Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test for Paired Comparisons",
+    "contentHtml": "<p>McNemar's test is a statistical test used to compare paired observations between two conditions or treatments.</p>",
+    "formula": "{",
+    "latex": "\\[ \\frac{(b+a)-1}{2} > 0 \\]\",",
+    "name": "McNemar's Test Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to compare the accuracy of two machine learning models on a paired dataset.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct and incorrect predictions for each model.\", \"mathHtml\": \"\", \"explanation\": \"\"}, {\"stepNumber\": 2, \"description\": \"Apply McNemar's test to determine if the difference in accuracy is statistically significant.\", \"mathHtml\": \"\\[ \\frac{(b+a)-1}{2} > 0 \\]\", \"explanation\": \"This test helps us avoid making Type I errors by accounting for the paired nature of the data.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "<p>McNemar's test is a powerful tool for evaluating the performance of machine learning models on paired datasets.</p>",
+    "realWorldApplications": [
+      "Comparing the accuracy of two classification models on a dataset with paired instances"
+    ],
+    "tags": [
+      "machine learning",
+      "paired comparisons",
+      "statistical testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:25.703Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_statistical_tests_ml_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "McNemar's Test for Paired Classifiers",
+    "contentHtml": "<p>When evaluating the performance of a classifier on paired data (e.g., before-and-after scenarios), McNemar's test provides a powerful tool to assess whether the changes are statistically significant.</p>",
+    "formula": {
+      "latex": "\\[\\frac{|a+b-c-d|}{a+b+c+d} \\leq \\alpha\\]",
+      "name": "McNemar's Test Statistic"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a classifier that predicts whether a customer will churn or not. We collect data on customers who received a promotional offer and those who did not. For each customer, we record their original class (churned or not) and the new class after receiving the offer.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Count the number of customers who churned in both scenarios",
+          "mathHtml": "\\[a\\]",
+          "explanation": "This represents the number of customers who would have churned regardless of the offer"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Count the number of customers who did not churn in both scenarios",
+          "mathHtml": "\\[d\\]",
+          "explanation": "This represents the number of customers who would not have churned regardless of the offer"
+        }
+      ],
+      "finalAnswer": "Compare the test statistic to the critical value or p-value to determine significance"
+    },
+    "intuition": "McNemar's test helps us identify whether the changes in class are due to the classifier's performance or random chance",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:16:46.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

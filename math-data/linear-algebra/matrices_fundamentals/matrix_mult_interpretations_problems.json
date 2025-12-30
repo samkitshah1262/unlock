@@ -1,0 +1,101 @@
+[
+  {
+    "id": "la_prb_matrix_mult_interpretations_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Given matrices A and B, find the matrix product C = AB.</p>",
+    "hints": "[ \"<p>Think about linear combinations of columns in A.</p>\", \"<p>What is the dot product \\(\\mathbf{a} \\cdot \\mathbf{b}\\) telling you?</p>\", \"<p>Block multiplication can be a helpful approach.</p>\" ],",
+    "solutionHtml": "<p>To find C, we'll multiply each column of A by B. For the first column of A:</p><p>\\[C(:, 1) = \\mathbf{a}_1 \\cdot \\mathbf{B}.\\]</p><p>Now, for the second column:</p><p>\\[C(:, 2) = \\mathbf{a}_2 \\cdot \\mathbf{B}.\\]</p>\",",
+    "answerShort": "The matrix product C is found by taking linear combinations of columns in A and dot products with B.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:14.480Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "Consider two matrices A and B with dimensions n x m and p x q respectively. What is the meaning of the matrix product C = AB?",
+    "hints": [
+      "Think about what each element in C represents.",
+      "Recall that matrix multiplication involves linear combinations of columns.",
+      "Dot products will play a crucial role."
+    ],
+    "solutionHtml": "<p>To understand the interpretation of the matrix product, let's consider a simple example.</p><p>Suppose A has two columns <math>\\mathbf{a}_1</math> and <math>\\mathbf{a}_2</math>, and B has two rows <math>\\mathbf{b}_1^T</math> and <math>\\mathbf{b}_2^T</math>. Then the element at the 2nd row and 1st column of C, namely <math>C_{21}</math>, can be written as:</p><p><math>C_{21} = \\mathbf{a}_2^T \\cdot \\mathbf{b}_1</math>.</p><p>This shows that <math>C_{21}</math> is the dot product of the 2nd column of A and the 1st row of B.</p>\",",
+    "answerShort": "<math>C = AB</math> represents a linear combination of columns of A, weighted by rows of B.\" },",
+    "commonMistakes": [
+      "Failing to recognize that matrix multiplication is not commutative."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:36.009Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Given matrices A and B, find the matrix product AB.</p>",
+    "hints": [
+      "<p>Think about what happens when you multiply a row of A by a column of B.</p>",
+      "<p>Consider the dot products involved in each entry of the resulting matrix.</p>",
+      "<p>Block multiplication can be helpful for larger matrices.</p>"
+    ],
+    "solutionHtml": "<p>To find AB, we need to compute the linear combination of columns of A using coefficients from B. This is equivalent to taking the dot product of each row in A with the corresponding column in B.</p><p>\\[AB = \\begin{bmatrix} a_{11} &amp; a_{12} \\\\ a_{21} &amp; a_{22} \\end{bmatrix}\\begin{bmatrix} b_{1} \\\\ b_{2} \\end{bmatrix} = \\begin{bmatrix} a_{11}b_{1} + a_{12}b_{2} \\\\ a_{21}b_{1} + a_{22}b_{2} \\end{bmatrix}\\]</p><p>As we can see, each entry in the resulting matrix is a linear combination of columns from A using coefficients from B.</p>\",",
+    "answerShort": "The product AB is the matrix with entries given by dot products.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:10:57.207Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_matrix_mult_interpretations_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "matrix_mult_interpretations",
+    "problem": "{",
+    "statementHtml": "<p>Consider two matrices A and B. What is the interpretation of their product AB?</p>",
+    "hints": [
+      "Think about what happens when you multiply a vector by a matrix.",
+      "The columns of AB are linear combinations of the columns of A, scaled by the elements of B.",
+      "Dot products and outer products come into play here."
+    ],
+    "solutionHtml": "<p>To understand the product AB, let's consider a simple example. Suppose A is a 2x3 matrix representing three vectors in R^2:</p>\\n\\[A = \\begin{bmatrix}1 & 2 & 3\\\\4 & 5 & 6\\end{bmatrix}\\]\\n<p>Now, suppose B is a 3x2 matrix representing two vectors in R^3:</p>\\n\\[B = \\begin{bmatrix}1 & 0\\\\0 & 1\\\\2 & 3\\end{bmatrix}\\]\\n<p>The product AB will be a 2x2 matrix. Each entry in this matrix is the dot product of a column of A and a row of B:</p>\\n\\[AB = \\begin{bmatrix}(1, 4) \\cdot (1, 0) & (1, 4) \\cdot (0, 1)\\\\(2, 5) \\cdot (1, 0) & (2, 5) \\cdot (0, 1)\\end{bmatrix} = \\begin{bmatrix}1 & 4\\\\2 & 5\\end{bmatrix}\\]\\n<p>In this example, the columns of AB are linear combinations of the columns of A, scaled by the elements of B. This is the general interpretation of matrix multiplication.</p>\",",
+    "answerShort": "The product AB represents a linear combination of the columns of A, scaled by the elements of B.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:11:23.241Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

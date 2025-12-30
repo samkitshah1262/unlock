@@ -1,0 +1,96 @@
+[
+  {
+    "id": "stat_con_cross_validation_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a fundamental technique in machine learning that helps evaluate and improve model performance by splitting data into training and testing sets.</p><p>Imagine you're trying to predict house prices based on features like number of bedrooms, square footage, etc. You have a dataset with many examples, but you want to make sure your model generalizes well to new, unseen data. That's where cross-validation comes in.</p>",
+    "formula": "{",
+    "latex": "\\(K\\)-fold cross-validation: \\(\\frac{1}{K} \\sum_{k=1}^K L(y_k, f(X_k))\\)\",",
+    "name": "Cross-Validation Loss\" },",
+    "intuition": "Cross-validation helps prevent overfitting by testing your model on unseen data and averaging its performance.",
+    "visualDescription": "A diagram showing a dataset being split into training and testing sets, with the model's performance evaluated on the test set",
+    "commonMistakes": [
+      "Not using enough folds",
+      "Ignoring stratification for imbalanced datasets"
+    ],
+    "realWorldApplications": [
+      "Evaluating and improving model performance in natural language processing",
+      "Selecting the best hyperparameters for a neural network"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:02:33.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cross_validation_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning that helps evaluate and improve model performance by splitting data into training and testing sets.</p><p>Imagine you're trying to predict house prices based on features like number of bedrooms, square footage, and location. You'd want to train your model on some houses and test it on others to see how well it generalizes. This is the idea behind cross-validation.</p>",
+    "formula": "{",
+    "latex": "\\(K\\)-fold CV: \\(\\text{Score} = \\frac{1}{K} \\sum_{k=1}^K \\mathcal{L}(y_k, f(x_k))\\)\",",
+    "name": "Cross-Validation Score\" },",
+    "intuition": "Cross-validation helps prevent overfitting by ensuring your model isn't too specialized to a specific training set.",
+    "visualDescription": "A diagram showing k-fold cross-validation: data is split into k subsets, and the model is trained and tested on each subset in turn.",
+    "commonMistakes": [
+      "Not using enough folds",
+      "Using stratified CV when not necessary"
+    ],
+    "realWorldApplications": [
+      "Evaluating model performance for time series forecasting"
+    ],
+    "tags": [
+      "machine learning",
+      "model evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:02:50.737Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_cross_validation_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation: A Crucial Tool in Machine Learning",
+    "contentHtml": "<p>Cross-validation is a powerful technique used to evaluate and improve machine learning models.</p><p>Imagine you're trying to predict the price of a house based on its features, but your training data only includes houses from one neighborhood. If you train your model solely on this data, it might not generalize well to other neighborhoods or even different cities. Cross-validation helps mitigate this issue by splitting your data into smaller subsets and training your model on each subset in turn.</p>",
+    "formula": "{",
+    "latex": "\\\\[ K\\\\text{-fold cross-validation}: \\\\frac{1}{K} \\sum_{k=1}^K L(y_k, f(X_k)) \\\\]\",",
+    "name": "Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\\\[ Leave-One-Out Cross-Validation: \\\\frac{1}{n} \\sum_{i=1}^n L(y_i, f(X_i)) \\\\]\", \"description\": \"A special case of K-fold CV where k=n\" } ] },",
+    "intuition": "Cross-validation helps you avoid overfitting by evaluating your model on unseen data and averaging the results. This way, you can trust that your model will perform well on new, unseen data.",
+    "realWorldApplications": [
+      "Stratified cross-validation is particularly useful in medical diagnosis, where you want to ensure that your model performs equally well across different patient populations."
+    ],
+    "commonMistakes": [
+      "Failing to account for class imbalance when using stratified CV"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:10.324Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

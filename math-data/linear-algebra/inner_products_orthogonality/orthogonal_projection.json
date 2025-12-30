@@ -1,0 +1,563 @@
+[
+  {
+    "id": "la_con_orthogonal_projection_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>When dealing with subspaces in linear algebra, it's crucial to understand how to project vectors onto these subspaces. This concept is fundamental to many machine learning and AI applications.</p><p>Given a vector <i>v</i> and a subspace <i>S</i>, the orthogonal projection of <i>v</i> onto <i>S</i> finds the point in <i>S</i> that minimizes the distance to <i>v</i>. This is equivalent to finding the best approximation of <i>v</i> within <i>S</i>.</p>",
+    "formula": {
+      "latex": "\\[ P_S v = \\left(I - Q\\right) v \\]",
+      "name": "Projection Matrix"
+    },
+    "intuition": "Think of orthogonal projection as a way to 'flatten' a vector onto a subspace, effectively removing any components that are not within the subspace. This is useful in many applications, such as feature engineering and dimensionality reduction.",
+    "realWorldApplications": [
+      "Dimensionality Reduction",
+      "Feature Engineering"
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between orthogonal projection and parallel projection"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:13:01.404Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_projection_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>Given a subspace W and a vector v, orthogonal projection onto W is the best approximation of v in terms of vectors from W.</p><p>This concept is crucial in machine learning, as it's used to reduce dimensionality, perform feature selection, and improve model performance.</p>",
+    "formula": "{",
+    "latex": "\\[P_W = WW^T\\]\",",
+    "name": "Orthogonal Projection Matrix\" },",
+    "intuition": "Think of orthogonal projection like taking a photo of v from the perspective of W. The resulting image is the best representation of v in terms of vectors from W.",
+    "realWorldApplications": [
+      "Dimensionality reduction in PCA"
+    ],
+    "commonMistakes": [
+      "Failing to account for the subspace when projecting"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:13:14.612Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_orthogonal_projection_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>Given a subspace and a vector, orthogonal projection finds the best approximation of that vector within the subspace.</p><p>This is achieved by finding the closest point in the subspace to the original vector.</p>",
+    "formula": {
+      "latex": "\\[ P = A (A^T A)^{-1} A^T \\]",
+      "name": "Projection Matrix"
+    },
+    "intuition": "Think of it like taking a photo of an object from different angles. The projection matrix is like the camera settings that capture the best possible image.",
+    "realWorldApplications": [
+      "In machine learning, orthogonal projection is used in dimensionality reduction techniques such as PCA (Principal Component Analysis)"
+    ],
+    "commonMistakes": [
+      "Not understanding that the projection matrix is not unique and can be different for the same subspace"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:13:28.884Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_projection_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>The orthogonal projection of a vector onto a subspace is crucial in many applications, including machine learning and signal processing.</p>",
+    "formula": "{",
+    "latex": "\\[P_A = A (A^T A)^{-1} A^T\\]\",",
+    "name": "Orthogonal Projection Matrix",
+    "variants": "[ {\"latex\": \"\\[P_A x = P_A x\\]\", \"description\": \" Idempotence\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the orthogonal projection of a vector <code>x</code> onto a subspace spanned by the matrix <code>A</code>.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the projection matrix <code>P_A</code>\", \"mathHtml\": \"\\[P_A = A (A^T A)^{-1} A^T\\]\", \"explanation\": \"We use the formula for orthogonal projection matrices.\"} ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "Orthogonal projection helps us find the best approximation of a vector within a subspace, which is essential in many machine learning algorithms.",
+    "realWorldApplications": [
+      "Dimensionality reduction",
+      "Anomaly detection"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:13:47.637Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_projection_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>The orthogonal projection of a vector onto a subspace is crucial in many applications, including machine learning and data analysis.</p>",
+    "formula": "{",
+    "latex": "\\[ P_A = A (A^T A)^{-1} A^T \\]\",",
+    "name": "Projection Matrix",
+    "variants": "[ {\"latex\": \"\\[ P_A x = (x^T A) (A^T A)^{-1} A^T \\]\", \"description\": \"Vector projection\"} ] },",
+    "intuition": "The orthogonal projection matrix, P_A, maps a vector to its closest point in the subspace. This is useful when we want to find the best approximation of a vector within that subspace.",
+    "visualDescription": "A diagram showing the original vector, the subspace, and the projected vector would help illustrate this concept.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:14:02.322Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_projection_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>The orthogonal projection of a vector onto a subspace is a fundamental concept in linear algebra and has numerous applications in machine learning.</p>",
+    "formula": "{",
+    "latex": "\\[ P = A (A^T A)^{-1} A^T \\]\",",
+    "name": "Projection Matrix\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the orthogonal projection of <math>\\mathbf{x}</math> onto the subspace spanned by <math>\\mathbf{v}</math>.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the matrix A\", \"mathHtml\": \"\\[ A = \\begin{bmatrix} v_1 & v_2 & \\cdots \\end{bmatrix} \\]\", \"explanation\": \"A is the matrix of column vectors that span the subspace.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "The orthogonal projection matrix P minimizes the squared distance between a vector and its projection, making it a crucial component in many machine learning algorithms.",
+    "realWorldApplications": [
+      "Dimensionality reduction",
+      "Anomaly detection"
+    ],
+    "tags": [
+      "orthogonal projection",
+      "linear algebra",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:14:20.753Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_orthogonal_projection_007",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>Given a subspace and a vector, orthogonal projection finds the closest point in that subspace to the original vector.</p>",
+    "formula": "{",
+    "latex": "\\[P = A (A^T A)^{-1} A^T\\]\",",
+    "name": "Orthogonal Projection Formula",
+    "variants": "[ {\"latex\": \"\\[P = I - Q\\]\", \"description\": \"Alternative formula using the orthogonal complement\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the closest point in the subspace spanned by <math>\\mathbf{v}_1</math> and <math>\\mathbf{v}_2</math> to the vector <math>\\mathbf{x}</math>.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the projection matrix\", \"mathHtml\": \"\\[A = [\\mathbf{v}_1 \\quad \\mathbf{v}_2]\\]\", \"explanation\": \"We use the formula above to construct the projection matrix.\"}, {\"stepNumber\": 2, \"description\": \"Compute the projection\", \"mathHtml\": \"\\[P\\mathbf{x}\\]\", \"explanation\": \"We multiply the projection matrix by the original vector.\"} ],",
+    "finalAnswer": "<p>The closest point is <math>P \\mathbf{x}</math>.</p>\" },",
+    "intuition": "Orthogonal projection helps us find the best approximation of a vector within a subspace, which is crucial in many machine learning and computer vision applications.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:14:42.526Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_projection_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection Theorem",
+    "contentHtml": "<p>The Orthogonal Projection Theorem states that given an orthonormal basis \\(\\mathbf{B} = (\\mathbf{b}_1, ..., \\mathbf{b}_k)\\) and a vector \\(\\mathbf{x}\\), the best approximation of \\(\\mathbf{x}\\) in the subspace spanned by \\(\\mathbf{B}\\) is given by the orthogonal projection matrix \\(\\mathbf{P} = \\mathbf{B} \\mathbf{B}^T\\).</p>\",",
+    "formula": "{",
+    "latex": "\\[\\mathbf{P} = \\mathbf{B} \\mathbf{B}^T\\]\",",
+    "name": "Orthogonal Projection Matrix\" },",
+    "theorem": "{",
+    "statement": "\\[\\text{Given an orthonormal basis } \\mathbf{B} = (\\mathbf{b}_1, ..., \\mathbf{b}_k) \\text{ and a vector } \\mathbf{x}, \\text{ the best approximation of } \\mathbf{x} \\text{ in the subspace spanned by } \\mathbf{B} \\text{ is given by the orthogonal projection matrix } \\mathbf{P} = \\mathbf{B} \\mathbf{B}^T.\\]\",",
+    "proofSketch": "The proof involves showing that \\(\\mathbf{P}\\) minimizes the squared error between \\(\\mathbf{x}\\) and its approximation in the subspace.\" },",
+    "intuition": "This theorem provides a powerful tool for projecting high-dimensional data onto lower-dimensional subspaces, which is crucial in many machine learning applications.",
+    "realWorldApplications": [
+      "Dimensionality reduction in computer vision",
+      "Feature extraction in natural language processing"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Orthogonal Projections",
+      "Machine Learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:15:07.407Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_orthogonal_projection_009",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection Theorem",
+    "contentHtml": "<p>The Orthogonal Projection Theorem states that given a subspace <em>V</em> and a vector <em>x</em>, there exists a unique orthogonal projection matrix <em>P</em> such that <code>\\[P x\\]</code> is the best approximation of <em>x</em> in <em>V</em>.</p>\",",
+    "formula": "{",
+    "latex": "\\[P = H\\]",
+    "name": "Orthogonal Projection Matrix\" },",
+    "theorem": "{",
+    "statement": "\\\\[\\\\text{For any }x \\\\in \\\\mathbb{R}^n, \\\\text{there exists a unique }P \\\\in \\\\mathcal{M}_{n}\\\\text{ such that }Px \\\\perp V_{\\\\bot}\\]\",",
+    "proofSketch": "The proof involves showing that <code>P</code> is the best approximation by minimizing the squared error between <em>x</em> and its projection onto <em>V</em>\" },",
+    "intuition": "This theorem provides a way to project any vector onto a subspace, which is crucial in many machine learning algorithms such as principal component analysis (PCA) and independent component analysis (ICA).",
+    "realWorldApplications": [
+      "Principal Component Analysis",
+      "Independent Component Analysis"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Orthogonality",
+      "Projection"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:15:27.259Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal projection of <i>x</i> onto the subspace spanned by the vectors <i>a</i> and <i>b</i>.</p>",
+    "hints": [
+      "<p>The key is to find the projection matrix.</p>",
+      "<p>Use the fact that the projection matrix is equal to the outer product of the basis vectors divided by their norm squared.</p>",
+      "<p>Don't forget to normalize the basis vectors!</p>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal projection, we first need to find the projection matrix. The projection matrix <i>P</i> is given by:</p>\\n\\[P = \\frac{1}{\\|a\\|^2 \\|b\\|^2 - (a \\cdot b)^2} [a][a]^T [b][b]^T - \\frac{(a \\cdot b)}{\\|a\\|^2 \\|b\\|^2 - (a \\cdot b)^2} ([a][b] + [b][a])^T.\\]\\n<p>Now, we can use the projection matrix to find the orthogonal projection:</p>\\n\\[x_{proj} = Px.\\]\\n<p>To simplify the calculation, let's first normalize the basis vectors:</p>\\n\\[\\hat{a} = \\frac{a}{\\|a\\|}, \\quad \\hat{b} = \\frac{b}{\\|b\\|}.\\]\\n<p>Now we can plug in the values:</p>\\n\\[P = \\frac{1}{\\|\\hat{a}\\|^2 \\|\\hat{b}\\|^2 - (\\hat{a} \\cdot \\hat{b})^2} [\\hat{a}][\\hat{a}]^T [\\hat{b}][\\hat{b}]^T - \\frac{\\hat{a} \\cdot \\hat{b}}{\\|\\hat{a}\\|^2 \\|\\hat{b}\\|^2 - (\\hat{a} \\cdot \\hat{b})^2} ([\\hat{a}][\\hat{b}] + [\\hat{b}][\\hat{a}])^T.\\]\\n<p>The final answer is:</p>\\n\\[x_{proj} = P x.\\]\",",
+    "answerShort": "<i>x</i> projected onto the subspace spanned by <i>a</i> and <i>b</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:15:58.883Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Given a vector <i>x</i> and a subspace <i>V</i>, find the orthogonal projection of <i>x</i> onto <i>V</i>.</p>",
+    "hints": [
+      "Think about the dot product and its relationship to orthogonality.",
+      "Use the fact that the projection matrix is an orthogonal projector.",
+      "Check if your answer is actually a vector in <i>V</i>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal projection, we need to find the closest point in <i>V</i> to <i>x</i>. Let's call this point <i>y</i>.</p><p>We can express <i>y</i> as a linear combination of basis vectors for <i>V</i>, say <i>b<sub>1</sub></i>, ..., <i>b<sub>d</sub></i>:</p><p>\\[y = \\sum_{i=1}^d c_i b_i\\]</p><p>Now, we can write the difference between <i>x</i> and <i>y</i> as:</p><p>\\[x - y = \\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right)\\]</p><p>This vector is orthogonal to all basis vectors, so it must be orthogonal to the entire subspace <i>V</i>. This means:</p><p>\\[\\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right) \\cdot \\mathbf{v} = 0\\]</p><p>for any vector <i>v</i> in <i>V</i>. We can simplify this equation by expanding the dot product:</p><p>\\[\\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right) \\cdot \\mathbf{v} = \\mathbf{x} \\cdot \\mathbf{v} - \\sum_{i=1}^d c_i \\mathbf{b}_i \\cdot \\mathbf{v}\\]</p><p>Since this is true for any <i>v</i>, the coefficient of each basis vector must be zero:</p><p>\\[c_i = \\mathbf{x} \\cdot \\mathbf{b}_i\\]</p><p>This gives us the coefficients for the projection matrix:</p><p>\\[\\mathbf{P} = \\sum_{i=1}^d \\frac{\\mathbf{b}_i \\mathbf{b}_i^\\top}{\\mathbf{b}_i^\\top \\mathbf{b}_i}\\]</p><p>Finally, the orthogonal projection of <i>x</i> onto <i>V</i> is given by:</p><p>\\[\\mathbf{P} \\mathbf{x}\\]</p>,",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:16:34.936Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal projection of vector <i>b</i> onto subspace spanned by vectors <i>a</i> and <i>c</i>.</p>",
+      "hints": [
+        "<p>The key is to find the coefficients that minimize the squared error.</p>",
+        "<p>You can use the fact that the projection matrix is orthogonal.</p>",
+        "<p>Think about how you would project a vector onto a line in 2D space.</p>"
+      ],
+      "solutionHtml": "<p>To find the orthogonal projection, we need to find the coefficients <i>c</i> and <i>d</i> that minimize the squared error:</p>\n<p><i>E</i> = ||<i>b</i> - (<i>c</i><i>a</i> + <i>d</i><i>c</i>)||^2</p>\n<p>We can use Lagrange multipliers to find the values of <i>c</i> and <i>d</i> that minimize this error.</p>",
+      "answerShort": "<i>P</i> = (<i>b</i> ⋅ <i>a</i>)<i>a</i>/||<i>a</i)||^2 + (<i>b</i> ⋅ <i>c</i>)<i>c</i>/||<i>c</i)||^2"
+    },
+    "commonMistakes": [
+      "<i>P</i> = <i>b</i> - (<i>a</i> ⋅ <i>b</i>)<i>a</i>",
+      "<i>P</i> is not necessarily unique",
+      "The projection matrix is not always orthogonal"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:16:58.679Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal projection of vector $\\mathbf{v} = (1, 2, 3)$ onto the subspace spanned by vectors $\\mathbf{u}_1 = (1, 0, 0)$ and $\\mathbf{u}_2 = (0, 1, 0).</p>\",",
+    "hints": "[ \"<p>Think about the projection matrix.</p>\", \"<p>You can use the fact that $\\mathbf{u}_1$ and $\\mathbf{u}_2$ are orthogonal to each other.</p>\", \"<p>Use the formula for the orthogonal projection onto a subspace.</p>\" ],",
+    "solutionHtml": "<p>To find the orthogonal projection, we first need to find the projection matrix $P$. We can do this by taking the outer product of $\\mathbf{u}_1$ and $\\mathbf{u}_2</p><p>\\[ P = \\mathbf{u}_1 \\mathbf{u}_1^T + \\mathbf{u}_2 \\mathbf{u}_2^T.\\]</p><p>Next, we can find the projection of $\\mathbf{v}$ onto the subspace by multiplying $P$ with $\\mathbf{v}</p><p>\\[ \\text{proj}(\\mathbf{v}) = P \\mathbf{v}. \\]</p>\",",
+    "answerShort": "The orthogonal projection is $\\boxed{\\left(1, 2/3, 0\\right)}$\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:17:22.911Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_projection_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the orthogonal projection of a vector onto a subspace.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the orthogonal projection of <i>\\(\\mathbf{v} = (1, 2, 3)\\)</i> onto the subspace spanned by <i>\\(\\mathbf{u}_1 = (1, 0, 0)\\)</i> and <i>\\(\\mathbf{u}_2 = (0, 1, 0)\\)</i>\",",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Check the result",
+    "mathHtml": "\\[\\|\\mathbf{v}_\\text{proj}\\|^2 = \\|(1, 2)\\|^2 = 5\\]\",",
+    "explanation": "We verify that the projected vector lies in the subspace and has the correct magnitude.\" } ],",
+    "finalAnswer": "(1, 2)\" },",
+    "intuition": "The key insight is that orthogonal projection is a way to find the best approximation of a vector within a subspace.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:17:58.056Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_projection_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the orthogonal projection of a vector onto a subspace.</p>",
+    "formula": {
+      "latex": "\\[P_A \\mathbf{v} = (A^\\dagger A)^{-1} A^\\dagger \\mathbf{v}\\]",
+      "name": "Orthogonal Projection Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal projection of vector \\mathbf{v} = [2, -3] onto the subspace spanned by \\mathbf{u}_1 = [1, 0] and \\mathbf{u}_2 = [0, 1].</p>",
+      "hints": [
+        "Hint: Use the formula for orthogonal projection."
+      ],
+      "solutionHtml": "<p>We can start by finding the orthonormal basis {\\mathbf{u}_1, \\mathbf{u}_2}.</p><p>Then, we'll use this basis to find the coefficients of the projection.</p>",
+      "answerShort": "The answer is [0.6, -0.8]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given vectors \\mathbf{v} = [2, -3] and \\mathbf{u}_1 = [1, 0], find the orthogonal projection of \\mathbf{v} onto the subspace spanned by \\mathbf{u}_1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the orthonormal basis {\\mathbf{u}_1, \\mathbf{u}_2}",
+          "mathHtml": "\\[\\mathbf{u}_2 = \\frac{1}{\\sqrt{5}} [0, 1]\\]",
+          "explanation": "We need to find an orthonormal basis for the subspace."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the projection coefficients",
+          "mathHtml": "\\[c_1 = (\\mathbf{u}_1^\\dagger \\mathbf{v}) (\\mathbf{u}_1^\\dagger \\mathbf{u}_1)^{-1}\\]",
+          "explanation": "We'll use these coefficients to find the projection."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the orthogonal projection",
+          "mathHtml": "\\[P_{A} \\mathbf{v} = c_1 \\mathbf{u}_1\\]",
+          "explanation": "Now we can plug in our coefficients and find the projection."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the final answer",
+          "mathHtml": "\\[P_{A} \\mathbf{v} = [0.6, -0.8]\\]",
+          "explanation": "The final answer is the orthogonal projection of \\mathbf{v} onto the subspace."
+        }
+      ],
+      "finalAnswer": "[0.6, -0.8]"
+    },
+    "intuition": "The key insight here is that we're finding the closest point in the subspace to our original vector.",
+    "visualDescription": "A diagram showing the orthogonal projection of a vector onto a subspace would be helpful for visual learners.",
+    "commonMistakes": [
+      "Forgetting to normalize the basis vectors"
+    ],
+    "realWorldApplications": [
+      "Principal component analysis (PCA) in machine learning"
+    ],
+    "tags": [
+      "orthogonal",
+      "projection",
+      "subspace"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:18:41.293Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_projection_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve an orthogonal projection problem step-by-step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the orthogonal projection of <math>\\mathbf{x} = [2, 3]</math> onto the subspace spanned by <math>\\mathbf{v} = [1, 0]</math>.\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the dot product between <math>\\mathbf{x}</math> and <math>\\mathbf{v}</math>\", \"mathHtml\": \"\\\\[ (\\\\mathbf{x}\\\\cdot \\\\mathbf{v}) = [2, 3]\\\\cdot [1, 0] = 2 \\\\]\", \"explanation\": \"We're doing this to find the coefficient of the projection.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the magnitude of <math>\\mathbf{v}</math>\", \"mathHtml\": \"\\\\[ ||\\\\mathbf{v}|| = \\\\sqrt{(1)^2 + (0)^2} = 1 \\\\]\", \"explanation\": \"This will help us normalize our projection.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the projection matrix\", \"mathHtml\": \"\\\\[ P_{\\\\mathbf{v}} = \\\\frac{\\\\mathbf{x}\\\\cdot \\\\mathbf{v}}{||\\\\mathbf{v}||^2} [1, 0] \\\\]\", \"explanation\": \"The projection matrix will help us find the projected vector.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the projected vector\", \"mathHtml\": \"\\\\[ P_{\\\\mathbf{v}} \\\\mathbf{x} = \\\\frac{(\\\\mathbf{x}\\\\cdot \\\\mathbf{v})}{||\\\\mathbf{v}||^2} [1, 0] \\\\cdot [2, 3] = [2, 0] \\\\]\", \"explanation\": \"This is the final projected vector.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the magnitude of the projected vector\", \"mathHtml\": \"\\\\[ ||P_{\\\\mathbf{v}} \\\\mathbf{x}|| = \\\\sqrt{(2)^2 + (0)^2} = 2 \\\\]\", \"explanation\": \"This is the final answer.\"} ],",
+    "finalAnswer": "The orthogonal projection of <math>\\mathbf{x}</math> onto the subspace spanned by <math>\\mathbf{v}</math> is <math>[2, 0]</math>\" },",
+    "intuition": "Orthogonal projections are essential in machine learning for tasks like dimensionality reduction and feature extraction.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:19:14.663Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_projection_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "contentHtml": "<p>In this example, we'll show how to project a vector onto a subspace using orthogonal projection.</p>",
+    "formula": {
+      "latex": "\\[ P = A (A^T A)^{-1} A^T \\]"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A and a vector b, find the best approximation of b in the column space of A.</p>",
+      "hints": [
+        "Hint: Use the orthogonal projection formula"
+      ],
+      "solutionHtml": "<p>We'll use the formula for orthogonal projection:</p><ul><li>Step 1: Calculate A^T A</li><li>Step 2: Calculate (A^T A)^{-1}</li><li>Step 3: Calculate A (A^T A)^{-1} A^T</li></ul>",
+      "answerShort": "The best approximation is P"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the best approximation of b = [2, 4] in the column space of A = [[1, 0], [0, 1]].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate A^T A",
+          "mathHtml": "\\[ (A^T A) = \\begin{bmatrix} 2 & 0 \\\\ 0 & 2 \\end{bmatrix} \\]",
+          "explanation": "This is the Gramian matrix of the columns of A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate (A^T A)^{-1}",
+          "mathHtml": "\\[ ((A^T A)^{-1}) = \\begin{bmatrix} 0.5 & 0 \\\\ 0 & 0.5 \\end{bmatrix} \\]",
+          "explanation": "This is the inverse of the Gramian matrix."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate P",
+          "mathHtml": "\\[ P = A (A^T A)^{-1} A^T = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} \\]",
+          "explanation": "This is the projection matrix."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate P b",
+          "mathHtml": "\\[ Pb = \\begin{bmatrix} 2 \\\\ 4 \\end{bmatrix} \\]",
+          "explanation": "This is the best approximation of b in the column space of A."
+        }
+      ],
+      "finalAnswer": "Pb = [2, 4]"
+    },
+    "intuition": "Orthogonal projection provides the best linear approximation of a vector within a subspace.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:19:49.720Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

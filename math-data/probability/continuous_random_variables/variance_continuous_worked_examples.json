@@ -1,0 +1,174 @@
+[
+  {
+    "id": "prob_wex_variance_continuous_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often encounter continuous random variables (RVs). The variance of such a variable is crucial in understanding its spread and uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+      "name": "Variance Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the variance of a continuous RV X with probability density function (PDF) f_X(x) = 2e^{-2x} for x ≥ 0.</p>",
+      "hints": [
+        "Hint: Use the given PDF to set up an integral.",
+        "Hint: Simplify the integral by recognizing a familiar function."
+      ],
+      "solutionHtml": "<p>Step 1: Set up the integral using the formula.\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]</p><p>Step 2: Evaluate the expected value of X.\\[ E[X] = \\int_{0}^{\\infty} x f_X(x) dx \\]</p><p>Step 3: Substitute the result from Step 2 into the integral in Step 1.\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]</p>",
+      "answerShort": "The variance is 1/4."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the variance of a continuous RV X with probability density function (PDF) f_X(x) = 3x^2 for x ≥ 0.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Set up the integral using the formula.",
+          "mathHtml": "\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+          "explanation": "We're setting up the integral to evaluate the variance."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the expected value of X.",
+          "mathHtml": "\\[ E[X] = \\int_{0}^{\\infty} x f_X(x) dx \\]",
+          "explanation": "The expected value is a weighted average of possible values."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Substitute the result from Step 2 into the integral in Step 1.",
+          "mathHtml": "\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+          "explanation": "Now we're evaluating the variance using the expected value."
+        }
+      ],
+      "finalAnswer": "The answer is 3/5."
+    },
+    "intuition": "Understanding the variance of continuous RVs helps in modeling real-world phenomena and making predictions.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:52:03.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variance_continuous_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often need to calculate the variance of a continuous random variable.</p>",
+    "formula": "{",
+    "latex": "\\[\\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f_X(x) dx\\]",
+    "name": "Variance formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function f_X(x) = 1/√(2π) \\* e^(-x^2/2), where E[X] = 0.</p>\",",
+    "hints": [
+      "Use the definition of variance",
+      "Integrate by parts"
+    ],
+    "solutionHtml": "<p>Step 1: Expand the square term and apply the expected value.</p><p>\\[E[(X-E[X])^2] = \\int_{-\\infty}^{\\infty} (x^2) f_X(x) dx\\]</p><p>Step 2: Integrate by parts, using u = x^2 and dv = f_X(x) dx.</p><p>\\[= -\\frac{1}{\\sqrt{2π}} \\int_{-\\infty}^{\\infty} x^2 e^{-x^2/2} dx + E[X] \\int_{-\\infty}^{\\infty} 2xe^{-x^2/2} dx\\]</p><p>Step 3: Evaluate the integral and simplify.</p>",
+    "answerShort": "The answer is 1\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a continuous random variable X with probability density function f_X(x) = 1/√(2π) \\* e^(-x^2/2), where E[X] = 0.</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Expand the square term and apply the expected value",
+        "mathHtml": "\\[E[(X-E[X])^2] = \\int_{-\\infty}^{\\infty} (x^2) f_X(x) dx\\]",
+        "explanation": "We use the definition of variance and expand the square term."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Integrate by parts",
+        "mathHtml": "\\[= -\\frac{1}{\\sqrt{2π}} \\int_{-\\infty}^{\\infty} x^2 e^{-x^2/2} dx + E[X] \\int_{-\\infty}^{\\infty} 2xe^{-x^2/2} dx\\]",
+        "explanation": "We integrate by parts, using u = x^2 and dv = f_X(x) dx."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Evaluate the integral and simplify",
+        "mathHtml": "",
+        "explanation": "We evaluate the integral and simplify to get the final answer."
+      }
+    ],
+    "finalAnswer": "1\" },",
+    "intuition": "The variance of a continuous random variable is the expected value of the squared difference from the mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:52:46.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variance_continuous_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate the variance of a continuous random variable.</p>",
+    "formula": {
+      "latex": "\\[\\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\]",
+      "name": "Variance Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x) = 2x, 0 &lt; x &lt; 1.</p>",
+      "hints": [
+        "Hint: Use the definition of variance and integrate by parts."
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x) = 2x, 0 &lt; x &lt; 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected value E[X]",
+          "mathHtml": "\\[E[X] = \\int_{0}^{1} 2x^2 dx\\]",
+          "explanation": "We use integration by parts to find the expected value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the second moment E[(X - E[X])^2]",
+          "mathHtml": "\\[E[(X - E[X])^2] = \\int_{0}^{1} (x - E[X])^2 f(x) dx\\]",
+          "explanation": "We use integration by parts to find the second moment."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the variance Var(X)",
+          "mathHtml": "\\[\\text{Var}(X) = E[(X - E[X])^2] - (E[X])^2\\]",
+          "explanation": "We substitute the values of E[X] and E[(X - E[X])^2] to find the variance."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[\\text{Var}(X) = \\int_{0}^{1} (x - E[X])^2 f(x) dx - (E[X])^2\\]",
+          "explanation": "We simplify the expression to get the final answer."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "The variance of a continuous random variable represents the spread or dispersion of the distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:53:22.178Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

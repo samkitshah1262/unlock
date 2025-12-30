@@ -1,0 +1,420 @@
+[
+  {
+    "id": "prob_con_variance_continuous_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>The variance of a continuous random variable X is a measure of its spread or dispersion.</p><p>Given a probability density function (PDF) f(x), we can define the variance as:</p>\\(\\sigma^2 = \\int_{-\\infty}^\\infty (x - E[X])^2 f(x) dx\\)<p>This formula integrates the squared difference between each possible value x and the expected value E[X] weighted by the probability density at that point.</p>\",",
+    "formula": "{",
+    "latex": "\\sigma^2 = \\int_{-\\infty}^\\infty (x - E[X])^2 f(x) dx\",",
+    "name": "Variance Formula\" },",
+    "whyMatters": "<p>The variance is a fundamental concept in probability theory, as it provides insight into the spread of a continuous random variable.</p>",
+    "intuition": "The variance measures how far each possible value is from the average, weighted by its likelihood.",
+    "realWorldApplications": [
+      "In machine learning, understanding the variance of features can help with feature selection and engineering."
+    ],
+    "commonMistakes": [
+      "Not recognizing that the integral is over all possible values of x"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:48:32.050Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_variance_continuous_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>Variance is a fundamental concept in probability theory that measures the spread or dispersion of a continuous random variable (RV). In the context of continuous RVs, variance is defined as the expected value of the squared difference between each possible outcome and the mean.</p><p>Mathematically, this can be represented by the following formula:</p>\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) dx\\)<p>where σ is the standard deviation, μ is the mean, and f(x) is the probability density function.</p>\",",
+    "formula": "{",
+    "latex": "\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) dx\\)\",",
+    "name": "Variance Formula\" },",
+    "whyMatters": "<p>Variance is crucial in machine learning and artificial intelligence as it helps quantify the uncertainty associated with a model's predictions. In regression tasks, for instance, variance can be used to measure the spread of predicted values.</p>",
+    "intuition": "Think of variance like the width of a bell curve. A small variance means most outcomes are clustered around the mean, while a large variance indicates more spread out data.",
+    "commonMistakes": [
+      "Forgetting that variance is squared",
+      "Not understanding the connection to standard deviation"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:48:53.989Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_variance_continuous_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>The variance of a continuous random variable is a measure of how spread out its probability density function (PDF) is.</p><p>Intuitively, it's the average squared distance from the mean. For discrete RVs, we used summation to calculate variance; for continuous RVs, we use integration.</p>",
+    "formula": {
+      "latex": "\\[\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\]",
+      "name": "Variance Formula"
+    },
+    "whyMatters": "<p>The variance is crucial in probability theory and statistics, as it helps us understand the spread of a distribution. In machine learning, it's used to measure the uncertainty of predictions.</p>",
+    "intuition": "Think of the variance like the average distance from the mean; if the PDF is concentrated around the mean, the variance will be low.",
+    "commonMistakes": [
+      "Forgetting that the integral goes from negative infinity to positive infinity"
+    ],
+    "realWorldApplications": [
+      "Estimating uncertainty in neural network predictions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:49:11.785Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variance_continuous_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>The variance of a continuous random variable X is defined as the expected value of the squared difference from the mean.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) dx \\]\",",
+    "name": "Variance Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a normal distribution with mean 0 and standard deviation 1.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Use the formula\", \"mathHtml\": \"\\[ \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - 0)^2 f(x) dx \\]\", \"explanation\": \"Plug in the given parameters\"} ],",
+    "finalAnswer": "1\" },",
+    "intuition": "The variance measures how spread out the data is. In this case, we're finding the expected value of the squared difference from the mean, which helps us understand the spread of a normal distribution.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:49:31.158Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variance_continuous_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>The variance of a continuous random variable is a measure of its spread.</p><p>It's defined as the expected value of the squared difference from the mean:</p>\\( \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx \\)<p>This formula is essential in probability theory and has numerous applications in machine learning, signal processing, and statistics.</p>\",",
+    "formula": "{",
+    "latex": "\\( \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx \\)\",",
+    "name": "Variance of Continuous Random Variable\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a normal distribution with mean 0 and standard deviation 1.</p>",
+    "steps": "[ {",
+    "stepNumber": 1,
+    "description": "Use the definition of variance",
+    "mathHtml": "\\( \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx \\)\",",
+    "explanation": "Plug in the given distribution and evaluate the integral\" } ],",
+    "finalAnswer": "1/π\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:49:51.544Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_variance_continuous_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>The variance of a continuous random variable is a fundamental concept in probability theory.</p><p>It represents how spread out the values are from their mean.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) dx \\]\",",
+    "name": "Variance of Continuous RV\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a normal distribution with mean 0 and standard deviation 1.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Use the definition of variance\", \"mathHtml\": \"\\( \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - 0)^2 f(x) dx \\)\", \"explanation\": \"Plug in the given distribution\"} ],",
+    "finalAnswer": "1\" },",
+    "intuition": "The variance is high when the values are far from the mean, and low when they're close.",
+    "realWorldApplications": [
+      "In machine learning, understanding the variance of a continuous random variable can help with model selection and hyperparameter tuning."
+    ],
+    "tags": [
+      "continuous RVs",
+      "probability theory"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:50:11.594Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_continuous_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "Find the variance of a continuous random variable X with probability density function (PDF) f(x).",
+    "hints": "[ \"Recall that the mean is given by ∫(-∞∞) x \\* f(x) dx.\", \"The variance is defined as the expected value of the squared difference from the mean.\", \"You can use integration by parts to simplify the integral.\" ],",
+    "solutionHtml": "<p>To find the variance, we need to evaluate ∫(-∞∞) (x - μ)^2 \\* f(x) dx, where μ is the mean.</p><p>We can start by expanding the squared difference:</p><p>(x - μ)^2 = x^2 - 2xμ + μ^2</p><p>Now we can integrate each term separately:</p><p>∫(-∞∞) x^2 \\* f(x) dx - 2μ ∫(-∞∞) x \\* f(x) dx + μ^2 ∫(-∞∞) f(x) dx</p><p>The first integral is the mean times the variance, which is zero since the mean is the expected value.</p><p>The second integral is just the mean squared, which we already know.</p><p>The third integral is the PDF evaluated at the mean, which is also the probability of X taking on the value μ. Since this is a continuous random variable, this probability is zero.</p><p>Putting it all together, we get:</p><p>Variance = ∫(-∞∞) (x - μ)^2 \\* f(x) dx = ∫(-∞∞) x^2 \\* f(x) dx</p>\",",
+    "answerShort": "Variance = ∫(-∞∞) x^2 \\* f(x) dx\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:50:40.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_continuous_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x).</p>",
+    "hints": [
+      "<p>The variance is the expected value of the squared difference from the mean.</p>",
+      "<p>You can use integration to find the expected value.</p>",
+      "<p>Start by finding the mean, then square the difference and integrate.</p>"
+    ],
+    "solutionHtml": "<p>To find the variance, we first need to find the mean:</p>\\( \\int_{-\\infty}^{\\infty} x f(x) dx = 0.5 \\)<p>Then, we can calculate the squared difference from the mean:</p>\\( (x - 0.5)^2 \\)<p>Next, we integrate this expression to find the expected value:</p>\\[ \\int_{-\\infty}^{\\infty} (x-0.5)^2 f(x) dx = 0.25 \\]<p>The variance is then the expected value of the squared difference from the mean:</p>\\( \\sigma^2 = 0.25 \\)<p>So, the final answer is:</p>\\[ \\boxed{\\sigma^2 = 0.25} \\]\",",
+    "answerShort": "σ² = 0.25\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:51:01.246Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_continuous_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x).</p>",
+    "hints": [
+      "Start by recalling the definition of variance.",
+      "Use the fact that the variance is equal to the expected value of the squared difference from the mean.",
+      "You can use integration to find the expected value."
+    ],
+    "solutionHtml": "<p>The variance of X is given by:</p>\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\)<p>where E[X] is the mean of X.</p><p>To find the expected value, we can use integration:</p>\\(E[X] = \\int_{-\\infty}^{\\infty} x f(x) dx\\)<p>Then, we can plug this back into the variance formula:</p>\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\)\\(<p>Now, you can use substitution or integration by parts to evaluate the integral.</p>\",",
+    "answerShort": "The final answer is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:51:22.273Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variance_continuous_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often encounter continuous random variables (RVs). The variance of such a variable is crucial in understanding its spread and uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+      "name": "Variance Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the variance of a continuous RV X with probability density function (PDF) f_X(x) = 2e^{-2x} for x ≥ 0.</p>",
+      "hints": [
+        "Hint: Use the given PDF to set up an integral.",
+        "Hint: Simplify the integral by recognizing a familiar function."
+      ],
+      "solutionHtml": "<p>Step 1: Set up the integral using the formula.\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]</p><p>Step 2: Evaluate the expected value of X.\\[ E[X] = \\int_{0}^{\\infty} x f_X(x) dx \\]</p><p>Step 3: Substitute the result from Step 2 into the integral in Step 1.\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]</p>",
+      "answerShort": "The variance is 1/4."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the variance of a continuous RV X with probability density function (PDF) f_X(x) = 3x^2 for x ≥ 0.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Set up the integral using the formula.",
+          "mathHtml": "\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+          "explanation": "We're setting up the integral to evaluate the variance."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the expected value of X.",
+          "mathHtml": "\\[ E[X] = \\int_{0}^{\\infty} x f_X(x) dx \\]",
+          "explanation": "The expected value is a weighted average of possible values."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Substitute the result from Step 2 into the integral in Step 1.",
+          "mathHtml": "\\[ \\text{Var}(X) = \\int_{0}^{\\infty} (x - E[X])^2 f_X(x) dx \\]",
+          "explanation": "Now we're evaluating the variance using the expected value."
+        }
+      ],
+      "finalAnswer": "The answer is 3/5."
+    },
+    "intuition": "Understanding the variance of continuous RVs helps in modeling real-world phenomena and making predictions.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:52:03.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variance_continuous_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often need to calculate the variance of a continuous random variable.</p>",
+    "formula": "{",
+    "latex": "\\[\\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f_X(x) dx\\]",
+    "name": "Variance formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function f_X(x) = 1/√(2π) \\* e^(-x^2/2), where E[X] = 0.</p>\",",
+    "hints": [
+      "Use the definition of variance",
+      "Integrate by parts"
+    ],
+    "solutionHtml": "<p>Step 1: Expand the square term and apply the expected value.</p><p>\\[E[(X-E[X])^2] = \\int_{-\\infty}^{\\infty} (x^2) f_X(x) dx\\]</p><p>Step 2: Integrate by parts, using u = x^2 and dv = f_X(x) dx.</p><p>\\[= -\\frac{1}{\\sqrt{2π}} \\int_{-\\infty}^{\\infty} x^2 e^{-x^2/2} dx + E[X] \\int_{-\\infty}^{\\infty} 2xe^{-x^2/2} dx\\]</p><p>Step 3: Evaluate the integral and simplify.</p>",
+    "answerShort": "The answer is 1\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the variance of a continuous random variable X with probability density function f_X(x) = 1/√(2π) \\* e^(-x^2/2), where E[X] = 0.</p>\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Expand the square term and apply the expected value",
+        "mathHtml": "\\[E[(X-E[X])^2] = \\int_{-\\infty}^{\\infty} (x^2) f_X(x) dx\\]",
+        "explanation": "We use the definition of variance and expand the square term."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Integrate by parts",
+        "mathHtml": "\\[= -\\frac{1}{\\sqrt{2π}} \\int_{-\\infty}^{\\infty} x^2 e^{-x^2/2} dx + E[X] \\int_{-\\infty}^{\\infty} 2xe^{-x^2/2} dx\\]",
+        "explanation": "We integrate by parts, using u = x^2 and dv = f_X(x) dx."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Evaluate the integral and simplify",
+        "mathHtml": "",
+        "explanation": "We evaluate the integral and simplify to get the final answer."
+      }
+    ],
+    "finalAnswer": "1\" },",
+    "intuition": "The variance of a continuous random variable is the expected value of the squared difference from the mean.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:52:46.539Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_variance_continuous_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "title": "Variance of Continuous Random Variables",
+    "contentHtml": "<p>In this worked example, we'll explore how to calculate the variance of a continuous random variable.</p>",
+    "formula": {
+      "latex": "\\[\\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\]",
+      "name": "Variance Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x) = 2x, 0 &lt; x &lt; 1.</p>",
+      "hints": [
+        "Hint: Use the definition of variance and integrate by parts."
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x) = 2x, 0 &lt; x &lt; 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected value E[X]",
+          "mathHtml": "\\[E[X] = \\int_{0}^{1} 2x^2 dx\\]",
+          "explanation": "We use integration by parts to find the expected value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the second moment E[(X - E[X])^2]",
+          "mathHtml": "\\[E[(X - E[X])^2] = \\int_{0}^{1} (x - E[X])^2 f(x) dx\\]",
+          "explanation": "We use integration by parts to find the second moment."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the variance Var(X)",
+          "mathHtml": "\\[\\text{Var}(X) = E[(X - E[X])^2] - (E[X])^2\\]",
+          "explanation": "We substitute the values of E[X] and E[(X - E[X])^2] to find the variance."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[\\text{Var}(X) = \\int_{0}^{1} (x - E[X])^2 f(x) dx - (E[X])^2\\]",
+          "explanation": "We simplify the expression to get the final answer."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "The variance of a continuous random variable represents the spread or dispersion of the distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:53:22.178Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

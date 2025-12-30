@@ -1,0 +1,107 @@
+[
+  {
+    "id": "prob_prb_exponential_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "problem": "{",
+    "statementHtml": "The exponential distribution <i>X</i> has a memoryless property: P(<i>X</i> > <i>t</i>) = e<sup>-λ<i>t</i></sup>, where λ is the rate parameter. Show that this implies the hazard rate is constant.",
+    "hints": [
+      "Consider the probability density function (PDF) of the exponential distribution.",
+      "Use the definition of the hazard rate and the memoryless property to relate it to the PDF.",
+      "Apply the definition of the integral to find the expected value."
+    ],
+    "solutionHtml": "Let <i>F</i>(<i>t</i>) = P(<i>X</i> ≤ <i>t</i>). Then, the hazard rate is λ(t) = f(<i>t</i>) / F(<i>t</i>). Using the memoryless property, we have:<br><br>\\[P(X > t) = e^{-λt} \\Rightarrow P(X > t | X > s) = e^{-(λ)(t-s)}\\]<br><br>This implies that λ(t) = λ is constant. Therefore, the hazard rate of an exponential distribution is constant.\",",
+    "answerShort": "The hazard rate is constant.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:01:14.297Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_exponential_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "problem": {
+      "statementHtml": "Let X be a continuous random variable with exponential distribution <i>P(X &gt; x) = e<sup>-λx</sup></i>. Show that the memoryless property holds: <i>P(X &gt; x + t | X &gt; x) = P(X &gt; t)</i>.",
+      "hints": [
+        "Recall the definition of exponential distribution and its relation to Poisson process.",
+        "Think about what it means for a random variable to be memoryless.",
+        "Use the given probability density function (PDF) to find the conditional probability."
+      ],
+      "solutionHtml": "<p>Given the PDF <i>f(x | x &gt; x) = λe<sup>-λx</sup></i>, we can find the conditional probability:</p><ul><li>P(X &gt; x + t | X &gt; x) = ∫<sub>x+t</sub><sup>∞</sup> f(u) du / P(X &gt; x)</li></ul><p>Simplify the integral and use the given PDF to get:</p><i>P(X &gt; x + t | X &gt; x) = e<sup>-λ(x+t)</sup> / (1 - e<sup>-λx</sup>)</i>",
+      "answerShort": "<i>P(X &gt; x + t | X &gt; x) = P(X &gt; t)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to condition on X &gt; x",
+      "Not recognizing the memoryless property"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:01:37.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_exponential_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "problem": "{",
+    "statementHtml": "Let $X$ be a continuous random variable with exponential distribution parameter $\\lambda$. Show that the memoryless property holds: P(X > t + s | X > t) = P(X > s) for all $t, s \\geq 0$.\",",
+    "hints": [
+      "Think about what it means to have a memoryless process.",
+      "Use the definition of exponential distribution and the given condition.",
+      "Relate this problem to the Poisson distribution."
+    ],
+    "solutionHtml": "<p>To prove the memoryless property, we need to show that P(X > t + s | X > t) = P(X > s).</p><p>Using the definition of exponential distribution, we have:</p>\\[P(X > t + s | X > t) = \\frac{\\int_{t+s}^{\\infty} \\lambda e^{-\\lambda x} dx}{\\int_t^{\\infty} \\lambda e^{-\\lambda x} dx}\\]\\[= \\frac{e^{-\\lambda(t+s)} - e^{-\\lambda(\\infty)}}{e^{-\\lambda t} - e^{-\\lambda(\\infty)}}\\]\\[= e^{-\\lambda s}.\\]On the other hand, we have:</p>\\[P(X > s) = \\int_s^{\\infty} \\lambda e^{-\\lambda x} dx\\]\\[= e^{-\\lambda s}.\\]Therefore, P(X > t + s | X > t) = P(X > s), and the memoryless property holds.</p>\",",
+    "answerShort": "The memoryless property holds.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:02:02.377Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_exponential_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "exponential",
+    "problem": "{",
+    "statementHtml": "<p>Consider a memoryless continuous random variable X with probability density function (PDF) f(x) = λe<sup>-λx</sup> for x ≥ 0 and λ > 0.</p>",
+    "hints": [
+      "Think about the meaning of 'memoryless'. What does it imply about the distribution?",
+      "Recall the definition of a Poisson process. How is this related to the exponential distribution?",
+      "Focus on the hazard rate, which represents the instantaneous failure rate."
+    ],
+    "solutionHtml": "<p>To prove that X has the memoryless property, we need to show that P(X > t + s | X > t) = P(X > s) for all t, s ≥ 0.</p><p>Let F(x) be the cumulative distribution function (CDF). Then,</p>\\[P(X > t + s | X > t) = \\frac{F(t+s)-F(t)}{1-F(t)}\\]\\[= \\frac{\\int_t^{t+s} f(u) du}{\\int_0^t f(u) du}\\]\\[= e^{-λs}\\] (by substitution and integration)\\[= P(X > s),\\]as desired.</p>\",",
+    "answerShort": "The exponential distribution is memoryless.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:02:24.254Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

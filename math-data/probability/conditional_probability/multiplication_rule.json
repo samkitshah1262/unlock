@@ -1,0 +1,443 @@
+[
+  {
+    "id": "prob_con_multiplication_rule_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule in Conditional Probability",
+    "contentHtml": "<p>The Multiplication Rule is a fundamental concept in conditional probability that allows us to chain together multiple conditional probabilities. It's often represented using tree diagrams.</p><p>Given two events A and B, the rule states that P(A ∩ B) = P(A | B) × P(B). This can be extended to any number of events.</p>",
+    "formula": "{",
+    "latex": "\\(P(A \\cap B) = P(A|B) \\times P(B)\\)\",",
+    "name": "Multiplication Rule\" },",
+    "intuition": "The Multiplication Rule is like a series of conditional statements. You start with the probability of an event given another, and then multiply it by the original probability.",
+    "visualDescription": "A tree diagram showing the chain of conditional probabilities",
+    "commonMistakes": [
+      "Forgetting to consider the intersection of events"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks in machine learning"
+    ],
+    "tags": [
+      "conditional probability",
+      "multiplication rule"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:58:46.474Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multiplication_rule_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule in Conditional Probability",
+    "contentHtml": "<p>The Multiplication Rule is a fundamental concept in conditional probability that helps us calculate the probability of an event given that another event has occurred.</p><p>Given two events A and B, the rule states that:</p>\\(P(A \\cap B) = P(B) \\cdot P(A | B)\\)<p>This formula can be visualized using tree diagrams, where we start with the initial probability of event B, then multiply it by the conditional probability of event A given that event B has occurred.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(A \\cap B) = P(B) \\cdot P(A | B)\\)\",",
+    "name": "Multiplication Rule\" },",
+    "intuition": "The Multiplication Rule is a natural extension of the definition of conditional probability. It makes sense that we would multiply the probability of event B by the probability of event A given that event B has occurred.",
+    "realWorldApplications": [
+      "In machine learning, this rule is used to calculate the probability of a class label given certain features."
+    ],
+    "commonMistakes": "[\"Not considering the conditional probability \\(P(A | B)\\) when calculating the probability of both events\"],",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:59:05.205Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multiplication_rule_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule in Conditional Probability",
+    "contentHtml": "<p>The Multiplication Rule is a powerful tool in conditional probability that allows us to chain together multiple conditional probabilities. It's like building a tree diagram, where each node represents a condition and the edges represent the probability of moving from one node to another.</p><p>Given two events A and B, the Multiplication Rule states that P(A∩B) = P(A|B) × P(B).</p>",
+    "formula": "{",
+    "latex": "\\(P(A \\cap B) = P(A | B) \\times P(B)\\)\",",
+    "name": "Multiplication Rule\" },",
+    "intuition": "Think of it like a decision tree: you start at the root node, then move to the next node based on the condition. The Multiplication Rule helps us calculate the probability of reaching each node.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Markov chains"
+    ],
+    "commonMistakes": [
+      "Forgetting to apply the rule recursively",
+      "Not accounting for conditional dependencies"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:59:22.230Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multiplication_rule_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule in Conditional Probability",
+    "contentHtml": "<p>The Multiplication Rule is a fundamental concept in conditional probability that helps us chain together multiple events to find their joint probability.</p><p>It's essential for modeling complex systems and understanding the relationships between variables.</p>",
+    "formula": "{",
+    "latex": "\\\\P(A \\cap B) = \\\\P(A|B) \\\\cdot \\\\P(B)\",",
+    "name": "Multiplication Rule",
+    "variants": "[ {\"latex\": \"\\\\P(A_1, A_2, ..., A_n) = \\\\prod_{i=1}^n \\\\P(A_i | A_{i-1}, ..., A_1)\", \"description\": \"Generalization to multiple events\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a medical test that's 90% accurate for people with the disease, and 99% accurate for those without. If the test is positive, what's the probability that the person has the disease?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the events",
+        "mathHtml": "\\P(D) = 0.8, \\P(\\neg D) = 0.2, \\P(T|D) = 0.9, \\P(T|\\neg D) = 0.01"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Apply the Multiplication Rule",
+        "mathHtml": "\\P(D|T) = \\frac{\\P(D) \\cdot \\P(T|D)}{\\P(T)}"
+      }
+    ],
+    "finalAnswer": "The probability that the person has the disease given a positive test result is 0.8.\" },",
+    "intuition": "The Multiplication Rule helps us break down complex events into smaller, more manageable pieces and then combine their probabilities.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:59:48.513Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multiplication_rule_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule in Conditional Probability",
+    "contentHtml": "<p>The Multiplication Rule is a fundamental concept in conditional probability that helps us calculate the probability of an event given multiple conditions.</p><p>It's particularly useful when we have a tree diagram representation of our events and want to find the probability of a specific path.</p>",
+    "formula": "{",
+    "latex": "\\[P(A \\mid B) = P(A \\cap B) / P(B)\\]\",",
+    "name": "Multiplication Rule\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two events, A and B, with probabilities P(A) = 0.6 and P(B) = 0.8. We want to find the probability of both events occurring given that event B has occurred.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Calculate the conditional probability",
+    "mathHtml": "\\[P(A \\mid B) = P(A \\cap B) / P(B)\\]\",",
+    "explanation": "We plug in our values and simplify to get the final answer\" } ],",
+    "finalAnswer": "0.48\" },",
+    "intuition": "The Multiplication Rule helps us break down complex conditional probability problems into smaller, more manageable pieces.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:00:15.030Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multiplication_rule_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule",
+    "formula": "{",
+    "latex": "\\[P(A \\cap B) = P(A) \\cdot P(B | A)\\]\",",
+    "name": "Chain rule for conditional probability\" },",
+    "whatEachRepresents": "{",
+    "A": "Event A",
+    "B": "Event B (conditioned on event A)\", \"P(A)\": \"Probability of event A\", \"P(B|A)\": \"Conditional probability of event B given event A\" },",
+    "whenToUse": "When you want to find the probability of two events occurring together, given that one has already occurred.",
+    "specialCases": "[ {\"latex\": \"\\[P(A \\cap B) = P(A) \\cdot P(B)\\]\", \"description\": \"Independent events\"} ],",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a coin flip with probability of heads being 0.5, and then roll a die with probability of getting a 6 given the coin is heads being 0.4. What's the probability of both events occurring?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the probability of the coin flip\", \"mathHtml\": \"\\[P(\\text{heads}) = 0.5\\]\", \"explanation\": \"We know the probability of heads is 50%\"}, {\"stepNumber\": 2, \"description\": \"Find the conditional probability of rolling a 6 given the coin is heads\", \"mathHtml\": \"\\[P(\\text{roll 6} | \\text{heads}) = 0.4\\]\", \"explanation\": \"We know the probability of getting a 6 given the coin is heads is 40%\"}, {\"stepNumber\": 3, \"description\": \"Multiply the probabilities\", \"mathHtml\": \"\\[P(\\text{heads} \\cap \\text{roll 6}) = P(\\text{heads}) \\cdot P(\\text{roll 6} | \\text{heads})\\]\", \"explanation\": \"We multiply the two probabilities together\"} ],",
+    "finalAnswer": "0.2\" },",
+    "intuition": "The multiplication rule helps you chain together conditional probabilities, making it easier to reason about complex events.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:00:45.724Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multiplication_rule_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "problem": "{",
+    "statementHtml": "Given events A and B, use the Multiplication Rule to find P(A ∩ B) if P(A) = 0.3, P(B) = 0.4, and P(A|B) = 0.6.",
+    "hints": "[ \"Start by applying Bayes' formula for P(A|B).\", \"Use the given probability values to simplify your expression.\", \"Recall that P(A ∩ B) = P(B) \\* P(A|B)\" ],",
+    "solutionHtml": "<p>To apply the Multiplication Rule, we need to find P(A ∩ B) using P(B) and P(A|B). First, we'll use Bayes' formula:</p>\\[P(A|B) = \\frac{P(A ∩ B)}{P(B)}\\]<p>Now, substitute in the given values:</p>\\[0.6 = \\frac{P(A ∩ B)}{0.4}\\]<p>Multiply both sides by 0.4 to solve for P(A ∩ B):</p>\\[P(A ∩ B) = 0.6 \\* 0.4 = 0.24\\]",
+    "answerShort": "P(A ∩ B) = 0.24\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:01:06.905Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multiplication_rule_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "problem": "{",
+    "statementHtml": "<p>Given events A and B, show that P(A ∩ B) = P(A) × P(B | A).</p>",
+    "hints": [
+      "Think about what it means for two events to be independent.",
+      "Consider a tree diagram to visualize the conditional probability.",
+      "Use the definition of conditional probability to rewrite the product."
+    ],
+    "solutionHtml": "<p>To solve this, we can start with the definition of conditional probability:</p>\\[P(B | A) = \\frac{P(A ∩ B)}{P(A)}.\\]<p>Now, we want to show that P(A ∩ B) = P(A) × P(B | A).</p>\\[P(A ∩ B) = P(A) × P(B | A)\\]</p>\",",
+    "answerShort": "P(A ∩ B) = P(A) × P(B | A)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:01:24.111Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multiplication_rule_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "problem": "{",
+    "statementHtml": "Let's say we have two events A and B in a probability space. We want to find P(A ∩ B), but we only know P(A) and P(B). How can we use this information to calculate the desired probability?",
+    "hints": [
+      "Think about how you would solve this problem if you knew P(A ∩ B)",
+      "Consider using a tree diagram to visualize the events",
+      "Recall that P(A ∩ B) = P(A)P(B|A)"
+    ],
+    "solutionHtml": "To find P(A ∩ B), we can use the multiplication rule: <br><br>\\[P(A ∩ B) = P(A)P(B|A)\\] <br> Since we don't know P(B|A), let's assume we have a tree diagram that shows the events. We can then use this diagram to find P(B|A). For example, if event A is 'rain' and event B is 'umbrella used', our tree diagram might look like: <br><br>\\[ \\begin{array}{c|cc} & \\text{Rain} & \\text{No Rain} \\\\ \\hline \\text{Umbrella Used} & 0.8 & 0.2 \\\\ \\text{Umbrella Not Used} & 0.1 & 0.9 \\end{array}\\] <br> From this diagram, we can see that P(B|A) = 0.8. Now we can plug in the values to find P(A ∩ B): <br><br>\\[P(A ∩ B) = P(A)P(B|A) = 0.5 \\* 0.8 = 0.4\\]\",",
+    "answerShort": "P(A ∩ B) = 0.4\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:01:50.590Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multiplication_rule_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule: Chain of Conditional Probabilities",
+    "contentHtml": "<p>The Multiplication Rule is a powerful tool in probability theory that helps us compute conditional probabilities by chaining together multiple events.</p>",
+    "formula": {
+      "latex": "\\[P(A|B) = \\frac{P(A\\cap B)}{P(B)}\\]",
+      "name": "Conditional Probability Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a deck of cards with 52 cards, and we draw two cards at random. What is the probability that both cards are hearts?</p>",
+      "hints": [
+        "Think about the probability of drawing one heart card first.",
+        "Then think about the probability of drawing another heart card given the first one was a heart."
+      ],
+      "solutionHtml": "<p>We can use the Multiplication Rule to solve this problem. Let's break it down step by step:</p>",
+      "answerShort": "The answer is 1/17"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a deck of cards with 52 cards, and we draw two cards at random. What is the probability that both cards are hearts?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Step 1: Compute the probability of drawing one heart card",
+          "mathHtml": "\\[P(\\text{heart}) = \\frac{13}{52}\\]",
+          "explanation": "We know there are 13 hearts in a deck of 52 cards."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Step 2: Compute the probability of drawing another heart card given the first one was a heart",
+          "mathHtml": "\\[P(\\text{heart} | \\text{heart}) = \\frac{12}{51}\\]",
+          "explanation": "Now we condition on the fact that the first card is a heart. There are 12 hearts left in the deck, and 51 cards total."
+        }
+      ],
+      "finalAnswer": "The probability of both cards being hearts is \\(P(\\text{heart}) \\cdot P(\\text{heart} | \\text{heart}) = \\frac{13}{52} \\cdot \\frac{12}{51} = \\frac{1}{17}\\)"
+    },
+    "intuition": "The key insight here is that we can break down complex conditional probability problems into smaller, more manageable pieces using the Multiplication Rule.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:02:25.275Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multiplication_rule_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule: Chain of Conditional Probabilities",
+    "contentHtml": "<p>The multiplication rule is a fundamental concept in probability theory that helps us compute conditional probabilities by chaining together multiple events.</p>",
+    "formula": "{",
+    "latex": "\\[P(A|B) = \\frac{P(A\\cap B)}{P(B)}\\]",
+    "name": "Conditional Probability Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have three events: A (rain tomorrow), B (cloudy today), and C (foggy tonight). We know that P(A|B) = 0.7, P(B) = 0.4, and P(C) = 0.3. What is the probability of rain tomorrow given foggy tonight?</p>",
+    "hints": [
+      "Hint: Use the multiplication rule to chain together the events"
+    ],
+    "solutionHtml": "<p>Step 1: Compute P(A|C) using the formula</p><ul><li>P(A|C) = \\frac{P(A\\cap C)}{P(C)}</li></ul><p>Step 2: Multiply P(A|C) by P(C) to get P(A)</p><ul><li>P(A) = P(A|C) \\* P(C)</li></ul><p>Step 3: Compute the final answer using Bayes' theorem</p><ul><li>P(A|C) = \\frac{P(A) \\* P(C)}{P(C)}</li></ul>",
+    "answerShort": "P(A|C) = 0.5\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given events A, B, and C, compute the probability of rain tomorrow given foggy tonight.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Compute P(A|C) using the formula",
+        "mathHtml": "\\[P(A|C) = \\frac{P(A\\cap C)}{P(C)}\\]",
+        "explanation": "We're applying the multiplication rule to chain together the events"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Multiply P(A|C) by P(C) to get P(A)",
+        "mathHtml": "\\[P(A) = P(A|C) \\* P(C)\\]",
+        "explanation": "We're using the formula for conditional probability and multiplying both sides by P(C)"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Compute the final answer using Bayes' theorem",
+        "mathHtml": "\\[P(A|C) = \\frac{P(A) \\* P(C)}{P(C)}\\]",
+        "explanation": "We're applying Bayes' theorem to get the desired probability"
+      }
+    ],
+    "finalAnswer": "0.5\" },",
+    "intuition": "The multiplication rule helps us chain together multiple events by multiplying their conditional probabilities.",
+    "visualDescription": "A tree diagram showing the chain of events",
+    "commonMistakes": "[\"Forgetting to multiply P(A|C) by P(C\")],",
+    "realWorldApplications": [
+      "Predicting weather patterns"
+    ],
+    "tags": [
+      "conditional probability",
+      "multiplication rule"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:03:06.881Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multiplication_rule_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "conditional_probability",
+    "topic": "multiplication_rule",
+    "title": "Multiplication Rule: Chain of Conditionals",
+    "contentHtml": "<p>When dealing with conditional probabilities, we often encounter complex scenarios involving multiple events. The multiplication rule helps us untangle these dependencies.</p>",
+    "problem": {
+      "statementHtml": "Suppose we have three events A, B, and C, where <i>A</i> is the event that it will rain tomorrow, <i>B</i> is the event that a specific type of flower blooms today, and <i>C</i> is the event that a certain insect species appears. We know:</p><ul><li>P(A) = 0.4 (40% chance of rain)</li><li>P(B|A) = 0.7 (70% chance of blooming given rain)</li><li>P(C|B) = 0.3 (30% chance of insect appearance given blooming)</li></ul>",
+      "hints": [
+        "Think about the probability of each event given the previous ones"
+      ],
+      "solutionHtml": "<p>To find P(A ∩ B ∩ C), we can apply the multiplication rule:</p><ol><li>We start with P(A) = 0.4.</li><li>Given A, we have P(B|A) = 0.7, so we multiply by this probability: P(A) × P(B|A) = 0.28.</li><li>Now, given B, we have P(C|B) = 0.3, and we multiply again: P(A) × P(B|A) × P(C|B) = 0.084.</li></ol>",
+      "answerShort": "P(A ∩ B ∩ C) = 0.084"
+    },
+    "workedExample": {
+      "problemHtml": "<p>What is the probability that it will rain tomorrow, a specific type of flower blooms today, and a certain insect species appears?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Start with the base probability",
+          "mathHtml": "P(A) = 0.4",
+          "explanation": "We begin by considering the initial event A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply the conditional probability for B given A",
+          "mathHtml": "P(B|A) = 0.7",
+          "explanation": "Given that it will rain tomorrow (A), we consider the probability of blooming today (B)."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply by the conditional probability for C given B",
+          "mathHtml": "P(C|B) = 0.3",
+          "explanation": "Now, given that the flower blooms today (B), we consider the probability of the insect species appearing (C)."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply all probabilities together to get the final answer",
+          "mathHtml": "P(A) × P(B|A) × P(C|B) = 0.084",
+          "explanation": "We multiply the three probabilities together to obtain the overall probability of the events occurring."
+        }
+      ],
+      "finalAnswer": "P(A ∩ B ∩ C) = 0.084"
+    },
+    "intuition": "The multiplication rule helps us chain together conditional probabilities, allowing us to calculate complex event combinations.",
+    "visualDescription": "A tree diagram showing the nested conditionals would be a helpful visualization for this concept.",
+    "commonMistakes": [
+      "Forgetting to apply the correct conditional probability",
+      "Not chaining the events correctly"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks in machine learning, where complex dependencies are modeled using conditional probabilities."
+    ],
+    "tags": [
+      "conditional_probability",
+      "multiplication_rule",
+      "chain_rule"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:03:55.317Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

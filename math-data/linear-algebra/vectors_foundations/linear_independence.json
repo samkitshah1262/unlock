@@ -1,0 +1,454 @@
+[
+  {
+    "id": "la_con_linear_independence_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be <i>linearly independent</i> if none of the vectors can be expressed as a combination of the others.</p><p>This means that each vector in the set has its own unique direction and cannot be obtained by scaling or combining the other vectors.</p>",
+    "formula": "{",
+    "latex": "\\( \\mathbf{v}_1, \\ldots, \\mathbf{v}_n \\) are linearly independent if \\( c_1 \\mathbf{v}_1 + \\cdots + c_n \\mathbf{v}_n = \\mathbf{0} \\) only when all coefficients \\( c_i \\) are zero.\",",
+    "name": "Linear Independence\" },",
+    "intuition": "Think of linear independence as the vectors being 'non-redundant'. Each vector has its own unique contribution to the set, and none can be eliminated or replaced without changing the overall behavior.",
+    "realWorldApplications": [
+      "In machine learning, linearly independent features are crucial for avoiding data redundancy and improving model performance."
+    ],
+    "commonMistakes": [
+      "Don't confuse linear independence with orthogonality. Orthogonal vectors are perpendicular to each other, but not necessarily linearly independent."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:44:24.612Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_linear_independence_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>A set of vectors is said to be linearly independent if none of the vectors can be expressed as a combination of the others.</p><p>In other words, if you have a set of vectors <math>\\{\\mathbf{v}_1,\\ldots,\\mathbf{v}_n\\}</math>, then they are linearly independent if and only if the equation</p><p><math>a_1\\mathbf{v}_1+\\cdots+a_n\\mathbf{v}_n=\\mathbf{0}</math>has only the trivial solution <math>(a_1,\\ldots,a_n)=(0,\\ldots,0)</math>.</p>\",",
+    "formula": "{",
+    "latex": "\\[ a_1\\mathbf{v}_1+\\cdots+a_n\\mathbf{v}_n=\\mathbf{0} \\]",
+    "name": "Linear Independence Equation\" },",
+    "intuition": "Think of linear independence like a set of unique building blocks. Each block can't be broken down into smaller pieces using the other blocks.",
+    "visualDescription": "A diagram showing a set of vectors with arrows, where each vector is represented by a distinct color or shape",
+    "commonMistakes": [
+      "Thinking that two vectors are linearly independent just because they're not parallel"
+    ],
+    "realWorldApplications": [
+      "Principal component analysis (PCA) in machine learning relies on the concept of linear independence to identify the most important features"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:44:44.606Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_linear_independence_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be <i>linearly independent</i> if none of the vectors can be expressed as a combination of the others.</p><p>This means that each vector in the set has its own unique direction and cannot be obtained by scaling or combining the other vectors in the set.</p>",
+    "formula": {
+      "latex": "\\[\\text{A set } \\mathbf{S} \\text{ is linearly independent if}\\] \\\\[\nexists c_1, c_2, \\ldots, c_n \\in \\mathbb{R}, \\text{ not all zero, such that } c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + \\ldots + c_n\\mathbf{v}_n = \\mathbf{0} \\]",
+      "name": "Linear Independence Criterion"
+    },
+    "intuition": "Think of linear independence like a set of distinct personalities. Each person (vector) has their own unique traits and characteristics, and none of them can be replicated by combining the others.",
+    "visualDescription": "A diagram showing multiple vectors in different directions, with no single vector being a combination of the others",
+    "commonMistakes": [
+      "Thinking that two vectors are linearly independent just because they're not parallel"
+    ],
+    "realWorldApplications": [
+      "In machine learning, linear independence is crucial for feature selection and dimensionality reduction. For example, principal component analysis (PCA) relies on finding the most linearly independent features to represent high-dimensional data."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:45:05.508Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_linear_independence_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence Theorem",
+    "contentHtml": "<p>The linear independence theorem is a fundamental concept in vector spaces that helps us determine whether a set of vectors is independent or not.</p>",
+    "formula": {
+      "latex": "\\[ \\text{Span}(S) = \\left\\{ c_1v_1 + \\cdots + c_kv_k : c_1, \\ldots, c_k \\in \\mathbb{R} \\right\\} \\]",
+      "name": "Span of a set"
+    },
+    "theorem": {
+      "statement": "\\[ A set S of vectors in V is linearly independent if and only if the only solution to the equation Ax = 0 is x = 0. \\]"
+    },
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:45:17.985Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_linear_independence_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>A set of vectors is said to be linearly independent if none of the vectors can be expressed as a linear combination of the others.</p><ul><li>This means that each vector in the set has its own unique direction and cannot be replaced by a combination of the other vectors.</li></ul>",
+    "formula": {
+      "latex": "\\[\\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n \\text{ are linearly independent } \\Leftrightarrow \\text{ no } c_1, c_2, \\ldots, c_n \\text{ exist such that }\\sum_{i=1}^n c_i \\mathbf{v}_i = \\mathbf{0}\\]",
+      "name": "Linear Independence"
+    },
+    "theorem": {
+      "statement": "\\[\\text{A set of vectors is linearly independent if and only if the only solution to }\\sum_{i=1}^n c_i \\mathbf{v}_i = \\mathbf{0}\\text{ is when all }c_i = 0.\\]"
+    },
+    "intuition": "Linear independence is crucial in many areas of mathematics, including linear algebra, differential equations, and machine learning.",
+    "realWorldApplications": [
+      "In machine learning, linearly independent features are essential for avoiding issues like multicollinearity."
+    ],
+    "tags": [
+      "linear-algebra",
+      "vector-spaces"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:45:38.056Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "<p>Consider a set of vectors \\{\\mathbf{v}_1, ..., \\mathbf{v}_n\\} in a vector space V. Determine whether these vectors are linearly independent.</p>\",",
+    "hints": [
+      "<p>If one vector is a linear combination of the others, they're not independent.</p>",
+      "<p>Check if any vector can be expressed as a sum of scalar multiples of the others.</p>",
+      "<p>Use the fact that a set of vectors is independent if and only if the only linear combination equal to zero is the trivial one (i.e., all coefficients are zero).</p>"
+    ],
+    "solutionHtml": "<p>To test for independence, we can use the following steps:</p><ol><li>\\(\\mathbf{v}_1 = c_1\\mathbf{v}_2 + \\cdots + c_k\\mathbf{v}_n\\) implies \\(c_1 = 0\\).</li><li>If this is true for all vectors, then the set is independent.</li></ol>\",",
+    "answerShort": "Independent if no non-trivial linear combination equals zero\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:45:56.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "Determine whether the set of vectors \\(\\{\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3\\}\\) is linearly independent.\",",
+    "hints": [
+      "Check if any vector can be written as a combination of the others.",
+      "If you find a non-trivial solution to the homogeneous equation, it's not independent.",
+      "Use the definition: a set of vectors is linearly independent if none of them can be expressed as a linear combination of the others."
+    ],
+    "solutionHtml": "<p>To test for linear independence, we can use the following steps:</p><ol><li>Write down the augmented matrix \\([A|I]\\), where \\(A\\) is the matrix whose columns are the vectors in the set and \\(I\\) is the identity matrix.</li><li>If the rank of \\(A\\) is equal to the number of columns, then the set is linearly independent.</li></ol>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:11.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "Determine whether the set of vectors \\[v_1 = (1, 0), v_2 = (0, 1), v_3 = (1, 1)\\] is linearly independent.\",",
+    "hints": [
+      "Check if any vector can be expressed as a combination of the others.",
+      "Think about the geometric meaning: are these vectors pointing in different directions?",
+      "Use the definition of linear independence to guide your approach."
+    ],
+    "solutionHtml": "To test for linear independence, we can use the following steps:\\n\\ 1. Show that no vector is a zero vector.\\n\\ \\[v_1 = (1, 0) \\neq (0, 0), v_2 = (0, 1) \\neq (0, 0), v_3 = (1, 1) \\neq (0, 0)\\]\\n\\ 2. Show that the vectors are not proportional.\\n\\ For any scalar \\(c\\), if\\n\\ \\(cv_1 + v_2 = cv_1 + cv_2 + cv_3\\), then\\n\\ \\(v_2 - v_1 = (0, 1) \\neq (0, 0)\\) and similarly for \\(v_3\\).\\n\\ Therefore, the vectors are linearly independent.\",",
+    "answerShort": "The set of vectors is linearly independent.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:32.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_linear_independence_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "problem": "{",
+    "statementHtml": "<p>Consider a set of vectors <code>\\{\\mathbf{v}_1, \\mathbf{v}_2, ..., \\mathbf{v}_n\\}</code>. Determine whether they are linearly independent or not.</p>\",",
+    "hints": [
+      "Check if any vector is a scalar multiple of another.",
+      "If you find a vector that can be expressed as a combination of the others, try to express it in terms of those vectors.",
+      "If none of the above works, think about whether the vectors span the entire space."
+    ],
+    "solutionHtml": "<p>To test for linear independence, we can use the following steps:</p><ol><li><p>Assume that <code>\\mathbf{v}_1</code> is a linear combination of the other vectors.</p></li><li><p>This means there exist scalars <code>c_2, c_3, ..., c_n</code> such that</p><p><code>\\mathbf{v}_1 = c_2 \\mathbf{v}_2 + c_3 \\mathbf{v}_3 + ... + c_n \\mathbf{v}_n</code>.</p></li><li><p>This is a contradiction, since we assumed that <code>\\mathbf{v}_1</code> was not a linear combination of the other vectors.</p></li><li><p>Therefore, our assumption must be false, and <code>\\mathbf{v}_1</code> is indeed linearly independent from the others.</p></li></ol>\",",
+    "answerShort": "The set of vectors is linearly independent if no vector can be expressed as a combination of the others.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:46:55.624Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_independence_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be linearly independent if none of the vectors can be expressed as a combination of the others.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n\\] are linearly independent if and only if",
+    "name": "Linear Independence\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given the vectors <code>[1, 0], [0, 1]</code>, determine whether they are linearly independent or not.</p>",
+    "hints": [
+      "Hint: Think about what it means for a vector to be expressed as a combination of others."
+    ],
+    "solutionHtml": "<p>To test for linear independence, we can try to express one vector as a combination of the others. Let's say we want to express <code>[1, 0]</code> as a combination:</p><ul><li>We know that <code>[1, 0] = c[1, 0] + d[0, 1]</code> for some constants <code>c</code> and <code>d</code>.</li><li>This implies that <code>c = 1</code> and <code>d = 0</code>, so we can't express <code>[1, 0]</code> as a combination.</li></ul>",
+    "answerShort": "Yes\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the vectors <code>[1, 2], [3, -2], [4, 5]</code>, find the maximal linearly independent set of these vectors.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the determinant of the matrix formed by the given vectors.\", \"mathHtml\": \"\\\\[\\\\det\\\\left(\\\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 3 &amp; -2 \\\\end{bmatrix}\\\\right) = \\\\frac{5}{1}\\]\", \"explanation\": \"The determinant is a measure of linear independence. A non-zero determinant indicates that the vectors are linearly independent.\"}, {\"stepNumber\": 2, \"description\": \"Find the rank of the matrix.\", \"mathHtml\": \"\\\\[\\\\text{rank}\\\\left(\\\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 3 &amp; -2 \\\\end{bmatrix}\\\\right) = 2\\]\", \"explanation\": \"The rank is a measure of the dimensionality of the vector space. A rank-2 matrix indicates that we have two linearly independent vectors.\"}, {\"stepNumber\": 3, \"description\": \"Find the maximal linearly independent set.\", \"mathHtml\": \"\\\\[\\\\text{Maximal Linearly Independent Set} = \\\\left\\\\{\\\\begin{bmatrix}1 \\\\\\\\ 2 \\\\end{bmatrix}, \\\\begin{bmatrix}0 \\\\\\\\ -1 \\\\end{bmatrix}\\\\right\\\\}\\]\", \"explanation\": \"The maximal linearly independent set consists of the two vectors that have a non-zero determinant. In this case, it's <code>[1, 2]</code> and <code>[3, -2]</code>. The vector <code>[4, 5]</code> can be expressed as a combination of these two vectors.\"}, {\"stepNumber\": 4, \"description\": \"Verify the result.\", \"mathHtml\": \"\\\\[\\\\begin{bmatrix}1 &amp; 2 \\\\\\\\ 3 &amp; -2 \\\\end{bmatrix}\\\\begin{bmatrix}-2 \\\\\\\\ 1 \\\\end{bmatrix} = \\\\begin{bmatrix}0 \\\\\\\\ 0 \\\\end{bmatrix}\\]\", \"explanation\": \"We can verify that the vector <code>[4, 5]</code> is indeed a combination of the two vectors in the maximal linearly independent set.\"}, {\"stepNumber\": 5, \"description\": \"State the final answer.\", \"mathHtml\": \"\\\\[\\\\text{Maximal Linearly Independent Set} = \\\\left\\\\{\\\\begin{bmatrix}1 \\\\\\\\ 2 \\\\end{bmatrix}, \\\\begin{bmatrix}3 \\\\\\\\ -2 \\\\end{bmatrix}\\\\right\\\\}\\]\", \"explanation\": \"The maximal linearly independent set is <code>[1, 2]</code> and <code>[3, -2]</code>.\"} ],",
+    "finalAnswer": "\\\\[\\\\text{Maximal Linearly Independent Set} = \\\\left\\\\{\\\\begin{bmatrix}1 \\\\\\\\ 2 \\\\end{bmatrix}, \\\\begin{bmatrix}3 \\\\\\\\ -2 \\\\end{bmatrix}\\\\right\\\\}\\]\" },",
+    "intuition": "<p>Linear independence is a fundamental concept in linear algebra. It's essential to understand that it's not just about finding the most vectors possible, but rather identifying the vectors that are truly independent.</p>",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:47:53.674Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_independence_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be linearly independent if none of the vectors can be expressed as a combination of the others.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_k\\] are linearly independent",
+      "name": ""
+    },
+    "problem": {
+      "statementHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, 0, 0], \\mathbf{b} = [0, 1, 0], and \\mathbf{c} = [0, 0, 1]</code>, determine whether they are linearly independent.</p>",
+      "hints": [
+        "Hint: Think about the geometric meaning of independence"
+      ],
+      "solutionHtml": "<p>To test for linear independence, we can try to express one vector as a combination of the others. For example, let's see if \\mathbf{a} can be expressed as a combination of \\mathbf{b} and \\mathbf{c}. We have:</p><ul><li>\\[1 = 0x_2 + 0x_3\\]</li></ul><p>This is not possible, so we know that \\mathbf{a} cannot be expressed as a combination of \\mathbf{b} and \\mathbf{c}. Similarly, we can show that none of the vectors can be expressed as a combination of the others.</p>",
+      "answerShort": "The given vectors are linearly independent."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, 0, 0], \\mathbf{b} = [0, 1, 0], and \\mathbf{c} = [0, 0, 1]</code>, determine whether they are linearly independent.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Try to express one vector as a combination of the others",
+          "mathHtml": "\\[1 = 0x_2 + 0x_3\\]",
+          "explanation": "If we can express \\mathbf{a} as a combination of \\mathbf{b} and \\mathbf{c}, then it's not independent"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Show that none of the vectors can be expressed as a combination of the others",
+          "mathHtml": "",
+          "explanation": "This is the key insight"
+        }
+      ],
+      "finalAnswer": "The given vectors are linearly independent."
+    },
+    "intuition": "",
+    "visualDescription": "A diagram showing three vectors in 3D space, none of which can be expressed as a combination of the others",
+    "commonMistakes": [
+      "Thinking that independence means the vectors must be perpendicular"
+    ],
+    "realWorldApplications": [
+      "In machine learning, linearly independent features are crucial for avoiding data redundancy and improving model performance"
+    ],
+    "tags": [
+      "linear algebra",
+      "vector spaces",
+      "independence"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:48:30.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_independence_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence: Definition and Testing",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be <i>linearly independent</i> if none of the vectors can be expressed as a combination of the others.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{v}_1, \\ldots, \\mathbf{v}_k\\] are linearly independent if and only if \\(c_1 \\mathbf{v}_1 + \\cdots + c_k \\mathbf{v}_k = 0\\) implies \\(c_1 = \\cdots = c_k = 0\\)"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, -2, 3], \\mathbf{b} = [4, 5, -6], and \\mathbf{c} = [-1, 0, 1]</code>, determine whether they are linearly independent.</p>",
+      "hints": [
+        "Hint: Use the definition of linear independence"
+      ],
+      "solutionHtml": "<p>To test for linear independence, we can try to express one vector as a combination of the others. Suppose \\(c_1 \\mathbf{a} + c_2 \\mathbf{b} = 0\\). We can solve for \\(c_1\\) and \\(c_2\\) using Gaussian elimination:</p><ul><li>Subtract \\(2\\) times the first equation from the second:</li></ul>",
+      "answerShort": "No"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, -2, 3], \\mathbf{b} = [4, 5, -6]</code>, and \\(\\mathbf{c} = [-1, 0, 1]\\)</code>, determine whether they are linearly independent.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Express one vector as a combination of the others",
+          "mathHtml": "\\[c_1 \\mathbf{a} + c_2 \\mathbf{b} = 0\\]",
+          "explanation": "We're trying to find a linear combination that equals zero."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve for the coefficients",
+          "mathHtml": "\\[c_1 = -\\frac{5}{3}, c_2 = \\frac{8}{3}\\]",
+          "explanation": "We're solving for the coefficients to see if we can express one vector as a combination of the others."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check if the resulting vector is zero",
+          "mathHtml": "\\[c_1 \\mathbf{a} + c_2 \\mathbf{b} = [-\\frac{5}{3}, \\frac{8}{3}, 0]\\]",
+          "explanation": "If we can express one vector as a combination of the others, then it's not linearly independent."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Conclude that the vectors are not linearly independent",
+          "mathHtml": "",
+          "explanation": "Since we found a non-zero combination, the vectors are not linearly independent."
+        }
+      ],
+      "finalAnswer": "No"
+    },
+    "intuition": "Linear independence is important in machine learning and artificial intelligence because it allows us to identify redundant features or dimensions in our data.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:49:12.403Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_linear_independence_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "linear_independence",
+    "title": "Linear Independence",
+    "contentHtml": "<p>In linear algebra, a set of vectors is said to be linearly independent if none of the vectors can be expressed as a combination of the others.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n\\] are linearly independent",
+      "name": "Linear Independence"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, 2], \\mathbf{b} = [3, 4], and \\mathbf{c} = [5, 6]</code>, determine if they are linearly independent.</p>",
+      "hints": [
+        "Hint: Check if one vector is a scalar multiple of another"
+      ],
+      "solutionHtml": "<p>To test for linear independence, we can try to express one vector as a combination of the others. Let's say we want to express <code>\\mathbf{a}</code> as a combination:</p><ul><li>We can write <code>\\mathbf{a} = c_1 \\mathbf{b} + c_2 \\mathbf{c}</code>, where <code>c_1</code> and <code>c_2</code> are scalars.</li><li>We can substitute the values of <code>\\mathbf{b}</code> and <code>\\mathbf{c}</code>: <code>[1, 2] = c_1 [3, 4] + c_2 [5, 6]</code>.</li><li>We can equate corresponding components: <code>1 = 3c_1 + 5c_2</code> and <code>2 = 4c_1 + 6c_2</code>.</li><li>We can solve this system of equations to find the values of <code>c_1</code> and <code>c_2</code>. This will tell us if we can express <code>\\mathbf{a}</code> as a combination of <code>\\mathbf{b}</code> and <code>\\mathbf{c}</code>.</li></ul>",
+      "answerShort": "No, the vectors are linearly independent"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the vectors <code>\\mathbf{a} = [1, 2], \\mathbf{b} = [3, 4], and \\mathbf{c} = [5, 6]</code>, determine if they are linearly independent.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write <code>\\mathbf{a}</code> as a combination of <code>\\mathbf{b}</code> and <code>\\mathbf{c}</code>",
+          "mathHtml": "<code>\\mathbf{a} = c_1 \\mathbf{b} + c_2 \\mathbf{c}</code>",
+          "explanation": "This is the general form of a linear combination."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Substitute values and equate components",
+          "mathHtml": "<code>[1, 2] = c_1 [3, 4] + c_2 [5, 6]</code>",
+          "explanation": "We're checking if one vector can be expressed as a combination of the others."
+        }
+      ],
+      "finalAnswer": "No"
+    },
+    "intuition": "<p>Linear independence is about finding a set of vectors that cannot be reduced to a smaller set. This has important implications in machine learning, where we often work with high-dimensional spaces.</p>",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:49:56.626Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

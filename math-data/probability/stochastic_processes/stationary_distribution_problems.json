@@ -1,0 +1,119 @@
+[
+  {
+    "id": "prob_prb_stationary_distribution_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "problem": {
+      "statementHtml": "Find a stationary distribution <i>P</i> of a Markov chain with transition matrix <i>A</i>, given that <i>P</i> exists and is unique.",
+      "hints": [
+        "Check if the matrix <i>A</i> has any eigenvalues equal to 1, as this can affect the existence and uniqueness of <i>P</i>",
+        "Recall that a stationary distribution must satisfy <i>P</i><sup>T</sup> = <i>P</i>",
+        "Think about how the PageRank algorithm uses Markov chains to rank web pages"
+      ],
+      "solutionHtml": "<p>To show existence, we can use the fact that the matrix <i>A</i> is stochastic and thus has a limiting distribution.</p><p>To show uniqueness, we can use the Perron-Frobenius theorem.</p>",
+      "answerShort": "The stationary distribution exists and is unique."
+    },
+    "commonMistakes": [
+      "Forgetting to check for eigenvalues equal to 1",
+      "Not considering the limiting behavior of the Markov chain"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:25:01.283Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_stationary_distribution_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "problem": {
+      "statementHtml": "<p>Consider a Markov chain with transition matrix P. Prove that if P has a stationary distribution π, then π is unique.</p>",
+      "hints": [
+        "Start by assuming two different stationary distributions π1 and π2.",
+        "Show that the difference π1 - π2 is a fixed point of P.",
+        "Use this to conclude that π1 = π2."
+      ],
+      "solutionHtml": "<p>To prove uniqueness, assume π1 ≠ π2. Then, let π = π1 - π2.</p><p>Since π is a stationary distribution, we have πP = π.</p><p>This implies that πP - π = 0, or Pπ = π.</p><p>But this means π is also a fixed point of P, which contradicts the assumption π1 ≠ π2.</p><p>Therefore, our initial assumption must be false, and π1 = π2.</p>",
+      "answerShort": "π is unique"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the case where π1 = π2.",
+      "Not recognizing that Pπ = π implies π is a fixed point."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:25:20.140Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_stationary_distribution_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "problem": {
+      "statementHtml": "<p>Find the stationary distribution of a Markov chain with transition matrix P.</p>",
+      "hints": [
+        "<p>The stationary distribution π exists if and only if there is no absorbing state.</p>",
+        "<p>Use the fact that πP = π to find the stationary distribution.</p>",
+        "<p>You can use the PageRank example to help you solve this problem.</p>"
+      ],
+      "solutionHtml": "<p>To find the stationary distribution, we need to find a vector π such that πP = π. Since there is no absorbing state, π exists and is unique.</p><p>We can normalize π to get the stationary distribution.</p>",
+      "answerShort": "π"
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:25:32.965Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_stationary_distribution_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "problem": {
+      "statementHtml": "<p>Find the stationary distribution of a Markov chain.</p>",
+      "hints": [
+        "Check if the Markov chain is irreducible and aperiodic.",
+        "Look for a detailed example to understand the process.",
+        "The stationary distribution will be a probability vector."
+      ],
+      "solutionHtml": "<p>To find the stationary distribution, we need to solve the equation <i>Pv = v</i>, where <i>P</i> is the transition matrix and <i>v</i> is the stationary distribution. Since the Markov chain is irreducible and aperiodic, there exists a unique stationary distribution.</p><p>We can use linear algebra techniques to solve for <i>v</i>. For example, we can use the power method or Gaussian elimination.</p>",
+      "answerShort": "The stationary distribution"
+    },
+    "commonMistakes": [
+      "Forgetting to check if the Markov chain is irreducible and aperiodic.",
+      "Not recognizing that the stationary distribution will be a probability vector."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:25:49.599Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

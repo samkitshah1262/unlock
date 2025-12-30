@@ -1,0 +1,110 @@
+[
+  {
+    "id": "la_prb_finding_eigenvectors_004",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "finding_eigenvectors",
+    "problem": {
+      "statementHtml": "Find an eigenvector of the matrix <code>A</code> corresponding to eigenvalue <code>&lambda;</code>.",
+      "hints": [
+        "Start by computing the null space of <code>(A - &lambda;I)</code>",
+        "The eigenspace is a subspace of the null space, so find its basis",
+        "Geometric multiplicity is important here"
+      ],
+      "solutionHtml": "<p>To find an eigenvector, we need to find a non-zero vector <code>v</code> such that <code>(A - &lambda;I)v = 0</code>. We can compute the null space of this matrix using Gaussian elimination or other methods.</p><p>The resulting basis for the null space will contain our eigenvector. Since we're looking for a non-zero vector, we'll take one of the vectors in the basis and normalize it to get our eigenvector.</p>",
+      "answerShort": "The eigenvector is <code>v</code>"
+    },
+    "commonMistakes": [
+      "Forgetting that the eigenspace is a subspace of the null space",
+      "Not normalizing the eigenvector"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:27:51.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_finding_eigenvectors_005",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "finding_eigenvectors",
+    "problem": "{",
+    "statementHtml": "Find the eigenvectors of matrix A = <latex>\\[\\begin{bmatrix} 1 & 2 \\\\ -1 & 3 \\end{bmatrix}\\]</latex> by computing the null space of (A - λI).\",",
+    "hints": [
+      "Start by finding the characteristic polynomial and its roots.",
+      "Use the eigenvectors to find the corresponding eigenvalues.",
+      "The eigenspaces are spanned by the eigenvectors."
+    ],
+    "solutionHtml": "<p>To find the eigenvectors, we first compute the characteristic polynomial:</p><latex>\\[\\det(A - \\lambda I) = \\begin{vmatrix} 1-\\lambda & 2 \\\\ -1 & 3-\\lambda \\end{vmatrix}\\]</latex><p>Expanding along the first row gives:</p><latex>\\[(1-\\lambda)(3-\\lambda)-(-1)(2) = (1-\\lambda)(3-\\lambda)+2\\]</latex><p>Solving for λ yields two eigenvalues: 1 and 4.</p><p>We can then compute the eigenvectors by solving the system:</p><latex>\\[(A - \\lambda I)\\mathbf{v} = \\mathbf{0}\\]</latex><p>For λ = 1, we get:</p><latex>\\[\\begin{bmatrix} 0 & 2 \\\\ -1 & 2 \\end{bmatrix}\\begin{bmatrix} v_1 \\\\ v_2 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}\\]</latex><p>Solving for v1 and v2 gives the eigenvector [1, -1]T.</p>\",",
+    "answerShort": "The eigenvectors are [1, -1]T and [-2, 1]T.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:28:16.590Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_finding_eigenvectors_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "finding_eigenvectors",
+    "problem": "{",
+    "statementHtml": "<p>Find the eigenvectors of a matrix A.</p>",
+    "hints": [
+      "Start by finding the eigenvalues.",
+      "The eigenvectors are in the null space of (A - λI).",
+      "Use the fact that eigenvectors are non-zero and span the eigenspace."
+    ],
+    "solutionHtml": "<p>To find the eigenvectors, we first need to find the eigenvalues. Let λ be an eigenvalue.</p><p>\\[ (A - λI) \\mathbf{v} = 0 \\]</p><p>Solve for v and then normalize it.</p>\",",
+    "answerShort": "The eigenvectors are in the null space of (A - λI).\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:28:30.856Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_finding_eigenvectors_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "finding_eigenvectors",
+    "problem": "{",
+    "statementHtml": "<p>Find the eigenvectors of a matrix A.</p>",
+    "hints": [
+      "Start by finding the eigenvalues of A.",
+      "Use the fact that an eigenvector is in the null space of (A - λI).",
+      "Check if your candidate eigenvectors are linearly independent."
+    ],
+    "solutionHtml": "<p>To find the eigenvectors, we need to solve the equation (A - λI)v = 0.</p>\\n<p>Let's say A has eigenvalue λ with corresponding eigenvector v. Then:</p>\\n\\[ (A - λI)v = 0 \\]\\n<p>We can rewrite this as:</p>\\n\\[ Av = λv \\]\\n<p>Solve for v, and normalize it to get the desired eigenvector.</p>\",",
+    "answerShort": "The eigenvectors are the non-zero solutions to (A - λI)v = 0.\" },",
+    "commonMistakes": [
+      "Forgetting to check linear independence of candidate eigenvectors"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:28:47.083Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

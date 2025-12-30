@@ -1,0 +1,157 @@
+[
+  {
+    "id": "stat_wex_power_analysis_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "title": "Power Analysis in Hypothesis Testing",
+    "contentHtml": "<p>In hypothesis testing, power analysis is crucial to determine the sample size required to detect a specific effect size at a given significance level.</p>",
+    "problem": "{",
+    "statementHtml": "Suppose we want to test whether there's a significant difference between two treatment groups in a clinical trial. We have an effect size of d = 0.5 and a desired power of 80%. What sample size do we need?",
+    "hints": [
+      "Consider the type I error rate",
+      "Think about the standard deviation"
+    ],
+    "solutionHtml": "<p>To perform power analysis, we can use the following steps:</p>",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the parameters\", \"mathHtml\": \"\\(d = 0.5\\), \\(power = 0.8\\)\", \"explanation\": \"We need to specify the effect size and desired power\"}, {\"stepNumber\": 2, \"description\": \"Choose a statistical test\", \"mathHtml\": \"\", \"explanation\": \"For example, we might use a two-sample t-test or ANOVA\"}, {\"stepNumber\": 3, \"description\": \"Calculate the required sample size\", \"mathHtml\": \"\\[n = \\frac{(z_{1-\\alpha} + z_{1-power})^2 \\cdot (\\sigma / d)^2}{\\epsilon}\\]\", \"explanation\": \"Here, \\(z_{1-\\alpha}\\) is the standard normal deviate for the type I error rate, and \\(\\epsilon\\) is a small value to account for numerical stability\"}, {\"stepNumber\": 4, \"description\": \"Check the assumptions\", \"mathHtml\": \"\", \"explanation\": \"Make sure our sample size calculation assumes the correct distribution and homogeneity of variance\"} ],",
+    "finalAnswer": "The required sample size is...\" },",
+    "intuition": "Power analysis helps us determine how many participants we need to detect a specific effect size, taking into account the type I error rate and other factors.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:04:14.812Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_power_analysis_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "title": "Power Analysis in Hypothesis Testing",
+    "contentHtml": "<p>In hypothesis testing, power analysis is crucial to determine the required sample size for a given effect size and significance level.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Power} = 1 - \\beta = P(\\text{Reject }H_0 | H_1) \\]\",",
+    "name": "Power Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to test the mean difference between two groups with a given effect size and significance level. How do we determine the required sample size for a desired power?</p>",
+    "hints": [
+      "Consider the type I error rate",
+      "Think about the standard deviation of the outcome variable"
+    ],
+    "solutionHtml": "<p>Here's how to solve this problem step-by-step:</p>",
+    "answerShort": "The required sample size\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test the mean difference between two groups with an effect size of 0.5 and a significance level of 0.05, assuming a type I error rate of 0.1.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the parameters\", \"mathHtml\": \"\\[ \\text{Power} = 1 - \\beta = P(\\text{Reject }H_0 | H_1) \\]\", \"explanation\": \"Start by defining the power and type I error rate.\" }, {\"stepNumber\": 2, \"description\": \"Determine the required sample size\", \"mathHtml\": \"\\[ n = \\frac{(Z_{\\alpha} + Z_\\beta)^2}{(\\Delta/\\sigma)^2} \\]\", \"explanation\": \"Use the formula for power analysis to determine the required sample size.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the standard deviation\", \"mathHtml\": \"\\[ \\sigma = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2} \\]\", \"explanation\": \"Use the sample data to estimate the standard deviation.\" }, {\"stepNumber\": 4, \"description\": \"Check the assumptions\", \"mathHtml\": \"\", \"explanation\": \"Verify that the assumptions of normality and equal variance are met.\" } ],",
+    "finalAnswer": "The required sample size is...\" },",
+    "intuition": "Power analysis helps us determine the minimum sample size needed to detect a given effect size with a certain level of confidence.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:04:45.011Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_power_analysis_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "title": "Power Analysis: Calculating Sample Size",
+    "contentHtml": "<p>In power analysis, we want to determine the sample size required to detect a specific effect size with a certain level of power.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we're conducting an experiment to compare the mean scores of two groups. We expect a moderate effect size (d = 0.5) and want to detect it with 80% power at α = 0.05.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the parameters\", \"mathHtml\": \"\\( d = 0.5 \\)\", \"explanation\": \"We're given the effect size (d) and want to use it in our calculation.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the standard deviation\", \"mathHtml\": \"\\( \\sigma = \\sqrt{\\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\mu)^2 } \\)\", \"explanation\": \"We'll need to estimate the population standard deviation (\\(\\sigma\\)) from a pilot study or previous research.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the required sample size\", \"mathHtml\": \"\\[ n = \\left( \\frac{Z^2 \\sigma^2}{d^2} \\right) \\]\", \"explanation\": \"We'll use the formula for calculating the required sample size (n), which depends on the effect size, standard deviation, and desired power.\"}, {\"stepNumber\": 4, \"description\": \"Check the results\", \"mathHtml\": \"\\( n = 384.5 \\)\", \"explanation\": \"After plugging in our values, we get an estimated sample size of approximately 385 participants.\"} ],",
+    "finalAnswer": "n ≈ 385\" },",
+    "intuition": "Power analysis helps us determine the minimum sample size required to detect a specific effect size with a certain level of power.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:05:09.279Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_power_analysis_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "title": "Power Analysis: Sample Size Calculation",
+    "contentHtml": "<p>In power analysis, we want to determine the required sample size to detect a specific effect size with a certain level of power.</p>",
+    "formula": {
+      "latex": "\\[ \text{Sample Size} = \\frac{(z + p) ^ 2}{(\\delta)^2} \\]",
+      "name": "sampleSizeFormula"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to detect an effect size of 0.5 standard deviations with a power of 0.8.</p>",
+      "hints": [
+        "Hint: Use the inverse normal distribution function"
+      ],
+      "solutionHtml": "<p>We can use the formula above to calculate the required sample size.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Calculate the sample size needed to detect an effect size of 0.5 standard deviations with a power of 0.8.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Specify the desired power and effect size",
+          "mathHtml": "\\[ \text{Power} = 0.8 \\]",
+          "explanation": "We need to specify the level of power we want to achieve."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a significance level",
+          "mathHtml": "\\[ \\alpha = 0.05 \\]",
+          "explanation": "A common choice is an alpha level of 0.05."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the Z-score",
+          "mathHtml": "\\[ z = \\frac{\\delta}{\\sqrt{\\frac{1}{n}}} \\]",
+          "explanation": "We need to calculate the Z-score for our desired effect size."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use the inverse normal distribution function to find the corresponding sample size",
+          "mathHtml": "\\[ n = \\left( \\frac{(z + p) ^ 2}{(\\delta)^2} \\right) \\]",
+          "explanation": "We can use the inverse normal distribution function to find the required sample size."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Round up to the nearest whole number",
+          "mathHtml": "\\[ n = \\lceil \\frac{(z + p) ^ 2}{(\\delta)^2} \\rceil \\]",
+          "explanation": "We need to round up to the nearest whole number to ensure we have enough data points."
+        }
+      ],
+      "finalAnswer": "The required sample size is approximately 123."
+    },
+    "intuition": "Power analysis helps us determine how many data points we need to detect a specific effect size with a certain level of confidence.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:05:39.808Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

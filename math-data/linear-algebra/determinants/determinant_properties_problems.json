@@ -1,0 +1,120 @@
+[
+  {
+    "id": "la_prb_determinant_properties_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_properties",
+    "problem": {
+      "statementHtml": "<p>Consider a matrix A and its transpose AT. Show that <i>det(ATA) = (det(A))<sup>2</sup></i>.</p>",
+      "hints": [
+        "Start by recalling the definition of determinant.",
+        "Think about what happens when you multiply two matrices together.",
+        "Use row operations to simplify your expression."
+      ],
+      "solutionHtml": "<p>To begin, recall that <i>det(ATA) = (tr(AT))</i>, where tr denotes the trace.</p><p>Next, note that <i>(tr(AT)) = (tr(A^T))</i>.</p><p>Now, use row operations to show that <i>A^T A</i> is similar to a diagonal matrix.</p><p>This allows us to write <i>det(ATA) = det(A^T A)</i>, which we can simplify using the fact that <i>det(A^T A) = (det(A))^2</i>.</p>",
+      "answerShort": "(det(A))<sup>2</sup>"
+    },
+    "commonMistakes": [
+      "Forgetting to use row operations to simplify the expression.",
+      "Not recalling the definition of determinant."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:03:45.979Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_determinant_properties_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_properties",
+    "problem": "{",
+    "statementHtml": "Let A be a square matrix and perform row operations on it to obtain B. Prove that <i>det(B)</i> = <i>det(A)</i>.",
+    "hints": [
+      "Start by applying the determinant's linearity property.",
+      "Notice that row operations preserve the determinant, but also change the matrix.",
+      "Think about how the transpose of a matrix affects its determinant."
+    ],
+    "solutionHtml": "<p>To prove this, first recall that <i>det(AB)</i> = (<i>det(A)</i>)(<i>det(B)</i>). Since we can write B as A multiplied by some row operation matrix R, we have <i>det(B)</i> = <i>det(RA)</i>. Now apply the determinant's linearity property to the right side:</p><p>\\[<i>det(RA)</i> = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} (r_{i,\\sigma(i)}a_{i,\\sigma(i)})\\]</p><p>Notice that this expression is equal to <i>det(A)</i> multiplied by the determinant of R, which is 1 since row operations preserve the determinant.</p>\",",
+    "answerShort": "<i>det(B)</i> = <i>det(A)</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:04:06.207Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_determinant_properties_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_properties",
+    "problem": {
+      "statementHtml": "Let <i>A</i> be a matrix and <i>B</i> its transpose. Prove that <i>det(AB)</i> equals <i>det(A) &middot; det(B)</i>.",
+      "hints": [
+        "Think about the definition of the determinant.",
+        "Consider the effect of row operations on the determinant.",
+        "Use the fact that transposing a matrix does not change its rank."
+      ],
+      "solutionHtml": "<p>Let's start by applying some row operations to <i>B</i>. Since transposing doesn't change the rank, we can assume that <i>B</i> is in upper triangular form.</p><p>This means that <i>det(B)</i> equals the product of its diagonal entries.</p><p>Now, let's apply some row operations to <i>AB</i>. We can add multiples of one row to another without changing the determinant. Since <i>B</i>'s rows are already triangular, we can add multiples of any row to the last row without affecting the determinant.</p><p>This means that <i>det(AB)</i> equals the product of the diagonal entries of <i>A</i>, which is <i>det(A)</i>.</p>",
+      "answerShort": "<i>det(AB) = det(A) &middot; det(B)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that transposing doesn't change the determinant.",
+      "Not recognizing that row operations preserve the determinant."
+    ],
+    "realWorldApplications": [
+      "In machine learning, this property is used in algorithms like PCA and LDA to transform data."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:04:27.916Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_determinant_properties_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "determinant_properties",
+    "problem": {
+      "statementHtml": "Let <i>A</i> be a matrix and <i>T</i> its transpose. Show that <i>|A| = |T|</i>.",
+      "hints": [
+        "Start by considering the effect of row operations on the determinant.",
+        "Think about what happens when you multiply both sides of an equation by -1.",
+        "Use the fact that transposing a matrix does not change its triangular form."
+      ],
+      "solutionHtml": "<p>To begin, we can use the fact that row operations do not affect the value of the determinant. This means that if <i>A</i> is transformed into <i>B</i> using elementary row operations, then <i>|A| = |B|</i>.</p><p>Next, we can consider what happens when we multiply both sides of an equation by -1. This does not change the value of the determinant, so <i>|-A| = |-T|</i>.</p><p>Finally, we can use the fact that transposing a matrix does not change its triangular form to conclude that <i>T</i> is also triangular. Since the determinant of a triangular matrix is equal to the product of its diagonal entries, we have <i>|T| = |A|</i>.</p>",
+      "answerShort": "<i>|A| = |T|</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that row operations do not affect the determinant.",
+      "Not considering the effect of multiplying both sides by -1."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:04:48.183Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

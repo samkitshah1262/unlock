@@ -1,0 +1,132 @@
+[
+  {
+    "id": "la_wex_orthogonal_matrices_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices: Definition and Properties",
+    "contentHtml": "<p>In linear algebra, an orthogonal matrix is a square matrix whose columns are pairwise orthogonal unit vectors.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{Q}^T \\mathbf{Q} = \\mathbf{I}\\]",
+    "name": "Orthogonality Condition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix \\mathbf{Q}, determine if it is orthogonal.</p>",
+    "hints": [
+      "Check the dot product of each column with itself",
+      "Verify that the columns have unit length"
+    ],
+    "solutionHtml": "<p>To check orthogonality, compute the matrix product \\mathbf{Q}^T \\mathbf{Q}. If this equals the identity matrix, then \\mathbf{Q} is orthogonal.</p>",
+    "answerShort": "Check if \\\\mathbf{Q}^T \\\\mathbf{Q} = \\\\mathbf{I}\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider the matrix \\[\\mathbf{Q} = \\begin{bmatrix} 1/\\sqrt{2}, -1/\\sqrt{2}, 0 \\\\ 1/\\sqrt{2}, 1/\\sqrt{2}, 0 \\\\ 0, 0, 1 \\end{bmatrix}\\]. Is it orthogonal?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the dot product of each column with itself\", \"mathHtml\": \"\\\\[ (1/\\\\sqrt{2})^2 + (-1/\\\\sqrt{2})^2 = 1 \\\\]\", \"explanation\": \"This shows that each column has unit length.\"}, {\"stepNumber\": 2, \"description\": \"Verify the orthogonality of each pair of columns\", \"mathHtml\": \"\\\\[ (1/\\\\sqrt{2}, -1/\\\\sqrt{2}) \\cdot (1/\\\\sqrt{2}, 1/\\\\sqrt{2}) = 0 \\\\]\", \"explanation\": \"This shows that any two columns are orthogonal.\"}, {\"stepNumber\": 3, \"description\": \"Compute the matrix product \\\\mathbf{Q}^T \\\\mathbf{Q}\", \"mathHtml\": \"\\\\[ \\\\begin{bmatrix} 1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ -1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ 0, 0, 1 \\\\end{bmatrix} \\\\begin{bmatrix} 1/\\\\sqrt{2}, -1/\\\\sqrt{2}, 0 \\\\\\\\ 1/\\\\sqrt{2}, 1/\\\\sqrt{2}, 0 \\\\\\\\ 0, 0, 1 \\\\end{bmatrix} = \\\\mathbf{I} \\\\]\", \"explanation\": \"This shows that the matrix product equals the identity matrix, confirming orthogonality.\"}, {\"stepNumber\": 4, \"description\": \"Conclude that \\\\mathbf{Q} is an orthogonal matrix\", \"mathHtml\": \"\", \"explanation\": \"Since we have verified all conditions, we can conclude that \\\\mathbf{Q} is indeed an orthogonal matrix.\"} ],",
+    "finalAnswer": "Yes, the given matrix is orthogonal\" },",
+    "intuition": "Orthogonal matrices preserve lengths and angles of vectors.",
+    "visualDescription": "A diagram showing two vectors with their projections onto a third vector, demonstrating preservation of angle",
+    "commonMistakes": [
+      "Forgetting to check unit length",
+      "Not verifying orthogonality between all pairs of columns"
+    ],
+    "realWorldApplications": [
+      "Rotation matrices in computer graphics and game development"
+    ],
+    "tags": [
+      "orthogonal matrix",
+      "rotation matrix"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:33:15.165Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_matrices_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]",
+      "name": "Orthogonality Condition"
+    },
+    "problem": {
+      "statementHtml": "<p>Given an orthogonal matrix <code>A</code>, show that its transpose is also its inverse.</p>",
+      "hints": [
+        "Hint: Use the orthogonality condition",
+        "Think about the properties of the dot product"
+      ],
+      "solutionHtml": "<p>To prove this, we can start by computing the product <code>\\mathbf{A}^T \\mathbf{A}</code>. Using the orthogonality condition, we get:</p><p><code>\\[\\mathbf{A}^T \\mathbf{A} = \\mathbf{I}\\]</code></p>",
+      "answerShort": "The transpose is also the inverse"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider the orthogonal matrix <code>A = \\begin{bmatrix}0.6 & 0.7 \\\\ -0.7 & 0.6\\end{bmatrix}</code>. Show that its transpose is also its inverse.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the product <code>\\mathbf{A}^T \\mathbf{A}</code>",
+          "mathHtml": "<code>\\[\\begin{bmatrix}0.6 & -0.7 \\\\ 0.7 & 0.6\\end{bmatrix}\\begin{bmatrix}0.6 & 0.7 \\\\ -0.7 & 0.6\\end{bmatrix} = \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}\\]</code>",
+          "explanation": "This shows that the product is the identity matrix"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Show that <code>\\mathbf{A}^T \\mathbf{x}</code> is a scalar multiple of <code>\\mathbf{x}</code>",
+          "mathHtml": "<code>\\[\\begin{bmatrix}0.6 & -0.7 \\\\ 0.7 & 0.6\\end{bmatrix}\\begin{bmatrix}x_1\\\\ x_2\\end{bmatrix} = \\lambda \\begin{bmatrix}x_1\\\\ x_2\\end{bmatrix}\\]</code>",
+          "explanation": "This shows that the matrix transforms vectors to their scaled versions"
+        }
+      ],
+      "finalAnswer": "The transpose is also the inverse"
+    },
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in machine learning for tasks like dimensionality reduction and feature extraction.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:33:51.783Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_orthogonal_matrices_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrices_fundamentals",
+    "topic": "orthogonal_matrices",
+    "title": "Orthogonal Matrices: Definition and Properties",
+    "contentHtml": "<p>Orthogonal matrices are a fundamental concept in linear algebra with far-reaching implications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A}^T\\mathbf{A} = \\mathbf{I}\\]",
+    "name": "Orthogonality Condition\" },",
+    "problem": "{",
+    "statementHtml": "<p>Consider a matrix \\mathbf{R} that represents a rotation in the plane. Show that \\mathbf{R} is an orthogonal matrix.</p>",
+    "hints": [
+      "Hint: Use the fact that rotations preserve lengths and angles."
+    ],
+    "solutionHtml": "<p>To show that \\mathbf{R} is orthogonal, we need to demonstrate that \\mathbf{R}^T\\mathbf{R} = \\mathbf{I}. Let's compute this product:</p><ul><li>\\[\\mathbf{R}^T\\mathbf{R} = \\begin{bmatrix} r_{11} &amp; r_{12} \\\\ r_{21} &amp; r_{22}\\end{bmatrix}\\begin{bmatrix} r_{11} &amp; r_{12} \\\\ r_{21} &amp; r_{22}\\end{bmatrix} = \\begin{bmatrix} r_{11}^2 + r_{12}^2 &amp; 0 \\\\ 0 &amp; r_{21}^2 + r_{22}^2\\end{bmatrix}\\]</li><li>Since rotations preserve lengths, we know that the sum of the squares of each column is equal to 1:</li></ul>",
+    "answerShort": "The matrix \\\\mathbf{R} is orthogonal.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a rotation matrix \\mathbf{R} = \\begin{bmatrix} \\cos(\\theta) &amp; -\\sin(\\theta) \\\\ \\sin(\\theta) &amp; \\cos(\\theta)\\end{bmatrix}. Show that \\mathbf{R} is orthogonal.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the product \\\\mathbf{R}^T\\\\mathbf{R}\", \"mathHtml\": \"\\\\[\\\\mathbf{R}^T\\\\mathbf{R} = \\\\begin{bmatrix} \\\\cos(\\\\theta) &amp; -\\\\sin(\\\\theta) \\\\\\\\ \\\\sin(\\\\theta) &amp; \\\\cos(\\\\theta)\\\\end{bmatrix}\\\\begin{bmatrix} \\\\cos(\\\\theta) &amp; -\\\\sin(\\\\theta) \\\\\\\\ \\\\sin(\\\\theta) &amp; \\\\cos(\\\\theta)\\\\end{bmatrix}\\]\", \"explanation\": \"We're computing the product of the transpose and original matrix to show that it's equal to the identity.\"}, {\"stepNumber\": 2, \"description\": \"Simplify the product\", \"mathHtml\": \"\\\\[\\\\mathbf{R}^T\\\\mathbf{R} = \\\\begin{bmatrix} \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta) &amp; 0 \\\\\\\\ 0 &amp; \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta)\\\\end{bmatrix}\\]\", \"explanation\": \"We can simplify the product by using the fact that \\\\cos^2(\\\\theta) + \\\\sin^2(\\\\theta) = 1.\"}, {\"stepNumber\": 3, \"description\": \"Conclude that \\\\mathbf{R} is orthogonal\", \"mathHtml\": \"\", \"explanation\": \"Since the product is equal to the identity, we can conclude that \\\\mathbf{R} is an orthogonal matrix.\"} ],",
+    "finalAnswer": "The matrix \\\\mathbf{R} is orthogonal.\" },",
+    "intuition": "Orthogonal matrices preserve lengths and angles, making them essential in machine learning for tasks like dimensionality reduction and feature extraction.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:34:41.214Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

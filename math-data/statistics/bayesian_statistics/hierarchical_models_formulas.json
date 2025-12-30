@@ -1,0 +1,133 @@
+[
+  {
+    "id": "stat_for_hierarchical_models_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "contentHtml": "<p>Hierarchical models are a powerful tool in Bayesian statistics, allowing us to model complex relationships between variables at multiple levels.</p><p>By using multi-level priors and random effects, we can account for variability within groups and capture higher-order dependencies.</p>",
+    "formula": "{",
+    "latex": "\\[y_i \\sim N(X\\beta + Zu_i, \\sigma^2)\\]\",",
+    "name": "Hierarchical Model Formula",
+    "variants": "[ {\"latex\": \"\\[u_i \\sim N(0, \\tau^2)\\]\", \"description\": \"Prior distribution for random effects\"} ] },",
+    "intuition": "Hierarchical models are useful when we have multiple observations within groups and want to account for both within-group and between-group variability.",
+    "visualDescription": "A diagram showing the hierarchical structure with multiple levels of grouping",
+    "realWorldApplications": [
+      "Recommendation systems",
+      "Natural language processing"
+    ],
+    "tags": [
+      "Bayesian statistics",
+      "Hierarchical models"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:46:31.342Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_hierarchical_models_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "contentHtml": "<p>Hierarchical models allow us to incorporate prior knowledge about groups or clusters of data into our Bayesian inference.</p>",
+    "formula": "{",
+    "latex": "\\[y_i | \\theta, \\sigma^2 \\sim N(\\theta, \\sigma^2)\\]\",",
+    "name": "Hierarchical Model for Grouped Data",
+    "variants": "[ {\"latex\": \"\\[\\mu_i | \\beta, \\tau^2 \\sim N(\\beta, \\tau^2)\\]\", \"description\": \"Individual-level model\"} ] },",
+    "intuition": "By sharing parameters across groups, we can capture commonalities and reduce the number of hyperparameters needed.",
+    "realWorldApplications": [
+      "Recommendation systems",
+      "Natural language processing"
+    ],
+    "tags": [
+      "Bayesian statistics",
+      "Hierarchical models",
+      "Multi-level priors"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:46:44.487Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_hierarchical_models_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models: Multi-level Priors",
+    "contentHtml": "<p>In Bayesian statistics, hierarchical models allow us to incorporate prior knowledge about groups or clusters of data. This is particularly useful when dealing with nested or grouped data.</p>",
+    "formula": "{",
+    "latex": "\\[p(y|θ) = \\prod_{i=1}^n p(y_i | θ_i)\\]\",",
+    "name": "Product of Priors",
+    "variants": "[ {\"latex\": \"\\[p(θ|α, β) = N(α, β^{-1})\\]\", \"description\": \"Prior distribution for the group-level parameters\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're analyzing exam scores for students in different schools. We want to model the average score per school.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define a prior distribution for each school's average score\", \"mathHtml\": \"\\[p(θ_i|α, β) = N(α, β^{-1})\\]\", \"explanation\": \"We assume the prior is normally distributed with mean α and precision β.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Hierarchical models allow us to borrow strength from similar groups or clusters, which can improve our estimates and reduce overfitting.",
+    "tags": [
+      "Bayesian Statistics",
+      "Hierarchical Models"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:47:03.134Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_hierarchical_models_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "hierarchical_models",
+    "title": "Hierarchical Models in Bayesian Statistics",
+    "contentHtml": "<p>Hierarchical models are a cornerstone of Bayesian statistics, allowing us to model complex systems with multiple levels of structure.</p><p>By incorporating multi-level priors and partial pooling, we can account for random effects and uncertainty at each level.</p>",
+    "formula": "{",
+    "latex": "\\[y_i \\sim N(X\\beta + Zu_i, \\sigma^2)\\]\",",
+    "name": "Hierarchical Linear Model",
+    "variants": "[ {\"latex\": \"\\[y_{ij} \\sim N(X_j\\beta + Zu_{ij}, \\sigma^2)\\]\", \"description\": \"Generalized hierarchical model for multiple observations\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're analyzing student test scores across different schools and classes.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior distribution for school-level means\", \"mathHtml\": \"\\[u_i \\sim N(0, \\tau^2)\\]\", \"explanation\": \"We assume each school has its own mean, with some shared uncertainty.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Hierarchical models help us separate signal from noise by accounting for the structure of our data.",
+    "realWorldApplications": [
+      "Analyzing student performance across schools and classes",
+      "Modeling customer behavior in marketing"
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Hierarchical Models",
+      "Random Effects"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:47:22.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

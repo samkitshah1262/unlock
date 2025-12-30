@@ -1,0 +1,141 @@
+[
+  {
+    "id": "prob_prb_markov_chains_intro_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": "{",
+    "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that the probability of being in state <i>i</i> at time <i>t</i>, given that we were in state <i>j</i> at time <i>s</i>, is equal to the (t-s)th power of the <i>j</i>th row of <i>P</i>.",
+    "hints": [
+      "Think about the Markov property and how it relates to the transition matrix.",
+      "Recall that the probability of being in state <i>i</i> at time <i>t</i>, given that we were in state <i>j</i> at time <i>s</i>, is equal to the dot product of the <i>j</i>th row of <i>P</i> and a vector with a 1 in the <i>i</i>th position and zeros elsewhere.",
+      "Use mathematical induction to prove that this probability remains unchanged after each time step."
+    ],
+    "solutionHtml": "<p>To prove this, we can use mathematical induction. The base case is when <i>t</i> = <i>s</i>, in which case the statement is trivially true.</p><p>For the inductive step, assume that the statement holds for some arbitrary <i>k</i>. We want to show that it also holds for <i>k+1</i>.</p><p>We have:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = P(X_{k+1} = i, X_k = j) / P(X_k = j)\\]</p><p>Using the Markov property and the transition matrix, we can rewrite this as:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = \\sum_{m=1}^n P(X_{k+1} = i, X_k = m, X_{k-1} = j) / P(X_k = j)\\]</p><p>By the inductive hypothesis, we know that:</p><p><code>\\[P(X_k = m | X_{k-1} = j) = (P^k)_{jm}\\]</p><p>Substituting this into our expression for <i>P(X_{k+1} = i | X_k = j)</i>, we get:</p><p><code>\\[P(X_{k+1} = i | X_k = j) = \\sum_{m=1}^n (P^{k+1})_{im} (P^k)_{jm} / P(X_k = j)\\]</p><p>This is equal to:</p><p><code>\\[(P^{k+1})_{ij}\\]</p><p>which completes the inductive step.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:10.786Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that if <i>P</i> is regular (has at least one recurrent class), then there exists a stationary distribution.",
+      "hints": [
+        "Think about the definition of a regular Markov chain.",
+        "Recall the concept of a stationary distribution and its relation to the transition matrix.",
+        "Use the fact that a regular Markov chain has at least one recurrent class to your advantage."
+      ],
+      "solutionHtml": "<p>To prove this, we can use the following steps:</p><ol><li>Let <i>P</i> be the transition matrix of our discrete-time Markov chain.</li><li>Show that <i>P</i> has at least one recurrent class.</li><li>Use the fact that a regular Markov chain has at least one recurrent class to conclude that there exists a stationary distribution.</li></ol>",
+      "answerShort": "The stationary distribution exists."
+    },
+    "commonMistakes": [
+      "Not recognizing that a regular Markov chain has at least one recurrent class.",
+      "Failing to use this fact to prove the existence of a stationary distribution."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:30.296Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "<p>Consider a discrete-time Markov chain with transition matrix <i>P</i>. Show that if <i>P</i><sup>n</sup> exists for all <i>n</i>, then the chain is ergodic.</p>",
+      "hints": [
+        "Check that the chain has a finite number of states.",
+        "Use induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>.",
+        "Show that the chain's stationary distribution exists and is unique."
+      ],
+      "solutionHtml": "<p>To prove ergodicity, we first need to show that the chain has a finite number of states. This follows from the fact that the transition matrix <i>P</i> has only finitely many entries.</p><p>Next, we use induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>. The base case is trivial, and the inductive step follows from the fact that <i>P</i><sup>n+1</sup> = <i>P</i><sup>n</sup>&nbsp;<i>P</i>.</p><p>Finally, we show that the chain's stationary distribution exists and is unique. This follows from the fact that the chain has a finite number of states.</p>",
+      "answerShort": "The chain is ergodic."
+    },
+    "commonMistakes": [
+      "Forgetting to check that the chain has a finite number of states.",
+      "Not using induction to show that <i>P</i><sup>n</sup> exists for all <i>n</i>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:12:53.484Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": "{",
+    "statementHtml": "<p>Consider a discrete-time Markov chain with transition matrix <i>P</i>. Show that if <i>P</i><sup>n</sup> exists, then it satisfies the Markov property.</p>",
+    "hints": [
+      "Start by recalling the definition of the Markov property.",
+      "Think about what happens when you apply the transition matrix multiple times.",
+      "Use induction to prove the result."
+    ],
+    "solutionHtml": "<p>To show that <i>P</i><sup>n</sup> satisfies the Markov property, we'll use induction. The base case is trivial: if <i>n</i>=1, then <i>P</i><sup>1</sup> clearly satisfies the Markov property.</p>\\n<p>Now assume that <i>P</i><sup>k</sup> satisfies the Markov property for some <i>k</i>&ge;1. We need to show that <i>P</i><sup>k+1</sup> also satisfies the Markov property.</p>\\n<p>Let <i>X</i><sub><i>t</i></sub> be the state at time <i>t</i>. Then:</p>\\n<pre><code>\\[P(X_{k+1}=j | X_k=i) = P(P(X_{k+1}=j | X_k=i)) = P(X_{k+1}=j)\\]</code></pre>\\n<p>This shows that <i>P</i><sup>k+1</sup> satisfies the Markov property, completing the induction.</p>\",",
+    "answerShort": "The transition matrix <i>P</i><sup>n</sup> satisfies the Markov property.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:13:19.191Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_chains_intro_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_chains_intro",
+    "problem": {
+      "statementHtml": "Consider a discrete-time Markov chain with transition matrix <i>P</i>. Prove that if <i>P</i> is irreducible and aperiodic, then it has a unique stationary distribution.",
+      "hints": [
+        "Start by recalling the definition of a stationary distribution.",
+        "Think about what properties an irreducible and aperiodic chain must have.",
+        "Use the fact that the chain's transition matrix is stochastic."
+      ],
+      "solutionHtml": "<p>Let <i>&#x03C6;</i>(<i>t</i>) be the probability distribution at time <i>t</i>. Since the chain is irreducible and aperiodic, it has a unique stationary distribution <i>&#x03C6;</i><sub>∞</sub>.</p><p>We need to show that <i>&#x03C6;</i>(<i>t</i>) converges to <i>&#x03C6;</i><sub>∞</sub> as <i>t</i> → ∞.</p><p>Using the definition of a stationary distribution, we have:</p><p><i>&#x03C6;</i>(<i>t</i>) = P&#x03C6;(0) = ...</p>",
+      "answerShort": "The unique stationary distribution exists."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the chain's aperiodicity.",
+      "Assuming that the chain has multiple stationary distributions."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:13:41.406Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

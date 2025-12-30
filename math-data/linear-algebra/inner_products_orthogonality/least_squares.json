@@ -1,0 +1,561 @@
+[
+  {
+    "id": "la_con_least_squares_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Normal Equations and Orthogonality",
+    "contentHtml": "<p>In many machine learning applications, we encounter overdetermined systems of linear equations. These arise when we have more observations than features in our data. The goal is to find the best-fitting line or hyperplane that minimizes the sum of squared errors.</p><p>One way to solve these problems is by using normal equations. These are a set of linear equations that can be used to find the coefficients of the optimal solution.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]",
+      "name": "Normal Equation"
+    },
+    "intuition": "The key insight is that the normal equations provide a way to find the optimal solution by minimizing the sum of squared errors.",
+    "realWorldApplications": [
+      "Linear regression in machine learning"
+    ],
+    "tags": [
+      "linear-algebra",
+      "machine-learning",
+      "least-squares"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:25:18.656Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_least_squares_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Normal Equations and Orthogonality",
+    "contentHtml": "<p>In linear algebra, least squares problems are a fundamental concept that arises in many applications, including machine learning and artificial intelligence.</p><p>Given a set of data points, the goal is to find the best-fitting line or hyperplane that minimizes the sum of squared errors between the observed values and the predicted values. This is achieved by solving a system of linear equations known as the normal equations.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "intuition": "The key insight is that the normal equations represent a balance between the sum of squared errors and the constraints imposed by the data points. This balance is achieved when the residual vector is orthogonal to the column space of the design matrix.",
+    "realWorldApplications": [
+      "Regression analysis in machine learning"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the normal equations are a system of linear equations",
+      "Not understanding the geometric interpretation of orthogonality"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:25:37.051Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_least_squares_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: A Geometric View",
+    "contentHtml": "<p>In linear algebra, we often encounter overdetermined systems of equations, where the number of equations exceeds the number of variables. One way to solve such systems is by minimizing the sum of squared errors using the least squares method.</p><p>Geometrically, this means finding the closest point in a subspace that best fits a set of data points.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A}\\mathbf{x} = \\mathbf{A}^T\\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "intuition": "The key insight is that the least squares solution minimizes the perpendicular distance from a point to the subspace, making it a natural choice for many applications.",
+    "realWorldApplications": [
+      "Regression analysis in machine learning"
+    ],
+    "commonMistakes": [
+      "Failing to recognize overdetermined systems as a fundamental problem type",
+      "Not understanding the geometric interpretation of least squares"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:25:53.578Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_least_squares_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Normal Equations",
+    "contentHtml": "<p>In many machine learning and data analysis scenarios, we encounter overdetermined systems of linear equations.</p><p>The normal equations provide a way to solve these systems efficiently.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]\",",
+    "name": "Normal Equation\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a set of data points, find the best-fitting line using least squares.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the mean of each feature\", \"mathHtml\": \"\\( \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\)\", \"explanation\": \"This helps to reduce the impact of outliers\"}, {\"stepNumber\": 2, \"description\": \"Calculate the covariance matrix\", \"mathHtml\": \"\\[ \\mathbf{S} = \\frac{1}{n-1} \\sum_{i=1}^n (\\mathbf{x}_i - \\bar{\\mathbf{x}})(\\mathbf{x}_i - \\bar{\\mathbf{x}})^T \\]\", \"explanation\": \"This measures the spread of the data\"} ],",
+    "finalAnswer": "The coefficients of the best-fitting line\" },",
+    "intuition": "The normal equations provide a way to find the minimum squared error between our model and the actual data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:26:18.820Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_least_squares_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems",
+    "contentHtml": "<p>In linear algebra, least squares problems arise when we want to find the best-fitting line or plane that approximates a set of data points.</p><p>This is particularly important in machine learning and statistics where we often encounter noisy data.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b}\\]\",",
+    "name": "Normal Equations\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a set of data points (x, y) that are noisy measurements of a linear relationship.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the mean-centered data\", \"mathHtml\": \"\\\\[\\\\bar{x}, \\\\bar{y}\\]\", \"explanation\": \"This helps to reduce the effect of outliers\"}, {\"stepNumber\": 2, \"description\": \"Construct the design matrix A\", \"mathHtml\": \"\\\\[A = [x_1, x_2, ..., x_n; 1, 1, ..., 1]\\]\", \"explanation\": \"The extra column of ones represents the bias term\"}, {\"stepNumber\": 3, \"description\": \"Compute the normal equations\", \"mathHtml\": \"\\\\[\\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b}\\]\", \"explanation\": \"This is a system of linear equations that we can solve for x\"} ],",
+    "finalAnswer": "The solution vector x\" },",
+    "intuition": "The key insight here is that the normal equations provide a way to find the best-fitting line or plane by minimizing the sum of squared errors.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:26:44.478Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_least_squares_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Normal Equations",
+    "contentHtml": "<p>In linear algebra, least squares problems involve finding the best-fitting line or hyperplane to a set of data points.</p><p>This is achieved by minimizing the sum of squared errors between the actual and predicted values.</p>",
+    "formula": "{",
+    "latex": "\\[ \\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]\",",
+    "name": "Normal Equation\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a set of data points (x, y), find the best-fitting line.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the mean values for x and y\", \"mathHtml\": \"\\( \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\)\", \"explanation\": \"This helps to center the data\"}, {\"stepNumber\": 2, \"description\": \"Form the augmented matrix\", \"mathHtml\": \"\\( \\begin{bmatrix} x_1 & y_1 \\\\ x_2 & y_2 \\\\ \\vdots & \\vdots \\\\ x_n & y_n \\end{bmatrix} \\)\", \"explanation\": \"This represents the data points\"} ],",
+    "finalAnswer": "The coefficients of the best-fitting line\" },",
+    "intuition": "Least squares problems are essential in machine learning, where they help to find the optimal hyperplane for classification or regression tasks.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:27:07.111Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_least_squares_007",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems",
+    "contentHtml": "<p>In linear algebra, least squares problems arise when we want to find the best fit line or plane that minimizes the sum of squared errors.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbf{w} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a set of data points {(x_i, y_i)}, find the best fit line that minimizes the sum of squared errors.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the mean-centered data\", \"mathHtml\": \"\\(y_i - \\bar{y}\\)\", \"explanation\": \"This helps to reduce the impact of outliers\"}, {\"stepNumber\": 2, \"description\": \"Calculate the covariance matrix and cross-product matrix\", \"mathHtml\": \"\\[\\Sigma = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})\\]\", \"explanation\": \"This helps to capture the linear relationship between x and y\"}, {\"stepNumber\": 3, \"description\": \"Solve for the coefficients using the normal equations\", \"mathHtml\": \"\\[\\mathbf{w} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\\]\", \"explanation\": \"This gives us the best fit line that minimizes the sum of squared errors\"} ],",
+    "finalAnswer": "The coefficients w\" },",
+    "intuition": "Least squares problems are a fundamental concept in linear algebra, with applications in machine learning and data analysis.",
+    "realWorldApplications": [
+      "Regression analysis for predicting stock prices"
+    ],
+    "tags": [
+      "least squares",
+      "linear regression",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:27:33.147Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_least_squares_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems",
+    "contentHtml": "<p>In linear algebra, least squares problems arise when we want to find the best-fitting line or plane that minimizes the sum of squared errors.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^\\top \\mathbf{A} \\mathbf{x} = \\mathbf{A}^\\top \\mathbf{b} \\]",
+      "name": "Normal Equation"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{If } \\mathbf{A} \\in \\mathbb{R}^{m \\times n}, \\mathbf{x} \\in \\mathbb{R}^n, \\text{ and } \\mathbf{b} \\in \\mathbb{R}^m, \\text{ then the least squares solution satisfies } \\mathbf{A}^\\top \\mathbf{A} \\mathbf{x} = \\mathbf{A}^\\top \\mathbf{b}. \\]"
+    },
+    "intuition": "The normal equation represents the condition for the best-fitting line or plane to minimize the sum of squared errors.",
+    "realWorldApplications": [
+      "Core concept in machine learning, used in regression tasks like linear regression and neural networks."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Least Squares",
+      "Regression"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:27:53.058Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_least_squares_009",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Theorem",
+    "contentHtml": "<p>The least squares theorem provides a way to find the best-fitting linear model in an overdetermined system.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b}\\]",
+      "name": "Normal Equations"
+    },
+    "theorem": {
+      "statement": "\\[\\min_{\\mathbf{x}} ||\\mathbf{A}\\mathbf{x}-\\mathbf{b}||^2\\]",
+      "proofSketch": "The proof involves showing that the normal equations are a necessary and sufficient condition for the minimum in the least squares problem."
+    },
+    "intuition": "This theorem shows that the best-fitting linear model is the one that minimizes the sum of squared errors.",
+    "realWorldApplications": [
+      "Regression analysis",
+      "Linear regression"
+    ],
+    "tags": [
+      "linear-algebra",
+      "least-squares"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:28:10.059Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Solve the overdetermined system using normal equations.</p>",
+    "hints": [
+      "Check if you can find a closed-form solution.",
+      "Think about how to minimize the squared error.",
+      "Recall that inner products are useful for finding orthogonal vectors."
+    ],
+    "solutionHtml": "<p>To solve this problem, we will use the normal equations.</p>\\n<p>First, we need to define the matrix A and the vector b:</p>\\n\\[A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\end{bmatrix},\\]\\[b = \\begin{bmatrix} 7 \\\\ 8 \\\\ 9 \\end{bmatrix}.\\]</p>\\n<p>Next, we need to compute the matrix product:</p>\\n\\[X = (A^T A)^{-1} A^T b.\\]</p>\",",
+    "answerShort": "The solution is X.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:28:28.414Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "Find the least squares solution to the overdetermined system <br/> \\[x_1 + 2x_2 = 3, x_1 + 4x_2 = 5, x_1 + 6x_2 = 7\\].\",",
+    "hints": [
+      "The normal equations can be derived from the original system.",
+      "The coefficient matrix is not square, so we need to use a pseudoinverse.",
+      "The solution will be the vector that minimizes the sum of squared errors."
+    ],
+    "solutionHtml": "<p>First, we form the augmented matrix:</p><br/> \\[\\begin{bmatrix} 1 &amp; 2 &amp; | &amp; 3 \\\\ 1 &amp; 4 &amp; | &amp; 5 \\\\ 1 &amp; 6 &amp; | &amp; 7 \\end{bmatrix}\\]</p><br/> <p>Then, we can write the normal equations:</p><br/> \\[\\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\\\ 7 &amp; 12 \\end{bmatrix}\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} 9 \\\\ 15 \\\\ 21 \\end{bmatrix}\\]</p><br/> <p>Next, we can solve the normal equations:</p><br/> \\[\\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\end{bmatrix}^{-1} \\begin{bmatrix} 3 &amp; 6 \\\\ 5 &amp; 10 \\end{bmatrix}\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} 9 \\\\ 15 \\\\ 21 \\end{bmatrix}\\]</p><br/> <p>The solution is:</p><br/> \\(x_1 = 1, x_2 = 1\\)</p>\",",
+    "answerShort": "The least squares solution is (1, 1)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:28:58.448Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of data points <code>(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)</code>, find the best-fitting line in the sense that it minimizes the sum of squared errors.</p>",
+    "hints": [
+      "<p>Start by finding the mean of the x-values and the mean of the y-values.</p>",
+      "<p>Use these means to define a system of linear equations.</p>",
+      "<p>Solve this system using matrix operations or Gaussian elimination.</p>"
+    ],
+    "solutionHtml": "<p>To find the best-fitting line, we need to minimize the sum of squared errors:</p>\\n\\ \\[ \\sum_{i=1}^n (y_i - (mx_i + b))^2 \\]\\n\\ <p>This is a quadratic function in terms of m and b. Setting its derivative with respect to m and b to zero gives us a system of linear equations.</p>\\n\\ \\[ \\begin{cases}\\n\\ \\sum_{i=1}^n x_i y_i - (\\bar{x}m + b)\\sum_{i=1}^n x_i = 0\\n\\ \\sum_{i=1}^n y_i - m\\sum_{i=1}^n x_i - bn = 0\\n\\ \\end{cases}\\]\\n\\ <p>Solving this system using matrix operations or Gaussian elimination gives us the values of m and b.</p>\",",
+    "answerShort": "The values of m and b that minimize the sum of squared errors.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:29:23.103Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_least_squares_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "problem": "{",
+    "statementHtml": "<p>Solve the overdetermined system using normal equations:</p><p>\\[\\mathbf{A}^T \\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b}\\]</p>\",",
+    "hints": [
+      "Check that <i>A</i> has full column rank.",
+      "Use the geometric view to find the projection matrix.",
+      "The normal equations are symmetric and positive semi-definite."
+    ],
+    "solutionHtml": "<p>To solve the system, we first compute the projection matrix:</p><p>\\[\\mathbf{P} = \\mathbf{A} (\\mathbf{A}^T \\mathbf{A})^{-1} \\mathbf{A}^T\\]</p><p>Then, we can find the least squares solution by projecting <i>b</i>:</p><p>\\[\\mathbf{x} = (\\mathbf{P}^T \\mathbf{P})^{-1} \\mathbf{P}^T \\mathbf{b}\\]</p>\",",
+    "answerShort": "The least squares solution is given by the above formula.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:29:43.039Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll solve an overdetermined least squares problem using normal equations.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vector b, find the coefficients x that minimize the sum of squared errors in the equation Ax ≈ b.</p>",
+    "hints": [
+      "Hint: Use the geometric view to understand the problem.",
+      "Hint: The normal equations will help you solve it."
+    ],
+    "solutionHtml": "<p>To start, we'll use the normal equations to rewrite the problem as a system of linear equations:</p><ul><li>We'll take the transpose of A and multiply it by b.</li><li>This gives us the matrix equation ATb ≈ AtAx.</li></ul>\", },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have the following overdetermined system:</p><p>\\[ \\begin{align*} &1.2x_0 + 2.5x_1 - 3.8x_2 = 4.7 \\\\ &-0.9x_0 + 1.2x_1 + 2.1x_2 = 3.6 \\\\ &2.1x_0 - 1.8x_1 + 0.5x_2 = 5.1 \\end{align*}\\]</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Take the transpose of A and multiply it by b.\", \"mathHtml\": \"\\\\[ (A^T)^{-1}A^Tb \\\\]\", \"explanation\": \"This helps us to get a system of linear equations that we can solve.\" }, {\"stepNumber\": 2, \"description\": \"Multiply both sides by A\", \"mathHtml\": \"\\\\[ A(A^T)^{-1}A^Tb = Ab \\\\]\", \"explanation\": \"This simplifies the equation and gets rid of the transpose.\" }, {\"stepNumber\": 3, \"description\": \"Solve for x\", \"mathHtml\": \"\\\\[ x = (A^T)^{-1}Ab \\\\]\", \"explanation\": \"Now we can solve for the coefficients x that minimize the sum of squared errors.\" }, {\"stepNumber\": 4, \"description\": \"Plug in values and simplify\", \"mathHtml\": \"\\\\[ \\begin{align*} &x_0 = ... \\\\ &x_1 = ... \\\\ &x_2 = ... \\\\ \\end{align*}\\]\", \"explanation\": \"Now we can plug in the values and simplify to get our final answer.\" } ],",
+    "finalAnswer": "The coefficients x that minimize the sum of squared errors are...\" },",
+    "intuition": "In this example, we used the normal equations to solve an overdetermined least squares problem. This is a common technique in machine learning and statistics.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:30:18.195Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve an overdetermined least squares problem using normal equations.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{A}^T \\\\mathbf{A} \\\\mathbf{x} = \\\\mathbf{A}^T \\\\mathbf{b}\\]\",",
+    "name": "Normal Equations\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix A and vector b, find the coefficients x that minimize the squared error between Ax and b.</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a system of linear equations:</p><ul><li>Ax = b</li></ul><p>where A is an m x n matrix, x is the coefficient vector, and b is the target vector. If m > n (overdetermined), how do we find the best-fitting coefficients?</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Verify that the solution minimizes the squared error",
+    "mathHtml": "\\\\[\\\\left\\\\| \\\\mathbf{A} \\\\mathbf{x} - \\\\mathbf{b}\\\\right\\\\|^2 = \\\\min_{x}\\]\",",
+    "explanation": "The solution x indeed minimizes the squared error, as we can verify by plugging it back into the original equation.\" } ],",
+    "finalAnswer": "\\\\[\\\\mathbf{x} = (\\\\mathbf{A}^T \\\\mathbf{A})^{-1} \\\\mathbf{A}^T \\\\mathbf{b}\\]\" },",
+    "intuition": "The key insight is that the normal equations represent the condition for minimizing the squared error.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:30:52.891Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_016",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Least Squares Problems: Solving Overdetermined Systems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a least squares problem using normal equations.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A}\\mathbf{x} = \\mathbf{A}^T\\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A and vector b, find the least squares solution x that minimizes the squared error ||Ax - b||^2.</p>",
+      "hints": [
+        "Hint: Use normal equations to solve the problem."
+      ],
+      "solutionHtml": "<p>We'll use the normal equations formula:</p><ul><li>Take the transpose of A, denoted as AT.</li><li>Multiply AT by A to get AA^T.</li><li>Multiply AA^T by x to get the left-hand side.</li><li>Multiply AT by b to get the right-hand side.</li></ul><p>The resulting equation is:</p><p>\\[ \\mathbf{A}^T\\mathbf{A}\\mathbf{x} = \\mathbf{A}^T\\mathbf{b} \\]</p>",
+      "answerShort": "The least squares solution x"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a matrix A and vector b:</p><p>A = \\[ \\begin{array}{ccc} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \\end{array} \\], b = \\[ \\begin{array}{c} 10 \\\\ 20 \\end{array} \\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Take the transpose of A",
+          "mathHtml": "\\[ \\mathbf{A}^T = \\begin{array}{cc} 1 &amp; 4 \\\\ 2 &amp; 5 \\\\ 3 &amp; 6 \\end{array} \\]",
+          "explanation": "This step is crucial in setting up the normal equations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply AT by A",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{A} = \\begin{array}{cc|c} 1 &amp; 4 &amp; | &amp; 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 5 &amp; | &amp; 4 &amp; 5 &amp; 6 \\end{array} \\]",
+          "explanation": "This step helps us to simplify the normal equations."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply AA^T by x",
+          "mathHtml": "\\[ (\\mathbf{A}^T\\mathbf{A})\\mathbf{x} = \\begin{array}{cc|c} 1 &amp; 4 &amp; | &amp; 1x_1 + 2x_2 + 3x_3 \\\\ 2 &amp; 5 &amp; | &amp; 4x_1 + 5x_2 + 6x_3 \\end{array} \\]",
+          "explanation": "This step helps us to set up the linear system."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply AT by b",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{b} = \\begin{array}{c} 10 \\\\ 20 \\end{array} \\]",
+          "explanation": "This step helps us to set up the right-hand side of the linear system."
+        }
+      ],
+      "finalAnswer": "The least squares solution x"
+    },
+    "intuition": "In this example, we used normal equations to solve an overdetermined system. This is a fundamental concept in linear algebra and has many applications in machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:31:43.557Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_least_squares_017",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "inner_products_orthogonality",
+    "topic": "least_squares",
+    "title": "Solving Overdetermined Least Squares Problems",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve an overdetermined least squares problem using normal equations.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^T\\mathbf{A} \\mathbf{x} = \\mathbf{A}^T \\mathbf{b} \\]",
+      "name": "Normal Equations"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A and vector b, find the least squares solution x that minimizes ||Ax - b||.</p>",
+      "hints": [
+        "Hint: Use normal equations"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a matrix A = \\[\\begin{array}{ccc} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{array}\\] and vector b = [10, 20, 30]^T. Find the least squares solution x that minimizes ||Ax - b||.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the product A^T A",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{A} = \\begin{bmatrix} 30 & 60 & 90 \\\\ 60 & 130 & 210 \\\\ 90 & 210 & 330 \\end{bmatrix} \\]",
+          "explanation": "This step sets the stage for our normal equations."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the product A^T b",
+          "mathHtml": "\\[ \\mathbf{A}^T\\mathbf{b} = [150, 300, 450]^T \\]",
+          "explanation": "This step provides the right-hand side for our normal equations."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve the normal equations",
+          "mathHtml": "\\[ (\\mathbf{A}^T\\mathbf{A})^{-1}(\\mathbf{A}^T\\mathbf{b}) \\]",
+          "explanation": "This step uses our previous computations to find the least squares solution."
+        }
+      ],
+      "finalAnswer": "[5, 10, 15]^T"
+    },
+    "intuition": "The key insight is that overdetermined systems can be solved by minimizing the squared error.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:32:15.708Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

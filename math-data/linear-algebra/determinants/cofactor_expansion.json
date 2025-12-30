@@ -1,0 +1,394 @@
+[
+  {
+    "id": "la_con_cofactor_expansion_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>Cofactor expansion is a powerful technique in linear algebra that allows us to compute determinants of matrices by expanding along any row or column.</p><p>Given a square matrix A, the minor M_{ij} is the determinant of the submatrix obtained by removing the i^{th} row and j^{th} column. The cofactor C_{ij} is then defined as the signed minor: C_{ij} = (-1)^{i+j}M_{ij}. Finally, we can compute the determinant det(A) using cofactor expansion:</p>\\[ \\det(A) = \\sum_{j=1}^n a_{ij}C_{ij}.\\]",
+    "formula": "{",
+    "latex": "\\\\[ \\\\det(A) = \\\\sum_{j=1}^n a_{ij}C_{ij}.\\\\]\" },",
+    "intuition": "Think of cofactor expansion as a way to 'undo' the matrix multiplication process. When we multiply two matrices, we're essentially computing the determinant of the resulting matrix. Cofactor expansion gives us a direct route to that determinant.",
+    "commonMistakes": [
+      "Forgetting to apply the sign change in the cofactors",
+      "Expanding along the wrong row or column"
+    ],
+    "realWorldApplications": [
+      "In machine learning, determinants are used in algorithms like PCA and LLE for dimensionality reduction."
+    ],
+    "tags": [
+      "linear algebra",
+      "determinants",
+      "cofactors"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:57:45.471Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_cofactor_expansion_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>In linear algebra, cofactor expansion is a powerful technique to compute determinants of matrices. Given a square matrix A, we can expand its determinant along any row or column using minors and cofactors.</p><p>Imagine a matrix as a grid of numbers. To expand the determinant along a row or column, we 'open up' that row or column like a book, revealing a set of smaller matrices (minors) inside. We then multiply each minor by its corresponding cofactor – a value that depends on the position and sign of the elements in the original matrix.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Expansion Formula"
+    },
+    "intuition": "Cofactor expansion helps us simplify complex determinants by breaking them down into smaller, more manageable pieces. This insight is crucial in many applications, including machine learning and artificial intelligence.",
+    "realWorldApplications": [
+      "In ML/AI, cofactor expansion can be used to compute the determinant of a covariance matrix, which is essential for tasks like principal component analysis."
+    ],
+    "commonMistakes": [
+      "Don't confuse cofactors with minors – they're related but distinct concepts."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:58:04.556Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_cofactor_expansion_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>In linear algebra, cofactor expansion is a powerful technique to calculate the determinant of a matrix. It's based on the idea that we can expand the determinant along any row or column, and then use minors and cofactors to simplify the calculation.</p><p>Imagine a matrix as a grid of numbers. When we expand along a row or column, we're essentially 'unraveling' this grid into a series of smaller grids, each with its own determinant. The key insight is that these smaller determinants are related to the original determinant through the cofactors.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Cofactor Expansion Formula"
+    },
+    "intuition": "The key insight is that cofactor expansion allows us to break down the calculation of a determinant into smaller, more manageable pieces. This makes it easier to understand and work with determinants in practice.",
+    "realWorldApplications": [
+      "In machine learning, determinants are used in techniques like principal component analysis (PCA) to reduce dimensionality and improve model performance."
+    ],
+    "tags": [
+      "determinant",
+      "cofactor expansion",
+      "linear algebra"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:58:23.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_cofactor_expansion_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>Cofactor expansion is a powerful technique to compute determinants of matrices using minors and cofactors.</p>",
+    "formula": "{",
+    "latex": "\\[\\det(A) = \\sum_{i=1}^n a_{i,j} \\cdot \\text{cof}(A[i|j])\\]\",",
+    "name": "Cofactor Expansion Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[2, 3], [4, 5]], compute its determinant using cofactor expansion.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a row or column to expand\", \"mathHtml\": \"\\\\[A = \\\\begin{bmatrix} 2 & 3 \\\\\\\\ 4 & 5 \\\\end{bmatrix}\\]\", \"explanation\": \"We'll choose the first row.\"}, {\"stepNumber\": 2, \"description\": \"Compute the minor and cofactor of the chosen element\", \"mathHtml\": \"\\\\[M = \\\\begin{vmatrix} 5 \\\\\\\\ -1 \\\\end{vmatrix}, C = M(-1)^{12}\\]\", \"explanation\": \"The minor is computed by removing the row and column of the chosen element, and the cofactor is the determinant of this minor with an additional sign.\"}, {\"stepNumber\": 3, \"description\": \"Repeat steps 1-2 for each element in the chosen row or column\", \"mathHtml\": \"\\\\[\\\\text{...}\\]\", \"explanation\": \"...\"} ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Cofactor expansion helps us to break down a complex determinant computation into smaller, more manageable pieces.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:58:47.410Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_cofactor_expansion_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>Cofactor expansion is a powerful technique to compute determinants of matrices. It's based on the idea that we can expand a determinant along any row or column.</p>",
+    "formula": "{",
+    "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]\",",
+    "name": "Cofactor Expansion Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[2, 1], [3, 4]], compute its determinant using cofactor expansion.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a row or column to expand along\", \"mathHtml\": \"\\\\[ \\det(A) = \\\\sum_{\\\\sigma} \\\\text{sgn}(\\\\sigma) \\\\prod_{i} a_{i,\\\\sigma(i)} \\\\]\", \"explanation\": \"This choice doesn't affect the final result.\"} ],",
+    "finalAnswer": "The determinant is -2.\" },",
+    "intuition": "Cofactor expansion helps us simplify complex determinants by breaking them down into smaller pieces.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:59:05.878Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_cofactor_expansion_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>Cofactor expansion is a powerful technique to compute determinants of matrices. It's essential in linear algebra and has numerous applications in machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]\",",
+    "name": "Cofactor Expansion Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[1, 2], [3, 4]], compute its determinant using cofactor expansion.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a row or column to expand along\", \"mathHtml\": \"\\\\[A = \\\\begin{bmatrix} 1 & 2 \\\\\\\\ 3 & 4 \\\\end{bmatrix}\\]\", \"explanation\": \"We can choose any row or column for expansion.\"} ],",
+    "finalAnswer": "The determinant is -2.\" },",
+    "intuition": "Cofactor expansion helps us compute determinants by breaking down the matrix into smaller sub-matrices, making it more manageable.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:59:24.082Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cofactor_expansion_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion",
+    "problem": "{",
+    "statementHtml": "<p>Given a square matrix A, expand its determinant along any row or column using cofactors.</p>",
+    "hints": [
+      "Start by selecting the row or column you want to expand along.",
+      "Find the minor of the selected element and multiply it by the corresponding cofactor.",
+      "Recursively apply this process until you reach a 2x2 matrix, which can be easily computed."
+    ],
+    "solutionHtml": "<p>To expand the determinant along the first row, we'll use the formula:</p>\\n\\\\[\\det(A) = a_{11}C_{11} + a_{12}C_{12} + ... + a_{1n}C_{1n}\\]\\n<p>where C_{ij} is the cofactor of A at position (i, j).</p>\\n<p>We'll then compute each cofactor recursively:</p>\\n\\\\[C_{11} = \\det(A_{11})\\]\\n...and so on.</p>\",",
+    "answerShort": "The final answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the matrix A = [[3, 2], [1, 4]], expand its determinant along the first row.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the minor of a_{11}\", \"mathHtml\": \"\\\\[A_{11} = \\\\begin{bmatrix} 4 \\\\\\\\ -1 \\\\end{bmatrix}\\]\", \"explanation\": \"The minor is obtained by removing the first row and column.\" }, {\"stepNumber\": 2, \"description\": \"Compute the cofactor C_{11}\", \"mathHtml\": \"\\\\[C_{11} = \\\\det(A_{11}) = (4)(-1) - (-1)(2) = -8\\]\", \"explanation\": \"The cofactor is the determinant of the minor.\" }, {\"stepNumber\": 3, \"description\": \"Multiply a_{11} by C_{11}\", \"mathHtml\": \"\\\\[a_{11}C_{11} = (3)(-8) = -24\\]\" } ],",
+    "finalAnswer": "-24\" },",
+    "commonMistakes": [
+      "Forgetting to multiply the cofactor by the corresponding element",
+      "Incorrectly computing the minor"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:59:54.005Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cofactor_expansion_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "problem": "{",
+    "statementHtml": "<p>Expand the determinant of a 3x3 matrix using cofactor expansion.</p>",
+    "hints": [
+      "<p>Start by selecting any row or column and expanding along it.</p>",
+      "<p>Use minors to simplify the calculation.</p>",
+      "<p>Apply the formula for the determinant of a 2x2 minor.</p>"
+    ],
+    "solutionHtml": "<p>To expand along the first row, we have:</p><p>\\[\\det(A) = a_{11} \\cdot \\text{minor}(A,1,1) + a_{12} \\cdot \\text{minor}(A,1,2) + a_{13} \\cdot \\text{minor}(A,1,3)\\]</p><p>Now we expand the minor:</p><p>\\[\\det(A) = a_{11} \\cdot (a_{22} \\cdot a_{33} - a_{23} \\cdot a_{32}) + ...</p>\",",
+    "answerShort": "<p>The final answer is...</p>\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:00:12.030Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_cofactor_expansion_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "problem": "{",
+    "statementHtml": "<p>Expand the determinant of a 3x3 matrix using cofactors.</p>",
+    "hints": [
+      "<p>Start by selecting any row or column and expanding along it.</p>",
+      "<p>Use minors to find the value of each cofactor.</p>",
+      "<p>Recursively apply the formula to the minor until you reach a 1x1 determinant.</p>"
+    ],
+    "solutionHtml": "<p>To expand the determinant, we'll choose the first row and expand along it:</p>\\n\\ \\[ \\det(A) = a_{11} \\cdot \\text{cofactor}(A) + a_{12} \\cdot \\text{cofactor}(B) + a_{13} \\cdot \\text{cofactor}(C) \\]\\n\\ <p>We'll find the value of each cofactor:</p>\\n\\ \\[ \\text{cofactor}(A) = (-1)^{1,1} \\det(\\begin{bmatrix}a_{22}&a_{23}\\\\ a_{32}&a_{33}\\end{bmatrix}) \\]\\n\\ <p>And so on...</p>\",",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:00:29.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_cofactor_expansion_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion in Linear Algebra",
+    "contentHtml": "<p>In this worked example, we'll explore how to expand a determinant along any row or column using cofactors.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given the matrix A = [[2, 1], [4, 3]], compute its determinant using cofactor expansion along the first row.</p>",
+      "hints": [
+        "Consider expanding along the first column instead"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given A = [[2, 1], [4, 3]], compute its determinant using cofactor expansion along the first row.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the minor of the top-left element",
+          "mathHtml": "\\[M_{11} = \\begin{vmatrix} 3 \\end{vmatrix} = 3\\]",
+          "explanation": "The minor is the determinant of the submatrix obtained by removing the first row and column."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the cofactor",
+          "mathHtml": "\\[C_{11} = M_{11}(-1)^{1+1} = -3\\]",
+          "explanation": "The cofactor is the minor multiplied by (-1) to the power of (row number + column number)"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Repeat steps 1-2 for the remaining elements",
+          "mathHtml": "",
+          "explanation": ""
+        },
+        {
+          "stepNumber": 4,
+          "description": "Sum up the products of the elements and their cofactors",
+          "mathHtml": "\\[\\det(A) = a_{11}C_{11} + \\cdots = 2(-3) + \\cdots\\]",
+          "explanation": "The final answer is the sum of the products"
+        }
+      ],
+      "finalAnswer": "6"
+    },
+    "intuition": "Cofactor expansion helps us break down a complex determinant into smaller, more manageable pieces.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:00:58.848Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_cofactor_expansion_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion: Step-by-Step",
+    "contentHtml": "<p>In this worked example, we'll walk through cofactor expansion step by step.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the determinant of matrix A using cofactor expansion:<br />\\[\\begin{bmatrix}2 & 3 \\\\4 & 5\\end{bmatrix}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose a row or column to expand along\", \"mathHtml\": \"\", \"explanation\": \"This choice doesn't affect the final result.\"}, {\"stepNumber\": 2, \"description\": \"Select the first element of the chosen row/column\", \"mathHtml\": \"\\[a_{11} = 2\\]\", \"explanation\": \"We'll use this value to calculate the minor and cofactor.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the minor by removing the row/column with the selected element\", \"mathHtml\": \"\", \"explanation\": \"The minor is a smaller matrix obtained by removing the chosen row/column.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the cofactor as the determinant of the minor multiplied by (-1) raised to the power of the row/column index\", \"mathHtml\": \"\\[(-1)^{1+1} \\det(\\begin{bmatrix}5 & 3 \\\\4 & 5\\end{bmatrix}) = -\\det(\\begin{bmatrix}5 & 3 \\\\4 & 5\\end{bmatrix})\\]\", \"explanation\": \"The cofactor is the minor's determinant multiplied by (-1) raised to the power of the row/column index.\"}, {\"stepNumber\": 5, \"description\": \"Repeat steps 2-4 for each element in the chosen row/column\", \"mathHtml\": \"\", \"explanation\": \"We'll add up these cofactors to find the final determinant value.\"} ],",
+    "finalAnswer": "\\[(-1)^{1+1} \\det(\\begin{bmatrix}2 & 3 \\\\4 & 5\\end{bmatrix}) = -\\det(\\begin{bmatrix}5 & 3 \\\\4 & 5\\end{bmatrix}) = 10\\]\" },",
+    "intuition": "Cofactor expansion is a powerful technique for calculating determinants, especially when the matrix size grows. By breaking down the determinant into smaller minors and cofactors, we can simplify complex calculations.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:01:29.957Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_cofactor_expansion_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "cofactor_expansion",
+    "title": "Cofactor Expansion: Solving Determinants",
+    "contentHtml": "<p>In this worked example, we'll apply cofactor expansion to find the determinant of a matrix.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Cofactor Expansion Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the determinant of the matrix A:</p><p>\\[A = \\begin{bmatrix} 2 & 1 \\\\ 3 & 4 \\end{bmatrix}\\]</p>",
+      "hints": [
+        "Use cofactor expansion",
+        "Start with the top-left element"
+      ],
+      "solutionHtml": "<p>To apply cofactor expansion, we'll choose a row or column and expand along it.</p><p>We'll start by expanding along the first row:</p><p>\\[\\begin{align*} \\det(A) &= a_{11}(A_{22}-a_{12}a_{32})-a_{21}(A_{42}-a_{31}a_{41}) \\\\ &= (2)(4-1(3))-(3)(4-1(4)) \\\\ &= 6-9 = \\boxed{-3} \\end{align*}\\]</p>",
+      "answerShort": "-3"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Expand the determinant of the matrix:</p><p>\\[A = \\begin{bmatrix} 2 & 1 \\\\ 3 & 4 \\end{bmatrix}\\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Choose a row or column to expand along",
+          "mathHtml": "",
+          "explanation": "This step is crucial in cofactor expansion"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Expand along the chosen row",
+          "mathHtml": "\\[\\begin{align*} \\det(A) &= a_{11}(A_{22}-a_{12}a_{32})-a_{21}(A_{42}-a_{31}a_{41}) \\\\ &= (2)(4-1(3))-(3)(4-1(4)) \\\\ &= 6-9 = \\boxed{-3} \\end{align*}\\]",
+          "explanation": "Apply the cofactor expansion formula to find the determinant"
+        }
+      ],
+      "finalAnswer": "-3"
+    },
+    "intuition": "Cofactor expansion is a powerful tool for finding determinants. By expanding along a row or column, we can simplify complex calculations.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:02:03.985Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "id": "stat_wex_causal_inference_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference Basics: Potential Outcomes",
+    "problem": "{",
+    "statementHtml": "<p>Consider a binary treatment variable <i>T</i> and an outcome variable <i>y</i>. We want to estimate the average effect of <i>T</i> on <i>y</i>.</p>",
+    "hints": [
+      "Hint: Think about potential outcomes"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A doctor wants to evaluate the effectiveness of a new medication for patients with high blood pressure. The treatment variable <i>T</i> is whether the patient receives the new medication (1) or not (0). The outcome variable <i>y</i> is the patient's blood pressure after 6 months.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define potential outcomes\", \"mathHtml\": \"\\[y_1 = y \\mid T=1\\], \\(y_0 = y \\mid T=0\\]\", \"explanation\": \"We consider the outcome if the patient receives the treatment and if they don't.\"}, {\"stepNumber\": 2, \"description\": \"Recognize confounding\", \"mathHtml\": \"\", \"explanation\": \"The doctor's decision to prescribe the medication might be influenced by other factors, such as the patient's age or health status.\"}, {\"stepNumber\": 3, \"description\": \"Introduce propensity scores\", \"mathHtml\": \"\\[p(x) = P(T=1 \\mid x)\\]\", \"explanation\": \"We use the propensity score to estimate the probability of receiving the treatment given the patient's characteristics <i>x</i>.\"}, {\"stepNumber\": 4\", \"description\": \"Estimate the average treatment effect\", \"mathHtml\": \"\", \"explanation\": \"By comparing the potential outcomes, we can estimate the average effect of the treatment on blood pressure.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "Causal inference is about estimating the effect of an intervention (treatment) on an outcome variable while accounting for confounding factors.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:30:12.814Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_causal_inference_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference: Potential Outcomes and Propensity Scores",
+    "problem": "{",
+    "statementHtml": "Suppose we want to evaluate the effect of a new marketing campaign on sales. We have data on customers who received the campaign (treatment) and those who didn't (control). How can we account for confounding variables?",
+    "hints": [
+      "Consider using propensity scores",
+      "Think about potential outcomes"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "Let's say we have a dataset with customer information, including whether they received the campaign (0 or 1). We want to estimate the average treatment effect (ATE) on sales.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define potential outcomes\", \"mathHtml\": \"\\(Y_i(0)\\) and \\(Y_i(1)\\) represent control and treatment outcomes respectively.\", \"explanation\": \"This helps us distinguish between the outcome under different conditions.\"}, {\"stepNumber\": 2, \"description\": \"Introduce propensity scores\", \"mathHtml\": \"\\(\\pi(x)\\) represents the probability of receiving the campaign given covariates \\(x\\).\", \"explanation\": \"We use these to balance treatment and control groups.\"}, {\"stepNumber\": 3, \"description\": \"Estimate ATE using propensity scores\", \"mathHtml\": \"\\(ATE = \\frac{1}{n} \\sum_{i=1}^n (Y_i(1) - Y_i(0)) \\cdot (\\pi(x_i) - \\bar{\\pi})\\)\", \"explanation\": \"This is an unbiased estimator of the ATE, as it accounts for confounding variables.\"}, {\"stepNumber\": 4, \"description\": \"Interpret results\", \"mathHtml\": \"\", \"explanation\": \"The estimated ATE represents the average difference in sales between treated and control groups, adjusted for covariates.\"} ],",
+    "finalAnswer": "Estimated ATE\" },",
+    "intuition": "Causal inference helps us isolate the effect of a treatment by accounting for confounding variables. Propensity scores are a powerful tool to achieve this.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:30:38.413Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_causal_inference_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference: Potential Outcomes",
+    "contentHtml": "<p>Causal inference is a fundamental concept in machine learning and statistics.</p>",
+    "formula": {
+      "latex": "\\[Y_i = \\mathbf{X}_i^T\\beta + \\epsilon_i\\]",
+      "name": "Linear Regression Model"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to determine the effect of a new marketing campaign on sales. We have data on past sales and marketing efforts, as well as information about the target audience.</p>",
+      "hints": [
+        "Consider using potential outcomes framework"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's say we have a dataset with three variables: Sales (target), Marketing Effort, and Audience Type. We want to estimate the average increase in sales due to the new marketing campaign.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define potential outcomes",
+          "mathHtml": "\\[Y_i(0) = \\text{Sales without marketing}\\]",
+          "explanation": "We're considering what would have happened if we didn't run the new campaign."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Define treated outcome",
+          "mathHtml": "\\[Y_i(1) = \\text{Sales with marketing}\\]",
+          "explanation": "Now we're considering what happens when we do run the campaign."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate average treatment effect",
+          "mathHtml": "\\[ATE = \\frac{\\sum_{i=1}^n Y_i(1) - Y_i(0)}{n}\\]",
+          "explanation": "We're estimating the difference in sales between with and without marketing."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Adjust for confounding variables",
+          "mathHtml": "\\[ATE = \\frac{\\sum_{i=1}^n Y_i(1) - Y_i(0)}{n}\\] + \\text{adjustment for } \\mathbf{X}_i\\]",
+          "explanation": "We're accounting for other factors that might affect sales."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Estimate propensity scores",
+          "mathHtml": "\\[p_i = Pr(Y_i(1) | \\mathbf{X}_i)\\]",
+          "explanation": "We're estimating the probability of being treated (running the campaign) given our features."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "Causal inference helps us answer questions about cause-and-effect relationships in data.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Failing to account for confounding variables"
+    ],
+    "realWorldApplications": [
+      "Estimating the effectiveness of a new marketing campaign"
+    ],
+    "tags": [
+      "causal inference",
+      "potential outcomes"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:31:11.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_causal_inference_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "causal_inference",
+    "title": "Causal Inference Basics: Potential Outcomes and Confounding",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to evaluate the effect of a new marketing campaign on sales. We have data on customers who received the campaign (treatment group) and those who did not (control group). However, there is a confounder variable - the seasonality of sales.</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's say we have data on 100 customers who received the campaign and 100 customers who did not. We want to estimate the average treatment effect (ATE) - the difference in sales between those who received the campaign and those who didn't.</p>",
+    "steps": "[ {",
+    "stepNumber": "4\",",
+    "description": "Estimate ATE using propensity scores",
+    "mathHtml": "\\\\[ATE = E[Y_i|X_i, D=1] - E[Y_i|X_i, D=0]\\]\",",
+    "explanation": "We can now estimate the average treatment effect by comparing the expected outcomes for customers in the treatment group with those in the control group, using their propensity scores to match them.\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "<p>Causal inference is about estimating the effect of an intervention (like a marketing campaign) on an outcome (like sales). We need to account for confounding variables that could affect both the treatment and the outcome. Propensity scores help us match customers in the treatment group with similar customers in the control group, allowing us to estimate the average treatment effect.</p>",
+    "visualDescription": "<p>A diagram showing the potential outcomes and propensity scores would be helpful.</p>",
+    "commonMistakes": [
+      "Failing to account for confounding variables",
+      "Incorrectly estimating propensity scores"
+    ],
+    "realWorldApplications": [
+      "Evaluating the effectiveness of a new product launch in e-commerce",
+      "Estimating the impact of a marketing campaign on sales in retail"
+    ],
+    "tags": [
+      "causal inference",
+      "propensity scores",
+      "confounding"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:31:50.013Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

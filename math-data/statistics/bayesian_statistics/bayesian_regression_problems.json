@@ -1,0 +1,83 @@
+[
+  {
+    "id": "stat_prb_bayesian_regression_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "problem": "{",
+    "statementHtml": "<p>Given a linear regression model with coefficients $\\mathbf{w}$ and prior distribution $p(\\mathbf{w})$, derive the posterior distribution of the coefficients after observing data points $(x_i, y_i)$.</p>\",",
+    "hints": [
+      "Start by writing down the likelihood function for the observed data.",
+      "Use Bayes' theorem to update the prior with the likelihood and obtain the posterior.",
+      "Consider using conjugate priors to simplify the calculation."
+    ],
+    "solutionHtml": "<p>To derive the posterior distribution, we first write down the likelihood function:</p>\\n\\ \\[ p(\\mathbf{y}|\\mathbf{w}) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} \\exp\\left(-\\frac{(y_i - x_i^T \\mathbf{w})^2}{2\\sigma^2}\\right) \\]\\n\\ <p>Next, we apply Bayes' theorem:</p>\\n\\ \\[ p(\\mathbf{w}|\\mathbf{y}) = \\frac{p(\\mathbf{y}|\\mathbf{w}) p(\\mathbf{w})}{\\int p(\\mathbf{y}|\\mathbf{w}) p(\\mathbf{w}) d\\mathbf{w}} \\]\\n\\ <p>Assuming a conjugate prior for the coefficients, we can simplify the calculation:</p>\\n\\ \\[ p(\\mathbf{w}) = \\mathcal{N}(\\mathbf{0}, \\sigma_0^2 I) \\]\\n\\ <p>The posterior distribution is then:</p>\\n\\ \\[ p(\\mathbf{w}|\\mathbf{y}) = \\mathcal{N}(\\mathbf{\\mu}, \\Sigma) \\], where $\\mathbf{\\mu}$ and $\\Sigma$ are the mean and covariance matrix, respectively.</p>\",",
+    "answerShort": "The posterior distribution is a multivariate normal distribution.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:43:29.266Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_regression_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "problem": {
+      "statementHtml": "<p>Prior on coefficients, posterior distribution, and prediction in Bayesian Linear Regression.</p>",
+      "hints": [
+        "Consider the conjugate prior for the regression coefficients.",
+        "Think about how to update the prior with new data.",
+        "Recall that the predictive distribution is a mixture of normals."
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to specify a prior on the regression coefficients. Let's assume a normal-inverse-gamma conjugate prior.</p><p>We can then use Bayes' theorem to update the prior with new data and obtain the posterior distribution.</p><p>Finally, we can use the posterior to make predictions for new inputs.</p>",
+      "answerShort": "The answer is..."
+    },
+    "commonMistakes": [
+      "Forgetting to specify a prior",
+      "Not updating the prior correctly"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:43:42.087Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bayesian_regression_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "bayesian_regression",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian linear regression model with prior distribution on the coefficients. Derive the posterior distribution and use it to make predictions.</p>",
+    "hints": [
+      "Start by specifying the likelihood function",
+      "Use Bayes' theorem to update the prior distribution",
+      "The predictive distribution is a mixture of normals"
+    ],
+    "solutionHtml": "<p>To derive the posterior distribution, we need to specify the likelihood function. Let's assume it's a normal distribution with mean 0 and variance $\\sigma^2$. We then use Bayes' theorem to update the prior distribution.</p><p>$p(\\mathbf{w}|\\mathcal{D}) = \\frac{p(\\mathcal{D}|\\mathbf{w}) p(\\mathbf{w})}{p(\\mathcal{D})}$</p><p>where $\\mathcal{D}$ is the dataset, and $p(\\mathcal{D}|\\mathbf{w})$ is the likelihood function.</p>\",",
+    "answerShort": "The posterior distribution is a normal distribution with mean...\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:43:58.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

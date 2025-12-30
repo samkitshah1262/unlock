@@ -1,0 +1,172 @@
+[
+  {
+    "id": "stat_wex_bias_variance_tradeoff_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "title": "Bias-Variance Tradeoff: Understanding the Balance",
+    "contentHtml": "<p>The bias-variance tradeoff is a fundamental concept in machine learning that highlights the delicate balance between model complexity and training data quality.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to classify handwritten digits using a neural network. How do we choose the number of hidden layers, neurons per layer, and activation functions?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the problem\", \"mathHtml\": \"\", \"explanation\": \"We need to understand that increasing model complexity can lead to overfitting.\"}, {\"stepNumber\": 2, \"description\": \"Analyze the training data\", \"mathHtml\": \"\\(\\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\)\", \"explanation\": \"We need to assess the quality of our training data and its ability to generalize.\"}, {\"stepNumber\": 3, \"description\": \"Choose a model\", \"mathHtml\": \"\", \"explanation\": \"Based on the analysis, we select a model that balances bias and variance.\"}, {\"stepNumber\": 4, \"description\": \"Evaluate the model's performance\", \"mathHtml\": \"\\(\\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\)\", \"explanation\": \"We measure the model's accuracy and adjust its complexity as needed.\"} ],",
+    "finalAnswer": "The optimal number of hidden layers, neurons per layer, and activation functions is determined by the balance between bias and variance.\" },",
+    "intuition": "The key insight is that increasing model complexity can lead to overfitting, while underfitting occurs when the model is too simple. The goal is to find a sweet spot where the model generalizes well.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:00:49.522Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bias_variance_tradeoff_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "title": "Bias-Variance Tradeoff: Decomposition and Implications",
+    "contentHtml": "<p>The bias-variance tradeoff is a fundamental concept in machine learning.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we're building a linear regression model to predict house prices based on features like number of bedrooms, square footage, etc. Our goal is to minimize the mean squared error (MSE) between predicted and actual prices.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the MSE loss function\", \"mathHtml\": \"\\[ \\text{MSE} = \\frac{1}{n} \\sum_{i=1}^n (\\hat{y}_i - y_i)^2 \\]\", \"explanation\": \"We want to minimize the average squared difference between predicted and actual prices.\"}, {\"stepNumber\": 2, \"description\": \"Assume a linear regression model\", \"mathHtml\": \"\\[ \\hat{y}_i = w_0 + w_1 x_{i,1} + \\cdots + w_d x_{i,d} \\]\", \"explanation\": \"This is our simple, interpretable model.\"}, {\"stepNumber\": 3, \"description\": \"Decompose the MSE into bias and variance terms\", \"mathHtml\": \"\\[ \\text{MSE} = (\\text{Bias})^2 + \\sigma^2 \\]\", \"explanation\": \"The bias term represents how far our model's predictions are from the true mean, while the variance term captures the spread of individual errors.\"}, {\"stepNumber\": 4, \"description\": \"Minimize the MSE by adjusting hyperparameters\", \"mathHtml\": \"\\[ w_0, \\ldots, w_d = \\text{argmin}_{w_0, \\ldots, w_d} (\\text{Bias})^2 + \\sigma^2 \\]\", \"explanation\": \"We can adjust model complexity (e.g., number of features) to balance bias and variance.\"}, ],",
+    "finalAnswer": "By decomposing the MSE into bias and variance terms, we can better understand how our model's performance is affected by its simplicity and the noise in the data.\" },",
+    "intuition": "The bias-variance tradeoff highlights the need for careful model selection: simple models may be too biased to capture complex relationships, while complex models may be overly sensitive to noise.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:01:17.198Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bias_variance_tradeoff_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "title": "Bias-Variance Tradeoff",
+    "contentHtml": "<p>The bias-variance tradeoff is a fundamental concept in machine learning.</p>",
+    "formula": {
+      "latex": "\\[\\text{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\]",
+      "name": "Mean Squared Error"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a linear regression model with two features, and the true relationship between the target variable y and the features is quadratic. How can we balance the bias (underfitting) and variance (overfitting) of our model?</p>",
+      "hints": [
+        "Hint: Consider adding more features or using regularization techniques."
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to find a way to reduce the complexity of our model while still capturing the underlying relationship between y and the features.</p>",
+      "answerShort": "Regularization"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset with two features x1 and x2, and the target variable y is the area of a rectangle. We want to build a linear regression model that predicts y based on x1 and x2.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Visualize the data",
+          "mathHtml": "\\[\\]",
+          "explanation": "This helps us identify any patterns or relationships between the features."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Split the data into training and testing sets",
+          "mathHtml": "\\[\\]",
+          "explanation": "This allows us to evaluate our model's performance on unseen data."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Train a linear regression model on the training set",
+          "mathHtml": "\\[\\hat{y} = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\]",
+          "explanation": "This gives us our initial model that we can then evaluate and refine."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the model's performance on the testing set",
+          "mathHtml": "\\[\\text{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\]",
+          "explanation": "This helps us identify any bias or variance issues with our model."
+        }
+      ],
+      "finalAnswer": "Regularized linear regression"
+    },
+    "intuition": "The key insight is that we need to balance the complexity of our model against its ability to capture the underlying relationship between y and the features.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:01:48.236Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bias_variance_tradeoff_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance_tradeoff",
+    "title": "Bias-Variance Tradeoff",
+    "contentHtml": "<p>The bias-variance tradeoff is a fundamental concept in machine learning.</p>",
+    "formula": {
+      "latex": "\\[\\text{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\]",
+      "name": "Mean Squared Error"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a linear regression model with two features. The true relationship is quadratic, but the model only captures the linear component.</p>",
+      "hints": [
+        "Hint: Think about how the model's simplicity affects its performance"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given a dataset with features X1 and X2, we fit a linear regression model to predict Y. However, the true relationship between Y and (X1, X2) is quadratic.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Visualize the data",
+          "mathHtml": "\\[\\text{Scatter plot of }Y\\text{ vs. }X_1, \\text{X}_2\\]",
+          "explanation": "To see how the model's simplicity affects its performance"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Fit the linear regression model",
+          "mathHtml": "\\[\\hat{y} = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2\\]",
+          "explanation": "The model is simple and only captures the linear component"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the Mean Squared Error (MSE)",
+          "mathHtml": "\\[\\text{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2\\]",
+          "explanation": "The MSE measures the model's performance"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Analyze the results",
+          "mathHtml": "",
+          "explanation": "We can see that the model is biased towards the linear component and has high variance"
+        }
+      ],
+      "finalAnswer": "The model is biased and has high variance"
+    },
+    "intuition": "A simple model may not capture the true relationship, but a complex model may overfit the data. Finding the right balance between bias and variance is crucial.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:02:16.893Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

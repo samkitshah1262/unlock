@@ -1,0 +1,104 @@
+[
+  {
+    "id": "la_prb_orthogonal_projection_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal projection of <i>x</i> onto the subspace spanned by the vectors <i>a</i> and <i>b</i>.</p>",
+    "hints": [
+      "<p>The key is to find the projection matrix.</p>",
+      "<p>Use the fact that the projection matrix is equal to the outer product of the basis vectors divided by their norm squared.</p>",
+      "<p>Don't forget to normalize the basis vectors!</p>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal projection, we first need to find the projection matrix. The projection matrix <i>P</i> is given by:</p>\\n\\[P = \\frac{1}{\\|a\\|^2 \\|b\\|^2 - (a \\cdot b)^2} [a][a]^T [b][b]^T - \\frac{(a \\cdot b)}{\\|a\\|^2 \\|b\\|^2 - (a \\cdot b)^2} ([a][b] + [b][a])^T.\\]\\n<p>Now, we can use the projection matrix to find the orthogonal projection:</p>\\n\\[x_{proj} = Px.\\]\\n<p>To simplify the calculation, let's first normalize the basis vectors:</p>\\n\\[\\hat{a} = \\frac{a}{\\|a\\|}, \\quad \\hat{b} = \\frac{b}{\\|b\\|}.\\]\\n<p>Now we can plug in the values:</p>\\n\\[P = \\frac{1}{\\|\\hat{a}\\|^2 \\|\\hat{b}\\|^2 - (\\hat{a} \\cdot \\hat{b})^2} [\\hat{a}][\\hat{a}]^T [\\hat{b}][\\hat{b}]^T - \\frac{\\hat{a} \\cdot \\hat{b}}{\\|\\hat{a}\\|^2 \\|\\hat{b}\\|^2 - (\\hat{a} \\cdot \\hat{b})^2} ([\\hat{a}][\\hat{b}] + [\\hat{b}][\\hat{a}])^T.\\]\\n<p>The final answer is:</p>\\n\\[x_{proj} = P x.\\]\",",
+    "answerShort": "<i>x</i> projected onto the subspace spanned by <i>a</i> and <i>b</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:15:58.883Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Given a vector <i>x</i> and a subspace <i>V</i>, find the orthogonal projection of <i>x</i> onto <i>V</i>.</p>",
+    "hints": [
+      "Think about the dot product and its relationship to orthogonality.",
+      "Use the fact that the projection matrix is an orthogonal projector.",
+      "Check if your answer is actually a vector in <i>V</i>"
+    ],
+    "solutionHtml": "<p>To find the orthogonal projection, we need to find the closest point in <i>V</i> to <i>x</i>. Let's call this point <i>y</i>.</p><p>We can express <i>y</i> as a linear combination of basis vectors for <i>V</i>, say <i>b<sub>1</sub></i>, ..., <i>b<sub>d</sub></i>:</p><p>\\[y = \\sum_{i=1}^d c_i b_i\\]</p><p>Now, we can write the difference between <i>x</i> and <i>y</i> as:</p><p>\\[x - y = \\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right)\\]</p><p>This vector is orthogonal to all basis vectors, so it must be orthogonal to the entire subspace <i>V</i>. This means:</p><p>\\[\\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right) \\cdot \\mathbf{v} = 0\\]</p><p>for any vector <i>v</i> in <i>V</i>. We can simplify this equation by expanding the dot product:</p><p>\\[\\left(\\mathbf{x} - \\sum_{i=1}^d c_i \\mathbf{b}_i\\right) \\cdot \\mathbf{v} = \\mathbf{x} \\cdot \\mathbf{v} - \\sum_{i=1}^d c_i \\mathbf{b}_i \\cdot \\mathbf{v}\\]</p><p>Since this is true for any <i>v</i>, the coefficient of each basis vector must be zero:</p><p>\\[c_i = \\mathbf{x} \\cdot \\mathbf{b}_i\\]</p><p>This gives us the coefficients for the projection matrix:</p><p>\\[\\mathbf{P} = \\sum_{i=1}^d \\frac{\\mathbf{b}_i \\mathbf{b}_i^\\top}{\\mathbf{b}_i^\\top \\mathbf{b}_i}\\]</p><p>Finally, the orthogonal projection of <i>x</i> onto <i>V</i> is given by:</p><p>\\[\\mathbf{P} \\mathbf{x}\\]</p>,",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:16:34.936Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "title": "Orthogonal Projection",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal projection of vector <i>b</i> onto subspace spanned by vectors <i>a</i> and <i>c</i>.</p>",
+      "hints": [
+        "<p>The key is to find the coefficients that minimize the squared error.</p>",
+        "<p>You can use the fact that the projection matrix is orthogonal.</p>",
+        "<p>Think about how you would project a vector onto a line in 2D space.</p>"
+      ],
+      "solutionHtml": "<p>To find the orthogonal projection, we need to find the coefficients <i>c</i> and <i>d</i> that minimize the squared error:</p>\n<p><i>E</i> = ||<i>b</i> - (<i>c</i><i>a</i> + <i>d</i><i>c</i>)||^2</p>\n<p>We can use Lagrange multipliers to find the values of <i>c</i> and <i>d</i> that minimize this error.</p>",
+      "answerShort": "<i>P</i> = (<i>b</i> ⋅ <i>a</i>)<i>a</i>/||<i>a</i)||^2 + (<i>b</i> ⋅ <i>c</i>)<i>c</i>/||<i>c</i)||^2"
+    },
+    "commonMistakes": [
+      "<i>P</i> = <i>b</i> - (<i>a</i> ⋅ <i>b</i>)<i>a</i>",
+      "<i>P</i> is not necessarily unique",
+      "The projection matrix is not always orthogonal"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:16:58.679Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_projection_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_projection",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal projection of vector $\\mathbf{v} = (1, 2, 3)$ onto the subspace spanned by vectors $\\mathbf{u}_1 = (1, 0, 0)$ and $\\mathbf{u}_2 = (0, 1, 0).</p>\",",
+    "hints": "[ \"<p>Think about the projection matrix.</p>\", \"<p>You can use the fact that $\\mathbf{u}_1$ and $\\mathbf{u}_2$ are orthogonal to each other.</p>\", \"<p>Use the formula for the orthogonal projection onto a subspace.</p>\" ],",
+    "solutionHtml": "<p>To find the orthogonal projection, we first need to find the projection matrix $P$. We can do this by taking the outer product of $\\mathbf{u}_1$ and $\\mathbf{u}_2</p><p>\\[ P = \\mathbf{u}_1 \\mathbf{u}_1^T + \\mathbf{u}_2 \\mathbf{u}_2^T.\\]</p><p>Next, we can find the projection of $\\mathbf{v}$ onto the subspace by multiplying $P$ with $\\mathbf{v}</p><p>\\[ \\text{proj}(\\mathbf{v}) = P \\mathbf{v}. \\]</p>\",",
+    "answerShort": "The orthogonal projection is $\\boxed{\\left(1, 2/3, 0\\right)}$\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:17:22.911Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

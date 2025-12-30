@@ -1,0 +1,221 @@
+[
+  {
+    "id": "la_con_eigen_basics_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "eigenvalues_eigenvectors",
+    "topic": "eigen_basics",
+    "title": "What Are Eigenvalues and Eigenvectors?",
+    "subtitle": "The special directions where matrices just scale",
+    "contentHtml": "<p>An <strong>eigenvector</strong> of a matrix \\(A\\) is a non-zero vector \\(\\mathbf{v}\\) that, when multiplied by \\(A\\), only gets <em>scaled</em>—it doesn't change direction. The scaling factor is called the <strong>eigenvalue</strong> \\(\\lambda\\):</p><p>\\[A\\mathbf{v} = \\lambda\\mathbf{v}\\]</p><p>Think of it this way: most vectors get rotated and stretched in complicated ways when you apply a linear transformation. But eigenvectors are special—they stay on the same line, just getting longer or shorter (or flipped if \\(\\lambda < 0\\)).</p><p><strong>Why this matters:</strong> Eigenvalues reveal the fundamental behavior of a transformation. In ML, they tell us about the principal directions of variance in data (PCA), the stability of dynamical systems, and the convergence of iterative algorithms.</p>",
+    "visualDescription": "A 2D plot showing a matrix transformation. Most vectors (gray arrows) get rotated and stretched. Two eigenvectors (colored arrows) stay on their original lines, just getting scaled by their eigenvalues.",
+    "intuition": "Imagine pushing on a flexible grid. Most points move in complex ways, but some special directions just stretch or compress uniformly. Those are the eigenvectors—the 'natural axes' of the transformation.",
+    "commonMistakes": [
+      "Thinking eigenvectors must be unit vectors (they can have any non-zero length)",
+      "Forgetting that the zero vector is never an eigenvector",
+      "Confusing eigenvalues with the entries of the matrix"
+    ],
+    "realWorldApplications": [
+      "PCA uses eigenvectors of the covariance matrix to find principal components",
+      "Google's PageRank is the dominant eigenvector of the web link matrix",
+      "Eigenvalues determine stability in control systems and neural network training"
+    ],
+    "tags": ["eigenvalue", "eigenvector", "linear transformation", "PCA", "fundamental"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["la_con_matrix_multiplication_001", "la_con_linear_transformations_001"],
+    "relatedCards": ["la_for_characteristic_polynomial_001", "la_thm_spectral_theorem_001"],
+    "nextCards": ["la_wex_eigen_basics_001", "la_prb_eigen_basics_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "la_for_characteristic_polynomial_001",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "eigenvalues_eigenvectors",
+    "topic": "characteristic_polynomial",
+    "title": "The Characteristic Polynomial",
+    "subtitle": "Finding eigenvalues by solving det(A - λI) = 0",
+    "contentHtml": "<p>To find eigenvalues, we need \\(A\\mathbf{v} = \\lambda\\mathbf{v}\\) for some non-zero \\(\\mathbf{v}\\). Rearranging:</p><p>\\[(A - \\lambda I)\\mathbf{v} = \\mathbf{0}\\]</p><p>This has a non-zero solution only when \\(A - \\lambda I\\) is singular, i.e., when its determinant is zero.</p>",
+    "formula": {
+      "latex": "\\det(A - \\lambda I) = 0",
+      "name": "Characteristic Equation",
+      "variants": [
+        {
+          "latex": "p(\\lambda) = \\det(A - \\lambda I)",
+          "description": "The characteristic polynomial p(λ)"
+        },
+        {
+          "latex": "p(\\lambda) = (-1)^n \\lambda^n + \\cdots + \\det(A)",
+          "description": "General form for n×n matrix"
+        }
+      ]
+    },
+    "intuition": "The determinant measures 'volume scaling'. When det = 0, the transformation squashes space—meaning some vectors get mapped to zero. Those are exactly the eigenvectors!",
+    "commonMistakes": [
+      "Forgetting to subtract λ from ALL diagonal entries",
+      "Sign errors when expanding the determinant",
+      "Not checking that found λ values actually give non-trivial eigenvectors"
+    ],
+    "realWorldApplications": [
+      "Eigenvalue computation in numerical linear algebra libraries (though they use better algorithms than direct polynomial solving)",
+      "Analyzing stability of systems by checking if eigenvalues have negative real parts"
+    ],
+    "tags": ["eigenvalue", "determinant", "polynomial", "characteristic equation"],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "estimatedMinutes": 2,
+    "prerequisites": ["la_con_eigen_basics_001", "la_for_determinant_basics_001"],
+    "relatedCards": ["la_wex_characteristic_polynomial_001"],
+    "nextCards": ["la_prb_characteristic_polynomial_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "la_wex_eigen_basics_001",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "eigenvalues_eigenvectors",
+    "topic": "eigen_basics",
+    "title": "Finding Eigenvalues and Eigenvectors: 2×2 Example",
+    "subtitle": "Complete walkthrough for a simple matrix",
+    "contentHtml": "<p>Let's find all eigenvalues and eigenvectors of:</p><p>\\[A = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\]</p>",
+    "workedExample": {
+      "problemHtml": "Find all eigenvalues and eigenvectors of \\(A = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\)",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Set up the characteristic equation",
+          "mathHtml": "\\[\\det(A - \\lambda I) = \\det\\begin{pmatrix} 4-\\lambda & 1 \\\\ 2 & 3-\\lambda \\end{pmatrix} = 0\\]",
+          "explanation": "We need to find values of λ where (A - λI) is singular"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Expand the determinant",
+          "mathHtml": "\\[(4-\\lambda)(3-\\lambda) - (1)(2) = 0\\]\\[12 - 4\\lambda - 3\\lambda + \\lambda^2 - 2 = 0\\]\\[\\lambda^2 - 7\\lambda + 10 = 0\\]",
+          "explanation": "Use the 2×2 determinant formula: ad - bc"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Solve the quadratic",
+          "mathHtml": "\\[(\\lambda - 5)(\\lambda - 2) = 0\\]\\[\\lambda_1 = 5, \\quad \\lambda_2 = 2\\]",
+          "explanation": "Factor or use quadratic formula. These are our eigenvalues!"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find eigenvector for λ₁ = 5",
+          "mathHtml": "\\[(A - 5I)\\mathbf{v} = \\begin{pmatrix} -1 & 1 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\mathbf{0}\\]\\[-v_1 + v_2 = 0 \\Rightarrow v_2 = v_1\\]\\[\\mathbf{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\\]",
+          "explanation": "Solve the homogeneous system. Any scalar multiple works!"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Find eigenvector for λ₂ = 2",
+          "mathHtml": "\\[(A - 2I)\\mathbf{v} = \\begin{pmatrix} 2 & 1 \\\\ 2 & 1 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\mathbf{0}\\]\\[2v_1 + v_2 = 0 \\Rightarrow v_2 = -2v_1\\]\\[\\mathbf{v}_2 = \\begin{pmatrix} 1 \\\\ -2 \\end{pmatrix}\\]",
+          "explanation": "Same process for the second eigenvalue"
+        },
+        {
+          "stepNumber": 6,
+          "description": "Verify our answers",
+          "mathHtml": "\\[A\\mathbf{v}_1 = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 5 \\end{pmatrix} = 5\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} \\checkmark\\]",
+          "explanation": "Always verify! Av should equal λv"
+        }
+      ],
+      "finalAnswer": "Eigenvalues: λ₁ = 5, λ₂ = 2. Eigenvectors: v₁ = (1, 1)ᵀ, v₂ = (1, -2)ᵀ"
+    },
+    "visualDescription": "Show the matrix A transforming the plane, with the two eigenvectors highlighted. v₁ gets stretched by 5, v₂ gets stretched by 2.",
+    "commonMistakes": [
+      "Arithmetic errors in determinant expansion",
+      "Stopping after finding eigenvalues without computing eigenvectors",
+      "Not verifying the answer by checking Av = λv"
+    ],
+    "tags": ["eigenvalue", "eigenvector", "2x2 matrix", "worked example"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 3,
+    "prerequisites": ["la_con_eigen_basics_001", "la_for_characteristic_polynomial_001"],
+    "relatedCards": ["la_prb_eigen_basics_001"],
+    "nextCards": ["la_con_diagonalization_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "la_thm_spectral_theorem_001",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "eigenvalues_eigenvectors",
+    "topic": "spectral_theorem",
+    "title": "The Spectral Theorem",
+    "subtitle": "Symmetric matrices are orthogonally diagonalizable",
+    "contentHtml": "<p>The Spectral Theorem is one of the most important results in linear algebra, especially for machine learning. It tells us that <em>symmetric matrices have nice properties</em>.</p>",
+    "theorem": {
+      "statement": "\\textbf{Spectral Theorem:} If \\(A\\) is a real symmetric matrix (\\(A = A^T\\)), then:\\begin{enumerate}\\item All eigenvalues of \\(A\\) are real\\item Eigenvectors corresponding to distinct eigenvalues are orthogonal\\item \\(A\\) can be diagonalized as \\(A = Q\\Lambda Q^T\\) where \\(Q\\) is orthogonal\\end{enumerate}",
+      "proofSketch": "For real eigenvalues: if Av = λv, then v̄ᵀAv = λ||v||². Since A is symmetric and real, v̄ᵀAv is real, so λ must be real. For orthogonality: if Av₁ = λ₁v₁ and Av₂ = λ₂v₂ with λ₁ ≠ λ₂, then λ₁(v₁·v₂) = (Av₁)·v₂ = v₁·(Av₂) = λ₂(v₁·v₂), so v₁·v₂ = 0."
+    },
+    "intuition": "Symmetric matrices represent 'pure scaling' in orthogonal directions—no rotation or shearing. The eigenvectors give you the natural coordinate system where the matrix acts most simply.",
+    "commonMistakes": [
+      "Applying this theorem to non-symmetric matrices",
+      "Forgetting that Q must be orthogonal, not just invertible",
+      "Confusing Q⁻¹ with Qᵀ (they're equal for orthogonal matrices)"
+    ],
+    "realWorldApplications": [
+      "PCA: The covariance matrix is symmetric, so we can find orthogonal principal components",
+      "Optimization: Hessians of twice-differentiable functions are symmetric",
+      "Graph Laplacians: Spectral clustering uses eigenvalues of symmetric Laplacian matrices"
+    ],
+    "tags": ["spectral theorem", "symmetric matrix", "diagonalization", "orthogonal", "PCA"],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["la_con_diagonalization_001", "la_con_orthogonal_matrices_001"],
+    "relatedCards": ["la_con_svd_basics_001", "la_con_pca_001"],
+    "nextCards": ["la_wex_spectral_theorem_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "la_prb_eigen_basics_001",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigenvalues_eigenvectors",
+    "topic": "eigen_basics",
+    "title": "Find Eigenvalues of a 3×3 Matrix",
+    "subtitle": "Practice with a larger matrix",
+    "contentHtml": "<p>This problem tests your ability to find eigenvalues of a 3×3 matrix with a special structure that makes computation easier.</p>",
+    "problem": {
+      "statementHtml": "<p>Find all eigenvalues of the matrix:</p><p>\\[A = \\begin{pmatrix} 2 & 1 & 0 \\\\ 0 & 2 & 1 \\\\ 0 & 0 & 3 \\end{pmatrix}\\]</p>",
+      "hints": [
+        "Notice that A is upper triangular. What's special about the determinant of triangular matrices?",
+        "For a triangular matrix, det(A - λI) factors very nicely...",
+        "The eigenvalues of a triangular matrix are just its diagonal entries!"
+      ],
+      "solutionHtml": "<p><strong>Key insight:</strong> For a triangular matrix, the determinant is the product of diagonal entries.</p><p>\\[\\det(A - \\lambda I) = \\det\\begin{pmatrix} 2-\\lambda & 1 & 0 \\\\ 0 & 2-\\lambda & 1 \\\\ 0 & 0 & 3-\\lambda \\end{pmatrix}\\]</p><p>\\[= (2-\\lambda)(2-\\lambda)(3-\\lambda) = 0\\]</p><p>The eigenvalues are the diagonal entries: \\(\\lambda_1 = 2\\) (with algebraic multiplicity 2) and \\(\\lambda_2 = 3\\).</p>",
+      "answerShort": "λ = 2 (multiplicity 2), λ = 3"
+    },
+    "commonMistakes": [
+      "Expanding the full 3×3 determinant instead of using the triangular shortcut",
+      "Confusing algebraic multiplicity with geometric multiplicity"
+    ],
+    "tags": ["eigenvalue", "triangular matrix", "determinant", "3x3"],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "estimatedMinutes": 2,
+    "prerequisites": ["la_con_eigen_basics_001"],
+    "relatedCards": ["la_wex_eigen_basics_001"],
+    "nextCards": ["la_prb_eigen_basics_002"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  }
+]
+

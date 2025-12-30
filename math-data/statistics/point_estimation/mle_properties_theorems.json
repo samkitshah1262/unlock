@@ -1,0 +1,69 @@
+[
+  {
+    "id": "stat_thm_mle_properties_004",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "mle_properties",
+    "title": "Properties of Maximum Likelihood Estimators (MLEs)",
+    "contentHtml": "<p>In statistics, MLEs are widely used to estimate parameters in probability distributions.</p><p>This theorem provides fundamental properties that ensure the reliability and accuracy of these estimates.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\det(A) = \\\\sum_{\\\\sigma} \\\\text{sgn}(\\\\sigma) \\\\prod_{i} a_{i,\\\\sigma(i)} \\\\]\",",
+    "name": "MLE Properties\" },",
+    "theorem": "{",
+    "statement": "\\[ \\textbf{Theorem: } The MLE is invariant under reparameterization. It is consistent if the true parameter belongs to the interior of the parameter space. Asymptotically, it is normally distributed with mean equal to the true parameter and variance inversely proportional to the Fisher information. Finally, it is efficient among all regular estimators. \\]",
+    "proofSketch": "The proof involves showing that the MLE is a consistent estimator using the law of large numbers, then demonstrating its asymptotic normality by applying the central limit theorem.\" },",
+    "intuition": "These properties ensure that MLEs are robust and accurate in estimating parameters. Invariance means the estimate doesn't change under different parameterizations. Consistency guarantees it converges to the true value as the sample size increases. Asymptotic normality provides a distribution for the estimate, while efficiency ensures it's the best possible among all regular estimators.",
+    "realWorldApplications": [
+      "In machine learning, MLEs are used in various algorithms, such as logistic regression and neural networks."
+    ],
+    "tags": [
+      "MLE",
+      "statistical inference"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:42:33.604Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_mle_properties_005",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "mle_properties",
+    "title": "Properties of Maximum Likelihood Estimators (MLEs)",
+    "contentHtml": "<p>A fundamental concept in statistical inference is the maximum likelihood estimator (MLE), which chooses the value that maximizes the probability of observing the data.</p><p>In this card, we explore three essential properties of MLEs: invariance, consistency, asymptotic normality, and efficiency.</p>",
+    "formula": {
+      "latex": "\\[ P(X | \\theta) = \\frac{1}{Z} e^{\\theta^T X} \\]",
+      "name": "Likelihood function"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{Invariance: } \\hat{\\theta}(X) = g(\\hat{\\theta}(g^{-1}(X))) \\\\ \\text{Consistency: } P(Lim_{n \\to \\infty} \\hat{\\theta}_n = \\theta | X_1, \\ldots, X_n) = 1 \\\\ \\text{Asymptotic Normality: } \\sqrt{n} (\\hat{\\theta}_n - \\theta) \\xrightarrow{d} N(0, I^{-1}) \\\\ \\text{Efficiency: } \\frac{1}{n} \\sum_{i=1}^n X_i \\geq \\frac{1}{2n} \\sum_{i=1}^n X_i^2 \\]",
+      "proofSketch": "The invariance property follows from the fact that MLEs are invariant to reparameterizations. Consistency is proven by showing that the likelihood function converges to a delta function at the true parameter value. Asymptotic normality is established using the central limit theorem and Taylor series expansions. Efficiency is demonstrated by comparing the variance of the MLE with that of an alternative estimator."
+    },
+    "intuition": "These properties ensure that MLEs are robust, reliable, and efficient in estimating parameters from data.",
+    "realWorldApplications": [
+      "In machine learning, MLEs are used to estimate model parameters, such as weights and biases in neural networks."
+    ],
+    "tags": [
+      "MLE",
+      "statistical inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:42:58.772Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

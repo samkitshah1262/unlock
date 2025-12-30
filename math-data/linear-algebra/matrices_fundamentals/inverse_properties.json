@@ -1,0 +1,255 @@
+[
+  {
+    "id": "la_con_inverse_properties_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "title": "Properties of Inverses",
+    "contentHtml": "<p>In linear algebra, an inverse of a matrix is another matrix that, when multiplied by the original matrix, results in the identity matrix. Understanding properties of inverses is crucial for solving systems of equations and finding solutions in various applications.</p><p>There are three main properties to consider:</p>",
+    "formula": "{",
+    "latex": "\\(A^{-1} A = I\\)\",",
+    "name": "Inverse Property\" },",
+    "intuition": "Think of the inverse as a 'reversal' operation. When you multiply two matrices together, the order matters. The inverse property ensures that when you multiply an original matrix by its inverse, you get back to where you started.",
+    "realWorldApplications": [
+      "In machine learning, finding the inverse of a covariance matrix is essential for calculating Bayes' theorem and performing statistical inference."
+    ],
+    "commonMistakes": [
+      "Failing to account for the order of matrix multiplication when working with inverses."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:26:32.325Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_inverse_properties_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "title": "Properties of Inverses",
+    "contentHtml": "<p>In linear algebra, an inverse matrix is a crucial concept that helps us solve systems of equations and find the unique solution. But what are the properties of these inverses? Let's dive in!</p><p>An invertible square matrix A has an inverse A^(-1) if and only if its determinant det(A) is non-zero.</p>",
+    "formula": "{",
+    "latex": "\\[ \\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)} \\]\",",
+    "name": "Determinant Formula\" },",
+    "intuition": "Think of an inverse matrix as a 'undo' button for the original matrix. When you multiply A by its inverse, the result is the identity matrix I.",
+    "realWorldApplications": [
+      "In machine learning, we often need to invert matrices when computing the covariance matrix or solving linear regression problems."
+    ],
+    "commonMistakes": [
+      "Don't assume that every square matrix has an inverse; it's only true for those with non-zero determinants."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:26:48.980Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_inverse_properties_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "title": "Properties of Inverses",
+    "contentHtml": "<p>In linear algebra, an inverse of a matrix is another matrix that, when multiplied by the original matrix, results in the identity matrix. But what are the properties of these inverses?</p><p>For starters, let's consider the product of two matrices, one of which has an inverse. We can write this as \\(\\mathbf{A} \\cdot \\mathbf{B}^{-1}\\). Now, if we multiply both sides by \\(\\mathbf{B}\\), we get \\(\\mathbf{A} \\cdot \\mathbf{B}^{-1} \\cdot \\mathbf{B} = \\mathbf{A}\\). Since the inverse of a matrix is defined as the matrix that, when multiplied by the original matrix, results in the identity matrix, we can substitute \\(\\mathbf{I}\\) for \\(\\mathbf{B}\\), where \\(\\mathbf{I}\\) is the identity matrix. This gives us \\(\\mathbf{A} \\cdot (\\mathbf{I})^{-1} = \\mathbf{A}\\). Since the inverse of the identity matrix is itself, we can simplify this to just \\(\\mathbf{A}\\).</p>\",",
+    "formula": "{",
+    "latex": "\\((\\mathbf{A} \\cdot \\mathbf{B}) \\cdot \\mathbf{B}^{-1} = \\mathbf{A}\\)\",",
+    "name": "\" },",
+    "intuition": "The key insight here is that the product of two matrices, one with an inverse, can be simplified by substituting the identity matrix for the second matrix. This allows us to easily simplify expressions involving matrix products and inverses.",
+    "realWorldApplications": [
+      "In machine learning, we often use matrix operations to manipulate data. Understanding the properties of inverses is crucial in these applications."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the product of two matrices can be simplified when one has an inverse"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:27:14.353Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_inverse_properties_004",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "title": "Product and Transpose Inverse Properties",
+    "contentHtml": "<p>In linear algebra, understanding the properties of inverses is crucial for solving systems of equations and manipulating matrices.</p><p>This theorem establishes two fundamental relationships between matrix products and their inverses.</p>",
+    "formula": "{",
+    "latex": "\\[ (AB)^{-1} = B^{-1}A^{-1} \\]",
+    "name": "Product Inverse Formula\" },",
+    "theorem": "{",
+    "statement": "\\\\[(AB)^{-1} = B^{-1}A^{-1}, \\quad (A^T)^{-1} = (A^{-1})^T\\\\]\" },",
+    "intuition": "These formulas allow us to easily compute the inverse of a product or transpose of a matrix, which is essential in many applications, including machine learning.",
+    "realWorldApplications": [
+      "In neural networks, computing the inverse of a weight matrix can help with backpropagation."
+    ],
+    "tags": [
+      "matrix operations",
+      "inverse matrices"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:27:29.853Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_inverse_properties_005",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "title": "Inverse Properties",
+    "contentHtml": "<p>The inverse of a matrix is a fundamental concept in linear algebra.</p><p>In this theorem, we explore two important properties: the product inverse and transpose inverse.</p>",
+    "formula": {
+      "latex": "\\[ (A \\cdot B)^{-1} = B^{-1} \\cdot A^{-1} \\]",
+      "name": "Product Inverse",
+      "variants": [
+        {
+          "latex": "\\[ (A^T)^{-1} = (A^{-1})^T \\]",
+          "description": "Transpose Inverse"
+        }
+      ]
+    },
+    "theorem": {
+      "statement": "\\[(I_n - A)^{-1} = I_n + A + A^2 + \\cdots + A^{n-1} \\]",
+      "proofSketch": "The proof involves using the geometric series and matrix multiplication properties."
+    },
+    "intuition": "These inverse properties help us understand how to compose inverses of matrices, which is crucial in many applications, including machine learning.",
+    "realWorldApplications": [
+      "Inverting covariance matrices for Gaussian mixture models"
+    ],
+    "tags": [
+      "linear algebra",
+      "matrices",
+      "inverse"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:27:46.920Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inverse_properties_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "problem": "{",
+    "statementHtml": "Find the product of two matrices A and B if their inverses exist.",
+    "hints": [
+      "Check that both matrices have full column rank.",
+      "Use the definition of matrix multiplication to guide your approach.",
+      "Recall that (AB)⁻¹ = B⁻¹A⁻¹"
+    ],
+    "solutionHtml": "\\[ Let A⁻¹ and B⁻¹ be the inverses. Then (AB)⁻¹ = A⁻¹B⁻¹, since matrix multiplication is associative. \\] \\[ Next, we use the fact that (AB)(AB)⁻¹ = I to write: \\[(AB)(A⁻¹B⁻¹) = I.\\] \\[ Simplifying, we get (AB)(A⁻¹B⁻¹) = A(A⁻¹)B(B⁻¹) = IB = I. Therefore, (AB)⁻¹ = A⁻¹B⁻¹. \\]",
+    "answerShort": "The product of two matrices with inverses is the inverse of their product.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:28:05.038Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inverse_properties_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "problem": "{",
+    "statementHtml": "<p>Find the product of two matrices A and B, where A is invertible.</p>",
+    "hints": [
+      "Check if A is square.",
+      "Remember that (AB)⁻¹ = B⁻¹A⁻¹.",
+      "The inverse of a product is not always easy to compute."
+    ],
+    "solutionHtml": "<p>To find the product, we need to multiply A⁻¹ by B:</p>\\n\\[A⁻¹B\\]\\n<p>This is equivalent to multiplying B by A⁻¹ and then taking the transpose:</p>\\n\\[(AB)⁻¹ = (B⁻¹A⁻¹)^T\\]\\n<p>Since A is invertible, we can rewrite this as:</p>\\n\\[B⁻¹A⁻¹^T\\]\\n<p>This shows that the product of two matrices is not always easy to compute.</p>\",",
+    "answerShort": "The product is B⁻¹A⁻¹^T.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:28:21.918Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inverse_properties_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "problem": "{",
+    "statementHtml": "<p>Prove that <code>\\(A \\cdot A^{-1} = I\\)</code>, where <code>A</code> is a square matrix and <code>I</code> is the identity matrix.</p>\",",
+    "hints": "[ \"<p><code>A \\cdot A^{-1}</code> is equal to <code>A \\cdot (A^T)^{-1} A</code> using the properties of transposes.</p>\", \"<p>Use the fact that <code>(A^T)^{-1} = (A^{-1})^T</code> to simplify further.</p>\", \"<p>Finally, use the associative property of matrix multiplication to rearrange terms.</p>\" ],",
+    "solutionHtml": "<p>To prove this, we can start by expanding <code>A \\cdot A^{-1}</code>:</p><p>\\[A \\cdot A^{-1} = (A \\cdot A^{-T}) \\cdot A^{-1}\\]</p><p>Now, since <code>A^T</code> is the transpose of <code>A</code>, we know that <code>A^T \\cdot A = I</code>.  Multiplying both sides by <code>A^{-1}</code> on the right gives:</p><p>\\[A^{-1} \\cdot (A^T \\cdot A) \\cdot A^{-1} = A^{-1} \\cdot I \\cdot A^{-1}\\]</p><p>Simplifying, we get:</p><p>\\[A^{-1} \\cdot I \\cdot A^{-1} = A^{-1} \\cdot A^{-1}\\]</p><p>Finally, since <code>A^{-1}</code> is the inverse of <code>A</code>, we know that <code>A^{-1} \\cdot A^{-1} = I</code>.  Therefore:</p><p>\\[A \\cdot A^{-1} = I\\]</p>\",",
+    "answerShort": "<code>I</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:28:49.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_inverse_properties_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "inverse_properties",
+    "problem": "{",
+    "statementHtml": "<p>Given a square matrix A, prove that <i>(A<sup>-1</sup>)</i><sup>T</sup> = (A<sup>T</sup>)</i><sup>-1</sup>.</p>",
+    "hints": [
+      "<p>Start by considering the product of A and its transpose.</p>",
+      "<p>Use the fact that <i>(AB)</i><sup>T</sup> = B<sup>T</sup>A<sup>T</sup>.</p>",
+      "<p>Now, substitute A for (A<sup>-1</sup>) in the previous equation.</p>"
+    ],
+    "solutionHtml": "<p>To prove the statement, we can start by considering the product of A and its transpose:</p><p>\\[ (A^T)(A) = I \\]</p><p>where <i>I</i> is the identity matrix. Now, substitute A for <i>(A<sup>-1</sup>)</i>:</p><p>\\[ ((A^{-1})^T)(A) = I \\]</p><p>Using the fact that <i>(AB)</i><sup>T</sup> = B<sup>T</sup>A<sup>T</sup>, we can rewrite this equation as:</p><p>\\[ (A^{-1})^T(A) = I \\]</p><p>This implies that <i>(A^{-1})</i><sup>T</sup> is the inverse of A<sup>T</sup>:</p><p>\\[ (A^{-1})^T = (A^T)^{-1} \\]</p>\",",
+    "answerShort": "<i>(A<sup>-1</sup>)</i><sup>T</sup> = (A<sup>T</sup>)</i><sup>-1</sup>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:29:15.909Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

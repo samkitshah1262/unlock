@@ -1,0 +1,626 @@
+[
+  {
+    "id": "stat_con_diagnostics_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Understanding Residual Plots and Leverage",
+    "contentHtml": "<p>In regression analysis, it's crucial to assess the quality of our model by examining residuals and influential points. This card introduces you to residual plots, leverage, and Cook's distance – essential concepts for identifying potential issues in your model.</p>",
+    "formula": {
+      "latex": "\\[ y = a + bx \\]",
+      "name": "Simple Linear Regression"
+    },
+    "intuition": "Think of residuals as the 'errors' between our predicted values and actual observations. Leverage measures how much each data point contributes to these errors.",
+    "visualDescription": "A scatter plot with a regression line, showing residual plots",
+    "commonMistakes": [
+      "Failing to check for outliers or influential points",
+      "Ignoring residuals as they're 'small'"
+    ],
+    "realWorldApplications": [
+      "Identifying biases in predictive models (ML/AI)"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:20.262Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_diagnostics_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics",
+    "contentHtml": "<p>Regression diagnostics help identify potential issues in a linear regression model by examining residuals, leverage, and influential points.</p><p>A residual plot shows the relationship between predicted values and actual values, helping to detect non-linear relationships or outliers. Leverage measures how much each data point contributes to the overall fit of the model. Influential points are those that have an unusually large impact on the regression line.</p>",
+    "formula": {
+      "latex": "\\[r_i = y_i - \\hat{y}_i\\]",
+      "name": "Residual",
+      "variants": [
+        {
+          "latex": "\\[h_i = x_i^T (X^T X)^{-1} X^T x_i\\]",
+          "description": "Leverage"
+        }
+      ]
+    },
+    "intuition": "Regression diagnostics provide a way to validate the assumptions of linear regression and identify potential issues that may affect model performance.",
+    "realWorldApplications": [
+      "Identifying and addressing biases in machine learning models"
+    ],
+    "commonMistakes": [
+      "Ignoring residuals and assuming the model is correct",
+      "Not considering leverage when evaluating outliers"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:36.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_diagnostics_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics",
+    "contentHtml": "<p>Regression diagnostics help you identify and address issues in your regression model.</p><p>A good regression model should have residuals that are randomly distributed around zero, with no patterns or trends. But what if your residuals don't look like this? That's where regression diagnostics come in.</p>",
+    "formula": "{",
+    "latex": "\\(y = \\beta_0 + \\beta_1 x + \\epsilon\\)\" },",
+    "intuition": "Think of residual plots as a way to visualize the 'leftover' variation in your data that isn't explained by the model. If you see patterns or outliers, it's like finding a hidden message - something's not quite right.",
+    "visualDescription": "A scatterplot with residuals on the y-axis and fitted values on the x-axis would be helpful to visualize residual plots.",
+    "commonMistakes": [
+      "Not checking for multicollinearity",
+      "Ignoring influential points"
+    ],
+    "realWorldApplications": [
+      "Identifying issues in predictive models used in ML/AI applications, such as anomaly detection or recommendation systems"
+    ],
+    "tags": [
+      "regression",
+      "diagnostics",
+      "ML/AI"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:40:51.802Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_diagnostics_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are essential tools in regression diagnostics to identify potential issues with your model.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Residual} = y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i}) \\]\",",
+    "name": "Residual Formula",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a simple linear regression model: \\(y = \\beta_0 + \\beta_1 x\\). Calculate the residual for the point \\(x=2, y=3\\).</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Plug in the values\", \"mathHtml\": \"\\(3 - (\\hat{\\beta}_0 + \\hat{\\beta}_1 * 2)\\)\", \"explanation\": \"We substitute \\(x=2\\) and \\(y=3\\) into the residual formula\"} ],",
+    "finalAnswer": "The residual is...\" },",
+    "intuition": "Residual plots help you visualize patterns in your residuals, while leverage measures how much each data point influences the model's predictions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:41:08.374Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_diagnostics_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are crucial in regression diagnostics to identify potential issues with your model.</p><p>A residual plot shows the residuals (observed - predicted) against the fitted values. This helps you detect patterns, such as curvature or non-constant variance, that might indicate poor model fit.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Residual} = y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i}) \\]\",",
+    "name": "Residual Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose you're analyzing the relationship between exam scores and study hours. You fit a linear regression model, but notice that the residuals seem to increase with the fitted values.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Plot the residuals against the fitted values",
+        "mathHtml": "",
+        "explanation": "This helps you visualize any patterns in the residuals."
+      }
+    ],
+    "finalAnswer": "The increasing residuals indicate non-constant variance, which might affect your model's accuracy.\" },",
+    "intuition": "Residual plots help you understand how well your model fits the data. Leverage measures the influence of each data point on the regression line.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:41:25.487Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_diagnostics_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots, Leverage, and Influential Points",
+    "contentHtml": "<p>Regression diagnostics help identify issues in a model's fit to the data.</p><ul><li>Residual plots reveal patterns or outliers that can indicate poor modeling choices.</li><li>Leverage measures each observation's influence on the regression line.</li><li>Cook's distance helps identify influential points that may affect the model's performance.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\text{Residual} = y_i - (\\hat{y}_i + b_0 + b_1 x_i) \\]\",",
+    "name": "Residual Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a linear regression model with two features. How would you identify influential points and leverage them to improve the model's performance?</p>",
+    "steps": "[ {",
+    "stepNumber": 1,
+    "description": "Plot the residuals against the fitted values",
+    "mathHtml": "\\[ \\text{Residual Plot} = (y_i - \\hat{y}_i) vs. (\\hat{y}_i + b_0 + b_1 x_i) \\]\",",
+    "explanation": "This helps identify patterns or outliers that can indicate poor modeling choices.\" } ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Regression diagnostics provide a way to evaluate the quality of a model's fit and identify potential issues.",
+    "realWorldApplications": [
+      "Identifying influential points in recommender systems"
+    ],
+    "tags": [
+      "regression",
+      "diagnostics",
+      "influential points"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:41:46.883Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_diagnostics_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are two essential tools in regression diagnostics.</p><p>A residual plot shows the relationship between residuals (vertical axis) and fitted values (horizontal axis). This helps identify patterns, outliers, and non-linear relationships.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Residual Plot: } y = f(x) + \\epsilon\\]\",",
+    "name": "Residual Plot\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a simple linear regression model:</p><p>y = β0 + β1x + ε</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Plot the residuals against the fitted values\", \"mathHtml\": \"\\[ y_i - \\hat{y}_i \\]\", \"explanation\": \"This helps identify patterns and outliers\"}, {\"stepNumber\": 2, \"description\": \"Check for non-linear relationships or curvature\", \"mathHtml\": \"\", \"explanation\": \"If we see a clear pattern, it may indicate non-linearity\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "Residual plots help us visualize the relationship between our predictions and actual values. Leverage measures how much each data point affects the regression line.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:04.642Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "<p>Use residual plots to identify influential points in a regression model.</p>",
+    "hints": [
+      "Start by plotting residuals against fitted values.",
+      "Look for patterns or outliers that may indicate issues with the model.",
+      "Check Cook's distance and leverage values for further confirmation."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use residual plots to identify influential points in a regression model. First, we'll plot residuals against fitted values:</p>\\n\\[Residuals vs Fitted Values]\\n<p>Next, we'll look for patterns or outliers that may indicate issues with the model.</p>\\n<p>Finally, we'll check Cook's distance and leverage values to further confirm our findings.</p>\",",
+    "answerShort": "Influential points are those with high Cook's distance or leverage values.\" },",
+    "commonMistakes": [
+      "Failing to account for non-linear relationships",
+      "Not considering the impact of outliers"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:19.147Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "Residual plots can be misleading if there are influential points in the data. Identify and explain three such points.",
+    "hints": [
+      "Check Cook's distance values for each point",
+      "Look at leverage values to identify outliers",
+      "Plot residuals against fitted values to spot unusual patterns"
+    ],
+    "solutionHtml": "\\[Residual plot with 3 influential points]\\n\\ To identify these points, we can calculate their Cook's distances. Points with high Cook's distances are likely to be influential.\\n\\ For point A, the Cook's distance is \\(0.02\\), indicating it has a moderate influence on the model. For point B, the value is \\(0.15\\), suggesting strong influence. Finally, for point C, we have \\(0.01\\), implying little impact.\\n\\ Next, let's examine leverage values. Points with high leverage can also be influential. Point A has a leverage of \\(0.6\\), while points B and C have leverages of \\(1.2\\) and \\(0.8\\), respectively.\\n\\ Finally, plotting residuals against fitted values reveals that points B and C have unusual patterns, further supporting their influence.\",",
+    "answerShort": "Points A, B, and C are the influential points.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:38.563Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model <code>y = β0 + β1x</code>, identify and describe three types of residual plots that can help diagnose issues with the model.</p>",
+      "hints": [
+        "Start by plotting residuals against fitted values.",
+        "Look for patterns or outliers in the plot.",
+        "Consider using a different scale if the data is skewed."
+      ],
+      "solutionHtml": "<p>To identify potential issues with the linear regression model, we can create three types of residual plots:</p><ul><li>Residuals vs. Fitted: This plot shows the residuals plotted against the fitted values from the model. If there's a pattern or outliers in this plot, it may indicate that the model is not capturing all the variability in the data.</li><li>Scale-Location: This plot shows the residuals plotted against the scale (or magnitude) of the data. If there are patterns or outliers in this plot, it may indicate that the model is sensitive to extreme values.</li><li>Residuals vs. Leverage: This plot shows the residuals plotted against the leverage statistic for each observation. If there are observations with high leverage and large residuals, it may indicate that these points are driving the model's predictions.</p>",
+      "answerShort": "Three types of residual plots to diagnose issues with linear regression models are Residuals vs. Fitted, Scale-Location, and Residuals vs. Leverage."
+    },
+    "commonMistakes": [
+      "Failing to check for influential points or outliers in the data.",
+      "Not considering the scale of the residuals when interpreting plots."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:42:58.245Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "Residual plots can be misleading if there are influential points in the data. Identify and explain three such points.",
+    "hints": [
+      "Check Cook's distance values for large values",
+      "Look at leverage values to identify outliers",
+      "Plot residuals against fitted values"
+    ],
+    "solutionHtml": "<p>Step 1: Calculate Cook's distance for each point.</p>\\[CD_i = \\frac{r_i^2}{k(1-h_i)}\\]<br><p>Step 2: Identify points with large CD values (e.g., > 3/k).</p>\\[Points 1, 2, and 5 have high Cook's distance.\\] <br><p>Step 3: Calculate leverage for each point.</p>\\[h_i = \\frac{X_i^T(X^TX)^{-1}X_i}{n}\\]<br><p>Step 4: Identify points with high leverage values (e.g., > 0.5).</p>\\[Points 2 and 5 have high leverage.\\] <br><p>Step 5: Plot residuals against fitted values for the identified influential points.</p>\",",
+    "answerShort": "Points 1, 2, and 5 are influential\" },",
+    "commonMistakes": [
+      "Failing to check Cook's distance",
+      "Ignoring high leverage points"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:43:15.962Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_diagnostics_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "problem": "{",
+    "statementHtml": "<p>Examine a regression model's residuals and leverage values to identify influential points.</p>",
+    "hints": [
+      "Check the residual plot for unusual patterns.",
+      "Look at the Cook's distance values; high values indicate potential outliers.",
+      "Consider the leverage values; high values suggest observations with large influence."
+    ],
+    "solutionHtml": "<p>To diagnose issues in a regression model, we can start by examining the residuals.</p>\\n<p>First, let's create a residual plot:</p>\\n\\[ \\text{Residual Plot} = \\text{Actual Values} - \\text{Fitted Values} \\]\\n<p>This should give us an idea of any unusual patterns or outliers in our data.</p>\\n<p>Next, we can calculate the Cook's distance values:</p>\\n\\[ \\text{Cook's Distance} = \\frac{(r_i)^2}{(1-h_i)^2} \\]\\n<p>where $r_i$ is the residual for observation $i$, and $h_i$ is the leverage value.</p>\\n<p>A high Cook's distance value indicates an influential point in our data.</p>\\n<p>We can also examine the leverage values:</p>\\n\\[ \\text{Leverage} = h_i = \\frac{(x_i - \\bar{x})^2}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\]\\n<p>A high leverage value suggests an observation with large influence on the regression line.</p>\\n<p>By examining these values, we can identify potential issues in our model and take steps to address them.</p>\",",
+    "answerShort": "Identify influential points by analyzing residuals, Cook's distance, and leverage values.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:43:37.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_diagnostics_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are essential tools in regression diagnostics to identify patterns and anomalies in your data.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a linear regression model <code>y = β0 + β1x</code> with residuals <code>r_i = y_i - (β0 + β1x_i)</code>. We want to identify influential points that affect the model's performance.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Plot the residuals against the fitted values\", \"mathHtml\": \"\\[r_i \\sim f(y_i)\\]\", \"explanation\": \"This helps us visualize patterns in the residuals.\"}, {\"stepNumber\": 2, \"description\": \"Check for non-random patterns\", \"mathHtml\": \"\", \"explanation\": \"Non-random patterns can indicate issues with the model or data.\"}, {\"stepNumber\": 3, \"description\": \"Calculate leverage values\", \"mathHtml\": \"\\[h_i = (x_i - \\bar{x})^T(X^T X)^{-1} (x_i - \\bar{x})\\]\", \"explanation\": \"Leverage measures the distance of each observation from the mean.\"}, {\"stepNumber\": 4, \"description\": \"Identify influential points using Cook's distance\", \"mathHtml\": \"\\[D_i = \\frac{(r_i - \\bar{r})^2}{p \\cdot (1 - h_i)}\\]\", \"explanation\": \"Cook's distance measures the influence of each point on the model.\"} ],",
+    "finalAnswer": "By analyzing residual plots, leverage values, and Cook's distance, we can identify influential points that affect our regression model.\" },",
+    "intuition": "Residual plots help us visualize patterns in the residuals, while leverage and Cook's distance provide more quantitative measures of influence.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:44:01.477Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_diagnostics_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are essential tools in regression diagnostics.</p>",
+    "formula": {
+      "latex": "\\[\\text{Residual} = y_i - \\hat{y}_i\\]",
+      "name": "Residual Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model, how can we identify influential points and leverage?</p>",
+      "hints": [
+        "Hint: Look at the residuals"
+      ],
+      "solutionHtml": "<p>To identify influential points and leverage:</p><ul><li>Plot the residuals against the fitted values.</li><li>Check for outliers in the residual plot.</li><li>Calculate Cook's distance to measure influence.</li></ul>",
+      "answerShort": "Identify influential points by checking residuals and Cook's distance"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A company wants to model the relationship between advertising spend (x) and sales (y). The data is:</p><p>x: [1, 2, 3, ...], y: [10, 15, 20, ...]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plot the residuals",
+          "mathHtml": "\\[\\text{Residual} = y_i - \\hat{y}_i\\]",
+          "explanation": "This helps identify patterns and outliers"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check for leverage",
+          "mathHtml": "",
+          "explanation": "High-leverage points can have a large impact on the model"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate Cook's distance",
+          "mathHtml": "\\[\\text{Cook's Distance} = \\frac{(r_i)^2}{p}\\]",
+          "explanation": "This measures the influence of each point"
+        }
+      ],
+      "finalAnswer": "Identify influential points by checking residuals and Cook's distance"
+    },
+    "intuition": "Residual plots help us understand the model's performance, while leverage and Cook's distance reveal which data points are most influential.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:44:27.278Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_diagnostics_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots, Leverage, and Influential Points",
+    "contentHtml": "<p>In regression analysis, it's crucial to verify that our model assumptions hold true. This involves examining residual plots, leverage values, and influential points.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with features X1, X2, and response Y, how can we identify potential issues in the linear regression model?</p>",
+    "hints": [
+      "Check for non-linear relationships",
+      "Look for outliers"
+    ],
+    "solutionHtml": "<p>To diagnose potential problems, we'll examine residual plots, leverage values, and influential points.</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a dataset with features X1 (age) and X2 (income), and response Y (salary). The linear regression model is: Y = β0 + β1X1 + β2X2. How can we identify potential issues in this model?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Plot the residuals",
+        "mathHtml": "\\[\\text{Residuals} = y_i - \\hat{y}_i\\]",
+        "explanation": "This helps us visualize any patterns or outliers in our data."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate leverage values",
+        "mathHtml": "\\[h_i = (x_{i1}-\\bar{x}_1)^2 + (x_{i2}-\\bar{x}_2)^2\\]",
+        "explanation": "Leverage measures how far each data point is from the mean."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Identify influential points",
+        "mathHtml": "\\[Cooks Distance = \\frac{(r_i - \\bar{r})^2}{(1-h_i)\\sigma^2}\\]",
+        "explanation": "Influential points are those with high leverage and/or large residuals."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Verify the assumptions",
+        "mathHtml": "\\[\\text{Assumptions}: \\text{Linearity}, \\text{Homoscedasticity}, \\text{Normality}\\]",
+        "explanation": "If our diagnostics indicate any issues, we may need to transform or remove data points."
+      }
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:44:54.754Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_diagnostics_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Identifying Influential Points",
+    "contentHtml": "<p>In regression analysis, it's crucial to identify and understand influential points that can affect our model's performance.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a dataset with features X1, X2, and target variable Y, how do we determine which data points are most influential in the regression model?</p>",
+      "hints": [
+        "Check residual plots",
+        "Look for outliers"
+      ],
+      "solutionHtml": "<p>To identify influential points, we'll use Cook's distance. This metric measures the impact of each data point on the regression model.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a dataset with features X1 and X2, and target variable Y. The residual plot shows a few outliers.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the residuals",
+          "mathHtml": "\\[e_i = y_i - \\hat{y}_i\\]",
+          "explanation": "We want to see how far each data point is from the predicted line."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute Cook's distance",
+          "mathHtml": "\\[D_i = \\frac{k}{p} \\cdot \\frac{(e_i - \\bar{e})^2}{\\sum_{i=1}^{n} (e_i - \\bar{e})^2}\\]",
+          "explanation": "Cook's distance measures the influence of each data point on the regression model."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Identify points with high Cook's distance",
+          "mathHtml": "",
+          "explanation": "These are our influential points!"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Visualize the results",
+          "mathHtml": "",
+          "explanation": "We can use a scatter plot to visualize the residuals and identify patterns."
+        }
+      ],
+      "finalAnswer": "The data points with high Cook's distance values are our most influential points."
+    },
+    "intuition": "Cook's distance helps us quantify how much each data point affects the regression model. By identifying these influential points, we can refine our model or remove outliers that might be skewing our results.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:45:20.560Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_diagnostics_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "diagnostics",
+    "title": "Regression Diagnostics: Residual Plots and Leverage",
+    "contentHtml": "<p>Residual plots and leverage are two essential tools in regression diagnostics.</p>",
+    "formula": {
+      "latex": "\\[ \text{Residual} = y_i - \\hat{y}_i \\]",
+      "name": "Residual Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model, how do we identify influential points and leverage?</p>",
+      "hints": [
+        "Check the residuals",
+        "Look for outliers"
+      ],
+      "solutionHtml": "<p>We'll use residual plots to visualize the residuals and identify patterns.</p><ul><li>We plot the residuals against the fitted values (\\hat{y}_i) to check for any non-random patterns.</li><li>Any points that lie far away from the rest could be influential or have high leverage.</li></ul>",
+      "answerShort": "Residual plots and leverage"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A company wants to analyze the relationship between advertising spend (x) and sales revenue (y). The data is as follows:</p><table><tr><th>x</th><th>y</th></tr><tr><td>1000</td><td>5000</td></tr><tr><td>2000</td><td>8000</td></tr><tr><td>3000</td><td>12000</td></tr></table>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plot the residuals against the fitted values",
+          "mathHtml": "\\[ \\text{Residual} = y_i - \\hat{y}_i \\]",
+          "explanation": "This helps us identify any non-random patterns in the residuals."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check for influential points",
+          "mathHtml": "\\[ \\text{Influential Point} = |r_i| > 3 \\]",
+          "explanation": "Points with large absolute residuals (|r_i|) could be influential."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate leverage",
+          "mathHtml": "\\[ h_i = \\frac{1}{n} + \\frac{(x_i - \\bar{x})^2}{n\\sigma_x^2} \\]",
+          "explanation": "Leverage measures the influence of each point on the regression line."
+        }
+      ],
+      "finalAnswer": "Influential points and high leverage values indicate potential issues with the model"
+    },
+    "intuition": "Residual plots help us visualize the residuals, while leverage helps us identify influential points that might affect our model's performance.",
+    "visualDescription": "A residual plot showing a clear pattern could indicate non-randomness in the residuals",
+    "commonMistakes": [
+      "Not checking for influential points",
+      "Ignoring high-leverage values"
+    ],
+    "realWorldApplications": [
+      "Identifying and addressing issues with regression models in machine learning applications"
+    ],
+    "tags": [
+      "Regression Diagnostics",
+      "Residual Plots",
+      "Leverage"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:45:58.305Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

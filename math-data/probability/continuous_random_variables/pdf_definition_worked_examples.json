@@ -1,0 +1,226 @@
+[
+  {
+    "id": "prob_wex_pdf_definition_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is characterized by its probability density function (PDF). The PDF represents the relative likelihood of observing each possible value.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\frac{1}{\\sigma \\sqrt(2\\pi)} e^{-(x-\\mu)^2/2\\sigma^2}\\]",
+      "name": "Normal Distribution PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a continuous random variable X with mean μ = 0 and standard deviation σ = 1. What is the probability that X takes on exactly the value x?</p>",
+      "hints": [
+        "Hint: Recall that P(X=x) = 0 for continuous variables"
+      ],
+      "solutionHtml": "<p>We know that P(X=x) = 0, but why is this the case? It's because the PDF f(x) is a continuous function and there are no atoms at x.</p>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a random variable X that follows a standard normal distribution. What is P(X=1)?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that X has a continuous distribution",
+          "mathHtml": "\\[\\]",
+          "explanation": "This means we can't pinpoint a specific value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Recall the PDF of the standard normal distribution",
+          "mathHtml": "\\[f(x) = \\frac{1}{\\sqrt(2\\pi)} e^{-(x-0)^2/2}\\]",
+          "explanation": "The PDF is continuous and has no atoms."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Conclude that P(X=1) = 0",
+          "mathHtml": "\\[\\]",
+          "explanation": "Since the PDF has no atom at x=1, the probability of observing exactly this value is zero."
+        }
+      ],
+      "finalAnswer": "P(X=1) = 0"
+    },
+    "intuition": "The key insight is that continuous random variables have no atoms, which means we can't pinpoint a specific value. This is why P(X=x) = 0.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:37:21.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x\\in [a, b]\\]",
+      "name": "Uniform Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Let X be a continuous random variable with PDF f_X(x). Show that P(X=x) = 0.</p>",
+      "hints": [
+        "Hint: Consider the definition of probability"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>We know that P(X=x) is the area under the curve f_X(x) at x.</li><li>Since f_X(x) is continuous, it has no spikes or jumps at x.</li><li>This means the area under the curve at x is 0, so P(X=x) = 0.</li></ul>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose X follows a uniform distribution on [0,1]. Find P(X=0.5).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize the problem",
+          "mathHtml": "\\[P(X=0.5) = ?\\]",
+          "explanation": "We need to find the probability of a specific value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the definition of uniform distribution",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x\\in [a, b]\\]",
+          "explanation": "The PDF is a constant function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the probability",
+          "mathHtml": "\\[P(X=0.5) = f_X(0.5) \\cdot (1-0) = \\frac{1}{1-0} \\cdot 0 = 0\\]",
+          "explanation": "The probability is simply the value of the PDF at x=0.5."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Conclude that P(X=0.5) = 0",
+          "mathHtml": "\\[P(X=0.5) = 0\\]",
+          "explanation": "Since the probability is 0, we can conclude that P(X=x) = 0 for any x."
+        }
+      ],
+      "finalAnswer": "P(X=0.5) = 0"
+    },
+    "intuition": "The PDF represents the relative likelihood of different values of X. The paradox arises because our intuition suggests that there should be some probability associated with a specific value, but this is not the case.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:37:58.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is described by its probability density function (PDF). The PDF represents the likelihood of a value occurring.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{\\sigma \\sqrt(2\\pi)} e^{-(x-\\mu)^2/(2\\sigma^2)}\\]",
+      "name": "Normal Distribution PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a random variable X following a normal distribution with mean μ = 3 and standard deviation σ = 1. Find P(X=4).</p>",
+      "hints": [
+        "Hint: The probability is zero"
+      ],
+      "solutionHtml": "<p>To find the probability, we need to evaluate the PDF at x = 4:</p><p>\\[f_X(4) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(4-3)^2/(2\\cdot 1^2)}\\]</p>",
+      "answerShort": "P(X=4)=0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X=x) for a random variable X following a normal distribution with mean μ = 3 and standard deviation σ = 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the given parameters",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(x-3)^2/(2\\cdot 1^2)}\\]",
+          "explanation": "We're using the formula for a normal distribution PDF"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the PDF at x",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(x-3)^2/(2\\cdot 1^2)}\\]",
+          "explanation": "We're evaluating the probability density function at the given value of x"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Realize that P(X=x) = 0",
+          "mathHtml": "",
+          "explanation": "Since a continuous random variable can only take on values within its support, the probability of exactly equaling a specific value is zero"
+        }
+      ],
+      "finalAnswer": "P(X=x)=0"
+    },
+    "intuition": "The PDF represents the likelihood of a value occurring. For a continuous random variable, P(X=x) = 0 because it's impossible to exactly equal a specific value.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:38:34.721Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is described by its probability density function (PDF). The PDF represents the likelihood of a value occurring.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-(x-\\mu)^2/2\\sigma^2}\\]",
+      "name": "Normal Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a continuous random variable X with PDF f(x). What is the probability that X takes on exactly x?</p>",
+      "hints": [
+        "Hint: Think about the area under the curve"
+      ],
+      "solutionHtml": "<p>We know that P(X=x) = 0, but why?</p><ul><li>What we're doing: We're examining the probability of a specific value.</li><li>MATH: \\[P(X=x) = \\int_{-\\infty}^{x} f(t) dt + \\int_x^{\\infty} f(t) dt = 0 + 0 = 0\\]</li><li>Why: The probability of a specific value is always zero because the area under the curve at that point is zero.</li></ul>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a continuous random variable X with PDF f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-(x-0)^2}.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Examine the probability of X taking on exactly x.",
+          "mathHtml": "\\[P(X=x) = \\int_{-\\infty}^{x} f(t) dt + \\int_x^{\\infty} f(t) dt\\]",
+          "explanation": "We're examining the area under the curve at point x."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the integrals.",
+          "mathHtml": "\\[P(X=x) = 0 + 0 = 0\\]",
+          "explanation": "The area under the curve is zero, so the probability is also zero."
+        }
+      ],
+      "finalAnswer": "P(X=x) = 0"
+    },
+    "intuition": "Understanding why P(X=x) = 0 helps us appreciate the nature of continuous random variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:39:08.262Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

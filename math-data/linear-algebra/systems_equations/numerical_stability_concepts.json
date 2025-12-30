@@ -1,0 +1,88 @@
+[
+  {
+    "id": "la_con_numerical_stability_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "numerical_stability",
+    "title": "Pivoting Strategies and Conditioning",
+    "contentHtml": "<p>When solving systems of linear equations, numerical considerations can make or break our results. Pivoting strategies help mitigate issues with conditioning, which is crucial for accurate solutions.</p><p>In this topic, we'll explore the importance of pivoting and how it relates to floating-point errors.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\det(A) = \\\\sum_{\\\\sigma} \\\\text{sgn}(\\\\sigma) \\\\prod_{i} a_{i,\\\\sigma(i)} \\\\]\" },",
+    "intuition": "Pivoting is like rearranging the columns of our matrix to make it easier to solve. This helps reduce the impact of conditioning on our results.",
+    "realWorldApplications": [
+      "In machine learning, pivoting can help improve the stability and accuracy of numerical computations."
+    ],
+    "commonMistakes": [
+      "Failing to consider the effects of conditioning on the solution"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:50:26.714Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_numerical_stability_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "numerical_stability",
+    "title": "Pivoting Strategies in Linear Algebra",
+    "contentHtml": "<p>In linear algebra, pivoting strategies are essential when solving systems of equations to avoid numerical instability and ensure accurate results.</p><p>When using Gaussian elimination or LU decomposition, the choice of pivot element can significantly impact the conditioning number of the matrix and the accuracy of the solution.</p>",
+    "formula": {
+      "latex": "\\[ \\text{cond}(A) = \\frac{\\sigma_1(A)}{\\sigma_n(A)} \\]",
+      "name": "Conditioning Number"
+    },
+    "intuition": "Pivoting strategies help maintain a stable condition number by selecting pivot elements that minimize the growth of roundoff errors during matrix operations.",
+    "visualDescription": "A diagram showing the impact of different pivoting strategies on the conditioning number would be helpful",
+    "commonMistakes": [
+      "Not considering the effect of pivoting on numerical stability"
+    ],
+    "realWorldApplications": [
+      "In machine learning, choosing the right pivot strategy can significantly affect the accuracy of linear regression models"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:50:42.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_numerical_stability_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "systems_equations",
+    "topic": "numerical_stability",
+    "title": "Pivoting Strategies and Conditioning",
+    "contentHtml": "<p>In linear algebra, we often encounter systems of equations that are not well-conditioned, leading to numerical instability when solving them.</p><p>Pivoting strategies aim to mitigate this issue by reordering the rows or columns of the matrix to minimize the impact of roundoff errors.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\det(A) = \\\\sum_{\\\\sigma} \\\\text{sgn}(\\\\sigma) \\\\prod_{i} a_{i,\\\\sigma(i)} \\\\]\",",
+    "name": "Determinant\" },",
+    "intuition": "When solving systems of equations, small changes in the input can lead to large errors. Pivoting strategies help reduce this sensitivity by reordering the matrix to minimize the impact of roundoff errors.",
+    "realWorldApplications": [
+      "In machine learning, pivoting strategies are crucial for ensuring the stability and accuracy of numerical computations."
+    ],
+    "commonMistakes": [
+      "Failing to recognize the importance of conditioning in linear algebra"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:50:57.744Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

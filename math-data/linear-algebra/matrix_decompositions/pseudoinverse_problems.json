@@ -1,0 +1,85 @@
+[
+  {
+    "id": "la_prb_pseudoinverse_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "Find the Moore-Penrose pseudoinverse of a matrix A using Singular Value Decomposition (SVD).",
+    "hints": [
+      "Start by decomposing A into UΣV^T.",
+      "Use the fact that Σ is diagonal to simplify the calculation.",
+      "The pseudoinverse will be VΣ^(-1)U^T."
+    ],
+    "solutionHtml": " To find the Moore-Penrose pseudoinverse of A, we first decompose it into UΣV^T using SVD: \\\\[ \\begin{align*} A &= U\\Sigma V^T. \\end{align*} \\\\] Then, since Σ is diagonal, we can simplify the calculation as follows:  \\\\[ \\begin{align*} (\\Sigma^(-1)U^T)^{-1} &= (V^T)^{-1}\\Sigma^(-1)U^T \\\\ &= V\\Sigma^(-1)U^T. \\end{align*} \\\\]  The Moore-Penrose pseudoinverse is therefore given by \\\\[ \\begin{align*} A^{\\dagger} &= V\\Sigma^(-1)U^T. \\end{align*} \\\\] \",",
+    "answerShort": "VΣ^(-1)U^T\" },",
+    "commonMistakes": [
+      "Forgetting to square the singular values",
+      "Not accounting for the diagonal structure of Σ"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:22.954Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pseudoinverse_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "Find the Moore-Penrose pseudoinverse of matrix A using SVD decomposition.",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Use the singular values to determine the condition number.",
+      "The pseudoinverse will be a combination of the left and right singular vectors."
+    ],
+    "solutionHtml": " To find the Moore-Penrose pseudoinverse, we first compute the SVD decomposition of matrix A: \\[A = U \\Sigma V^T\\]. Then, we use the singular values to determine the condition number. Finally, we construct the pseudoinverse as \\[\\Sigma^{\\dagger} V^T,\\] where \\(\\Sigma^{\\dagger}\\) is the diagonal matrix with entries 1/σ_i for i = 1, ..., k and 0 otherwise. \",",
+    "answerShort": "The Moore-Penrose pseudoinverse of A is Σ^{\\dagger} V^T.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:38.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pseudoinverse_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "<p>Find the Moore-Penrose pseudoinverse of a matrix <i>A</i>, given its SVD decomposition.</p>",
+    "hints": [
+      "Recall that the pseudoinverse is used to solve least squares problems.",
+      "Think about how the SVD can help you find the inverse (or pseudo-inverse) of a matrix.",
+      "Use the formula for the Moore-Penrose pseudoinverse in terms of the SVD factors."
+    ],
+    "solutionHtml": "<p>To find the Moore-Penrose pseudoinverse, we use the SVD decomposition: <i>A</i> = <i>UΣV<sup>T</sup></i>. Then, we can write:</p><p>\\[\\hat{A}^+</p> = Σ<sup>-1</sup>V<sup>T</sup>(VV<sup>T</sup>)<sup>-1</sup>U<sup>T</sup>\\]</p>\",",
+    "answerShort": "The Moore-Penrose pseudoinverse is Σ<sup>-1</sup>V<sup>T</sup>(VV<sup>T</sup>)<sup>-1</sup>U<sup>T</sup>\" },",
+    "commonMistakes": [
+      "Forgetting to use the SVD decomposition",
+      "Not accounting for the possibility of singular values"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:57.495Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

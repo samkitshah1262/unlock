@@ -1,0 +1,112 @@
+[
+  {
+    "id": "la_prb_attention_transformers_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "problem": {
+      "statementHtml": "<p>Consider a sequence of vectors <code>&#x27;Q&#x27;</code>, <code>&#x27;K&#x27;</code>, and <code>&#x27;V&#x27;</code>. Use attention as matrix operations to compute the output vector.</p>",
+      "hints": [
+        "<p>Think about how you can use dot products to compute similarity between vectors.</p>",
+        "<p>Recall that softmax is used to normalize weights. Why is this important?</p>",
+        "<p>Use the QKV matrices to compute the attention weights.</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can start by computing the dot product between <code>&#x27;Q&#x27;</code> and <code>&#x27;K&#x27;</code>. This gives us the similarity between each vector in the sequence.</p><p>We then use softmax to normalize these weights. Finally, we compute the output vector by taking a weighted sum of the input vectors using the attention weights.</p>",
+      "answerShort": "The output vector is computed using attention as matrix operations."
+    },
+    "commonMistakes": [
+      "<p>Forgetting to apply softmax to the attention weights.</p>",
+      "<p>Misunderstanding how dot products are used in attention computations.</p>"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:43:26.673Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_attention_transformers_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "problem": "{",
+    "statementHtml": "<p>Consider a sequence of tokens <em>x</em><sub>1</sub>, …, <em>x</em><sub>n</sub>. The attention mechanism computes a weighted sum of these tokens using query and key matrices. Write the softmax attention formula as a matrix product.</p>",
+    "hints": [
+      "<p>The query matrix is used to compute similarity scores between each token and the current input.</p>",
+      "<p>Use the softmax function to normalize the weights.</p>",
+      "<p>Combine the weighted tokens using matrix multiplication.</p>"
+    ],
+    "solutionHtml": "<p>To compute the attention, we first compute the dot product of the query matrix <em>Q</em> and key matrix <em>K</em>, then apply softmax:</p>\\n<p><code>\\[ \\text{Attention} = \\text{softmax}\\left(\\frac{\\mathbf{QK}}{\\sqrt{d}}\\right) \\]</code></p>\\n<p>The final output is a weighted sum of the input tokens.</p>\",",
+    "answerShort": "<code>softmax(QK / √d)</code>\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:43:44.606Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_attention_transformers_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "problem": "{",
+    "statementHtml": "Consider a query vector <i>q</i> and a set of key-value pairs <i>KV</i>. Design a softmax attention mechanism that computes a weighted sum of the values in <i>KV</i> based on their similarity to <i>q</i>.",
+    "hints": [
+      "Think about how you can use matrix operations to compute attention weights.",
+      "Recall the definition of softmax and how it's related to exponential functions.",
+      "Consider using a QKV matrix decomposition for efficiency."
+    ],
+    "solutionHtml": "<p>To start, define the query-key-value matrices:</p>\\n\\[Q = q \\cdot K^T\\]\\n\\[K = [k_1, k_2, ..., k_n]^T\\]\\n\\[V = [v_1, v_2, ..., v_n]^T\\]\\n<p>Next, compute the attention weights using softmax:</p>\\n\\[Attention(Q, K) = Softmax(Q \\cdot K)\\]\\n<p>Finally, compute the weighted sum of values in <i>V</i>:</p>\\n\\[Output = Attention(Q, K) \\cdot V\\]\",",
+    "answerShort": "The final output is a weighted sum of values in KV based on their similarity to q.\" },",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:44:04.175Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_attention_transformers_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "problem": {
+      "statementHtml": "<p>Consider a sequence of tokens <em>x</em><sub>1</sub>, …, <em>x</em><sub>n</sub>. The attention mechanism computes a weighted sum of these tokens based on their relevance to the current token. Represent this as a matrix operation.</p>",
+      "hints": [
+        "<p>Think about how you can use linear transformations to compute the attention weights.</p>",
+        "<p>Recall that softmax is used to normalize the attention weights.</p>",
+        "<p>You may need to use the QKV matrices from the previous problem.</p>"
+      ],
+      "solutionHtml": "<p>To compute the attention weights, we can use a linear transformation followed by a softmax operation. Let <em>A</em> be the matrix of attention weights, <em>Q</em>, <em>K</em>, and <em>V</em> be the QKV matrices.</p>\n<p><em>A</em> = Softmax(<em>Q</em> &middot; <em>K</em><sup>T</sup>) &middot; <em>V</em></p>",
+      "answerShort": "<em>A</em>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the softmax operation",
+      "Not using the correct QKV matrices"
+    ],
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:44:22.757Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

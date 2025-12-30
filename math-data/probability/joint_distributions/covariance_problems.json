@@ -1,0 +1,78 @@
+[
+  {
+    "id": "prob_prb_covariance_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be random variables with joint distribution P(x,y). Calculate the covariance Cov(X,Y) using the formula.</p>",
+    "hints": [
+      "<p>The covariance is half of the variance of their sum.</p>",
+      "<p>Use the definition of covariance: E[(X-E[X])(Y-E[Y])].</p>",
+      "<p>Expand the expectation and simplify.</p>"
+    ],
+    "solutionHtml": "<p>To calculate Cov(X,Y), we need to find E[(X-E[X])(Y-E[Y])] first.</p>\\[E[(X-E[X])(Y-E[Y])] = E[X(Y-E[Y]) - X(E[X]-X)]\\] <p>Simplify the expression:</p>\\[= E[XY - Y(E[X] - X) - X(E[X] - X)]\\] <p>Now, expand the expectation:</p>\\[= \\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} (xy - y(E[X] - x) - x(E[X] - x)) p(x,y) dx dy\\] <p>Simplify further:</p>\\[= \\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} xy p(x,y) dx dy - E[Y]E[X] + E[Y]E[X] - E[X]E[X]\\] <p>Finally, we get the covariance:</p>\\[= \\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} xy p(x,y) dx dy - (E[Y])(E[X])\\] <p>The final answer is Cov(X,Y) = ...</p>\",",
+    "answerShort": "Cov(X,Y) = ...",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:06:23.100Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_covariance_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "problem": "{",
+    "statementHtml": "<p>Find the covariance between two random variables X and Y.</p>",
+    "hints": [
+      "Start by recalling the definition of covariance.",
+      "Think about how to apply this definition to a specific example.",
+      "Use the formula for covariance to simplify your answer."
+    ],
+    "solutionHtml": "<p>To find the covariance, we need to calculate the expected value of the product of X and Y minus the product of their means.</p>\\n<p>\\(cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY] - E[X]E[Y]\\)</p>\",",
+    "answerShort": "The covariance is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:06:36.307Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_covariance_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "covariance",
+    "title": "Covariance of Joint Distributions",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be random variables with joint distribution P(X, Y). Define the covariance between X and Y as <i>cov</i>(X, Y) = E[(X - E[X])(Y - E[Y])]. Show that <i>cov</i>(X, Y) can be computed using the formula: <i>cov</i>(X, Y) = E[XY] - E[X]E[Y].</p>",
+    "hints": [
+      "<p>Start by expanding the product (X - E[X])(Y - E[Y]) and use linearity of expectation.</p>",
+      "<p>Show that the expected value of X is equal to the sum of the expected values of X conditioned on Y.</p>",
+      "<p>Use the definition of covariance to rewrite the expression in terms of the joint distribution P(X, Y).</p>"
+    ],
+    "solutionHtml": "<p>To expand the product, we have:</p>\\[ (X - E[X])(Y - E[Y]) = XY - XE[Y] - YE[X] + (E[X])^2.\\]<p>Now, take the expected value of both sides:</p>\\[ E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y] - E[X]E[Y] + (E[X])^2.\\]<p>Simplify the right-hand side to get:</p>\\[ E[XY] - (E[X])^2 - E[X]E[Y].\\]<p>This is equal to <i>cov</i>(X, Y), which completes the proof.</p>\",",
+    "answerShort": "<i>cov</i>(X, Y) = E[XY] - E[X]E[Y]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:07:02.935Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

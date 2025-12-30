@@ -1,0 +1,73 @@
+[
+  {
+    "id": "prob_prb_variance_continuous_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "Find the variance of a continuous random variable X with probability density function (PDF) f(x).",
+    "hints": "[ \"Recall that the mean is given by ∫(-∞∞) x \\* f(x) dx.\", \"The variance is defined as the expected value of the squared difference from the mean.\", \"You can use integration by parts to simplify the integral.\" ],",
+    "solutionHtml": "<p>To find the variance, we need to evaluate ∫(-∞∞) (x - μ)^2 \\* f(x) dx, where μ is the mean.</p><p>We can start by expanding the squared difference:</p><p>(x - μ)^2 = x^2 - 2xμ + μ^2</p><p>Now we can integrate each term separately:</p><p>∫(-∞∞) x^2 \\* f(x) dx - 2μ ∫(-∞∞) x \\* f(x) dx + μ^2 ∫(-∞∞) f(x) dx</p><p>The first integral is the mean times the variance, which is zero since the mean is the expected value.</p><p>The second integral is just the mean squared, which we already know.</p><p>The third integral is the PDF evaluated at the mean, which is also the probability of X taking on the value μ. Since this is a continuous random variable, this probability is zero.</p><p>Putting it all together, we get:</p><p>Variance = ∫(-∞∞) (x - μ)^2 \\* f(x) dx = ∫(-∞∞) x^2 \\* f(x) dx</p>\",",
+    "answerShort": "Variance = ∫(-∞∞) x^2 \\* f(x) dx\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:50:40.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_continuous_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x).</p>",
+    "hints": [
+      "<p>The variance is the expected value of the squared difference from the mean.</p>",
+      "<p>You can use integration to find the expected value.</p>",
+      "<p>Start by finding the mean, then square the difference and integrate.</p>"
+    ],
+    "solutionHtml": "<p>To find the variance, we first need to find the mean:</p>\\( \\int_{-\\infty}^{\\infty} x f(x) dx = 0.5 \\)<p>Then, we can calculate the squared difference from the mean:</p>\\( (x - 0.5)^2 \\)<p>Next, we integrate this expression to find the expected value:</p>\\[ \\int_{-\\infty}^{\\infty} (x-0.5)^2 f(x) dx = 0.25 \\]<p>The variance is then the expected value of the squared difference from the mean:</p>\\( \\sigma^2 = 0.25 \\)<p>So, the final answer is:</p>\\[ \\boxed{\\sigma^2 = 0.25} \\]\",",
+    "answerShort": "σ² = 0.25\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:51:01.246Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_variance_continuous_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "variance_continuous",
+    "problem": "{",
+    "statementHtml": "<p>Find the variance of a continuous random variable X with probability density function (PDF) f(x).</p>",
+    "hints": [
+      "Start by recalling the definition of variance.",
+      "Use the fact that the variance is equal to the expected value of the squared difference from the mean.",
+      "You can use integration to find the expected value."
+    ],
+    "solutionHtml": "<p>The variance of X is given by:</p>\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\)<p>where E[X] is the mean of X.</p><p>To find the expected value, we can use integration:</p>\\(E[X] = \\int_{-\\infty}^{\\infty} x f(x) dx\\)<p>Then, we can plug this back into the variance formula:</p>\\(\\sigma^2 = \\int_{-\\infty}^{\\infty} (x - E[X])^2 f(x) dx\\)\\(<p>Now, you can use substitution or integration by parts to evaluate the integral.</p>\",",
+    "answerShort": "The final answer is...\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:51:22.273Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

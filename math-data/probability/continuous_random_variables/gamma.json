@@ -1,0 +1,530 @@
+[
+  {
+    "id": "prob_con_gamma_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in many real-world applications, particularly in machine learning and statistics.</p><p>It's characterized by two parameters: shape (k) and scale (θ). The density function of the Gamma distribution is given by:</p>\\(\\frac{1}{\\Gamma(k)} (\\theta x)^{k-1} e^{-x/\\theta}\\)<p>The Gamma distribution has several special cases, including the Chi-squared distribution with k degrees of freedom when θ = 2 and the Exponential distribution with rate λ when k = 1.</p>\",",
+    "formula": "{",
+    "latex": "\\frac{1}{\\Gamma(k)} (\\theta x)^{k-1} e^{-x/\\theta}",
+    "name": "Gamma Distribution Density\" },",
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process, and it's also a fundamental building block for many other continuous distributions.",
+    "realWorldApplications": [
+      "Modeling waiting times in queuing systems",
+      "Analyzing survival data"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:20:06.102Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_gamma_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises from the amount of time until the first event occurs in an exponential distribution.</p><p>It's characterized by two parameters: shape <i>k</i> and scale <i>\\theta</i>. The probability density function (PDF) is given by:</p>\\(\\frac{k^{k}}{\\Gamma(k)}x^{k-1}e^{-\\frac{x}{\\theta}}\\)<p>The Gamma distribution has several special cases, including the chi-squared distribution with <i>n</i> degrees of freedom when <i>k</i> = <i>n</i>/2 and <i>\\theta</i> = 2, and the exponential distribution when <i>k</i> = 1.</p>\",",
+    "formula": "{",
+    "latex": "\\frac{k^k}{\\Gamma(k)}x^{k-1}e^{-\\frac{x}{\\theta}}",
+    "name": "Gamma PDF\" },",
+    "intuition": "The Gamma distribution is useful for modeling the time until a rare event occurs, and its special cases have important applications in statistics and machine learning.",
+    "realWorldApplications": [
+      "Modeling waiting times in queuing systems",
+      "Analyzing survival rates in medical studies"
+    ],
+    "commonMistakes": [
+      "Confusing the Gamma distribution with the exponential distribution",
+      "Not recognizing the chi-squared distribution as a special case of the Gamma distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:20:27.818Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_gamma_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in many real-world applications, particularly in machine learning and artificial intelligence.</p><p>It's characterized by two parameters: shape <i>k</i> and scale <i>\\theta</i>. The probability density function (PDF) of the Gamma distribution is given by:</p>\\(f(x | k, \\theta) = \\frac{\\theta^k}{\\Gamma(k)} x^{k-1} e^{-x/\\theta}\\)<p>The Gamma distribution has several special cases that are important in practice. One notable example is the chi-squared distribution with <i>n</i> degrees of freedom, which corresponds to a Gamma distribution with shape parameter <i>k = n/2</i> and scale parameter <i>\\theta = 2</i>.</p>\",",
+    "formula": "{",
+    "latex": "\\(f(x | k, \\theta) = \\frac{\\theta^k}{\\Gamma(k)} x^{k-1} e^{-x/\\theta}\\)\",",
+    "name": "Gamma Distribution PDF\" },",
+    "intuition": "The Gamma distribution is useful for modeling the time it takes for a process to complete or the amount of time until an event occurs. It's often used in machine learning to model the duration of tasks, such as processing times or response times.",
+    "realWorldApplications": [
+      "Modeling processing times in natural language processing",
+      "Modeling response times in recommender systems"
+    ],
+    "tags": [
+      "probability",
+      "machine learning",
+      "artificial intelligence"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:20:49.922Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_gamma_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that is often used to model waiting times between events in a Poisson process.</p>",
+    "formula": {
+      "latex": "\\[ X \\sim \\text{Gamma}(k, \\theta) \\]",
+      "name": "Gamma Distribution",
+      "variants": [
+        {
+          "latex": "\\[ X \\sim \\chi^2(k) \\]",
+          "description": "Chi-squared distribution with k degrees of freedom"
+        },
+        {
+          "latex": "\\[ X \\sim \\text{Exponential}(\\theta) \\]",
+          "description": "Exponential distribution with rate parameter \\theta"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Poisson process with an average arrival rate of 2 per minute. What is the probability that the first arrival occurs within 5 minutes?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that the waiting time follows a Gamma distribution",
+          "mathHtml": "",
+          "explanation": "The waiting time between events in a Poisson process follows a Gamma distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the Gamma distribution to calculate the probability",
+          "mathHtml": "\\[ P(X \\leq 5) = \\int_0^5 \\frac{1}{\\theta^k} x^{k-1} e^{-x/\\theta} dx \\]",
+          "explanation": "We can use the formula for the Gamma distribution to calculate the probability that the waiting time is less than or equal to 5 minutes."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The Gamma distribution is often used to model waiting times between events in a Poisson process because it has a shape parameter k that controls the spread of the distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:21:17.978Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_gamma_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises naturally in many applications, including machine learning and signal processing.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Density Function",
+      "variants": [
+        {
+          "latex": "\\[F(x | \\alpha, \\beta) = \\int_0^x f(t | \\alpha, \\beta) dt\\]",
+          "description": "Cumulative Distribution Function"
+        }
+      ]
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X with a Gamma distribution with parameters α=3 and β=2. Find the probability that X is greater than 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Evaluate the cumulative distribution function at x=1",
+          "mathHtml": "\\[F(1 | \\alpha=3, \\beta=2) = ...\\]",
+          "explanation": "We use the CDF to find the probability that X is less than or equal to 1"
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process, and its parameters control the mean and variance of this distribution.",
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a call center"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "gamma distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:21:42.317Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_gamma_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises from modeling the time it takes for a random process to occur.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Density"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we model the time it takes for a customer to make a purchase in an online store. The average time is 30 minutes, and the standard deviation is 10 minutes.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the parameters",
+          "mathHtml": "\\[\\alpha = \\frac{30}{10} = 3, \\beta = \\frac{1}{10}\\]",
+          "explanation": "We use the mean and standard deviation to estimate the shape and rate parameters."
+        }
+      ],
+      "finalAnswer": "The probability density function (PDF) of the Gamma distribution is used to model this process."
+    },
+    "intuition": "The Gamma distribution is useful for modeling waiting times or the time until an event occurs.",
+    "realWorldApplications": [
+      "Modeling customer behavior in e-commerce"
+    ],
+    "tags": [
+      "continuous random variables",
+      "probability theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:03.153Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_gamma_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises from the amount of time until the <i>n</i>th event occurs in a Poisson process.</p>",
+    "formula": {
+      "latex": "\\[X \\sim Gamma(k, \\theta) \\]",
+      "name": "Gamma Distribution"
+    },
+    "theorem": {
+      "statement": "\\[P(X \\leq x) = \\int_0^x \\frac{\\theta^k}{\\Gamma(k)} t^{k-1} e^{-\\theta t} dt \\]"
+    },
+    "intuition": "The Gamma distribution is a natural extension of the exponential distribution, allowing for more complex event arrival patterns.",
+    "realWorldApplications": [
+      "Modeling waiting times in queuing systems",
+      "Analyzing failure rates in reliability engineering"
+    ],
+    "tags": [
+      "probability theory",
+      "continuous random variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:19.216Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_gamma_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in many applications, including reliability engineering and machine learning.</p>",
+    "formula": "{",
+    "latex": "\\Gamma(x) = \\int_0^\\infty t^{x-1} e^{-t} dt",
+    "name": "Gamma Function\" },",
+    "theorem": "{",
+    "statement": "\\\\[X \\\\sim Gamma(k, \\\\theta) \\\\quad \\\\Rightarrow \\\\quad f_X(x) = \\\\frac{\\\\theta^k}{\\\\Gamma(k)} x^{k-1} e^{-x/\\\\theta}\\]\",",
+    "proofSketch": "The proof involves showing that the probability density function (PDF) of the gamma distribution satisfies the properties of a valid PDF and then using the definition of the gamma function to simplify the expression.\" },",
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process, where k represents the number of events and \\theta represents the mean time between events.",
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a call center"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "gamma distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:37.692Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_gamma_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with gamma distribution: \\(\\Gamma(k,\\theta)\\). Find the probability density function (PDF) of X.</p>\",",
+    "hints": [
+      "Recall that the gamma distribution is a product of exponential distributions.",
+      "Think about how the parameters k and θ affect the shape of the PDF.",
+      "Use the definition of the gamma distribution to relate it to the exponential distribution."
+    ],
+    "solutionHtml": "<p>To find the probability density function (PDF) of X, we can use the following formula:</p>\\n\\[f(x | \\Gamma(k,\\theta)) = \\frac{1}{\\theta^k \\Gamma(k)} x^{k-1} e^{-x/\\theta}\\]\\n<p>where Γ(k) is the gamma function.</p>\",",
+    "answerShort": "The probability density function (PDF) of X is given by the formula above.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:22:55.446Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_gamma_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": {
+      "statementHtml": "<p>Let X be a continuous random variable with density function <i>f(x) = \\(\\frac{1}{\\beta^\\alpha}\\) \\* \\(x^{\\alpha-1}\\) \\* e<sup>-x/\\beta</sup></i>. Determine the values of <i>α</i> and <i>β</i> such that X is a chi-squared distribution with <i>k</i> degrees of freedom.</p>",
+      "hints": [
+        "<p>The gamma distribution has two parameters, <i>α</i> and <i>β</i>. The chi-squared distribution is a special case of the gamma distribution.</p>",
+        "<p>Recall that the chi-squared distribution with <i>k</i> degrees of freedom is equivalent to the sum of <i>k</i> independent exponential random variables.</p>",
+        "<p>You can use the fact that the exponential distribution is a special case of the gamma distribution to help you solve this problem.</p>"
+      ],
+      "solutionHtml": "<p>To find the values of <i>α</i> and <i>β</i>, we need to relate the gamma distribution to the chi-squared distribution. Let <i>X = \\sum_{i=1}^k Y_i</i>, where each <i>Y_i</i> is an exponential random variable with rate parameter <i>r</i>. Then, <i>X ~ Gamma(\\frac{k}{2}, 2/r)</i>.</p><p>We can see that this is equivalent to our original gamma distribution if we set <i>α = \\frac{k}{2}</i> and <i>β = 2/r</i>.</p>",
+      "answerShort": "<i>α = \\frac{k}{2}, β = 2/r</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that the chi-squared distribution is a special case of the gamma distribution",
+      "Not recognizing that the exponential distribution is also a special case of the gamma distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:23:24.625Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_gamma_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "problem": "{",
+    "statementHtml": "<p>Consider a random variable X with a gamma distribution <i>\\(Gamma(k,\\theta)\\)</i>. Find the probability density function (PDF) of X.</p>\",",
+    "hints": "[ \"Think about the exponential distribution and how it relates to the gamma distribution.\", \"Recall that the gamma distribution is often used in modeling waiting times between events.\", \"The key insight lies in understanding the relationship between the shape parameter <i>k</i> and the scale parameter <i>\\(\\theta\\)</i>\" ],",
+    "solutionHtml": "<p>The probability density function (PDF) of a gamma distributed random variable X is given by:</p><p>\\[f(x | k, \\theta) = \\frac{\\theta^k}{\\Gamma(k)} x^{k-1} e^{-x/\\theta}\\]</p>\",",
+    "answerShort": "<i>\\(f(x | k, \\theta)\\)</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:23:43.205Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_gamma_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution: Definition and Properties",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in various applications, including machine learning.</p>",
+    "formula": {
+      "latex": "\\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\]",
+      "name": "Gamma Function"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the probability density function (PDF) of a Gamma distribution with shape parameter k and rate parameter θ.</p>",
+      "hints": [
+        "Hint: Use the definition of the Gamma function"
+      ],
+      "solutionHtml": "<p>To find the PDF, we can use the following steps:</p><ul><li>Step 1: Recall that the Gamma function is defined as \\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\].</li><li>Step 2: Substitute x with k and θ with θ in the definition of the Gamma function.</li><li>Step 3: Simplify the expression to obtain the PDF.</li></ul>",
+      "answerShort": "The PDF is \\[f(x) = \\frac{\\theta^k}{\\Gamma(k)}x^{k-1}e^{-\\theta x}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the probability density function (PDF) of a Gamma distribution with shape parameter k = 2 and rate parameter θ = 3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recall the definition of the Gamma function",
+          "mathHtml": "\\[\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t} dt\\]",
+          "explanation": "This will help us find the PDF"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Substitute x with k and θ with θ",
+          "mathHtml": "\\[f(x) = \\frac{\\theta^k}{\\Gamma(k)}x^{k-1}e^{-\\theta x}\\]",
+          "explanation": "This gives us the PDF in terms of k and θ"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[f(x) = \\frac{3^2}{\\Gamma(2)}x^{2-1}e^{-3x}\\]",
+          "explanation": "We can simplify the expression by plugging in the values of k and θ"
+        }
+      ],
+      "finalAnswer": "The PDF is \\[f(x) = \\frac{9}{1}x^1e^{-3x}\\]"
+    },
+    "intuition": "The Gamma distribution is often used to model the time between events in a Poisson process.",
+    "visualDescription": "A diagram showing the shape of the Gamma distribution could help illustrate its properties.",
+    "commonMistakes": [
+      "Forgetting to simplify the expression"
+    ],
+    "realWorldApplications": [
+      "Modeling the time between customer arrivals in a call center"
+    ],
+    "tags": [
+      "probability",
+      "Gamma distribution",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:24:25.501Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_gamma_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "workedExample": "{",
+    "problemHtml": "Find the probability density function (PDF) of a gamma distribution with shape parameter $k=3$ and scale parameter $\theta=2$.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Simplify the expression by evaluating $\\Gamma(k)$ for $k=3$.\",",
+    "mathHtml": "\\[\\Gamma(3) = 2, f(x | k, \\theta) = \\frac{4}{2}x^2e^{-x/2}\\]\" },",
+    "explanation": "The gamma distribution is a continuous random variable that models the time between events in a Poisson process.\" }, {",
+    "finalAnswer": "The probability density function is $f(x | k, \\theta) = \\frac{4}{2}x^2e^{-x/2}$.\" },",
+    "intuition": "The gamma distribution is a powerful tool for modeling the time between events in a Poisson process. Its PDF can be used to calculate probabilities and expectations of these events.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:24:49.874Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_gamma_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "gamma",
+    "title": "Gamma Distribution: Definition and Properties",
+    "contentHtml": "<p>The Gamma distribution is a continuous probability distribution that arises in many applications, including machine learning and signal processing.</p>",
+    "formula": {
+      "latex": "\\[f(x | \\alpha, \\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\beta x}\\]",
+      "name": "Gamma Distribution PDF"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the expected value of a Gamma random variable with parameters \\(\\alpha = 3\\) and \\(\\beta = 2\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that the expected value is a weighted average",
+          "mathHtml": "\\[E[X] = \\int_0^\\infty x f(x | \\alpha, \\beta) dx\\]",
+          "explanation": "We can evaluate this integral using the definition of the Gamma distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use substitution and partial fractions",
+          "mathHtml": "\\[= \\frac{1}{2} \\int_0^\\infty x^{3-1} e^{-2x} dx\\]",
+          "explanation": "We can simplify the integral by recognizing it as a Gamma function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the integral using the definition of the Gamma function",
+          "mathHtml": "\\[= \\frac{1}{2} \\Gamma(4) / (2^3) = \\frac{6}{8}\\]",
+          "explanation": "The result is a finite value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "State the final answer",
+          "mathHtml": "",
+          "explanation": "The expected value of the Gamma random variable is 0.75."
+        }
+      ],
+      "finalAnswer": "E[X] = \\frac{6}{8}"
+    },
+    "intuition": "The Gamma distribution is a flexible model that can capture a wide range of shapes, making it useful in many applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:25:19.647Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

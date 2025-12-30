@@ -1,0 +1,194 @@
+[
+  {
+    "id": "la_wex_geometric_determinant_008",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "geometric_determinant",
+    "title": "Geometric Interpretation of Determinants",
+    "contentHtml": "<p>In this example, we'll explore how determinants can be used to find the area and volume of parallelograms and pyramids.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a parallelogram with vertices (0,0), (1,0), (1,1), and (0,1). Find its area using the determinant.</p>",
+      "hints": [
+        "Think about the geometric interpretation of the determinant.",
+        "Use the formula to find the area."
+      ],
+      "solutionHtml": "<p>Step 1: Define the matrix A representing the parallelogram's vertices.\\[A = \\begin{bmatrix} 0 & 1 \\\\ 0 & 1 \\end{bmatrix}\\]\n<p>Step 2: Calculate the determinant of A.\\[\\det(A) = (1-0)(1-0) - (0-0)(1-1) = 1\\]\n<p>Step 3: Interpret the result as the area of the parallelogram. The area is 1.</p>",
+      "answerShort": "The area is 1."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A pyramid with a square base and height 5 has a volume equal to \\frac{1}{3} times its base area multiplied by the height. Find the volume using the determinant.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the matrix A representing the vertices of the pyramid.",
+          "mathHtml": "\\[A = \\begin{bmatrix} x_1 & y_1 & z_1 \\\\ x_2 & y_2 & z_2 \\end{bmatrix}\\]",
+          "explanation": "This step sets up the matrix representation of the pyramid's vertices."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the determinant of A.",
+          "mathHtml": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+          "explanation": "The determinant represents the volume of the pyramid."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Interpret the result as the volume of the pyramid.",
+          "mathHtml": "\\[V = \\frac{1}{3} |\\det(A)| h\\]",
+          "explanation": "The volume is equal to one-third times the absolute value of the determinant multiplied by the height."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Plug in the values and simplify.",
+          "mathHtml": "\\[V = \\frac{1}{3} |(x_2-x_1)(y_2-y_1)z_1|\\]",
+          "explanation": "This step simplifies the expression for the volume."
+        }
+      ],
+      "finalAnswer": "The volume is \\frac{1}{3}|(x_2-x_1)(y_2-y_1)z_1|."
+    },
+    "intuition": "Determinants can be used to find the area and volume of parallelograms and pyramids by representing their vertices as a matrix.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:14:52.056Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_geometric_determinant_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "geometric_determinant",
+    "title": "Geometric Interpretation of Determinants",
+    "contentHtml": "<p>In this worked example, we'll explore how determinants relate to area and volume in geometric transformations.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the area of the parallelogram spanned by vectors <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math>.\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the determinant of the matrix formed by stacking these vectors.\", \"mathHtml\": \"\\[ \\det\\left(\\begin{bmatrix}\\mathbf{a} & \\mathbf{b}\\end{bmatrix}\\right) \\]\", \"explanation\": \"The determinant represents the scaling factor for linear transformations.\"}, {\"stepNumber\": 2, \"description\": \"Recognize that this is equivalent to taking the dot product of <math>\\mathbf{a}</math> and <math>\\mathbf{b}</math>.\", \"mathHtml\": \"\\[ \\det\\left(\\begin{bmatrix}\\mathbf{a} & \\mathbf{b}\\end{bmatrix}\\right) = \\mathbf{a} \\cdot \\mathbf{b} \\]\", \"explanation\": \"This connection highlights the geometric meaning of determinants.\"}, {\"stepNumber\": 3, \"description\": \"Use the properties of dot products to simplify this expression.\", \"mathHtml\": \"\\[ \\mathbf{a} \\cdot \\mathbf{b} = ||\\mathbf{a}|| ||\\mathbf{b}|| \\cos(\\theta) \\]\", \"explanation\": \"This step showcases how determinants relate to the area of parallelograms.\"}, {\"stepNumber\": 4, \"description\": \"Combine these results to find the final answer.\", \"mathHtml\": \"\", \"explanation\": \"The determinant represents the scaling factor for linear transformations, which in this case corresponds to the area of the parallelogram.\"} ],",
+    "finalAnswer": "The area is given by <math>\\det\\left(\\begin{bmatrix}\\mathbf{a} & \\mathbf{b}\\end{bmatrix}\\right) = ||\\mathbf{a}|| ||\\mathbf{b}|| |\\cos(\\theta)|</math>\" },",
+    "intuition": "Determinants provide a powerful tool for analyzing geometric transformations, allowing us to compute areas and volumes with ease.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:15:22.442Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_geometric_determinant_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "geometric_determinant",
+    "title": "Geometric Interpretation of Determinants",
+    "contentHtml": "<p>In linear algebra, determinants are often taught as a numerical value without much geometric intuition. In this worked example, we'll explore how determinants relate to area, volume, and orientation in higher-dimensional spaces.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} sgn(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a linear transformation A: ℝ² → ℝ². What is the scaling factor of A?</p>",
+      "hints": [
+        "Hint: Think about how A affects area"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a linear transformation A: ℝ² → ℝ², represented by the matrix \\[A = \\begin{bmatrix} 2 & 1 \\\\ -3 & 4 \\end{bmatrix}\\]. Find the scaling factor of A.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the determinant of A",
+          "mathHtml": "\\[\\det(A) = (2*4 + (-3)*1) - (1*(-3)) = 8-(-3) = 11\\]",
+          "explanation": "We're using the formula for a 2x2 determinant to find the scaling factor."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the absolute value of the determinant",
+          "mathHtml": "\\[|\\det(A)| = |11| = 11\\]",
+          "explanation": "The absolute value gives us the magnitude of the scaling factor."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Interpret the result geometrically",
+          "mathHtml": "",
+          "explanation": "A has a scaling factor of 11. This means that A stretches or shrinks areas by a factor of 11."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check our answer with an example",
+          "mathHtml": "",
+          "explanation": "Let's apply A to a unit square. The resulting area should be the product of the scaling factor and the original area."
+        }
+      ],
+      "finalAnswer": "The scaling factor is |11| = 11"
+    },
+    "intuition": "Determinants can be thought of as measuring the 'amount' of stretching or shrinking a linear transformation applies to areas.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:15:54.364Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_geometric_determinant_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "determinants",
+    "topic": "geometric_determinant",
+    "title": "Geometric Interpretation of Determinants",
+    "contentHtml": "<p>In this worked example, we'll explore how determinants relate to area, volume, and orientation in geometric transformations.</p>",
+    "formula": {
+      "latex": "\\[\\det(A) = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i} a_{i,\\sigma(i)}\\]",
+      "name": "Determinant Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider the linear transformation A represented by the matrix <code>A = [[2, 0], [1, 3]]</code>. Find the area of the parallelogram spanned by the vectors <code>(1, 0)</code> and <code>(0, 1)</code>.</p>",
+      "hints": [
+        "Hint: Use the determinant to find the area."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the geometric interpretation of determinants.</p><ul><li>Step 1: Compute the determinant of A. \\[\\det(A) = \\begin{vmatrix}2 & 0 \\\\ 1 & 3 \\end{vmatrix} = (2)(3) - (1)(0) = 6</li><li>Step 2: Use the formula for the area of a parallelogram. The area is equal to half the magnitude of the determinant, so <code>A = |\\det(A)|/2 = |6|/2 = 3</code>.</li></ul>",
+      "answerShort": "The area is 3 square units."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the volume of the parallelepiped spanned by the vectors <code>(1, 0, 0)</code>, <code>(0, 1, 0)</code>, and <code>(0, 0, 1)</code> with respect to the linear transformation A.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the determinant of A.",
+          "mathHtml": "\\[\\det(A) = \\begin{vmatrix}2 & 0 & 0 \\\\ 1 & 3 & 0 \\\\ 0 & 0 & 4 \\end{vmatrix}",
+          "explanation": "The determinant represents the scaling factor for the volume."
+        }
+      ],
+      "finalAnswer": "The volume is |\\det(A)| = 8 cubic units."
+    },
+    "intuition": "Determinants provide a way to measure the area, volume, and orientation of geometric transformations. This example illustrates how the determinant can be used to find the area and volume of parallelograms and parallelepipeds.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:16:29.005Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

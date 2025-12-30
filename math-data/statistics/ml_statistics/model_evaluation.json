@@ -1,0 +1,584 @@
+[
+  {
+    "id": "stat_con_model_evaluation_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial to ensure it generalizes well to new data. We'll explore six essential metrics: accuracy, precision, recall, F1-score, AUC-ROC, and calibration.</p>",
+    "formula": "{",
+    "latex": "\\(Accuracy = \\frac{TP + TN}{TP + FP + FN + TN}\\)\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\(Precision = \\frac{TP}{TP + FP}\\)\", \"description\": \"True positives over total positives and false positives\"}, {\"latex\": \"\\(Recall = \\frac{TP}{TP + FN}\\)\", \"description\": \"True positives over total actual positive instances\"} ] },",
+    "intuition": "These metrics help you understand how well your model performs on a specific task. Accuracy is the most straightforward, while precision and recall are useful for imbalanced datasets.",
+    "realWorldApplications": [
+      "Classifying spam vs. non-spam emails",
+      "Identifying fraudulent transactions"
+    ],
+    "commonMistakes": [
+      "Not considering class imbalance when evaluating precision and recall"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:07:52.052Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_evaluation_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial to ensure it generalizes well to new data. We'll explore five essential metrics: accuracy, precision, recall, F1 score, and AUC-ROC.</p><p>These metrics help us understand how well our model classifies instances correctly. Accuracy measures the proportion of correct predictions, while precision and recall focus on positive predictions (e.g., true positives). The F1 score is a harmonic mean of precision and recall, providing a balanced view. Finally, AUC-ROC visualizes the receiver operating characteristic curve, helping us understand how well our model separates classes.</p>",
+    "formula": {
+      "latex": "\\[\\text{Accuracy} = \\frac{TP + TN}{TP + FP + FN + TN}\\]",
+      "name": "Accuracy",
+      "variants": [
+        {
+          "latex": "\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]",
+          "description": "Positive predictive value"
+        },
+        {
+          "latex": "\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]",
+          "description": "True positive rate"
+        },
+        {
+          "latex": "\\[\\text{F1 Score} = 2 \\cdot \\frac{Precision \\cdot Recall}{Precision + Recall}\\]",
+          "description": "Harmonic mean of precision and recall"
+        }
+      ]
+    },
+    "intuition": "These metrics provide a nuanced understanding of model performance, helping us identify strengths and weaknesses.",
+    "realWorldApplications": [
+      "Classifying spam vs. non-spam emails in email filters"
+    ],
+    "commonMistakes": [
+      "Confusing accuracy with precision or recall",
+      "Not considering class imbalance when evaluating recall"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:08:12.867Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_model_evaluation_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial to ensure it generalizes well to new data. We'll explore five essential metrics: accuracy, precision, recall, F1 score, and AUC-ROC.</p><p>Accuracy measures the proportion of correctly classified instances. Precision calculates the ratio of true positives to total predicted positive instances. Recall, on the other hand, is the proportion of true positives to actual positive instances.</p>",
+    "formula": {
+      "latex": "\\[\\text{F1} = \\frac{2 \\cdot \\text{precision} \\cdot \\text{recall}}{\\text{precision} + \\text{recall}}\\]",
+      "name": "F1 Score",
+      "variants": [
+        {
+          "latex": "\\[\\text{Accuracy} = \\frac{TP + TN}{TP + FP + FN + TN}\\]",
+          "description": "Accuracy formula"
+        }
+      ]
+    },
+    "intuition": "These metrics provide a nuanced understanding of model performance, helping you identify strengths and weaknesses.",
+    "realWorldApplications": [
+      "In ML/AI, these metrics guide hyperparameter tuning and model selection for better generalization."
+    ],
+    "commonMistakes": [
+      "Confusing accuracy with precision or recall",
+      "Not considering class imbalance when evaluating"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:08:29.781Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_evaluation_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>Evaluating machine learning models is crucial to understand their performance and make informed decisions. In this formula card, we'll explore key metrics used in model evaluation.</p>",
+    "formula": "{",
+    "latex": "\\[Accuracy = \\frac{TP + TN}{TP + FP + FN + TN}\\]\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\[Precision = \\frac{TP}{TP + FP}\\]\", \"description\": \"Precision measures the proportion of true positives among all positive predictions.\"}, {\"latex\": \"\\[Recall = \\frac{TP}{TP + FN}\\]\", \"description\": \"Recall measures the proportion of true positives among all actual positive instances.\"}, {\"latex\": \"\\[F1-score = 2 \\* \\frac{Precision \\* Recall}{Precision + Recall}\\]\", \"description\": \"The F1-score is the harmonic mean of precision and recall, providing a balanced measure.\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification model that predicts whether a customer will churn or not. We have 100 actual positive instances (customers who churned) and 80 true positives (correctly predicted by the model). Calculate the accuracy, precision, recall, and F1-score for this model.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count the number of true positives\", \"mathHtml\": \"\\[TP = 80\\]\", \"explanation\": \"This is the number of customers who actually churned and were correctly predicted by the model.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the total number of positive predictions\", \"mathHtml\": \"\\[TP + FP = ?\\]\", \"explanation\": \"We need to find the total number of customers who were predicted to churn (true positives plus false positives).\"} ],",
+    "finalAnswer": "Accuracy: 0.8, Precision: 0.9, Recall: 1.0, F1-score: 0.95\" },",
+    "intuition": "Model evaluation metrics provide a way to quantify the performance of machine learning models and help us understand their strengths and weaknesses.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:08:56.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_evaluation_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy, Precision, Recall, F1, AUC-ROC, Calibration",
+    "contentHtml": "<p>When evaluating machine learning models, it's crucial to use the right metrics to measure their performance. In this card, we'll explore six essential model evaluation metrics: accuracy, precision, recall, F1 score, AUC-ROC, and calibration.</p>",
+    "formula": "{",
+    "latex": "\\[Accuracy = \\frac{TP + TN}{TP + FP + FN + TN}\\]\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\[Precision = \\frac{TP}{TP + FP}\\]\", \"description\": \"Precision measures the proportion of true positives among all predicted positive instances.\"}, {\"latex\": \"\\[Recall = \\frac{TP}{TP + FN}\\]\", \"description\": \"Recall measures the proportion of true positives among all actual positive instances.\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification model that predicts whether a customer will churn or not. We want to evaluate its performance on a test set.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of true positives (TP), false positives (FP), true negatives (TN), and false negatives (FN)\", \"mathHtml\": \"\\[...]\\\", \"explanation\": \"We count the instances where the model correctly predicted churn or non-churn.\"} ],",
+    "finalAnswer": "The accuracy score for our model is 0.85.\" },",
+    "intuition": "These metrics help us understand how well a model generalizes to new, unseen data and identify areas for improvement.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:09:17.716Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_evaluation_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>Model evaluation metrics are crucial in machine learning to assess the performance of a model.</p><p>A good model should balance accuracy and precision, while also considering recall and F1 score.</p>",
+    "formula": "{",
+    "latex": "\\[Accuracy = \\frac{TP + TN}{P + N}\\]\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\[Precision = \\frac{TP}{P}\\]\", \"description\": \"Precision measures the proportion of true positives among all positive predictions.\"}, {\"latex\": \"\\[Recall = \\frac{TP}{P + FN}\\]\", \"description\": \"Recall measures the proportion of true positives among all actual positive instances.\"}, {\"latex\": \"\\[F1 = 2 \\cdot \\frac{Precision \\cdot Recall}{Precision + Recall}\\]\", \"description\": \"F1 score is the harmonic mean of precision and recall.\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification model that predicts whether a customer will churn or not.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of true positives (TP), false negatives (FN), true negatives (TN), and false positives (FP).\"}, {\"stepNumber\": 2, \"description\": \"Use the formula for accuracy to calculate the model's performance.\", \"mathHtml\": \"\\[Accuracy = \\frac{TP + TN}{P + N}\\]\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Model evaluation metrics provide a way to quantify the performance of a model and make informed decisions about its deployment.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:09:38.732Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_model_evaluation_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial to ensure it generalizes well to new data. This card covers key metrics: accuracy, precision, recall, F1 score, AUC-ROC, and calibration.</p>",
+    "formula": "{",
+    "latex": "\\[Accuracy = \\frac{TP + TN}{TP + FP + FN + TN}\\]\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\[Precision = \\frac{TP}{TP + FP}\\]\", \"description\": \"True positives over total positive predictions\"}, {\"latex\": \"\\[Recall = \\frac{TP}{TP + FN}\\]\", \"description\": \"True positives over total actual positive instances\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binary classification model predicting whether a customer will churn or not. We have the following true labels and predictions:</p><ul><li>Actual: [0, 1, 1, 0, 1]</li><li>Predicted: [0, 1, 1, 0, 1]</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count true positives (TP) and false negatives (FN)\", \"mathHtml\": \"\\[TP = 3\\]\", \"explanation\": \"We correctly predicted 3 customers who actually churned\"}, {\"stepNumber\": 2, \"description\": \"Count true negatives (TN) and false positives (FP)\", \"mathHtml\": \"\\[TN = 2\\], \\[FP = 1\\]\", \"explanation\": \"We correctly predicted 2 customers who didn't churn and incorrectly predicted 1 customer to churn\"} ],",
+    "finalAnswer": "Accuracy is calculated as the sum of TP, TN over the total instances\" },",
+    "intuition": "These metrics help you understand your model's strengths and weaknesses, making it easier to improve its performance.",
+    "tags": [
+      "machine learning",
+      "model evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:03.080Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "problem": "{",
+    "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, AUC-ROC, and calibration metrics.</p>",
+    "hints": [
+      "Start by calculating the true positives (TP) and false positives (FP).",
+      "Use these values to calculate precision.",
+      "Recall is related to precision, but consider a different scenario."
+    ],
+    "solutionHtml": "<p>Let's say we have a model that predicts whether a customer will churn or not. We have the following data:</p><ul><li>TP: 80 (correctly predicted churn)</li><li>FP: 20 (incorrectly predicted no churn)</li></ul><p>We can calculate accuracy as:</p>\\(\\frac{\\text{TP} + \\text{TN}}{\\text{TP} + \\text{FP} + \\text{TN} + \\text{FN}}\\)<p>where TN and FN are the number of true negatives and false negatives, respectively.</p><p>Next, we can calculate precision as:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FP}}\\)<p>Recall is then calculated as:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FN}}\\)<p>F1 score is the harmonic mean of precision and recall.</p><p>AUC-ROC measures the model's ability to distinguish between classes. Calibration measures how well the model's predictions align with the true labels.</p>\",",
+    "answerShort": "The answer\" },",
+    "commonMistakes": [
+      "Forgetting to consider TN and FN",
+      "Not understanding the difference between precision and recall"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:25.118Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, and F1-score.</p>",
+      "hints": [
+        "Start by calculating true positives (TP) and false negatives (FN).",
+        "Use these values to compute precision.",
+        "Recall is the ratio of TP to the sum of TP and FN."
+      ],
+      "solutionHtml": "<p>To calculate accuracy, count the number of correct predictions out of total predictions.</p><p>For precision, divide TP by the sum of TP and FP (false positives).</p><p>Recall is already calculated in Hint 2. F1-score is the harmonic mean of precision and recall.</p>",
+      "answerShort": "Accuracy: ..., Precision: ..., Recall: ..., F1-score: ..."
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:36.852Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": "{",
+    "statementHtml": "<p>Evaluate the performance of a binary classification model using accuracy and precision.</p>",
+    "hints": [
+      "<p>Start by calculating the number of true positives (TP) and false positives (FP).</p>",
+      "<p>Then, use these values to calculate accuracy and precision.</p>",
+      "<p>Don't forget to consider the denominator for both metrics!</p>"
+    ],
+    "solutionHtml": "<p>To calculate accuracy, divide the sum of TP and true negatives (TN) by the total number of samples:</p>\\(\\frac{\\text{TP} + \\text{TN}}{\\text{Total Samples}}\\)<p>For precision, divide TP by the sum of TP and FP:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FP}}\\)<p>Finally, plug in your values to get the desired metrics.</p>\",",
+    "answerShort": "Accuracy: 0.8, Precision: 0.9\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:52.957Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, and AUC-ROC.</p>",
+      "hints": [
+        "Start by calculating the true positives (TP) and false negatives (FN).",
+        "Use these values to compute precision and recall.",
+        "For F1 score, consider the harmonic mean of precision and recall."
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Calculate TP = 10, FN = 5.</li><li>Compute precision as TP / (TP + FP) = 0.833.</li><li>Calculate recall as TP / (TP + FN) = 0.667.</li><li>F1 score: harmonic mean of precision and recall = 0.75.</li></ul>",
+      "answerShort": "F1 score: 0.75"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the class imbalance in the dataset.",
+      "Not normalizing the data before training the model."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:07.381Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": "{",
+    "statementHtml": "Evaluate a binary classification model using accuracy, precision, recall, F1 score, and AUC-ROC. Given a test set with 1000 samples, calculate these metrics for a model that correctly classifies 850 samples.",
+    "hints": [
+      "Start by calculating the number of true positives (TP) and false positives (FP).",
+      "Use the TP and FP values to compute precision.",
+      "Recall is the ratio of TP to the sum of TP and FN."
+    ],
+    "solutionHtml": "To calculate accuracy, we need the number of true negatives (TN) and false negatives (FN), which can be found by subtracting TP and FP from the total test set size. Accuracy is then calculated as (TP + TN) / 1000.\\n\\nFor precision, we divide TP by (TP + FP). For recall, we divide TP by (TP + FN).\\n\\nF1 score is the harmonic mean of precision and recall. AUC-ROC is calculated using the true positive rate and false positive rate at different thresholds.\\n\\nHere are the calculations:\\nAccuracy: (850) / 1000 = 0.85\\nPrecision: TP / (TP + FP) = 850 / 150 = 0.567\\nRecall: TP / (TP + FN) = 850 / 900 = 0.944\\nF1 score: sqrt(2 \\* precision \\* recall) / (precision + recall) = 0.75\\nAUC-ROC: calculated using the true positive rate and false positive rate at different thresholds.\",",
+    "answerShort": "Accuracy: 0.85, Precision: 0.567, Recall: 0.944, F1 score: 0.75, AUC-ROC: [calculated value]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:30.522Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, AUC-ROC, and calibration metrics.</p>",
+      "hints": [
+        "<p>Start by calculating the number of true positives (TP) and false negatives (FN).</p>",
+        "<p>Use these values to compute precision as TP/(TP+FP), where FP is the number of false positives.</p>",
+        "<p>Recall is then calculated as TP/(TP+FN). F1 score is the harmonic mean of precision and recall.</p>"
+      ],
+      "solutionHtml": "<p>Solution goes here...</p>",
+      "answerShort": "Answer: ... (to be filled in)"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:41.589Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy, Precision, Recall, F1, AUC-ROC, Calibration",
+    "contentHtml": "<p>In this worked example, we'll explore how to evaluate the performance of a machine learning model using various metrics.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binary classification model that predicts whether a customer will churn or not. We want to evaluate its performance on a test set.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of true positives (TP) and false negatives (FN)\", \"mathHtml\": \"\\[TP = \\sum_{i=1}^n y_i \\cdot p(y_i | x_i), FN = \\sum_{i=1}^n (1-y_i) \\cdot p(1-y_i | x_i)\\]\", \"explanation\": \"We're counting the number of correct positive predictions and incorrect negative predictions.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of true negatives (TN) and false positives (FP)\", \"mathHtml\": \"\\[TN = \\sum_{i=1}^n (1-y_i) \\cdot p(1-y_i | x_i), FP = \\sum_{i=1}^n y_i \\cdot p(y_i | x_i)\\]\", \"explanation\": \"We're counting the number of correct negative predictions and incorrect positive predictions.\"}, {\"stepNumber\": 3, \"description\": \"Calculate accuracy\", \"mathHtml\": \"\\[Accuracy = \\frac{TP + TN}{TP + FN + TN + FP}\\]\", \"explanation\": \"Accuracy measures the proportion of correctly classified instances.\"}, {\"stepNumber\": 4, \"description\": \"Calculate precision and recall\", \"mathHtml\": \"\\[Precision = \\frac{TP}{TP + FP}, Recall = \\frac{TP}{TP + FN}\\]\", \"explanation\": \"Precision measures the proportion of true positives among all positive predictions. Recall measures the proportion of true positives among all actual positive instances.\"}, {\"stepNumber\": 5, \"description\": \"Calculate F1 score\", \"mathHtml\": \"\\[F1 = \\frac{2 \\cdot Precision \\cdot Recall}{Precision + Recall}\\]\", \"explanation\": \"The F1 score is the harmonic mean of precision and recall, providing a balanced measure.\"} ],",
+    "finalAnswer": "By calculating these metrics, we can gain insights into our model's performance and identify areas for improvement.\" },",
+    "intuition": "Model evaluation metrics provide a way to quantify how well your model generalizes to new data. By understanding the strengths and weaknesses of each metric, you can choose the most relevant ones for your specific problem.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:12:12.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy, Precision, Recall, F1, AUC-ROC, Calibration",
+    "contentHtml": "<p>Evaluate your machine learning models with these essential metrics.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binary classification model that predicts whether a customer will buy a product or not. We have the following true labels and predictions:<br />\\[\\begin{array}{c|cc} & \\text{Not Buy} & \\text{Buy}\\\\\\hline \\text{True Label: Not Buy} & 90 & 10\\\\ \\text{True Label: Buy} & 5 & 85\\end{array}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of true positives (TP) and false negatives (FN)\", \"mathHtml\": \"\\(\\text{TP}=85,\\quad \\text{FN}=5\\)\", \"explanation\": \"We're counting how many times our model correctly predicted a 'Buy' when the customer did buy.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of true negatives (TN) and false positives (FP)\", \"mathHtml\": \"\\(\\text{TN}=90,\\quad \\text{FP}=10\\)\", \"explanation\": \"We're counting how many times our model correctly predicted a 'Not Buy' when the customer didn't buy.\"}, {\"stepNumber\": 3, \"description\": \"Calculate accuracy\", \"mathHtml\": \"\\(\\text{Accuracy} = \\frac{\\text{TP} + \\text{TN}}{\\text{TP} + \\text{FP} + \\text{FN} + \\text{TN}}\\)\", \"explanation\": \"We're dividing the number of correct predictions by the total number of predictions.\"}, {\"stepNumber\": 4, \"description\": \"Calculate precision\", \"mathHtml\": \"\\(\\text{Precision} = \\frac{\\text{TP}}{\\text{TP} + \\text{FP}}\\)\", \"explanation\": \"We're dividing the number of true positives by the sum of true and false positives.\"}, {\"stepNumber\": 5, \"description\": \"Calculate recall\", \"mathHtml\": \"\\(\\text{Recall} = \\frac{\\text{TP}}{\\text{TP} + \\text{FN}}\\)\", \"explanation\": \"We're dividing the number of true positives by the sum of true and false negatives.\"}, {\"stepNumber\": 6, \"description\": \"Calculate F1 score\", \"mathHtml\": \"\\(\\text{F1} = 2 \\cdot \\frac{\\text{Precision} \\cdot \\text{Recall}}{\\text{Precision} + \\text{Recall}}\\)\", \"explanation\": \"We're taking the harmonic mean of precision and recall to get a single metric that balances both.\"} ],",
+    "finalAnswer": "\\(\\text{Accuracy}=0.85,\\quad \\text{Precision}=0.875,\\quad \\text{Recall}=0.944,\\quad \\text{F1}=0.896\\)\" },",
+    "intuition": "These metrics help you understand how well your model is performing in different aspects.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:12:48.456Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy, Precision, Recall, F1, AUC-ROC, Calibration",
+    "contentHtml": "<p>In this worked example, we'll go through a step-by-step solution to understand how to evaluate model performance using various metrics.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binary classification model that predicts whether a customer will churn or not. We want to evaluate its performance on a test set of 1000 samples, where 500 are positive (churn) and 500 are negative (don't churn).",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Calculate F1 score",
+    "mathHtml": "\\[F1 = 2 \\cdot \\frac{Precision \\cdot Recall}{Precision + Recall}\\]\",",
+    "explanation": "The F1 score is the harmonic mean of precision and recall, providing a balanced measure of both.\" } ],",
+    "finalAnswer": "After calculating these metrics, we can gain insights into our model's performance and make adjustments as needed.\" },",
+    "intuition": "Model evaluation metrics help us understand how well our models generalize to new data. By tracking these metrics, we can identify areas for improvement and optimize our models for better performance.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:13:17.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy, Precision, Recall, F1, AUC-ROC, Calibration",
+    "contentHtml": "<p>Evaluating machine learning models is crucial to understand their performance.</p>",
+    "workedExample": "{",
+    "problemHtml": "Given a binary classification model with true positives (TP) = 10, false positives (FP) = 5, true negatives (TN) = 20, and false negatives (FN) = 15. Calculate the accuracy.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count the total number of correct predictions\", \"mathHtml\": \"\\(\\text{TP} + \\text{TN}\\)\", \"explanation\": \"We're counting the number of instances where our model correctly predicted the class.\"}, {\"stepNumber\": 2, \"description\": \"Count the total number of predictions\", \"mathHtml\": \"\\(\\text{TP} + \\text{FP} + \\text{TN} + \\text{FN}\\)\", \"explanation\": \"We're counting all instances, regardless of whether they were correct or not.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the accuracy\", \"mathHtml\": \"\\(\\frac{\\text{TP} + \\text{TN}}{\\text{TP} + \\text{FP} + \\text{TN} + \\text{FN}}\\)\", \"explanation\": \"We're dividing the number of correct predictions by the total number of predictions to get our accuracy.\"}, {\"stepNumber\": 4, \"description\": \"Plug in the values\", \"mathHtml\": \"\\(\\frac{10+20}{10+5+20+15}\\) = 0.6\", \"explanation\": \"Now we can plug in the values and calculate the accuracy.\"}, {\"stepNumber\": 5, \"description\": \"Calculate the final answer\", \"mathHtml\": \"Accuracy: 0.6\", \"explanation\": \"Our final answer is an accuracy of 0.6.\"} ],",
+    "finalAnswer": "Accuracy: 0.6\" },",
+    "intuition": "Model evaluation metrics provide insights into a model's performance, helping you understand its strengths and weaknesses.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:13:43.523Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_018",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy and Beyond",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial. We'll explore common metrics like accuracy, precision, recall, F1 score, AUC-ROC, and calibration.</p>",
+    "formula": {
+      "latex": "\\[\\text{Accuracy} = \\frac{TP + TN}{TP + FP + FN + TN}\\]",
+      "name": "Accuracy",
+      "variants": [
+        {
+          "latex": "\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]",
+          "description": "True positives divided by sum of true positives and false positives"
+        },
+        {
+          "latex": "\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]",
+          "description": "True positives divided by sum of true positives and false negatives"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Given a binary classification model with TP=80, FP=20, TN=100, and FN=30, calculate the accuracy.</p>",
+      "hints": [
+        "Hint: Use the formula above"
+      ],
+      "solutionHtml": "<p>We'll use the provided values:</p><ul><li>TP = 80</li><li>FP = 20</li><li>TN = 100</li><li>FN = 30</li></ul><p>The accuracy is:</p>",
+      "answerShort": "0.8"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A binary classification model has TP=120, FP=40, TN=150, and FN=60. Calculate the precision.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sum of true positives and false positives",
+          "mathHtml": "\\[TP + FP = 160\\]",
+          "explanation": "We need this value to calculate precision"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sum of true positives",
+          "mathHtml": "\\[TP = 120\\]",
+          "explanation": "This is given in the problem statement"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the precision",
+          "mathHtml": "\\[Precision = \\frac{120}{160} = 0.75\\]",
+          "explanation": "Now we can use the formula for precision"
+        }
+      ],
+      "finalAnswer": "0.75"
+    },
+    "intuition": "Understanding these metrics helps you choose the right evaluation method for your machine learning model.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:14:12.127Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_model_evaluation_019",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics: Accuracy and Beyond",
+    "contentHtml": "<p>In machine learning, evaluating model performance is crucial. Let's dive into accuracy, precision, recall, F1 score, AUC-ROC, and calibration.</p>",
+    "formula": "{",
+    "latex": "\\(Accuracy = \\frac{TP + TN}{P + N}\\)\",",
+    "name": "Accuracy",
+    "variants": "[ {\"latex\": \"\\(Precision = \\frac{TP}{P}\\)\", \"description\": \"True positives over total positive predictions\"}, {\"latex\": \"\\(Recall = \\frac{TP}{P}\\)\", \"description\": \"True positives over total actual positive instances\"} ] },",
+    "problem": "{",
+    "statementHtml": "<p>Given a binary classification model with 100 true positives, 50 false negatives, and 80 true negatives, calculate the accuracy.</p>",
+    "hints": [
+      "Hint: Use the formula for accuracy"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Calculate the precision of a model that correctly predicts 70 out of 100 positive instances, with 30 false positives.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count true positives and total positive predictions\", \"mathHtml\": \"\\(TP = 70\\), \\(P = 100\\)\"}, {\"stepNumber\": 2, \"description\": \"Calculate precision using the formula\", \"mathHtml\": \"\\(Precision = \\frac{70}{100} = 0.7\\)\"}, {\"stepNumber\": 3, \"description\": \"Interpret the result\", \"explanation\": \"A higher precision indicates a better model at correctly identifying positive instances\"} ],",
+    "finalAnswer": "0.7\" },",
+    "intuition": "Model evaluation metrics help you understand how well your model generalizes to new data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:14:34.956Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

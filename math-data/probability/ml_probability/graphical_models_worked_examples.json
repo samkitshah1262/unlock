@@ -1,0 +1,169 @@
+[
+  {
+    "id": "prob_wex_graphical_models_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple Bayesian network.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a Bayesian network with variables A, B, and C:</p><ul><li>A → B</li><li>B → C</li></ul><p>Solve for P(C|A).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the conditional probability table (CPT) for each node.\", \"mathHtml\": \"\\[P(B|A) = \\frac{1}{2}\\]\", \"explanation\": \"We need to find the CPTs to apply Bayes' theorem.\"}, {\"stepNumber\": 2, \"description\": \"Apply Bayes' theorem to find P(C|A).\", \"mathHtml\": \"\\[P(C|A) = \\frac{P(B|A) \\cdot P(C|B)}{P(B|A)}\\]\", \"explanation\": \"We'll use the CPTs and Bayes' theorem to solve for P(C|A)\"}, {\"stepNumber\": 3, \"description\": \"Substitute the given values.\", \"mathHtml\": \"\\[P(C|A) = \\frac{\\frac{1}{2} \\cdot \\frac{3}{4}}{\\frac{1}{2}}\\]\", \"explanation\": \"Now we substitute the CPTs and simplify.\"}, {\"stepNumber\": 4, \"description\": \"Simplify the expression.\", \"mathHtml\": \"\\[P(C|A) = \\frac{3}{4}\\]\", \"explanation\": \"We've simplified the expression to find P(C|A)\"}, {\"stepNumber\": 5, \"description\": \"Check our answer.\", \"mathHtml\": \"\", \"explanation\": \"Let's check our answer by plugging in values and verifying it makes sense.\"} ],",
+    "finalAnswer": "\\[P(C|A) = \\frac{3}{4}\\]\" },",
+    "intuition": "Bayesian networks provide a powerful way to reason about conditional probabilities. By applying Bayes' theorem, we can solve complex problems step-by-step.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:03:18.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this example, we'll work through a simple Bayesian network to demonstrate how to solve it step-by-step.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given the following Bayesian network:</p><ul><li>P(A) = 0.5</li><li>P(B|A) = 0.7</li><li>P(C|B) = 0.9</li></ul>",
+    "hints": [
+      "Hint: Start by finding P(A)"
+    ],
+    "solutionHtml": "<p>We'll solve this problem step-by-step:</p><ol><li>Find P(A): \\(\\frac{1}{2}\\)</li><li>Find P(B|A): \\(\\frac{7}{10}\\)</li><li>Find P(C|B): \\(\\frac{9}{10}\\)</li><li>Use the chain rule to find P(C): \\(P(C) = \\sum_{a} P(A=a) P(C|B=1) P(B=1|A=a)\\)</li></ol>\",",
+    "answerShort": "P(C) = 0.735\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the following Bayesian network:</p><ul><li>P(A) = 0.5</li><li>P(B|A) = 0.7</li><li>P(C|B) = 0.9</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find P(A)\", \"mathHtml\": \"\\(P(A) = \\frac{1}{2}\\)\", \"explanation\": \"We start by finding the probability of A.\"}, {\"stepNumber\": 2, \"description\": \"Find P(B|A)\", \"mathHtml\": \"\\(P(B|A) = \\frac{7}{10}\\)\", \"explanation\": \"Next, we find the conditional probability of B given A.\"}, {\"stepNumber\": 3, \"description\": \"Find P(C|B)\", \"mathHtml\": \"\\(P(C|B) = \\frac{9}{10}\\)\", \"explanation\": \"Then, we find the conditional probability of C given B.\"}, {\"stepNumber\": 4, \"description\": \"Use the chain rule to find P(C)\", \"mathHtml\": \"\\(P(C) = \\sum_{a} P(A=a) P(C|B=1) P(B=1|A=a)\\)\", \"explanation\": \"Finally, we use the chain rule to find the probability of C.\"} ],",
+    "finalAnswer": "P(C) = 0.735\" },",
+    "intuition": "The key insight here is that Bayesian networks allow us to model complex probabilistic relationships between variables.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:03:56.117Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "problem": "{",
+    "statementHtml": "<p>Solve the following Bayesian network:</p><img src=\"bayesian_network.png\"/>",
+    "hints": [
+      "Consider the conditional probability of each node"
+    ],
+    "solutionHtml": "<p>Step 1: Find the root node in the graph.</p>\\[ P(X) = \\prod_{i} P(X_i | parent(X_i)) \\]<p>Why: We start with the nodes that have no incoming edges, as they must be conditioned on their parents.</p><p>Step 2: Update the probability of each node given its parents.</p>\\[ P(X_i | parent(X_i)) = \\frac{P(parent(X_i) | X_i) P(X_i)}{\\sum_{X_i} P(parent(X_i) | X_i) P(X_i)} \\]<p>Why: We update each node's probability by considering the conditional probability of its parents.</p><p>Step 3: Repeat Step 2 until all nodes have been updated.</p>\",",
+    "answerShort": "P(X) = ...",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Repeat Step 2 until all nodes have been updated.",
+    "mathHtml": "\\[ ... \\]",
+    "explanation": "We update each node's probability by considering the conditional probability of its parents.\" }, {",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the Bayesian network:</p><img src=\"bayesian_network.png\"/>",
+    "finalAnswer": "...",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:04:53.250Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple Bayesian network.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a Bayesian network with variables A, B, and C:</p><ul><li>A → B</li><li>B → C</li></ul><p>Find P(C|A).</p>",
+      "hints": [
+        "Hint: Start by finding P(B|A)",
+        "Hint: Use the chain rule"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+      "answerShort": "P(C|A) = 0.5"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Step 1: Find P(B|A)</p><ul><li>We know A → B, so P(B|A) = 0.7</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the conditional probability of B given A",
+          "mathHtml": "\\[P(B|A) = 0.7 \\]",
+          "explanation": "We use the directionality of the Bayesian network to find this probability"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(C|B)",
+          "mathHtml": "\\[P(C|B) = 0.5 \\]",
+          "explanation": "Again, we use the directionality of the Bayesian network to find this probability"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Bayes' theorem",
+          "mathHtml": "\\[P(C|A) = P(B|A) P(C|B) / P(B) \\]",
+          "explanation": "We use Bayes' theorem to update our knowledge of C given A"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find P(B)",
+          "mathHtml": "\\[P(B) = P(A) P(B|A) + P(\\neg A) P(B|\\neg A) \\]",
+          "explanation": "We use the total probability theorem to find this probability"
+        }
+      ],
+      "finalAnswer": "P(C|A) = 0.5"
+    },
+    "intuition": "Bayesian networks are powerful tools for modeling complex relationships between variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:05:25.059Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>Bayesian networks are a powerful tool in probabilistic graphical models.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a Bayesian network with variables A, B, and C, determine the probability P(A|B).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the relevant nodes\", \"mathHtml\": \"\\(A, B\\)\", \"explanation\": \"We only need to consider the nodes involved in the conditional probability\"}, {\"stepNumber\": 2, \"description\": \"Apply Bayes' theorem\", \"mathHtml\": \"\\[P(A|B) = \\frac{P(B|A) P(A)}{P(B)}\\]\", \"explanation\": \"We're using Bayes' theorem to update the prior probability of A given B\"}, {\"stepNumber\": 3, \"description\": \"Simplify the expression\", \"mathHtml\": \"\\[P(A|B) = \\frac{P(B|A) P(A)}{\\sum_{a} P(B|a) P(a)}\\]\", \"explanation\": \"We're simplifying the expression by combining like terms\"}, {\"stepNumber\": 4, \"description\": \"Evaluate the probability\", \"mathHtml\": \"\\[P(A|B) = \\frac{0.7 \\cdot 0.5}{0.8}\\] (assuming specific values)\", \"explanation\": \"We're plugging in specific values to get a numerical answer\"} ],",
+    "finalAnswer": "P(A|B) = 1.75\" },",
+    "intuition": "Bayesian networks provide a powerful framework for modeling complex probabilistic relationships.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:05:49.498Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "id": "stat_prb_logistic_regression_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "problem": "{",
+    "statementHtml": "In a logistic regression model, we have a binary response variable Y and a set of predictor variables X<sub>1</sub>, ..., X<sub>p</sub>. The goal is to estimate the probability P(Y=1 | X) using maximum likelihood estimation (MLE).",
+    "hints": [
+      "Start by assuming a logistic link function between the linear combination of predictors and the log-odds.",
+      "Use the fact that the log-odds are equal to the logarithm of the odds ratio.",
+      "Apply the MLE method to estimate the parameters"
+    ],
+    "solutionHtml": "\\[P(Y=1 | X) = \\frac{1}{1 + e^{-(\\beta_0 + \\sum_{i=1}^p \\beta_i X_i)}}.\\] The log-odds are equal to the logarithm of the odds ratio, which is the ratio of the probability of success (Y=1) to the probability of failure (Y=0). The MLE method can be used to estimate the parameters β_0 and β_i. The estimated probabilities P(Y=1 | X) can then be interpreted as the predicted probability of success given the values of the predictor variables.\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:06:04.279Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_logistic_regression_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "problem": "{",
+    "statementHtml": "In a binary classification problem, we want to predict the probability of an event occurring based on one or more features. Use logistic regression to model the relationship between the feature(s) and the outcome variable. Given the following data:<br>\\(x_1 = 0.5, x_2 = 0.7, y = 1\\), calculate the maximum likelihood estimate (MLE) of the intercept and slope.\",",
+    "hints": "[ \"Start by writing down the logistic regression equation: \\(P(y=1|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\).\", \"Notice that we can rewrite this as a log-odds ratio: \\(log(\\frac{P(y=1|x)}{1-P(y=1|x)}) = \\beta_0 + \\beta_1 x\\).\", \"Use the fact that the MLE of the intercept and slope are the values that maximize the likelihood function.\" ],",
+    "solutionHtml": "To find the MLE, we need to maximize the log-likelihood function:<br>\\(LL(\\beta_0, \\beta_1) = \\sum_{i=1}^n [y_i \\log(P(y_i=1|x_i)) + (1-y_i) \\log(1-P(y_i=1|x_i))]\\)<br><br>Using the log-odds ratio form of the logistic regression equation, we can rewrite this as:<br>\\(LL(\\beta_0, \\beta_1) = \\sum_{i=1}^n [y_i (\\log(\\frac{P(y_i=1|x_i)}{1-P(y_i=1|x_i)}) - (1-y_i) log(2))]\\)<br><br>Now we can use the fact that the MLE of the intercept and slope are the values that maximize this function. To do so, we take the derivative with respect to each parameter and set it equal to zero:<br>\\(\\frac{\\partial LL}{\\partial \\beta_0} = 0\\) and \\(\\frac{\\partial LL}{\\partial \\beta_1} = 0\\)<br><br>Solving for \\(\\beta_0\\) and \\(\\beta_1\\), we get the MLE estimates:<br>\\(\\hat{\\beta}_0 = -log(2) + log(\\frac{P(y=1|x)}{1-P(y=1|x)}) |_{x=0.5, x=0.7}\\) and \\(\\hat{\\beta}_1 = 0\\)<br><br>Finally, we can plug these values back into the logistic regression equation to get the predicted probability:<br>\\(P(y=1|x) = \\frac{1}{1 + e^{-(\\hat{\\beta}_0 + \\hat{\\beta}_1 x)}}\\).\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:06:36.895Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_logistic_regression_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "problem": "{",
+    "statementHtml": "<p>Given a binary classification dataset with features X and outcome y \\(\\in \\{0,1\\}\\), use logistic regression to predict the probability of y=1 given X.</p>\",",
+    "hints": [
+      "Start by defining the likelihood function for each data point.",
+      "Use the maximum likelihood estimation (MLE) method to find the parameters.",
+      "Interpret the coefficients in terms of odds ratios."
+    ],
+    "solutionHtml": "<p>Let's denote the feature vector as X and the outcome variable as y. The logistic regression model is given by:</p>\\n<p>\\[P(y=1|X) = \\sigma(X^T\\beta)\\]</p>\\n<p>where \\(\\sigma(z) = 1/(1+e^{-z})\\) is the sigmoid function.</p>\\n<p>To find the maximum likelihood estimate (MLE), we need to maximize the log-likelihood:</p>\\n<p>\\[L(\\beta) = \\sum_{i=1}^n [y_i\\log P(y_i=1|X_i) + (1-y_i)\\log P(y_i=0|X_i)]</p>\\n<p>The MLE is obtained by setting the derivative of L with respect to β equal to zero:</p>\\n<p>\\[0 = \\sum_{i=1}^n [y_i - P(y_i=1|X_i)] X_i\\]</p>\\n<p>Solving for β, we get the estimated coefficients.</p>\",",
+    "answerShort": "The MLE of the logistic regression model is obtained by maximizing the log-likelihood function.\" },",
+    "commonMistakes": [
+      "Forgetting to include the intercept term",
+      "Not using the correct likelihood function"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:06:58.487Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_logistic_regression_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "problem": "{",
+    "statementHtml": "<p>For a binary classification problem with logistic regression, calculate the maximum likelihood estimate (MLE) of the intercept and slope coefficients given the following data:</p>\\[\\begin{array}{c|cc} x & y=0 & y=1\\\\\\hline 0.5 & 20 & 10\\\\ 1.2 & 30 & 15\\\\ 2.8 & 40 & 25\\\\ 3.9 & 50 & 35 \\end{array}\\]\",",
+    "hints": [
+      "<p>Start by calculating the log-likelihood function.</p>",
+      "<p>Use the fact that the MLE is the value that maximizes the likelihood function.</p>",
+      "<p>Apply the chain rule to find the partial derivatives of the log-likelihood with respect to the intercept and slope coefficients.</p>"
+    ],
+    "solutionHtml": "<p>To calculate the MLE, we first need to define the log-likelihood function:</p>\\[\\log L(\\beta_0, \\beta_1) = \\sum_{i=1}^n [y_i \\log \\sigma(x_i) + (1-y_i) \\log(1-\\sigma(x_i))]\\] <p>where $\\sigma(x) = 1/(1+e^{-x})$ is the sigmoid function.</p> <p>We then need to find the partial derivatives of the log-likelihood with respect to the intercept and slope coefficients:</p>\\[\\frac{\\partial \\log L}{\\partial \\beta_0} = \\sum_{i=1}^n [y_i - \\sigma(x_i)]\\] \\[\\frac{\\partial \\log L}{\\partial \\beta_1} = \\sum_{i=1}^n [x_i(y_i-\\sigma(x_i))]\\] <p>Setting these partial derivatives equal to zero and solving for $\\beta_0$ and $\\beta_1$, we find the MLE:</p>\\[\\hat{\\beta}_0 = -\\frac{1}{n}\\sum_{i=1}^n [y_i - \\sigma(x_i)]\\] \\[\\hat{\\beta}_1 = \\frac{1}{n}\\sum_{i=1}^n [x_i(y_i-\\sigma(x_i))]\\] <p>Finally, we can use these estimates to calculate the odds ratio:</p>\\[OR = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x)}\\] <p>The final answer is the estimated values of $\\hat{\\beta}_0$ and $\\hat{\\beta}_1$, which can be used to make predictions about new data.</p>\",",
+    "answerShort": "MLE estimates of intercept and slope coefficients\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:07:30.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_logistic_regression_014",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "problem": "{",
+    "statementHtml": "In a binary classification problem with logistic regression, calculate the maximum likelihood estimate (MLE) of the log-odds parameter <i>β</i>.",
+    "hints": [
+      "Start by writing down the likelihood function for the observed data.",
+      "Recall that the logistic function is given by <i>p(x) = 1/(1+e^(-<i>β</i>x))</i>.",
+      "Use the fact that the MLE of a parameter is given by the value that maximizes the likelihood."
+    ],
+    "solutionHtml": "<p>To calculate the MLE, we need to find the value of <i>β</i> that maximizes the likelihood function.</p><p>We can do this by taking the derivative of the log-likelihood with respect to <i>β</i> and setting it equal to zero:</p>\\[ \\frac{\\partial}{\\partial \\beta} \\log L(\\beta) = 0 \\] <p>Solving for <i>β</i>, we get the MLE:</p>\\[ \\hat{\\beta} = \\frac{1}{2x} \\log \\left( \\frac{p(x)}{1-p(x)} \\right) \\] <p>The final answer is:</p><i>β</i> = ...",
+    "answerShort": "...\", },",
+    "commonMistakes": [
+      "Forgetting to take the derivative of the log-likelihood",
+      "Not recognizing that the MLE is given by the value that maximizes the likelihood"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:07:49.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

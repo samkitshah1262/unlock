@@ -1,0 +1,134 @@
+[
+  {
+    "id": "la_wex_attention_transformers_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention as Matrix Operations",
+    "problem": "{",
+    "statementHtml": "Given a query vector <i>q</i>, a key vector <i>k</i>, and a value vector <i>v</i>, compute the attention weights using softmax.",
+    "hints": [
+      "Consider the dot product between <i>q</i> and <i>k</i>",
+      "Think about how to normalize these values"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ul><li>Compute the dot product between <i>q</i> and each <i>k</i> vector: \\\\( q \\cdot k_i \\\\)</li><li>Compute the scaled dot products by dividing by the sum of all dot products: \\\\( softmax(q \\cdot k_i) \\\\)</li><li>Compute the attention weights as the product of the scaled dot products and the value vectors: \\\\( softmax(q \\cdot k_i) \\cdot v_i \\\\)</li></ul>\",",
+    "answerShort": "The attention weights are computed using softmax\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have three key-value pairs: (<i>k_1</i>, <i>v_1</i>), (<i>k_2</i>, <i>v_2</i>), and (<i>k_3</i>, <i>v_3</i>). The query vector is <i>q</i>. Compute the attention weights.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the dot products\", \"mathHtml\": \"\\\\( q \\cdot k_1, q \\cdot k_2, q \\cdot k_3 \\\\)\", \"explanation\": \"We're computing the similarity between the query and each key\"}, {\"stepNumber\": 2, \"description\": \"Compute the scaled dot products\", \"mathHtml\": \"\\\\( softmax(q \\cdot k_1), softmax(q \\cdot k_2), softmax(q \\cdot k_3) \\\\)\", \"explanation\": \"We're normalizing these similarities to get probabilities\"}, {\"stepNumber\": 3, \"description\": \"Compute the attention weights\", \"mathHtml\": \"\\\\( softmax(q \\cdot k_i) \\cdot v_i \\\\)\", \"explanation\": \"We're combining the normalized similarities with the value vectors\"} ],",
+    "finalAnswer": "The attention weights are computed as \\\\( softmax(q \\cdot k_i) \\cdot v_i \\\\)\" },",
+    "intuition": "Attention is a way to weigh the importance of different key-value pairs based on their similarity to the query.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:44:55.361Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_attention_transformers_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention as Matrix Operations: QKV and Softmax",
+    "contentHtml": "<p>In this example, we'll demonstrate how attention works in transformers using matrix operations.</p>",
+    "workedExample": "{",
+    "problemHtml": "Given a query matrix <strong>Q</strong>, key matrix <strong>K</strong>, and value matrix <strong>V</strong>, compute the attention output.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the dot product of Q and K\", \"mathHtml\": \"\\[QK^T\\]\", \"explanation\": \"This is the similarity between each query and key.\"}, {\"stepNumber\": 2, \"description\": \"Apply softmax to get attention weights\", \"mathHtml\": \"\\[softmax(QK^T)\\]\", \"explanation\": \"Softmax normalizes the dot product to obtain a probability distribution over keys.\"}, {\"stepNumber\": 3\", \"description\": \"Compute weighted sum of V using attention weights\", \"mathHtml\": \"\\[V \\cdot softmax(QK^T)\\]\", \"explanation\": \"This is the final output, where each value is weighted by its similarity to the query.\"} ],",
+    "finalAnswer": "The attention output is <strong>V \\cdot softmax(QK^T)</strong>\" },",
+    "intuition": "Attention works by computing similarities between queries and keys, then weighting values based on these similarities.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:45:14.621Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_attention_transformers_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention Mechanism in Transformers",
+    "contentHtml": "<p>In this worked example, we'll dive into the attention mechanism used in transformers.</p>",
+    "formula": {
+      "latex": "\\[Q\\cdot K^T\\]",
+      "name": "Dot Product Attention"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a query matrix Q and a key-value pair matrix KV, compute the attention weights using softmax.</p>",
+      "hints": [
+        "Hint: Use the dot product formula"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+      "answerShort": "The attention weights"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the attention weights for the query matrix Q and key-value pair matrix KV.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the dot product of Q and K",
+          "mathHtml": "\\[Q\\cdot K^T = \\sum_{i} q_i k_i^T\\]",
+          "explanation": "This step computes the similarity between each query element and key element."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the softmax of the dot product",
+          "mathHtml": "\\[softmax(Q\\cdot K^T) = \\frac{exp(Q\\cdot K^T)}{\\sum_{i} exp(Q\\cdot K^T)}\\]",
+          "explanation": "This step normalizes the dot products to obtain attention weights."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the final attention weights",
+          "mathHtml": "\\[attention = softmax(Q\\cdot K^T) \\odot V\\]",
+          "explanation": "This step combines the attention weights with the value matrix V to obtain the final output."
+        }
+      ],
+      "finalAnswer": "The final attention weights"
+    },
+    "intuition": "Attention mechanisms allow models to focus on specific parts of the input data, improving their ability to capture relevant information.",
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:45:41.495Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_attention_transformers_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "ml_applications",
+    "topic": "attention_transformers",
+    "title": "Attention Mechanism in Transformers",
+    "contentHtml": "<p>In this worked example, we'll dive into the attention mechanism used in transformers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a sequence of tokens <code>['This', 'is', 'an', 'example']</code>. We want to calculate the attention weights for each token.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the query matrix Q\", \"mathHtml\": \"\\[Q = \\text{Linear}(XW_q)\\]\", \"explanation\": \"We use a linear transformation to project the input sequence X into a query space.\"}, {\"stepNumber\": 2, \"description\": \"Compute the key and value matrices K and V\", \"mathHtml\": \"\\[K = \\text{Linear}(XW_k),\\quad V = \\text{Linear}(XW_v)\\]\", \"explanation\": \"We use another linear transformation to project X into a key space and a value space.\"}, {\"stepNumber\": 3, \"description\": \"Compute the attention weights\", \"mathHtml\": \"\\[Attention(Q, K) = softmax(\\frac{QK^T}{\\sqrt{d}})\\]\", \"explanation\": \"We use the softmax function to normalize the attention weights, where d is the dimensionality of the query and key vectors.\"}, {\"stepNumber\": 4\", \"description\": \"Compute the output matrix O\", \"mathHtml\": \"\\[O = Attention(Q, K) \\cdot V\\]\", \"explanation\": \"We multiply the attention weights with the value matrix to get the final output.\"} ],",
+    "finalAnswer": "The attention weights and output matrix are calculated.\" },",
+    "intuition": "Attention mechanisms allow models to focus on specific parts of the input sequence, enabling them to capture long-range dependencies.",
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:46:05.781Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

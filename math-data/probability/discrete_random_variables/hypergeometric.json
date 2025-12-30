@@ -1,0 +1,384 @@
+[
+  {
+    "id": "prob_con_hypergeometric_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution is a fundamental concept in probability theory that arises when we sample without replacement from a finite population.</p><p>Imagine you're drawing cards from a deck without shuffling, and you want to know the probability of getting exactly <i>k</i> Aces. The hypergeometric distribution helps us calculate this probability.</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = \\frac{{k\\choose r} {N-k\\choose M-r}}{{N\\choose M}}\\]",
+      "name": "Hypergeometric Probability"
+    },
+    "intuition": "The hypergeometric distribution is useful when we want to understand the probability of getting a certain number of successes in a sample, without replacement, from a finite population.",
+    "realWorldApplications": [
+      "In machine learning, the hypergeometric distribution can be used to model the probability of selecting a rare class label from a dataset."
+    ],
+    "commonMistakes": [
+      "Failing to account for the finite nature of the population when sampling without replacement"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:27:58.501Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_hypergeometric_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution models the probability of drawing a specific number of successes from a finite population without replacement.</p><p>For example, imagine you have a deck of cards with 10 red cards and 10 blue cards. You draw 3 cards randomly without replacing them. What's the probability that exactly 2 are red?</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = \\frac{{k\\choose r} {N-k\\choose n-r}}{{N\\choose n}}\\]",
+      "name": "Hypergeometric Probability"
+    },
+    "intuition": "The hypergeometric distribution is useful when you have a finite population and want to account for the fact that drawing one item affects the probability of drawing others.",
+    "realWorldApplications": [
+      "In recommender systems, the hypergeometric distribution can be used to model the probability of a user interacting with a specific item given their past behavior."
+    ],
+    "commonMistakes": [
+      "Failing to account for the finite population size"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:28:15.421Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_hypergeometric_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution is a fundamental concept in probability theory that arises when sampling without replacement from a finite population.</p><p>Imagine you have a deck of cards with <i>n</i> distinct types, and you randomly draw <i>k</i> cards without replacing them. The hypergeometric distribution describes the probability of drawing exactly <i>r</i> cards of one particular type (e.g., hearts) given that there are <i>m</i> such cards in the deck.</p>",
+    "formula": {
+      "latex": "\\[P(X=r)=\\frac{\\binom{m}{r} \\binom{n-m}{k-r}}{\\binom{n}{k}}\\]",
+      "name": "Hypergeometric Probability"
+    },
+    "intuition": "The hypergeometric distribution is useful when you need to account for the fact that sampling without replacement can affect the probability of drawing certain items.",
+    "realWorldApplications": [
+      "In machine learning, the hypergeometric distribution is used in anomaly detection and rare event analysis."
+    ],
+    "commonMistakes": [
+      "Failing to account for the finite population size when sampling without replacement"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:28:34.509Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_hypergeometric_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution is a discrete probability distribution that describes the number of successes in a sample of size <i>n</i> drawn from a population of size <i>N</i> without replacement, where each item in the population has a binary outcome (success or failure).</p>",
+    "formula": "{",
+    "latex": "\\[H(x|n,N) = \\frac{\\binom{x}{k} \\binom{n-x}{N-k}}{\\binom{N}{n}}\\]\",",
+    "name": "Hypergeometric Distribution Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a deck of <i>N</i> = 52 cards, and we draw a sample of size <i>n</i> = 5 without replacement. What is the probability that exactly <i>x</i> = 3 of the drawn cards are hearts?</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Determine the total number of ways to choose the non-hearts in the sample",
+    "mathHtml": "\\[ \\binom{n-x}{N-k} = \\frac{(n-x)!}{((n-x)-(N-k))!(N-k)!}\\]\",",
+    "explanation": "This is the number of ways to select <i>N-k</i> non-hearts from a sample of size <i>n-x</i>\" } ],",
+    "finalAnswer": "The probability is then calculated by plugging in the values and simplifying\" },",
+    "intuition": "The hypergeometric distribution helps us understand the uncertainty in sampling without replacement, which is crucial in many real-world applications such as quality control or survey research.",
+    "realWorldApplications": [
+      "Quality Control",
+      "Survey Research"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:29:10.485Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_hypergeometric_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution",
+    "contentHtml": "<p>The hypergeometric distribution models sampling without replacement from a finite population.</p><p>Given a population of size N with K items of interest and M items not of interest, the probability of drawing k items of interest is given by:</p>\\(P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{M-k}}{\\binom{N}{M)}\\)<p>This formula is useful in scenarios where you need to estimate the proportion of a specific type in a sample, but you can't replace items.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{M-k}}{\\binom{N}{M)}\\)\",",
+    "name": "Hypergeometric Distribution Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A box of assorted donuts contains 15 chocolate, 10 strawberry, and 25 other flavors. If you randomly select 5 donuts without replacement, what's the probability that exactly 3 are chocolate?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the total number of donuts\", \"mathHtml\": \"\\(N=15+10+25=50\\)\", \"explanation\": \"We need to know the total population size.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of chocolate donuts in the sample\", \"mathHtml\": \"\\(k=3\\)\", \"explanation\": \"We want to find the probability of exactly 3 chocolate donuts.\"}, {\"stepNumber\": 3, \"description\": \"Apply the hypergeometric distribution formula\", \"mathHtml\": \"\\(P(X=k) = \\frac{\\binom{15}{3} \\binom{50-15}{5-3}}{\\binom{50}{5)}\\)\", \"explanation\": \"Plug in the values and simplify the expression.\"} ],",
+    "finalAnswer": "The probability is approximately 0.145\" },",
+    "intuition": "The hypergeometric distribution helps you understand how to account for the lack of replacement when sampling from a finite population.",
+    "realWorldApplications": [
+      "Estimating the proportion of a specific type in a sample, without replacement"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "sampling"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:29:43.486Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_hypergeometric_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution Formula",
+    "contentHtml": "<p>The hypergeometric distribution formula is used to calculate the probability of drawing a certain number of successes from a finite population without replacement.</p>",
+    "formula": "{",
+    "latex": "\\[P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{n-k}}{\\binom{N}{n}}\\]\",",
+    "name": "Hypergeometric Probability Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a deck of 52 cards, and we want to draw 5 cards without replacement. What is the probability that exactly 3 of them are hearts?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Determine the number of hearts in the deck",
+        "mathHtml": "\\(K=13\\)",
+        "explanation": "We know there are 13 hearts in a standard deck."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the number of non-hearts",
+        "mathHtml": "\\(N-K=39\\)",
+        "explanation": "There are 52-13=39 non-heart cards."
+      }
+    ],
+    "finalAnswer": "The final answer is the probability calculated using the formula.\" },",
+    "intuition": "This formula is useful when you need to calculate the probability of drawing a certain number of successes from a finite population without replacement.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:04.742Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_hypergeometric_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a deck of <i>n</i> cards with <i>K</i> red cards and <i>n-K</i> black cards. We draw <i>r</i> cards without replacement. What is the probability that exactly <i>k</i> of them are red?</p>",
+    "hints": [
+      "<p>Think about the number of ways to choose <i>k</i> red cards from the <i>K</i> available.</p>",
+      "<p>Now, consider the number of ways to choose the remaining <i>r-k</i> cards from the <i>n-K</i> black cards.</p>",
+      "<p>Use the multiplication principle to combine these two cases.</p>"
+    ],
+    "solutionHtml": "<p>We can use the hypergeometric distribution formula:</p>\\[\\mathbb{P}(K=k) = \\frac{\\binom{K}{k} \\binom{n-K}{r-k}}{\\binom{n}{r}}\\] <p>Here, <i>K</i> is the number of red cards, <i>k</i> is the number of red cards drawn, and <i>r</i> is the total number of cards drawn.</p>\",",
+    "answerShort": "The probability is given by the hypergeometric distribution formula.\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:27.245Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_hypergeometric_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "A random sample of <i>n</i> items is drawn from a population of <i>K</i> items containing <i>Kp</i> positive instances and <i>Kk</i> negative instances, without replacement. What is the probability that exactly <i>r</i> out of these <i>n</i> items are positive?",
+    "hints": [
+      "Start by considering the number of ways to choose <i>r</i> positive items from the total of <i>Kp</i>",
+      "Think about the number of ways to choose the remaining <i>n-r</i> items, given that they must be negative",
+      "Use the formula for combinations to simplify your answer"
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the hypergeometric distribution. Let's denote the event that an item is positive as 'P' and the event that it is negative as 'N'. We want to find <i>P(r)</i>, the probability of exactly <i>r</i> items being positive.</p><p>We have:</p>\\[ P(r) = \\frac{\\binom{K_p}{r} \\cdot \\binom{K-K_p}{n-r}}{\\binom{K}{n}} \\]<p>This formula represents the number of ways to choose <i>r</i> positive items from the total of <i>Kp</i>, multiplied by the number of ways to choose the remaining <i>n-r</i> items, given that they must be negative.</p>\",",
+    "answerShort": "<i>P(r) = \\frac{\\binom{K_p}{r} \\cdot \\binom{K-K_p}{n-r}}{\\binom{K}{n}}</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:30:53.670Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_hypergeometric_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "problem": "{",
+    "statementHtml": "A bag contains <i>n</i> balls, <i>k</i> of which are red and <i>n-k</i> are blue. If we randomly draw <i>m</i> balls without replacement, what is the probability that exactly <i>r</i> of them are red?",
+    "hints": [
+      "Think about the number of ways to choose <i>r</i> red balls out of <i>k</i>",
+      "Consider the number of ways to choose the remaining <i>m-r</i> balls",
+      "Use the hypergeometric distribution formula"
+    ],
+    "solutionHtml": "Let's calculate the probability. We can use the hypergeometric distribution formula:\\[P(X=r)=\\frac{\\binom{k}{r}\\binom{n-k}{m-r}}{\\binom{n}{m}}.\\]Now, we can plug in the values and simplify.\",",
+    "answerShort": "The answer is P(X=r)\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:31:10.734Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_hypergeometric_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Solving Hypergeometric Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a hypergeometric distribution problem step-by-step.</p>",
+    "formula": {
+      "latex": "\\[P(X=k) = \\frac{\\binom{K}{k} \\binom{N-K}{n-k}}{\\binom{N}{n}}\\]"
+    },
+    "problem": {
+      "statementHtml": "<p>A bag contains 10 red balls and 15 blue balls. We randomly draw 4 balls without replacement. What is the probability that exactly 2 of the drawn balls are red?</p>",
+      "hints": [
+        "Think about the number of ways to choose the 2 red balls.",
+        "Consider the total number of possible outcomes."
+      ],
+      "solutionHtml": "<p>We'll break this down into smaller steps.</p>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A bag contains 10 red balls and 15 blue balls. We randomly draw 4 balls without replacement. What is the probability that exactly 2 of the drawn balls are red?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the number of favorable outcomes.",
+          "mathHtml": "\\[\\text{# of ways to choose 2 red balls} = \\binom{10}{2}\\]",
+          "explanation": "We're counting the number of ways we can select exactly 2 red balls from the bag."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the total number of possible outcomes.",
+          "mathHtml": "\\[\\text{# of possible outcomes} = \\binom{25}{4}\\]",
+          "explanation": "We're counting the total number of ways we can select 4 balls from the bag."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the probability.",
+          "mathHtml": "\\[P(X=2) = \\frac{\\text{# of favorable outcomes}}{\\text{# of possible outcomes}}\\]",
+          "explanation": "We're dividing the number of favorable outcomes by the total number of possible outcomes."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "This example illustrates the importance of considering the order in which we draw balls when calculating probabilities.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:31:43.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_hypergeometric_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution: Sampling without Replacement",
+    "contentHtml": "<p>In this example, we'll explore how to solve a problem step-by-step using the hypergeometric distribution.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a deck of 52 cards with 13 hearts. We draw 5 cards without replacement. What's the probability that exactly 3 are hearts?",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the number of favorable outcomes\", \"mathHtml\": \"\\\\(K = {13 \\choose 3}\\)\", \"explanation\": \"We're counting the number of ways we can choose exactly 3 hearts from the 13 available.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the total number of possible outcomes\", \"mathHtml\": \"\\\\(N = {52 \\choose 5}\\)\", \"explanation\": \"We're counting the number of ways we can draw 5 cards without replacement from the 52-card deck.\"}, {\"stepNumber\": 3, \"description\": \"Apply the hypergeometric formula\", \"mathHtml\": \"\\\\[P(X=3) = \\\\frac{K}{N}\\]\", \"explanation\": \"We're using the hypergeometric distribution to find the probability of exactly 3 hearts given the number of favorable outcomes and total possible outcomes.\"}, {\"stepNumber\": 4, \"description\": \"Simplify the expression\", \"mathHtml\": \"\\\\[P(X=3) = \\\\frac{{13 \\choose 3}}{{52 \\choose 5}}\\]\", \"explanation\": \"We're simplifying the expression by plugging in the values for K and N.\"}, {\"stepNumber\": 5, \"description\": \"Evaluate the probability\", \"mathHtml\": \"\\\\[P(X=3) = \\\\frac{0.0117}{0.1758}\\] \\\\\\\\ P(X=3) ≈ 0.0662\", \"explanation\": \"We're evaluating the expression by plugging in the values and simplifying further.\"} ],",
+    "finalAnswer": "The probability is approximately 0.0662.\" },",
+    "intuition": "The hypergeometric distribution helps us account for the fact that we're drawing cards without replacement, which changes the probability calculation compared to a binomial distribution.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:32:14.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_hypergeometric_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "discrete_random_variables",
+    "topic": "hypergeometric",
+    "title": "Hypergeometric Distribution: Sampling without Replacement",
+    "contentHtml": "<p>In this example, we'll explore how to solve a problem step-by-step using the hypergeometric distribution.</p>",
+    "problem": "{",
+    "statementHtml": "<p>A bag contains 10 red marbles and 5 blue marbles. We randomly draw 3 marbles without replacement. What is the probability that all 3 are red?</p>",
+    "hints": [
+      "Think about the number of possible ways to choose the marbles",
+      "Use the hypergeometric distribution formula"
+    ],
+    "solutionHtml": "<p>We'll break down the solution into 4 steps:</p><ul><li>Step 1: Identify the total number of possible outcomes.</li><li>Step 2: Calculate the number of favorable outcomes (all 3 marbles are red).</li><li>Step 3: Use the hypergeometric distribution formula to find the probability.</li><li>Step 4: Simplify and calculate the final answer.</li></ul>",
+    "answerShort": "The probability is approximately 0.144\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A bag contains 10 red marbles and 5 blue marbles. We randomly draw 3 marbles without replacement. What is the probability that all 3 are red?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the total number of possible outcomes\", \"mathHtml\": \"\\\\( {10 \\choose 3} \\\\cdot {5 \\choose 0} \\\\)\", \"explanation\": \"We use the combination formula to calculate the total number of possible ways to choose 3 red marbles and 0 blue marbles.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of favorable outcomes (all 3 are red)\", \"mathHtml\": \"\\\\( {10 \\choose 3} \\\\)\", \"explanation\": \"We only care about the number of ways to choose all 3 marbles as red.\"}, {\"stepNumber\": 3, \"description\": \"Use the hypergeometric distribution formula\", \"mathHtml\": \"\\\\[ P(X=3) = \\\\frac{{10 \\choose 3} {5 \\choose 0}}{{15 \\choose 3}} \\\\]\", \"explanation\": \"We apply the hypergeometric distribution formula to find the probability.\"}, {\"stepNumber\": 4, \"description\": \"Simplify and calculate the final answer\", \"mathHtml\": \"\\\\( P(X=3) \\\\approx 0.144 \\\\)\", \"explanation\": \"We simplify the expression and calculate the approximate value.\"} ],",
+    "finalAnswer": "The probability is approximately 0.144\" },",
+    "intuition": "The hypergeometric distribution helps us account for the fact that we're sampling without replacement, which changes the probability calculation.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:32:53.007Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

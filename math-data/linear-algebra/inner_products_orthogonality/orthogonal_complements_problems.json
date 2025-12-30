@@ -1,0 +1,115 @@
+[
+  {
+    "id": "la_prb_orthogonal_complements_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal complement of a given subspace.</p>",
+      "hints": [
+        "Start by recalling the definition of an orthogonal complement.",
+        "Think about how you can use the properties of inner products to find the desired subspace.",
+        "Don't forget to check your answer for orthogonality."
+      ],
+      "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are orthogonal to every vector in the given subspace. Let's call this subspace <code>S</code>. We can do this by finding the set of all vectors <code>v</code> such that <code>&#956;(v, w) = 0</code> for all <code>w &#x2208 S</code>.</p><p>We can use the properties of inner products to find this subspace. Specifically, we know that if <code>&#956;(v, w) = 0</code>, then <code>v</code> is orthogonal to every vector in <code>S</code>. Therefore, the orthogonal complement of <code>S</code> is given by:</p><p><code>W^&#x2208 = { v | &#956;(v, w) = 0 for all w &#x2208 S }</code></p>",
+      "answerShort": "The orthogonal complement is the set of all vectors that are orthogonal to every vector in the given subspace."
+    },
+    "commonMistakes": [
+      "Forgetting to check orthogonality between the desired subspace and the original subspace.",
+      "Not recognizing that the orthogonal complement is a subspace itself, rather than just a set of vectors."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:09.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": "{",
+    "statementHtml": "<p>Find the orthogonal complement of a given subspace.</p>",
+    "hints": [
+      "Start by considering a basis for the subspace.",
+      "Use the fact that the dot product between an element in the subspace and an element not in the subspace is zero to find the orthogonal complement.",
+      "Think about how you can use this concept to find the projection of a vector onto the subspace."
+    ],
+    "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are perpendicular to every vector in the given subspace.</p><p>Let's start by considering a basis for the subspace. Let's say it has $n$ elements: $\\mathbf{v}_1, \\ldots, \\mathbf{v}_n$.</p><p>We want to find all vectors that are perpendicular to every vector in this subspace. We can do this by finding all vectors that satisfy the following condition:</p><p>\\[\\sum_{i=1}^n c_i (\\mathbf{v}_i \\cdot \\mathbf{w}) = 0\\]</p><p>where $\\mathbf{w}$ is any vector not in the subspace. We can rewrite this as:</p><p>\\[c_1 (\\mathbf{v}_1 \\cdot \\mathbf{w}) + c_2 (\\mathbf{v}_2 \\cdot \\mathbf{w}) + \\cdots + c_n (\\mathbf{v}_n \\cdot \\mathbf{w}) = 0\\]</p><p>This is a system of $n$ linear equations with $n$ variables. Solving this system, we get the orthogonal complement.</p>\",",
+    "answerShort": "The orthogonal complement is all vectors that satisfy the above condition.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:35.474Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": "{",
+    "statementHtml": "Find the orthogonal complement of a given subspace <code>W</code> in <code>R^n</code>.",
+    "hints": [
+      "Recall that two subspaces are orthogonal if their intersection is trivial.",
+      "Think about how to find the orthogonal projection of any vector onto <code>W</code>'s orthogonal complement.",
+      "Use the fact that the orthogonal projection matrix is symmetric and idempotent."
+    ],
+    "solutionHtml": "<p>To find the orthogonal complement, we can use the following steps:</p><ol><li>\\(P_W^\\perp = I - P_W\\), where \\(I\\) is the identity matrix.</li><li>Since \\(P_W\\) is symmetric and idempotent, so is \\(P_W^\\perp\\).</li><li>The orthogonal complement of <code>W</code> is therefore the column space of \\(P_W^\\perp\\).</li></ol>\",",
+    "answerShort": "The orthogonal complement\" },",
+    "commonMistakes": [
+      "Forgetting that the orthogonal projection matrix is symmetric and idempotent."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:34:51.481Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_orthogonal_complements_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "inner_products_orthogonality",
+    "topic": "orthogonal_complements",
+    "problem": {
+      "statementHtml": "<p>Find the orthogonal complement of a subspace W in R^n.</p>",
+      "hints": [
+        "<p>Recall that two vectors are orthogonal if their dot product is zero.</p>",
+        "<p>The orthogonal complement of W contains all vectors that are orthogonal to every vector in W.</p>",
+        "<p>You can use the Gram-Schmidt process to find an orthonormal basis for the orthogonal complement.</p>"
+      ],
+      "solutionHtml": "<p>To find the orthogonal complement, we need to find all vectors that are orthogonal to every vector in W. Let's call this subspace V.</p><p>We know that V contains all vectors that satisfy the equation <i>u</i>·<i>v</i> = 0 for all <i>v</i> in W.</p><p>To find a basis for V, we can use the Gram-Schmidt process. Let's start with an arbitrary vector <i>w</i> that is not in W.</p><p>We can normalize <i>w</i> to get a unit vector <i>u</i>. Then, we can subtract the projection of <i>w</i> onto W from <i>w</i> to get a new vector <i>v</i> that is orthogonal to every vector in W.</p><p>We can repeat this process until we have found a basis for V.</p>",
+      "answerShort": "The orthogonal complement of W is the set of all vectors that satisfy the equation u·v = 0 for all v in W."
+    },
+    "commonMistakes": [
+      "Assuming that the orthogonal complement is always one-dimensional.",
+      "Not normalizing the basis vectors to get an orthonormal basis."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:35:13.352Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

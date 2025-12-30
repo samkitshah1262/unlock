@@ -1,0 +1,133 @@
+[
+  {
+    "id": "stat_prb_bootstrap_ci_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "Construct a 95% bootstrap confidence interval for the mean of a dataset using the percentile method.",
+    "hints": [
+      "Start by generating B bootstrap samples from the original dataset.",
+      "Calculate the sample mean for each bootstrap sample and order them.",
+      "Use the ordered sample means to determine the lower and upper bounds of the CI."
+    ],
+    "solutionHtml": "\\[Let X_1, ..., X_n be the original dataset. We generate B bootstrap samples \\{X_{i1}, ..., X_{ib}\\} with replacement.\\] <p>For each bootstrap sample, calculate the sample mean \\(\\bar{x}_b\\). Order these means in increasing order: \\(\\bar{x}_{(1)}, ..., \\bar{x}_{(B)}\\).</p> <p>The 2.5th percentile of the ordered sample means is the lower bound of the CI, and the 97.5th percentile is the upper bound.</p> <p>For example, if B = 1000 and the 25th percentile of the ordered sample means is \\(-3.4\\), then the lower bound of the CI would be -3.4.</p> <p>The final answer is: [lower bound, upper bound].</p>\",",
+    "answerShort": "[lower bound, upper bound]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:25.719Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% bootstrap confidence interval for the mean of a given dataset.</p>",
+      "hints": [
+        "Start by resampling with replacement from the original dataset.",
+        "Calculate the sample mean for each bootstrap replicate.",
+        "Use the percentile method to determine the lower and upper bounds."
+      ],
+      "solutionHtml": "<p>To construct the interval, follow these steps:</p><ol><li>Resample with replacement from the original dataset to obtain a bootstrap replicate.</li><li>Calculate the sample mean for each bootstrap replicate: \\(\\bar{x}^{*}\\).</li><li>Arrange the bootstrap means in ascending order and find the 2.5th percentile (lower bound) and the 97.5th percentile (upper bound). The interval is then [\\(\\bar{x}_{0.025}\\), \\(\\bar{x}_{0.975}\\)].</li></ol>",
+      "answerShort": "The answer"
+    },
+    "commonMistakes": [
+      "Forgetting to resample with replacement",
+      "Not arranging the bootstrap means in ascending order"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:40.779Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% bootstrap confidence interval for the population mean using the following dataset:</p><ul><li>\\(x_1 = 2\\), \\(x_2 = 4\\), ..., \\(x_n = 10\\)</li></ul>\",",
+    "hints": [
+      "Start by generating B bootstrap samples from the original data.",
+      "Calculate the sample mean for each bootstrap sample and sort them.",
+      "Find the 2.5th percentile and 97.5th percentile of these sample means."
+    ],
+    "solutionHtml": "<p>Step 1: Generate B bootstrap samples.</p><ul><li>\\(x^*_{i,1}\\) = \\(x_{\\sigma(i)}\\) for \\(i=1,...,n\\)</li></ul><p>Step 2: Calculate the sample mean for each bootstrap sample and sort them.</p><ul><li>\\(\\bar{x}^*_b = \\frac{1}{n}\\sum_{i=1}^{n}x^*_{i,b}\\) for \\(b=1,...,B\\)</li></ul><p>Step 3: Find the 2.5th percentile and 97.5th percentile of these sample means.</p><ul><li>\\(CI = \\left[\\bar{x}^*_{(0.025B+1)}, \\bar{x}^*_{(0.975B)}\\right]\\)</li></ul>\",",
+    "answerShort": "The answer is the 95% bootstrap confidence interval.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:01.406Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "Construct a <i>bootstrap</i> confidence interval for the population mean using the percentile method and BCa method.",
+    "hints": [
+      "Start by generating multiple samples from the original dataset.",
+      "Calculate the sample means for each bootstrap sample.",
+      "Use the calculated sample means to construct the confidence interval."
+    ],
+    "solutionHtml": " Suppose we have a dataset of exam scores with mean $\\mu$ and standard deviation $\\sigma$. We want to construct a 95% bootstrap confidence interval for $\\mu$ using the percentile method.  1. Generate $B=1000$ bootstrap samples from the original dataset. 2. Calculate the sample mean $\\bar{x}_i$ for each bootstrap sample, $i=1,\\ldots,B$. 3. Arrange the calculated sample means in ascending order: $\\bar{x}_{(1)} \\leq \\cdots \\leq \\bar{x}_{(B)}$. 4. The 2.5th percentile of the ordered sample means is the lower bound of the confidence interval, and the 97.5th percentile is the upper bound.  Using the BCa method, we can also adjust the interval by considering the variability in the bootstrap samples. This involves calculating the bias-corrected and accelerated quantiles. \",",
+    "answerShort": "The 95% bootstrap confidence interval for $\\mu$ is [$\\bar{x}_{(2.5)}$, $\\bar{x}_{(97.5)}$].\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:21.011Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% bootstrap confidence interval (BCa method) for the mean of a sample from a normal distribution.</p>",
+    "hints": [
+      "Start by generating B samples from the original data.",
+      "Use these samples to estimate the mean and standard error.",
+      "Combine the results to get your CI."
+    ],
+    "solutionHtml": "<p>To construct the 95% BCa interval, we first generate <i>B</i> samples with replacement from the original dataset.</p><p>Next, for each sample, calculate the sample mean and standard error.</p><p>Then, combine these results to get the desired CI:</p>\\[\\text{CI} = (\\text{sample mean}_{(1-\\alpha/2)\\cdot B}, \\text{sample mean}_{(\\alpha/2)\\cdot B})\\]\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:34.077Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "prob_prb_bayes_theorem_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_theorem",
+    "problem": "{",
+    "statementHtml": "<p>Given a random variable X and events A and B, prove Bayes' Theorem: P(A|B) = P(B|A) \\* P(A) / P(B)</p>\",",
+    "hints": [
+      "Start by recalling the definition of conditional probability.",
+      "Think about how the theorem relates to updating probabilities given new information.",
+      "Use the formula for total probability to help derive Bayes' Theorem."
+    ],
+    "solutionHtml": "<p>To prove Bayes' Theorem, we can start with the definition of conditional probability:</p>\\n\\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\]\\n<p>Now, recall that P(A \\cap B) = P(B|A) \\* P(A)</p>\\n<p>Simplify the expression for Bayes' Theorem by substituting this result:</p>\\n\\[P(A|B) = \\frac{P(B|A) \\* P(A)}{P(B)}\\]\\n<p>Finally, we can simplify further by dividing both sides by P(B):</p>\\n\\[P(A|B) = \\frac{P(B|A) \\* P(A)}{P(B)} / P(B)\\]\\n<p>This is the desired form of Bayes' Theorem.</p>\",",
+    "answerShort": "P(A|B) = P(B|A) * P(A) / P(B)\" },",
+    "commonMistakes": "[\"Forgetting to divide both sides by P(B)\", \"Not recognizing that P(A \\cap B) = P(B|A) * P(A)\"],",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:12:04.264Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_theorem_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_theorem",
+    "problem": "{",
+    "statementHtml": "Given a random variable X and events A and B, show that P(X|A ∩ B) = P(X|A) using Bayes' Theorem.",
+    "hints": [
+      "Start by writing down the definition of conditional probability.",
+      "Recognize that P(A ∩ B) = P(B|A)P(A).",
+      "Use this to rewrite the numerator and denominator."
+    ],
+    "solutionHtml": "\\[P(X|A ∩ B) = \\frac{P(X ∩ A ∩ B)}{P(A ∩ B)}\\] <p>Now, we can use the definition of conditional probability:</p> \\[P(X|A ∩ B) = \\frac{\\sum_{x} P(x)P(x|A ∩ B)}{\\sum_{x} P(x)P(x|A ∩ B)}\\] <p>Substitute our hint:</p> \\[= \\frac{P(X|A)\\sum_{x} P(x)P(x|A)}{\\sum_{x} P(x)P(x|A)}\\] <p>Simplify the numerator and denominator:</p> \\[= P(X|A)\\]",
+    "answerShort": "P(X|A ∩ B) = P(X|A)\" },",
+    "commonMistakes": [
+      "Forgetting to use Bayes' Theorem",
+      "Not recognizing that P(A ∩ B) = P(B|A)P(A)"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:12:27.166Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_theorem_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_theorem",
+    "problem": "{",
+    "statementHtml": "Let X be a binary random variable with probability density function (PDF) P(X=0)=p and P(X=1)=q. Given that Y is another binary random variable with P(Y=0|X=0)=r and P(Y=1|X=1)=s, find the conditional probability P(Y=1|X=0).",
+    "hints": [
+      "Start by applying Bayes' theorem.",
+      "Use the given probabilities to write down the likelihood term.",
+      "Simplify the expression using the fact that X is binary."
+    ],
+    "solutionHtml": "<p>Using Bayes' theorem, we have:</p><p>P(Y=1|X=0) = P(X=0 \\& Y=1) / P(X=0)</p><p>We can write down the likelihood term as:</p><p>P(Y=1|X=0) = P(Y=1) / (P(X=0) + P(X=1))</p><p>Now, substitute the given probabilities:</p><p>P(Y=1|X=0) = q / (p + q)</p>\",",
+    "answerShort": "q/(p+q)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:12:46.803Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_bayes_theorem_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "bayes_theorem",
+    "problem": "{",
+    "statementHtml": "Given a random variable X and events A and B, prove Bayes' Theorem: P(A|B) = <br />\\(\\frac{P(B|A) \\cdot P(A)}{P(B)}\\)<br />\",",
+    "hints": [
+      "Start by considering the denominator P(B). How can you write it as a sum?",
+      "Use the definition of conditional probability to rewrite P(B|A) and P(B)",
+      "Now, simplify the expression"
+    ],
+    "solutionHtml": "<p>Step 1: Write P(B) as a sum</p><p>\\[P(B) = \\sum_{x} P(x) \\cdot I\\{x \\in B\\}\\]</p><p>Step 2: Rewrite conditional probabilities</p><p>\\[P(A|B) = \\frac{\\sum_{x} P(x) \\cdot I\\{x \\in A \\cap B\\}}{\\sum_{x} P(x) \\cdot I\\{x \\in B\\}}, P(B|A) = \\frac{\\sum_{x} P(x) \\cdot I\\{x \\in B \\cap A\\}}{\\sum_{x} P(x) \\cdot I\\{x \\in A\\}}\\]</p><p>Step 3: Simplify</p><p>\\[P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}\\]</p>\",",
+    "answerShort": "<code>P(A|B) = \\\\(\\frac{P(B|A) \\cdot P(A)}{P(B)}</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:13:12.037Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "stat_con_regularization_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Balancing Bias and Variance",
+    "contentHtml": "<p>In traditional linear regression, we aim to find the best-fitting line that minimizes the mean squared error (MSE). However, this approach can lead to overfitting when dealing with noisy or high-dimensional data. Regularization techniques, such as Ridge, Lasso, and Elastic Net, help mitigate this issue by adding a penalty term to the loss function.</p><p>This penalty term encourages the model to find a balance between goodness of fit (bias) and simplicity (variance). By trading off these two competing goals, regularized regression can lead to more robust and generalizable models.</p>",
+    "formula": {
+      "latex": "\\[\\text{Ridge Regression: } \\lambda ||\\theta||^2 + \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2\\]",
+      "name": "Ridge Regression Loss"
+    },
+    "intuition": "Regularization helps avoid overfitting by adding a cost to complex models. This encourages the model to find a simpler, more generalizable solution.",
+    "realWorldApplications": [
+      "Reducing dimensionality in feature engineering",
+      "Improving model interpretability"
+    ],
+    "commonMistakes": [
+      "Failing to recognize the importance of regularization in high-dimensional data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:57:03.605Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_regularization_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Ridge, Lasso, and Elastic Net",
+    "contentHtml": "<p>When performing regression analysis, we often face a tradeoff between model complexity and overfitting. Regularization techniques, such as ridge, lasso, and elastic net regularization, help mitigate this issue by adding a penalty term to the cost function.</p><p>This penalty encourages simpler models, reducing the magnitude of certain coefficients or features. In this card, we'll explore these three popular regularization methods and discuss their strengths and weaknesses.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\\\text{Ridge: } \\alpha ||\\\\mathbf{w}||^2 + (1/2) ||y - X\\\\mathbf{w}||^2 \\\\]\",",
+    "name": "Ridge Regression",
+    "variants": "[ {\"latex\": \"\\\\[ \\\\text{Lasso: } \\alpha ||\\\\mathbf{w}||_1 + (1/2) ||y - X\\\\mathbf{w}||^2 \\\\]\", \"description\": \"L1 regularization\" }, {\"latex\": \"\\\\[ \\\\text{Elastic Net: } \\alpha_1 ||\\\\mathbf{w}||_1 + \\alpha_2 ||\\\\mathbf{w}||^2 + (1/2) ||y - X\\\\mathbf{w}||^2 \\\\]\", \"description\": \"Combination of L1 and L2 regularization\" } ] },",
+    "intuition": "Regularization helps prevent overfitting by adding a penalty term that favors simpler models. This is particularly important in high-dimensional spaces, where the risk of overfitting increases.",
+    "realWorldApplications": [
+      "Reducing dimensionality in feature engineering",
+      "Improving model interpretability"
+    ],
+    "tags": [
+      "regularization",
+      "ridge regression",
+      "lasso regression",
+      "elastic net"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:57:26.320Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_regularization_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Balancing Bias and Variance",
+    "contentHtml": "<p>In traditional linear regression, we aim to find the best-fitting line that minimizes the mean squared error (MSE). However, this approach can lead to overfitting when the number of features exceeds the number of samples. Regularization techniques, such as Ridge, Lasso, and Elastic Net, introduce a penalty term to the loss function to prevent overfitting.</p><p>This tradeoff between bias and variance is crucial in machine learning applications, where we often face limited training data and a large number of features.</p>",
+    "formula": "{",
+    "latex": "\\(y = \\beta_0 + \\beta_1 x + \\epsilon\\)\",",
+    "name": "Linear Regression\" },",
+    "intuition": "Regularization helps reduce the impact of noise in the data by shrinking the coefficients towards zero, effectively reducing overfitting.",
+    "realWorldApplications": [
+      "Reducing dimensionality in text classification"
+    ],
+    "commonMistakes": [
+      "Forgetting that regularization is not just about feature selection"
+    ],
+    "tags": [
+      "regularization",
+      "overfitting",
+      "bias-variance tradeoff"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:57:42.754Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

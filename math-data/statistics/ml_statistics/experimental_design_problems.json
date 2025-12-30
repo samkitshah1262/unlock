@@ -1,0 +1,115 @@
+[
+  {
+    "id": "stat_prb_experimental_design_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "problem": "{",
+    "statementHtml": "In a randomized controlled trial (RCT), we want to compare the average response of two treatments: A and B. We randomly assign <i>n</i> participants to either treatment A or B. Assuming equal sample sizes, what is the expected value of the difference in means between the two groups?",
+    "hints": [
+      "Think about the law of large numbers.",
+      "Consider the mean squared error (MSE) for each group.",
+      "Recall that randomization ensures the expected values are equal."
+    ],
+    "solutionHtml": "<p>To find the expected value, we can use the fact that randomization ensures the expected means are equal. Let <i>x</i><sub>A</sub> and <i>x</i><sub>B</sub> be the responses for treatment A and B, respectively. Then, the expected difference is:</p>\\n\\[E[(x_A - x_B)] = E[x_A] - E[x_B] = 0,\\n<p>since randomization ensures the expected means are equal.</p>\",",
+    "answerShort": "The expected value of the difference in means is 0.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:34:05.220Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_experimental_design_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "problem": "{",
+    "statementHtml": "<p>Design a factorial experiment to compare the effects of three different fertilizers on plant growth.</p>",
+    "hints": [
+      "Start by defining the factors and their levels.",
+      "Consider using blocking to account for any variation in soil quality.",
+      "Think about how you can measure the response variable (plant growth) accurately."
+    ],
+    "solutionHtml": "<p>To design a factorial experiment, we need to define the factors and their levels. Let's say we have three fertilizers: A, B, and C. Each fertilizer has two levels: 0 and 100 units per acre.</p><p>We can represent this using the following LaTeX:</p>\\[\\begin{array}{ccc} & F_1 (0) & F_1 (100) \\\\ \\hline F_2 (0) & A_{00}, B_{00}, C_{00} & A_{10}, B_{10}, C_{10} \\\\ F_2 (100) & A_{01}, B_{01}, C_{01} & A_{11}, B_{11}, C_{11} \\end{array}\\]</p><p>Next, we need to decide how to measure the response variable. Let's say we'll use a ruler to measure the height of each plant.</p>\",",
+    "answerShort": "The factorial design has 2^3 = 8 treatments\" },",
+    "commonMistakes": [
+      "Not considering blocking",
+      "Using an incorrect measurement method"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:34:23.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_experimental_design_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "problem": {
+      "statementHtml": "<p>Design a randomized block experiment to compare the effectiveness of two different fertilizers on crop yields.</p>",
+      "hints": [
+        "Start by identifying the factors that affect the outcome: fertilizer type and block.",
+        "Randomize the blocks, but not the fertilizer types within each block.",
+        "Use a 2x2 factorial design with fertilizer type as one factor and block as another."
+      ],
+      "solutionHtml": "<p>To solve this problem, we first identify the factors that affect the outcome: fertilizer type and block. We then randomize the blocks to ensure they are representative of the population.</p><p>Next, we use a 2x2 factorial design with fertilizer type as one factor and block as another. This allows us to compare the effects of each fertilizer within each block.</p>",
+      "answerShort": "Randomized block experiment with a 2x2 factorial design"
+    },
+    "commonMistakes": [
+      "Not randomizing the blocks",
+      "Not considering the interaction between fertilizer type and block"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:34:38.173Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_experimental_design_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "experimental_design",
+    "problem": "{",
+    "statementHtml": "<p>Design a factorial experiment to compare the effects of three different fertilizers on plant growth.</p>",
+    "hints": [
+      "Start by defining the factors and their levels.",
+      "Consider how many observations you need for each combination of fertilizer types.",
+      "Think about how to randomize the treatments."
+    ],
+    "solutionHtml": "<p>To design this experiment, we first define the factors: <i>F</i> (fertilizer type) with three levels: A, B, and C. We then decide on the number of observations for each combination of fertilizer types.</p>\\n<p>Let's assume we want to have 5 replicates for each of the 3 x 3 = 9 combinations. This gives us a total of 45 observations.</p>\\n<p>We can now construct the experiment design using a Latin square:</p>\\[\\begin{array}{c|ccc} & A & B & C\\\\\\hline 1 & \\cdot & \\cdot & \\cdot\\\\ 2 & \\cdot & \\cdot & \\cdot\\\\ 3 & \\cdot & \\cdot & \\cdot\\\\ 4 & \\cdot & \\cdot & \\cdot\\\\ 5 & \\cdot & \\cdot & \\cdot\\end{array}\\]\\n<p>The dot product of the row and column vectors gives us a balanced design.</p>\",",
+    "answerShort": "The factorial experiment has 45 observations, with 3 levels for each of the 3 factors.\" },",
+    "commonMistakes": [
+      "Forgetting to include replicates",
+      "Not considering the number of observations per combination"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:34:58.647Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "prob_wex_permutations_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "permutations",
+    "title": "Permutations with Repetition",
+    "contentHtml": "<p>In probability theory, permutations are a fundamental concept in counting arrangements of objects.</p>",
+    "formula": {
+      "latex": "\\[P(n,k) = \\frac{n!}{(n-k)!}\\]",
+      "name": "permutation formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the number of ways to arrange 5 people in a row if John and Sarah are standing together.</p>",
+      "hints": [
+        "Think about permutations with repetition.",
+        "John and Sarah can be treated as one unit."
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the number of ways to arrange 7 people in a row if John, Sarah, and Michael are standing together.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Treat John, Sarah, and Michael as one unit.",
+          "mathHtml": "\\[P(4,3) = \\frac{4!}{(4-3)!}\\]",
+          "explanation": "We're treating them as a single entity to simplify the counting."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Count the number of ways to arrange this unit.",
+          "mathHtml": "\\[P(1,1) = \\frac{1!}{(1-1)!}\\]",
+          "explanation": "We're essentially counting permutations with repetition for this unit."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Multiply the results from steps 1 and 2.",
+          "mathHtml": "\\[P(4+1,3+1) = P(4,3) \\cdot P(1,1)\\]",
+          "explanation": "We're combining the two permutations to get our final answer."
+        }
+      ],
+      "finalAnswer": "\\[P(7,3) = P(4,3) \\cdot P(1,1) = 24 \\cdot 1 = 24\\]"
+    },
+    "intuition": "Permutations with repetition allow us to count arrangements where certain objects can be treated as a single unit.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:43:14.004Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_permutations_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "permutations",
+    "title": "Permutations with Repetition",
+    "contentHtml": "<p>In probability theory, permutations are a fundamental concept.</p><ul><li>We'll explore how to count arrangements when repetition is allowed.</li></ul>",
+    "formula": {
+      "latex": "\\[P(n,k) = \\frac{n!}{(n-k)!}\\]",
+      "name": "Permutation Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the number of ways to arrange 5 people in a row, allowing for repetition.</p>",
+      "hints": [
+        "Think about how many choices you have for each position"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>We can choose any of the 5 people for the first spot (5 options). For the second spot, we again have 5 options. This continues until all spots are filled.</li><li>This gives us a total of \\(5^5\\) arrangements.</li></ul>",
+      "answerShort": "\\(5^5\\)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the number of ways to arrange 3 letters, allowing for repetition.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Count the choices for each letter",
+          "mathHtml": "\\(3^3\\)",
+          "explanation": "We have 3 options for each of the 3 letters"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Multiply the choices together",
+          "mathHtml": "\\(3^3\\)",
+          "explanation": "This gives us the total number of arrangements"
+        }
+      ],
+      "finalAnswer": "\\(3^3\\)"
+    },
+    "intuition": "Permutations with repetition are useful in natural language processing when considering word order.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:43:38.865Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_permutations_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "permutations",
+    "workedExample": "{",
+    "problemHtml": "Find the number of permutations of <i>n</i> items taken <i>k</i> at a time with repetition.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Simplify the expression.",
+    "mathHtml": "\\[P(n, k) = \\frac{n^k}{k!}\\]\",",
+    "explanation": "We're left with a simple formula that can be used to calculate permutations with repetition.\" } ],",
+    "finalAnswer": "The final answer is \\(P(n, k) = \\frac{n^k}{k!}\\).\" },",
+    "intuition": "Permutations with repetition are useful in natural language processing and information retrieval, where we often need to consider the order of words or characters.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:44:05.548Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

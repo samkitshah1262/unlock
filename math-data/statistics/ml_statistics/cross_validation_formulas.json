@@ -1,0 +1,132 @@
+[
+  {
+    "id": "stat_for_cross_validation_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "K-Fold Cross-Validation",
+    "contentHtml": "<p>K-fold cross-validation is a widely used technique in machine learning to evaluate and compare the performance of different models.</p><p>It works by splitting the dataset into <i>k</i> folds, training on <i>k-1</i> folds, and testing on the remaining fold. This process is repeated for all folds, providing an estimate of model performance with lower variance than a single test set.</p>",
+    "formula": "{",
+    "latex": "\\[K-fold CV: \\frac{1}{k} \\sum_{i=1}^k L(y_i, f(x_i))\\]\",",
+    "name": "K-Fold Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[LOOCV: \\frac{1}{n} \\sum_{i=1}^n L(y_i, f(x_i))\\]\", \"description\": \"Leave-One-Out Cross-Validation\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of <i>n</i> samples with features <i>x</i> and target variable <i>y</i>. We want to evaluate the performance of two different models, <i>f1(x)</i> and <i>f2(x)</i>, using 5-fold cross-validation.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Split the dataset into 5 folds",
+        "mathHtml": "",
+        "explanation": "This ensures each model sees a different set of samples during training and testing."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "K-fold cross-validation provides a more robust estimate of model performance by averaging over multiple test sets, reducing the impact of outliers or biased sampling.",
+    "tags": [
+      "machine learning",
+      "statistics"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:33.411Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation Formulas",
+    "contentHtml": "<p>Cross-validation is a crucial technique in machine learning to evaluate model performance and prevent overfitting. Here are some essential formulas:</p>",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV: } \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(\\mathbf{x}_k))\\]\",",
+    "name": "K-fold Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[Leave-One-Out Cross-Validation (LOOCV): \\frac{1}{N} \\sum_{i=1}^N L(y_i, f(\\mathbf{x}_i))\\]\", \"description\": \"Used when N is small\"} ] },",
+    "intuition": "Cross-validation helps you estimate how well your model will generalize to new data by splitting it into training and testing sets. The formulas above show the average loss or error for each fold.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:47.464Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation Formulas",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV: } \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(x_k))\\]\",",
+    "name": "K-fold Cross-Validation Loss\" },",
+    "contentHtml": "<p>When evaluating machine learning models, we often use cross-validation to avoid overfitting. The K-fold cross-validation formula calculates the average loss across K folds.</p>",
+    "intuition": "Cross-validation helps us estimate how well our model generalizes by splitting data into subsets and training on each subset in turn.",
+    "realWorldApplications": [
+      "Evaluating models for classification, regression, and clustering tasks"
+    ],
+    "tags": [
+      "machine learning",
+      "cross-validation",
+      "evaluation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:03:59.672Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_cross_validation_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "ml_statistics",
+    "topic": "cross_validation",
+    "title": "Cross-Validation",
+    "subtitle": "Evaluating models with unseen data",
+    "contentHtml": "<p>Cross-validation is a resampling technique used to evaluate machine learning models by splitting the available data into training and testing sets.</p>",
+    "formula": "{",
+    "latex": "\\[K\\text{-fold CV}: \\frac{1}{K} \\sum_{k=1}^K L(y_k, f(x_k))\\]\",",
+    "name": "Cross-Validation Loss",
+    "variants": "[ {\"latex\": \"\\[Leave-One-Out Cross-Validation (LOOCV): \\frac{1}{n} \\sum_{i=1}^n L(y_i, f(x_i))\\]\", \"description\": \"A special case of K-fold CV where K=n\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset with 100 samples and want to evaluate the performance of our model.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Split the data into training (80%) and testing sets (20%)",
+        "mathHtml": "",
+        "explanation": "This allows us to evaluate the model's performance on unseen data."
+      }
+    ],
+    "finalAnswer": "The average loss on the test set\" },",
+    "intuition": "Cross-validation helps prevent overfitting by providing a more accurate estimate of a model's performance.",
+    "tags": [
+      "machine learning",
+      "cross-validation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:04:18.620Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

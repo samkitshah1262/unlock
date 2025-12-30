@@ -1,0 +1,169 @@
+[
+  {
+    "id": "la_wex_pseudoinverse_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the Moore-Penrose pseudoinverse of a matrix using Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix \\mathbf{A} and a vector \\mathbf{b}, find the least squares solution to \\mathbf{Ax} = \\mathbf{b}</p>",
+      "hints": [
+        "Hint: Use SVD to decompose \\mathbf{A}"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll first compute the SVD of \\mathbf{A}: \\[ \\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T \\].</p><ul><li>Compute the pseudoinverse of \\mathbf{A} using the formula: \\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]</li></ul>",
+      "answerShort": "The Moore-Penrose pseudoinverse is \\mathbf{A}^\\dagger"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have the matrix \\[ \\mathbf{A} = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\end{bmatrix} \\] and the vector \\[ \\mathbf{b} = \\begin{bmatrix} 5 \\\\ 6 \\end{bmatrix} \\]. Find the least squares solution to \\mathbf{Ax} = \\mathbf{b}</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of \\mathbf{A}",
+          "mathHtml": "\\[ \\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T \\]",
+          "explanation": "This step is crucial for finding the Moore-Penrose pseudoinverse."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the pseudoinverse of \\mathbf{A}",
+          "mathHtml": "\\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]",
+          "explanation": "Now we can use the formula to compute the Moore-Penrose pseudoinverse."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the least squares solution",
+          "mathHtml": "\\[ \\mathbf{x} = \\mathbf{A}^\\dagger \\mathbf{b} \\]",
+          "explanation": "Finally, we can use the Moore-Penrose pseudoinverse to find the least squares solution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the result",
+          "mathHtml": "\\[ \\mathbf{Ax} = \\mathbf{A}\\mathbf{A}^\\dagger \\mathbf{b} \\approx \\mathbf{b} \\]",
+          "explanation": "We should get a good approximation of the original vector \\mathbf{b}. "
+        }
+      ],
+      "finalAnswer": "The least squares solution is \\mathbf{x}"
+    },
+    "intuition": "The Moore-Penrose pseudoinverse helps us find the best possible solution to an underdetermined system, which is crucial in many machine learning applications.",
+    "realWorldApplications": [
+      "Linear regression with regularization"
+    ],
+    "tags": [
+      "Moore-Penrose Pseudoinverse",
+      "Singular Value Decomposition",
+      "Least Squares"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:57:46.777Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_pseudoinverse_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a least squares problem using the Moore-Penrose pseudoinverse.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given an overdetermined system of linear equations <code>Ax = b</code>, find the minimum norm solution <code>x</code>.</p>",
+    "hints": [
+      "Hint: Use SVD to decompose A"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll first compute the SVD of A:</p><ul><li>We'll then use the right singular vectors to form the pseudoinverse.</li></ul>",
+    "answerShort": "The minimum norm solution is given by <code>x = V Σ+ U^T b</code>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's consider a simple example:</p><p><code>A = [[2, 1], [1, 3]] and <code>b = [4, 5]^T</code>.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the SVD of A\", \"mathHtml\": \"\\[A = U \\Sigma V^T\\]\", \"explanation\": \"We'll use the SVD to decompose A into its left and right singular vectors.\" }, {\"stepNumber\": 2, \"description\": \"Form the pseudoinverse using the right singular vectors\", \"mathHtml\": \"\\[V Σ+ U^T = (V \\Sigma^+ V^T)U^T\\]\", \"explanation\": \"The pseudoinverse is given by the product of the right singular vectors and their corresponding singular values.\" }, {\"stepNumber\": 3, \"description\": \"Compute the minimum norm solution\", \"mathHtml\": \"\\[x = V Σ+ U^T b\\]\", \"explanation\": \"We'll use the pseudoinverse to find the minimum norm solution that satisfies the original system of equations.\" }, {\"stepNumber\": 4, \"description\": \"Verify the solution\", \"mathHtml\": \"\", \"explanation\": \"We can verify our solution by plugging it back into the original system of equations.\" } ],",
+    "finalAnswer": "The minimum norm solution is <code>x = [1.5, 0.25]^T</code>\" },",
+    "intuition": "The Moore-Penrose pseudoinverse provides a way to solve overdetermined systems by finding the minimum norm solution that satisfies the original system of equations.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:58:20.060Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_pseudoinverse_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll explore how to compute the Moore-Penrose pseudoinverse using Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^+ = \\mathbf{V}\\mathbf{Σ}^\\dagger\\mathbf{U}^T\\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, compute its Moore-Penrose pseudoinverse using SVD.</p>",
+      "hints": [
+        "Hint: Start by computing the SVD of A."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ul><li>Compute the SVD of A: \\[\\mathbf{A} = \\mathbf{U}\\mathbf{Σ}\\mathbf{V}^T\\]</li><li>Find the pseudoinverse of Σ: \\[\\mathbf{Σ}^\\dagger = \\frac{1}{σ_1} \\begin{bmatrix} σ_1 & 0 & 0 \\\\ 0 & σ_2 & 0 \\\\ 0 & 0 & σ_3 \\end{bmatrix}\\]</li><li>Compute the pseudoinverse of A: \\[\\mathbf{A}^+ = \\mathbf{V}\\mathbf{Σ}^\\dagger\\mathbf{U}^T\\]</li></ul>",
+      "answerShort": "The Moore-Penrose pseudoinverse is computed."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the Moore-Penrose pseudoinverse of \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of A",
+          "mathHtml": "\\[\\mathbf{A} = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\]",
+          "explanation": "We start by computing the SVD of A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the pseudoinverse of Σ",
+          "mathHtml": "\\[\\mathbf{Σ}^\\dagger = \\frac{1}{σ_1} \\begin{bmatrix} σ_1 & 0 & 0 \\\\ 0 & σ_2 & 0 \\\\ 0 & 0 & σ_3 \\end{bmatrix}\\]",
+          "explanation": "We find the pseudoinverse of Σ by taking the reciprocal of each singular value."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the pseudoinverse of A",
+          "mathHtml": "\\[\\mathbf{A}^+ = \\begin{bmatrix} v_1 & v_2 \\\\ u_1 & u_2 \\end{bmatrix}\\]",
+          "explanation": "Finally, we compute the pseudoinverse of A by multiplying the right singular vectors with the reciprocal of each singular value."
+        }
+      ],
+      "finalAnswer": "The Moore-Penrose pseudoinverse is computed."
+    },
+    "intuition": "The key insight is that the SVD provides a way to decompose a matrix into its most important directions, allowing us to compute the pseudoinverse efficiently.",
+    "visualDescription": "A diagram showing the SVD decomposition of A would be helpful in visualizing the process.",
+    "commonMistakes": [
+      "Mistake: Forgetting to take the reciprocal of each singular value."
+    ],
+    "realWorldApplications": [
+      "Application: Regularization techniques in machine learning, such as L1 and L2 regularization."
+    ],
+    "tags": [
+      "Moore-Penrose Pseudoinverse",
+      "SVD"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:59:06.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

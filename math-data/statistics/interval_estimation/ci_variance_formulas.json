@@ -1,0 +1,105 @@
+[
+  {
+    "id": "stat_for_ci_variance_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "contentHtml": "<p>The chi-squared interval is a widely used method for constructing confidence intervals (CIs) for population variance.</p><p>This card will explore the formula and its application in mathematical statistics, with a focus on machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\[ \\chi^2_{1-\\alpha/2} \\left( \\frac{S^2}{n} \\right) \\leq \\sigma^2 \\leq \\chi^2_{\\alpha/2} \\left( \\frac{S^2}{n} \\right) \\]\",",
+    "name": "Chi-squared interval formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to construct a 95% CI for the population variance of exam scores, given a sample of size 25 with mean 80 and standard deviation 10.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Construct the CI",
+    "mathHtml": "\\[ (6.4, 13.6) \\]\",",
+    "explanation": "This is our 95% CI for the population variance.\" } ],",
+    "finalAnswer": "(6.4, 13.6)\" },",
+    "intuition": "The chi-squared interval provides a way to quantify the uncertainty in our estimate of the population variance.",
+    "realWorldApplications": [
+      "Estimating variance is crucial in machine learning for tasks like feature selection and hyperparameter tuning."
+    ],
+    "tags": [
+      "confidence intervals",
+      "variance estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:15:37.893Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_variance_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "contentHtml": "<p>The chi-squared interval is a widely used method in statistical inference to construct an interval estimate of the population variance.</p><ul><li>It's particularly useful when we're interested in making inferences about the spread of a distribution, rather than its central tendency.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\chi^2 = \\frac{(n-1)S^2}{\\sigma^2} \\]\",",
+    "name": "Chi-squared statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the variance of the IQ scores in a sample of students. We have n = 100 observations with mean μ = 100 and sample variance S^2 = 16.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the chi-squared statistic",
+        "mathHtml": "\\[ \\chi^2 = \\frac{(n-1)S^2}{\\sigma^2} = \\frac{(100-1)(16)}{25^2} \\]",
+        "explanation": "We plug in the values and simplify"
+      }
+    ],
+    "finalAnswer": "The resulting interval estimate for the population variance\" },",
+    "intuition": "The chi-squared interval is based on the idea that if we have a large enough sample, the sample variance should be close to the population variance.",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:15:56.394Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_ci_variance_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "contentHtml": "<p>The chi-squared interval is a widely used method for constructing confidence intervals (CIs) for population variance.</p><p>Given a random sample of size n from a normal distribution with unknown mean and variance, the CI provides an estimate of the true population variance.</p>",
+    "formula": "{",
+    "latex": "\\[ \\chi^2 = \\frac{(n-1)s^2}{\\sigma^2} \\]\",",
+    "name": "Chi-squared statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the population variance of exam scores with a sample size of n=25.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample variance s^2\", \"mathHtml\": \"\\[ s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})^2 \\]\", \"explanation\": \"We use the sample mean and sum of squared deviations to estimate the population variance.\"} ],",
+    "finalAnswer": "The CI for the population variance\" },",
+    "intuition": "The chi-squared interval is useful when we want to make inferences about the spread of a normal distribution.",
+    "realWorldApplications": [
+      "In quality control, this method can be used to monitor and adjust production processes."
+    ],
+    "tags": [
+      "confidence intervals",
+      "variance estimation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:16:15.475Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

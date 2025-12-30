@@ -1,0 +1,554 @@
+[
+  {
+    "id": "stat_con_method_of_moments_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments in Point Estimation",
+    "contentHtml": "<p>In point estimation, we often seek to find the best estimate of a population parameter based on sample data. The method of moments is a popular approach that uses moment conditions to identify the unknown parameters.</p><p>Given a set of random variables X_1, ..., X_n with corresponding probability density functions f(x|θ), our goal is to find the value of θ that best fits the observed data.</p>",
+    "formula": {
+      "latex": "\\[ E[X_i] = \\int x_i f(x|\\theta) dx \\]",
+      "name": "Moment Condition"
+    },
+    "whyMatters": "<p>The method of moments is important because it provides a way to estimate parameters without relying on the assumption that the data follows a specific distribution.</p>",
+    "geometricIntuition": "",
+    "realWorldApplications": [
+      "In machine learning, we often use moment-based methods for estimating parameters in complex models."
+    ],
+    "commonMistakes": [
+      "Failing to check the identifiability of the model"
+    ],
+    "tags": [
+      "point estimation",
+      "method of moments"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:22:01.791Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_method_of_moments_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: A Simple yet Powerful Point Estimator",
+    "contentHtml": "<p>In statistics, point estimation is a crucial task that involves finding an estimate of an unknown population parameter based on a sample from that population. The method of moments is a simple yet powerful approach to achieve this.</p><p>Given a set of random variables X1, ..., Xm, the goal is to find the parameters θ1, ..., θk that best fit the data. The method of moments does this by equating the sample moments (mean, variance, etc.) with their corresponding population moments and solving for the unknown parameters.</p>",
+    "formula": "{",
+    "latex": "\\\\[ E[X] = \\\\frac{1}{n} \\\\sum_{i=1}^n x_i \\]\",",
+    "name": "Sample Mean\" },",
+    "intuition": "The method of moments is attractive because it's easy to implement and often provides a good starting point for more complex estimation methods. In machine learning, this approach can be used as a baseline or as a component in ensemble methods.",
+    "realWorldApplications": [
+      "Estimating population means in survey analysis",
+      "Inferring parameters in Bayesian networks"
+    ],
+    "commonMistakes": [
+      "Failing to check the assumptions of the method (e.g., normality)",
+      "Not considering alternative estimation methods"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:22:18.247Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_method_of_moments_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments",
+    "contentHtml": "<p>The method of moments is a widely used technique in statistical inference that provides an alternative to maximum likelihood estimation (MLE). It's based on matching the first few moments of the sample data with those of the underlying distribution.</p><p>Given a random variable X, we want to find the parameters θ of a probability density function f(x|θ) that best fit our observed data. The method of moments does this by equating the sample moments (e.g., mean, variance) with their theoretical counterparts.</p>",
+    "formula": "{",
+    "latex": "\\\\[ E[X] = \\\\int_{-\\infty}^{\\infty} x f(x|\\\\theta) dx \\\\]\",",
+    "name": "Moment Equation\" },",
+    "whyMatters": "<p>The method of moments is particularly useful when the likelihood function is difficult to derive or evaluate. It's also a great way to introduce students to the concept of moment matching, which has applications in machine learning and artificial intelligence.</p>",
+    "intuition": "The key insight is that by equating sample moments with theoretical moments, we're effectively 'matching' the shape of our data with the shape of the underlying distribution.",
+    "realWorldApplications": [
+      "In natural language processing, moment matching can be used to estimate the parameters of a language model."
+    ],
+    "commonMistakes": [
+      "Not recognizing that the method of moments is an approximation and not always consistent with MLE"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:22:36.028Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_method_of_moments_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments",
+    "contentHtml": "<p>The Method of Moments is a popular technique in point estimation that finds the parameters of a distribution by matching moments.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\theta} = \\arg\\min_{\\theta} \\sum_{i=1}^n (M_i - E_i(\\theta))^2 \\]\",",
+    "name": "Moment Matching\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean 80 and variance 10. We want to estimate the parameters of a normal distribution using the Method of Moments.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean",
+        "mathHtml": "\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]",
+        "explanation": "This is the first moment we need to match."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample variance",
+        "mathHtml": "\\[ s^2 = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2 \\]",
+        "explanation": "This is the second moment we need to match."
+      }
+    ],
+    "finalAnswer": "The estimated parameters are 80 and 10.\" },",
+    "intuition": "The Method of Moments works by finding the parameters that best fit our data, as measured by the sum of squared differences between sample moments and population moments.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:22:55.440Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_method_of_moments_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments in Point Estimation",
+    "contentHtml": "<p>The method of moments is a popular approach to point estimation in statistical inference.</p><p>Given a probability distribution with unknown parameters, we can use the method of moments to estimate these parameters by matching the first few moments (e.g., mean, variance) of the observed data to those of the theoretical distribution.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\theta} = E(X) = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\",",
+    "name": "Moment Estimator\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample of exam scores with mean 80 and variance 10. We want to estimate the population mean using the method of moments.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample mean\", \"mathHtml\": \"\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"explanation\": \"This is the empirical average of our observed data.\"}, {\"stepNumber\": 2, \"description\": \"Use the method of moments to estimate the population mean\", \"mathHtml\": \"\\[ \\hat{\\mu} = \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\", \"explanation\": \"We set the sample mean equal to the theoretical mean and solve for the unknown parameter.\"} ],",
+    "finalAnswer": "The estimated population mean is 80.\" },",
+    "intuition": "The method of moments provides a simple and intuitive way to estimate parameters when we have limited information about the underlying distribution.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:23:16.168Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_method_of_moments_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments",
+    "contentHtml": "<p>The Method of Moments is a popular method in statistical inference that estimates parameters by matching moments.</p><p>Given a probability distribution with unknown parameters and observed data, we can estimate the parameters by equating the population moments to their sample counterparts.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\theta} = \\arg\\min_{\\theta} ||\\mathbf{m}_n - \\mathbf{M}_{\\theta}||^2 \\]\",",
+    "name": "Moment Matching\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Gaussian distribution with unknown mean and variance, and we observe the first two moments.</p>",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Match the moments to the population moments",
+    "mathHtml": "\\\\[ m_1 = \\\\mu, \\quad m_2 = \\\\sigma^2 + \\\\mu^2 \\\\]\",",
+    "explanation": "We equate the sample mean and variance to their corresponding population values.\" } ],",
+    "finalAnswer": "The estimated parameters are the solution to the moment matching equations\" },",
+    "intuition": "The Method of Moments is a clever way to estimate unknown parameters by exploiting the relationship between moments and distributions.",
+    "realWorldApplications": [
+      "It's used in many applications, including finance and quality control"
+    ],
+    "tags": [
+      "Point Estimation",
+      "Method of Moments"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:23:40.884Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_method_of_moments_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments",
+    "contentHtml": "<p>The Method of Moments is a popular technique in statistical inference that estimates population parameters by matching moments.</p><p>This approach is particularly useful when the underlying distribution is unknown or difficult to work with.</p>",
+    "formula": "{",
+    "latex": "\\[ \\hat{\\theta} = \\text{argmax}_{\\theta} \\int_{-\\infty}^{\\infty} f(x | \\theta) \\cdot (x - \\mu)^2 dx \\]\",",
+    "name": "Moment-Matching Estimator\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean 80 and variance 10. We want to estimate the underlying normal distribution's parameters.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the sample mean and variance",
+        "mathHtml": "\\[ \bar{x} = \\frac{\\sum x_i}{n}, s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1} \\]",
+        "explanation": "This step is crucial in setting up the moment-matching problem"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the normal distribution that matches these moments",
+        "mathHtml": "\\[ f(x | \\mu, \\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-(x-\\mu)^2/(2\\sigma^2)} \\]",
+        "explanation": "We can use numerical methods or approximations to find the best-fitting normal distribution"
+      }
+    ],
+    "finalAnswer": "The estimated parameters are \\\\(\\\\hat{\\\\mu}, \\\\hat{\\\\sigma} \\\\)\" },",
+    "intuition": "The Method of Moments is a clever way to estimate unknown distributions by matching their moments, which can be more tractable than working with the distribution itself.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:24:03.098Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_method_of_moments_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the method of moments estimator for a normal distribution with unknown mean and variance.</p>",
+    "hints": [
+      "Start by identifying the population moments.",
+      "Use the sample moments to set up equations.",
+      "The goal is to find the parameters that minimize the difference between the two sets of moments."
+    ],
+    "solutionHtml": "<p>To begin, we need to identify the population moments. For a normal distribution with mean $\\mu$ and variance $\\sigma^2$, the first moment is $\\mu$ and the second moment is $\\mu^2 + \\sigma^2.</p><p>We can use these moments to set up equations. Let $x_1, ..., x_n$ be our sample data points. The sample mean is $\\bar{x} = (1/n) \\sum_{i=1}^{n} x_i$, and the sample variance is $s^2 = ((1/(n-1)) \\sum_{i=1}^{n} (x_i - \\bar{x})^2).</p><p>We can use these equations to find the method of moments estimator. First, we set up an equation for the first moment:</p><p>\\[ \\mu = \\bar{x}. \\]</p><p>This is because the sample mean is an unbiased estimator of the population mean.</p><p>Next, we set up an equation for the second moment:</p><p>\\[ \\mu^2 + \\sigma^2 = (1/n) \\sum_{i=1}^{n} x_i^2. \\]</p><p>We can solve these equations to find our estimator.</p>\",",
+    "answerShort": "The method of moments estimator for the mean is $\\bar{x}$, and the estimator for the variance is $s^2$.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:24:26.782Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_method_of_moments_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "problem": "{",
+    "statementHtml": "<p>Estimate the population mean using the method of moments.</p>",
+    "hints": [
+      "Start by finding the sample mean.",
+      "Use the sample variance to estimate the population variance.",
+      "Compare your answer to the maximum likelihood estimator (MLE)."
+    ],
+    "solutionHtml": "<p>To apply the method of moments, we need to find the sample mean and sample variance.</p>\\[ \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i \\]\\[ s^2 = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2 \\]Then, we can estimate the population mean using the sample mean:</p>\\[ \\hat{\\mu} = \\bar{x} \\]<p>Next, we need to find the population variance. Since we're estimating the population mean, we'll use the sample variance as our estimator:</p>\\[ \\hat{\\sigma}^2 = s^2 \\]Finally, we can estimate the population variance using the sample variance:</p>\\[ \\hat{\\sigma}^2 = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2 \\]The final answer is:</p><p>\\\\( \\hat{\\mu}, \\hat{\\sigma}^2 \\\\)</p>\",",
+    "answerShort": "\\\\( \\hat{\\mu}, \\hat{\\sigma}^2 \\\\)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:24:47.386Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_method_of_moments_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the method of moments estimator for a normal distribution with unknown mean and variance.</p>",
+    "hints": [
+      "Start by identifying the population moments.",
+      "Use the sample moments to set up equations.",
+      "Solve the system of equations."
+    ],
+    "solutionHtml": "<p>To find the method of moments estimator, we need to identify the population moments. For a normal distribution with unknown mean $\\mu$ and variance $\\sigma^2$, the first two population moments are:</p>\\n\\[E(X) = \\mu,\\quad E((X - \\mu)^2) = \\sigma^2.\\]\\n<p>Next, we use the sample moments to set up equations. Let $x_1, x_2, ..., x_n$ be a random sample from the normal distribution. The first two sample moments are:</p>\\n\\[m_1 = \\frac{1}{n} \\sum_{i=1}^n x_i,\\quad m_2 = \\frac{1}{n} \\sum_{i=1}^n (x_i - m_1)^2.\\]\\n<p>Now, we set up the system of equations:</p>\\n\\[\\begin{align*}\\frac{1}{n} \\sum_{i=1}^n x_i &= \\mu,\\\\ \\frac{1}{n} \\sum_{i=1}^n (x_i - m_1)^2 &= \\sigma^2.\\end{align*}\\]\\n<p>Solving this system of equations gives us the method of moments estimator:</p>\\n\\[m_1 = \\hat{\\mu},\\quad m_2 = \\hat{\\sigma}^2 + \\hat{\\mu}^2 - (m_1)^2.\\]",
+    "answerShort": "The method of moments estimator is $\\boxed{(\\bar{x}, s^2 + \\bar{x}^2 - (\\bar{x})^2)}$.\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:25:13.514Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_method_of_moments_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "problem": "{",
+    "statementHtml": "<p>Find the method of moments estimator for a population mean using a known variance.</p>",
+    "hints": [
+      "Start by identifying the population parameters and sample statistics.",
+      "Recall that the method of moments equates sample moments to population moments.",
+      "Use the given variance to simplify your calculations."
+    ],
+    "solutionHtml": "<p>To find the method of moments estimator, we first identify the population mean (<i>μ</i>) and sample mean (<i>x̄</i>). We then set the sample moment (the variance) equal to the population moment:</p>\\n\\[ \\frac{1}{N} \\sum_{i=1}^N (x_i - x̄)^2 = \\sigma^2. \\]\\n<p>Simplifying, we get:</p>\\n\\[ x̄ = \\mu. \\]\\n<p>The method of moments estimator for the population mean is therefore <i>x̄</i>.</p>\",",
+    "answerShort": "<i>x̄</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:25:28.985Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The Method of Moments is a popular point estimation technique in mathematical statistics.</p>",
+    "formula": "{",
+    "latex": "\\[\\mathbb{E}[X] = \\int_{-\\infty}^{\\infty} x f(x) dx \\]",
+    "name": "Expected Value\" },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random variable X with probability density function (PDF) f(x). Find the method of moments estimator for its mean.</p>",
+    "hints": [
+      "Hint: Use the expected value formula"
+    ],
+    "solutionHtml": "<p>To apply the Method of Moments, we need to find the first moment (mean) and then equate it to the sample mean.</p>",
+    "answerShort": "The method of moments estimator for the mean is the sample mean\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let X be a random variable with PDF f(x) = \\frac{1}{2}e^{-|x-1|}. Find the method of moments estimator for its mean.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the expected value of X\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = \\\\int_{-\\\\infty}^{\\\\infty} x f(x) dx \\\\]\", \"explanation\": \"This is the first step in applying the Method of Moments\"}, {\"stepNumber\": 2, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = \\\\int_{0}^{1} (x+1) \\\\frac{1}{2}e^{-(x-1)} dx + \\\\int_{1}^{\\infty} (-x+1) \\\\frac{1}{2}e^{-(x-1)} dx \\\\]\", \"explanation\": \"Now we need to evaluate the integral to find the expected value\"}, {\"stepNumber\": 3, \"description\": \"Simplify and equate with the sample mean\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X] = 1 \\\\]\", \"explanation\": \"The expected value is equal to the sample mean. We can now use this result as our estimator\"}, {\"stepNumber\": 4, \"description\": \"Find the method of moments estimator for the variance\", \"mathHtml\": \"\\\\[\\\\mathbb{E}[X^2] = \\\\int_{-\\\\infty}^{\\\\infty} x^2 f(x) dx \\\\]\", \"explanation\": \"We can apply a similar process to find the method of moments estimator for the variance\"} ],",
+    "finalAnswer": "The method of moments estimator for the mean is 1\" },",
+    "intuition": "The Method of Moments is an intuitive way to estimate parameters by matching moments.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:01.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The Method of Moments is a popular technique in point estimation, allowing us to find the maximum likelihood estimator (MLE) without directly maximizing the likelihood function.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{M}_X = E[X]\\]",
+      "name": "Moment"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the method of moments estimator for the mean and variance of a normal distribution with known parameters.</p>",
+      "hints": [
+        "Hint: Use the moment equations"
+      ],
+      "solutionHtml": "<p>To find the MOME, we need to set up the moment equations:</p><ul><li>\\[E[X] = \\mu\\]</li><li>\\[E[(X-\\mu)^2] = \\sigma^2\\]</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset {1, 2, 3, 4} with unknown mean and variance. We want to use the method of moments to estimate these parameters.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{1+2+3+4}{4} = 2.5\\]",
+          "explanation": "This is our first moment equation"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample variance",
+          "mathHtml": "\\[s^2 = \\frac{(1-2.5)^2+(2-2.5)^2+(3-2.5)^2+(4-2.5)^2}{4} = 0.5\\]",
+          "explanation": "This is our second moment equation"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the moment equations to find the MOME",
+          "mathHtml": "\\[\\mu = \\bar{x} = 2.5\\] and \\[\\sigma^2 = s^2 = 0.5\\]",
+          "explanation": "Now we can plug in our sample values"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check the MOME",
+          "mathHtml": "\\[E[(X-\\mu)^2] = E[(X-2.5)^2] = \\sigma^2 = 0.5\\]",
+          "explanation": "This shows our MOME is correct"
+        }
+      ],
+      "finalAnswer": "The method of moments estimator for the mean and variance are \\[\\mu = 2.5\\] and \\[\\sigma^2 = 0.5\\]"
+    },
+    "intuition": "The method of moments allows us to find the MOME without directly maximizing the likelihood function, making it a useful technique in certain situations.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:33.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The method of moments is a popular technique in point estimation.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{m} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+      "name": "Sample Mean"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with finite moments, find the method of moments estimator for its mean.</p>",
+      "hints": [
+        "Hint: Use the sample mean"
+      ],
+      "solutionHtml": ""
+    },
+    "workedExample": {
+      "problemHtml": "",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the random variable X",
+          "mathHtml": "\\[X \\sim F\\]",
+          "explanation": "We start by defining the random variable X"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the population mean",
+          "mathHtml": "\\[\\mu = E[X]\\]",
+          "explanation": "The population mean is the expected value of X"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Estimate the population mean using the sample mean",
+          "mathHtml": "\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "We use the sample mean as an estimator for the population mean"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the method of moments estimator",
+          "mathHtml": "\\[\\hat{m} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "The method of moments estimator is simply the sample mean"
+        }
+      ],
+      "finalAnswer": "\\[\\hat{m}\\]"
+    },
+    "intuition": "The method of moments is a simple and intuitive way to estimate population parameters, especially when the data is limited.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:26:56.937Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_method_of_moments_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "method_of_moments",
+    "title": "Method of Moments: Point Estimation",
+    "contentHtml": "<p>The method of moments is a popular approach to point estimation in statistical inference.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+      "name": "Moment Estimator"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random variable X with known moments up to order k, find the point estimator for its mean.</p>",
+      "hints": [
+        "Hint: Use the method of moments"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X ~ N(\\mu, \\sigma^2) with known moments up to order 2. Find the point estimator for its mean.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the moment equations",
+          "mathHtml": "\\[\\mathbb{E}[X] = \\mu, \\\\ \\mathbb{E}[X^2] = \\sigma^2 + \\mu^2\\]",
+          "explanation": "We need to match the moments of the known distribution with those of the unknown distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve for the moment estimator",
+          "mathHtml": "\\[\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]",
+          "explanation": "We use the known moments to estimate the unknown mean."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Verify the estimator",
+          "mathHtml": "\\[\\mathbb{E}[\\hat{\\mu}] = \\mu, \\\\ \\text{Var}([\\hat{\\mu}]) = \\frac{\\sigma^2}{n}\\]",
+          "explanation": "We verify that our estimator is unbiased and consistent."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "The point estimator for the mean is the sample mean."
+        }
+      ],
+      "finalAnswer": "\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^n x_i"
+    },
+    "intuition": "The method of moments works by matching the known moments with those of the unknown distribution, effectively estimating the parameters.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:27:25.176Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

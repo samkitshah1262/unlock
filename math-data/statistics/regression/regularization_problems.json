@@ -1,0 +1,129 @@
+[
+  {
+    "id": "stat_prb_regularization_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "problem": {
+      "statementHtml": "<p>Regularized regression is a technique used to prevent overfitting in linear regression models by adding a penalty term to the loss function.</p>",
+      "hints": [
+        "<p>The goal of regularization is to find a balance between model complexity and training error.</p>",
+        "<p>Ridge regression adds an L2 penalty, while Lasso regression adds an L1 penalty. What's the difference?</p>",
+        "<p>Elastic Net combines both L1 and L2 penalties. How does this affect the solution?</p>"
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to find the coefficients that minimize the regularized loss function.</p><p>We can use gradient descent or an optimization algorithm to find the optimal values.</p>",
+      "answerShort": "The answer is..."
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:59:45.704Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regularization_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "problem": "{",
+    "statementHtml": "<p>Regularized regression is a technique used to prevent overfitting in linear regression models by adding a penalty term to the loss function.</p>",
+    "hints": [
+      "Start by rewriting the original regression equation with an added regularization term.",
+      "Think about how this term affects the model's behavior and what it means for the coefficients.",
+      "Use the concept of bias-variance tradeoff to understand why regularization is important."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can start by rewriting the original regression equation:</p>\\n<p>\\(y = \\mathbf{x}^T \\beta + \\epsilon\\)</p>\\n<p>Then, add a regularization term:</p>\\n<p>\\(\\min_{\\beta} (\\frac{1}{2n} ||y - X\\beta||^2 + \\alpha ||\\beta||_2)\\)</p>\\n<p>Solve for the coefficients by minimizing the regularized loss function.</p>\",",
+    "answerShort": "The answer is...\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:00:01.345Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regularization_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "problem": "{",
+    "statementHtml": "<p>Given a linear regression model with $n$ features and $m$ samples, how do regularization techniques like Ridge, Lasso, and Elastic Net help mitigate overfitting?</p>",
+    "hints": [
+      "Think about the cost function in linear regression.",
+      "Consider what happens when you add more features to your model.",
+      "Ridge and Lasso are similar, but with a key difference."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll start by reviewing the cost function for linear regression:</p>\\(\\mathcal{L} = \\frac{1}{2n} ||\\mathbf{y} - X\\beta||^2 + \\alpha ||\\beta||_p^p\\)<p>Now, let's discuss each regularization technique:</p><ul><li>Ridge Regression: adds a term to the cost function that penalizes large coefficients.</li><li>Lasso Regression: adds a term that sets some coefficients exactly to zero.</li><li>Elastic Net: combines Ridge and Lasso penalties.</li></ul><p>These techniques help mitigate overfitting by shrinking the magnitude of the coefficients, effectively reducing the model's complexity.</p>\",",
+    "answerShort": "Regularization techniques like Ridge, Lasso, and Elastic Net help mitigate overfitting in linear regression by adding a penalty term to the cost function that shrinks the magnitude of the coefficients.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:00:21.143Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regularization_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression",
+    "problem": "{",
+    "statementHtml": "<p>Consider a linear regression model with $n$ features and $m$ samples. How do we balance the bias-variance tradeoff?</p>",
+    "hints": [
+      "Think about overfitting and underfitting.",
+      "What happens when you add more features?",
+      "How does regularization help?"
+    ],
+    "solutionHtml": "<p>To address this, we introduce regularized regression methods like Ridge Regression, Lasso Regression, and Elastic Net. The goal is to find the optimal coefficients $\\mathbf{w}$ that minimize the cost function:</p>\\n\\[J(\\mathbf{w}) = \\frac{1}{2} ||\\mathbf{y} - X\\mathbf{w}||^2 + \\alpha R(\\mathbf{w})\\]\\n<p>where $R(\\mathbf{w})$ is a regularization term.</p>\\n<p>Ridge Regression sets $R(\\mathbf{w}) = ||\\mathbf{w}||^2$, Lasso Regression sets $R(\\mathbf{w}) = |\\mathbf{w}|_1$, and Elastic Net combines both terms. The $\\alpha$ hyperparameter controls the strength of regularization.</p>\",",
+    "answerShort": "The optimal coefficients are found by minimizing the cost function.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:00:39.415Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_regularization_014",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "problem": "{",
+    "statementHtml": "Regularized regression aims to reduce overfitting by adding a penalty term to the loss function. Implement ridge regression using the following formula: \\\\( \\alpha ||\\\\theta||^2 + (1/2) * (y - X\\\\theta)^T (y - X\\\\theta) \\\\).\",",
+    "hints": [
+      "Start by rewriting the original loss function as a minimization problem.",
+      "Identify the penalty term and its purpose in the context of regularization.",
+      "Use the formula to derive the closed-form solution for the coefficients."
+    ],
+    "solutionHtml": "<p>To solve this, we first rewrite the loss function:</p><p>\\( L(\\theta) = (1/2) * (y - X\\theta)^T (y - X\\theta) + \\alpha ||\\theta||^2 \\)</p><p>Next, we take the derivative of the loss function with respect to \\( \\theta \\)</p><p>\\( \\frac{\\partial L}{\\partial \\theta} = -(X^T y) + (X^T X) \\theta + 2 \\alpha \\theta \\)</p><p>Solving for \\( \\theta \\)</p><p>\\( \\hat{\\theta} = ((X^T X) + \\alpha I)^{-1} (X^T y) \\)</p>",
+    "answerShort": "\\\\( \\\\hat{\\\\theta} \\\\)\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:00:58.681Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

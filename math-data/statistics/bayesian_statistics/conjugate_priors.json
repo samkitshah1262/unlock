@@ -1,0 +1,590 @@
+[
+  {
+    "id": "stat_con_conjugate_priors_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are distributions that 'match' the likelihood function of a statistical model. This means that if you update your prior with new data using Bayes' theorem, the resulting posterior distribution is still from the same family as the prior.</p><p>For example, when modeling binomial data (e.g., coin flips), a beta-binomial conjugate prior ensures that the updated posterior remains a beta distribution. This property makes conjugate priors useful for efficient inference and prediction.</p>",
+    "formula": {
+      "latex": "\\[\\beta(\\alpha + k, \\beta + n - k) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)} \\int_0^1 x^{\\alpha + k - 1} (1-x)^{\\beta + n - k - 1} dx\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the likelihood of word sequences and update the prior distribution over possible sentences."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that conjugate priors are not always available or optimal"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:34.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_conjugate_priors_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, a conjugate prior is a probability distribution that 'matches' the likelihood function of a statistical model. This means that updating the posterior distribution with new data is straightforward, as the prior and likelihood are from the same family.</p><p>Conjugate priors simplify inference and allow for efficient computation of posteriors. They're particularly useful when working with exponential families, such as binomial or Poisson distributions.</p>",
+    "formula": {
+      "latex": "\\[\\beta \\sim \\text{Beta}(a, b) \\quad \\text{and} \\quad \\theta \\sim \\text{Binomial}(n, p) \\]",
+      "name": "Conjugate Prior Formula",
+      "variants": [
+        {
+          "latex": "\\[\\mu \\sim \\mathcal{N}(0, 1) \\quad \\text{and} \\quad x \\sim \\mathcal{N}(\\mu, \\sigma^2) \\]",
+          "description": "Normal-Normal conjugate prior"
+        }
+      ]
+    },
+    "intuition": "Conjugate priors provide a natural way to update our uncertainty about model parameters as we collect more data. This is especially important in machine learning, where we often need to make predictions based on limited training sets.",
+    "realWorldApplications": [
+      "Using conjugate priors for Bayesian linear regression"
+    ],
+    "commonMistakes": [
+      "Failing to recognize when a conjugate prior is available",
+      "Not updating the prior correctly with new data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:53.721Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_conjugate_priors_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a system or process as new data arrives.</p><p>When we have a prior distribution that is the same type as the likelihood function, we can easily update our beliefs using Bayes' theorem. This leads to closed-form solutions and efficient inference.</p>",
+    "formula": "{",
+    "latex": "\\[\\beta \\sim \\text{Beta}(a_0, b_0) \\quad \\text{and} \\quad p \\sim \\text{Binomial}(n, p) \\]",
+    "name": "Conjugate Prior",
+    "variants": "[ {\"latex\": \"\\\\[\\\\mu \\\\sim \\\\mathcal{N}(\\\\mu_0, \\\\sigma_0^2) \\\\quad \\\\text{and} \\\\quad x \\\\sim \\\\mathcal{N}(\\\\mu, \\\\sigma^2) \\\\]\", {\"latex\": \"\\\\[\\\\lambda \\\\sim \\\\text{Gamma}(a_0, b_0) \\\\quad \\\\text{and} \\\\quad k \\\\sim \\\\text{Poisson}(\\\\lambda) \\\\]\"} ] },",
+    "intuition": "Conjugate priors simplify the updating process by leveraging the same distributional structure as the likelihood. This leads to more efficient and accurate inference.",
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the uncertainty in word frequencies."
+    ],
+    "commonMistakes": [
+      "Failing to recognize when a conjugate prior is available can lead to computationally expensive or inaccurate inference."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:21:14.141Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_conjugate_priors_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>Conjugate priors are a fundamental concept in Bayesian statistics that allow us to simplify complex inference tasks. In this card, we'll explore the beta-binomial, normal-normal, and gamma-poisson conjugate prior relationships.</p>",
+    "formula": "{",
+    "latex": "\\[ \\beta(\\alpha + k) / (\\alpha + n) \\]\",",
+    "name": "Beta-Binomial Conjugate Prior\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binomial distribution with parameters $n$ and $p$. We want to update our prior belief about $p$ given $k$ successes out of $n$ trials. What is the updated posterior distribution?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Update the prior using Bayes' rule\", \"mathHtml\": \"\\[ \\frac{f(k|n,p) \\cdot g(p) }{ F(n,k) } \\]\", \"explanation\": \"We multiply the likelihood by the prior and normalize\"} ],",
+    "finalAnswer": "The updated posterior distribution is beta-binomial\" },",
+    "intuition": "Conjugate priors allow us to update our prior beliefs using Bayes' rule without having to re-specify the prior distribution.",
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the uncertainty in word frequencies."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Conjugate Priors"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:21:34.934Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_conjugate_priors_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial and Normal-Normal",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a crucial concept that allows us to simplify complex inference problems.</p><p>When the likelihood function is from a conjugate family with respect to the prior distribution, we can easily update our posterior distribution using Bayes' theorem.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Normal-Normal: } f(y|\\mu,\\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-\\frac{(y-\\mu)^2}{2\\sigma^2}} \\]\",",
+    "name": "Beta-Binomial Conjugate Prior",
+    "variants": "[ {",
+    "description": "For continuous outcomes\" } ] },",
+    "intuition": "Conjugate priors simplify Bayesian inference by allowing us to update our prior distribution with the likelihood function, resulting in a posterior distribution that still belongs to the same family.",
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the uncertainty of word frequencies"
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Conjugate Priors"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:21:53.838Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_conjugate_priors_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial and Beyond",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our knowledge about model parameters.</p><p>When we have a binomial likelihood and a beta prior, the resulting posterior distribution is also beta. This is known as the beta-binomial conjugate prior.</p>",
+    "formula": "{",
+    "latex": "\\[ \\text{Posterior} = \\frac{\\text{Likelihood} \\cdot \\text{Prior}}{\\int \\text{Likelihood} \\cdot \\text{Prior} d\\theta} \\]\",",
+    "name": "Conjugate Prior Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're analyzing the success rate of a new marketing campaign. We have 10 observations, with 7 successes and 3 failures.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the prior distribution\", \"mathHtml\": \"\\( \\alpha = 2, \\beta = 2 \\)\", \"explanation\": \"We're using a weakly informative prior to reflect our lack of knowledge about the true success rate.\"}, {\"stepNumber\": 2, \"description\": \"Update with the likelihood function\", \"mathHtml\": \"\\( \\text{Likelihood} = \\binom{10}{7} (0.5)^7 (1-0.5)^3 \\)\", \"explanation\": \"We're using the binomial likelihood to update our prior with the observed data.\"}, {\"stepNumber\": 3, \"description\": \"Compute the posterior distribution\", \"mathHtml\": \"\\( \\text{Posterior} = \\frac{\\text{Likelihood} \\cdot \\text{Prior}}{\\int \\text{Likelihood} \\cdot \\text{Prior} d\\theta} \\)\", \"explanation\": \"We're using the conjugate prior formula to compute the updated posterior distribution.\"} ],",
+    "finalAnswer": "The resulting posterior distribution is also beta, with parameters \\( \\alpha' = 9, \\beta' = 3 \\)\" },",
+    "intuition": "Conjugate priors allow us to easily update our knowledge about model parameters by leveraging the mathematical structure of the problem.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:22:20.231Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_conjugate_priors_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>When working with Bayesian models, it's crucial to understand conjugate priors. In this card, we'll explore the beta-binomial, normal-normal, and gamma-poisson conjugate prior distributions.</p>",
+    "formula": "{",
+    "latex": "\\[P(\\theta | x) \\propto P(x | \\theta) \\cdot P(\\theta)\\]\",",
+    "name": "Conjugate Prior Formula",
+    "variants": "[ {\"latex\": \"\\[P(\\mu | x) \\propto N(x | \\mu, \\sigma^2) \\cdot N(\\mu | m, s^2)\\]\", \"description\": \"Normal-Normal conjugate prior\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a binomial distribution with n trials and k successes. We want to estimate the probability of success using a beta-binomial conjugate prior.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior distribution\", \"mathHtml\": \"\\[P(\\theta) = Beta(\\alpha, \\beta)\\]\", \"explanation\": \"We choose a beta distribution as our prior.\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "Conjugate priors allow us to update our model parameters efficiently by leveraging the mathematical structure of the problem.",
+    "realWorldApplications": [
+      "Bayesian A/B testing in marketing"
+    ],
+    "tags": [
+      "bayes",
+      "conjugate prior",
+      "beta-binomial",
+      "normal-normal",
+      "gamma-poisson"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:22:41.107Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian model with a conjugate prior distribution for the parameter <i>p</i>. Suppose we have <i>n</i> independent Bernoulli trials with success probability <i>p</i>, and <i>k</i> of them are successes. Find the posterior distribution of <i>p</i>.</p>",
+    "hints": [
+      "<p>The prior distribution is beta distributed.</p>",
+      "<p>Use Bayes' theorem to update the prior with the likelihood.</p>",
+      "<p>Compare the shape of the prior and posterior distributions.</p>"
+    ],
+    "solutionHtml": "<p>To find the posterior distribution, we apply Bayes' theorem:</p><p>\\[ p(p|k,n) = \\frac{p(k+1|n+1)p(p)}{\\int_0^1 p(k+1|n+1)p(p) dp} \\]</p><p>Since the prior is beta distributed, we have</p><p>\\[ p(p) = Beta(a,b) = \\frac{1}{B(a,b)}p^a(1-p)^b \\]</p><p>The likelihood is the product of <i>n</i> independent Bernoulli trials:</p><p>\\[ L(k|n,p) = \\prod_{i=1}^n p^{k_i}(1-p)^{n-k_i} \\]</p><p>Substituting and simplifying, we get the posterior distribution:</p><p>\\[ p(p|k,n) = Beta(a+k,b+n-k) \\]</p>\",",
+    "answerShort": "<i>Beta(a+k,b+n-k)</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:03.940Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": {
+      "statementHtml": "Consider a Bayesian model where we have observed <i>n</i> successes and <i>m</i> failures in <i>N</i>=<i>n</i>+<i>m</i> total trials, with a prior distribution on the success probability <i>p</i>. Find the conjugate prior distribution for the binomial model.",
+      "hints": [
+        "Recall that the beta distribution is conjugate to the binomial distribution.",
+        "Think about how the prior mean and variance affect the posterior distribution.",
+        "Use the fact that the beta distribution has a closed-form expression."
+      ],
+      "solutionHtml": "<p>To find the conjugate prior, we need to determine the parameters of the beta distribution. The prior mean is <i>p</i>, and the prior variance can be calculated as <i>pv(1-p)</i>. We can then use these values to update the posterior distribution using Bayes' theorem.</p>",
+      "answerShort": "The conjugate prior is a Beta distribution with parameters (<i>n+α</i>, <i>m+β</i>)."
+    },
+    "commonMistakes": [
+      "Forgetting that the beta distribution has a closed-form expression.",
+      "Not considering the effect of the prior mean and variance on the posterior distribution."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:20.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "Consider a Bayesian model where we have a prior distribution <i>P(θ)</i> and an observation <i>y</i>. Find the conjugate prior distribution <i>P(θ|y)</i> for the parameters of a Beta-Binomial, Normal-Normal, or Gamma-Poisson family.",
+    "hints": [
+      "Think about what happens to the prior when we observe more data.",
+      "Recall that conjugacy means the posterior is from the same family as the prior.",
+      "Consider how the observation affects the shape of the prior distribution."
+    ],
+    "solutionHtml": "\\[P(θ|y) = \\frac{P(y|θ)P(θ)}{\\int P(y|θ)P(θ)dθ}\\] for each family. For Beta-Binomial, <i>P(θ)</i> is a beta distribution and <i>P(y|θ)</i> is a binomial distribution. For Normal-Normal, <i>P(θ)</i> is a normal distribution and <i>P(y|θ)</i> is another normal distribution. For Gamma-Poisson, <i>P(θ)</i> is a gamma distribution and <i>P(y|θ)</i> is a Poisson distribution.\",",
+    "answerShort": "The conjugate prior distributions are Beta-Binomial: beta, Normal-Normal: normal, and Gamma-Poisson: gamma.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:40.233Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian model where we have a binomial distribution with <i>n</i> trials and <i>k</i> successes. We want to find the conjugate prior for this model.</p>",
+      "hints": [
+        "Start by thinking about what kind of distribution would make sense as a prior.",
+        "Recall that the binomial distribution is related to the beta distribution.",
+        "Think about how you can use the gamma function to help with the conjugate prior."
+      ],
+      "solutionHtml": "<p>To find the conjugate prior, we need to find the distribution that has the same form as the posterior. In this case, the posterior is a binomial distribution.</p><p>We know that the beta distribution is the conjugate prior for the binomial distribution. Therefore, our conjugate prior is a beta distribution with parameters <i>a</i> and <i>b</i>.</p>",
+      "answerShort": "The conjugate prior is a beta distribution."
+    },
+    "commonMistakes": [
+      "Forgetting that the beta distribution is the conjugate prior for the binomial distribution.",
+      "Not considering the relationship between the binomial distribution and the beta distribution."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:55.986Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian model with a binomial likelihood and a conjugate prior distribution. What is the posterior distribution?</p>",
+    "hints": [
+      "Start by identifying the conjugate prior for this problem.",
+      "Think about how the prior affects the posterior.",
+      "Use the Bayes' theorem formula to find the posterior."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the fact that the beta distribution is a conjugate prior for binomial likelihoods. The posterior distribution will also be a beta distribution.</p><p>We can write down the Bayes' theorem formula:</p>\\[\\frac{\\text{Likelihood} \\times \\text{Prior}}{\\text{Evidence}}\\]<p>Substituting in our distributions, we get:</p>\\[\\frac{(n+1) \\cdot B(\\alpha_0, \\beta_0)}{\\int_{0}^{1} (x^{n} \\cdot (1-x)^{m}) \\cdot B(\\alpha_0, \\beta_0) dx}\\]<p>After simplifying and rearranging, we find that the posterior distribution is:</p>\\[B(\\alpha_0+n, \\beta_0+m)\\]",
+    "answerShort": "Beta distribution with updated parameters\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:24:13.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a model.</p>",
+    "formula": {
+      "latex": "\\[\\beta \\sim \\text{Beta}(a,b)\\]",
+      "name": "Conjugate Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a binomial distribution with $n=10$ and $p=0.5$. We want to update our prior belief about the probability of success, represented by \\(\\theta\\), given that we observe $k=7$ successes.</p>",
+      "hints": [
+        "Hint: Use conjugate prior for binomial"
+      ],
+      "solutionHtml": "<p>We can use a beta distribution as our prior and update it using Bayes' theorem. The updated posterior distribution is also a beta distribution, which is the key insight here.</p>",
+      "answerShort": "Beta(8,3)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's work through an example to illustrate this process.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior distribution",
+          "mathHtml": "\\[\\theta \\sim \\text{Beta}(a,b)\\]",
+          "explanation": "We choose a beta distribution as our prior because it's conjugate to the binomial likelihood."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior using Bayes' theorem",
+          "mathHtml": "\\[p(\\theta | k) \\propto p(k | \\theta) \\cdot p(\\theta)\\]",
+          "explanation": "We update our prior distribution by multiplying it with the likelihood and normalizing."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the updated posterior",
+          "mathHtml": "\\[p(\\theta | k) = \\frac{p(k | \\theta) \\cdot p(\\theta)}{\\int_{0}^{1} p(k | \\theta) \\cdot p(\\theta) d\\theta}\\]",
+          "explanation": "We integrate out the prior to get our updated posterior distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the final answer",
+          "mathHtml": "\\[p(\\theta | k) = \\text{Beta}(8,3)\\]",
+          "explanation": "After updating our prior using Bayes' theorem, we get a new beta distribution as our posterior."
+        }
+      ],
+      "finalAnswer": "Beta(8,3)"
+    },
+    "intuition": "Conjugate priors allow us to update our understanding of a model in a way that's mathematically tractable and easy to interpret.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:24:45.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are essential for updating posteriors.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binomial distribution with <i>n</i> trials and <i>k</i> successes. We want to update our prior belief about the probability of success using Bayes' theorem.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior\", \"mathHtml\": \"\\( \\beta_0 \\sim Beta(\\alpha_0, \\beta_0) \\)\", \"explanation\": \"We choose a conjugate prior that is also a beta distribution.\"}, {\"stepNumber\": 2, \"description\": \"Observe the data\", \"mathHtml\": \"\\( x \\sim Binomial(n, p) \\)\", \"explanation\": \"We collect <i>x</i> successes out of <i>n</i> trials.\"}, {\"stepNumber\": 3, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\( \\beta_1 | x \\sim Beta(\\alpha_0 + x, \\beta_0 + n - x) \\)\", \"explanation\": \"We update our prior belief about <i>p</i> using the observed data.\"}, {\"stepNumber\": 4, \"description\": \"Posterior distribution\", \"mathHtml\": \"\\( p | x \\sim Beta(\\alpha_1, \\beta_1) \\)\", \"explanation\": \"Our updated posterior belief about <i>p</i> is still a beta distribution, but with updated parameters.\"} ],",
+    "finalAnswer": "The conjugate prior for the binomial distribution is another beta distribution.\" },",
+    "intuition": "Conjugate priors simplify Bayesian inference by maintaining the same distribution family throughout.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:25:08.421Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a system based on new data.</p>",
+    "formula": {
+      "latex": "\\[\\beta(a_1 + x, b_1 + n - x) = \\frac{\\Gamma(a_1 + b_1)}{\\Gamma(a_1) \\Gamma(b_1)} \\frac{(a_1 + x)^{x} (b_1 + n - x)^{n-x}}{(a_1 + b_1)^{n-1}}\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin with an unknown probability of heads, and we flip it 10 times. We observe 5 heads. What is the updated distribution for the coin's probability?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior",
+          "mathHtml": "\\[\\beta(a_0, b_0) = \\frac{\\Gamma(a_0 + b_0)}{\\Gamma(a_0) \\Gamma(b_0)} \\frac{(a_0)^{x_0} (b_0)^{n-x_0}}{(a_0 + b_0)^{n-1}}\\]",
+          "explanation": "We start with a vague prior for the coin's probability."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior",
+          "mathHtml": "\\[\\beta(a_1, b_1) = \\frac{\\Gamma(a_0 + x_0 + 1)}{\\Gamma(a_0 + 1) \\Gamma(b_0 + n - x_0)} \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}\\]",
+          "explanation": "We update the prior using Bayes' rule."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the updated distribution",
+          "mathHtml": "\\[\\beta(a_1, b_1) = \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}\\]",
+          "explanation": "We simplify the updated distribution by canceling out common terms."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the maximum a posteriori (MAP) estimate",
+          "mathHtml": "\\[\\hat{p} = \\frac{a_1 + x_0}{a_1 + b_1 + n}\\]",
+          "explanation": "We find the MAP estimate by finding the mode of the updated distribution."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The updated distribution tells us that our belief about the coin's probability has shifted towards a more likely value given the data."
+        }
+      ],
+      "finalAnswer": "The updated distribution for the coin's probability is \\beta(a_1, b_1) = \\frac{(a_0 + x_0)^{x_0} (b_0 + n - x_0)^{n-x_0}}{(a_0 + b_0 + 1)^{n-1}}"
+    },
+    "intuition": "Conjugate priors allow us to update our understanding of a system based on new data, without having to re-specify the prior distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:25:50.102Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our knowledge about parameters given new data.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a binomial distribution with <i>n</i> trials and <i>p</i> probability of success. We want to update our prior belief about <i>p</i> using the observed number of successes, <i>k</i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the prior distribution\", \"mathHtml\": \"\\[ \\alpha \\sim Beta(\\alpha_0, \\beta_0) \\]\", \"explanation\": \"We choose a beta distribution as our prior because it's conjugate to the binomial likelihood.\"}, {\"stepNumber\": 2, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\[ f(p | k) = \\frac{f(k | p) f(p)}{\\int_{0}^{1} f(k | p') f(p') dp'} \\]\", \"explanation\": \"We use Bayes' theorem to update our prior with the likelihood of observing <i>k</i> successes given <i>p</i>. The integral normalizes the posterior.\"}, {\"stepNumber\": 3, \"description\": \"Simplify the posterior\", \"mathHtml\": \"\\[ f(p | k) = Beta(\\alpha_0 + k, \\beta_0 + n - k) \\]\", \"explanation\": \"We can simplify the posterior by recognizing it's still a beta distribution.\"}, {\"stepNumber\": 4, \"description\": \"Compute the updated mean and variance\", \"mathHtml\": \"\\[ E[p | k] = \\frac{\\alpha_0 + k}{\\alpha_0 + n}, Var[p | k] = \\frac{(\\alpha_0 + k)(\\beta_0 + n - k)}{(n+1)\\alpha_0^2} \\]\", \"explanation\": \"We can compute the updated mean and variance of our posterior distribution.\"}, {\"stepNumber\": 5, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"Our updated belief about <i>p</i> is now a beta distribution with new parameters. We can use this to make inferences or predictions.\"} ],",
+    "finalAnswer": "The posterior distribution is Beta(\\alpha_0 + k, \\beta_0 + n - k)\" },",
+    "intuition": "Conjugate priors allow us to easily update our knowledge about parameters given new data by leveraging the mathematical structure of the problem.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:26:20.687Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_conjugate_priors_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial Example",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating posterior distributions.</p>",
+    "formula": {
+      "latex": "\\[\\beta(a + x, b + n - x) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin flip experiment with an unknown probability of heads, p. We observe <i>n</i> flips and <i>x</i> heads. What is the updated distribution for <i>p</i>?</p>",
+      "hints": [
+        "Hint: Use conjugate prior",
+        "Hint: Update using Bayes' theorem"
+      ],
+      "solutionHtml": "<p>We can model this problem using a Beta-Binomial conjugate prior.</p><ul><li>Step 1: Define the prior distribution as \\(\\beta(a, b)\\). In this case, we choose <i>a</i> and <i>b</i> such that the prior mean is close to our initial guess of <i>p</i>.</li><li>Step 2: Update the prior using Bayes' theorem with the likelihood function \\(f(x | p) = \\binom{n}{x} p^x (1-p)^{n-x}\\).</li><li>Step 3: Simplify the posterior distribution to get \\(\\beta(a + x, b + n - x)\\).</li><li>Step 4: Interpret the updated distribution and make predictions.</li></ul>",
+      "answerShort": "Updated Beta-Binomial distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We observe <i>n=10</i> flips with <i>x=5</i> heads. Our initial guess for <i>p</i> is 0.4.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior distribution",
+          "mathHtml": "\\[\\beta(a, b) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+          "explanation": "Choose <i>a</i> and <i>b</i> to match our initial guess of <i>p</i>."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update the prior using Bayes' theorem",
+          "mathHtml": "\\[f(x | p) = \\binom{n}{x} p^x (1-p)^{n-x}\\]",
+          "explanation": "Use the likelihood function to update the prior."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the posterior distribution",
+          "mathHtml": "\\[\\beta(a + x, b + n - x) = \\frac{\\Gamma(a + b)}{\\Gamma(a) \\Gamma(b)} \\prod_{i=1}^n (x_i + a) (b + n - x_i - 1)\\]",
+          "explanation": "Simplify the updated distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the updated distribution",
+          "mathHtml": "",
+          "explanation": "Make predictions and interpret the results."
+        }
+      ],
+      "finalAnswer": "Updated Beta-Binomial distribution"
+    },
+    "intuition": "Conjugate priors simplify Bayesian inference by providing an updated distribution that is from the same family as the prior.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:27:01.836Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

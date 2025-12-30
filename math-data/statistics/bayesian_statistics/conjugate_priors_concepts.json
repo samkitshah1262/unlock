@@ -1,0 +1,97 @@
+[
+  {
+    "id": "stat_con_conjugate_priors_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are distributions that 'match' the likelihood function of a statistical model. This means that if you update your prior with new data using Bayes' theorem, the resulting posterior distribution is still from the same family as the prior.</p><p>For example, when modeling binomial data (e.g., coin flips), a beta-binomial conjugate prior ensures that the updated posterior remains a beta distribution. This property makes conjugate priors useful for efficient inference and prediction.</p>",
+    "formula": {
+      "latex": "\\[\\beta(\\alpha + k, \\beta + n - k) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)} \\int_0^1 x^{\\alpha + k - 1} (1-x)^{\\beta + n - k - 1} dx\\]",
+      "name": "Beta-Binomial Conjugate Prior"
+    },
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the likelihood of word sequences and update the prior distribution over possible sentences."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that conjugate priors are not always available or optimal"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:34.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_conjugate_priors_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, a conjugate prior is a probability distribution that 'matches' the likelihood function of a statistical model. This means that updating the posterior distribution with new data is straightforward, as the prior and likelihood are from the same family.</p><p>Conjugate priors simplify inference and allow for efficient computation of posteriors. They're particularly useful when working with exponential families, such as binomial or Poisson distributions.</p>",
+    "formula": {
+      "latex": "\\[\\beta \\sim \\text{Beta}(a, b) \\quad \\text{and} \\quad \\theta \\sim \\text{Binomial}(n, p) \\]",
+      "name": "Conjugate Prior Formula",
+      "variants": [
+        {
+          "latex": "\\[\\mu \\sim \\mathcal{N}(0, 1) \\quad \\text{and} \\quad x \\sim \\mathcal{N}(\\mu, \\sigma^2) \\]",
+          "description": "Normal-Normal conjugate prior"
+        }
+      ]
+    },
+    "intuition": "Conjugate priors provide a natural way to update our uncertainty about model parameters as we collect more data. This is especially important in machine learning, where we often need to make predictions based on limited training sets.",
+    "realWorldApplications": [
+      "Using conjugate priors for Bayesian linear regression"
+    ],
+    "commonMistakes": [
+      "Failing to recognize when a conjugate prior is available",
+      "Not updating the prior correctly with new data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:53.721Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_conjugate_priors_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "title": "Conjugate Priors: Beta-Binomial, Normal-Normal, Gamma-Poisson",
+    "contentHtml": "<p>In Bayesian statistics, conjugate priors are a powerful tool for updating our understanding of a system or process as new data arrives.</p><p>When we have a prior distribution that is the same type as the likelihood function, we can easily update our beliefs using Bayes' theorem. This leads to closed-form solutions and efficient inference.</p>",
+    "formula": "{",
+    "latex": "\\[\\beta \\sim \\text{Beta}(a_0, b_0) \\quad \\text{and} \\quad p \\sim \\text{Binomial}(n, p) \\]",
+    "name": "Conjugate Prior",
+    "variants": "[ {\"latex\": \"\\\\[\\\\mu \\\\sim \\\\mathcal{N}(\\\\mu_0, \\\\sigma_0^2) \\\\quad \\\\text{and} \\\\quad x \\\\sim \\\\mathcal{N}(\\\\mu, \\\\sigma^2) \\\\]\", {\"latex\": \"\\\\[\\\\lambda \\\\sim \\\\text{Gamma}(a_0, b_0) \\\\quad \\\\text{and} \\\\quad k \\\\sim \\\\text{Poisson}(\\\\lambda) \\\\]\"} ] },",
+    "intuition": "Conjugate priors simplify the updating process by leveraging the same distributional structure as the likelihood. This leads to more efficient and accurate inference.",
+    "realWorldApplications": [
+      "In natural language processing, conjugate priors can be used to model the uncertainty in word frequencies."
+    ],
+    "commonMistakes": [
+      "Failing to recognize when a conjugate prior is available can lead to computationally expensive or inaccurate inference."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:21:14.141Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

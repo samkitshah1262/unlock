@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    .ttypography {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h3 {
+      color: #1a1a1a;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    h3 a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    h3 a:hover {
+      text-decoration: underline;
+    }
+    .spoiler {
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .spoiler-title {
+      display: block;
+      padding: 12px 15px;
+      background: #f0f0f0;
+      cursor: pointer;
+      font-weight: 600;
+      user-select: none;
+      border-bottom: 1px solid #ddd;
+    }
+    .spoiler-title:hover {
+      background: #e8e8e8;
+    }
+    .spoiler-title::before {
+      content: '▶ ';
+      font-size: 0.8em;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .spoiler.open .spoiler-title::before {
+      content: '▼ ';
+    }
+    .spoiler-content {
+      padding: 15px;
+      background: #fff;
+      display: none;
+    }
+    .spoiler.open .spoiler-content {
+      display: block;
+    }
+    pre, code {
+      background: #f5f5f5;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 0.85em;
+    }
+    pre {
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .MathJax {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Editorial</h1>
+  <p><a href="https://codeforces.com/blog/entry/142316" target="_blank">View on Codeforces →</a></p>
+  
+  <div class="ttypography"><div class="spoiler"><b class="spoiler-title">Div2A</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2098A">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div2B</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2098B">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1A</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097A">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1B</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097B">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1C</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097C">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1D</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097D">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1E</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097E">Tutorial is loading...</div></div></div> <div class="spoiler"><b class="spoiler-title">Div1F</b><div class="spoiler-content" style="display: block;"><div class="problemTutorial" problemcode="2097F">Tutorial is loading...</div></div></div></div>
+
+    </div>
+
+
+        
+            
+
+  <script>
+    // Make all spoilers toggleable
+    document.querySelectorAll('.spoiler-title').forEach(title => {
+      title.addEventListener('click', function() {
+        const spoiler = this.closest('.spoiler');
+        spoiler.classList.toggle('open');
+      });
+    });
+    
+    // Open all spoilers by default for easier reading
+    document.querySelectorAll('.spoiler').forEach(spoiler => {
+      spoiler.classList.add('open');
+    });
+  </script>
+</body>
+</html>

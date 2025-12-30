@@ -1,0 +1,107 @@
+[
+  {
+    "id": "prob_prb_ergodic_theorem_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "ergodic_theorem",
+    "problem": "{",
+    "statementHtml": "Prove that the ergodic theorem holds for a stationary stochastic process <i>X</i> with finite second moment.",
+    "hints": [
+      "Start by considering the long-run average of <i>X</i>.",
+      "Use the fact that the process is stationary to relate the average to the distribution.",
+      "Apply the dominated convergence theorem to justify the interchange of limits."
+    ],
+    "solutionHtml": "<p>Let <i>A</i> be the expected value of <i>X</i>. We want to show that <i>A</i> is the long-run average.</p><p>We know that for any <i>t</i>, the distribution of <i>X</i> at time <i>t</i> is the same as the original distribution. Therefore, we can write:</p>\\[ \\lim_{T\\to\\infty} \\frac{1}{T} \\sum_{t=0}^{T-1} X_t = A.\\]<p>To justify this interchange of limits, apply the dominated convergence theorem to the sequence <i>X_0, X_1, ...</i>. The dominating function is the expected value.</p>\",",
+    "answerShort": "The ergodic theorem holds.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:29:43.232Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_ergodic_theorem_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "ergodic_theorem",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process <i>X</i><sub>t</sub> with ergodic theorem stating that time averages converge to ensemble averages.</p>",
+      "hints": [
+        "Start by recalling the definition of ergodicity.",
+        "Think about what it means for time averages to converge to ensemble averages.",
+        "Use the concept of stationary distributions to help you solve this problem."
+      ],
+      "solutionHtml": "<p>To prove convergence, we can use the following steps:</p><ol><li>Recall that <i>X</i><sub>t</sub> is ergodic.</li><li>Apply the ergodic theorem to show that time averages converge to ensemble averages.</li></ol>",
+      "answerShort": "Convergence occurs."
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:29:56.274Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_ergodic_theorem_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "ergodic_theorem",
+    "problem": "{",
+    "statementHtml": "<p>Ergodic Theorem: Prove that the time average of a stochastic process converges to its space average.</p>",
+    "hints": [
+      "Start by assuming the process is stationary and ergodic.",
+      "Use the definition of ergodicity to relate the time average to the space average.",
+      "Apply the Lebesgue dominated convergence theorem to show that the time average converges almost surely."
+    ],
+    "solutionHtml": "<p>Let $X_t$ be a stochastic process. We want to prove that $\\frac{1}{T} \\int_0^T X_t dt$ converges almost surely to its space average, $\\mathbb{E}[X].</p><p>First, note that ergodicity implies that the time average is equal to the space average for any fixed $t$. Therefore, we can write:</p>\\[\\lim_{T \\to \\infty} \\frac{1}{T} \\int_0^T X_t dt = \\mathbb{E}[X].\\]<p>Next, apply the Lebesgue dominated convergence theorem to show that the time average converges almost surely. This is because the sequence of random variables $\\left(\\frac{1}{T} \\int_0^T X_t dt\\right)_{T=1}^\\infty$ is uniformly integrable and bounded in probability.</p><p>Finally, use the fact that the space average is constant to conclude that the time average converges almost surely to its space average.</p>\",",
+    "answerShort": "The time average of a stochastic process converges almost surely to its space average.\" },",
+    "commonMistakes": [
+      "Forgetting to apply the Lebesgue dominated convergence theorem.",
+      "Assuming the process is stationary without checking ergodicity."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:30:22.327Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_ergodic_theorem_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "ergodic_theorem",
+    "problem": "{",
+    "statementHtml": "Let $X_1, X_2, \\ldots$ be a sequence of i.i.d. random variables with finite mean $\\mu$. Prove that the time average $\\frac{1}{n} \\sum_{i=1}^n X_i$ converges almost surely to the space average $\\mu$ as $n\\to\\infty$.\",",
+    "hints": [
+      "Start by showing that the sequence is uniformly integrable.",
+      "Use the fact that the sequence has finite mean and the Borel-Cantelli lemma.",
+      "Conclude using the strong law of large numbers."
+    ],
+    "solutionHtml": "<p>To show convergence, we use the following steps:</p><ol><li>Fix $\\epsilon > 0$. By uniform integrability, there exists $N$ such that for all $n \\ge N$, $\\left| \\frac{1}{n} \\sum_{i=1}^n X_i - \\mu \\right| < \\epsilon$ almost surely.</li><li>By the Borel-Cantelli lemma, this implies that the event $\\left\\{\\omega: \\sup_{n \\ge N} \\left| \\frac{1}{n} \\sum_{i=1}^n X_i - \\mu \\right| < \\epsilon \\right\\}$ has probability 1.</li><li>Since $\\epsilon$ was arbitrary, this implies that the sequence converges almost surely to $\\mu$.</li></ol>\",",
+    "answerShort": "The sequence converges almost surely to $\\mu$.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:30:46.572Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

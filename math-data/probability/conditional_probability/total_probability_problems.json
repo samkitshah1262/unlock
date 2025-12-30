@@ -1,0 +1,87 @@
+[
+  {
+    "id": "prob_prb_total_probability_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "total_probability",
+    "problem": {
+      "statementHtml": "Let <i>S</i> be a sample space with events <i>A</i>, <i>B</i>, and <i>C</i>. Prove that <i>P(A)</i> = <i>P(A|C)P(C) + P(A|B)P(B) + ...</i>",
+      "hints": [
+        "Consider the partition of <i>S</i> into disjoint events",
+        "Think about weighted averages and conditional probabilities",
+        "Use the definition of conditional probability to simplify"
+      ],
+      "solutionHtml": "<p>To prove this, we can start by rewriting the left-hand side:</p><p><i>P(A)</i> = <i>P(A ∩ S)</i></p><p>Then, we apply the law of total probability:</p><p><i>P(A)</i> = ∑<sub>i</sub> <i>P(A ∩ C<i>)</i>/<i>P(C<i>)</i></p><p>We can further simplify this expression by recognizing that each event <i>C<i></i> is mutually exclusive:</p><p><i>P(A)</i> = ∑<sub>i</sub> <i>P(A|C<i>)P(C<i>)</i></p><p>This is the desired result.</p>",
+      "answerShort": "<i>P(A)</i> = <i>P(A|C)P(C) + P(A|B)P(B) + ..."
+    },
+    "commonMistakes": [
+      "Forgetting to apply the law of total probability",
+      "Not recognizing mutually exclusive events"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:06:26.331Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_total_probability_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "total_probability",
+    "problem": "{",
+    "statementHtml": "Let <i>S</i> be a sample space with events <i>A</i>, <i>B</i>, and <i>C</i>. Find the probability of <i>C</i> given that <i>A</i> or <i>B</i> occurs. Use the Law of Total Probability to partition <i>S</i>.",
+    "hints": [
+      "Consider a weighted average of probabilities",
+      "Focus on the event <i>C</i>",
+      "Use the fact that <i>P(C|A) = P(A ∩ C) / P(A)</i>"
+    ],
+    "solutionHtml": "<p>To apply the Law of Total Probability, partition the sample space <i>S</i> into three events: <i>A</i>, <i>B</i>, and their complement <i>C^c</i>. Then,</p><p>\\[P(C) = P(A ∩ C) + P(B ∩ C) + P(C^c)\\]</p><p>Now, we can use the fact that <i>P(A ∪ B)</i> is equal to the sum of individual probabilities. This gives us</p><p>\\[P(C|A ∪ B) = \\frac{P(A ∩ C) + P(B ∩ C)}{P(A ∪ B)}\\]</p>\",",
+    "answerShort": "The probability of <i>C</i> given that <i>A</i> or <i>B</i> occurs is <i>P(C|A ∪ B)</i>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:06:50.003Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_total_probability_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "conditional_probability",
+    "topic": "total_probability",
+    "problem": {
+      "statementHtml": "<p>Given a partition of sample space Ω into disjoint sets E1, ..., En, show that P(A) = ∑<sub>i</sub> P(A ∩ Ei).</p>",
+      "hints": [
+        "Consider the definition of conditional probability.",
+        "Think about how the events Ai are related to each other and A.",
+        "Use the fact that P(Ei) = 1 for all i."
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use the definition of conditional probability:</p>\n<p>P(A ∩ Ei) = P(A | Ei)P(Ei)</p>\n<p>Since the events Ei are disjoint, we have:</p>\n<p>P(A) = ∑<sub>i</sub> P(A ∩ Ei) = ∑<sub>i</sub> P(A | Ei)P(Ei)</p>\n<p>We can rewrite this as a weighted average:</p>\n<p>P(A) = ∑<sub>i</sub> w_i P(A | Ei), where w_i = P(Ei)</p>",
+      "answerShort": "P(A) = ∑<sub>i</sub> P(A | Ei)P(Ei)"
+    },
+    "commonMistakes": [
+      "Forgetting to use the definition of conditional probability.",
+      "Not considering the disjointness of the events Ei."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:07:10.792Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

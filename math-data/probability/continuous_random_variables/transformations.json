@@ -1,0 +1,608 @@
+[
+  {
+    "id": "prob_con_transformations_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformations of Continuous Random Variables",
+    "contentHtml": "<p>When working with continuous random variables, it's often necessary to transform them into a new variable that has a more convenient distribution or properties.</p><p>This process is called transformation of random variables, and it's crucial in many areas of statistics and machine learning.</p>",
+    "formula": {
+      "latex": "\\[f_Y(y) = f_X(x) |x=g^{-1}(y)|g'(g^{-1}(y))\\]",
+      "name": "Jacobian method"
+    },
+    "intuition": "The key insight is that the probability density function (PDF) of the transformed variable Y is related to the PDF of the original variable X through the Jacobian of the transformation.",
+    "realWorldApplications": [
+      "In machine learning, transformations are used to normalize data, handle non-linear relationships, and improve model performance."
+    ],
+    "commonMistakes": [
+      "Failing to account for the Jacobian term when transforming variables"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:32:01.660Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_transformations_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformations of Continuous Random Variables",
+    "contentHtml": "<p>When working with continuous random variables, we often need to transform them into new variables that are easier to work with or better suited for our problem at hand.</p><p>This process is called a transformation of the random variable, and it's a crucial concept in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\\\[g(X) = f(X), \\quad X \\\\sim F_X(x)\\\\]\",",
+    "name": "Transformation Formula\" },",
+    "intuition": "Transformations allow us to change the scale, shape, or location of a continuous random variable, making it easier to analyze and model real-world phenomena.",
+    "visualDescription": "A diagram showing the original distribution and the transformed distribution would be helpful in visualizing this concept.",
+    "commonMistakes": [
+      "Forgetting to account for the Jacobian factor when transforming variables"
+    ],
+    "realWorldApplications": [
+      "In machine learning, transformations are used to normalize data, improve model performance, and enhance interpretability."
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "transformations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:32:19.809Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_transformations_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformations of Continuous Random Variables",
+    "contentHtml": "<p>When dealing with continuous random variables, it's often necessary to transform them to better suit our needs or models. This concept is crucial in probability theory and has far-reaching implications in machine learning and artificial intelligence.</p><p>In this context, we'll focus on the Jacobian method for transforming the probability density function (PDF) of a continuous random variable X into the PDF of another variable g(X).</p>",
+    "formula": {
+      "latex": "\\[f_Y(y) = f_X(g^{-1}(y)) |g'(g^{-1}(y))|\\]",
+      "name": "Jacobian transformation formula"
+    },
+    "intuition": "Think of it like a change of coordinates. When we transform X into g(X), we're essentially redefining our units or axes. The Jacobian method helps us preserve the probability mass by adjusting for this change.",
+    "realWorldApplications": [
+      "In Bayesian networks, transformations are used to model complex relationships between variables"
+    ],
+    "commonMistakes": [
+      "Forgetting to account for the absolute value in the formula",
+      "Not recognizing when a transformation is necessary"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:32:37.610Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_transformations_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>The Jacobian method is a powerful tool to transform continuous random variables in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\[f_Y(y) = |g'(x)| \\cdot f_X(x),\\]",
+    "name": "Jacobian Transformation Formula",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a continuous random variable X ~ N(0,1). Find the PDF of Y = X^2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the derivative of g(x) = x^2\", \"mathHtml\": \"\\[g'(x) = 2x\\]\", \"explanation\": \"The derivative is crucial for the Jacobian method.\"} ],",
+    "finalAnswer": "The PDF of Y is a Rayleigh distribution.\" },",
+    "intuition": "Transforming continuous random variables helps us work with new distributions, which is essential in machine learning and AI.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:32:54.848Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_transformations_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "formula": "{",
+    "latex": "\\[g(X) = f(Y), \\quad Y = h(X)\\]\",",
+    "name": "Transformation Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random variable X ~ N(0,1). We want to find the PDF of g(X) = X^2.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the derivative of h(x)\", \"mathHtml\": \"\\(h'(x) = 2x\\)\", \"explanation\": \"This is the Jacobian of the transformation.\"}, {\"stepNumber\": 2, \"description\": \"Apply the chain rule\", \"mathHtml\": \"\\[g'(x) = h'(x) \\* f'(Y)\\]\", \"explanation\": \"We're using the chain rule to find the derivative of g(X).\"}, {\"stepNumber\": 3, \"description\": \"Find the PDF of g(X)\", \"mathHtml\": \"\\[p_G(x) = p_Y(y) |J|\\], where \\(|J| = |h'(x)|\\]\", \"explanation\": \"Now we can find the PDF of g(X) by applying the transformation to the original PDF.\"} ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Transforming random variables allows us to work with new distributions and apply them to real-world problems.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:33:16.554Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_transformations_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>Given a continuous random variable X with probability density function (PDF) f(x), we often need to find the PDF of g(X) for some transformation g(·). The Jacobian method provides a powerful tool for this task.</p>",
+    "formula": "{",
+    "latex": "\\[f_Y(y) = \\frac{1}{|J_x|} f(g^{-1}(y))\\]\",",
+    "name": "Jacobian Transformation Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the PDF of Z = X^2, given that X ∼ N(0, 1).</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Identify g(x) and its inverse",
+        "mathHtml": "\\[g(x) = x^2\\]",
+        "explanation": "This is a simple quadratic transformation."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Compute the Jacobian determinant",
+        "mathHtml": "\\[|J_x| = |2x|\\]",
+        "explanation": "The derivative of g(x) with respect to x."
+      }
+    ],
+    "finalAnswer": "The final PDF is given by...\" },",
+    "intuition": "Transforming a continuous random variable involves understanding how the transformation affects the underlying probability distribution.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:33:38.566Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_transformations_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications, including machine learning and artificial intelligence.</p><p>Given a continuous random variable X with PDF f(x), we can transform it into another random variable Y using a function g. The PDF of Y, denoted as f_Y(y), is obtained by applying the Jacobian method:</p>",
+    "formula": "{",
+    "latex": "\\[f_Y(y) = \\int_{-\\infty}^{\\infty} f(x) |g'(x)| dx\\]\",",
+    "name": "Jacobian Transformation Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a continuous random variable X ~ N(0,1). We want to transform it into Y = X^2.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the PDF of X\", \"mathHtml\": \"\\[f_X(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-x^2/2}\\]\", \"explanation\": \"We use the standard normal distribution.\" }, {\"stepNumber\": 2, \"description\": \"Apply the Jacobian transformation formula\", \"mathHtml\": \"\\[f_Y(y) = \\int_{-\\infty}^{\\infty} f_X(x) |x| dx\\]\", \"explanation\": \"We use the chain rule to find the derivative of g.\" }, {\"stepNumber\": 3, \"description\": \"Evaluate the integral\", \"mathHtml\": \"\\[f_Y(y) = \\frac{1}{2} e^{-y/2}\\]\", \"explanation\": \"We can evaluate the integral using standard techniques.\" } ],",
+    "finalAnswer": "The PDF of Y is a half-normal distribution.\" },",
+    "intuition": "Transforming continuous random variables allows us to model complex phenomena in machine learning and artificial intelligence. The Jacobian method provides a powerful tool for computing the resulting probability density function.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:34:07.233Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_transformations_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformation of Continuous Random Variables",
+    "contentHtml": "<p>The Jacobian method is a powerful tool to transform continuous random variables.</p><p>Given a function g(x), we can find the probability density function (PDF) of Y=g(X) using the Jacobian method.</p>",
+    "formula": {
+      "latex": "\\[f_Y(y) = \\frac{\\partial+}{\\partial y} f_X(g^{-1}(y)) |_{g^{-1}(y)} \\]",
+      "name": "Jacobian Method"
+    },
+    "theorem": {
+      "statement": "\\[f_Y(y) = \\frac{\\partial+}{\\partial y} f_X(g^{-1}(y)) |_{g^{-1}(y)} \\]"
+    },
+    "intuition": "The Jacobian method helps us find the PDF of Y=g(X) by relating it to the PDF of X. This is useful in machine learning when we need to transform data.",
+    "realWorldApplications": [
+      "Transforming data for neural networks"
+    ],
+    "tags": [
+      "Continuous Random Variables",
+      "Jacobian Method",
+      "Transformation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:34:25.945Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_transformations_009",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transformation of Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications, including machine learning and artificial intelligence.</p><p>This theorem provides a powerful tool for analyzing such transformations.</p>",
+    "formula": {
+      "latex": "\\[g(X) = h(f(X))\\]",
+      "name": "Transformation Formula"
+    },
+    "theorem": {
+      "statement": "\\[P(g(X) \\leq y) = \\int_{-\\infty}^y p_g(t) dt, where p_g(t) = |h'(f^{-1}(t))|p_X(f^{-1}(t))\\]",
+      "proofSketch": "The proof involves applying the change of variables formula and using the chain rule to compute the Jacobian."
+    },
+    "intuition": "This theorem allows us to transform a continuous random variable X into another variable g(X) while preserving its probability distribution.",
+    "realWorldApplications": [
+      "Transforming features in machine learning models"
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables",
+      "transformations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:34:43.252Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_transformations_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with probability density function (PDF) f<sub>X</sub>(x). Find the PDF of g(X), where g(u) = u^2.</p>",
+    "hints": [
+      "<p>Start by applying the transformation rule for continuous random variables.</p>",
+      "<p>Use the Jacobian method to find the derivative of g<sup>-1</sup>(u).</p>",
+      "<p>Recall that the PDF of Y = g(X) is given by the absolute value of the derivative times the PDF of X.</p>"
+    ],
+    "solutionHtml": "<p>To apply the transformation rule, we need to find the derivative of g<sup>-1</sup>(u).</p>\\[g'<sub>u</sub>(u) = \\frac{d}{du} u^2 = 2u\\]\\n<p>The Jacobian is given by |g'<sub>u</sub>(u)| = |2u|.</p>\\n<p>Now, we can use the transformation rule:</p>\\[f<sub>Y</sub>(y) = \\left|\\frac{d}{dy} g'(u)\\right| f_X(g'^{-1}(y))\\]\\n<p>We need to find u such that g(u) = y.</p>\\[g(u) = u^2 = y\\] \\[u = \\sqrt{y}\\]\\n<p>Now, we can substitute:</p>\\[f<sub>Y</sub>(y) = |2\\sqrt{y}| f_X(\\sqrt{y})\\]\\n<p>The final answer is:</p>\\[f<sub>Y</sub>(y) = \\frac{|2\\sqrt{y}|}{|g'<sub>u</sub>(u)|} f_X(\\sqrt{y})\\]\\n<p>This result makes sense, as the PDF of Y should be proportional to the derivative of g and the PDF of X.</p>\",",
+    "answerShort": "f<sub>Y</sub>(y) = \\frac{|2\\sqrt{y}|}{|g'<sub>u</sub>(u)|} f_X(\\sqrt{y})\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:35:15.240Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_transformations_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with PDF f_X(x). Find the PDF of g(X) = 3X + 2 using the Jacobian method.</p>",
+    "hints": [
+      "Start by finding the CDF of g(X), then differentiate to get the PDF.",
+      "Use the chain rule for the derivative.",
+      "Don't forget to adjust the bounds of integration!"
+    ],
+    "solutionHtml": "<p>To find the PDF, we'll use the Jacobian method:</p><ul><li>Find the CDF: F_g(x) = P(g(X) &lt; x) = P(3X + 2 &lt; x)</li><li>Differentiate to get the PDF: f_g(x) = d/dx(F_g(x))</li><li>Use the chain rule for the derivative:</li></ul>\\[f_g(x) = \\frac{d}{dx}\\left[F_X\\left(\\frac{x-2}{3}\\right)\\right] = \\frac{1}{3} f_X\\left(\\frac{x-2}{3}\\right)\\]\\[f_g(x) = \\frac{1}{3} f_X\\left(\\frac{x-2}{3}\\right)\\]</p>\",",
+    "answerShort": "The PDF of g(X) is f_g(x) = (1/3)f_X((x-2)/3)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:35:38.439Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_transformations_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "problem": "{",
+    "statementHtml": "Let X be a continuous random variable with PDF f(x). Find the PDF of g(X), where g is a monotonic function.",
+    "hints": [
+      "Start by applying the Jacobian method to find the derivative of g.",
+      "Use the chain rule to relate the PDFs of X and g(X).",
+      "Don't forget to normalize the resulting PDF."
+    ],
+    "solutionHtml": "\\[f_G(y) = \\frac{d}{dy}g^{-1}(y)f(g^{-1}(y))\\]. To see why this works, consider the inverse function theorem.\",",
+    "answerShort": "The PDF of g(X) is f_G(y)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:35:53.406Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_transformations_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "problem": "{",
+    "statementHtml": "<p>Given a continuous random variable X with PDF f_X(x), find the PDF of g(X) using the Jacobian method.</p>",
+    "hints": [
+      "Start by finding the inverse function g^(-1)(u).",
+      "Use the chain rule to compute the derivative of g.",
+      "Integrate the product of the derivative and the original PDF."
+    ],
+    "solutionHtml": "<p>To find the PDF of g(X), we need to apply the Jacobian method.</p><p>First, we find the inverse function g^(-1)(u):</p>\\[g^(-1}(u) = \\frac{1}{2} u + 3\\]<p>Then, we compute the derivative of g:</p>\\[\\frac{\\text{d}}{\\text{d}u} g(u) = \\frac{1}{2}\\]<p>Next, we integrate the product of the derivative and the original PDF:</p>\\[f_{g(X)}(u) = \\int_{-\\infty}^{\\infty} f_X\\left(g^(-1}(u)\\right) \\cdot \\left|\\frac{\\text{d}}{\\text{d}u} g(u)\\right| \\, \\text{d}u\\]<p>Finally, we simplify the integral:</p>\\[f_{g(X)}(u) = \\int_{-\\infty}^{\\infty} f_X\\left(\\frac{1}{2} u + 3\\right) \\cdot \\frac{1}{2} \\, \\text{d}u\\]\",",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:36:17.289Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_transformations_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": {
+      "latex": "\\[g(X) = \\frac{1}{2}x^2 + 3\\]",
+      "name": "Transformed PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a continuous random variable X with probability density function (PDF) f(x), find the PDF of g(X).</p>",
+      "hints": [
+        "Hint: Use the Jacobian method"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the Jacobian method. Here are the steps:</p><ul><li>Step 1: Define the transformation g(X) and its inverse.</li><li>Step 2: Compute the derivative of the inverse function.</li><li>Step 3: Use the chain rule to find the PDF of g(X).</li></ul>",
+      "answerShort": "The final answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a continuous random variable X with PDF f(x) = \\(2x + 1\\), and we want to find the PDF of g(X) = \\frac{1}{2}X^2 + 3.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the transformation g(X) and its inverse.",
+          "mathHtml": "\\[g(x) = \\frac{1}{2}x^2 + 3\\]",
+          "explanation": "We need to find the inverse function of g(x)."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the derivative of the inverse function.",
+          "mathHtml": "\\[\\frac{dg^{-1}(y)}{dy} = \\frac{1}{x}\\]",
+          "explanation": "The derivative will help us find the Jacobian."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use the chain rule to find the PDF of g(X).",
+          "mathHtml": "\\[f_Y(y) = f(g^{-1}(y)) \\left| \\frac{dg^{-1}(y)}{dy} \\right|\\]",
+          "explanation": "Now we can plug in the values and simplify."
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "Transforming continuous random variables helps us work with more complex distributions, which is essential in many machine learning and AI applications.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:36:52.321Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_transformations_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications.</p>",
+    "formula": {
+      "latex": "\\[g(X) = \\int_{-\\infty}^{\\infty} f(x) dx\\]",
+      "name": "PDF Transformation"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the PDF of Y = X^2, where X follows a standard normal distribution.</p>",
+      "hints": [
+        "Hint: Use Jacobian method"
+      ],
+      "solutionHtml": "<p>We'll use the Jacobian method to find the PDF of Y. First, we need to find the CDF:</p><ul><li>F_Y(y) = P(Y &lt; y) = P(X^2 &lt; y)</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the PDF of Z = e^X, where X follows an exponential distribution with rate parameter λ.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the CDF of Z",
+          "mathHtml": "\\[F_Z(z) = P(Z &lt; z) = P(e^X &lt; z)\\]",
+          "explanation": "We're finding the probability that e^X is less than z."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the PDF of Z using the CDF",
+          "mathHtml": "\\[f_Z(z) = F'_Z(z) = \\frac{d}{dz} P(Z &lt; z)\\]",
+          "explanation": "Now we'll find the derivative of the CDF to get the PDF."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[f_Z(z) = \\lambda e^{-(\\ln z)^2/2}\\]",
+          "explanation": "We can simplify the expression by using the properties of exponential and logarithmic functions."
+        }
+      ],
+      "finalAnswer": "The PDF of Z is λe^(-(lnz)^2/2)"
+    },
+    "intuition": "Transforming continuous random variables allows us to model real-world phenomena in a more flexible way.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:37:23.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_transformations_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, we often encounter continuous random variables that need to be transformed into new variables with desired properties.</p>",
+    "formula": {
+      "latex": "\\[g(X) = \\int_{-\\infty}^{\\infty} f(x) g'(x) dx\\]",
+      "name": "Transformation of Continuous Random Variables"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a continuous random variable X with PDF f(x), find the PDF of Y = \\sqrt{X}.</p>",
+      "hints": [
+        "Hint: Use the Jacobian method"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the Jacobian method. First, we need to find the transformation rule:</p><ul><li>We're transforming X into Y using the function g(x) = \\sqrt{x}</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the PDF of Z = e^X when X is a standard normal random variable.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the transformation rule",
+          "mathHtml": "\\[g(x) = e^x\\]",
+          "explanation": "We're transforming X into Z using the function g(x) = e^x."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the derivative of the transformation rule",
+          "mathHtml": "\\[g'(x) = e^x\\]",
+          "explanation": "The derivative is used to find the Jacobian determinant."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the PDF of Z using the Jacobian method",
+          "mathHtml": "\\[f_Z(z) = \\int_{-\\infty}^{\\infty} f(x) |g'(x)| dx\\]",
+          "explanation": "We're integrating the original PDF with respect to x, and multiplying by the absolute value of the derivative."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Evaluate the integral",
+          "mathHtml": "\\[f_Z(z) = \\frac{1}{z}\\sqrt(2/\\pi) e^{-\\ln^2 z} \\int_{-\\infty}^{\\infty} \\frac{1}{\\sqrt{2\\pi}} e^{-(x-\\ln z)^2/2} dx\\]",
+          "explanation": "We can evaluate the integral using standard normal distribution properties."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Simplify the result",
+          "mathHtml": "\\[f_Z(z) = \\frac{1}{z}\\sqrt(2/\\pi) e^{-\\ln^2 z} \\int_{-\\infty}^{\\infty} \\frac{1}{\\sqrt{2\\pi}} e^{-(x-\\ln z)^2/2} dx = \\frac{1}{z}\\sqrt(2/\\pi) e^{-\\ln^2 z} \\int_{-\\infty}^{\\infty} \\frac{1}{\\sqrt{2\\pi}} e^{-(x-\\ln z)^2/2} dx\\]",
+          "explanation": "The final result is the PDF of Z = e^X."
+        }
+      ],
+      "finalAnswer": "\\[f_Z(z) = \\frac{1}{z}\\sqrt(2/\\pi) e^{-\\ln^2 z}"
+    },
+    "intuition": "<p>The Jacobian method helps us transform continuous random variables by finding the derivative of the transformation rule and using it to find the new PDF.</p>",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to include the absolute value of the derivative"
+    ],
+    "realWorldApplications": [
+      "Transforming data for machine learning models"
+    ],
+    "tags": [
+      "continuous random variables",
+      "transformation",
+      "Jacobian method"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:38:13.473Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_transformations_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "transformations",
+    "title": "Transforming Continuous Random Variables",
+    "contentHtml": "<p>In probability theory, transformations of continuous random variables are crucial in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\(g(X) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\)\",",
+    "name": "PDF of g(X)\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a continuous random variable X with PDF \\(f_X(x)\\), find the PDF of Y = aX + b, where a and b are constants.</p>\",",
+    "hints": [
+      "Hint: Use the Jacobian method"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use the Jacobian method. First, we need to find the CDF of Y:</p>\\n<p>\\(F_Y(y) = P(Y \\leq y)\\)</p>\\n<p>Then, we can find the PDF by differentiating the CDF:</p>\\n<p>\\(f_Y(y) = F_Y'(y)\\)</p>\",",
+    "answerShort": "The final answer is the transformed PDF\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose X follows a standard normal distribution with mean 0 and variance 1. Find the PDF of Y = 2X + 3.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the CDF of Y\", \"mathHtml\": \"\\(F_Y(y) = P(Y \\leq y)\\)\", \"explanation\": \"We need to find the probability that Y is less than or equal to y.\"}, {\"stepNumber\": 2, \"description\": \"Use the Jacobian method\", \"mathHtml\": \"\\(J(x) = |a|\\)\", \"explanation\": \"The Jacobian determinant gives us the scaling factor for the transformation.\"}, {\"stepNumber\": 3, \"description\": \"Find the PDF by differentiating the CDF\", \"mathHtml\": \"\\(f_Y(y) = F_Y'(y)\\)\", \"explanation\": \"Now we can find the PDF of Y by differentiating the CDF with respect to y.\"}, {\"stepNumber\": 4, \"description\": \"Plug in the values and simplify\", \"mathHtml\": \"\\(f_Y(y) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(y-6)^2}{8}}\\)\", \"explanation\": \"We can plug in the values of a and b to get the final PDF.\"} ],",
+    "finalAnswer": "The transformed PDF is \\(f_Y(y) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(y-6)^2}{8}}\\)\" },",
+    "intuition": "Transforming continuous random variables helps us work with new distributions that are more suitable for our problem or application.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:38:52.383Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

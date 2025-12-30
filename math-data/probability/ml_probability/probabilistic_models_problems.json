@@ -1,0 +1,106 @@
+[
+  {
+    "id": "prob_prb_probabilistic_models_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "probabilistic_models",
+    "problem": {
+      "statementHtml": "<p>Consider a probabilistic generative model that uses latent variables to represent complex distributions. Given a dataset X and a prior distribution P(z), use the Expectation-Maximization (EM) algorithm to learn the parameters of the model.</p>",
+      "hints": [
+        "Start by defining the complete data likelihood function.",
+        "Use the EM algorithm to iteratively update the posterior distribution over the latent variables.",
+        "Converge on a stable solution by monitoring the log-likelihood and stopping when it plateaus."
+      ],
+      "solutionHtml": "<p>To solve this problem, we can follow these steps:</p><ul><li>Step 1: Define the complete data likelihood function as P(X, z | θ) = ∫P(X | z, θ)p(z)dz.</li><li>Step 2: Use the EM algorithm to iteratively update the posterior distribution over the latent variables. This involves two main steps:</li><ul><li>E-step: Compute the expected value of the log-likelihood given the current parameters and data.</li><li>M-step: Update the model parameters to maximize the expected log-likelihood.</li></ul><li>Step 3: Converge on a stable solution by monitoring the log-likelihood and stopping when it plateaus.</li></ul>",
+      "answerShort": "The learned parameters of the probabilistic generative model."
+    },
+    "commonMistakes": [
+      "Failing to properly define the complete data likelihood function.",
+      "Not converging on a stable solution due to poor initialization or premature stopping."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:37:46.249Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_probabilistic_models_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "probabilistic_models",
+    "problem": "{",
+    "statementHtml": "<p>Given a probabilistic generative model with latent variables, derive the expectation-maximization (EM) algorithm.</p>",
+    "hints": [
+      "Start by considering the complete data likelihood.",
+      "Recall that the EM algorithm alternates between E-step and M-step.",
+      "In this case, the Q-function is the expected log-likelihood of the observed data."
+    ],
+    "solutionHtml": "<p>To derive the EM algorithm, we'll first consider the complete data likelihood:</p>\\n\\[P(C|X) = \\int P(C|Z)P(Z|X)dZ\\]\\n<p>Next, we'll alternate between E-step and M-step.</p>\\n<p>E-step: Compute the expected value of the log-likelihood using the current estimate of the latent variables:</p>\\n\\[Q(\\theta | X) = \\int P(C|Z)P(Z|X)dZ\\]\\n<p>M-step: Update the model parameters to maximize the Q-function:</p>\\n\\[E[Q(\\theta | X)] = E[\\log P(C|Z) + \\log P(Z|X)]\\]\\n<p>Repeat until convergence.</p>\",",
+    "answerShort": "EM algorithm\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:38:06.754Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_probabilistic_models_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "probabilistic_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a probabilistic generative model that uses a latent variable to represent an underlying distribution.</p>",
+    "hints": [
+      "Think about how you would use the EM algorithm to learn the parameters of this model.",
+      "Recall that VAEs are a type of probabilistic generative model.",
+      "Don't forget to consider the reparameterization trick when working with VAEs."
+    ],
+    "solutionHtml": "<p>To solve this problem, we need to derive the likelihood function for our latent variable model. Let's assume we have a dataset <i>X</i> and a probabilistic generative model that uses a latent variable <i>Z</i>.</p><p>We can write the likelihood function as:</p>\\[\\mathcal{L}(\\theta) = \\prod_{n=1}^N p(x_n | z_n, \\theta)\\]where <i>N</i> is the number of data points in our dataset. To make this problem more tractable, let's assume that we have a probabilistic generative model that uses a Gaussian mixture distribution for the latent variable.</p><p>We can write the likelihood function as:</p>\\[\\mathcal{L}(\\theta) = \\prod_{n=1}^N \\sum_{k=1}^K p(x_n | z_n=k, \\mu_k, \\sigma_k)\\]where <i>K</i> is the number of components in our Gaussian mixture model. To learn the parameters of this model, we can use the EM algorithm.</p>\",",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:38:30.652Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_probabilistic_models_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "probabilistic_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a probabilistic generative model that uses a latent variable <i>Z</i>. Given an observed variable <i>X</i>, derive the expected value of the log-likelihood using the evidence lower bound (ELBO).</p>",
+    "hints": [
+      "Start by writing down the ELBO in terms of the likelihood and prior.",
+      "Use the fact that the expected value of a function is equal to the integral of the function times its probability density.",
+      "Simplify the expression as much as possible."
+    ],
+    "solutionHtml": "<p>To derive the expected value of the log-likelihood, we start by writing down the ELBO:</p>\\n\\[ \\mathcal{L} = \\mathbb{E}_{q(z|x)}[\\log p(x|z)] + \\mathbb{E}_{q(z|x)}[\\log p(z)] - \\log p(x) \\]\\n<p>Next, we use the fact that the expected value of a function is equal to the integral of the function times its probability density:</p>\\n\\[ \\mathcal{L} = \\int q(z|x) \\left[ \\log p(x|z) + \\log p(z) - \\log p(x) \\right] dz \\]\\n<p>We can simplify this expression by combining terms:</p>\\n\\[ \\mathcal{L} = \\int q(z|x) \\log \\frac{p(x|z)p(z)}{p(x)} dz \\]\\n<p>This is the expected value of the log-likelihood using the ELBO.</p>\",",
+    "answerShort": "The expected value of the log-likelihood is equal to the ELBO.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:38:56.101Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

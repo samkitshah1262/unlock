@@ -1,0 +1,233 @@
+[
+  {
+    "id": "la_wex_kernel_range_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "kernel_range",
+    "title": "Kernel and Range of Linear Transformations",
+    "contentHtml": "<p>Linear transformations are a fundamental concept in linear algebra.</p>",
+    "formula": {
+      "latex": "\\[T:\\mathbb{R}^n \\to \\mathbb{R}^m\\]",
+      "name": ""
+    },
+    "problem": {
+      "statementHtml": "<p>Find the kernel and range of the linear transformation T: \\mathbb{R}^2 \\to \\mathbb{R}^3 defined by</p><ul><li>T([x, y]) = [x, y, x + y]</li></ul>",
+      "hints": [
+        "Hint 1",
+        "Hint 2"
+      ],
+      "solutionHtml": "<p>To find the kernel, we need to solve T(x) = [0, 0, 0].</p><ol><li>Let T([x, y]) = [0, 0, 0]. Then x + y = 0.</li><li>This is a linear equation in two variables. The solution set is the line y = -x.</li><li>The kernel is spanned by this line.</li></ol>",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the kernel and range of the linear transformation T: \\mathbb{R}^2 \\to \\mathbb{R}^3 defined by</p><ul><li>T([x, y]) = [x, y, x + y]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the kernel",
+          "mathHtml": "\\[T(x) = [0, 0, 0]\\]",
+          "explanation": "The kernel is the set of all vectors that are mapped to zero."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Solve T(x) = [0, 0, 0]",
+          "mathHtml": "\\[x + y = 0\\]",
+          "explanation": "This gives us a linear equation in two variables."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the solution set",
+          "mathHtml": "\\[y = -x\\]",
+          "explanation": "The solution set is the line y = -x."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the range",
+          "mathHtml": "",
+          "explanation": "To find the range, we need to find all possible outputs of T."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "The kernel and range of a linear transformation provide important insights into its behavior.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:02:26.947Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_kernel_range_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "kernel_range",
+    "title": "Kernel and Range of Linear Transformations",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the kernel and range of a linear transformation.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the kernel and range of the linear transformation T: ℝ² → ℝ³ given by <code>T(x, y) = (x + y, x - y, 2y)</code>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the null space of T.\", \"mathHtml\": \"\\[T(\\begin{bmatrix} x \\\\ y \\end{bmatrix}) = \\begin{bmatrix} x + y \\\\ x - y \\\\ 2y \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\end{bmatrix}\\]\", \"explanation\": \"We set the components of T(x, y) equal to zero and solve for x and y.\"}, {\"stepNumber\": 2, \"description\": \"Find the general solution to the null space.\", \"mathHtml\": \"\\[x + y = 0 \\quad\\Rightarrow\\quad x = -y\\]\", \"explanation\": \"We can see that any vector of the form <code>(-t, t)</code> is in the null space.\"}, {\"stepNumber\": 3, \"description\": \"Find the range of T.\", \"mathHtml\": \"\\[T(\\begin{bmatrix} x \\\\ y \\end{bmatrix}) = (x + y, x - y, 2y) = (a, b, c)\\]\", \"explanation\": \"We can see that any vector of the form <code>(a, b, c)</code> is in the range.\"}, {\"stepNumber\": 4, \"description\": \"Determine if T is injective or surjective.\", \"mathHtml\": \"\", \"explanation\": \"Since the kernel is non-trivial, T is not injective. However, since the range spans ℝ³, T is surjective.\"} ],",
+    "finalAnswer": "The kernel of T is the set of vectors of the form <code>(-t, t)</code>, and the range of T is all vectors in ℝ³.\" },",
+    "intuition": "Understanding the kernel and range of a linear transformation is crucial for many applications in machine learning, such as dimensionality reduction and feature extraction.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:02:56.760Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_kernel_range_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "kernel_range",
+    "title": "Kernel and Range of Linear Transformations",
+    "contentHtml": "<p>In linear algebra, we often encounter linear transformations between vector spaces.</p><p>Given a transformation T: V → W, our goal is to understand its kernel (null space) and range (image).</p>",
+    "formula": "{",
+    "latex": "\\(T(\\mathbf{v}) = \\mathbf{A} \\mathbf{v}\\)\",",
+    "name": "Linear Transformation\" },",
+    "problem": "{",
+    "statementHtml": "<p>Consider the linear transformation T: ℝ² → ℝ³ defined by</p><p>\\[\\begin{bmatrix}T_1\\\\T_2\\\\T_3\\end{bmatrix} = \\begin{bmatrix}1 & 0 \\\\ 0 & 1 \\\\ 1 & 1\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}\\]. Find the kernel and range of T.</p>\",",
+    "hints": [
+      "Hint: Use the transformation matrix to find the null space"
+    ],
+    "solutionHtml": "<p>Step 1: Compute the null space</p><p>\\[\\mathbf{x} = \\begin{bmatrix}x \\\\ y\\end{bmatrix} \\in \\ker T \\quad\\Leftrightarrow\\quad \\begin{bmatrix}1 & 0 \\\\ 0 & 1 \\\\ 1 & 1\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix} = \\begin{bmatrix}0 \\\\ 0 \\\\ 0\\end{bmatrix}\\]</p><p>Step 2: Find the null space</p><p>\\[\\mathbf{x} = \\begin{bmatrix}x \\\\ y\\end{bmatrix} \\in \\ker T \\quad\\Leftrightarrow\\quad x + y = 0\\]</p><p>Step 3: Compute the range</p><p>\\[T(\\mathbf{v}) = \\begin{bmatrix}1 & 0 \\\\ 0 & 1 \\\\ 1 & 1\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix} = \\begin{bmatrix}x + y \\\\ x + y \\\\ (x+y) + y\\end{bmatrix} = \\begin{bmatrix}2(x+y) \\\\ 2(x+y) \\\\ 3(x+y)\\end{bmatrix}\\]</p><p>Step 4: Find the range</p><p>\\[T(\\mathbf{v}) = \\begin{bmatrix}2x \\\\ 2x \\\\ 3x\\end{bmatrix}, x \\in ℝ\\]</p>\",",
+    "answerShort": "The kernel is the set of vectors satisfying \\(x + y = 0\\), and the range is the set of vectors of the form \\(\\begin{bmatrix}2x \\\\ 2x \\\\ 3x\\end{bmatrix}\\)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the kernel and range of the linear transformation T: ℝ² → ℝ³ defined by</p><p>\\[\\begin{bmatrix}T_1\\\\T_2\\\\T_3\\end{bmatrix} = \\begin{bmatrix}1 & 0 \\\\ 0 & 1 \\\\ 1 & 1\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}\\].</p>\",",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Find the range",
+    "mathHtml": "\\[T(\\mathbf{v}) = \\begin{bmatrix}2x \\\\ 2x \\\\ 3x\\end{bmatrix}, x \\in ℝ\\]\",",
+    "explanation": "We simplify the expression for the transformation and find that it is a linear combination of the standard basis vectors.\" } ],",
+    "finalAnswer": "The kernel is the set of vectors satisfying \\(x + y = 0\\), and the range is the set of vectors of the form \\(\\begin{bmatrix}2x \\\\ 2x \\\\ 3x\\end{bmatrix}\\)\" },",
+    "intuition": "Understanding the kernel and range of a linear transformation is crucial in many applications, including machine learning where it helps to identify the underlying structure of data.",
+    "visualDescription": "A diagram showing the null space as a line and the range as a plane or a subspace would be helpful for visualizing these concepts.",
+    "commonMistakes": [
+      "Mistaking the kernel with the range",
+      "Not recognizing that the transformation is linear"
+    ],
+    "realWorldApplications": [
+      "Identifying the underlying structure of data in machine learning"
+    ],
+    "tags": [
+      "linear algebra",
+      "machine learning",
+      "kernel",
+      "range",
+      "transformations"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:04:15.091Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_kernel_range_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "kernel_range",
+    "workedExample": "{",
+    "problemHtml": "Find the kernel and range of the linear transformation T: ℝ² → ℝ³ defined by T(x, y) = (x + y, x - y, 2y).",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Determine the matrix representation of T.\", \"mathHtml\": \"\\[T = \\begin{bmatrix}1 & 1 \\\\ 1 & -1 \\\\ 0 & 2\\end{bmatrix}\\]\", \"explanation\": \"We write down the transformation as a matrix by evaluating each component.\"}, {\"stepNumber\": 2, \"description\": \"Find the null space of T.\", \"mathHtml\": \"\\[T \\begin{bmatrix}x \\\\ y\\end{bmatrix} = \\begin{bmatrix}0 \\\\ 0 \\\\ 0\\end{bmatrix}\\]\", \"explanation\": \"The null space consists of vectors that, when transformed by T, result in the zero vector.\"}, {\"stepNumber\": 3, \"description\": \"Find the column space (image) of T.\", \"mathHtml\": \"\\[T \\begin{bmatrix}x \\\\ y\\end{bmatrix} = c \\begin{bmatrix}1 \\\\ -1 \\\\ 2\\end{bmatrix}\\]\", \"explanation\": \"The image is spanned by the columns of the matrix representation.\"}, {\"stepNumber\": 4, \"description\": \"Find the preimage of a vector.\", \"mathHtml\": \"\\[T^{-1}(c \\begin{bmatrix}1 \\\\ -1 \\\\ 2\\end{bmatrix}) = \\begin{bmatrix}x \\\\ y\\end{bmatrix}\\]\", \"explanation\": \"The preimage is the set of input vectors that, when transformed by T, result in a given output vector.\"}, {\"stepNumber\": 5, \"description\": \"Determine if T is injective or surjective.\", \"mathHtml\": \"\", \"explanation\": \"We can check the rank-nullity theorem to determine the injectivity and surjectivity of T.\"} ],",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:04:43.365Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_kernel_range_015",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "kernel_range",
+    "title": "Kernel and Range: Understanding Linear Transformations",
+    "contentHtml": "<p>In linear algebra, a linear transformation is a function that preserves vector addition and scalar multiplication.</p>",
+    "formula": {
+      "latex": "\\[T\\mathbf{x} = A\\mathbf{x}\\]",
+      "name": "Linear Transformation"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the kernel and range of the linear transformation T: \\mathbb{R}^2 → \\mathbb{R}^3 defined by:</p><ul><li>A = \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}</li></ul>",
+      "hints": [
+        "Hint: Find the null space and column space of A"
+      ],
+      "solutionHtml": "<p>Step 1: Compute the determinant of A.</p><ul><li>\\[\\det(A) = (1)(1) - (0)(0) = 1\\]</li></ul><p>Why? We compute the determinant to find the volume scaling factor for the transformation.</p>",
+      "answerShort": "The kernel is span{<math>(1, 0)</math>} and the range is \\mathbb{R}^3"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let T: \\mathbb{R}^2 → \\mathbb{R}^3 be defined by:</p><ul><li>A = \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the determinant of A",
+          "mathHtml": "\\[\\det(A) = (1)(1) - (0)(0) = 1\\]",
+          "explanation": "We compute the determinant to find the volume scaling factor for the transformation."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the null space of A",
+          "mathHtml": "\\[\\text{Null space} = \\{(x, y) | Ax = (0, 0)\\}\\]",
+          "explanation": "The null space contains all vectors that are mapped to zero."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the column space of A",
+          "mathHtml": "\\[\\text{Column space} = \\{(x, y) | Ax = (x, y)\\}\\]",
+          "explanation": "The column space contains all linear combinations of the columns of A."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine if T is injective or surjective",
+          "mathHtml": "\\[T\\text{ is not injective since } (1, 0) \\mapsto (1, 0), but it is surjective since the range is \\mathbb{R}^3\\]",
+          "explanation": "We check if T is one-to-one and onto."
+        }
+      ],
+      "finalAnswer": "The kernel is span{<math>(1, 0)</math>} and the range is \\mathbb{R}^3"
+    },
+    "intuition": "Understanding the kernel and range of a linear transformation provides insight into its behavior and properties.",
+    "visualDescription": "A diagram showing the null space and column space of A",
+    "commonMistakes": [
+      "Failing to compute the determinant",
+      "Not recognizing that T is not injective"
+    ],
+    "realWorldApplications": [
+      "Dimensionality reduction in machine learning"
+    ],
+    "tags": [
+      "linear algebra",
+      "transformations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:05:26.301Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

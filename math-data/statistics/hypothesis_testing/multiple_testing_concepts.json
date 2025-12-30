@@ -1,0 +1,96 @@
+[
+  {
+    "id": "stat_con_multiple_testing_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>In many fields, including machine learning and artificial intelligence, we often perform multiple tests or experiments to validate hypotheses or identify patterns. However, as we increase the number of tests, the likelihood of obtaining false positives (Type I errors) also grows.</p><p>This is known as the Multiple Testing Problem (MTP), where we need to balance the desire for accurate results with the risk of incorrect conclusions.</p>",
+    "formula": {
+      "latex": "\\(FWER = P(Type~I~error)\\)",
+      "name": "Family-wise error rate",
+      "variants": []
+    },
+    "intuition": "The MTP is a fundamental challenge in statistical inference, as it highlights the tension between the number of tests and the desired level of significance.",
+    "realWorldApplications": [
+      "In machine learning, the MTP arises when we perform multiple feature selection steps or evaluate multiple models on the same dataset."
+    ],
+    "commonMistakes": [
+      "Failing to account for the MTP can lead to inflated false positive rates and incorrect conclusions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:05:55.398Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multiple_testing_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>When performing multiple hypothesis tests, we face a crucial challenge: controlling the family-wise error rate (FWER). The FWER is the probability of rejecting at least one true null hypothesis.</p><p>Intuitively, as we perform more tests, the likelihood of making at least one false positive increases. This is where Bonferroni, False Discovery Rate (FDR), and Benjamini-Hochberg come in – methods to adjust for multiple testing.</p>",
+    "formula": {
+      "latex": "\\[\\text{FWER} = P(\\text{at least one false positive}) \\]",
+      "name": "Family-wise error rate"
+    },
+    "intuition": "The key insight is that as the number of tests increases, the FWER grows exponentially. We need to adjust our significance level or use more robust methods to maintain a reasonable FWER.",
+    "realWorldApplications": [
+      "In machine learning, multiple testing arises when we perform feature selection or hyperparameter tuning."
+    ],
+    "commonMistakes": [
+      "Failing to account for multiple testing can lead to inflated false positive rates."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:06:10.544Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_multiple_testing_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "hypothesis_testing",
+    "topic": "multiple_testing",
+    "title": "Multiple Testing Problem",
+    "contentHtml": "<p>When performing multiple hypothesis tests, it's crucial to consider the family-wise error rate (FWER) - the probability of rejecting at least one true null hypothesis.</p><p>The FWER is closely related to three key concepts: Bonferroni correction, False Discovery Rate (FDR), and Benjamini-Hochberg procedure.</p>",
+    "formula": {
+      "latex": "\\[\\text{FWER} = P(\\text{at least one false positive}) \\]",
+      "name": "Family-wise error rate"
+    },
+    "intuition": "The key insight is that as you perform more tests, the probability of at least one false positive increases. This is because each test has its own chance of error.",
+    "visualDescription": "A diagram showing multiple tests with increasing FWER",
+    "commonMistakes": [
+      "Not accounting for multiple testing",
+      "Using individual p-values without correction"
+    ],
+    "realWorldApplications": [
+      "Controlling the number of false positives in medical trials",
+      "Detecting anomalies in financial data"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:06:25.048Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

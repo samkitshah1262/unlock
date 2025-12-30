@@ -1,0 +1,133 @@
+[
+  {
+    "id": "prob_prb_multivariate_normal_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be jointly normally distributed with mean vector μ = (μ<sub>X</sub>, μ<sub>Y</sub>) and covariance matrix Σ. Find the marginal distribution of X.</p>",
+    "hints": [
+      "<p>The marginal distribution of X is a univariate normal distribution.</p>",
+      "<p>Use the fact that Σ<sub>XX</sub> = V(X) to find the variance of X.</p>",
+      "<p>Apply the formula for the probability density function (PDF) of a univariate normal distribution.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of X, we first need to find its mean and variance. The mean is simply μ<sub>X</sub>.</p><p>The variance can be found using Σ<sub>XX</sub>, which is the (1, 1)th element of Σ.</p><p>The PDF of a univariate normal distribution with mean μ and variance σ<sup>2</sup> is given by:</p>\\[\\frac{1}{\\sqrt{2πσ^2}}e^{(-(\\mathbf{x}-μ)^2/(2σ^2))}\\]<p>Substituting our values, we get the marginal distribution of X:</p>\",",
+    "answerShort": "The marginal distribution of X is N(μ<sub>X</sub>, Σ<sub>XX</sub>).\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:18:47.115Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "Let $X = (X_1, X_2) \\sim N(\\mu, \\Sigma)$ be a bivariate normal random variable. Find the marginal distribution of $X_1$.\",",
+    "hints": "[ \"Recall that the marginal distribution of $X_1$ is given by integrating out $X_2$. Think about how to apply the multivariate normal density function in this case.\", \"You may need to use the fact that $\\int_{-\\infty}^{\\infty} \\phi(x; \\mu, \\sigma) dx = 1$, where $\\phi$ is the standard normal density.\", \"Consider using the formula for the bivariate normal density and simplifying it to get the marginal distribution of $X_1$. You may need to use properties of the multivariate normal distribution.\" ],",
+    "solutionHtml": "<p>To find the marginal distribution of $X_1$, we integrate out $X_2$ from the joint density:</p>\\[f(x_1) = \\int_{-\\infty}^{\\infty} f(x_1, x_2) dx_2.\\]Using the bivariate normal density function, we have:</p>\\[f(x_1) = \\frac{1}{2\\pi \\sigma_x \\sigma_y \\sqrt{1 - \\rho^2}} \\exp\\left(-\\frac{(x_1 - \\mu_1)^2}{2\\sigma_x^2} - \\frac{(x_2 - \\mu_2)^2}{2\\sigma_y^2} + \\frac{\\rho (x_1 - \\mu_1)(x_2 - \\mu_2)}{\\sigma_x \\sigma_y}\\right).\\]Integrating out $x_2$, we get:</p>\\[f(x_1) = \\frac{1}{\\sqrt{2\\pi} \\sigma_x} \\exp\\left(-\\frac{(x_1 - \\mu_1)^2}{2\\sigma_x^2}\\right).\\]This is the standard normal density, so $X_1$ has a marginal distribution that is also standard normal.</p>\",",
+    "answerShort": "Standard Normal\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:18.415Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_012",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": {
+      "statementHtml": "<p>Consider a multivariate normal distribution <i>N</i>(μ, Σ) with mean vector μ and covariance matrix Σ.</p>",
+      "hints": [
+        "Think about how to compute the marginal distributions.",
+        "Recall that Σ is symmetric.",
+        "Use the fact that the conditional distribution given x<sub>i</sub> is also multivariate normal."
+      ],
+      "solutionHtml": "<p>To find the marginal distribution of the <i>i</i>-th variable, we can integrate out all other variables.</p>\n<p><i>N</i>(μ, Σ) = ∫... d<i>j</i>...</i></p>",
+      "answerShort": "The marginal distribution is also multivariate normal with mean μ<sub>i</sub> and covariance Σ<sub>ii</sub>"
+    },
+    "commonMistakes": [
+      "Forgetting that the conditional distribution given x<sub>i</sub> is still multivariate normal."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:34.555Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_013",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "title": "Multivariate Normal Distribution",
+    "problem": "{",
+    "statementHtml": "<p>Let X = (X<sub>1</sub>, ..., X<sub>n</sub>) be a random vector following a multivariate normal distribution with mean vector μ and covariance matrix Σ. Find the joint density function f(x) of X.</p>",
+    "hints": [
+      "<p>The marginal distributions are univariate normals.</p>",
+      "<p>Conditioning on one variable gives another multivariate normal distribution.</p>",
+      "<p>Use the formula for the determinant of a covariance matrix to simplify your answer.</p>"
+    ],
+    "solutionHtml": "<p>To find the joint density function, we can use the following formula:</p>\\n\\[f(x) = \\frac{1}{\\sqrt{(2π)^n |\\Sigma|}} e^{\\left(-\\frac{1}{2} (x-μ)^T Σ^{-1} (x-μ)\\right)}.\\]\\n<p>Here, |Σ| is the determinant of the covariance matrix.</p>\",",
+    "answerShort": "f(x) = ... \" },",
+    "commonMistakes": [
+      "Forgetting to include the normalizing constant",
+      "Not simplifying the expression correctly"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:19:53.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multivariate_normal_014",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "multivariate_normal",
+    "problem": "{",
+    "statementHtml": "<p>Let X = (X1, ..., XM) and Y = (Y1, ..., YN) be jointly normally distributed with mean vectors μX and μY, respectively, and covariance matrices ΣXX, ΣYY, and ΣXY. Find the marginal distribution of X.</p>",
+    "hints": [
+      "<p>Start by recalling the definition of a multivariate normal distribution.</p>",
+      "<p>Use the fact that the marginal distribution of X is also normally distributed to simplify your answer.</p>",
+      "<p>Don't forget to include the correct covariance matrix for the marginal distribution.</p>"
+    ],
+    "solutionHtml": "<p>To find the marginal distribution of X, we can use the formula:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\\n\\ <p>Substituting the given values, we get:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\\n\\ <p>The final answer is:</p>\\n\\ \\[P(X = x) = \\frac{1}{\\sqrt{(2π)^M |\\SigmaXX|}} e^{\\left(-\\frac{1}{2} (x - μX)^T ΣXX^{-1} (x - μX)\\right)}.\\]\",",
+    "answerShort": "The marginal distribution of X is a multivariate normal distribution with mean vector μX and covariance matrix ΣXX.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:20:21.201Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

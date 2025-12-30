@@ -1,0 +1,77 @@
+[
+  {
+    "id": "la_prb_characteristic_polynomial_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "characteristic_polynomial",
+    "problem": "{",
+    "statementHtml": "<p>Finding the eigenvalues of a matrix A using the characteristic polynomial.</p>",
+    "hints": [
+      "<p>Start by considering the equation det(A - λI) = 0.</p>",
+      "<p>Think about how you can use this equation to find λ.</p>",
+      "<p>Remember that λ is an eigenvalue if and only if A - λI has a zero eigenvector.</p>"
+    ],
+    "solutionHtml": "<p>To find the eigenvalues of A, we need to solve det(A - λI) = 0 for λ. We can do this by expanding the determinant:</p>\\n\\n\\[det(A - λI) = \\sum_{\\sigma} sgn(\\sigma) \\prod_{i} (a_{i,\\sigma(i)} - λ)\\]\\n\\n<p>This is a polynomial equation in λ, and we need to find its roots. In general, this will involve factoring the polynomial or using numerical methods.</p>\\n\\n<p>For example, let's say A = [[2, 1], [1, 1]]. Then:</p>\\n\\n\\[det(A - λI) = \\sum_{\\sigma} sgn(\\sigma) \\prod_{i} (a_{i,\\sigma(i)} - λ) = (\\lambda-3)(\\lambda-1)\\]\\n\\n<p>This has roots at λ = 1 and λ = 3, which are the eigenvalues of A.</p>\",",
+    "answerShort": "The eigenvalues are the roots of the characteristic polynomial.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:24:28.854Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_characteristic_polynomial_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "characteristic_polynomial",
+    "problem": "{",
+    "statementHtml": "Find all eigenvalues of a matrix A by solving det(A - λI) = 0.",
+    "hints": [
+      "Start by expanding the determinant using the fact that det(AB) = det(A)det(B).",
+      "Notice that each term in the expanded expression has the form (-λ)^k, where k is the number of times I appears in the product.",
+      "Use this observation to simplify the equation and identify the eigenvalues."
+    ],
+    "solutionHtml": "\\[ \\text{Let } A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}. \\] \\[ \\text{We want to solve: } \\det(A - \\lambda I) = 0. \\] \\[ \\text{Expanding the determinant, we get: } \\] \\[(a-\\lambda)(d-\\lambda) - bc = 0.\\] \\[ \\text{Simplifying this equation, we find that } \\] \\[\\lambda^2 - (a+d)\\lambda + ad - bc = 0.\\] \\[ \\text{Factoring the quadratic, we get: } \\] \\[(\\lambda - r_1)(\\lambda - r_2) = 0,\\] \\[ \\text{where } r_1, r_2 \\text{ are the eigenvalues.} \\] \\[ \\text{Solving for } \\lambda, \\text{ we find that } \\] \\[ \\lambda = r_1, r_2.\\] \\[ \\text{The algebraic multiplicity of each eigenvalue is 1.}\\]",
+    "answerShort": "Eigenvalues: λ1, λ2.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:24:52.649Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_characteristic_polynomial_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "characteristic_polynomial",
+    "problem": "{",
+    "statementHtml": "Find all eigenvalues of the matrix A = <latex>\\[ \\begin{bmatrix} 2 & 1 \\\\ 3 & 2 \\end{bmatrix} \\]</latex> by solving the characteristic polynomial det(A - λI) = 0.\",",
+    "hints": [
+      "Start by finding the characteristic polynomial, which is a cubic in λ.",
+      "Factor out λ from each term in the polynomial.",
+      "Use the fact that the determinant of a product of matrices is the product of their determinants to simplify the expression."
+    ],
+    "solutionHtml": "<p>To find all eigenvalues of A, we need to solve the characteristic polynomial det(A - λI) = 0.</p><p>First, we compute:</p><latex>\\[ \\det\\left(\\begin{bmatrix}2-\\lambda & 1 \\\\ 3 & 2-\\lambda\\end{bmatrix}\\right) = (2-\\lambda)^2-3 = \\lambda^2 - 4\\lambda + 7 = 0. \\]</latex><p>This is a quadratic equation in λ, which can be factored as:</p><latex>\\[ (\\lambda-1)(\\lambda-7) = 0. \\]</latex><p>Solving for λ gives us the eigenvalues λ = 1 and λ = 7.</p>\",",
+    "answerShort": "λ = 1, λ = 7\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:25:13.939Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

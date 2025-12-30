@@ -1,0 +1,119 @@
+[
+  {
+    "id": "prob_prb_markov_classification_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process with states {1, 2, ..., n}. Classify each state as transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for cycles in the transition matrix.",
+        "If the process is irreducible, it must be either transient or recurrent."
+      ],
+      "solutionHtml": "<p>To classify each state, we need to examine the transition matrix P.</p>\n<p>Let's start with a simple example:</p>\n<p><code>P = \\[\\begin{array}{cc} 0 & 1 \\\\ 1 & 0 \\end{array}\\]</code></p>\n<p>The states are {0, 1}. We can see that state 0 is transient because it only transitions to state 1.</p>\n<p>State 1 is recurrent because it eventually returns to itself. In fact, it's periodic with period 2.</p>",
+      "answerShort": "Transient (state 0), Recurrent/Periodic (state 1)"
+    },
+    "commonMistakes": [
+      "Forgetting that a state can be both transient and recurrent.",
+      "Assuming a state is irreducible just because it has no self-loops."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:20.547Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process X<sub>t</sub>. Determine whether it is transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the expected value of the number of visits to each state is finite.",
+        "If the process returns to a specific state with probability 1, it's likely periodic.",
+        "Recurrence implies that the process will return to some states infinitely often."
+      ],
+      "solutionHtml": "<p>To solve this problem, we need to analyze the behavior of X<sub>t</sub>. Let's start by considering the expected value of the number of visits to each state. If this value is finite, then the process is recurrent.</p>\n<p>Next, let's check if the process returns to a specific state with probability 1. If it does, then the process is periodic.</p>\n<p>If we've determined that the process is not periodic or recurrent, then it must be transient.</p>",
+      "answerShort": "Transient, Recurrent, Periodic, Irreducible"
+    },
+    "commonMistakes": [
+      "Failing to consider the expected value of the number of visits to each state.",
+      "Assuming that a process is periodic just because it returns to some states infinitely often."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:39.605Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "problem": {
+      "statementHtml": "<p>Consider a stochastic process <i>X</i> on a state space <i>S</i>. Determine whether it is transient, recurrent, periodic, or irreducible.</p>",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for a stationary distribution.",
+        "If the process is periodic, find its period."
+      ],
+      "solutionHtml": "<p>To classify the state space <i>S</i>, we need to examine the behavior of the stochastic process <i>X</i>.<br><br>Let's assume that <i>X</i> has a finite number of states. If this is not the case, we can use the fact that the process is irreducible and find its stationary distribution.</p>",
+      "answerShort": "Transient or recurrent"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:19:53.337Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_markov_classification_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "markov_classification",
+    "title": "State Classification in Stochastic Processes",
+    "problem": {
+      "statementHtml": "Consider a stochastic process <i>X</i> with transition matrix <i>P</i>. Determine whether it is transient, recurrent, periodic, or irreducible.",
+      "hints": [
+        "Check if the process has a finite number of states.",
+        "Look for cycles in the state space.",
+        "Use the fact that <i>P^n</i> converges to a limiting distribution."
+      ],
+      "solutionHtml": "<p>To determine the type of stochastic process, we can analyze the transition matrix <i>P</i>. First, we check if the process has a finite number of states. If it does, then the process is recurrent.</p><p>If the process has an infinite number of states, we look for cycles in the state space. If there are no cycles, then the process is transient. Otherwise, it is periodic.</p><p>Finally, if the process is irreducible, then it is either recurrent or transient.</p>",
+      "answerShort": "Transient, Recurrent, Periodic, Irreducible"
+    },
+    "commonMistakes": [
+      "Failing to distinguish between recurrent and transient processes.",
+      "Assuming that a periodic process has a finite number of states."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:20:12.018Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

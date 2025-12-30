@@ -1,0 +1,127 @@
+[
+  {
+    "id": "stat_wex_ci_variance_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "contentHtml": "<p>In this worked example, we'll learn how to construct a confidence interval (CI) for the variance of a population using the chi-squared distribution.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to estimate the variance of the height of adult males in a certain city. We have a random sample of n = 25 measurements with mean μ = 175.5 cm and sample variance s^2 = 10.23 cm^2.</p>",
+    "hints": [],
+    "solutionHtml": "<p>To construct a CI for σ^2, we'll use the chi-squared distribution. First, we need to calculate the sample variance:</p><p>s^2 = (Σ(x_i - μ)^2) / (n-1)</p>",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Construct a 95% CI for σ^2 using the chi-squared distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample variance\", \"mathHtml\": \"\\\\[s^2 = (Σ(x_i - μ)^2) / (n-1)\\]\", \"explanation\": \"We need to calculate the sample variance to use it in the chi-squared distribution.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the degrees of freedom\", \"mathHtml\": \"\\\\[\\\\nu = n-1\\]\", \"explanation\": \"The degrees of freedom for the chi-squared distribution is one less than the sample size.\" }, {\"stepNumber\": 3, \"description\": \"Find the critical value from the chi-squared distribution\", \"mathHtml\": \"\\\\[χ^2_{0.975} = \\\\chi^2(24)\\]\", \"explanation\": \"We'll use the chi-squared distribution to find the critical value for a 95% CI.\" }, {\"stepNumber\": 4, \"description\": \"Calculate the upper and lower bounds of the CI\", \"mathHtml\": \"\\\\[L = χ^2_{0.025} \\\\cdot s^2 / (n-1), U = χ^2_{0.975} \\\\cdot s^2 / (n-1)\\]\", \"explanation\": \"We'll use the critical value to calculate the upper and lower bounds of the CI.\" } ],",
+    "finalAnswer": "\" },",
+    "intuition": "<p>The chi-squared distribution is used to construct a CI for σ^2 because it's the distribution of the sum of squared standardized variables. This makes sense, since we're trying to estimate the population variance.</p>",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:17:47.690Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_variance_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "problem": {
+      "statementHtml": "Suppose we want to construct a 95% confidence interval (CI) for the population variance <i>σ</i><sup>2</sup> of a normally distributed random variable X.",
+      "hints": [
+        "Check if data is normally distributed",
+        "Use sample variance as an estimate"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "Let's say we have a dataset with n = 25 observations, and the sample variance is s<sup>2</sup> = 4.5.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[ \\bar{x} = \\frac{\\sum x_i}{n} \\]",
+          "explanation": "We need to calculate the sample mean to find the chi-squared statistic."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the chi-squared statistic",
+          "mathHtml": "\\[ χ^2 = \\frac{(n-1)s^2}{σ_0^2} \\]",
+          "explanation": "The chi-squared statistic is a function of the sample variance and the known population variance <i>σ</i><sup>2</sup>. We'll use this to find the CI."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the critical value",
+          "mathHtml": "\\[ χ^2_{0.975} \\approx 14.7 \\]",
+          "explanation": "We need to find the critical value from the chi-squared distribution with <i>n-1</i> degrees of freedom."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the CI",
+          "mathHtml": "\\[ (σ^2)_{L} = \\frac{(n-1)s^2}{χ^2}, \\\\ (σ^2)_{U} = \\frac{(n-1)s^2}{χ^2_{0.975}} \\]",
+          "explanation": "Now we can calculate the lower and upper bounds of the CI using the critical value and the sample variance."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The CI gives us a range of plausible values for the population variance <i>σ</i><sup>2</sup>. We can use this to make inferences about the population."
+        }
+      ],
+      "finalAnswer": "(σ^2)_{L} = 1.8, (σ^2)_{U} = 6.3"
+    },
+    "intuition": "The chi-squared interval provides a way to estimate the population variance while accounting for the uncertainty in our sample.",
+    "realWorldApplications": [
+      "In quality control, this method can be used to monitor and control processes."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:18:19.988Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_ci_variance_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "ci_variance",
+    "title": "CI for Variance: Chi-squared Interval",
+    "problem": "{",
+    "statementHtml": "Suppose we want to estimate the population variance of exam scores with a margin of error 2 points. We have a random sample of <i>n</i> = 36 scores with mean <i>&#x03BC;</i> = 75 and sample variance <i>s<sup>2</sup></i> = 25.",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample mean\", \"mathHtml\": \"\\\\[ \\bar{x} = \\\\frac{\\\\sum x_i}{n} = \\\\frac{2700}{36} = 75 \\\\]\", \"explanation\": \"We need to calculate the sample mean for the chi-squared interval.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the sample variance\", \"mathHtml\": \"\\\\[ s^2 = \\\\frac{\\\\sum (x_i - \\\\bar{x})^2}{n-1} = \\\\frac{3750}{35} = 25 \\\\]\", \"explanation\": \"We need to calculate the sample variance for the chi-squared interval.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the degrees of freedom\", \"mathHtml\": \"\\\\[ df = n - 1 = 36 - 1 = 35 \\\\]\", \"explanation\": \"The degrees of freedom is used to determine the critical value from the chi-squared distribution.\" }, {\"stepNumber\": 4, \"description\": \"Calculate the critical value\", \"mathHtml\": \"\\\\[ \\chi^2_{0.975} = 33.74 (from a chi-squared table) \\\\]\", \"explanation\": \"The critical value is used to determine the upper and lower bounds of the confidence interval.\" }, {\"stepNumber\": 5, \"description\": \"Calculate the CI\", \"mathHtml\": \"\\\\[ \\text{CI} = \\\\left(\\\\frac{(n-1)s^2}{\\chi^2_{0.975}}, \\\\frac{(n-1)s^2}{\\chi^2_{1-0.975}}\\\\right) = \\\\left(20, 30\\\\right) \\\\]\", \"explanation\": \"The CI is calculated using the critical value and the sample variance.\" } ],",
+    "finalAnswer": "\\\\[ (20, 30) \\\\]\" },",
+    "intuition": "The chi-squared interval provides a way to estimate the population variance with a margin of error. It's useful in many real-world applications, such as quality control or engineering.",
+    "realWorldApplications": [
+      "Quality control in manufacturing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:18:50.947Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

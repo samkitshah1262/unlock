@@ -1,0 +1,312 @@
+[
+  {
+    "id": "la_con_transpose_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>A matrix transpose is an operation that flips a matrix over its diagonal. This means that the rows of the original matrix become the columns of the transposed matrix, and vice versa.</p><p>For example, if we have the following 2x3 matrix:</p>\\(\\begin{bmatrix}1 & 2 & 3\\\\4 & 5 & 6\\end{bmatrix}\\)<p>The transpose of this matrix would be:</p>\\(\\begin{bmatrix}1 & 4\\\\2 & 5\\\\3 & 6\\end{bmatrix}\\)<p>This operation is useful in many areas, including linear algebra and machine learning.</p>\",",
+    "formula": "{",
+    "latex": "\\(A^T = \\begin{bmatrix}a_{11} & a_{12} & \\cdots & a_{1n}\\\\a_{21} & a_{22} & \\cdots & a_{2n}\\\\\\vdots & \\vdots & \\ddots & \\vdots\\\\a_{m1} & a_{m2} & \\cdots & a_{mn}\\end{bmatrix}\\)\",",
+    "name": "Matrix Transpose Formula\" },",
+    "intuition": "The matrix transpose operation helps to reveal the underlying structure of a matrix, making it easier to analyze and work with.",
+    "realWorldApplications": [
+      "In machine learning, the transpose operation is used in algorithms such as PCA (Principal Component Analysis) and SVD (Singular Value Decomposition)."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations",
+      "machine learning"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:13:52.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_transpose_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>A matrix transpose is an operation that flips a matrix over its diagonal. This means that the rows of the original matrix become the columns of the transposed matrix, and vice versa.</p><p>This concept is crucial in linear algebra as it helps us to manipulate matrices in various ways, such as solving systems of equations or finding eigenvalues.</p>",
+    "formula": {
+      "latex": "\\(A^T = \\begin{bmatrix} a_{11} & a_{12} & \\cdots & a_{1n} \\\\ a_{21} & a_{22} & \\cdots & a_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1} & a_{m2} & \\cdots & a_{mn} \\end{bmatrix}\\)",
+      "name": "Matrix Transpose"
+    },
+    "intuition": "Think of the matrix as a grid, and the transpose operation as flipping it over its diagonal. This helps to reveal symmetries in the original matrix.",
+    "commonMistakes": [
+      "Forgetting that the transpose operation flips both rows and columns"
+    ],
+    "realWorldApplications": [
+      "In machine learning, matrix transposes are used extensively for tasks like data preprocessing, model training, and feature engineering."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:14:11.488Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_transpose_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>The matrix transpose operation is a fundamental concept in linear algebra that has numerous applications in machine learning and artificial intelligence.</p><p>In essence, given an m x n matrix A, the transpose of A, denoted as A^T, is obtained by flipping the rows into columns and vice versa. This can be represented mathematically as:</p>\\(\\mathbf{A}^T = \\begin{bmatrix}a_{11}&\\cdots&a_{1n}\\\\ \\vdots&\\ddots&\\vdots\\\\ a_{m1}&\\cdots&a_{mn}\\end{bmatrix}\\)<p>This operation has several important properties. For instance, the transpose of a transpose is equal to the original matrix:</p>\\((\\mathbf{A}^T)^T = \\mathbf{A}\\),",
+    "formula": "{",
+    "latex": "\\( (\\mathbf{A}^T)^T = \\mathbf{A} \\)\",",
+    "name": "Transpose Property\" },",
+    "intuition": "The matrix transpose operation is a way to 'flip' the rows and columns of a matrix, which can be useful in various machine learning algorithms.",
+    "realWorldApplications": [
+      "In neural networks, the transpose of the weight matrix is used to compute the output of a layer."
+    ],
+    "commonMistakes": [
+      "Not understanding that the transpose operation flips both rows and columns"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:14:31.107Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_transpose_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>The matrix transpose operation is a fundamental concept in linear algebra.</p><p>Given an <i>m</i>&times;<i>n</i> matrix A, its transpose, denoted by A<sup>T</sup>, is obtained by swapping the rows and columns:</p>\\(\\mathbf{A}^{\\mathrm{T}} = \\begin{bmatrix}\\mathbf{a}_{1} & \\cdots & \\mathbf{a}_{n}\\end{bmatrix}^{\\mathrm{T}} = \\begin{bmatrix}\\mathbf{a}_{1}^{\\mathrm{T}} \\\\ \\vdots \\\\ \\mathbf{a}_{m}^{\\mathrm{T}}\\end{bmatrix}\\)<p>This operation preserves the matrix product, i.e., for any matrices A and B:</p>\\(\\mathbf{A}^{\\mathrm{T}} \\mathbf{B} = (\\mathbf{AB})^{\\mathrm{T}}\\),",
+    "formula": "{",
+    "latex": "\\[\\mathbf{A}^{\\mathrm{T}} = \\begin{bmatrix}\\mathbf{a}_{1} & \\cdots & \\mathbf{a}_{n}\\end{bmatrix}^{\\mathrm{T}} = \\begin{bmatrix}\\mathbf{a}_{1}^{\\mathrm{T}} \\\\ \\vdots \\\\ \\mathbf{a}_{m}^{\\mathrm{T}}\\end{bmatrix}\\]\",",
+    "name": "Matrix Transpose\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the transpose of the matrix</p>\\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\].\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Swap rows and columns\", \"mathHtml\": \"\\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}^{\\mathrm{T}} = \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]\", \"explanation\": \"By definition, the transpose swaps rows and columns\"} ],",
+    "finalAnswer": "\\[\\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]\" },",
+    "intuition": "The matrix transpose is a way to 'flip' the matrix, which can be useful in various applications, such as computing the dot product or finding the inverse of a matrix.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:15:02.684Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_transpose_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>The matrix transpose operation is a fundamental concept in linear algebra.</p><p>Given an <i>m</i> × <i>n</i> matrix A, its transpose A<sup>T</sup> is defined as the <i>n</i> × <i>m</i> matrix where the rows of A become the columns of A<sup>T</sup>.</p>",
+    "formula": "{",
+    "latex": "\\[A^T = \\begin{bmatrix} a_{11} & \\cdots & a_{1n} \\\\ \\vdots & \\ddots & \\vdots \\\\ a_{m1} & \\cdots & a_{mn} \\end{bmatrix}\\]\",",
+    "name": "Matrix Transpose\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the transpose of the matrix A = [[1, 2], [3, 4]].</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the rows of A as columns in A<sup>T</sup>\", \"mathHtml\": \"\\[A^T = \\begin{bmatrix} 1 & 3 \\\\ 2 & 4 \\end{bmatrix}\\]\", \"explanation\": \"We swap the rows and columns to get the transpose\"} ],",
+    "finalAnswer": "The answer is [[1, 3], [2, 4]].\" },",
+    "intuition": "The matrix transpose operation helps us switch between row vectors and column vectors, which is crucial in many machine learning algorithms.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:15:24.454Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_transpose_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>The matrix transpose operation is a fundamental concept in linear algebra.</p><p>Given a matrix A, its transpose AT is obtained by swapping its rows with columns.</p>",
+    "formula": "{",
+    "latex": "\\[A^T = \\begin{bmatrix}a_{11}&\\cdots&a_{1n}\\\\ \\vdots&\\ddots&\\vdots\\\\ a_{m1}&\\cdots&a_{mn}\\end{bmatrix}^{T} = \\begin{bmatrix}a_{21}&\\cdots&a_{2n}\\\\ \\vdots&\\ddots&\\vdots\\\\ a_{m1}&\\cdots&a_{mn}\\end{bmatrix},\\]\" },",
+    "intuition": "The transpose operation is useful when working with matrices that represent linear transformations between spaces.",
+    "realWorldApplications": [
+      "In machine learning, the transpose of a weight matrix is used in backpropagation to compute gradients."
+    ],
+    "tags": [
+      "matrices",
+      "linear algebra"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:15:40.277Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_transpose_007",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose",
+    "contentHtml": "<p>The matrix transpose operation is a fundamental concept in linear algebra.</p><p>Given an m × n matrix A, its transpose AT is an n × m matrix where the rows of A become the columns of AT and vice versa.</p>",
+    "formula": "{",
+    "latex": "\\(A^T)_{ij} = A_{ji}\\)\",",
+    "name": "Transpose Formula\" },",
+    "theorem": "{",
+    "statement": "\\[ (A^T)^T = A \\]\",",
+    "proofSketch": "By definition, the transpose of a matrix is obtained by swapping its rows and columns. Applying this operation twice returns us to the original matrix.\" },",
+    "intuition": "The transpose operation allows us to switch between row and column vectors, which is crucial in many machine learning algorithms.",
+    "realWorldApplications": [
+      "In neural networks, the transpose of a weight matrix is used to compute the output layer's activations."
+    ],
+    "tags": [
+      "linear algebra",
+      "matrix operations"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:15:56.249Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_transpose_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "title": "Matrix Transpose Theorem",
+    "contentHtml": "<p>The matrix transpose theorem states that the transpose of a product is equal to the product of the transposes.</p>",
+    "formula": {
+      "latex": "\\[ (AB)^T = B^T A^T \\]",
+      "name": ""
+    },
+    "theorem": {
+      "statement": "\\[(A^T)^T = A\\]",
+      "proofSketch": "The proof involves showing that the transpose of a product is equal to the product of the transposes, and then applying this result to the theorem statement."
+    },
+    "intuition": "This theorem helps us simplify complex matrix operations by allowing us to break them down into smaller, more manageable pieces.",
+    "realWorldApplications": [
+      "In machine learning, this theorem has applications in natural language processing and computer vision."
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrices"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:16:10.012Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_transpose_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "problem": "{",
+    "statementHtml": "Find the transpose of the matrix <code>\\[A = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\]</code>\",",
+    "hints": [
+      "The transpose of a matrix flips its rows and columns.",
+      "Think about what happens when you multiply A by its transpose.",
+      "Check if your answer is symmetric."
+    ],
+    "solutionHtml": "<p>To find the transpose, swap the rows and columns:</p><code>\\[A^T = \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]</code>\",",
+    "answerShort": "The answer is <code>\\[A^T = \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]</code>\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:16:25.531Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_transpose_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "problem": "{",
+    "statementHtml": "Find the transpose of the matrix <i>A</i>.",
+    "hints": [
+      "Think about what happens when you swap rows and columns.",
+      "The new matrix has the same elements as the original, but in a different order.",
+      "Check if your answer is symmetric."
+    ],
+    "solutionHtml": "<p>To find the transpose of <i>A</i>, we swap its rows with its columns:</p><p>\\[A^T = \\begin{bmatrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\\end{bmatrix}^\\intercal = \\begin{bmatrix}a_{11}&a_{21}\\\\a_{12}&a_{22}\\end{bmatrix}\\]</p>\",",
+    "answerShort": "<i>A</i>^T\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:16:39.649Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_transpose_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrices_fundamentals",
+    "topic": "transpose",
+    "problem": "{",
+    "statementHtml": "<p>Given a matrix <strong>A</strong>, find its transpose <strong>A<sup>T</sup></sup>. What are the properties of the transpose?</p>",
+    "hints": [
+      "Think about what happens when you multiply a row vector by a column vector.",
+      "The transpose operation is an involution, meaning it's its own inverse.",
+      "Symmetric matrices have a special property under transposition."
+    ],
+    "solutionHtml": "<p>To find the transpose of <strong>A</strong>, we swap the rows and columns:</p><p>\\[ \\mathbf{A}^T = \\begin{bmatrix} a_{11} & a_{12} & \\cdots & a_{1n} \\\\ a_{21} & a_{22} & \\cdots & a_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1} & a_{m2} & \\cdots & a_{mn} \\end{bmatrix}\\]</p><p>The transpose operation preserves the symmetry of a matrix:</p><p>\\[ (\\mathbf{A}^T)^T = \\mathbf{A}^T.\\]</p>\",",
+    "answerShort": "The answer is <strong>A<sup>T</sup></sup>.\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T10:16:59.573Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

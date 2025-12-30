@@ -1,0 +1,93 @@
+[
+  {
+    "id": "prob_con_wlln_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental concept in probability theory that states that the average of a sequence of independent and identically distributed random variables will converge to their expected value with probability 1 as the number of terms increases.</p><p>In other words, the WLLN guarantees that the sample mean will be arbitrarily close to the population mean for sufficiently large samples.</p>",
+    "formula": {
+      "latex": "\\(\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| < \\epsilon) = 1\\)",
+      "name": "WLLN Formula"
+    },
+    "theorem": {
+      "statement": "\\[P(|\\bar{X}_n - \\mu| < \\epsilon) \\geq 1 - \\frac{\\sigma^2}{n\\epsilon^2}\\]",
+      "proofSketch": "The proof of the WLLN relies on Chebyshev's inequality, which states that for any random variable X with mean μ and variance σ^2, P(|X - μ| > k) ≤ σ^2 / (k^2). By applying this inequality to the sample mean \\bar{X}_n, we can show that the probability of the sample mean deviating from the population mean by more than ε decreases rapidly as n increases."
+    },
+    "intuition": "The WLLN provides a powerful tool for understanding the behavior of random variables. It shows that even if individual observations are noisy or unreliable, the average of many such observations will still converge to their expected value.",
+    "realWorldApplications": [
+      "In machine learning, the WLLN is used to analyze the performance of algorithms and understand how they behave in practice."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:39:45.952Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_wlln_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) states that the average of a sequence of independent and identically distributed random variables will converge to the population mean as the number of observations increases.</p><p>This is a fundamental concept in probability theory, allowing us to make predictions about the behavior of large systems.</p>",
+    "formula": {
+      "latex": "\\(\\lim_{n \\to \\infty} \\frac{1}{n} \\sum_{i=1}^n X_i = E[X]\\)",
+      "name": "WLLN Formula"
+    },
+    "intuition": "The WLLN is often visualized as a random walk, where the average position of the walker converges to the starting point as the number of steps increases.",
+    "realWorldApplications": [
+      "In machine learning, the WLLN has implications for understanding the behavior of large datasets and the importance of data normalization."
+    ],
+    "commonMistakes": [
+      "Not accounting for the impact of outliers on the average"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:40:02.731Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_wlln_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental concept in probability theory that states that the average of a sequence of independent and identically distributed random variables will converge to their expected value with probability 1 as the number of observations increases.</p><p>In other words, WLLN guarantees that the sample mean will be close to the population mean for large enough samples. This is a crucial result in statistics and machine learning, as it provides a theoretical foundation for many statistical methods and algorithms.</p>",
+    "formula": {
+      "latex": "\\(\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| > \\epsilon) = 0\\)",
+      "name": "WLLN Formula"
+    },
+    "intuition": "The WLLN is often visualized as a game of chance, where the average outcome of many independent trials converges to the expected value. This concept has far-reaching implications in machine learning, where it's used to justify the use of sample averages as estimates of population parameters.",
+    "realWorldApplications": [
+      "In regression analysis, WLLN is used to show that the sample mean squared error converges to zero as the number of samples increases."
+    ],
+    "commonMistakes": [
+      "Not understanding the difference between strong and weak laws of large numbers"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:40:23.422Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

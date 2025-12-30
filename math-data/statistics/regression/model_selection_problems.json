@@ -1,0 +1,108 @@
+[
+  {
+    "id": "stat_prb_model_selection_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of regression models, how do we choose the best one?</p>",
+    "hints": [
+      "Start by considering R² and adjusted R²",
+      "Think about the trade-off between model complexity and fit",
+      "Don't forget to consider cross-validation"
+    ],
+    "solutionHtml": "<p>To select the best regression model, we can use metrics such as R², adjusted R², AIC, BIC, or perform cross-validation. Let's say we have three models: linear, quadratic, and cubic.</p>\\n<p>Model 1 (linear): \\(\\hat{y} = 2x + 3\\)</p>\\n<p>Model 2 (quadratic): \\(\\hat{y} = x^2 + 2x + 1\\)</p>\\n<p>Model 3 (cubic): \\(\\hat{y} = x^3 + 3x^2 + 2x + 1\\)</p>\\n<p>We can calculate the R² for each model:</p>\\n<p>R² (linear) = 0.8</p>\\n<p>R² (quadratic) = 0.85</p>\\n<p>R² (cubic) = 0.9</p>\\n<p>However, we also need to consider the adjusted R² to account for the number of parameters:</p>\\n<p>Adjusted R² (linear) = 0.75</p>\\n<p>Adjusted R² (quadratic) = 0.8</p>\\n<p>Adjusted R² (cubic) = 0.85</p>\\n<p>We can also use AIC and BIC to compare the models:</p>\\n<p>AIC (linear) = 10</p>\\n<p>AIC (quadratic) = 9.5</p>\\n<p>AIC (cubic) = 9</p>\\n<p>BIC (linear) = 11</p>\\n<p>BIC (quadratic) = 10.5</p>\\n<p>BIC (cubic) = 10</p>\\n<p>Finally, let's perform cross-validation:</p>\\n<p>We split our data into training and testing sets.</p>\\n<p>We train each model on the training set and evaluate its performance on the testing set.</p>\\n<p>The best-performing model is the cubic one.</p>\",",
+    "answerShort": "The best-performing model is the cubic one.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:53:34.921Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": {
+      "statementHtml": "Selecting a regression model: Which one is best?",
+      "hints": [
+        "Start by comparing R² values",
+        "Consider adjusted R² for overfitting concerns",
+        "Use AIC and BIC to compare models"
+      ],
+      "solutionHtml": "<p>Let's say we have three candidate models:</p><ul><li>M1: y = 2x + 3</li><li>M2: y = x^2 + 4</li><li>M3: y = 3x - 2</li></ul><p>We can calculate R² for each model:</p><ul><li>R²(M1) = 0.8</li><li>R²(M2) = 0.6</li><li>R²(M3) = 0.9</li></ul><p>Adjusted R² helps with overfitting concerns:</p><ul><li>adjR²(M1) = 0.75</li><li>adjR²(M2) = 0.5</li><li>adjR²(M3) = 0.85</li></ul><p>AIC and BIC can also help:</p><ul><li>AIC(M1) = 10.2</li><li>AIC(M2) = 11.5</li><li>AIC(M3) = 9.8</li><li>BIC(M1) = 12.1</li><li>BIC(M2) = 13.4</li><li>BIC(M3) = 11.6</li></ul><p>Now, let's use cross-validation to compare models:</p><ul><li>M1: 0.85</li><li>M2: 0.7</li><li>M3: 0.9</li></ul><p>The best model is M3.</p>",
+      "answerShort": "M3"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:53:57.510Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": "{",
+    "statementHtml": "<p>Choose the best model from a set of linear regression models.</p>",
+    "hints": [
+      "Start by calculating R² and adjusted R² for each model.",
+      "Consider the AIC and BIC values to compare models with different numbers of features.",
+      "Use cross-validation to evaluate the performance of each model on unseen data."
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll calculate the metrics for each model and compare them.</p>\\n\\ \\[R² = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2}{\\sum_{i=1}^n (y_i - \\bar{y})^2}\\]\\n\\ \\[adjusted R² = 1 - \\frac{\\sum_{i=1}^n (y_i - \\hat{y}_i)^2/(n-1)}{\\sum_{i=1}^n (y_i - \\bar{y})^2/(n-1)}\\]\\n\\ \\[AIC = -2 \\log(L) + 2k,\\ BIC = -2 \\log(L) + k \\log(n)\\]\",",
+    "answerShort": "The model with the lowest AIC and BIC values is likely to be the best.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:54:15.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_selection_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "regression",
+    "topic": "model_selection",
+    "problem": {
+      "statementHtml": "<p>Given a linear regression model with multiple predictors, how do we choose the best subset of features?</p>",
+      "hints": [
+        "Start by considering the R² value for each possible combination of features.",
+        "Think about how to adjust for the number of parameters being estimated.",
+        "Use cross-validation to evaluate the performance of each model."
+      ],
+      "solutionHtml": "<p>To select the best subset of features, we can use various metrics such as R², adjusted R², AIC, and BIC. These measures provide different insights into the quality of the model.</p>\n<p>R² measures how well the model explains the variance in the response variable, but it does not account for the number of parameters being estimated. Adjusted R² is a more conservative measure that takes into account the number of parameters.</p>\n<p>AIC and BIC are information criteria that penalize models with many parameters. They provide a way to compare models with different numbers of parameters.</p>\n<p>Cross-validation is a technique for evaluating the performance of each model on unseen data. This helps us avoid overfitting by ensuring that our model generalizes well to new data.</p>",
+      "answerShort": "The best subset of features is chosen based on the combination that maximizes R² or minimizes AIC/BIC."
+    },
+    "commonMistakes": [
+      "Failing to adjust for the number of parameters being estimated.",
+      "Using only one metric to evaluate model performance."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:54:33.796Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

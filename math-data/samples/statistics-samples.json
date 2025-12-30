@@ -1,0 +1,161 @@
+[
+  {
+    "id": "stat_con_mle_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "estimation",
+    "topic": "mle",
+    "title": "Maximum Likelihood Estimation",
+    "subtitle": "Finding the parameters that make your data most likely",
+    "contentHtml": "<p><strong>Maximum Likelihood Estimation (MLE)</strong> is the most common way to estimate parameters from data. The idea: choose the parameter values that make the observed data most probable.</p><p>Given data \\(x_1, \\ldots, x_n\\) and a model with parameter \\(\\theta\\), the <strong>likelihood function</strong> is:</p><p>\\[L(\\theta) = P(\\text{data} | \\theta) = \\prod_{i=1}^n f(x_i | \\theta)\\]</p><p>The MLE is the \\(\\theta\\) that maximizes this. In practice, we maximize the <strong>log-likelihood</strong> (easier because products become sums):</p><p>\\[\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta \\sum_{i=1}^n \\log f(x_i | \\theta)\\]</p>",
+    "formula": {
+      "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_{\\theta} \\prod_{i=1}^n f(x_i | \\theta)",
+      "name": "Maximum Likelihood Estimator",
+      "variants": [
+        {
+          "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_{\\theta} \\sum_{i=1}^n \\log f(x_i | \\theta)",
+          "description": "Log-likelihood form (more practical)"
+        },
+        {
+          "latex": "\\hat{\\theta}_{\\text{MLE}} = \\arg\\min_{\\theta} \\left( -\\sum_{i=1}^n \\log f(x_i | \\theta) \\right)",
+          "description": "Negative log-likelihood (for minimization)"
+        }
+      ]
+    },
+    "intuition": "Imagine you flip a coin 10 times and get 7 heads. What's the most likely value of the true heads probability p? MLE says: the p that makes '7 heads in 10 flips' most probable. Answer: p = 0.7. Makes sense—the data is your best guide!",
+    "visualDescription": "A plot showing the likelihood function L(θ) as a curve, with the MLE marked at the peak. Show how different parameter values give different likelihoods of the observed data.",
+    "commonMistakes": [
+      "Confusing likelihood with probability (likelihood is a function of θ, not x)",
+      "Forgetting to use log-likelihood for numerical stability",
+      "Not checking that you found a maximum, not a minimum or saddle point"
+    ],
+    "realWorldApplications": [
+      "Training logistic regression (cross-entropy loss is negative log-likelihood)",
+      "Fitting Gaussian mixture models (EM algorithm maximizes likelihood)",
+      "Language models: predicting next word by maximizing likelihood",
+      "Virtually all parametric models in ML use MLE or variants"
+    ],
+    "tags": ["MLE", "likelihood", "estimation", "log-likelihood"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["prob_con_pdf_cdf_001", "prob_con_conditional_probability_001"],
+    "relatedCards": ["stat_wex_mle_001", "stat_thm_mle_properties_001"],
+    "nextCards": ["stat_con_mle_properties_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_mle_001",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "estimation",
+    "topic": "mle",
+    "title": "MLE for Normal Distribution",
+    "subtitle": "Deriving the sample mean and variance",
+    "contentHtml": "<p>This fundamental example shows that MLE for normally distributed data gives exactly the sample mean and sample variance.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Given i.i.d. samples \\(x_1, \\ldots, x_n\\) from \\(\\mathcal{N}(\\mu, \\sigma^2)\\), find the MLEs for \\(\\mu\\) and \\(\\sigma^2\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write the likelihood function",
+          "mathHtml": "\\[L(\\mu, \\sigma^2) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left(-\\frac{(x_i - \\mu)^2}{2\\sigma^2}\\right)\\]",
+          "explanation": "Product of n normal PDFs"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Take the log-likelihood",
+          "mathHtml": "\\[\\ell(\\mu, \\sigma^2) = -\\frac{n}{2}\\log(2\\pi) - \\frac{n}{2}\\log(\\sigma^2) - \\frac{1}{2\\sigma^2}\\sum_{i=1}^n (x_i - \\mu)^2\\]",
+          "explanation": "Log turns products into sums, making calculus easier"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Maximize with respect to μ",
+          "mathHtml": "\\[\\frac{\\partial \\ell}{\\partial \\mu} = \\frac{1}{\\sigma^2}\\sum_{i=1}^n (x_i - \\mu) = 0\\]\\[\\Rightarrow \\hat{\\mu}_{\\text{MLE}} = \\frac{1}{n}\\sum_{i=1}^n x_i = \\bar{x}\\]",
+          "explanation": "The MLE for μ is just the sample mean!"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Maximize with respect to σ²",
+          "mathHtml": "\\[\\frac{\\partial \\ell}{\\partial \\sigma^2} = -\\frac{n}{2\\sigma^2} + \\frac{1}{2(\\sigma^2)^2}\\sum_{i=1}^n (x_i - \\mu)^2 = 0\\]\\[\\Rightarrow \\hat{\\sigma}^2_{\\text{MLE}} = \\frac{1}{n}\\sum_{i=1}^n (x_i - \\bar{x})^2\\]",
+          "explanation": "The MLE for σ² is the sample variance (with n, not n-1)"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Note on bias",
+          "mathHtml": "\\[E[\\hat{\\sigma}^2_{\\text{MLE}}] = \\frac{n-1}{n}\\sigma^2 \\neq \\sigma^2\\]",
+          "explanation": "The MLE for variance is biased! That's why we often use n-1 (Bessel's correction)"
+        }
+      ],
+      "finalAnswer": "\\(\\hat{\\mu}_{\\text{MLE}} = \\bar{x}\\) (sample mean), \\(\\hat{\\sigma}^2_{\\text{MLE}} = \\frac{1}{n}\\sum(x_i - \\bar{x})^2\\) (biased sample variance)"
+    },
+    "commonMistakes": [
+      "Using n-1 instead of n (MLE gives n; unbiased estimate uses n-1)",
+      "Forgetting to verify it's a maximum via second derivative",
+      "Sign errors in the derivatives"
+    ],
+    "tags": ["MLE", "normal distribution", "sample mean", "sample variance"],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "estimatedMinutes": 3,
+    "prerequisites": ["stat_con_mle_001", "prob_con_normal_distribution_001"],
+    "relatedCards": ["stat_prb_mle_001"],
+    "nextCards": ["stat_con_mle_properties_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "stat_con_bias_variance_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "ml_statistics",
+    "topic": "bias_variance",
+    "title": "The Bias-Variance Tradeoff",
+    "subtitle": "Why simple models underfit and complex models overfit",
+    "contentHtml": "<p>The <strong>bias-variance tradeoff</strong> is a fundamental concept explaining why ML models fail. For any estimator or model, the expected error can be decomposed:</p><p>\\[\\text{Expected Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Irreducible Noise}\\]</p><p><strong>Bias</strong>: How wrong the model is on average. Simple models have high bias—they underfit, missing patterns in the data.</p><p><strong>Variance</strong>: How much the model changes with different training data. Complex models have high variance—they overfit, memorizing noise.</p><p>The tradeoff: reducing one often increases the other!</p>",
+    "formula": {
+      "latex": "\\mathbb{E}[(y - \\hat{f}(x))^2] = \\text{Bias}[\\hat{f}(x)]^2 + \\text{Var}[\\hat{f}(x)] + \\sigma^2",
+      "name": "Bias-Variance Decomposition",
+      "variants": [
+        {
+          "latex": "\\text{Bias}[\\hat{f}(x)] = \\mathbb{E}[\\hat{f}(x)] - f(x)",
+          "description": "Bias = expected prediction minus true value"
+        },
+        {
+          "latex": "\\text{Var}[\\hat{f}(x)] = \\mathbb{E}[(\\hat{f}(x) - \\mathbb{E}[\\hat{f}(x)])^2]",
+          "description": "Variance = spread of predictions"
+        }
+      ]
+    },
+    "intuition": "Imagine aiming at a target. Bias is how far your average shot is from the bullseye. Variance is how spread out your shots are. A simple model is like always aiming at the center—biased if the target is elsewhere, but consistent. A complex model adjusts to each attempt—low bias but shots scatter wildly.",
+    "visualDescription": "Four target diagrams showing: (1) Low bias, low variance (tight cluster on bullseye), (2) Low bias, high variance (scattered around bullseye), (3) High bias, low variance (tight cluster off-center), (4) High bias, high variance (scattered off-center).",
+    "commonMistakes": [
+      "Thinking you can minimize both bias and variance simultaneously (tradeoff!)",
+      "Confusing training error with test error (variance shows up in test error)",
+      "Ignoring the irreducible noise term (some error can't be fixed)"
+    ],
+    "realWorldApplications": [
+      "Model selection: choosing the right complexity",
+      "Regularization: adding penalty to reduce variance",
+      "Ensemble methods: averaging reduces variance",
+      "Cross-validation: estimating the tradeoff on your data"
+    ],
+    "tags": ["bias", "variance", "tradeoff", "overfitting", "underfitting"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["stat_con_estimators_basics_001"],
+    "relatedCards": ["stat_con_regularization_001", "stat_con_cross_validation_001"],
+    "nextCards": ["stat_wex_bias_variance_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  }
+]
+

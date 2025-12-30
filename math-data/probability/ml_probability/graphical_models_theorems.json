@@ -1,0 +1,64 @@
+[
+  {
+    "id": "prob_thm_graphical_models_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Hammersley-Clifford Theorem",
+    "contentHtml": "<p>The Hammersley-Clifford theorem is a fundamental result in probabilistic graphical models, providing a condition for d-separation in Bayesian networks.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{X} \\perp \\! \\! \\! \\mathbf{Y} | \\mathbf{Z} \\]",
+      "name": "d-separation"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{If } \\mathcal{C}(\\mathbf{X}, \\mathbf{Y}) = \\emptyset, \\text{ then } \\mathbf{X} \\perp \\! \\! \\! \\mathbf{Y} | \\mathbf{Z}. \\]"
+    },
+    "intuition": "D-separation is a property of Bayesian networks that ensures the absence of causal relationships between variables. The Hammersley-Clifford theorem provides a condition for when d-separation holds, allowing us to identify conditional independence relationships in complex graphical models.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:00:29.969Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_graphical_models_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "The Hammersley-Clifford Theorem",
+    "contentHtml": "<p>The Hammersley-Clifford theorem is a fundamental result in probabilistic graphical models, providing a necessary and sufficient condition for d-separation.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{X} \\perp \\mathbf{Y} | \\mathbf{Z} \\quad \\Leftrightarrow \\quad \\nabla_\\mathbf{Z} (P(\\mathbf{x}, \\mathbf{y})) = 0 \\]",
+      "name": "D-separation"
+    },
+    "theorem": {
+      "statement": "\\[ \\forall \\mathbf{x}\\in \\mathcal{X}, \\mathbf{y}\\in \\mathcal{Y}, \\mathbf{z}\\in \\mathcal{Z}: P(\\mathbf{x}, \\mathbf{y}) = P(\\mathbf{x}|\\mathbf{z})P(\\mathbf{y}|\\mathbf{z}) \\]",
+      "proofSketch": "The proof involves showing that the theorem holds for all possible distributions and then using a series of algebraic manipulations to arrive at the desired result."
+    },
+    "intuition": "D-separation is a crucial concept in probabilistic graphical models, allowing us to identify conditional independence relationships between variables. The Hammersley-Clifford theorem provides a powerful tool for verifying these relationships.",
+    "realWorldApplications": [
+      "Bayesian networks are widely used in AI and machine learning applications, such as natural language processing and computer vision."
+    ],
+    "tags": [
+      "Probabilistic Graphical Models",
+      "D-separation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:00:53.765Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

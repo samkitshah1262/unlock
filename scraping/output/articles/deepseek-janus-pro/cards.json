@@ -1,0 +1,380 @@
+[
+  {
+    "id": "ai-deepseek-janus-pro-decoupled-visual-encoding-1",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Technical Architecture of Janus-Pro",
+    "title": "Decoupled Visual Encoding",
+    "subtitle": "Technical Architecture of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>\n    <p>Janus-Pro employs independent encoding strategies tailored for its two primary tasks:</p>\n  </li>\n  <li><strong>Understanding Encoder</strong>: Utilizes the SigLIP encoder, a high-performance visual encoder that extracts detailed semantic features from images and maps them into a 1-D sequence compatible with the language model.</li>\n  <li>\n    <p><strong>Generation Encoder</strong>: Leverages a VQ tokenizer that converts images into discrete IDs, enabling stable image decoding and efficient learning of pixel dependencies.</p>\n  </li>\n  <li>By separating these two encoders, Janus-Pro mitigates the conflicts typically observed in unified multimodal models, where the same visual representation is used for drastically different tasks. This leads to <strong>optimized task-specific performance</strong>.</li>\n</ul>\n<p>Janus-Pro employs independent encoding strategies tailored for its two primary tasks:</p>\n<p><strong>Generation Encoder</strong>: Leverages a VQ tokenizer that converts images into discrete IDs, enabling stable image decoding and efficient learning of pixel dependencies.</p>",
+    "contentMarkdown": "*   Janus-Pro employs independent encoding strategies tailored for its two primary tasks:\n    \n*   **Understanding Encoder**: Utilizes the SigLIP encoder, a high-performance visual encoder that extracts detailed semantic features from images and maps them into a 1-D sequence compatible with the language model.\n*   **Generation Encoder**: Leverages a VQ tokenizer that converts images into discrete IDs, enabling stable image decoding and efficient learning of pixel dependencies.\n    \n*   By separating these two encoders, Janus-Pro mitigates the conflicts typically observed in unified multimodal models, where the same visual representation is used for drastically different tasks. This leads to **optimized task-specific performance**.\n\nJanus-Pro employs independent encoding strategies tailored for its two primary tasks:\n\n**Generation Encoder**: Leverages a VQ tokenizer that converts images into discrete IDs, enabling stable image decoding and efficient learning of pixel dependencies.",
+    "order": 1,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 131,
+      "contentLength": 1117
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#decoupled-visual-encoding",
+    "scrapedAt": "2025-12-28T11:51:58.817Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-autoregressive-transformer-core-2",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Technical Architecture of Janus-Pro",
+    "title": "Autoregressive Transformer Core",
+    "subtitle": "Technical Architecture of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>At the heart of Janus-Pro is a unified <strong>autoregressive transformer</strong> that processes multimodal feature sequences. These sequences, formed by concatenating text and image features, flow seamlessly through the model to generate outputs for either task.</li>\n</ul>",
+    "contentMarkdown": "*   At the heart of Janus-Pro is a unified **autoregressive transformer** that processes multimodal feature sequences. These sequences, formed by concatenating text and image features, flow seamlessly through the model to generate outputs for either task.",
+    "order": 2,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models",
+      "transformer"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 36,
+      "contentLength": 286
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#autoregressive-transformer-core",
+    "scrapedAt": "2025-12-28T11:51:58.817Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-multi-stage-training-pipeline-3",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Technical Architecture of Janus-Pro",
+    "title": "Multi-Stage Training Pipeline",
+    "subtitle": "Technical Architecture of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>\n    <p>Janus-Pro employs a three-stage training strategy:</p>\n\n    <ul>\n      <li><strong>Stage I</strong>: Training adaptors and image decoders focuses on aligning image features with text through robust pixel dependency modeling. Using fixed LLM parameters, this stage employs ImageNet to map simple categories (e.g., ‘sunflower’) into meaningful representations. Extended training ensures stable feature alignment, improving subsequent multimodal learning and generation stability.</li>\n      <li><strong>Stage II</strong>: Unified pretraining leverages a mix of high-quality text-to-image datasets and synthetic aesthetic data at a 1:1 ratio. These datasets include diverse prompts and scenarios to train the model for intricate multimodal generation tasks. Synthetic data, curated using advanced prompt engineering (e.g., MidJourney datasets), ensures faster convergence and eliminates inconsistencies found in real-world datasets. The unified autoregressive model is trained exclusively on dense prompts, enhancing the model’s ability to process and align complex visual and textual instructions. This approach optimizes the training pipeline, enabling Janus-Pro to surpass inefficiencies observed in earlier models, including DALL-E 3.</li>\n      <li><strong>Stage III</strong>: Fine-tuning is performed across multimodal (5 parts), text-only (1 part), and image-to-text (4 parts) datasets, ensuring balanced performance across diverse tasks. Loss functions include cross-entropy for text-to-text and multimodal alignment tasks, and reconstruction loss for image generation tasks, which optimizes visual fidelity while preserving textual alignment. Additionally, advanced datasets such as MEME understanding, chart comprehension, and multimodal dialogue benchmarks are incorporated, enhancing the model’s ability to handle nuanced real-world challenges.</li>\n    </ul>\n  </li>\n</ul>\n<p>Janus-Pro employs a three-stage training strategy:</p>\n<ul>\n      <li><strong>Stage I</strong>: Training adaptors and image decoders focuses on aligning image features with text through robust pixel dependency modeling. Using fixed LLM parameters, this stage employs ImageNet to map simple categories (e.g., ‘sunflower’) into meaningful representations. Extended training ensures stable feature alignment, improving subsequent multimodal learning and generation stability.</li>\n      <li><strong>Stage II</strong>: Unified pretraining leverages a mix of high-quality text-to-image datasets and synthetic aesthetic data at a 1:1 ratio. These datasets include diverse prompts and scenarios to train the model for intricate multimodal generation tasks. Synthetic data, curated using advanced prompt engineering (e.g., MidJourney datasets), ensures faster convergence and eliminates inconsistencies found in real-world datasets. The unified autoregressive model is trained exclusively on dense prompts, enhancing the model’s ability to process and align complex visual and textual instructions. This approach optimizes the training pipeline, enabling Janus-Pro to surpass inefficiencies observed in earlier models, including DALL-E 3.</li>\n      <li><strong>Stage III</strong>: Fine-tuning is performed across multimodal (5 parts), text-only (1 part), and image-to-text (4 parts) datasets, ensuring balanced performance across diverse tasks. Loss functions include cross-entropy for text-to-text and multimodal alignment tasks, and reconstruction loss for image generation tasks, which optimizes visual fidelity while preserving textual alignment. Additionally, advanced datasets such as MEME understanding, chart comprehension, and multimodal dialogue benchmarks are incorporated, enhancing the model’s ability to handle nuanced real-world challenges.</li>\n    </ul>",
+    "contentMarkdown": "*   Janus-Pro employs a three-stage training strategy:\n    \n    *   **Stage I**: Training adaptors and image decoders focuses on aligning image features with text through robust pixel dependency modeling. Using fixed LLM parameters, this stage employs ImageNet to map simple categories (e.g., ‘sunflower’) into meaningful representations. Extended training ensures stable feature alignment, improving subsequent multimodal learning and generation stability.\n    *   **Stage II**: Unified pretraining leverages a mix of high-quality text-to-image datasets and synthetic aesthetic data at a 1:1 ratio. These datasets include diverse prompts and scenarios to train the model for intricate multimodal generation tasks. Synthetic data, curated using advanced prompt engineering (e.g., MidJourney datasets), ensures faster convergence and eliminates inconsistencies found in real-world datasets. The unified autoregressive model is trained exclusively on dense prompts, enhancing the model’s ability to process and align complex visual and textual instructions. This approach optimizes the training pipeline, enabling Janus-Pro to surpass inefficiencies observed in earlier models, including DALL-E 3.\n    *   **Stage III**: Fine-tuning is performed across multimodal (5 parts), text-only (1 part), and image-to-text (4 parts) datasets, ensuring balanced performance across diverse tasks. Loss functions include cross-entropy for text-to-text and multimodal alignment tasks, and reconstruction loss for image generation tasks, which optimizes visual fidelity while preserving textual alignment. Additionally, advanced datasets such as MEME understanding, chart comprehension, and multimodal dialogue benchmarks are incorporated, enhancing the model’s ability to handle nuanced real-world challenges.\n\nJanus-Pro employs a three-stage training strategy:\n\n*   **Stage I**: Training adaptors and image decoders focuses on aligning image features with text through robust pixel dependency modeling. Using fixed LLM parameters, this stage employs ImageNet to map simple categories (e.g., ‘sunflower’) into meaningful representations. Extended training ensures stable feature alignment, improving subsequent multimodal learning and generation stability.\n*   **Stage II**: Unified pretraining leverages a mix of high-quality text-to-image datasets and synthetic aesthetic data at a 1:1 ratio. These datasets include diverse prompts and scenarios to train the model for intricate multimodal generation tasks. Synthetic data, curated using advanced prompt engineering (e.g., MidJourney datasets), ensures faster convergence and eliminates inconsistencies found in real-world datasets. The unified autoregressive model is trained exclusively on dense prompts, enhancing the model’s ability to process and align complex visual and textual instructions. This approach optimizes the training pipeline, enabling Janus-Pro to surpass inefficiencies observed in earlier models, including DALL-E 3.\n*   **Stage III**: Fine-tuning is performed across multimodal (5 parts), text-only (1 part), and image-to-text (4 parts) datasets, ensuring balanced performance across diverse tasks. Loss functions include cross-entropy for text-to-text and multimodal alignment tasks, and reconstruction loss for image generation tasks, which optimizes visual fidelity while preserving textual alignment. Additionally, advanced datasets such as MEME understanding, chart comprehension, and multimodal dialogue benchmarks are incorporated, enhancing the model’s ability to handle nuanced real-world challenges.",
+    "order": 3,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 3,
+    "tags": [
+      "models",
+      "llm",
+      "loss function",
+      "fine-tuning"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 453,
+      "contentLength": 3768
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#multi-stage-training-pipeline",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-stage-i-initial-adaptation-and-image-head-training-4",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Detailed Pipeline Stages of Janus-Pro",
+    "title": "Stage I: Initial Adaptation and Image Head Training",
+    "subtitle": "Detailed Pipeline Stages of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>\n    <p>This stage focuses on initializing and stabilizing the visual encoding processes.</p>\n  </li>\n  <li><strong>Goals</strong>:\n    <ul>\n      <li>Train adaptors that map image and text features into a unified latent space compatible with the language model.</li>\n      <li>Stabilize the image generation process using fixed LLM parameters.</li>\n    </ul>\n  </li>\n  <li><strong>Techniques</strong>:\n    <ul>\n      <li>Uses <strong>ImageNet</strong> for category-driven pixel dependency modeling. For example, category names like “sunflower” are used to guide the model in generating simple yet semantically correct images.</li>\n      <li>Extends training iterations compared to Janus, ensuring the adaptors and image decoder learn robust feature mappings.</li>\n    </ul>\n  </li>\n  <li><strong>Why it’s Better</strong>:\n    <ul>\n      <li>Previous models, such as DALL-E 3, struggled with noise in early image generation stages due to less rigorous initial training. Janus-Pro eliminates this problem by prolonging Stage I, leading to <strong>better stabilization in later stages</strong>.</li>\n    </ul>\n  </li>\n</ul>\n<p>This stage focuses on initializing and stabilizing the visual encoding processes.</p>\n<ul>\n      <li>Train adaptors that map image and text features into a unified latent space compatible with the language model.</li>\n      <li>Stabilize the image generation process using fixed LLM parameters.</li>\n    </ul>\n<ul>\n      <li>Uses <strong>ImageNet</strong> for category-driven pixel dependency modeling. For example, category names like “sunflower” are used to guide the model in generating simple yet semantically correct images.</li>\n      <li>Extends training iterations compared to Janus, ensuring the adaptors and image decoder learn robust feature mappings.</li>\n    </ul>\n<ul>\n      <li>Previous models, such as DALL-E 3, struggled with noise in early image generation stages due to less rigorous initial training. Janus-Pro eliminates this problem by prolonging Stage I, leading to <strong>better stabilization in later stages</strong>.</li>\n    </ul>",
+    "contentMarkdown": "*   This stage focuses on initializing and stabilizing the visual encoding processes.\n    \n*   **Goals**:\n    *   Train adaptors that map image and text features into a unified latent space compatible with the language model.\n    *   Stabilize the image generation process using fixed LLM parameters.\n*   **Techniques**:\n    *   Uses **ImageNet** for category-driven pixel dependency modeling. For example, category names like “sunflower” are used to guide the model in generating simple yet semantically correct images.\n    *   Extends training iterations compared to Janus, ensuring the adaptors and image decoder learn robust feature mappings.\n*   **Why it’s Better**:\n    *   Previous models, such as DALL-E 3, struggled with noise in early image generation stages due to less rigorous initial training. Janus-Pro eliminates this problem by prolonging Stage I, leading to **better stabilization in later stages**.\n\nThis stage focuses on initializing and stabilizing the visual encoding processes.\n\n*   Train adaptors that map image and text features into a unified latent space compatible with the language model.\n*   Stabilize the image generation process using fixed LLM parameters.\n\n*   Uses **ImageNet** for category-driven pixel dependency modeling. For example, category names like “sunflower” are used to guide the model in generating simple yet semantically correct images.\n*   Extends training iterations compared to Janus, ensuring the adaptors and image decoder learn robust feature mappings.\n\n*   Previous models, such as DALL-E 3, struggled with noise in early image generation stages due to less rigorous initial training. Janus-Pro eliminates this problem by prolonging Stage I, leading to **better stabilization in later stages**.",
+    "order": 4,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "models",
+      "llm"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 249,
+      "contentLength": 2094
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#stage-i:-initial-adaptation-and-image-head-training",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-stage-ii-unified-pretraining-with-dense-descriptiv-5",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Detailed Pipeline Stages of Janus-Pro",
+    "title": "Stage II: Unified Pretraining with Dense Descriptive Prompts",
+    "subtitle": "Detailed Pipeline Stages of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>\n    <p>This stage is the backbone of Janus-Pro’s superior multimodal capabilities.</p>\n  </li>\n  <li><strong>Goals</strong>:\n    <ul>\n      <li>Train the unified autoregressive model with both text and image data.</li>\n      <li>Eliminate inefficiencies by focusing exclusively on dense text-to-image data rather than splitting it across multiple datasets.</li>\n    </ul>\n  </li>\n  <li><strong>Techniques</strong>:\n    <ul>\n      <li>Incorporates <strong>high-quality synthetic aesthetic data</strong> alongside real-world data in a 1:1 ratio. The synthetic data is generated using robust prompt engineering tools (e.g., MidJourney prompts) to enhance training diversity and quality.</li>\n      <li>Synthetic data ensures <strong>faster convergence</strong>, as it avoids the noise and inconsistencies common in real-world datasets.</li>\n      <li>Introduces a <strong>redesigned learning schedule</strong>:\n        <ul>\n          <li>Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.</li>\n          <li>Text-only training is minimized, keeping the model focused on multimodal learning.</li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><strong>Why it’s Better</strong>:\n    <ul>\n      <li>Models like DALL-E 3 and SD3-Medium rely heavily on real-world data, which often contains inconsistencies. Janus-Pro’s use of synthetic data eliminates this issue, producing more stable and aesthetically pleasing outputs.</li>\n    </ul>\n  </li>\n</ul>\n<p>This stage is the backbone of Janus-Pro’s superior multimodal capabilities.</p>\n<ul>\n      <li>Train the unified autoregressive model with both text and image data.</li>\n      <li>Eliminate inefficiencies by focusing exclusively on dense text-to-image data rather than splitting it across multiple datasets.</li>\n    </ul>\n<ul>\n      <li>Incorporates <strong>high-quality synthetic aesthetic data</strong> alongside real-world data in a 1:1 ratio. The synthetic data is generated using robust prompt engineering tools (e.g., MidJourney prompts) to enhance training diversity and quality.</li>\n      <li>Synthetic data ensures <strong>faster convergence</strong>, as it avoids the noise and inconsistencies common in real-world datasets.</li>\n      <li>Introduces a <strong>redesigned learning schedule</strong>:\n        <ul>\n          <li>Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.</li>\n          <li>Text-only training is minimized, keeping the model focused on multimodal learning.</li>\n        </ul>\n      </li>\n    </ul>\n<ul>\n          <li>Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.</li>\n          <li>Text-only training is minimized, keeping the model focused on multimodal learning.</li>\n        </ul>\n<ul>\n      <li>Models like DALL-E 3 and SD3-Medium rely heavily on real-world data, which often contains inconsistencies. Janus-Pro’s use of synthetic data eliminates this issue, producing more stable and aesthetically pleasing outputs.</li>\n    </ul>",
+    "contentMarkdown": "*   This stage is the backbone of Janus-Pro’s superior multimodal capabilities.\n    \n*   **Goals**:\n    *   Train the unified autoregressive model with both text and image data.\n    *   Eliminate inefficiencies by focusing exclusively on dense text-to-image data rather than splitting it across multiple datasets.\n*   **Techniques**:\n    *   Incorporates **high-quality synthetic aesthetic data** alongside real-world data in a 1:1 ratio. The synthetic data is generated using robust prompt engineering tools (e.g., MidJourney prompts) to enhance training diversity and quality.\n    *   Synthetic data ensures **faster convergence**, as it avoids the noise and inconsistencies common in real-world datasets.\n    *   Introduces a **redesigned learning schedule**:\n        *   Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.\n        *   Text-only training is minimized, keeping the model focused on multimodal learning.\n*   **Why it’s Better**:\n    *   Models like DALL-E 3 and SD3-Medium rely heavily on real-world data, which often contains inconsistencies. Janus-Pro’s use of synthetic data eliminates this issue, producing more stable and aesthetically pleasing outputs.\n\nThis stage is the backbone of Janus-Pro’s superior multimodal capabilities.\n\n*   Train the unified autoregressive model with both text and image data.\n*   Eliminate inefficiencies by focusing exclusively on dense text-to-image data rather than splitting it across multiple datasets.\n\n*   Incorporates **high-quality synthetic aesthetic data** alongside real-world data in a 1:1 ratio. The synthetic data is generated using robust prompt engineering tools (e.g., MidJourney prompts) to enhance training diversity and quality.\n*   Synthetic data ensures **faster convergence**, as it avoids the noise and inconsistencies common in real-world datasets.\n*   Introduces a **redesigned learning schedule**:\n    *   Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.\n    *   Text-only training is minimized, keeping the model focused on multimodal learning.\n\n*   Real-world data is phased out in favor of descriptive prompts, allowing the model to specialize in rich semantic generation tasks.\n*   Text-only training is minimized, keeping the model focused on multimodal learning.\n\n*   Models like DALL-E 3 and SD3-Medium rely heavily on real-world data, which often contains inconsistencies. Janus-Pro’s use of synthetic data eliminates this issue, producing more stable and aesthetically pleasing outputs.",
+    "order": 5,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 358,
+      "contentLength": 3177
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#stage-ii:-unified-pretraining-with-dense-descriptive-prompts",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-stage-iii-fine-tuning-across-multimodal-text-only--6",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Detailed Pipeline Stages of Janus-Pro",
+    "title": "Stage III: Fine-Tuning Across Multimodal, Text-Only, and Visual Data",
+    "subtitle": "Detailed Pipeline Stages of Janus-Pro",
+    "contentHtml": "<ul>\n  <li>\n    <p>The final stage polishes the model’s understanding and generation capabilities.</p>\n  </li>\n  <li><strong>Goals</strong>:\n    <ul>\n      <li>Enhance performance on specialized multimodal tasks like visual question answering, detailed text-to-image alignment, and multimodal conversation.</li>\n      <li>Fine-tune the model for both instruction-following (e.g., text-to-image tasks) and creative generation tasks.</li>\n    </ul>\n  </li>\n  <li><strong>Techniques</strong>:\n    <ul>\n      <li>Adjusts the data ratio between multimodal data, pure text data, and text-to-image data to <strong>5:1:4</strong>.\n        <ul>\n          <li>This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.</li>\n        </ul>\n      </li>\n      <li>Involves supervised fine-tuning on <strong>expanded datasets</strong> such as MEME understanding, chart comprehension, and conversational AI benchmarks.</li>\n    </ul>\n  </li>\n  <li><strong>Why it’s Better</strong>:\n    <ul>\n      <li>Fine-tuning across a diverse dataset makes Janus-Pro more versatile in real-world tasks, such as creating instructional graphics or handling multimodal dialogues—areas where DALL-E struggles.</li>\n    </ul>\n  </li>\n</ul>\n<p>The final stage polishes the model’s understanding and generation capabilities.</p>\n<ul>\n      <li>Enhance performance on specialized multimodal tasks like visual question answering, detailed text-to-image alignment, and multimodal conversation.</li>\n      <li>Fine-tune the model for both instruction-following (e.g., text-to-image tasks) and creative generation tasks.</li>\n    </ul>\n<ul>\n      <li>Adjusts the data ratio between multimodal data, pure text data, and text-to-image data to <strong>5:1:4</strong>.\n        <ul>\n          <li>This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.</li>\n        </ul>\n      </li>\n      <li>Involves supervised fine-tuning on <strong>expanded datasets</strong> such as MEME understanding, chart comprehension, and conversational AI benchmarks.</li>\n    </ul>\n<ul>\n          <li>This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.</li>\n        </ul>\n<ul>\n      <li>Fine-tuning across a diverse dataset makes Janus-Pro more versatile in real-world tasks, such as creating instructional graphics or handling multimodal dialogues—areas where DALL-E struggles.</li>\n    </ul>",
+    "contentMarkdown": "*   The final stage polishes the model’s understanding and generation capabilities.\n    \n*   **Goals**:\n    *   Enhance performance on specialized multimodal tasks like visual question answering, detailed text-to-image alignment, and multimodal conversation.\n    *   Fine-tune the model for both instruction-following (e.g., text-to-image tasks) and creative generation tasks.\n*   **Techniques**:\n    *   Adjusts the data ratio between multimodal data, pure text data, and text-to-image data to **5:1:4**.\n        *   This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.\n    *   Involves supervised fine-tuning on **expanded datasets** such as MEME understanding, chart comprehension, and conversational AI benchmarks.\n*   **Why it’s Better**:\n    *   Fine-tuning across a diverse dataset makes Janus-Pro more versatile in real-world tasks, such as creating instructional graphics or handling multimodal dialogues—areas where DALL-E struggles.\n\nThe final stage polishes the model’s understanding and generation capabilities.\n\n*   Enhance performance on specialized multimodal tasks like visual question answering, detailed text-to-image alignment, and multimodal conversation.\n*   Fine-tune the model for both instruction-following (e.g., text-to-image tasks) and creative generation tasks.\n\n*   Adjusts the data ratio between multimodal data, pure text data, and text-to-image data to **5:1:4**.\n    *   This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.\n*   Involves supervised fine-tuning on **expanded datasets** such as MEME understanding, chart comprehension, and conversational AI benchmarks.\n\n*   This ensures a balance between multimodal understanding and generation tasks, unlike DALL-E 3, which leans more toward visual generation.\n\n*   Fine-tuning across a diverse dataset makes Janus-Pro more versatile in real-world tasks, such as creating instructional graphics or handling multimodal dialogues—areas where DALL-E struggles.",
+    "order": 6,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 2,
+    "tags": [
+      "models",
+      "fine-tuning"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 267,
+      "contentLength": 2574
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#stage-iii:-fine-tuning-across-multimodal,-text-only,-and-visual-data",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-decoupled-architecture-for-better-task-specializat-7",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Decoupled Architecture for Better Task Specialization",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>By using separate encoders for multimodal understanding and generation, Janus-Pro avoids the performance conflicts seen in unified encoder architectures (e.g., DALL-E 3 and Stable Diffusion models).</li>\n      <li>This results in <strong>stronger semantic understanding</strong> for tasks like visual question answering and a more coherent generation for text-to-image prompts.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>DALL-E 3 and others use a single visual encoder, which must simultaneously process inputs for understanding and generation, leading to compromises in both.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>By using separate encoders for multimodal understanding and generation, Janus-Pro avoids the performance conflicts seen in unified encoder architectures (e.g., DALL-E 3 and Stable Diffusion models).</li>\n      <li>This results in <strong>stronger semantic understanding</strong> for tasks like visual question answering and a more coherent generation for text-to-image prompts.</li>\n    </ul>\n<ul>\n      <li>DALL-E 3 and others use a single visual encoder, which must simultaneously process inputs for understanding and generation, leading to compromises in both.</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   By using separate encoders for multimodal understanding and generation, Janus-Pro avoids the performance conflicts seen in unified encoder architectures (e.g., DALL-E 3 and Stable Diffusion models).\n    *   This results in **stronger semantic understanding** for tasks like visual question answering and a more coherent generation for text-to-image prompts.\n*   **Competitors’ Limitation**:\n    *   DALL-E 3 and others use a single visual encoder, which must simultaneously process inputs for understanding and generation, leading to compromises in both.\n\n*   By using separate encoders for multimodal understanding and generation, Janus-Pro avoids the performance conflicts seen in unified encoder architectures (e.g., DALL-E 3 and Stable Diffusion models).\n*   This results in **stronger semantic understanding** for tasks like visual question answering and a more coherent generation for text-to-image prompts.\n\n*   DALL-E 3 and others use a single visual encoder, which must simultaneously process inputs for understanding and generation, leading to compromises in both.",
+    "order": 7,
+    "orderInChapter": 1,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 150,
+      "contentLength": 1314
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#decoupled-architecture-for-better-task-specialization",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-superior-text-to-image-instruction-following-8",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Superior Text-to-Image Instruction Following",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>On the <strong>GenEval benchmark</strong>, which tests alignment between dense prompts and generated outputs, Janus-Pro scores <strong>80% overall accuracy</strong>, surpassing DALL-E 3 (67%) and SD3-Medium (74%).</li>\n      <li>Its use of synthetic aesthetic data and descriptive prompts enables better semantic alignment with intricate instructions, resulting in coherent, high-quality images.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>DALL-E 3’s reliance on real-world data and inconsistent text-to-image mappings often results in less precise and aesthetically inconsistent outputs.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>On the <strong>GenEval benchmark</strong>, which tests alignment between dense prompts and generated outputs, Janus-Pro scores <strong>80% overall accuracy</strong>, surpassing DALL-E 3 (67%) and SD3-Medium (74%).</li>\n      <li>Its use of synthetic aesthetic data and descriptive prompts enables better semantic alignment with intricate instructions, resulting in coherent, high-quality images.</li>\n    </ul>\n<ul>\n      <li>DALL-E 3’s reliance on real-world data and inconsistent text-to-image mappings often results in less precise and aesthetically inconsistent outputs.</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   On the **GenEval benchmark**, which tests alignment between dense prompts and generated outputs, Janus-Pro scores **80% overall accuracy**, surpassing DALL-E 3 (67%) and SD3-Medium (74%).\n    *   Its use of synthetic aesthetic data and descriptive prompts enables better semantic alignment with intricate instructions, resulting in coherent, high-quality images.\n*   **Competitors’ Limitation**:\n    *   DALL-E 3’s reliance on real-world data and inconsistent text-to-image mappings often results in less precise and aesthetically inconsistent outputs.\n\n*   On the **GenEval benchmark**, which tests alignment between dense prompts and generated outputs, Janus-Pro scores **80% overall accuracy**, surpassing DALL-E 3 (67%) and SD3-Medium (74%).\n*   Its use of synthetic aesthetic data and descriptive prompts enables better semantic alignment with intricate instructions, resulting in coherent, high-quality images.\n\n*   DALL-E 3’s reliance on real-world data and inconsistent text-to-image mappings often results in less precise and aesthetically inconsistent outputs.",
+    "order": 8,
+    "orderInChapter": 2,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 142,
+      "contentLength": 1336
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#superior-text-to-image-instruction-following",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-stability-and-scalability-in-visual-generation-9",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Stability and Scalability in Visual Generation",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>Achieves unparalleled stability in image generation, with fewer issues like mismatched object positioning or color inaccuracies.</li>\n      <li>Scales seamlessly to larger parameter sizes (7B model), improving performance without requiring significantly larger computational resources.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>DALL-E 3 and similar models struggle with <strong>object consistency</strong> in dense scenes (e.g., handling multiple objects or understanding spatial relationships). Janus-Pro excels in these areas, as seen in its performance on the <strong>DPG-Bench</strong> (Dense Prompt Graph Benchmark), where it scores <strong>84.19</strong>, outperforming DALL-E 3 (83.50).</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>Achieves unparalleled stability in image generation, with fewer issues like mismatched object positioning or color inaccuracies.</li>\n      <li>Scales seamlessly to larger parameter sizes (7B model), improving performance without requiring significantly larger computational resources.</li>\n    </ul>\n<ul>\n      <li>DALL-E 3 and similar models struggle with <strong>object consistency</strong> in dense scenes (e.g., handling multiple objects or understanding spatial relationships). Janus-Pro excels in these areas, as seen in its performance on the <strong>DPG-Bench</strong> (Dense Prompt Graph Benchmark), where it scores <strong>84.19</strong>, outperforming DALL-E 3 (83.50).</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   Achieves unparalleled stability in image generation, with fewer issues like mismatched object positioning or color inaccuracies.\n    *   Scales seamlessly to larger parameter sizes (7B model), improving performance without requiring significantly larger computational resources.\n*   **Competitors’ Limitation**:\n    *   DALL-E 3 and similar models struggle with **object consistency** in dense scenes (e.g., handling multiple objects or understanding spatial relationships). Janus-Pro excels in these areas, as seen in its performance on the **DPG-Bench** (Dense Prompt Graph Benchmark), where it scores **84.19**, outperforming DALL-E 3 (83.50).\n\n*   Achieves unparalleled stability in image generation, with fewer issues like mismatched object positioning or color inaccuracies.\n*   Scales seamlessly to larger parameter sizes (7B model), improving performance without requiring significantly larger computational resources.\n\n*   DALL-E 3 and similar models struggle with **object consistency** in dense scenes (e.g., handling multiple objects or understanding spatial relationships). Janus-Pro excels in these areas, as seen in its performance on the **DPG-Bench** (Dense Prompt Graph Benchmark), where it scores **84.19**, outperforming DALL-E 3 (83.50).",
+    "order": 9,
+    "orderInChapter": 3,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 166,
+      "contentLength": 1550
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#stability-and-scalability-in-visual-generation",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-synthetic-data-utilization-for-enhanced-quality-10",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Synthetic Data Utilization for Enhanced Quality",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>By incorporating 72 million synthetic aesthetic samples, Janus-Pro achieves <strong>faster training convergence</strong> and improved output quality.</li>\n      <li>These samples eliminate real-world noise, ensuring images are more detailed, vibrant, and aesthetically pleasing.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>Real-world data used by DALL-E 3 and others often contains low-quality samples, resulting in <strong>unstable image generation</strong> and a reliance on heavy post-processing to improve aesthetics.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>By incorporating 72 million synthetic aesthetic samples, Janus-Pro achieves <strong>faster training convergence</strong> and improved output quality.</li>\n      <li>These samples eliminate real-world noise, ensuring images are more detailed, vibrant, and aesthetically pleasing.</li>\n    </ul>\n<ul>\n      <li>Real-world data used by DALL-E 3 and others often contains low-quality samples, resulting in <strong>unstable image generation</strong> and a reliance on heavy post-processing to improve aesthetics.</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   By incorporating 72 million synthetic aesthetic samples, Janus-Pro achieves **faster training convergence** and improved output quality.\n    *   These samples eliminate real-world noise, ensuring images are more detailed, vibrant, and aesthetically pleasing.\n*   **Competitors’ Limitation**:\n    *   Real-world data used by DALL-E 3 and others often contains low-quality samples, resulting in **unstable image generation** and a reliance on heavy post-processing to improve aesthetics.\n\n*   By incorporating 72 million synthetic aesthetic samples, Janus-Pro achieves **faster training convergence** and improved output quality.\n*   These samples eliminate real-world noise, ensuring images are more detailed, vibrant, and aesthetically pleasing.\n\n*   Real-world data used by DALL-E 3 and others often contains low-quality samples, resulting in **unstable image generation** and a reliance on heavy post-processing to improve aesthetics.",
+    "order": 10,
+    "orderInChapter": 4,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 124,
+      "contentLength": 1202
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#synthetic-data-utilization-for-enhanced-quality",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-advanced-fine-tuning-and-dataset-scaling-11",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Advanced Fine-Tuning and Dataset Scaling",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>Includes multimodal datasets for document understanding, table recognition, and multimodal conversations, making it more versatile than visual generation-focused models like DALL-E.</li>\n      <li>Expanded datasets (e.g., 90M for multimodal understanding) give Janus-Pro superior performance on <strong>real-world applications</strong>.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>Competitors like DALL-E are narrowly focused on creative text-to-image tasks and often underperform in multimodal understanding or cross-domain tasks.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>Includes multimodal datasets for document understanding, table recognition, and multimodal conversations, making it more versatile than visual generation-focused models like DALL-E.</li>\n      <li>Expanded datasets (e.g., 90M for multimodal understanding) give Janus-Pro superior performance on <strong>real-world applications</strong>.</li>\n    </ul>\n<ul>\n      <li>Competitors like DALL-E are narrowly focused on creative text-to-image tasks and often underperform in multimodal understanding or cross-domain tasks.</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   Includes multimodal datasets for document understanding, table recognition, and multimodal conversations, making it more versatile than visual generation-focused models like DALL-E.\n    *   Expanded datasets (e.g., 90M for multimodal understanding) give Janus-Pro superior performance on **real-world applications**.\n*   **Competitors’ Limitation**:\n    *   Competitors like DALL-E are narrowly focused on creative text-to-image tasks and often underperform in multimodal understanding or cross-domain tasks.\n\n*   Includes multimodal datasets for document understanding, table recognition, and multimodal conversations, making it more versatile than visual generation-focused models like DALL-E.\n*   Expanded datasets (e.g., 90M for multimodal understanding) give Janus-Pro superior performance on **real-world applications**.\n\n*   Competitors like DALL-E are narrowly focused on creative text-to-image tasks and often underperform in multimodal understanding or cross-domain tasks.",
+    "order": 11,
+    "orderInChapter": 5,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 120,
+      "contentLength": 1222
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#advanced-fine-tuning-and-dataset-scaling",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  },
+  {
+    "id": "ai-deepseek-janus-pro-efficient-training-strategy-12",
+    "domain": "ai_primers",
+    "category": "Models",
+    "article": "DeepSeek Janus-Pro",
+    "articleSlug": "deepseek-janus-pro",
+    "chapter": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "title": "Efficient Training Strategy",
+    "subtitle": "Why Janus-Pro is Better Than DALL-E and Other SOTA Models",
+    "contentHtml": "<ul>\n  <li><strong>Janus-Pro Advantage</strong>:\n    <ul>\n      <li>Redesigning Stage II training to focus exclusively on dense descriptive prompts reduces computational inefficiencies by <strong>20%-30%</strong>, making Janus-Pro both faster and cheaper to train.</li>\n    </ul>\n  </li>\n  <li><strong>Competitors’ Limitation</strong>:\n    <ul>\n      <li>DALL-E and Stable Diffusion models rely on computationally expensive diffusion techniques and often require extensive training on category-based labels, which are less effective for complex instructions.</li>\n    </ul>\n  </li>\n</ul>\n<ul>\n      <li>Redesigning Stage II training to focus exclusively on dense descriptive prompts reduces computational inefficiencies by <strong>20%-30%</strong>, making Janus-Pro both faster and cheaper to train.</li>\n    </ul>\n<ul>\n      <li>DALL-E and Stable Diffusion models rely on computationally expensive diffusion techniques and often require extensive training on category-based labels, which are less effective for complex instructions.</li>\n    </ul>",
+    "contentMarkdown": "*   **Janus-Pro Advantage**:\n    *   Redesigning Stage II training to focus exclusively on dense descriptive prompts reduces computational inefficiencies by **20%-30%**, making Janus-Pro both faster and cheaper to train.\n*   **Competitors’ Limitation**:\n    *   DALL-E and Stable Diffusion models rely on computationally expensive diffusion techniques and often require extensive training on category-based labels, which are less effective for complex instructions.\n\n*   Redesigning Stage II training to focus exclusively on dense descriptive prompts reduces computational inefficiencies by **20%-30%**, making Janus-Pro both faster and cheaper to train.\n\n*   DALL-E and Stable Diffusion models rely on computationally expensive diffusion techniques and often require extensive training on category-based labels, which are less effective for complex instructions.",
+    "order": 12,
+    "orderInChapter": 6,
+    "difficulty": 2,
+    "estimatedMinutes": 1,
+    "tags": [
+      "models"
+    ],
+    "metadata": {
+      "hasCode": false,
+      "hasMath": false,
+      "hasImages": false,
+      "wordCount": 110,
+      "contentLength": 1048
+    },
+    "nextCards": [],
+    "relatedCards": [],
+    "prerequisites": [],
+    "sourceUrl": "https://aman.ai/primers/ai/deepseek-janus-pro/#efficient-training-strategy",
+    "scrapedAt": "2025-12-28T11:51:58.818Z"
+  }
+]

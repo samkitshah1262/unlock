@@ -1,0 +1,160 @@
+[
+  {
+    "id": "la_wex_cross_product_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "title": "Cross Product in R³",
+    "contentHtml": "<p>The cross product is a fundamental operation in vector algebra that allows us to find the area of a parallelogram or the volume of a pyramid.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{a} \\times \\mathbf{b} = (a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1) \\]",
+      "name": "Cross Product Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the area of the parallelogram formed by vectors <math>\\mathbf{a} = (1, 2, 3)</math> and <math>\\mathbf{b} = (4, 5, 6)</math>.</p>",
+      "hints": [
+        "Consider the formula for the cross product.",
+        "Use the given vectors to calculate the area."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the formula for the cross product:</p><p>\\[ \\mathbf{a} \\times \\mathbf{b} = (a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1) \\]</p><p>Substituting the given values, we get:</p><p>\\[ (2*6-3*5, 3*4-1*6, 1*5-2*4) = (12-15, 12-6, 5-8) \\]</p><p>Simplifying the expression, we find that the area of the parallelogram is:</p><p>\\[ \\sqrt{(0)^2 + (-3)^2 + (-3)^2} = \\boxed{3\\sqrt{3}} \\]</p>",
+      "answerShort": "3√3"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the volume of a pyramid with base area <math>A</math> and height <math|h|</math>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Use the formula for the cross product to find the area vector",
+          "mathHtml": "\\[ \\mathbf{A} = \\frac{1}{2} |\\mathbf{a} \\times \\mathbf{b}| \\]",
+          "explanation": "The area vector is half the magnitude of the cross product."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the formula for the volume of a pyramid",
+          "mathHtml": "\\[ V = \\frac{1}{3} |\\mathbf{A}|h \\]",
+          "explanation": "The volume is one-third the magnitude of the area vector times the height."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Substitute the given values",
+          "mathHtml": "\\[ V = \\frac{1}{3} |\\mathbf{A}|h \\]",
+          "explanation": "Plug in the values for the area and height to find the volume."
+        }
+      ],
+      "finalAnswer": "The final answer is the volume of the pyramid."
+    },
+    "intuition": "The cross product allows us to find the area of a parallelogram or the volume of a pyramid by leveraging the geometric meaning of the operation.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:26:07.036Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_cross_product_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "title": "Cross Product in R³",
+    "contentHtml": "<p>In this worked example, we'll explore the cross product of two vectors in R³ and its geometric meaning.</p>",
+    "formula": {
+      "latex": "\\(\\mathbf{a} \\times \\mathbf{b} = \\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{vmatrix}\\)",
+      "name": "Cross product formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the cross product of vectors \\(\\mathbf{a} = 2\\mathbf{i} + 3\\mathbf{j} - \\mathbf{k}\\) and \\(\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} + 4\\mathbf{k}\\).</p>",
+      "hints": [
+        "Recall the formula for the cross product"
+      ],
+      "solutionHtml": "<p>We can expand the formula:</p><ul><li>Compute the determinant:</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the cross product of vectors \\(\\mathbf{a} = 2\\mathbf{i} + 3\\mathbf{j} - \\mathbf{k}\\) and \\(\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} + 4\\mathbf{k}\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Expand the formula",
+          "mathHtml": "\\[\\mathbf{a} \\times \\mathbf{b} = \\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\2&3&-1\\\\1&2&4\\end{vmatrix}\\]",
+          "explanation": "We're using the formula for the cross product"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the determinant",
+          "mathHtml": "\\[\\mathbf{a} \\times \\mathbf{b} = (3(4) - (-1)(2))\\mathbf{i} + ((-1)(1) - 2(1))\\mathbf{j} + (2(1) - 3(1))\\mathbf{k}\\]",
+          "explanation": "We're computing the determinant using the formula"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the result",
+          "mathHtml": "\\[\\mathbf{a} \\times \\mathbf{b} = 12\\mathbf{i} - 3\\mathbf{j} + \\mathbf{k}\\]",
+          "explanation": "We're simplifying the result"
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "The cross product has a geometric meaning: it represents the area of the parallelogram formed by the two vectors.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:26:43.346Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_cross_product_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "cross_product",
+    "title": "Cross Product in R³",
+    "contentHtml": "<p>In three-dimensional space, the cross product of two vectors is a vector perpendicular to both input vectors.</p>",
+    "formula": "{",
+    "latex": "\\\\[\\\\mathbf{a} \\\\times \\\\mathbf{b} = (a_2 b_3 - a_3 b_2) \\\\mathbf{i} + (a_3 b_1 - a_1 b_3) \\\\mathbf{j} + (a_1 b_2 - a_2 b_1) \\\\mathbf{k}\\]\",",
+    "name": "Cross Product Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the cross product of vectors <code>&#x27;\\mathbf{a} = (1, 0, 1)&#x27;</code> and <code>&#x27;\\mathbf{b} = (0, 2, 1)&#x27;</code>.</p>",
+    "hints": [
+      "Hint: Use the formula"
+    ],
+    "solutionHtml": "<p>To find the cross product, we plug in the values:</p><ul><li>\\\\(a_2 b_3 - a_3 b_2 = (0)(1) - (1)(2) = -2\\)</li><li>\\\\(a_3 b_1 - a_1 b_3 = (1)(0) - (0)(1) = 0\\)</li><li>\\\\(a_1 b_2 - a_2 b_1 = (1)(2) - (0)(1) = 2\\)</li></ul><p>The result is:</p><code>&#x27;\\\\mathbf{a} \\\\times \\\\mathbf{b} = (-2) \\\\mathbf{i} + 0 \\\\mathbf{j} + 2 \\\\mathbf{k}\\]</code>\",",
+    "answerShort": "(-2, 0, 2)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the area of the parallelogram with adjacent sides <code>&#x27;\\mathbf{a} = (1, 0, 1)&#x27;</code> and <code>&#x27;\\mathbf{b} = (0, 2, 1)&#x27;</code>.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the cross product\", \"mathHtml\": \"\\\\[\\\\mathbf{a} \\\\times \\\\mathbf{b} = (-2) \\\\mathbf{i} + 0 \\\\mathbf{j} + 2 \\\\mathbf{k}\\]\", \"explanation\": \"The cross product gives us a vector perpendicular to both input vectors.\"}, {\"stepNumber\": 2, \"description\": \"Find the magnitude of the cross product\", \"mathHtml\": \"\\\\[|\\\\mathbf{a} \\\\times \\\\mathbf{b}| = \\\\sqrt{(-2)^2 + 0^2 + 2^2}\\]\", \"explanation\": \"The magnitude is the length of the resulting vector.\"} ],",
+    "finalAnswer": "|\\\\mathbf{a} \\\\times \\\\mathbf{b}| = \\\\sqrt{4+4} = 2\\\\sqrt{2}\" },",
+    "intuition": "<p>The cross product gives us a vector that can be used to find the area of the parallelogram formed by the input vectors.</p>",
+    "visualDescription": "<p>A diagram showing two vectors and their cross product, with an arrow representing the resulting vector.</p>",
+    "commonMistakes": [
+      "Forgetting to use the correct formula"
+    ],
+    "realWorldApplications": [
+      "Computing areas of parallelograms in computer graphics"
+    ],
+    "tags": [
+      "vectors",
+      "cross product",
+      "area"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:27:28.314Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

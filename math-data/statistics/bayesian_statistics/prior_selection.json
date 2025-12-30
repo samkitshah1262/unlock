@@ -1,0 +1,606 @@
+[
+  {
+    "id": "stat_con_prior_selection_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. A prior distribution represents our initial beliefs about the parameters of a model before observing any data.</p><p>A prior can be informative or non-informative, proper or improper. Informative priors reflect specific knowledge about the parameter, while non-informative priors represent complete ignorance. Proper priors have finite volume, whereas improper priors do not.</p>",
+    "formula": {
+      "latex": "\\[ \text{Jeffreys Prior} = |H|^{-1/2} \\]",
+      "name": "Jeffreys Prior",
+      "variants": []
+    },
+    "intuition": "The goal of prior selection is to balance the need for regularization with the desire to allow the data to speak. A good prior should not dominate the posterior, but rather provide a gentle nudge.",
+    "realWorldApplications": [
+      "In machine learning, proper priors are often used in Bayesian neural networks to prevent overfitting."
+    ],
+    "commonMistakes": [
+      "Failing to consider the implications of improper priors on the posterior distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:15:36.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_prior_selection_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. The goal is to choose a prior distribution that reflects our existing knowledge about the problem at hand.</p><p>A common approach is to use an informative prior, which incorporates domain-specific information. However, this can lead to overfitting if not carefully managed.</p>",
+    "formula": "{",
+    "latex": "\\(P(\\theta | X) = \\frac{P(X | \\theta) P(\\theta)}{P(X)}\\)\",",
+    "name": "Bayes' theorem\" },",
+    "intuition": "Prior selection is about balancing the desire to incorporate existing knowledge with the need to avoid overfitting. A good prior should be informative enough to guide the learning process but not so strong that it dominates the data.",
+    "realWorldApplications": [
+      "In machine learning, a well-chosen prior can improve the performance of Bayesian neural networks."
+    ],
+    "commonMistakes": [
+      "Failing to recognize the impact of prior selection on model performance"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:15:50.561Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_prior_selection_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. A prior distribution represents our initial beliefs about the parameters of a model before observing any data.</p><p>There are different types of priors: informative and non-informative. Informative priors reflect specific knowledge or assumptions, while non-informative priors represent a lack of prior information.</p>",
+    "formula": {
+      "latex": "\\[ p(\\theta | D) = \\frac{p(D | \\theta) p(\\theta)}{p(D)} \\]",
+      "name": "Bayes' theorem"
+    },
+    "intuition": "Prior selection matters because it can significantly impact the resulting posterior distribution and, ultimately, our conclusions about the model's parameters.",
+    "realWorldApplications": [
+      "In machine learning, prior selection is crucial for tasks like Bayesian neural networks or Gaussian process regression."
+    ],
+    "commonMistakes": [
+      "Failing to consider the implications of different prior choices on the results"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:16:04.603Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_prior_selection_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. We'll explore the different types of priors and when to use them.</p>",
+    "formula": {
+      "latex": "\\[ p(\\theta | x) = \\frac{p(x | \\theta) p(\\theta)}{p(x)} \\]",
+      "name": "Bayes' theorem"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to model the prior distribution of a coin's bias. What type of prior would be suitable?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Choose an informative prior",
+          "mathHtml": "",
+          "explanation": "An informative prior is useful when we have some knowledge about the parameter"
+        }
+      ],
+      "finalAnswer": "A uniform prior"
+    },
+    "intuition": "Priors help us encode our initial beliefs or assumptions about a model's parameters. Informative priors can be helpful when we have domain expertise, while non-informative priors are useful for avoiding bias.",
+    "realWorldApplications": [
+      "In natural language processing, informative priors can be used to model the prior distribution of word frequencies."
+    ],
+    "tags": [
+      "Bayesian statistics",
+      "prior selection"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:16:22.065Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_prior_selection_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. A good prior can significantly impact the posterior distribution and subsequent inference.</p>",
+    "formula": "{",
+    "latex": "\\[ \\pi(x) = \\frac{\\alpha}{\\beta + x} \\]\",",
+    "name": "Informative Prior",
+    "variants": "[ {\"latex\": \"\\[ \\pi(x) = \\mathcal{N}(x | 0, 1) \\]\", \"description\": \"Non-informative prior\"} ] },",
+    "intuition": "A informative prior provides additional information about the distribution of interest. This can be useful when domain knowledge is available.",
+    "realWorldApplications": [
+      "In natural language processing, a informative prior can help improve topic modeling"
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Prior Selection"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:16:34.662Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_prior_selection_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. A good prior can greatly impact the results of our inference.</p><p>But how do we choose an informative yet non-informative prior? Enter Jeffreys' prior!</p>",
+    "formula": "{",
+    "latex": "\\[ p(\\theta) \\propto \\exp\\left(-\\frac{1}{2} \\int_{-\\infty}^{\\infty} (x - \\mu)^2 \\pi(x) dx \\right) \\]\",",
+    "name": "Jeffreys' Prior\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of exam scores with mean 80 and standard deviation 10. We want to model the prior distribution of students' abilities.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the problem\", \"mathHtml\": \"\", \"explanation\": \"\"}, {\"stepNumber\": 2, \"description\": \"Choose a conjugate prior\", \"mathHtml\": \"\\[ p(\\theta) \\propto \\exp\\left(-\\frac{1}{2} \\int_{-\\infty}^{\\infty} (x - \\mu)^2 \\pi(x) dx \\right) \\]\", \"explanation\": \"Jeffreys' prior is a popular choice for continuous distributions\"} ],",
+    "finalAnswer": "The answer\" },",
+    "intuition": "A good prior should reflect our initial understanding of the problem, but not be too informative.",
+    "tags": [
+      "Bayesian Statistics",
+      "Prior Selection"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:16:54.714Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_prior_selection_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. A good prior can greatly impact the resulting posterior distribution.</p><ul><li>A proper prior is one that integrates to 1, while an improper prior does not.</li><li>Jeffreys' prior is a popular choice for certain problems, but it's not always suitable.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\mathcal{P}(x) = \\frac{\\text{Likelihood} \\cdot \\text{Prior}}{\\int \\text{Likelihood} \\cdot \\text{Prior} dx} \\]\",",
+    "name": "Bayes' Theorem\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're modeling the probability of a coin landing heads-up. We have some prior knowledge that the coin is biased towards heads.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify the likelihood function\", \"mathHtml\": \"\\[ \\text{Likelihood} = \\frac{1}{2} + \\frac{\\theta}{2} \\]\", \"explanation\": \"The likelihood represents our updated understanding of the coin's bias.\"}, {\"stepNumber\": 2, \"description\": \"Choose a prior distribution for θ\", \"mathHtml\": \"\\[ \\text{Prior} = \\mathcal{N}(0.5, 0.1) \\]\", \"explanation\": \"A normal distribution with mean 0.5 and variance 0.1 represents our initial uncertainty about the coin's bias.\"}, {\"stepNumber\": 3, \"description\": \"Update the prior using Bayes' theorem\", \"mathHtml\": \"\\[ \\mathcal{P}(x) = \\frac{\\text{Likelihood} \\cdot \\text{Prior}}{\\int \\text{Likelihood} \\cdot \\text{Prior} dx} \\]\", \"explanation\": \"The updated posterior distribution takes into account our prior knowledge and the observed data.\"} ],",
+    "finalAnswer": "The resulting posterior distribution represents our updated understanding of the coin's bias.\" },",
+    "intuition": "A good prior can help or hurt your model, so it's essential to choose one that reflects your domain expertise.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:17:20.692Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior Selection: Informative vs Non-Informative</p>",
+      "hints": [
+        "Consider a simple coin flip example",
+        "Think about how informative priors affect posterior distributions",
+        "Don't forget to check the proper/ improper prior distinction"
+      ],
+      "solutionHtml": "<p>To illustrate, let's consider a fair coin with unknown bias. We can model this using a beta distribution as our prior.</p>\n<p>For an informative prior, we might assume a strong prior belief that the coin is slightly biased towards heads or tails.</p>\n<p>This would result in a more concentrated posterior distribution around the true value of the bias.</p>\n<p>In contrast, a non-informative prior (e.g., uniform) would lead to a broader posterior distribution, reflecting our lack of prior knowledge about the coin's bias.</p>",
+      "answerShort": "Informative priors result in more concentrated posteriors"
+    },
+    "commonMistakes": [
+      "Forgetting that improper priors can still be useful",
+      "Assuming all informative priors are proper"
+    ],
+    "realWorldApplications": [
+      "Using non-informative priors for hyperparameter tuning in deep learning models"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:17:36.465Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior selection is a crucial step in Bayesian statistics. Consider a simple coin flip experiment where we want to estimate the probability of heads. Suppose we have two prior distributions: one informative and one non-informative.</p>",
+      "hints": [
+        "Think about what 'informative' means in this context.",
+        "Recall that improper priors can be problematic.",
+        "Jeffreys' prior is a special case - why?"
+      ],
+      "solutionHtml": "<p>To illustrate the difference, let's assume our informative prior has mean 0.5 and variance 0.1. The non-informative prior could be a uniform distribution over [0,1].</p><p>Now, suppose we observe 10 coin flips with 6 heads. How would our posterior distributions change?</p>",
+      "answerShort": "The informative prior leads to a more concentrated posterior, while the non-informative prior yields a broader distribution."
+    },
+    "commonMistakes": [
+      "Failing to recognize that improper priors can lead to inconsistent posteriors.",
+      "Assuming all priors are equivalent without considering the context."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:17:51.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": {
+      "statementHtml": "<p>Prior selection in Bayesian statistics is crucial. Consider a scenario where you have two informative priors: <i>A</i> and <i>B</i>. Which one should you use?</p>",
+      "hints": [
+        "Think about the strength of each prior.",
+        "Consider the data distribution.",
+        "Check if the priors are proper or improper."
+      ],
+      "solutionHtml": "<p>To tackle this problem, we need to understand the differences between informative and non-informative priors. Informative priors contain information beyond just the data, while non-informative priors only reflect our uncertainty about the model parameters.</p><p>A proper prior is one that integrates to 1, whereas an improper prior does not. Jeffreys' prior is a type of improper prior that can be used when there's no prior knowledge.</p>",
+      "answerShort": "Use the informative prior with the strongest evidence."
+    },
+    "commonMistakes": [
+      "Choosing the wrong prior based on personal bias.",
+      "Ignoring the data distribution in favor of the prior."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:05.775Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_prior_selection_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "problem": "{",
+    "statementHtml": "<p>Prior selection in Bayesian statistics is crucial. Consider a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\). What prior distribution should we choose for \\(\\mu\\)?</p>\",",
+    "hints": [
+      "Start by thinking about the properties you want your prior to have.",
+      "Consider whether you want your prior to be informative or non-informative.",
+      "Think about how you can use Jeffreys' prior as a starting point."
+    ],
+    "solutionHtml": "<p>To choose an appropriate prior, we need to consider the properties of our normal distribution. Since we're modeling uncertainty in \\(\\mu\\), we want our prior to be non-informative. A common choice is the improper prior \\(p(\\mu) = 1\\).</p>\",",
+    "answerShort": "The answer is an improper prior, specifically \\(p(\\mu) = 1\\).\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:19.922Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[\\pi(x) = \\frac{1}{Z} e^{-\\frac{1}{2}\\sigma^2 (x-\\mu)^2}\\]",
+      "name": "Normal distribution prior",
+      "variants": [
+        {
+          "latex": "\\[\\pi(x) = \\frac{1}{C} x^{a-1} (1-x)^{b-1}\\]",
+          "description": "Beta distribution prior"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin flip experiment with an unknown probability of heads. We want to model this uncertainty using a Bayesian approach.</p>",
+      "hints": [
+        "Think about the possible values for the prior"
+      ],
+      "solutionHtml": "<p>We can use a uniform distribution as our prior, assuming equal likelihood for all possible outcomes.</p>",
+      "answerShort": "Uniform distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of exam scores with mean \\(\\mu = 80\\) and standard deviation \\(\\sigma = 5\\). We want to model the uncertainty in the true average score using a Bayesian approach.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Choose an informative prior",
+          "mathHtml": "\\[\\pi(x) = \\frac{1}{Z} e^{-\\frac{1}{2}\\sigma^2 (x-\\mu)^2}\\]",
+          "explanation": "An informative prior can help us make more accurate predictions."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Consider a non-informative prior",
+          "mathHtml": "\\[\\pi(x) = \\frac{1}{C} x^{a-1} (1-x)^{b-1}\\]",
+          "explanation": "A non-informative prior can help us avoid making strong assumptions about the data."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Use Jeffreys' prior",
+          "mathHtml": "\\[\\pi(x) = \\sqrt{\\frac{f'(x)}{2}}\\]",
+          "explanation": "Jeffreys' prior is a compromise between informative and non-informative priors."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Update the prior with new data",
+          "mathHtml": "\\[\\pi(x|D) = \\frac{\\pi(x)f(D|x)}{\\int_{-\\infty}^{\\infty} \\pi(x')f(D|x') dx'}\\]",
+          "explanation": "We can update our prior using Bayes' theorem."
+        }
+      ],
+      "finalAnswer": "The updated posterior distribution"
+    },
+    "intuition": "Prior selection is about balancing the need for informative models with the risk of overfitting.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:18:52.532Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ P(\\theta | x) = \\frac{P(x | \\theta) P(\\theta)}{P(x)} \\]",
+      "name": "Bayes' theorem",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a dataset, how do we choose an informative prior that reflects our knowledge about the model parameters?</p>",
+      "hints": [
+        "Consider the domain expertise",
+        "Think about the prior's impact on the posterior"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we're modeling the probability of a coin being fair. We have a dataset of 10 coin flips, and we want to choose an informative prior for the coin's bias.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the domain expertise",
+          "mathHtml": "",
+          "explanation": "We know that coins are typically biased towards heads or tails."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a prior distribution",
+          "mathHtml": "\\[ P(b) = \\frac{1}{\\sqrt{12}} \\exp(-|b|/\\sqrt{3}) \\]",
+          "explanation": "This is an improper prior that reflects our lack of knowledge about the coin's bias."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Update the prior with the data",
+          "mathHtml": "",
+          "explanation": "We'll use Bayes' theorem to update the prior with the likelihood of the observed data."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check for convergence",
+          "mathHtml": "",
+          "explanation": "We'll monitor the posterior's convergence using MCMC or other methods."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "",
+          "explanation": "The resulting posterior distribution will reflect our updated knowledge about the coin's bias."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "A good prior should reflect our domain expertise and be updated by the data to produce a meaningful posterior.",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Choosing an improper prior without justification"
+    ],
+    "realWorldApplications": [
+      "Modeling user behavior in recommendation systems"
+    ],
+    "tags": [
+      "Bayesian statistics",
+      "prior selection",
+      "inference"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:19:20.959Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty.</p>",
+    "formula": {
+      "latex": "\\[ \\pi(x) = \\frac{\\alpha}{\\beta + x} \\]",
+      "name": "Informative Prior"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a coin toss experiment with an unknown probability of heads, p. We want to model our prior beliefs about p.</p>",
+      "hints": [
+        "Hint: Think about the shape of the prior"
+      ],
+      "solutionHtml": "<p>To select a proper prior, we need to ensure it integrates to 1. A common choice is the beta distribution, which has parameters α and β.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose our initial belief about p is that it's likely to be close to 0.5 (α = 10, β = 20).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the prior",
+          "mathHtml": "\\[ \\pi(p) = \\frac{10}{30 + p} \\]",
+          "explanation": "We choose an informative prior to reflect our initial belief."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check if it's proper",
+          "mathHtml": "\\[ \\int_{0}^{1} \\frac{10}{30 + p} dp = 1 \\]",
+          "explanation": "The integral evaluates to 1, so the prior is proper."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Update with data",
+          "mathHtml": "\\[ \\pi(p | D) = \\frac{\\pi(p) \\times L(D | p)}{\\int_{0}^{1} \\pi(p) \\times L(D | p) dp} \\]",
+          "explanation": "We can now update the prior with our observed data."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "\\[ \\pi(p | D) = \\frac{\\alpha + N}{\\beta + N} \\]",
+          "explanation": "The updated prior reflects our new beliefs about p."
+        }
+      ],
+      "finalAnswer": "A proper and informative prior is selected"
+    },
+    "intuition": "Proper priors ensure the model integrates to 1, while informative priors reflect our initial beliefs.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:19:48.399Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_prior_selection_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "prior_selection",
+    "title": "Prior Selection in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, prior selection is a crucial step in modeling uncertainty. We'll explore the differences between informative and non-informative priors, proper and improper priors, and Jeffreys' prior.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{P}(\\theta | x) = \\frac{\\mathbf{L}(x | \\theta) \\pi(\\theta)}{\\int_{\\theta} \\mathbf{L}(x | \\theta) \\pi(\\theta) d\\theta}\\]",
+      "name": "Bayes' Theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we're modeling the probability of a coin being fair. We have prior knowledge that the coin is likely to be biased towards heads or tails, but not extremely so. How do we represent this uncertainty?</p>",
+      "hints": [
+        "Consider a conjugate prior",
+        "Think about the shape of the prior"
+      ],
+      "solutionHtml": "<p>We can use an informative prior that reflects our prior knowledge. For example, a beta distribution with parameters (2, 2) would imply a relatively flat prior over the range [0, 1].</p>",
+      "answerShort": "Informative prior"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a dataset of coin tosses and want to estimate the probability of heads. We know that the coin is likely biased towards either heads or tails, but not extremely so. How do we select a prior?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the type of prior needed",
+          "mathHtml": "",
+          "explanation": "We need an informative prior to reflect our prior knowledge."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose a conjugate prior",
+          "mathHtml": "",
+          "explanation": "A beta distribution is a natural choice for modeling probability."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Select the parameters of the prior",
+          "mathHtml": "",
+          "explanation": "We choose (2, 2) to reflect our prior knowledge that the coin is likely biased towards either heads or tails."
+        }
+      ],
+      "finalAnswer": "Informative beta prior with parameters (2, 2)"
+    },
+    "intuition": "Prior selection is about incorporating domain knowledge and uncertainty into your model. It's essential to choose a prior that reflects your understanding of the problem.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:20:16.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

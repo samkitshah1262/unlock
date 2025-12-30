@@ -1,0 +1,258 @@
+[
+  {
+    "id": "stat_wex_simple_linear_regression_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "simple_linear_regression",
+    "title": "Simple Linear Regression: Model, Least Squares, and Interpretation",
+    "contentHtml": "<p>In simple linear regression, we model a continuous outcome variable as a function of one predictor variable.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to predict the price of a house (outcome) based on its size (predictor). We have the following data:<br><table><tr><th>Size</th><th>Price</th></tr><tr><td>1000 sqft</td><td>$200,000</td></tr><tr><td>1200 sqft</td><td>$240,000</td></tr><tr><td>1500 sqft</td><td>$300,000</td></tr></table>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the model\", \"mathHtml\": \"\\\\[y = \\\\beta_0 + \\\\beta_1 x\\\\]\", \"explanation\": \"We're modeling the outcome variable y as a linear function of the predictor x.\"}, {\"stepNumber\": 2, \"description\": \"Find the least squares coefficients\", \"mathHtml\": \"\\\\[\\\\hat{\\\\beta}_1 = \\\\frac{\\\\sum (x_i - \\\\bar{x})(y_i - \\\\bar{y})}{\\\\sum (x_i - \\\\bar{x})^2}\\\\]\", \"explanation\": \"We're finding the values of \\\\beta_0 and \\\\beta_1 that minimize the sum of squared residuals.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the intercept\", \"mathHtml\": \"\\\\[\\\\hat{\\\\beta}_0 = \\\\bar{y} - \\\\hat{\\\\beta}_1 \\\\bar{x}\\\\]\", \"explanation\": \"We're using the mean values to calculate the intercept.\"}, {\"stepNumber\": 4\", \"description\": \"Interpret the coefficients\", \"mathHtml\": \"\\\\[\\\\text{Slope: } \\\\hat{\\\\beta}_1 = \\\\frac{\\\\Delta y}{\\\\Delta x}\\\\]\", \"explanation\": \"The slope represents the change in outcome for a one-unit change in predictor, while holding other variables constant.\"}, {\"stepNumber\": 5\", \"description\": \"Check residuals\", \"mathHtml\": \"\\\\[e_i = y_i - (\\\\hat{\\\\beta}_0 + \\\\hat{\\\\beta}_1 x_i)\\\\]\", \"explanation\": \"We're checking the residuals to ensure our model is a good fit.\"} ],",
+    "finalAnswer": "The estimated coefficients are \\\\hat{\\\\beta}_0 and \\\\hat{\\\\beta}_1.\" },",
+    "intuition": "Simple linear regression provides a straightforward way to model the relationship between a continuous outcome and one predictor variable.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:22:19.897Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_simple_linear_regression_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "simple_linear_regression",
+    "title": "Simple Linear Regression: Model, Least Squares, and Interpretation",
+    "contentHtml": "<p>In simple linear regression, we model a continuous outcome variable as a function of one predictor variable.</p>",
+    "workedExample": {
+      "problemHtml": "Suppose we want to predict the price of a house (outcome) based on its size (predictor). We have the following data:<br><table><tr><th>Size (ft<sup>2</sup>)</th><th>Price ($)</th></tr><tr><td>1000</td><td>200000</td></tr><tr><td>1200</td><td>250000</td></tr><tr><td>1500</td><td>300000</td></tr><tr><td>1800</td><td>350000</td></tr></table>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Fit the model",
+          "mathHtml": "\\[y = \\beta_0 + \\beta_1 x\\]",
+          "explanation": "We use the least squares method to find the best-fitting line."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the intercept and slope",
+          "mathHtml": "\\[\\hat{\\beta}_0 = (\\sum y_i) / n, \\hat{\\beta}_1 = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\\]",
+          "explanation": "The intercept represents the expected value of the outcome when the predictor is zero."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate residuals",
+          "mathHtml": "\\[e_i = y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)\\]",
+          "explanation": "Residuals measure the difference between observed and predicted values."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the model",
+          "mathHtml": "\\[E(y|x) = \\hat{\\beta}_0 + \\hat{\\beta}_1 x\\]",
+          "explanation": "The expected value of the outcome given the predictor is the predicted value."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Check assumptions",
+          "mathHtml": "",
+          "explanation": "We should verify that our data meets the assumptions of linear regression."
+        }
+      ],
+      "finalAnswer": "\\[y = -5000 + 200 x\\]"
+    },
+    "intuition": "Simple linear regression provides a straightforward way to model and predict continuous outcomes based on a single predictor variable.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:22:49.053Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_simple_linear_regression_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "simple_linear_regression",
+    "title": "Simple Linear Regression: Model and Interpretation",
+    "contentHtml": "<p>In simple linear regression, we model a continuous response variable as a function of one predictor variable.</p>",
+    "formula": {
+      "latex": "\\[y = \\beta_0 + \\beta_1 x\\]",
+      "name": "Simple Linear Regression Model"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have data on the height (in inches) and weight (in pounds) of a random sample of adults. We want to model the relationship between height and weight.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the data points (height, weight) = {(64, 120), (68, 140), (72, 160)}, find the simple linear regression model and interpret the coefficients.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the mean of height and weight",
+          "mathHtml": "\\[\\bar{x} = \\frac{64 + 68 + 72}{3} = 68\\]",
+          "explanation": "We need the means to calculate the residuals."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the deviations from the mean",
+          "mathHtml": "\\[x_i - \\bar{x} = x_i - 68\\]",
+          "explanation": "This helps us find the slope and intercept of the regression line."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the covariance between height and weight",
+          "mathHtml": "\\[cov(x,y) = \\frac{1}{2} [(64-68)(120-140) + (68-68)(140-160)]\\]",
+          "explanation": "The covariance measures the linear relationship between the variables."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the slope and intercept of the regression line",
+          "mathHtml": "\\[\\beta_1 = \\frac{cov(x,y)}{var(x)}, \\beta_0 = \\bar{y} - \\beta_1 \\bar{x}\\]",
+          "explanation": "The slope represents the change in weight for a one-unit increase in height, while the intercept is the predicted weight when height is zero."
+        }
+      ],
+      "finalAnswer": "\\[y = 120 + 2x\\]"
+    },
+    "intuition": "Simple linear regression helps us understand how changes in one variable affect another. In this example, a one-unit increase in height corresponds to a two-pound increase in weight.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:23:18.394Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_simple_linear_regression_018",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "simple_linear_regression",
+    "title": "Simple Linear Regression",
+    "contentHtml": "<p>In simple linear regression, we model a continuous outcome variable as a linear function of one predictor variable.</p>",
+    "formula": {
+      "latex": "\\[y = \\beta_0 + \\beta_1 x\\]",
+      "name": "Regression Equation"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider the dataset below:</p><ul><li>x: exam scores (0-100)</li><li>y: quiz grades (A-F)</li></ul>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given the dataset:</p><ul><li>x: [80, 90, 70, 85]</li><li>y: [A, B, C, A]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the mean of x and y",
+          "mathHtml": "\\[\\bar{x} = \\frac{80+90+70+85}{4} = 82.5\\]",
+          "explanation": "This helps us find the intercept term."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the mean of (x - \\bar{x}) and (y - \\bar{y})",
+          "mathHtml": "\\[\\bar{(x-\\bar{x})} = \\frac{(80-82.5) + ...}{4} = -1.25\\]",
+          "explanation": "This helps us find the slope term."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the sum of (x - \\bar{x})(y - \\bar{y})",
+          "mathHtml": "\\[\\sum(x-\\bar{x})(y-\\bar{y}) = (-1.25)(A-B) + ...\\]",
+          "explanation": "This helps us find the intercept term."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the least squares estimate of \\beta_1",
+          "mathHtml": "\\[\\hat{\\beta}_1 = \\frac{\\sum(x-\\bar{x})(y-\\bar{y})}{\\sum(x-\\bar{x})^2} = \\frac{-1.25(A-B) + ...}{4(-1.25)^2}\\]",
+          "explanation": "This is the slope of our regression line."
+        }
+      ],
+      "finalAnswer": "\\[\\hat{y} = 82.5 - 0.15(x-82.5)\\]"
+    },
+    "intuition": "The key insight here is that simple linear regression helps us understand how changes in one variable affect the outcome variable.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:23:50.758Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_simple_linear_regression_019",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "simple_linear_regression",
+    "title": "Simple Linear Regression: Model and Interpretation",
+    "contentHtml": "<p>In this worked example, we'll walk through a simple linear regression problem step-by-step.</p>",
+    "problem": "{",
+    "statementHtml": "Given the dataset below, fit a simple linear regression model to predict <i>y</i> based on <i>x</i>.",
+    "hints": [
+      "Check for outliers",
+      "Verify assumptions"
+    ],
+    "solutionHtml": "<p>We'll use the least squares method to find the best-fitting line.</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "\\[x, y] = [(1, 2), (2, 4), (3, 5), (4, 7)]\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the mean of <i>x</i> and <i>y</i>",
+        "mathHtml": "\\[\\bar{x} = \\frac{10}{4}, \\bar{y} = \\frac{18}{4}\\]",
+        "explanation": "This helps us find the intercept term."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the deviations from the means",
+        "mathHtml": "\\[x_i - \\bar{x}, y_i - \\bar{y}\\] for each data point"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Find the covariance between <i>x</i> and <i>y</i>",
+        "mathHtml": "\\[cov(x, y) = \\frac{1}{4}[(2-\\bar{x})(4-\\bar{y}) + (4-\\bar{x})(5-\\bar{y}) + ...]\\]"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Find the variance of <i>x</i> and <i>y</i>",
+        "mathHtml": "\\[var(x) = \\frac{1}{4}[(1-\\bar{x})^2 + (2-\\bar{x})^2 + ...], var(y) = \\frac{1}{4}[(2-\\bar{y})^2 + (4-\\bar{y})^2 + ...]\\]"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Calculate the slope and intercept",
+        "mathHtml": "\\[b = \\frac{cov(x, y)}{var(x)}, a = \\bar{y} - b\\*\\bar{x}\\]"
+      }
+    ],
+    "finalAnswer": "The estimated regression line is <i>y</i> = 1.5 + 2.0<i>x</i>\" },",
+    "intuition": "Simple linear regression helps us model the relationship between two variables, making it a fundamental tool in machine learning and data analysis.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:24:22.564Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

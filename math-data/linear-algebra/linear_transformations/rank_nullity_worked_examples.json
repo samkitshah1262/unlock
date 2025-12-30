@@ -1,0 +1,151 @@
+[
+  {
+    "id": "la_wex_rank_nullity_009",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "rank_nullity",
+    "title": "Rank-Nullity Theorem",
+    "contentHtml": "<p>The Rank-Nullity Theorem is a fundamental result in Linear Algebra, stating that the rank and nullity of a matrix sum to its dimension.</p>",
+    "formula": "{",
+    "latex": "\\(r(A) + n(A) = n\\)\",",
+    "name": "Rank-Nullity Formula\" },",
+    "problem": "{",
+    "statementHtml": "<p>Let \\(A \\in \\mathbb{R}^{m \\times n}\\) be a matrix with rank \\(r\\) and nullity \\(n\\). Prove that \\(r + n = m\\).</p>\",",
+    "hints": [
+      "Consider the column space",
+      "Think about the dimension of the kernel"
+    ],
+    "solutionHtml": "<p>We can prove this by showing that the dimension of the column space is equal to the rank, and the dimension of the kernel is equal to the nullity.</p><ul><li>\\(r = \\dim(\\text{col}(A))\\)</li><li>\\(n = \\dim(\\ker(A))\\)</li></ul>\",",
+    "answerShort": "The theorem holds\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let \\(A = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\). Find the rank and nullity of \\(A\\), and prove that they sum to 2.</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find a basis for the column space\", \"mathHtml\": \"\\[\\text{col}(A) = \\text{span}\\left(\\begin{bmatrix}1 \\\\ 3\\end{bmatrix}, \\begin{bmatrix}2 \\\\ 4\\end{bmatrix}\\right)\\]\", \"explanation\": \"We can do this by finding the linearly independent columns\"}, {\"stepNumber\": 2, \"description\": \"Find a basis for the kernel\", \"mathHtml\": \"\\[\\ker(A) = \\text{span}\\left(\\begin{bmatrix}-2 \\\\ 1\\end{bmatrix}\\right)\\]\", \"explanation\": \"We can do this by finding the linearly independent vectors in the null space\"}, {\"stepNumber\": 3, \"description\": \"Show that the rank is equal to the dimension of the column space\", \"mathHtml\": \"\\[r = \\dim(\\text{col}(A)) = 2\\]\", \"explanation\": \"This follows from our basis for the column space\"}, {\"stepNumber\": 4, \"description\": \"Show that the nullity is equal to the dimension of the kernel\", \"mathHtml\": \"\\[n = \\dim(\\ker(A)) = 1\\]\", \"explanation\": \"This follows from our basis for the kernel\"} ],",
+    "finalAnswer": "The rank and nullity sum to 2\" },",
+    "intuition": "The Rank-Nullity Theorem helps us understand how matrices can be decomposed into their column space and kernel, which has important implications in machine learning and AI.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:08:35.237Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_nullity_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "rank_nullity",
+    "title": "Rank-Nullity Theorem",
+    "contentHtml": "<p>The Rank-Nullity Theorem is a fundamental result in Linear Algebra.</p>",
+    "formula": {
+      "latex": "\\[\\text{rank}(A) + \\text{nullity}(A) = n\\]",
+      "name": "Rank-Nullity Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Let A be a matrix with rank r and nullity n-r. Prove that the dimension of the column space is equal to the rank.</p>",
+      "hints": [
+        "Hint: Use the fact that the range is spanned by the columns"
+      ],
+      "solutionHtml": "<p><ul><li>We know that the range is spanned by the columns, so we can write any vector in the range as a linear combination of the columns.</li><li>This means that every nonzero column must be independent and contribute to the rank.</li><li>Conversely, if a column is dependent, it can be written as a linear combination of the other columns, which are already spanned by the first r columns.</li><li>This shows that the nullity is equal to n-r.</li></ul></p>",
+      "answerShort": "The rank is equal to the dimension of the column space"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let A = \\[\\begin{array}{cc}1 &amp; 2 \\\\ 3 &amp; 4\\end{array}\\]. Prove that the rank-nullity theorem holds.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the rank of A",
+          "mathHtml": "\\[\\text{rank}(A) = 2\\]",
+          "explanation": "The columns are independent and span a plane."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the nullity of A",
+          "mathHtml": "\\[\\text{nullity}(A) = 1\\]",
+          "explanation": "The third column is dependent on the first two."
+        }
+      ],
+      "finalAnswer": "The rank-nullity theorem holds with rank 2 and nullity 1"
+    },
+    "intuition": "The key insight is that the rank represents the dimension of the spanned space, while the nullity represents the dimension of the orthogonal complement.",
+    "visualDescription": "A diagram showing a plane (rank) and a line (nullity) in an n-dimensional space",
+    "commonMistakes": [
+      "Forgetting to consider dependent columns"
+    ],
+    "realWorldApplications": [
+      "Dimensionality reduction in machine learning"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Rank-Nullity Theorem"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:09:08.240Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_rank_nullity_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "linear_transformations",
+    "topic": "rank_nullity",
+    "title": "Rank-Nullity Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll apply the Rank-Nullity Theorem to a matrix and find its rank and nullity.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the rank and nullity of the matrix A = \\[\\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\\\ 5 &amp; 6 \\end{bmatrix}\\].\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Find the row echelon form of A",
+        "mathHtml": "\\[A_{\text{REF}} = \\begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 2 \\ 0 &amp; 0 \\end{bmatrix}\\]",
+        "explanation": "We do this to simplify the matrix and make it easier to find its rank."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the pivot columns",
+        "mathHtml": "\\[\\text{Pivot columns: } (1, 2)\\]",
+        "explanation": "The pivot columns are the ones that become leading ones in the row echelon form."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Count the number of pivot columns",
+        "mathHtml": "\\[\text{Rank} = 2\\]",
+        "explanation": "This is our rank."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Find the nullity by subtracting the rank from the dimension",
+        "mathHtml": "\\[\text{Nullity} = 3 - 2 = 1\\]",
+        "explanation": "The nullity is the difference between the dimension and the rank."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Check our answer",
+        "mathHtml": "\\[A_{\text{REF}} \\cdot \\begin{bmatrix} x \\end{bmatrix} = \\begin{bmatrix} 0 \\end{bmatrix}\\]",
+        "explanation": "We can verify that the nullity is correct by showing that there exists a non-trivial solution to A's equation."
+      }
+    ],
+    "finalAnswer": "\\\\[\\\\text{Rank}(A) = 2, \\\\text{Nullity}(A) = 1\\\\]\" },",
+    "intuition": "The Rank-Nullity Theorem helps us understand the relationship between a matrix's rank and nullity. It's useful in many applications, including machine learning.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T11:09:39.387Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

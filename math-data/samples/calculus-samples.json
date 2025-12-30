@@ -1,0 +1,163 @@
+[
+  {
+    "id": "calc_con_gradient_001",
+    "subject": "calculus",
+    "type": "concept",
+    "chapter": "multivariable",
+    "topic": "gradient",
+    "title": "The Gradient: Direction of Steepest Ascent",
+    "subtitle": "The key to optimization in ML",
+    "contentHtml": "<p>The <strong>gradient</strong> of a multivariable function \\(f(\\mathbf{x})\\) is a vector containing all partial derivatives:</p><p>\\[\\nabla f = \\left( \\frac{\\partial f}{\\partial x_1}, \\frac{\\partial f}{\\partial x_2}, \\ldots, \\frac{\\partial f}{\\partial x_n} \\right)\\]</p><p>The gradient has a beautiful geometric meaning: <strong>it points in the direction where \\(f\\) increases fastest</strong>, and its magnitude tells you how steep that increase is.</p><p>This is why gradient descent works: to minimize a function, move in the direction <em>opposite</em> the gradient.</p>",
+    "formula": {
+      "latex": "\\nabla f(\\mathbf{x}) = \\begin{pmatrix} \\frac{\\partial f}{\\partial x_1} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_n} \\end{pmatrix}",
+      "name": "Gradient Vector",
+      "variants": [
+        {
+          "latex": "\\nabla f = \\left( f_{x_1}, f_{x_2}, \\ldots, f_{x_n} \\right)",
+          "description": "Compact subscript notation"
+        },
+        {
+          "latex": "D_\\mathbf{u} f = \\nabla f \\cdot \\mathbf{u}",
+          "description": "Directional derivative (u is unit vector)"
+        }
+      ]
+    },
+    "intuition": "Imagine standing on a hillside. The gradient points directly uphill—the steepest way up. Its length tells you how steep the slope is. If you want to get to the bottom (minimize), walk opposite to the gradient.",
+    "visualDescription": "A contour plot of a 2D function with gradient vectors drawn perpendicular to contour lines, pointing toward higher values. Show that gradient is perpendicular to level curves.",
+    "commonMistakes": [
+      "Confusing gradient (a vector) with its magnitude (a scalar)",
+      "Forgetting that the gradient points UPHILL (toward higher values)",
+      "Not realizing the gradient is perpendicular to level curves/surfaces"
+    ],
+    "realWorldApplications": [
+      "Gradient descent for training neural networks",
+      "Optimizing loss functions in all of ML",
+      "Natural gradient for more efficient optimization",
+      "Gradient-based feature attribution (saliency maps)"
+    ],
+    "tags": ["gradient", "partial derivative", "optimization", "directional derivative"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["calc_con_partial_derivatives_001"],
+    "relatedCards": ["calc_con_gradient_descent_001", "calc_for_directional_derivative_001"],
+    "nextCards": ["calc_wex_gradient_001", "calc_con_hessian_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "calc_con_gradient_descent_001",
+    "subject": "calculus",
+    "type": "concept",
+    "chapter": "ml_calculus",
+    "topic": "gradient_descent",
+    "title": "Gradient Descent: The Optimization Workhorse",
+    "subtitle": "How neural networks learn",
+    "contentHtml": "<p><strong>Gradient descent</strong> is the algorithm that trains nearly all modern ML models. The idea is simple: to minimize a function, repeatedly take small steps in the direction opposite the gradient.</p><p>Starting from some initial point \\(\\mathbf{x}_0\\), we update:</p><p>\\[\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta \\nabla f(\\mathbf{x}_t)\\]</p><p>where \\(\\eta\\) (eta) is the <strong>learning rate</strong>—how big each step is.</p><p>The magic: even for functions with millions of parameters (like neural network weights), this simple local rule leads to good solutions!</p>",
+    "formula": {
+      "latex": "\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta \\nabla f(\\mathbf{x}_t)",
+      "name": "Gradient Descent Update",
+      "variants": [
+        {
+          "latex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla_{\\theta} \\mathcal{L}(\\theta)",
+          "description": "ML notation (θ = parameters, L = loss)"
+        },
+        {
+          "latex": "\\mathbf{x}_{t+1} = \\mathbf{x}_t - \\eta_t \\nabla f(\\mathbf{x}_t)",
+          "description": "With adaptive learning rate"
+        }
+      ]
+    },
+    "intuition": "Imagine being blindfolded on a hilly landscape and trying to find the lowest point. Strategy: feel which direction is downhill (that's the negative gradient), take a step that way, repeat. The learning rate is your step size—too big and you overshoot, too small and you're too slow.",
+    "visualDescription": "A 3D loss surface with the gradient descent path shown as a zigzagging line from a random starting point down to a minimum. Show how different learning rates affect the path.",
+    "commonMistakes": [
+      "Learning rate too high → divergence or oscillation",
+      "Learning rate too low → painfully slow convergence",
+      "Confusing local minima with global minima",
+      "Forgetting that gradient descent finds LOCAL minima, not necessarily global"
+    ],
+    "realWorldApplications": [
+      "Training all neural networks (backprop computes gradients, GD uses them)",
+      "Logistic regression, linear regression, SVM training",
+      "Modern variants: SGD, Adam, AdaGrad, RMSprop",
+      "Fine-tuning large language models"
+    ],
+    "tags": ["gradient descent", "optimization", "learning rate", "neural networks"],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "estimatedMinutes": 2,
+    "prerequisites": ["calc_con_gradient_001"],
+    "relatedCards": ["calc_con_backpropagation_001", "calc_con_convexity_001"],
+    "nextCards": ["calc_wex_gradient_descent_001", "calc_prb_gradient_descent_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  },
+  {
+    "id": "calc_wex_chain_rule_001",
+    "subject": "calculus",
+    "type": "worked_example",
+    "chapter": "ml_calculus",
+    "topic": "backpropagation",
+    "title": "Chain Rule in Neural Networks",
+    "subtitle": "Computing gradients through layers",
+    "contentHtml": "<p>This example shows how the chain rule computes gradients in a simple 2-layer neural network—the foundation of backpropagation.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Consider a simple network: input \\(x\\), hidden layer \\(h = \\sigma(w_1 x)\\), output \\(y = w_2 h\\), loss \\(L = (y - t)^2\\) where \\(t\\) is the target. Find \\(\\frac{\\partial L}{\\partial w_1}\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write out the computation graph",
+          "mathHtml": "\\[x \\xrightarrow{w_1} z_1 = w_1 x \\xrightarrow{\\sigma} h = \\sigma(z_1) \\xrightarrow{w_2} y = w_2 h \\xrightarrow{} L = (y-t)^2\\]",
+          "explanation": "The gradient must flow backward through each operation"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply chain rule",
+          "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = \\frac{\\partial L}{\\partial y} \\cdot \\frac{\\partial y}{\\partial h} \\cdot \\frac{\\partial h}{\\partial z_1} \\cdot \\frac{\\partial z_1}{\\partial w_1}\\]",
+          "explanation": "Multiply the derivatives along the path from L back to w₁"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute each partial derivative",
+          "mathHtml": "\\[\\frac{\\partial L}{\\partial y} = 2(y - t)\\]\\[\\frac{\\partial y}{\\partial h} = w_2\\]\\[\\frac{\\partial h}{\\partial z_1} = \\sigma'(z_1)\\]\\[\\frac{\\partial z_1}{\\partial w_1} = x\\]",
+          "explanation": "Each is a simple local derivative"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Multiply them together",
+          "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = 2(y-t) \\cdot w_2 \\cdot \\sigma'(z_1) \\cdot x\\]",
+          "explanation": "This is the gradient flowing from loss back to the first weight"
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the result",
+          "mathHtml": "\\[\\frac{\\partial L}{\\partial w_1} = \\underbrace{2(y-t)}_{\\text{error signal}} \\cdot \\underbrace{w_2 \\cdot \\sigma'(z_1)}_{\\text{through hidden layer}} \\cdot \\underbrace{x}_{\\text{input}}\\]",
+          "explanation": "The gradient is: (how wrong we are) × (how the error propagates back) × (the input that caused it)"
+        }
+      ],
+      "finalAnswer": "\\(\\frac{\\partial L}{\\partial w_1} = 2(y-t) \\cdot w_2 \\cdot \\sigma'(z_1) \\cdot x\\)"
+    },
+    "intuition": "Backpropagation is just the chain rule applied systematically. Each layer passes back the 'blame' for the error, scaled by its local gradient. The product of all these local gradients gives the total gradient.",
+    "commonMistakes": [
+      "Applying chain rule in wrong order (should be forward then backward)",
+      "Forgetting the σ'(z) term (the activation derivative)",
+      "Vanishing gradients when σ'(z) is small (problem with sigmoid/tanh)"
+    ],
+    "tags": ["chain rule", "backpropagation", "neural network", "gradient"],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "estimatedMinutes": 3,
+    "prerequisites": ["calc_con_gradient_001", "calc_con_chain_rule_multi_001"],
+    "relatedCards": ["calc_con_backpropagation_001"],
+    "nextCards": ["calc_prb_backpropagation_001"],
+    "generatedAt": "2025-12-26T10:00:00.000Z",
+    "generatedBy": "manual-sample",
+    "reviewed": true,
+    "version": 1
+  }
+]
+

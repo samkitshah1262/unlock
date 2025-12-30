@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scalable Voting Contract + Refunds &amp; gas management</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .problem-statement {
+      background: #fff;
+    }
+    .header .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    .time-limit, .memory-limit, .input-file, .output-file {
+      color: #666;
+      font-size: 0.9em;
+      margin: 5px 0;
+    }
+    .property-title {
+      display: inline;
+      font-weight: normal;
+    }
+    .input-specification, .output-specification, .note {
+      margin: 20px 0;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .sample-tests {
+      margin: 20px 0;
+    }
+    .sample-test {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .input, .output {
+      flex: 1;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 0.9em;
+    }
+    .MathJax {
+      font-size: 1.1em;
+    }
+    p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="problem-statement"><div class="header"><div class="title">E. Scalable Voting Contract + Refunds &amp; gas management</div><div class="time-limit"><div class="property-title">time limit per test</div>60 s</div><div class="memory-limit"><div class="property-title">memory limit per test</div>1024 MB</div><div class="input-file input-standard"><div class="property-title">input</div>standard input</div><div class="output-file output-standard"><div class="property-title">output</div>standard output</div></div><div><p><span>Level 5: Scalable single-proposal Voting Contract + Refunds and gas management</span></p><p><span class="tex-font-style-bf">1. Problem Statement</span></p><p>This problem is a follow-up on Level 3: we implement the same high-level logic, but this time handle funds and manage gas more carefully.</p><p>You need to implement a smart contract that allows to vote "yes" or "no" on some proposal. Compared to Level 1 there is one important distinction: this time the voting contract needs to be scalable and should handle any number of voters up to 4 billion.</p><ol> <li> The size of the storage of the proposal contract cannot exceed <span class="tex-font-style-tt">100 000</span> bits. </li><li> Anyone can deploy the proposal contract. </li><li> The voting is time-limited: no more votes can be accepted after the specified duration. </li><li> Any number of votes can be accepted. </li><li> No votes can be accepted after the voting deadline. </li><li> A voter is uniquely identified by their blockchain address. </li><li> Any voter can vote only one time. </li><li> A voter cannot change their mind and change how they cast their vote. </li><li> If a vote is not accepted, an exit code indicating unsuccessful execution must be thrown. </li><li> Your contract's receivers should not consume too much gas: most tests won't send more than 0.1 Toncoin (the reference solution consumes way below this limit). </li><li> The proposal contract should reimburse the excess funds sent by voters: it cannot freeze funds, burn them, or send them to someone else. </li><li> You must handle cases when voting transactions fail midair due to insufficient funds. The voter should be able to vote again by increasing the amount of Toncoins spent. Do not assume gas price is constant. </li></ol><p><span class="tex-font-style-bf">2. Interfaces</span></p><p>Your submission must adhere to the interfaces described in this section to ensure your contract can be tested automatically. If your contract's interfaces are different, the tests will fail. The interface described below is exactly the same as in Level 1.</p><p><span class="tex-font-style-bf">2.1 File name and contract name</span></p><p>Your solution must be submitted in a file named <span class="tex-font-style-tt">solution5.tact</span>, and the contract must be named <span class="tex-font-style-tt">Proposal</span>.</p><p><span class="tex-font-style-bf">2.2 Contract deployment</span></p><p>Your contract's <a href="https://docs.tact-lang.org/book/contracts/#init-function"><span class="tex-font-style-tt">init()</span> function</a> should receive a single argument of the following type:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Init</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln">    proposalId</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> uint32</span><span class="pun">;</span><br><span class="pln">    votingEndingAt</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> uint32</span><span class="pun">;</span><br><span class="pun">}</span><br></code></pre><ul> <li> The <span class="tex-font-style-tt">proposalId</span> field in the init structure ensures that more than one proposal contract can be deployed on the blockchain. </li><li> If the current <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a> is greater than the value of the <span class="tex-font-style-tt">votingEndingAt</span> field, no more votes will be accepted. </li></ul><p>An <a href="https://docs.tact-lang.org/book/receive/#receive-internal-messages">empty receiver</a> should be available to deploy your contract:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="pln">receive</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">}</span><br></code></pre><p>Protection against funds freezing is not required here.</p><p><span class="tex-font-style-bf">2.3 Voting</span></p><p>To allow casting votes, your contract needs to have a receiver accepting the <span class="tex-font-style-tt">Vote</span> message type:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="pln">message </span><span class="typ">Vote</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">value</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Bool</span><span class="pln"> </span><span class="pun">}</span><br></code></pre><p>The <span class="tex-font-style-tt">value</span> field of a <span class="tex-font-style-tt">Vote</span> message means "yes" if it is <span class="tex-font-style-tt">true</span>, or "no" otherwise.</p><p><span class="tex-font-style-bf">2.4 Retrieving voting data from your contract</span></p><p>Your contract needs to have a getter named <span class="tex-font-style-tt">proposalState</span> to retrieve the current voting results with the following signature:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="kwd">get</span><span class="pln"> fun proposalState</span><span class="pun">():</span><span class="pln"> </span><span class="typ">ProposalState</span><br></code></pre><p>This getter above needs to return the pair of "yes" and "no" votes packed into the <span class="tex-font-style-tt">ProposalState</span> structure:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="kwd">struct</span><span class="pln"> </span><span class="typ">ProposalState</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln">    yesCount</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> uint32</span><span class="pun">;</span><br><span class="pln">    noCount</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> uint32</span><span class="pun">;</span><br><span class="pun">}</span><br></code></pre><p><span class="tex-font-style-bf">2.5 Solution template</span></p><p>You can find the contract interfaces described above in <a href="https://github.com/ton-studio/tact-smart-battle/blob/main/problem5/solution5.tact"><span class="tex-font-style-tt">solution5.tact</span></a>.</p><p><span class="tex-font-style-bf">3. Public Tests</span></p><p>For a deeper understanding of how your contract will be tested and to ensure full compatibility, please refer to the public interface compatibility test: <a href="https://github.com/ton-studio/tact-smart-battle/blob/main/problem5/public5.spec.ts"><span class="tex-font-style-tt">public5.spec.ts</span></a>.</p><p>Use the following command to execute the automated tests specifically for Level 5:</p><pre class="lstlisting"><code class="prettyprint prettyprinted" style=""><span class="pln">npm run test public5</span><br></code></pre><p>The <span class="tex-font-style-tt">test</span> script automatically compiles all the Tact contracts before running the tests.</p><p>Good luck with implementing <span class="tex-font-style-bf">Level 5</span>!</p></div></div>
+</body>
+</html>

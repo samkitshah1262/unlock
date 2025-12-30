@@ -1,0 +1,205 @@
+[
+  {
+    "id": "prob_wex_conditional_distributions_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge of a random variable Y given new information about another random variable X.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y) and the conditional probability P(Y|X), find the updated probability P(y|x) for a specific value y.</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use Bayes' theorem:</p><ul><li>What we do: Plug in the given values and simplify</li><math>\\[P(y|x) = \\frac{P(x,y)}{P(x)}\\]</math></li><li>The math: Apply Bayes' theorem to the joint distribution P(X, Y)</li><li>Why: This gives us the updated probability P(Y|X) for a specific value y</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) = [0.3, 0.2; 0.7, 0.8] and the conditional probability P(Y|X) = [0.5, 0.9]. Find the updated probability P(y|x=1) for y=1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the given values",
+          "mathHtml": "\\[P(x=1,y=1) = 0.3\\*0.8\\]",
+          "explanation": "We're using the joint distribution to find the probability of X=1 and Y=1"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X=x)",
+          "mathHtml": "\\[P(x=1) = \\sum_y P(x=1,y) = 0.3\\*0.8 + 0.7\\*0.5 = 0.54\\]",
+          "explanation": "We're summing over all possible values of Y to find the probability of X=x"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Bayes' theorem",
+          "mathHtml": "\\[P(y=1|x=1) = \\frac{P(x=1,y=1)}{P(x=1)}\\*\\frac{1}{0.54}\\]",
+          "explanation": "This gives us the updated probability P(Y|X) for a specific value y"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "In this example, we're updating our knowledge of Y given new information about X. Bayes' theorem helps us do this by providing a formula to update the probability.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:55:33.613Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to model the relationship between two random variables.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional Probability Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y), find the conditional probability P(Y = y | X = x).</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) where X is the number of hours studied and Y is the score on a test. If P(X = 3, Y = 80) = 0.2 and P(X = 3) = 0.5, find P(Y = 80 | X = 3).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the Bayes' theorem formula",
+          "mathHtml": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+          "explanation": "We're using Bayes' theorem to update our probability given new information"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X = 3, Y = 80)",
+          "mathHtml": "\\[P(X = 3, Y = 80) = 0.2\\]",
+          "explanation": "This is the joint probability we're given"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find P(X = 3)",
+          "mathHtml": "\\[P(X = 3) = 0.5\\]",
+          "explanation": "This is the marginal probability we need for Bayes' theorem"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Plug in values and simplify",
+          "mathHtml": "\\[P(Y|X) = \\frac{0.2}{0.5} = 0.4\\]",
+          "explanation": "Now we're updating our probability given the new information"
+        }
+      ],
+      "finalAnswer": "P(Y = 80 | X = 3) = 0.4"
+    },
+    "intuition": "Conditional distributions allow us to update our probability based on new information.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:56:07.006Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, we often encounter conditional distributions, which describe the probability of an event given that another event has occurred.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random variable X with a uniform distribution on [0,1]. We want to find P(Y=1|X=x), where Y is a binary random variable indicating whether x is greater than or equal to 0.5.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the conditional probability\", \"mathHtml\": \"\\(P(Y=1 | X = x) = \\frac{P(X=x, Y=1)}{P(X=x)}\\)\", \"explanation\": \"We're using the definition of conditional probability.\"}, {\"stepNumber\": 2, \"description\": \"Find the numerator\", \"mathHtml\": \"\\(P(X=x, Y=1) = P(Y=1) \\cdot P(X=x | Y=1)\\)\", \"explanation\": \"We're breaking down the joint event into two parts: the probability of Y=1 and the probability of X=x given Y=1.\"}, {\"stepNumber\": 3, \"description\": \"Find the denominator\", \"mathHtml\": \"\\(P(X=x) = \\int_0^1 P(Y=0 | X=t) dt\\)\", \"explanation\": \"We're integrating over all possible values of X to get the marginal probability.\"}, {\"stepNumber\": 4\", \"description\": \"Substitute and simplify\", \"mathHtml\": \"\\(P(Y=1 | X=x) = \\frac{\\int_0^x P(Y=1) dt}{\\int_0^1 P(Y=0 | X=t) dt}\\)\", \"explanation\": \"We're plugging in the expressions from steps 2 and 3.\"} ],",
+    "finalAnswer": "The final answer is a function of x, which we can evaluate for specific values.\" },",
+    "intuition": "Conditional distributions help us update our beliefs about Y given new information X. This is crucial in many machine learning applications.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:56:36.983Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge about a random variable given new information.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y), find the conditional distribution P(Y|X).</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use Bayes' theorem:</p><ul><li>We know that P(Y|X) = \\frac{P(X,Y)}{P(X)}</li><li>Now, we need to find P(X,Y) and P(X)</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) = \\frac{1}{4} \\delta(X-0) \\delta(Y-0) + \\frac{1}{2} \\delta(X-1) \\delta(Y-0) + \\frac{1}{8} \\delta(X-1) \\delta(Y-1)</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find P(X,Y)",
+          "mathHtml": "\\[P(X=0,Y=0) = \\frac{1}{4}, P(X=0,Y=1) = 0, P(X=1,Y=0) = \\frac{1}{2}, P(X=1,Y=1) = \\frac{1}{8}\\]",
+          "explanation": "We're finding the probability of each possible combination of X and Y"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X)",
+          "mathHtml": "\\[P(X=0) = \\frac{1}{4} + 0 = \\frac{1}{4}, P(X=1) = \\frac{1}{2} + \\frac{1}{8} = \\frac{3}{4}\\]",
+          "explanation": "We're finding the probability of each possible value of X"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug into Bayes' theorem",
+          "mathHtml": "\\[P(Y=0|X=0) = \\frac{P(X=0,Y=0)}{P(X=0)}, P(Y=1|X=0) = 0, P(Y=0|X=1) = \\frac{P(X=1,Y=0)}{P(X=1)}, P(Y=1|X=1) = \\frac{P(X=1,Y=1)}{P(X=1)}\\]",
+          "explanation": "We're plugging the values into Bayes' theorem"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify",
+          "mathHtml": "\\[P(Y=0|X=0) = \\frac{1}{4} / (1/4), P(Y=1|X=0) = 0, P(Y=0|X=1) = (1/2) / (3/4), P(Y=1|X=1) = (1/8) / (3/4)\\]",
+          "explanation": "We're simplifying the expressions"
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "Conditional distributions allow us to update our knowledge about Y given new information X.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:57:24.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

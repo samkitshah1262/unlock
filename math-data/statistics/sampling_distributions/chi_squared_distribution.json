@@ -1,0 +1,475 @@
+[
+  {
+    "id": "stat_con_chi_squared_distribution_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The Chi-squared distribution is a fundamental concept in statistical inference, used to model the sum of squared independent standard normal variables.</p><p>Imagine flipping a coin multiple times and recording the number of heads. The Chi-squared distribution helps us understand the probability of observing certain outcomes given the true underlying probability.</p>",
+    "formula": {
+      "latex": "\\[ \\chi^2 = \\sum_{i=1}^k (O_i - E_i)^2 / E_i \\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "intuition": "The Chi-squared distribution provides a way to quantify the difference between observed and expected frequencies, making it a crucial tool in hypothesis testing and confidence interval construction.",
+    "realWorldApplications": [
+      "Hypothesis testing in machine learning models",
+      "Confidence intervals for categorical data"
+    ],
+    "commonMistakes": [
+      "Failing to account for degrees of freedom when calculating the Chi-squared statistic"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:59:45.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_chi_squared_distribution_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The chi-squared distribution is a fundamental concept in statistical inference that arises from the sum of squared standard normal variables.</p><p>Imagine you're conducting an experiment to test whether two populations have different means. You collect data and calculate the difference between each sample mean and the overall population mean, then square these differences and add them up. The resulting variable follows a chi-squared distribution with degrees of freedom equal to the number of samples minus one.</p>",
+    "formula": {
+      "latex": "\\[ \\chi^2 = \\sum_{i=1}^k (x_i - \\mu)^2 / \\sigma^2 \\]",
+      "name": "Chi-Squared Distribution",
+      "variants": []
+    },
+    "intuition": "The chi-squared distribution is a measure of how well the observed data fits a theoretical model. In machine learning, it's used to evaluate the goodness-of-fit for statistical models and detect outliers.",
+    "realWorldApplications": [
+      "Detecting anomalies in financial transactions",
+      "Evaluating the performance of predictive models"
+    ],
+    "commonMistakes": [
+      "Confusing the chi-squared distribution with the normal distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:00:00.391Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_chi_squared_distribution_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The Chi-squared distribution is a fundamental concept in statistical inference, used to model the sum of squared independent standard normal variables.</p><p>It's a continuous probability distribution that arises naturally when testing hypotheses about categorical data.</p>",
+    "formula": {
+      "latex": "\\[ \\chi^2 = \\sum_{i=1}^{k} Z_i^2 \\]",
+      "name": ""
+    },
+    "intuition": "The Chi-squared distribution provides a way to quantify the difference between observed and expected frequencies in categorical data. This is crucial in many real-world applications, such as testing for independence in contingency tables or evaluating the goodness of fit of a statistical model.",
+    "realWorldApplications": [
+      "Hypothesis testing in machine learning",
+      "Evaluating the quality of clustering algorithms"
+    ],
+    "commonMistakes": [
+      "Failing to account for degrees of freedom when calculating Chi-squared statistics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:00:13.504Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_distribution_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The Chi-squared distribution is a fundamental concept in statistical inference, used to model the sum of squared standardized normal variables.</p><ul><li>It's often used in hypothesis testing and confidence intervals for proportions and goodness-of-fit tests.</li></ul>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]\",",
+    "name": "Chi-squared statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test if a coin is fair. We flip the coin 10 times and record the number of heads.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the expected number of heads under the null hypothesis\", \"mathHtml\": \"\\[E = 5\\]\", \"explanation\": \"We assume the coin is fair, so the expected number of heads is half of the total flips.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the observed number of heads and the difference from the expected value\", \"mathHtml\": \"\\[O=7,\\quad (O-E) = 2\\]\", \"explanation\": \"We observe 7 heads, which is 2 more than our expected value.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the chi-squared statistic\", \"mathHtml\": \"\\[\\chi^2 = \\frac{(7-5)^2}{5} + \\frac{(3-5)^2}{5} = 1.6\\]\", \"explanation\": \"We sum up the squared differences between observed and expected values, divided by the expected value.\"} ],",
+    "finalAnswer": "The chi-squared statistic is 1.6\" },",
+    "intuition": "The Chi-squared distribution helps us quantify how far our observed data is from what we would expect under a null hypothesis.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:00:36.561Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_distribution_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The chi-squared distribution is a fundamental concept in statistical hypothesis testing.</p><p>It's used to determine whether there's a statistically significant difference between observed and expected frequencies in a contingency table.</p>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i=1}^{k} \\frac{(\\text{observed}_i - \\text{expected}_i)^2}{\\text{expected}_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we're testing whether there's a correlation between smoking and lung cancer. We collect data on the number of smokers and non-smokers with lung cancer.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Calculate the observed frequencies",
+        "mathHtml": "Observed_smokers = 50, Observed_non_smokers = 30"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the expected frequencies under the null hypothesis",
+        "mathHtml": "Expected_smokers = 40, Expected_non_smokers = 60"
+      }
+    ],
+    "finalAnswer": "The chi-squared statistic is calculated as the sum of the squared differences between observed and expected frequencies, divided by the expected frequencies.\" },",
+    "intuition": "The chi-squared distribution helps us determine whether the observed frequencies are significantly different from what we'd expect under a null hypothesis.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:00:54.790Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_chi_squared_distribution_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The chi-squared distribution is a fundamental concept in statistical inference, used to test hypotheses about categorical data.</p><p>It's essential for understanding goodness-of-fit tests and independence tests.</p>",
+    "formula": "{",
+    "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to test whether the number of heads in a coin flip follows a binomial distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the expected frequencies\", \"mathHtml\": \"\\(\\text{Expected frequency} = \\frac{\\text{Total observations}}{2}\\)\", \"explanation\": \"We're assuming equal probability of heads and tails.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the chi-squared statistic\", \"mathHtml\": \"\\(\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\)\", \"explanation\": \"We're summing the squared differences between observed and expected frequencies, divided by the expected frequencies.\"}, {\"stepNumber\": 3, \"description\": \"Compare the chi-squared statistic to a critical value\", \"mathHtml\": \"\", \"explanation\": \"This determines whether our data is significantly different from the expected distribution.\"} ],",
+    "finalAnswer": "Reject the null hypothesis if the p-value is below a certain significance level\" },",
+    "intuition": "The chi-squared distribution helps us determine how likely it is to observe a particular set of categorical data, given an expected distribution.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:01:15.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_chi_squared_distribution_007",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The Chi-Squared distribution is a fundamental concept in statistical inference, used to test hypotheses about categorical data.</p><p>It's a probability distribution that describes the sum of squares of k independent standard normal variables. This distribution plays a crucial role in many areas of statistics and machine learning.</p>",
+    "formula": "{",
+    "latex": "\\[ \\chi^2 = \\sum_{i=1}^{k} z_i^2 \\]",
+    "name": "Chi-Squared Statistic\" },",
+    "theorem": "{",
+    "statement": "\\\\[ \\chi^2 \\sim \\\\chi_k^2 \\\\] if and only if \\\\(z_1, z_2, ..., z_k\\\\) are i.i.d. standard normals\",",
+    "proofSketch": "The proof relies on the fact that the sum of squares of independent normal variables follows a Chi-Squared distribution\" },",
+    "intuition": "The Chi-Squared distribution helps us model the variability in categorical data when we're interested in testing hypotheses about the underlying probability distributions.",
+    "realWorldApplications": [
+      "Hypothesis testing for goodness-of-fit",
+      "Testing independence between variables"
+    ],
+    "tags": [
+      "statistical inference",
+      "hypothesis testing"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:01:32.112Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_chi_squared_distribution_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution",
+    "contentHtml": "<p>The Chi-Squared distribution is a fundamental concept in mathematical statistics, used to model the sum of squared standard normal variables.</p><p>It's a continuous probability distribution that arises from the ratio of two chi-squared random variables.</p>",
+    "formula": "{",
+    "latex": "\\\\[ \\chi^2 = \\\\sum_{i=1}^k (O_i - E_i)^2 / E_i \\\\]\",",
+    "name": "Chi-Squared Statistic\" },",
+    "theorem": "{",
+    "statement": "\\\\[ X^2 = \\\\sum_{i=1}^n (X_i - \\\\mu)^2 / \\\\sigma^2 \\\\] is distributed as \\\\chi^2_k when \\\\(X_1, \\\\ldots, X_n\\\\) are independent and identically distributed normal variables with mean \\\\mu and variance \\\\sigma^2. \" },",
+    "intuition": "The Chi-Squared distribution represents the sum of squared standard normal variables, which is used to test hypotheses about the goodness-of-fit of a statistical model.",
+    "realWorldApplications": [
+      "In machine learning, the Chi-Squared statistic is used in hypothesis testing and confidence interval construction."
+    ],
+    "tags": [
+      "statistical inference",
+      "goodness-of-fit"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:01:48.349Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_distribution_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "Let X be a chi-squared random variable with <i>n</i> degrees of freedom. Show that the sum of <i>n</i> independent standard normal variables has the same distribution as X.",
+    "hints": [
+      "Recall the definition of a chi-squared distribution and its relationship to sums of squares.",
+      "Use the fact that the square of a standard normal variable is exponentially distributed with rate 1/2.",
+      "Apply the convolution formula for the sum of independent random variables."
+    ],
+    "solutionHtml": "\\[ \\begin{align*} \\chi^2 &= \\sum_{i=1}^{n} Z_i^2 \\\\ &= \\sum_{i=1}^{n} (N(0, 1))^2 \\\\ &= \\sum_{i=1}^{n} N^2(0, 1) \\\\ &\\sim \\chi^2(n) \\end{align*}\\] Final answer: The sum of <i>n</i> independent standard normal variables has the same distribution as X.\",",
+    "answerShort": "The chi-squared distribution\" },",
+    "commonMistakes": [
+      "Forgetting to apply the convolution formula",
+      "Not recognizing the relationship between chi-squared and sums of squares"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:04.886Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_distribution_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "<p>Consider a chi-squared statistic X<sup>2</sup> = Σ (O - E)<sup>2</sup>/E with k-1 degrees of freedom. Show that X<sup>2</sup> is the sum of k independent variables, each distributed as χ<sup>2</sup>(1).</p>",
+    "hints": [
+      "<p>The key insight lies in recognizing X<sup>2</sup> as a weighted sum of squared normal variables.</p>",
+      "<p>Use the fact that χ<sup>2</sup>(1) is the distribution of the square of a standard normal variable.</p>",
+      "<p>Apply the linearity property of the chi-squared distribution to each term in the sum.</p>"
+    ],
+    "solutionHtml": "<p>To show this, we can write X<sup>2</sup> as:</p><p>\\[X^2 = \\sum_{i=1}^{k} (O_i - E_i)^2/E_i\\]</p><p>Each term in the sum is a squared normal variable with mean 0 and variance E_i. By the chi-squared distribution property, this is equivalent to χ<sup>2</sup>(1) for each i.</p><p>Since these variables are independent, their sum also follows a chi-squared distribution with k-1 degrees of freedom.</p>\",",
+    "answerShort": "χ<sup>2</sup>(k-1)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:25.099Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_chi_squared_distribution_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable following a chi-squared distribution with <i>n</i> degrees of freedom. Find the expected value and variance of X.</p>",
+    "hints": [
+      "Recall that the chi-squared distribution is a sum of squared normals.",
+      "Think about how the expected value and variance of the individual normals contribute to those of the sum."
+    ],
+    "solutionHtml": "<p>To find the expected value, we can use the linearity property of expectation:</p>\\(E[X] = E\\left[\\sum_{i=1}^n \\chi_i^2\\right] = \\sum_{i=1}^n E[\\chi_i^2]\\)<p>Since each $\\chi_i$ is a standard normal, we have \\(E[\\chi_i^2] = 1\\). Therefore, the expected value of X is:</p>\\(E[X] = n\\)<p>To find the variance, we can use the fact that the chi-squared distribution is a sum of squared normals:</p>\\(\\text{Var}(X) = \\sum_{i=1}^n \\text{Var}(\\chi_i^2)\\)<p>Since each $\\chi_i$ is independent and has variance 1, we have:</p>\\(\\text{Var}(X) = n\\)</p>\",",
+    "answerShort": "E[X] = n, Var(X) = n\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:02:44.181Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_distribution_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution: Worked Example",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a problem involving the chi-squared distribution.</p>",
+    "formula": {
+      "latex": "\\[\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}\\]",
+      "name": "Chi-Squared Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 10 is taken from a normal distribution with mean 5 and standard deviation 1. Calculate the chi-squared statistic for this sample.</p>",
+      "hints": [
+        "Hint: Use the formula for the chi-squared statistic"
+      ],
+      "solutionHtml": "<p>We'll solve this problem step-by-step:</p><ul><li>Step 1: Calculate the expected values under the null hypothesis</li><li>Step 2: Calculate the observed values and their deviations from the expected values</li><li>Step 3: Calculate the chi-squared statistic using the formula</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 10 is taken from a normal distribution with mean 5 and standard deviation 1. Calculate the chi-squared statistic for this sample.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected values under the null hypothesis",
+          "mathHtml": "\\[E_i = (10)(5) = 50\\]",
+          "explanation": "We're assuming a normal distribution with mean 5 and standard deviation 1."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the observed values and their deviations from the expected values",
+          "mathHtml": "\\[O_1 = \\ldots = O_{10} = 50\\]",
+          "explanation": "We'll assume all observations are equal to the mean for simplicity."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the chi-squared statistic using the formula",
+          "mathHtml": "\\[\\chi^2 = \\frac{(O_1 - E_1)^2}{E_1} + \\ldots + \\frac{(O_{10} - E_{10})^2}{E_{10}}\\]",
+          "explanation": "We'll plug in the values and calculate the chi-squared statistic."
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "The chi-squared distribution is used to test hypotheses about the mean of a normal distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:03:14.184Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_distribution_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Chi-Squared Distribution: Worked Example",
+    "contentHtml": "<p>In this worked example, we'll apply the chi-squared distribution to a common problem in statistical testing.</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we want to test if there's an association between the type of coffee and the number of hours studied by students. We have a table showing the counts for each combination:</p><ul><li>Coffee A: 10, 15, 20</li><li>Coffee B: 5, 8, 12</li></ul>",
+      "hints": [
+        "Hint: Use the chi-squared distribution to test the null hypothesis"
+      ],
+      "solutionHtml": "<p>We'll follow these steps:</p>",
+      "answerShort": "The p-value is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Given a contingency table with counts for each combination of coffee type and hours studied, calculate the chi-squared statistic.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the expected frequencies under the null hypothesis",
+          "mathHtml": "\\[ E_{ij} = \\frac{(R_i)(C_j)}{N} \\]",
+          "explanation": "We're assuming independence between coffee type and hours studied."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the chi-squared statistic",
+          "mathHtml": "\\[ χ^2 = \\sum_{i,j} \\frac{(O_{ij} - E_{ij})^2}{E_{ij}} \\]",
+          "explanation": "We're measuring the difference between observed and expected frequencies."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the degrees of freedom",
+          "mathHtml": "\\[ df = (r-1)(c-1) \\]",
+          "explanation": "The number of independent pieces of information in our contingency table."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Look up the p-value from a chi-squared distribution table or calculate it using software",
+          "mathHtml": "\\[ P(χ^2 > χ^2_{observed}) \\]",
+          "explanation": "We're determining the probability of observing our data (or more extreme) under the null hypothesis."
+        }
+      ],
+      "finalAnswer": "The p-value is..."
+    },
+    "intuition": "The chi-squared distribution helps us test whether observed frequencies are significantly different from expected frequencies.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:03:41.382Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_chi_squared_distribution_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "sampling_distributions",
+    "topic": "chi_squared_distribution",
+    "title": "Solving Chi-Squared Distribution Problems",
+    "contentHtml": "<p>In this worked example, we'll walk through a step-by-step solution to a chi-squared distribution problem.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a sample of size <i>n</i> from a population with a known proportion <i>p</i>. We want to test the null hypothesis that the true proportion is equal to <i>p</i> against the alternative that it's different. The chi-squared statistic is calculated as:</p><p>\\[\\chi^2 = \\sum_{i=1}^{k} \\frac{(O_i - E_i)^2}{E_i}\\]</p>\",",
+    "hints": [
+      "Make sure to calculate the expected frequencies first"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a sample of size <i>n</i> = 100 from a population with a known proportion <i>p</i> = 0.5. We observe <i>O_1</i> = 55 successes and <i>O_2</i> = 45 failures. The expected frequencies are:</p><p>\\[E_1 = np = 50, E_2 = n(1-p) = 50\\]</p>\",",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Compare the calculated chi-squared statistic to the critical value",
+    "mathHtml": "\\[\\chi^2 > \\chi^2_{0.95}(1)\\]\",",
+    "explanation": "If our calculated chi-squared statistic is greater than the critical value, we reject the null hypothesis.\" } ],",
+    "finalAnswer": "The answer is...\" },",
+    "intuition": "The key insight here is that the chi-squared distribution is used to test hypotheses about the proportion of successes in a sample.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:04:30.859Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

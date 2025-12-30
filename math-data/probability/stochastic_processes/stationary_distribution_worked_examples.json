@@ -1,0 +1,182 @@
+[
+  {
+    "id": "prob_wex_stationary_distribution_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions in Stochastic Processes",
+    "contentHtml": "<p>In stochastic processes, a stationary distribution is a probability measure that remains unchanged over time.</p>",
+    "formula": {
+      "latex": "\\[\\pi(x) = \\frac{1}{Z} p(x),\\]",
+      "name": "Stationary Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a transition matrix P, show that the stationary distribution π exists and is unique.</p>",
+      "hints": [
+        "Hint: Use the fact that πP = π"
+      ],
+      "solutionHtml": "<p>To prove existence, we can use the Perron-Frobenius theorem. To prove uniqueness, we can show that if π' is another stationary distribution, then π' = π.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a Markov chain with transition matrix P:</p><ul><li>P = \\[\\begin{bmatrix}0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{bmatrix}\\]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the stationary distribution π",
+          "mathHtml": "\\[\\pi = (0.5, 0.5)\\]",
+          "explanation": "We can find π by solving the equation πP = π"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Verify that π is indeed a stationary distribution",
+          "mathHtml": "\\[\\pi P = \\frac{1}{Z} p(x)\\]",
+          "explanation": "By plugging in the values of π and P, we can show that πP = π"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Show that π is unique",
+          "mathHtml": "\\[\\pi' P = \\pi'\\]",
+          "explanation": "We can use the fact that if π' is another stationary distribution, then π'P = π', and show that π' = π"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Conclude that π is the unique stationary distribution",
+          "mathHtml": "\\[\\pi = \\frac{1}{Z} p(x)\\]",
+          "explanation": "By combining our results, we can conclude that π is the unique stationary distribution"
+        }
+      ],
+      "finalAnswer": "π = (0.5, 0.5)"
+    },
+    "intuition": "The key insight is that a stationary distribution represents a long-term equilibrium of the Markov chain.",
+    "realWorldApplications": [
+      "PageRank algorithm in Google's search engine"
+    ],
+    "tags": [
+      "stochastic processes",
+      "Markov chains",
+      "stationary distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:26:27.017Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_stationary_distribution_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions",
+    "contentHtml": "<p>In stochastic processes, a stationary distribution is a probability measure that describes the long-run behavior of a random process.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a Markov chain with transition matrix <code>A</code>. Prove that if <code>P</code> is the stationary distribution, then <code>P A = P</code>.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the stationary distribution\", \"mathHtml\": \"\\[P \\cdot I = P\\]\", \"explanation\": \"We start by assuming that <code>P</code> is a probability vector\"}, {\"stepNumber\": 2, \"description\": \"Expand the product\", \"mathHtml\": \"\\[P \\cdot A = P \\cdot (A^T)^T\\]\", \"explanation\": \"Using the fact that matrix multiplication is associative and distributive over addition\"}, {\"stepNumber\": 3, \"description\": \"Use the Markov property\", \"mathHtml\": \"\\[(P \\cdot A) e = P e\\]\", \"explanation\": \"Since <code>P</code> is a stationary distribution, it satisfies the Markov property\"}, {\"stepNumber\": 4, \"description\": \"Simplify and conclude\", \"mathHtml\": \"\\[P A = P\\]\", \"explanation\": \"By combining the previous steps, we obtain the desired result\"} ],",
+    "finalAnswer": "<code>P A = P</code>\" },",
+    "intuition": "The stationary distribution represents the long-run behavior of a random process, and this property ensures that the process remains in equilibrium.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:26:51.022Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_stationary_distribution_016",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions in Stochastic Processes",
+    "contentHtml": "<p>In this card, we'll explore stationary distributions in stochastic processes.</p>",
+    "formula": {
+      "latex": "\\[\\pi(x) = \\frac{1}{Z} p(x)\\]",
+      "name": "stationary_distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a Markov chain with transition matrix P, show that the stationary distribution π exists and is unique.</p>",
+      "hints": [
+        "Hint: Use the fact that πP = π"
+      ],
+      "solutionHtml": ""
+    },
+    "workedExample": {
+      "problemHtml": "",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the stationary distribution π",
+          "mathHtml": "\\[\\pi(x) = \\frac{1}{Z} p(x)\\]",
+          "explanation": "We define π as a probability distribution that satisfies the Markov chain's transition matrix."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Show that πP = π",
+          "mathHtml": "\\[\\pi P = \\pi\\]",
+          "explanation": "We show that the stationary distribution π is fixed by the Markov chain's transitions."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Prove uniqueness of π",
+          "mathHtml": "",
+          "explanation": "We prove that there can be only one stationary distribution π that satisfies the Markov chain's properties."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "The key insight is that a stationary distribution π exists and is unique when the Markov chain has no absorbing states.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:27:14.872Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_stationary_distribution_017",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "stochastic_processes",
+    "topic": "stationary_distribution",
+    "title": "Stationary Distributions: Definition and Existence",
+    "contentHtml": "<p>A stochastic process is said to have a stationary distribution if its probability distribution remains unchanged over time.</p>",
+    "formula": "{",
+    "latex": "\\(P(x) = \\frac{1}{\\pi}\\int_{-\\infty}^{\\infty} f(x, y) dy\\)\",",
+    "name": "Stationary Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Prove that the PageRank algorithm converges to a stationary distribution.</p>",
+    "hints": [
+      "Hint: Use the Markov chain's transition matrix"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Consider a random walk on a graph with N nodes. Prove that the probability distribution of the walker converges to a stationary distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the transition matrix P\", \"mathHtml\": \"\\[P = \\begin{bmatrix} p_{11} & \\cdots & p_{1N} \\\\ \\vdots & \\ddots & \\vdots \\\\ p_{N1} & \\cdots & p_{NN} \\end{bmatrix}\\]\", \"explanation\": \"This represents the probability of moving from one node to another.\"}, {\"stepNumber\": 2, \"description\": \"Show that P is a stochastic matrix\", \"mathHtml\": \"\\[P\\mathbf{1} = \\mathbf{1}\\]\", \"explanation\": \"This ensures the process is well-defined and has a stationary distribution.\"}, {\"stepNumber\": 3, \"description\": \"Use the Perron-Frobenius theorem to prove convergence\", \"mathHtml\": \"\", \"explanation\": \"This theorem guarantees that the largest eigenvalue of P is simple and positive.\"}, {\"stepNumber\": 4, \"description\": \"Show that the stationary distribution exists\", \"mathHtml\": \"\\[P\\pi = \\pi\\]\", \"explanation\": \"This ensures the process has a limiting probability distribution.\"}, {\"stepNumber\": 5, \"description\": \"Conclude that the PageRank algorithm converges to a stationary distribution\", \"mathHtml\": \"\", \"explanation\": \"This is because the algorithm can be viewed as a random walk on a graph.\"} ],",
+    "finalAnswer": "\" },",
+    "intuition": "The key insight is that the stationary distribution represents the long-term behavior of the stochastic process.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:27:49.545Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

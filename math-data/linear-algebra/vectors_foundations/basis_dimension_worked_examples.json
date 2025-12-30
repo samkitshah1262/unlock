@@ -1,0 +1,243 @@
+[
+  {
+    "id": "la_wex_basis_dimension_010",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "basis_dimension",
+    "title": "Finding a Basis",
+    "contentHtml": "<p>A basis of a vector space is a set of vectors that span the entire space and are linearly independent.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{B} = \\left\\{ \\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n \\right\\}\\]",
+      "name": "Basis"
+    },
+    "problem": {
+      "statementHtml": "<p>Find a basis for the vector space spanned by the vectors \\[\\mathbf{a} = (1, 2), \\mathbf{b} = (3, -1), \\mathbf{c} = (-1, 0)\\].</p>",
+      "hints": [
+        "Hint: Check if any of the given vectors are linearly independent"
+      ],
+      "solutionHtml": "<p>To find a basis, we first check which vectors are linearly independent. We can do this by calculating their determinants:</p><ul><li>\\[\\det(\\mathbf{a}) = 1 \\cdot 2 - 2 \\cdot 1 = 0\\]</li><li>\\[\\det(\\mathbf{b}) = 3 \\cdot (-1) + (-1) \\cdot 1 = -4 \\neq 0\\]</li></ul><p>Since \\mathbf{b} is linearly independent, we can choose it as one of our basis vectors. We then check which other vectors are linearly independent with \\mathbf{b}: </p><ul><li>\\[\\det(\\mathbf{a}, \\mathbf{b}) = 1 \\cdot (-1) + 2 \\cdot 3 - 2 \\cdot (-1) = 7 \\neq 0\\]</li></li></ul><p>We can choose \\mathbf{a} as our second basis vector. Finally, we check which other vectors are linearly independent with both \\mathbf{b} and \\mathbf{a}: </p><ul><li>\\[\\det(\\mathbf{c}, \\mathbf{b}) = (-1) \\cdot (-1) + 0 \\cdot 3 - 0 \\cdot (-1) = 1 \\neq 0\\]</li></li></ul><p>We can choose \\mathbf{c} as our third basis vector. Therefore, the basis is \\[\\mathbf{B} = \\left\\{ \\mathbf{b}, \\mathbf{a}, \\mathbf{c} \\right\\}\\].</p>",
+      "answerShort": "The basis is \\[\\mathbf{B} = \\left\\{ \\mathbf{b}, \\mathbf{a}, \\mathbf{c} \\right\\}\\]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find a basis for the vector space spanned by the vectors \\[\\mathbf{v}_1 = (2, -3), \\mathbf{v}_2 = (-1, 2)\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if any of the given vectors are linearly independent",
+          "mathHtml": "\\[\\det(\\mathbf{v}_1) = 4 \\cdot 2 - 6 \\cdot (-3) = 20 \\neq 0\\]",
+          "explanation": "We check the determinant to see if the vector is linearly independent."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Choose one of the vectors as a basis",
+          "mathHtml": "\\[\\mathbf{B} = \\left\\{ \\mathbf{v}_1 \\right\\}\\]",
+          "explanation": "We choose \\mathbf{v}_1 as our first basis vector."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check which other vectors are linearly independent with the chosen vector",
+          "mathHtml": "\\[\\det(\\mathbf{v}_2, \\mathbf{v}_1) = (-1) \\cdot 2 + 2 \\cdot 3 - 2 \\cdot (-3) = 11 \\neq 0\\]",
+          "explanation": "We check which other vectors are linearly independent with our chosen vector."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Choose the other basis vectors",
+          "mathHtml": "\\[\\mathbf{B} = \\left\\{ \\mathbf{v}_1, \\mathbf{v}_2 \\right\\}\\]",
+          "explanation": "We choose \\mathbf{v}_2 as our second basis vector."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Verify the basis",
+          "mathHtml": "\\[\\det(\\mathbf{B}) = \\det(\\left\\{ \\mathbf{v}_1, \\mathbf{v}_2 \\right\\}\\)] = 0\\]",
+          "explanation": "We verify that our chosen vectors span the entire space and are linearly independent."
+        }
+      ],
+      "finalAnswer": "\\[\\mathbf{B} = \\left\\{ \\mathbf{v}_1, \\mathbf{v}_2 \\right\\}\\]"
+    },
+    "intuition": "A basis is a set of vectors that can be used to express any vector in the space.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:54:04.110Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_basis_dimension_011",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "basis_dimension",
+    "title": "Finding Bases and Dimension",
+    "contentHtml": "<p>In this worked example, we'll explore how to find a basis and calculate the dimension of a vector space.</p>",
+    "workedExample": "{",
+    "problemHtml": "Find a basis for the subspace <span class=\\\"math\\\">\\\\(W = \\{ [x, y] : x + 2y = 0 \\\\}\\)</span> in <span class=\\\"math\\\">\\\\(\\mathbb{R}^2\\\\)</span>.\",",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Write down the vectors in W",
+        "mathHtml": "\\([x, y] : x + 2y = 0 \\)",
+        "explanation": "We want to find a set of linearly independent vectors that span W."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Simplify the equation and solve for y",
+        "mathHtml": "\\(x + 2y = 0 \\Rightarrow y = -\\frac{1}{2}x\\)",
+        "explanation": "This helps us find a specific vector in W."
+      },
+      {
+        "stepNumber": 3,
+        "description": "Write down the vectors and check for linear independence",
+        "mathHtml": "\\([0, 0], [-1, 1/2]\\) are in W",
+        "explanation": "We can verify that these vectors are linearly independent by checking their dot product."
+      },
+      {
+        "stepNumber": 4,
+        "description": "Calculate the dimension of W",
+        "mathHtml": "\\(dim(W) = 1\\)",
+        "explanation": "Since we have a basis with one vector, the dimension is 1."
+      }
+    ],
+    "finalAnswer": "The basis for W is \\\\([0, 0], [-1, 1/2]\\\\) and dim(W) = 1.\" },",
+    "intuition": "Finding a basis helps us understand the structure of a subspace. By calculating the dimension, we can determine how many linearly independent vectors are needed to span that subspace.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:54:30.123Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_basis_dimension_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "basis_dimension",
+    "title": "Finding Bases and Dimension",
+    "contentHtml": "<p>In linear algebra, a basis is a set of vectors that span a vector space.</p><ul><li>We'll learn how to find bases and calculate dimension.</li></ul>",
+    "formula": {
+      "latex": "\\[\\dim(V) = \\text{number of elements in the basis} \\]",
+      "name": "Dimension Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Find a basis for the vector space spanned by vectors <math>\\mathbf{v}_1</math>, <math>\\mathbf{v}_2</math>, and <math>\\mathbf{v}_3</math>.</p>",
+      "hints": [
+        "Hint: Use the standard basis"
+      ],
+      "solutionHtml": "<p>We can find a basis by writing each vector as a combination of the standard basis vectors.</p><ul><li>Step 1: Write <math>\\mathbf{v}_1</math> in terms of the standard basis:</li><li>Math: \\[\\mathbf{v}_1 = a_{11} \\mathbf{i} + a_{12} \\mathbf{j} + a_{13} \\mathbf{k}\\]</li><li>Description: We're expressing <math>\\mathbf{v}_1</math> as a combination of the standard basis vectors.</li></ul>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find a basis for the vector space spanned by vectors <math>\\mathbf{v}_1 = (1, 2, 3)</math>, <math>\\mathbf{v}_2 = (4, -1, 0)</math>, and <math>\\mathbf{v}_3 = (0, 5, 6)</math>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write each vector in terms of the standard basis",
+          "mathHtml": "\\[\\mathbf{v}_1 = a_{11} \\mathbf{i} + a_{12} \\mathbf{j} + a_{13} \\mathbf{k}\\]",
+          "explanation": "We're expressing each vector as a combination of the standard basis vectors."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Combine like terms",
+          "mathHtml": "\\[\\mathbf{v}_1 = (1, 2, 3) = 1 \\mathbf{i} + 2 \\mathbf{j} + 3 \\mathbf{k}\\]",
+          "explanation": "We're combining the coefficients to get a simpler expression."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the basis",
+          "mathHtml": "\\[\\text{basis} = \\{(1, 0, 0), (0, 2, 0)\\}\\]",
+          "explanation": "The resulting vectors form a basis for the vector space."
+        }
+      ],
+      "finalAnswer": "The answer"
+    },
+    "intuition": "A basis is a set of vectors that can be used to write any other vector in the space as a combination.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:55:08.779Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_basis_dimension_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "vectors_foundations",
+    "topic": "basis_dimension",
+    "title": "Finding Bases and Dimension",
+    "contentHtml": "<p>In linear algebra, a basis is a set of vectors that spans the vector space.</p><ul><li>A basis must be linearly independent, meaning one vector cannot be expressed as a combination of the others.</li><li>A basis must also span the entire vector space, meaning any vector in the space can be written as a linear combination of the basis vectors.</li></ul>",
+    "formula": {
+      "latex": "\\[ \\dim(V) = |\\mathbf{B}| \\]",
+      "name": "Dimension Theorem",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Find a basis for the vector space \\(V = \\Span\\{\\mathbf{x}_1, \\mathbf{x}_2, \\mathbf{x}_3\\}\\).</p>",
+      "hints": [
+        "Check if the given vectors are linearly independent"
+      ],
+      "solutionHtml": "<p>To find a basis, we need to check if the given vectors are linearly independent.</p><ul><li>We can do this by calculating the determinant of the matrix formed by the vectors:</li></ul>",
+      "answerShort": "The vectors \\(\\mathbf{x}_1, \\mathbf{x}_2, \\mathbf{x}_3\\) form a basis for the vector space."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find a basis for the vector space \\(V = \\Span\\{\\begin{bmatrix}1 \\\\ 0\\end{bmatrix}, \\begin{bmatrix}0 \\\\ 1\\end{bmatrix}\\}\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the given vectors are linearly independent",
+          "mathHtml": "\\[ |\\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}| = 1 \\]",
+          "explanation": "The determinant is non-zero, so the vectors are linearly independent."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Check if the given vectors span the entire vector space",
+          "mathHtml": "\\[ \\begin{bmatrix}x \\\\ y\\end{bmatrix} = x \\begin{bmatrix}1 \\\\ 0\\end{bmatrix} + y \\begin{bmatrix}0 \\\\ 1\\end{bmatrix}\\]\\]",
+          "explanation": "Any vector in the space can be written as a linear combination of the given vectors, so they span the entire vector space."
+        },
+        {
+          "stepNumber": 3,
+          "description": "The given vectors form a basis for the vector space",
+          "mathHtml": "",
+          "explanation": "Since the vectors are linearly independent and span the entire vector space, they form a basis."
+        }
+      ],
+      "finalAnswer": "The vectors \\(\\begin{bmatrix}1 \\\\ 0\\end{bmatrix}, \\begin{bmatrix}0 \\\\ 1\\end{bmatrix}\\) form a basis for the vector space."
+    },
+    "intuition": "A basis is like a set of building blocks that can be combined to create any vector in the space.",
+    "visualDescription": "A diagram showing the vectors and how they span the entire vector space",
+    "commonMistakes": [
+      "Forgetting to check if the given vectors are linearly independent"
+    ],
+    "realWorldApplications": [
+      "In machine learning, a basis can be used as a set of features for a dataset."
+    ],
+    "tags": [
+      "basis",
+      "dimension",
+      "linear independence"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:55:51.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

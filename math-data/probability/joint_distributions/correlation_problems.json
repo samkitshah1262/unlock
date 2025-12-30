@@ -1,0 +1,82 @@
+[
+  {
+    "id": "prob_prb_correlation_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": "{",
+    "statementHtml": "<p>Given two random variables X and Y with joint distribution P(X,Y), show that the correlation coefficient ρ is bounded by [-1,1].</p>",
+    "hints": [
+      "Consider the definition of correlation as a covariance normalized by standard deviations.",
+      "Think about what happens when one variable is constant.",
+      "Use the fact that the variance of X is always non-negative."
+    ],
+    "solutionHtml": "<p>To prove the bound, we can start with the definition of ρ:</p>\\(\\rho = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\)<p>Then, we can use the fact that the variance is always non-negative to get:</p>\\(-1 \\leq \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y} \\leq 1\\)<p>This shows that ρ is bounded by [-1,1].</p>\",",
+    "answerShort": "[-1,1]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:13.312Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_correlation_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": {
+      "statementHtml": "<p>Let X and Y be random variables with joint distribution <i>P(x,y)</i>. Show that if X and Y are uncorrelated, then they must also be independent.</p>",
+      "hints": [
+        "<p>If X and Y are uncorrelated, what does that mean for their covariance?</p>",
+        "<p>How can we use the fact that <i>P(x,y)</i> is a joint distribution to relate independence to correlation?</p>",
+        "<p>What property of independent random variables implies that they must be uncorrelated?</p>"
+      ],
+      "solutionHtml": "<p>To show that X and Y are independent if they're uncorrelated, we'll use the fact that <i>P(x,y)</i> is a joint distribution. Recall that two events A and B are independent if their probabilities satisfy <i>P(A ∩ B) = P(A)P(B)</i>.</p><p>If X and Y are uncorrelated, then their covariance <i>E[(X-EX)(Y-EY)]</i> is zero.</p><p>This implies that for any values x and y, we have:</p><p><i>P(x,y) = P(x)P(y)</i>.</p><p>This is exactly the condition for independence of X and Y. Therefore, if X and Y are uncorrelated, then they must also be independent.</p>",
+      "answerShort": "<i>X and Y are independent</i>"
+    },
+    "commonMistakes": [
+      "Forgetting that covariance is not the same as correlation",
+      "Assuming independence implies zero correlation"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:36.609Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_correlation_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "correlation",
+    "problem": "{",
+    "statementHtml": "Let X and Y be random variables with joint distribution P(X,Y). Prove that if X and Y are uncorrelated, then they must be independent.",
+    "hints": [
+      "Start by recalling the definition of correlation coefficient.",
+      "Use the fact that E[XY] = E[X]E[Y] for independence.",
+      "Compare the expressions for correlated and uncorrelated cases."
+    ],
+    "solutionHtml": "<p>To prove this, we first recall the definition of correlation coefficient:</p>\\(\\rho_{X,Y} = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\)<p>Since X and Y are uncorrelated, we have that \\(\\rho_{X,Y} = 0\\). This implies that</p>\\(0 = \\frac{\\text{Cov}(X,Y)}{\\sigma_X\\sigma_Y}\\) <p>Simplifying this expression gives us:</p>\\(\\text{Cov}(X,Y) = 0\\)<p>Now, recall the definition of covariance:</p>\\(\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]\\)<p>This implies that</p>\\(E[XY] = E[X]E[Y]\\)<p>This is exactly the condition for independence. Therefore, if X and Y are uncorrelated, then they must be independent.</p>\",",
+    "answerShort": "If X and Y are uncorrelated, then they are independent.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:12:59.836Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

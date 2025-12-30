@@ -1,0 +1,75 @@
+[
+  {
+    "id": "stat_thm_regularization_008",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Regularized Regression: Theorem",
+    "contentHtml": "<p>Ridge, Lasso, and Elastic Net regression are powerful tools in machine learning, but how do they work?</p>",
+    "formula": {
+      "latex": "\\[ \\alpha\\mathbf{w} = \\arg\\min_\\mathbf{w} \\left(\\frac{1}{2}\\|\\mathbf{X}\\mathbf{w}-\\mathbf{y}\\|^2 + \\alpha\\|\\mathbf{w}\\|^2\\right) \\]",
+      "name": "Regularized Regression"
+    },
+    "theorem": {
+      "statement": "\\[ \\min_\\mathbf{w} \\left(\\frac{1}{2}\\|\\mathbf{X}\\mathbf{w}-\\mathbf{y}\\|^2 + \\alpha\\|\\mathbf{w}\\|^2\\right) \\]",
+      "proofSketch": "The proof involves showing that the regularized loss function has a unique minimum, which is achieved when the gradient of the loss function with respect to the weights is zero."
+    },
+    "intuition": "Regularization helps prevent overfitting by adding a penalty term to the loss function. The strength of this penalty is controlled by the regularization parameter \\(\\alpha\\).",
+    "realWorldApplications": [
+      "Feature selection in image classification"
+    ],
+    "tags": [
+      "regularization",
+      "ridge regression",
+      "lasso regression",
+      "elastic net"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:59:12.828Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_regularization_009",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "regression",
+    "topic": "regularization",
+    "title": "Ridge Regression Theorem",
+    "contentHtml": "<p>Ridge regression is a widely used regularization technique in machine learning that helps prevent overfitting by adding a penalty term to the loss function.</p>",
+    "formula": {
+      "latex": "\\[ \\min_{\\mathbf{w}} \frac{1}{2} ||\\mathbf{x}\\mathbf{w}-\\mathbf{y}||^2 + \\alpha ||\\mathbf{w}||^2 \\]",
+      "name": "Ridge Regression Loss Function"
+    },
+    "theorem": {
+      "statement": "\\[ \\min_{\\mathbf{w}} \frac{1}{2} ||\\mathbf{x}\\mathbf{w}-\\mathbf{y}||^2 + \\alpha ||\\mathbf{w}||^2 = \\frac{1}{2} ||\\mathbf{x}(\\mathbf{I}+\\alpha\\mathbf{x}^T\\mathbf{x})^{-1}\\mathbf{x}^T\\mathbf{y}||^2 \\]",
+      "proofSketch": "The proof involves showing that the minimizer of the ridge regression loss function is a linear transformation of the input data, and then using this to derive the closed-form solution."
+    },
+    "intuition": "Ridge regression helps prevent overfitting by adding a penalty term that encourages the model's weights to be small. This has the effect of reducing the model's capacity to fit the noise in the training data.",
+    "realWorldApplications": [
+      "Reducing overfitting in neural networks"
+    ],
+    "tags": [
+      "ridge regression",
+      "regularization",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:59:32.932Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

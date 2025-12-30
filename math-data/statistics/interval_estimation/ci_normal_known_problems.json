@@ -1,0 +1,82 @@
+[
+  {
+    "id": "stat_prb_ci_normal_known_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "title": "CI for Mean (Known Variance)",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean μ when σ is known.</p>",
+    "hints": [
+      "<p>Start by standardizing the sample mean x̄.</p>",
+      "<p>Use the standard normal distribution to find the critical value z.</p>",
+      "<p>Combine the standardized sample mean with the critical value to get the interval bounds.</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate of μ, we first standardize the sample mean x̄:</p>\\n\\ \\[ \\frac{\\bar{x} - \\mu}{\\sigma / \\sqrt{n}} = z.\\]\\n\\ <p>Next, we find the critical value z corresponding to our desired confidence level (1 - α).</p>\\n\\ <p>Finally, we combine the standardized sample mean with the critical value to get the interval bounds:</p>\\n\\ \\[ \\bar{x} + z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\quad \\text{and} \\quad \\bar{x} - z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]\\n\\ <p>The margin of error is half the width of the interval:</p>\\n\\ \\[ \\frac{2z \\cdot \\sigma}{\\sqrt{n}}.\\]\\n\\ <p>Thus, our CI for μ is:</p>\\n\\ \\[ \\bar{x} - z \\cdot \\frac{\\sigma}{\\sqrt{n}}, \\quad \\bar{x} + z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]\",",
+    "answerShort": "The Z-interval estimate of μ is\" },",
+    "commonMistakes": [
+      "Forgetting to standardize the sample mean",
+      "Using the wrong critical value"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:06:49.029Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_normal_known_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean with known variance.</p>",
+    "hints": [
+      "<p>The interval will be centered at what statistic?</p>",
+      "<p>What is the standard error in this case?</p>",
+      "<p>How does the margin of error relate to the confidence level?</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate, we first need to calculate the sample mean \\(\\bar{x}\\) and the sample variance \\(s^2\\). Given that the population variance is known (\\(\\sigma^2\\)), we can use this information to find the standard error:</p>\\n\\[SE = \\frac{\\sigma}{\\sqrt{n}}.\\]\\n<p>Next, we calculate the Z-score using the standard error and the margin of error (ME):</p>\\n\\[Z = \\frac{\\bar{x} - \\mu_0}{SE}.\\]\\n<p>The interval is then constructed as:</p>\\n\\[CI = (\\bar{x} + Z \\cdot SE, \\bar{x} - Z \\cdot SE).\\]</p>\",",
+    "answerShort": "The answer is the calculated CI\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:07:06.161Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_ci_normal_known_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "ci_normal_known",
+    "problem": "{",
+    "statementHtml": "<p>Construct a Z-interval estimate of the population mean with known variance.</p>",
+    "hints": [
+      "<p>If you're unsure about the formula, recall that it's based on the standard normal distribution.</p>",
+      "<p>Think about how to apply the margin of error concept.</p>",
+      "<p>Check your work by verifying that the interval is symmetric around the sample mean.</p>"
+    ],
+    "solutionHtml": "<p>To construct a Z-interval estimate, we need to find the critical value from the standard normal distribution. Let's denote the sample mean as $\\bar{x}$ and the known variance as $\\sigma^2$. The margin of error is given by</p>\\[M = Z \\cdot \\frac{\\sigma}{\\sqrt{n}}.\\]<p>Now, we can write the interval estimate as follows:</p>\\[\\bar{x} - M \\leq \\mu \\leq \\bar{x} + M.\\]",
+    "answerShort": "The Z-interval estimate is given by $\\bar{x} \\pm M$.\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:07:22.097Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

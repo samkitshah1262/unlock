@@ -1,0 +1,450 @@
+[
+  {
+    "id": "stat_con_credible_intervals_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals are a fundamental concept in Bayesian statistics that provide a range of values within which a parameter is likely to lie.</p><p>In frequentist statistics, confidence intervals are used to estimate population parameters. However, credible intervals offer a more nuanced approach by incorporating prior knowledge and updating it based on the data.</p>",
+    "formula": "{",
+    "latex": "\\\\[P(\\\\theta \\in I) = \\\\int_{I} p(\\\\theta | D) d\\\\theta \\\\approx 0.95\\\\]\",",
+    "name": "Credible Interval Formula\" },",
+    "whyMatters": "<p>Credible intervals matter because they provide a more accurate representation of uncertainty in Bayesian inference.</p>",
+    "intuition": "Think of credible intervals as a range of plausible values for a parameter, based on the data and prior knowledge.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions."
+    ],
+    "commonMistakes": [
+      "Confusing credible intervals with confidence intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:09.078Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_credible_intervals_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, credible intervals provide a way to quantify uncertainty around a parameter estimate. Unlike frequentist confidence intervals, which are based on repeated sampling, credible intervals reflect the posterior distribution of the parameter.</p><p>Given a prior distribution and data likelihood, we can compute the posterior distribution using Bayes' theorem. The credible interval is then defined as the region within which the true value of the parameter has a certain probability (usually 95%) of lying.</p>",
+    "formula": {
+      "latex": "\\[P(\\theta|y) = \\frac{f(y|\\theta) \\pi(\\theta)}{\\int f(y|\\theta) \\pi(\\theta) d\\theta}\\]",
+      "name": "Bayes' theorem"
+    },
+    "whyMatters": "<p>Credible intervals are essential in Bayesian statistics because they provide a more accurate representation of uncertainty than frequentist confidence intervals. This is particularly important in machine learning and AI applications, where the choice of prior distribution can significantly impact the results.</p>",
+    "intuition": "Think of credible intervals as a range within which the true value of the parameter is likely to lie, given the data and our prior beliefs.",
+    "realWorldApplications": [
+      "In Bayesian linear regression, credible intervals for coefficients provide a more nuanced understanding of their uncertainty."
+    ],
+    "commonMistakes": [
+      "Confusing frequentist confidence intervals with Bayesian credible intervals"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:27.746Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_credible_intervals_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, credible intervals provide a way to quantify uncertainty around a posterior distribution. Unlike frequentist confidence intervals, which are based on repeated sampling and population parameters, credible intervals reflect the uncertainty inherent in the data itself.</p><p>Given a posterior distribution <i>p</i>(<i>θ</i>|<i>D</i>) for some parameter <i>θ</i>, a <i>credible interval</i> is an interval [<i>a</i>, <i>b</i>] such that the probability of <i>θ</i> falling within this interval, given the data <i>D</i>, is at least 1-<i>α</i>.</p>",
+    "formula": {
+      "latex": "\\[ [a, b] = \\{ θ : P(θ | D) ≥ 1 - α \\} \\]",
+      "name": "Credible Interval"
+    },
+    "intuition": "Think of credible intervals as a way to summarize the uncertainty in your posterior distribution. They provide a range of values that are plausible given the data, rather than trying to pinpoint a single 'true' value.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions or hyperparameter tuning."
+    ],
+    "commonMistakes": [
+      "Don't confuse credible intervals with frequentist confidence intervals; they have different interpretations and uses."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:32:46.308Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_credible_intervals_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals provide a way to quantify uncertainty in Bayesian inference.</p><ul><li>They are often used in place of frequentist confidence intervals, offering a more intuitive and interpretable approach.</li></ul>",
+    "formula": "{",
+    "latex": "\\[P(\\theta \\in I) = P(\\text{data} | \\theta) \\int_{I} p(\\theta) d\\theta\\]\",",
+    "name": "Credible Interval Formula\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model with prior distribution $p(\theta)$ and likelihood function $p(\text{data} | \theta).$ We want to construct a 95% credible interval for $\theta.$</p>",
+    "steps": "[ {",
+    "stepNumber": 2,
+    "description": "Calculate the quantiles of the sampled values",
+    "mathHtml": "\\[Q_{0.025}(\\theta), Q_{0.975}(\\theta)\\]\",",
+    "explanation": "We calculate the 2.5th and 97.5th percentiles of the sampled values to obtain the credible interval.\" } ],",
+    "finalAnswer": "The resulting interval provides a 95% credible region for $\\theta$\" },",
+    "intuition": "Credible intervals provide a way to quantify uncertainty in Bayesian inference by calculating the range of plausible values for a parameter.",
+    "realWorldApplications": [
+      "Bayesian model selection and comparison"
+    ],
+    "tags": [
+      "bayesian statistics",
+      "credible intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:12.259Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_credible_intervals_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals are a fundamental concept in Bayesian statistics, providing a range of values within which a parameter is expected to lie with a certain level of confidence.</p><p>They differ from frequentist confidence intervals in that they reflect the uncertainty in the parameter itself rather than just the sampling distribution.</p>",
+    "formula": "{",
+    "latex": "\\[P(\\theta \\in I | y) = P(I | y) = 0.95\\]\",",
+    "name": "Credible Interval Definition",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model for the mean of a normal distribution with known variance.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Specify prior and likelihood\", \"mathHtml\": \"\\(p(\\theta) \\propto \\exp(-\\frac{1}{2} \\theta^2)\\)\", \"explanation\": \"We choose a conjugate prior for the mean.\"} ],",
+    "finalAnswer": "The credible interval is then calculated using the posterior distribution.\" },",
+    "intuition": "Credible intervals provide a more nuanced understanding of uncertainty in Bayesian models, reflecting both the data and our prior beliefs.",
+    "realWorldApplications": [
+      "In machine learning, credible intervals can be used to quantify uncertainty in model predictions."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Credible Intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:31.212Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_credible_intervals_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals provide a way to quantify uncertainty in Bayesian inference.</p><ul><li>They're an alternative to frequentist confidence intervals.</li></ul>",
+    "formula": "{",
+    "latex": "\\[ \\text{HPD Interval}: P(\\theta \\in [a, b]) = 0.95 \\]\",",
+    "name": "Highest Posterior Density (HPD) Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a Bayesian model with prior distribution π(x) and likelihood function f(y|x). We want to construct a 95% credible interval for the parameter θ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Sample from the posterior distribution π(x|y)\", \"mathHtml\": \"\\( \\text{sample} ~ N(\\mu, \\sigma^2) \\)\", \"explanation\": \"We use Markov Chain Monte Carlo (MCMC) methods to draw samples from the posterior.\"} ],",
+    "finalAnswer": "The 95% credible interval is [a, b]\" },",
+    "intuition": "Credible intervals capture the uncertainty in Bayesian inference by providing a range of plausible values for the parameter.",
+    "realWorldApplications": [
+      "In natural language processing, credible intervals can be used to quantify the uncertainty in language models."
+    ],
+    "tags": [
+      "Bayesian Statistics",
+      "Credible Intervals"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:33:50.102Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_credible_intervals_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% HPD interval for the mean of a normal distribution with unknown mean and variance.</p>",
+      "hints": [
+        "Think about how to use the posterior distribution",
+        "Recall the properties of the normal distribution",
+        "Consider the relationship between HPD intervals and frequentist CIs"
+      ],
+      "solutionHtml": "<p>To construct a 95% HPD interval, we need to find the 2.5th and 97.5th percentiles of the posterior distribution.</p><p>We can do this using the inverse cumulative distribution function (CDF) of the normal distribution.</p>",
+      "answerShort": "The answer is [insert math]"
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:01.653Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_credible_intervals_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "problem": "{",
+    "statementHtml": "<p>Construct a <i>credible interval</i> (CI) for the mean of a normal distribution using Bayesian inference.</p>",
+    "hints": [
+      "Start by specifying a prior distribution for the mean.",
+      "Use Bayes' theorem to update the prior with the likelihood.",
+      "Find the HPD interval that contains <i>p</i>% of the posterior density."
+    ],
+    "solutionHtml": "<p>To construct a CI, we need to specify a prior distribution for the mean, &mu;.</p>\\n<p>Let's assume a normal distribution with mean 0 and variance 100, scaled by the standard deviation of our data.</p>\\n<p>We then update this prior with the likelihood using Bayes' theorem:</p>\\n\\[p(\\mu | X) \\propto p(X | \\mu) \\cdot p(\\mu)\\]\\n<p>Next, we find the HPD interval that contains <i>p</i>% of the posterior density.</p>\",",
+    "answerShort": "The CI is [mean - 1.96*std/√n, mean + 1.96*std/√n]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:18.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_credible_intervals_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals",
+    "problem": "{",
+    "statementHtml": "Find a 95% credible interval for the mean of a normal distribution with known variance <i>\\(\\sigma^2\\)</i> and unknown mean <i>\\(\\mu\\)</i>, given a dataset of size <i>n</i>.\",",
+    "hints": "[ \"Start by finding the posterior distribution of <i>\\(\\mu\\)</i>\", \"Use the fact that the prior is conjugate to the likelihood\", \"The credible interval will be based on the 2.5th and 97.5th percentiles of this distribution\" ],",
+    "solutionHtml": "<p>To find the posterior distribution, we can use Bayes' theorem:</p>\\n\\[ p(\\mu | \\mathbf{x}) = \\frac{p(\\mathbf{x} | \\mu) \\cdot p(\\mu)}{\\int p(\\mathbf{x} | \\mu) \\cdot p(\\mu) d\\mu }.\\]\\n<p>Since the prior is conjugate to the likelihood, we can use a normal distribution with mean <i>\\(0\\)</i> and variance <i>\\(\\frac{1}{k}\\sigma^2\\)</i> as our prior.</p>\\n<p>The posterior distribution will also be normal, with mean:</p>\\n\\[ \\mu_{post} = \\frac{\\sum_{i=1}^{n} x_i}{n} + \\left( \\frac{\\sigma^2}{k} \\right) \\cdot \\frac{1}{\\sigma^2 + \\frac{k}{n}}.\\]\\n<p>The 95% credible interval will be the 2.5th and 97.5th percentiles of this distribution.</p>\",",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:40.188Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_credible_intervals_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "problem": {
+      "statementHtml": "Given a posterior distribution <i>p</i>(<i>θ</i>|<i>d</i>) and a prior distribution <i>p</i>(<i>θ</i>) over the parameter <i>θ</i>, find a credible interval for <i>θ</i>",
+      "hints": [
+        "Hint: Recall Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To construct a credible interval, we can use the HPD (Highest Posterior Density) method.</p>",
+      "answerShort": "HPD interval"
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we have a posterior distribution <i>p</i>(<i>θ</i>|<i>d</i>) with density function <span class=\"latex\">\\(f(\\theta|d) = \\frac{1}{2}\\exp(-0.5(\\theta-2)^2)\\)</span>. Find a 95% credible interval for <i>θ</i>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the HPD region",
+          "mathHtml": "<span class=\"latex\">\\(f(\\theta|d) = \\frac{1}{2}\\exp(-0.5(\\theta-2)^2)\\)</span>",
+          "explanation": "The HPD region corresponds to the highest density values of the posterior distribution"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the upper and lower bounds",
+          "mathHtml": "<span class=\"latex\">\\(f(\\theta|d) = \\frac{1}{2}\\exp(-0.5(\\theta-2)^2)\\)</span>",
+          "explanation": "The upper and lower bounds are the points where the density function is equal to the 2.5th percentile"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the interval",
+          "mathHtml": "<span class=\"latex\">\\(f(\\theta|d) = \\frac{1}{2}\\exp(-0.5(\\theta-2)^2)\\)</span>",
+          "explanation": "The interval is the region between the upper and lower bounds"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Check the interval",
+          "mathHtml": "<span class=\"latex\">\\(f(\\theta|d) = \\frac{1}{2}\\exp(-0.5(\\theta-2)^2)\\)</span>",
+          "explanation": "Verify that the interval contains 95% of the posterior mass"
+        }
+      ],
+      "finalAnswer": "The 95% credible interval is [1.15, 3.35]"
+    },
+    "intuition": "Credible intervals provide a way to quantify uncertainty in Bayesian inference, allowing us to make probabilistic statements about unknown parameters",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:35:13.386Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_credible_intervals_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>Credible intervals provide a way to quantify uncertainty in Bayesian inference.</p>",
+    "formula": {
+      "latex": "\\[ P(\\theta | y) = \\frac{P(y | \\theta) P(\\theta)}{P(y)} \\]",
+      "name": "Bayes' theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>Find a 95% credible interval for the mean of a normal distribution with known variance and unknown mean.</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem to find the posterior distribution.",
+        "Hint: The credible interval is based on the posterior distribution."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a normal distribution with known variance \\sigma^2 = 4 and unknown mean \\mu. We observe data y = [1, 2, 3]. Find a 95% credible interval for \\mu.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Specify the prior distribution",
+          "mathHtml": "\\[ P(\\mu) = N(0, 10^2) \\]",
+          "explanation": "We choose a vague prior to reflect our lack of knowledge about \\mu."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Update with the likelihood",
+          "mathHtml": "\\[ P(y | \\mu) = \\prod_{i} N(y_i | \\mu, \\sigma^2) \\]",
+          "explanation": "We update the prior with the likelihood of observing y given \\mu."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the posterior distribution",
+          "mathHtml": "\\[ P(\\mu | y) = \\frac{P(y | \\mu) P(\\mu)}{P(y)} \\]",
+          "explanation": "We apply Bayes' theorem to find the posterior distribution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the credible interval",
+          "mathHtml": "\\[ P(\\mu | y) = N(1.2, 0.3^2) \\]",
+          "explanation": "We can now find the 95% credible interval by finding the 2.5th and 97.5th percentiles of the posterior distribution."
+        }
+      ],
+      "finalAnswer": "The 95% credible interval is [0.8, 1.6]"
+    },
+    "intuition": "Credible intervals provide a way to quantify uncertainty in Bayesian inference by finding the region that contains a certain percentage of the posterior distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:35:44.500Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_credible_intervals_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals in Bayesian Statistics",
+    "contentHtml": "<p>In Bayesian statistics, credible intervals provide an alternative to frequentist confidence intervals.</p>",
+    "formula": {
+      "latex": "\\[P(\\theta | y) = \\frac{P(y | \\theta) P(\\theta)}{P(y)}\\]",
+      "name": "Bayes' theorem"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a Bayesian model with prior distribution <i>P(\\theta)</i> and likelihood function <i>L(\\theta | y)</i>, find the 95% credible interval for parameter <i>\\theta</i>.</p>",
+      "hints": [
+        "Hint: Start by finding the posterior distribution"
+      ],
+      "solutionHtml": "<p>Solution steps:</p>",
+      "answerShort": "The answer"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a Bayesian model with prior distribution <i>N(0, 1)</i> and likelihood function <i>N(\\theta, 2)</i>. Find the 95% credible interval for parameter <i>\\theta</i>.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the posterior distribution",
+          "mathHtml": "\\[P(\\theta | y) = \\frac{P(y | \\theta) P(\\theta)}{P(y)}\\]",
+          "explanation": "We apply Bayes' theorem to update our prior knowledge with the new data."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Standardize the posterior",
+          "mathHtml": "\\[z = \\frac{\\theta - 0}{1}\\]",
+          "explanation": "This helps us work with a standard normal distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the critical values",
+          "mathHtml": "\\[P(Z &lt; z_{crit}) = 0.025\\]",
+          "explanation": "We use the cumulative distribution function to find the critical values."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Translate back to the original scale",
+          "mathHtml": "\\[\\theta_{crit} = z_{crit} + 0\\]",
+          "explanation": "Finally, we translate our results back to the original scale."
+        }
+      ],
+      "finalAnswer": "The 95% credible interval is [\\theta_{crit}, \\theta_{crit}]"
+    },
+    "intuition": "Credible intervals provide a more interpretable and flexible alternative to frequentist confidence intervals.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:36:14.137Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

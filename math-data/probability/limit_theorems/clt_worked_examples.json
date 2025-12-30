@@ -1,0 +1,244 @@
+[
+  {
+    "id": "prob_wex_clt_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a specific problem.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random variable X with mean μ = 10 and variance σ^2 = 4. We want to find the probability that X is greater than 12.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Standardize X\", \"mathHtml\": \"\\(Z = \\frac{X - \\mu}{\\sigma}\\)\", \"explanation\": \"We standardize X by subtracting its mean and dividing by its standard deviation.\"}, {\"stepNumber\": 2, \"description\": \"Approximate the distribution of Z\", \"mathHtml\": \"\\[Z \\sim N(0,1)\\]\", \"explanation\": \"By applying the CLT, we can approximate the distribution of Z as a normal distribution with mean 0 and variance 1.\"}, {\"stepNumber\": 3, \"description\": \"Find the probability that Z > 1.5\", \"mathHtml\": \"\\(P(Z > 1.5) = P(Z < -1.5)\\)\", \"explanation\": \"We can find this probability by finding the area under the standard normal curve to the left of -1.5.\"}, {\"stepNumber\": 4, \"description\": \"Use a calculator or table\", \"mathHtml\": \"\\(P(Z > 1.5) \\approx 0.0668\\)\", \"explanation\": \"We can use a calculator or table to find that this probability is approximately 0.0668.\"}, {\"stepNumber\": 5, \"description\": \"Translate back to the original problem\", \"mathHtml\": \"\\(P(X > 12) = P(Z > 1.5)\\)\", \"explanation\": \"Finally, we translate our answer back to the original problem by noting that \\(X > 12\\) if and only if \\(Z > 1.5\\).\"} ],",
+    "finalAnswer": "The probability that X is greater than 12 is approximately 0.0668.\" },",
+    "intuition": "The CLT allows us to approximate the distribution of a sum of independent random variables as normal, even if the individual variables don't follow a normal distribution.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:53:25.327Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: A Worked Example",
+    "contentHtml": "<p>In this example, we'll apply the Central Limit Theorem (CLT) to a real-world scenario.</p>",
+    "formula": {
+      "latex": "\\[\\frac{\\sqrt{n}}{\\sigma}\\]",
+      "name": "Standardized Variable"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 100 is taken from a population with mean 50 and standard deviation 10. What can we say about the distribution of the sample mean?</p>",
+      "hints": [
+        "Hint: Think about the shape of the sampling distribution."
+      ],
+      "solutionHtml": "<p>To apply the CLT, we first need to check if the conditions are met.</p><ul><li>Check that the population is normally distributed. Since it's not given, we'll assume it's not normal.</li><li>Verify that the sample size is large enough. In this case, n = 100 is sufficient.</li></ul><p>Now, apply the CLT: as n → ∞, the sampling distribution of the mean will converge to a normal distribution with mean μ and standard deviation σ / √n.</p>",
+      "answerShort": "The sample mean will be approximately normally distributed."
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 100 is taken from a population with mean 50 and standard deviation 10. What can we say about the distribution of the sample mean?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Check if the conditions are met",
+          "mathHtml": "",
+          "explanation": "We need to verify that the population is normally distributed and that the sample size is large enough."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Verify normality assumption",
+          "mathHtml": "",
+          "explanation": "Since it's not given, we'll assume it's not normal."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Check if sample size is sufficient",
+          "mathHtml": "",
+          "explanation": "In this case, n = 100 is sufficient."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Apply the Central Limit Theorem",
+          "mathHtml": "\\[\\frac{\\sqrt{n}}{\\sigma}\\]",
+          "explanation": "As n → ∞, the sampling distribution of the mean will converge to a normal distribution with mean μ and standard deviation σ / √n."
+        }
+      ],
+      "finalAnswer": "The sample mean will be approximately normally distributed."
+    },
+    "intuition": "The CLT provides a powerful tool for making inferences about population means based on sample data.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:54:01.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a real-world problem.</p>",
+    "formula": "{",
+    "latex": "\\(X_n \\sim N(\\mu, \\sigma^2/n)\\)\",",
+    "name": "CLT Formula",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random sample of size 100 from a normal distribution with mean 5 and standard deviation 1. What can we say about the sample mean?</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's assume our random sample is \\(X_1, X_2, ..., X_{100}\\) with mean \\(\\bar{X}_n = (1/100) \\sum_{i=1}^{100} X_i\\).</p>\",",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Use the CLT to make inferences",
+    "mathHtml": "",
+    "explanation": "We can use the CLT to construct confidence intervals or perform hypothesis tests on the population mean.\" } ],",
+    "finalAnswer": "The sample mean is approximately normally distributed with mean 5 and standard deviation 1/\\(\\sqrt{100}\\).\" },",
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "In machine learning, the CLT is used to justify the use of normal distributions in modeling and hypothesis testing."
+    ],
+    "tags": [
+      "CLT",
+      "Normal Distribution"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:54:34.928Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a specific problem.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X with mean μ and variance σ^2. We want to find the probability that X is within k standard deviations of its mean, i.e., P(μ - kσ &lt;= X &lt;= μ + kσ).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Standardize the random variable",
+          "mathHtml": "\\[Z = \\frac{X - \\mu}{\\sigma}\\]",
+          "explanation": "We standardize X by subtracting its mean and dividing by its standard deviation, which helps us apply the CLT."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Apply the Central Limit Theorem",
+          "mathHtml": "\\[Z \\sim N(0,1)\\]",
+          "explanation": "Since the standardized variable Z has mean 0 and variance 1, we can apply the CLT to find its distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the desired probability",
+          "mathHtml": "\\[P(\\mu - k\\sigma &lt;= X &lt;= \\mu + k\\sigma) = P(Z &lt;= k)\\]",
+          "explanation": "We can now use the standard normal distribution to find the desired probability."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Use a table or calculator to find the probability",
+          "mathHtml": "\\[P(Z &lt;= k) \\approx 0.8416\\]",
+          "explanation": "Using a standard normal distribution table or calculator, we can find the approximate value of P(Z &lt;= k)."
+        }
+      ],
+      "finalAnswer": "The probability is approximately 0.8416."
+    },
+    "intuition": "The CLT helps us model the behavior of many real-world phenomena by assuming that a sum of independent random variables follows a normal distribution.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:55:05.477Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem: Worked Example",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to a real-world scenario.</p>",
+    "formula": {
+      "latex": "\\[\\frac{1}{\\sqrt{n}} \\sum_{i=1}^n (X_i - \\mu)^2 = \\sigma^2\\]",
+      "name": "Chi-Square Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 25 is taken from a normal distribution with mean 10 and standard deviation 3. What can we say about the sample mean?</p>",
+      "hints": [
+        "Hint: Think about the shape of the sampling distribution"
+      ],
+      "solutionHtml": "<p>We'll apply the Central Limit Theorem to find the distribution of the sample mean.</p>",
+      "answerShort": "The sample mean is approximately normally distributed"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's say we have a dataset of exam scores with a mean of 80 and standard deviation of 5. We want to know the distribution of the average score for a random sample of size 30.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Identify the population parameters",
+          "mathHtml": "\\[\\mu = 80, \\sigma = 5\\]",
+          "explanation": "We need to know the mean and standard deviation of the original distribution"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample size",
+          "mathHtml": "\\[n = 30\\]",
+          "explanation": "The larger the sample size, the more normal the sampling distribution will be"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the CLT",
+          "mathHtml": "\\[\\bar{X} \\sim N(80, \\frac{5^2}{30})\\]",
+          "explanation": "The sample mean is approximately normally distributed with a mean of 80 and standard deviation of \\frac{5}{\\sqrt{30}}"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Interpret the result",
+          "mathHtml": "",
+          "explanation": "We can now use this normal distribution to make inferences about the population mean"
+        }
+      ],
+      "finalAnswer": "The sample mean is approximately normally distributed with a mean of 80 and standard deviation of \\frac{5}{\\sqrt{30}}"
+    },
+    "intuition": "The CLT allows us to simplify complex distributions by assuming normality, making it a powerful tool in statistics and machine learning.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:55:40.660Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

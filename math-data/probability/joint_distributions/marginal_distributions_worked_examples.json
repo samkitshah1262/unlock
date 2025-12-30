@@ -1,0 +1,174 @@
+[
+  {
+    "id": "prob_wex_marginal_distributions_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions: Summing Out Variables",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex distributions by summing out variables.</p>",
+    "formula": "{",
+    "latex": "\\[P(X) = \\sum_{Y} P(X,Y)\\]",
+    "name": "Marginal Distribution\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint distribution <code>P(X,Y)</code>, find the marginal distribution of <code>X</code>.</p>",
+    "hints": [
+      "Hint: Use the definition of marginalization"
+    ],
+    "solutionHtml": "<p><ul><li>We start by recalling the definition of marginalization:</li></ul>\\[P(X) = \\\\sum_{Y} P(X,Y)\\]</p><p><ul><li>Now, we can apply this formula to our joint distribution <code>P(X,Y)</code>:</li></ul>\",",
+    "answerShort": "The answer is...\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a joint distribution of exam scores and hours studied:</p><p><code>P(S,H) = \\frac{1}{2} \\delta(S-80, H=5) + \\frac{1}{4} \\delta(S-90, H=10) + \\frac{1}{4} \\delta(S-100, H=15)</code></p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the marginal distribution of <code>X</code>",
+        "mathHtml": "\\[P(X) = \\sum_{Y} P(X,Y)\\]",
+        "explanation": "We're summing out the hours studied variable"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Apply the formula to each term",
+        "mathHtml": "",
+        "explanation": "We'll calculate the marginal distribution for each possible score"
+      }
+    ],
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "Marginalization helps us focus on a specific variable while ignoring others, making it easier to analyze and work with complex distributions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:49:24.432Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_marginal_distributions_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions: Summing Out Variables",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X) = \\sum_{Y} P(X,Y) \\]",
+      "name": "Marginal Distribution Formula",
+      "variants": []
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X,Y) and a marginal distribution P(Y), find the expression for P(X).</p>",
+      "hints": [
+        "Hint: Use the definition of marginalization"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the formula for marginalization.</p><ul><li>Step 1: Write down the joint distribution P(X,Y)</li><li>Step 2: Sum out Y using the definition of marginalization</li><li>Step 3: Simplify the expression to get P(X)</li></ul>",
+      "answerShort": "P(X) = \\sum_{Y} P(X,Y)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X,Y) where X and Y are binary variables. Find the expression for P(X).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the joint distribution",
+          "mathHtml": "\\[ P(X,Y) = \\frac{1}{4} + \\frac{1}{2}X\\cdot Y \\]",
+          "explanation": "We start by writing down the joint distribution."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Sum out Y using marginalization",
+          "mathHtml": "\\[ P(X) = \\sum_{Y=0,1} P(X,Y) = \\frac{1}{4} + X\\cdot \\left( \\frac{1}{2} + \\frac{1}{2}X \\right) \\]",
+          "explanation": "We sum out Y using the definition of marginalization."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[ P(X) = \\frac{1}{2} + X \\cdot \\left( \\frac{1}{2} + X \\right) \\]",
+          "explanation": "We simplify the expression to get the final answer."
+        }
+      ],
+      "finalAnswer": "P(X) = \\frac{1}{2} + X \\cdot \\left( \\frac{1}{2} + X \\right)"
+    },
+    "intuition": "Marginalization allows us to reduce the dimensionality of a joint distribution by summing out variables, making it easier to work with and analyze.",
+    "visualDescription": "A diagram showing the joint distribution P(X,Y) and the marginal distribution P(Y) would help illustrate the concept of marginalization.",
+    "commonMistakes": [
+      "Forgetting to sum out Y",
+      "Not simplifying the expression"
+    ],
+    "realWorldApplications": [
+      "In machine learning, marginalization is used in probabilistic graphical models to simplify complex distributions."
+    ],
+    "tags": [
+      "probability",
+      "marginalization",
+      "joint distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:50:06.219Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_marginal_distributions_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "marginal_distributions",
+    "title": "Marginal Distributions",
+    "contentHtml": "<p>In probability theory, marginalization is a powerful technique to simplify complex joint distributions by summing or integrating out variables.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution <span class=\"latex\">P(X,Y)</span> over two random variables X and Y. If we want to find the marginal distribution of X, we need to integrate out Y:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Integrate out Y",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\int P(X,Y)dY</span>",
+          "explanation": "We're using the definition of marginalization to integrate out Y and obtain a distribution over X only."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Simplify the integral",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\int P(X=y,Y)dY</span>",
+          "explanation": "We're assuming a discrete Y for simplicity. The integral becomes a sum over possible values of Y."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the sum",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\sum_{y} P(X=x,Y=y)</span>",
+          "explanation": "We're evaluating the sum by plugging in specific values for X and Y."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Normalize the result",
+          "mathHtml": "<span class=\"latex\">P_X(x) = \\frac{\\sum_{y} P(X=x,Y=y)}{\\sum_{x,y} P(X=x,Y=y)}</span>",
+          "explanation": "We're normalizing the result to ensure it's a valid probability distribution."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Final answer",
+          "mathHtml": "<span class=\"latex\">P_X(x)</span>",
+          "explanation": "The final answer is the marginal distribution of X, which we can use for further analysis or modeling."
+        }
+      ],
+      "finalAnswer": "<span class=\"latex\">P_X(x)</span>"
+    },
+    "intuition": "Marginalization helps us focus on a specific variable while ignoring others. It's like taking a snapshot of the joint distribution from a particular perspective.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:50:38.357Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "stat_wex_logistic_regression_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "title": "Logistic Regression: Solving a Binary Classification Problem",
+    "contentHtml": "<p>In this example, we'll walk through a step-by-step solution to a binary classification problem using logistic regression.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we're trying to predict whether a customer will purchase a product based on their age and income. We have the following data:<br>\\[ \\begin{array}{c|cc} & \\text{Purchase} & \\\\ \\hline \\text{Age} & 25-34 & 35-44 \\\\ \\hline \\text{Income} & \\$50,000-\\$74,999 & \\$75,000-\\$99,999 \\\\ \\hline \\text{Purchase} & 0.6 & 0.8 \\\\ \\end{array}\\] What is the probability that a customer with age 35-44 and income $75,000-\\$99,999 will purchase the product?\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the logistic regression model\", \"mathHtml\": \"\\[ p(y=1|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}} \\]\", \"explanation\": \"We're using a binary classification model to predict the probability of purchase given the customer's features.\"}, {\"stepNumber\": 2, \"description\": \"Estimate the maximum likelihood estimates (MLEs) for the coefficients\", \"mathHtml\": \"\\[ \\hat{\\beta}_0 = -1.23, \\quad \\hat{\\beta}_1 = 0.05 \\]\", \"explanation\": \"We're using the MLE method to estimate the model parameters.\"}, {\"stepNumber\": 3, \"description\": \"Plug in the values for age and income\", \"mathHtml\": \"\\[ p(y=1|x) = \\frac{1}{1 + e^{-(\\hat{\\beta}_0 + \\hat{\\beta}_1 \\cdot 35-44)}} \\]\", \"explanation\": \"We're plugging in the estimated coefficients and the customer's features.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the probability\", \"mathHtml\": \"\\[ p(y=1|x) = 0.82 \\]\", \"explanation\": \"We're using the logistic function to calculate the probability of purchase given the customer's features.\"} ],",
+    "finalAnswer": "The estimated probability is 0.82.\" },",
+    "intuition": "Logistic regression provides a way to model binary classification problems by estimating the probability of an event occurring based on input features.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:08:18.742Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_logistic_regression_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "title": "Logistic Regression: Solving a Binary Classification Problem",
+    "contentHtml": "<p>In this example, we'll walk through solving a binary classification problem using logistic regression.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to predict whether a customer will churn based on their usage patterns. We have the following data:<br />\\[\\begin{array}{c|cc} & \\text{Churned} & \\text{Did not Churn}\\\\ \\hline \\text{Usage 1} & 30 & 70\\\\ \\text{Usage 2} & 20 & 80\\\\ \\text{Usage 3} & 15 & 85\\\\ \\end{array}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the logistic regression model\", \"mathHtml\": \"\\[p(y=1|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\]\", \"explanation\": \"This is the probability of a customer churning given their usage patterns.\"}, {\"stepNumber\": 2, \"description\": \"Estimate the model parameters\", \"mathHtml\": \"\\[p(y=1|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\]\", \"explanation\": \"We can use maximum likelihood estimation (MLE) to find the values of β0 and β1 that maximize the likelihood.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the odds ratio\", \"mathHtml\": \"\\[OR = e^{\\beta_1}\\]\", \"explanation\": \"The odds ratio represents how much more likely a customer is to churn given an increase in usage.\"}, {\"stepNumber\": 4\", \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"We can use the estimated model parameters and odds ratio to make predictions about new customers.\"} ],",
+    "finalAnswer": "The predicted probability of a customer churning given their usage patterns.\" },",
+    "intuition": "Logistic regression provides a way to model binary classification problems by modeling the log-odds.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:08:43.258Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_logistic_regression_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "title": "Logistic Regression: Binary Classification",
+    "contentHtml": "<p>In logistic regression, we model a binary response variable using a log-odds transformation.</p>",
+    "formula": {
+      "latex": "\\[ p = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}} \\]",
+      "name": "Logistic Function"
+    },
+    "problem": {
+      "statementHtml": "<p>A company wants to predict whether a customer will purchase a product based on their age and income. Given the following data:</p><ul><li>Age: 25, Income: $50,000, Purchase: Yes</li><li>Age: 35, Income: $30,000, Purchase: No</li><li>...</li></ul>",
+      "hints": [
+        "Hint: Use the logistic function to model the probability of purchase"
+      ],
+      "solutionHtml": "<p>We can use maximum likelihood estimation (MLE) to find the optimal coefficients \\(\\beta_0, \\beta_1\\). The MLE estimates are:</p><ul><li>\\(\\hat{\\beta}_0 = 2.5\\)</li><li>\\(\\hat{\\beta}_1 = -0.05\\)</li></ul>",
+      "answerShort": "MLE estimates: \\(\\hat{\\beta}_0, \\hat{\\beta}_1\\)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>A customer has an age of 30 and income $40,000. What is the predicted probability of purchase?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the values",
+          "mathHtml": "\\[ p = \\frac{1}{1 + e^{-(\\hat{\\beta}_0 + \\hat{\\beta}_1 * 30)}} \\]",
+          "explanation": "We're using the logistic function to model the probability of purchase"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the log-odds",
+          "mathHtml": "\\[ x = (\\hat{\\beta}_0 + \\hat{\\beta}_1 * 30) \\]",
+          "explanation": "We're calculating the log-odds by plugging in the values"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply the logistic function",
+          "mathHtml": "\\[ p = \\frac{1}{1 + e^{-x}} \\]",
+          "explanation": "We're applying the logistic function to get the predicted probability"
+        }
+      ],
+      "finalAnswer": "Predicted probability: 0.7"
+    },
+    "intuition": "The key insight is that logistic regression models the log-odds of the response variable, which allows us to make predictions and calculate odds ratios.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:09:13.672Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_logistic_regression_018",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "title": "Logistic Regression: Binary Classification",
+    "contentHtml": "<p>Logistic regression is a fundamental technique in machine learning and statistics.</p>",
+    "formula": {
+      "latex": "\\[ p = \\frac{1}{1 + e^{-z}} \\]"
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we want to predict whether a customer will purchase a product based on their age, income, and education level. We have the following data: <ul><li>Age: [25, 30, 35], Income: [$50k, $75k, $100k], Education: [HS, College, Master's]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the logistic function",
+          "mathHtml": "\\[ p = \\frac{1}{1 + e^{-z}} \\]",
+          "explanation": "The logistic function maps any real-valued input to a value between 0 and 1."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Transform the data into z-scores",
+          "mathHtml": "\\[ z = \\frac{x - \\mu}{\\sigma} \\]",
+          "explanation": "This helps standardize the inputs."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the log-odds",
+          "mathHtml": "\\[ logit(p) = z \\]",
+          "explanation": "The log-odds represent the logarithm of the odds in favor of the positive class."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Estimate the model parameters using MLE",
+          "mathHtml": "\\[ \\theta = (X^T X)^{-1} X^T y \\]",
+          "explanation": "The maximum likelihood estimate (MLE) is a popular method for estimating the model parameters."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Interpret the results",
+          "mathHtml": "\\[ OR = e^{\\theta} \\]",
+          "explanation": "The odds ratio (OR) represents the change in the log-odds for a one-unit change in the input feature."
+        }
+      ],
+      "finalAnswer": "The estimated model parameters and their interpretation"
+    },
+    "intuition": "Logistic regression is a powerful tool for binary classification problems, allowing us to estimate the probability of an event occurring given certain features.",
+    "visualDescription": "A diagram showing the logistic function and its relationship to the input data",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:09:40.780Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_logistic_regression_019",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "regression",
+    "topic": "logistic_regression",
+    "title": "Logistic Regression: Solving a Binary Classification Problem",
+    "contentHtml": "<p>In this example, we'll walk through solving a binary classification problem using logistic regression.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to predict whether a customer will purchase a product based on their age and income. We have the following data:<br><ul><li>Age: 30-50</li><li>Income: $40,000-$80,000</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the logistic regression model\", \"mathHtml\": \"\\[y = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\]\", \"explanation\": \"We're using a sigmoid function to map our input features to a probability.\"}, {\"stepNumber\": 2, \"description\": \"Estimate the model parameters\", \"mathHtml\": \"\\[logistic(y) = \\frac{y}{n} + (1 - y)\\ln(1 - y)\\]\", \"explanation\": \"We're using maximum likelihood estimation to find the values of β0 and β1 that maximize the likelihood.\"}, {\"stepNumber\": 3, \"description\": \"Interpret the model coefficients\", \"mathHtml\": \"\\[OR = e^{\\beta_1}\\]\", \"explanation\": \"The odds ratio tells us how much more likely a customer is to purchase the product for every additional unit of income.\"}, {\"stepNumber\": 4, \"description\": \"Make predictions using the model\", \"mathHtml\": \"\", \"explanation\": \"We can use our estimated model to predict the probability of a customer purchasing the product given their age and income.\"} ],",
+    "finalAnswer": "The predicted probability is...\" },",
+    "intuition": "Logistic regression provides a powerful way to model binary classification problems, allowing us to estimate the probability of an event occurring based on input features.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:10:03.880Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

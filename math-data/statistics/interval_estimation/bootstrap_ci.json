@@ -1,0 +1,618 @@
+[
+  {
+    "id": "stat_con_bootstrap_ci_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When we're unsure about the true value of a population parameter, interval estimation provides a way to construct an interval that likely contains the true value.</p><p>The bootstrap method is a non-parametric technique used for constructing confidence intervals. It's particularly useful when the underlying distribution is unknown or complex.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = [x^{*}_{l}, x^{*}_{u}]\\]",
+      "name": "Bootstrap CI"
+    },
+    "intuition": "The bootstrap method works by resampling the original data with replacement, creating many 'new' datasets. Each of these new datasets is then used to construct a confidence interval. By repeating this process many times, we can get an idea of how the true value might be distributed.",
+    "realWorldApplications": [
+      "In machine learning, bootstrap methods are often used for estimating uncertainty in model predictions."
+    ],
+    "commonMistakes": [
+      "Failing to account for the variability introduced by resampling"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:16.116Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_bootstrap_ci_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When working with statistical models, it's crucial to quantify uncertainty and provide confidence intervals (CIs) for our estimates. Traditional methods rely on asymptotic theory, which can be limiting in practice. Bootstrap confidence intervals offer a non-parametric alternative, providing more robust results.</p><p>The bootstrap method involves resampling your dataset with replacement to generate new datasets, each with its own set of statistics. By repeating this process many times, you create a distribution of possible estimates and their corresponding CIs.</p>",
+    "formula": {
+      "latex": "\\[ CI = [\\text{Percentile} - \\alpha/2, \\text{Percentile} + \\alpha/2] \\]",
+      "name": "Bootstrap CI Formula"
+    },
+    "intuition": "The bootstrap method provides a way to estimate uncertainty without relying on specific assumptions about the underlying distribution. This is particularly useful when dealing with complex models or limited data.",
+    "realWorldApplications": [
+      "In machine learning, bootstrapping can help evaluate model performance and provide more accurate estimates of generalization error."
+    ],
+    "commonMistakes": [
+      "Failing to understand that bootstrap CIs are not necessarily symmetric; be mindful of the direction of the estimate."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:32.442Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_bootstrap_ci_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>When estimating a population parameter using a sample statistic, it's crucial to quantify the uncertainty associated with that estimate. One way to do this is by constructing confidence intervals (CI) around the point estimate. In this concept card, we'll explore bootstrap confidence intervals, a non-parametric method for creating CIs.</p><p>The bootstrap method involves resampling your original dataset with replacement to create many new datasets, each representing a possible realization of the data-generating process. For each of these 'bootstrap' samples, you calculate the statistic of interest (e.g., mean or proportion). This creates a distribution of values for that statistic.</p><p>The 2.5th and 97.5th percentiles of this bootstrap distribution become the lower and upper bounds of your CI, respectively. The idea is that if you were to repeat the process many times, about 95% of the time the true parameter would fall within these bounds.</p>",
+    "formula": {
+      "latex": "\\[CI = [\\text{Percentile}^{2.5}_{97.5}(\\hat{\\theta})]\\]",
+      "name": "Bootstrap CI"
+    },
+    "intuition": "The bootstrap method allows us to create CIs without making assumptions about the underlying distribution of the data, making it a powerful tool for exploratory data analysis and model evaluation.",
+    "realWorldApplications": [
+      "In machine learning, bootstrap CIs can be used to quantify the uncertainty in model predictions or feature importance scores."
+    ],
+    "commonMistakes": [
+      "Failing to account for the variability in the bootstrap distribution when constructing the CI"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:34:52.350Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_004",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Estimating population parameters using a sample-based approach is crucial in many fields.</p><p>The bootstrap confidence interval provides a non-parametric way to construct an interval estimate for the population parameter.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{lower} = \\min\\left(\\{B(\\hat{\\theta}) : B \\in \\mathcal{B}\\}\\right), BCa_{upper} = \\max\\left(\\{B(\\hat{\\theta}) : B \\in \\mathcal{B}\\}\\right)\\]\",",
+    "name": "Bootstrap Confidence Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the mean height of a population using a sample-based approach.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Generate B bootstrap samples from the original dataset",
+        "mathHtml": "",
+        "explanation": "This step helps us understand how our sample estimate varies under different scenarios."
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean for each bootstrap sample",
+        "mathHtml": "",
+        "explanation": "We're essentially creating a distribution of sample means."
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "The bootstrap confidence interval provides an adaptive way to construct an interval estimate by resampling from the original dataset.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:10.638Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_005",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>The Bootstrap confidence interval is a non-parametric method for constructing confidence intervals without assuming normality or any specific distribution.</p><p>This approach is particularly useful when dealing with small sample sizes, outliers, or complex distributions.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = [Q_{0.025}, Q_{0.975}]\\]\",",
+    "name": "Bootstrap Confidence Interval",
+    "variants": "[ {\"latex\": \"\\[E_1 = \\frac{1}{B}\\sum_{i=1}^B T(R_i)\\]\", \"description\": \"Estimate of the population parameter\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a dataset of exam scores, construct a 95% confidence interval for the mean score using the Bootstrap method.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Resample with replacement\", \"mathHtml\": \"\\[R_i = \\{x_{i1}, x_{i2}, ..., x_{in}\\}\\]\", \"explanation\": \"This step creates a bootstrap sample.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the statistic of interest\", \"mathHtml\": \"\\[T(R_i) = \\bar{x}_i\\]\", \"explanation\": \"In this case, we're calculating the mean score.\"} ],",
+    "finalAnswer": "The final answer is the Bootstrap confidence interval\" },",
+    "intuition": "The Bootstrap method allows us to construct a confidence interval by repeatedly resampling from our original dataset and recalculating the statistic of interest.",
+    "realWorldApplications": [
+      "Constructing confidence intervals for complex distributions in machine learning"
+    ],
+    "tags": [
+      "Bootstrap",
+      "Confidence Intervals",
+      "Non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:32.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_006",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Bootstrap confidence intervals provide a non-parametric way to estimate population parameters without assuming normality or equal variances.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = \\text{quantile}(B) + \\frac{\\sigma}{\\sqrt{B}} \\cdot t_{\\alpha/2, B-1}\\]\",",
+    "name": "Bootstrap Confidence Interval\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the mean of a population with unknown distribution.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Generate B bootstrap samples",
+        "mathHtml": "",
+        "explanation": "This is where the magic happens"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean for each bootstrap sample",
+        "mathHtml": "",
+        "explanation": "We're essentially re-sampling from our original data"
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Bootstrap confidence intervals work by resampling from your original data to create a distribution of possible values. The interval is then constructed based on this distribution.",
+    "realWorldApplications": [
+      "Estimating the mean of customer ratings in e-commerce"
+    ],
+    "tags": [
+      "bootstrap",
+      "confidence interval",
+      "non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:35:50.137Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_for_bootstrap_ci_007",
+    "subject": "statistics",
+    "type": "formula",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>Bootstrap confidence intervals provide a non-parametric way to estimate population parameters without assuming normality or equal variances.</p><p>This method is particularly useful when dealing with complex data distributions or small sample sizes.</p>",
+    "formula": "{",
+    "latex": "\\[BCa_{1-\\alpha} = \\text{quantile}(B) + \\frac{\\text{se}}{\\sqrt{n}},\\]\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we want to estimate the average height of adults in a city using a random sample of 30 individuals.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Collect data on heights",
+        "mathHtml": "",
+        "explanation": ""
+      },
+      {
+        "stepNumber": 2,
+        "description": "Calculate the sample mean and standard deviation",
+        "mathHtml": "",
+        "explanation": ""
+      }
+    ],
+    "finalAnswer": "\" },",
+    "intuition": "Bootstrap confidence intervals work by resampling with replacement from the original dataset to generate a distribution of possible estimates. This allows us to estimate the uncertainty in our estimate.",
+    "realWorldApplications": [
+      "Estimating population means in machine learning models"
+    ],
+    "tags": [
+      "bootstrap",
+      "confidence interval",
+      "non-parametric"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:07.100Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "Construct a 95% bootstrap confidence interval for the mean of a dataset using the percentile method.",
+    "hints": [
+      "Start by generating B bootstrap samples from the original dataset.",
+      "Calculate the sample mean for each bootstrap sample and order them.",
+      "Use the ordered sample means to determine the lower and upper bounds of the CI."
+    ],
+    "solutionHtml": "\\[Let X_1, ..., X_n be the original dataset. We generate B bootstrap samples \\{X_{i1}, ..., X_{ib}\\} with replacement.\\] <p>For each bootstrap sample, calculate the sample mean \\(\\bar{x}_b\\). Order these means in increasing order: \\(\\bar{x}_{(1)}, ..., \\bar{x}_{(B)}\\).</p> <p>The 2.5th percentile of the ordered sample means is the lower bound of the CI, and the 97.5th percentile is the upper bound.</p> <p>For example, if B = 1000 and the 25th percentile of the ordered sample means is \\(-3.4\\), then the lower bound of the CI would be -3.4.</p> <p>The final answer is: [lower bound, upper bound].</p>\",",
+    "answerShort": "[lower bound, upper bound]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:25.719Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% bootstrap confidence interval for the mean of a given dataset.</p>",
+      "hints": [
+        "Start by resampling with replacement from the original dataset.",
+        "Calculate the sample mean for each bootstrap replicate.",
+        "Use the percentile method to determine the lower and upper bounds."
+      ],
+      "solutionHtml": "<p>To construct the interval, follow these steps:</p><ol><li>Resample with replacement from the original dataset to obtain a bootstrap replicate.</li><li>Calculate the sample mean for each bootstrap replicate: \\(\\bar{x}^{*}\\).</li><li>Arrange the bootstrap means in ascending order and find the 2.5th percentile (lower bound) and the 97.5th percentile (upper bound). The interval is then [\\(\\bar{x}_{0.025}\\), \\(\\bar{x}_{0.975}\\)].</li></ol>",
+      "answerShort": "The answer"
+    },
+    "commonMistakes": [
+      "Forgetting to resample with replacement",
+      "Not arranging the bootstrap means in ascending order"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:36:40.779Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% bootstrap confidence interval for the population mean using the following dataset:</p><ul><li>\\(x_1 = 2\\), \\(x_2 = 4\\), ..., \\(x_n = 10\\)</li></ul>\",",
+    "hints": [
+      "Start by generating B bootstrap samples from the original data.",
+      "Calculate the sample mean for each bootstrap sample and sort them.",
+      "Find the 2.5th percentile and 97.5th percentile of these sample means."
+    ],
+    "solutionHtml": "<p>Step 1: Generate B bootstrap samples.</p><ul><li>\\(x^*_{i,1}\\) = \\(x_{\\sigma(i)}\\) for \\(i=1,...,n\\)</li></ul><p>Step 2: Calculate the sample mean for each bootstrap sample and sort them.</p><ul><li>\\(\\bar{x}^*_b = \\frac{1}{n}\\sum_{i=1}^{n}x^*_{i,b}\\) for \\(b=1,...,B\\)</li></ul><p>Step 3: Find the 2.5th percentile and 97.5th percentile of these sample means.</p><ul><li>\\(CI = \\left[\\bar{x}^*_{(0.025B+1)}, \\bar{x}^*_{(0.975B)}\\right]\\)</li></ul>\",",
+    "answerShort": "The answer is the 95% bootstrap confidence interval.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:01.406Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "Construct a <i>bootstrap</i> confidence interval for the population mean using the percentile method and BCa method.",
+    "hints": [
+      "Start by generating multiple samples from the original dataset.",
+      "Calculate the sample means for each bootstrap sample.",
+      "Use the calculated sample means to construct the confidence interval."
+    ],
+    "solutionHtml": " Suppose we have a dataset of exam scores with mean $\\mu$ and standard deviation $\\sigma$. We want to construct a 95% bootstrap confidence interval for $\\mu$ using the percentile method.  1. Generate $B=1000$ bootstrap samples from the original dataset. 2. Calculate the sample mean $\\bar{x}_i$ for each bootstrap sample, $i=1,\\ldots,B$. 3. Arrange the calculated sample means in ascending order: $\\bar{x}_{(1)} \\leq \\cdots \\leq \\bar{x}_{(B)}$. 4. The 2.5th percentile of the ordered sample means is the lower bound of the confidence interval, and the 97.5th percentile is the upper bound.  Using the BCa method, we can also adjust the interval by considering the variability in the bootstrap samples. This involves calculating the bias-corrected and accelerated quantiles. \",",
+    "answerShort": "The 95% bootstrap confidence interval for $\\mu$ is [$\\bar{x}_{(2.5)}$, $\\bar{x}_{(97.5)}$].\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:21.011Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_bootstrap_ci_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "problem": "{",
+    "statementHtml": "<p>Construct a 95% bootstrap confidence interval (BCa method) for the mean of a sample from a normal distribution.</p>",
+    "hints": [
+      "Start by generating B samples from the original data.",
+      "Use these samples to estimate the mean and standard error.",
+      "Combine the results to get your CI."
+    ],
+    "solutionHtml": "<p>To construct the 95% BCa interval, we first generate <i>B</i> samples with replacement from the original dataset.</p><p>Next, for each sample, calculate the sample mean and standard error.</p><p>Then, combine these results to get the desired CI:</p>\\[\\text{CI} = (\\text{sample mean}_{(1-\\alpha/2)\\cdot B}, \\text{sample mean}_{(\\alpha/2)\\cdot B})\\]\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:37:34.077Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bootstrap_ci_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a bootstrap confidence interval using the percentile method.</p>",
+    "formula": {
+      "latex": "\\[\\text{CI} = [\\text{quantile}_1, \\text{quantile}_2]\\]",
+      "name": "Percentile Method CI"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to estimate the mean of a population using a sample of size 30. We have a dataset with values ranging from 10 to 20, and we're interested in constructing a 95% confidence interval for the true mean.</p>",
+      "hints": [
+        "Hint: Use the bootstrap method",
+        "Think about resampling"
+      ],
+      "solutionHtml": "<p>Here's how we can solve this problem step-by-step:</p><ul><li>Step 1: Calculate the sample mean, \\(\\bar{x}\\), and standard deviation, \\(s\\).</li><li>Step 2: Resample with replacement from the original dataset to create a bootstrap sample of size 30.</li><li>Step 3: Calculate the mean of each bootstrap sample, \\(\\bar{x}^*\\).</li><li>Step 4: Arrange the bootstrap means in order and find the 2.5th percentile (lower bound) and 97.5th percentile (upper bound) of this ordered list.</li></ul>",
+      "answerShort": "The answer is [CI]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Let's say our sample mean is \\(\\bar{x} = 15\\), and the standard deviation is \\(s = 2.5\\).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[\\bar{x} = \\frac{1}{30}\\sum_{i=1}^{30} x_i\\]",
+          "explanation": "We need to find the average of our sample values."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Resample with replacement",
+          "mathHtml": "",
+          "explanation": "This step is crucial for creating a bootstrap distribution."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the mean of each bootstrap sample",
+          "mathHtml": "\\[\\bar{x}^* = \\frac{1}{30}\\sum_{i=1}^{30} x_i^*\\]",
+          "explanation": "We're essentially repeating our original calculation for each bootstrap sample."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the percentiles",
+          "mathHtml": "",
+          "explanation": "This is where we find the lower and upper bounds of our confidence interval."
+        }
+      ],
+      "finalAnswer": "[CI]"
+    },
+    "intuition": "The key insight here is that by resampling with replacement, we're effectively creating a distribution of possible sample means. The percentiles of this distribution become our confidence interval.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:38:08.012Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bootstrap_ci_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a bootstrap confidence interval using the percentile method.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we want to estimate the mean of a population based on a sample of size 30. The sample mean is $\\overline{x} = 25$ with standard deviation $s = 3$. Construct a 95% bootstrap confidence interval for the true population mean using the percentile method.</p>\",",
+    "hints": [
+      "Hint: Use the sample data to create a bootstrap distribution"
+    ],
+    "solutionHtml": "<p>...</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>We'll use R to generate a bootstrap distribution of means and then calculate the 2.5th and 97.5th percentiles to obtain our confidence interval.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Generate the bootstrap distribution\", \"mathHtml\": \"\\\\[x_{i}^{*} = \\\\frac{1}{30}\\\\sum_{j=1}^{30} x_{ij}\\]\", \"explanation\": \"We'll use the sample data to create a bootstrap distribution of means.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the percentiles\", \"mathHtml\": \"\\\\[p_{0.025} = \\\\text{quantile}(x^{*}, 0.025)\\\\]\", \"explanation\": \"We'll calculate the 2.5th and 97.5th percentiles of our bootstrap distribution.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the confidence interval\", \"mathHtml\": \"\\\\[CI = (p_{0.025}, p_{0.975})\\\\]\", \"explanation\": \"Our confidence interval will be the interval bounded by these two percentiles.\"}, {\"stepNumber\": 4, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"We can interpret our confidence interval as having a 95% chance of containing the true population mean.\"} ],",
+    "finalAnswer": "The 95% bootstrap confidence interval is (23.1, 26.9)\" },",
+    "intuition": "Bootstrap confidence intervals provide a non-parametric way to estimate uncertainty in our estimates.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:38:34.598Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bootstrap_ci_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a bootstrap confidence interval using the percentile method.</p>",
+    "workedExample": {
+      "problemHtml": "<p>Suppose we want to estimate the mean of a population with known variance. We have a random sample of size <i>n</i> from the population and want to construct a 95% confidence interval for the true population mean.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Generate <i>B</i> bootstrap samples",
+          "mathHtml": "\\[x_1^*, x_2^*, ..., x_B^* \\sim \\text{Sample} (n)\\]",
+          "explanation": "We'll use these bootstrap samples to approximate the distribution of the sample mean."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample mean for each bootstrap sample",
+          "mathHtml": "\\[\\bar{x}_b^* = \\frac{1}{n} \\sum_{i=1}^{n} x_i^*\\]",
+          "explanation": "This gives us a set of sample means that we can use to estimate the distribution of the true population mean."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the <i>2.5</i>% and <i>97.5</i>% percentiles of the bootstrap sample means",
+          "mathHtml": "\\[p_{0.025}^* = \\text{Percentile} (\\bar{x}_1^*, ..., \\bar{x}_B^*) (0.025)\\]",
+          "explanation": "These percentiles will serve as our confidence interval bounds."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the bootstrap confidence interval",
+          "mathHtml": "\\[CI = [p_{0.025}^*, p_{0.975}^*]\\]",
+          "explanation": "The resulting interval is a non-parametric estimate of the true population mean."
+        }
+      ],
+      "finalAnswer": "The 95% bootstrap confidence interval for the true population mean is [p_{0.025}^*, p_{0.975}^*]."
+    },
+    "intuition": "Bootstrap confidence intervals provide a way to construct non-parametric estimates of population parameters without relying on specific distributional assumptions.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:39:01.550Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bootstrap_ci_016",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a bootstrap confidence interval using the percentile method.</p>",
+    "formula": {
+      "latex": "\\[ \\text{CI} = [\\text{Percentile Lower}, \\text{Percentile Upper}] \\]",
+      "name": "Bootstrap CI"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we want to estimate the mean of a population using a sample of size 30. We have a dataset with values ranging from 10 to 20, and we'd like to construct a 95% confidence interval for the true mean.</p>",
+      "hints": [],
+      "solutionHtml": "<p>We'll use the bootstrap method to create a CI. First, we calculate the sample mean: \\(\\bar{x} = 15.5\\)</p><p>Next, we resample with replacement from our dataset to generate 10,000 bootstrap samples.</p>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>We'll use the following steps:</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample mean",
+          "mathHtml": "\\[ \\bar{x} = \\frac{\\sum x_i}{n} \\]",
+          "explanation": "This gives us a starting point for our CI."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Resample with replacement",
+          "mathHtml": "",
+          "explanation": "We'll generate many bootstrap samples to estimate the distribution of the sample mean."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the bootstrap sample means",
+          "mathHtml": "\\[ \\bar{x}^{*i} = \\frac{\\sum x_i^{*}}{n} \\]",
+          "explanation": "This gives us a set of bootstrap sample means."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the desired percentile points",
+          "mathHtml": "",
+          "explanation": "We'll use these to construct our CI."
+        }
+      ],
+      "finalAnswer": "The 95% CI for the true mean is [14.2, 16.8]."
+    },
+    "intuition": "Bootstrap CIs are useful when we're unsure about the underlying distribution or have limited data.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:39:28.216Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_bootstrap_ci_017",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "interval_estimation",
+    "topic": "bootstrap_ci",
+    "title": "Bootstrap Confidence Intervals",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to construct a bootstrap confidence interval using the percentile method.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we want to estimate the population mean of exam scores for a new student cohort. We have a sample of <i>n</i> = 30 scores with sample mean <i>x̄</i> = 75 and sample standard deviation <i>s</i> = 8.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Construct the confidence interval",
+    "mathHtml": "\\[x̄ - x̄_{0.025}, x̄ + x̄_{0.975}\\] is the bootstrap confidence interval\",",
+    "explanation": "We construct the confidence interval by subtracting and adding the calculated percentiles from the original sample mean.\" } ],",
+    "finalAnswer": "The 95% bootstrap confidence interval for the population mean is [72, 78].\" },",
+    "intuition": "Bootstrap confidence intervals provide a non-parametric way to estimate population parameters without assuming normality or equal variances.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:39:56.145Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

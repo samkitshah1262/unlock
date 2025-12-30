@@ -1,0 +1,74 @@
+[
+  {
+    "id": "stat_prb_credible_intervals_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "problem": {
+      "statementHtml": "<p>Construct a 95% HPD interval for the mean of a normal distribution with unknown mean and variance.</p>",
+      "hints": [
+        "Think about how to use the posterior distribution",
+        "Recall the properties of the normal distribution",
+        "Consider the relationship between HPD intervals and frequentist CIs"
+      ],
+      "solutionHtml": "<p>To construct a 95% HPD interval, we need to find the 2.5th and 97.5th percentiles of the posterior distribution.</p><p>We can do this using the inverse cumulative distribution function (CDF) of the normal distribution.</p>",
+      "answerShort": "The answer is [insert math]"
+    },
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:01.653Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_credible_intervals_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "problem": "{",
+    "statementHtml": "<p>Construct a <i>credible interval</i> (CI) for the mean of a normal distribution using Bayesian inference.</p>",
+    "hints": [
+      "Start by specifying a prior distribution for the mean.",
+      "Use Bayes' theorem to update the prior with the likelihood.",
+      "Find the HPD interval that contains <i>p</i>% of the posterior density."
+    ],
+    "solutionHtml": "<p>To construct a CI, we need to specify a prior distribution for the mean, &mu;.</p>\\n<p>Let's assume a normal distribution with mean 0 and variance 100, scaled by the standard deviation of our data.</p>\\n<p>We then update this prior with the likelihood using Bayes' theorem:</p>\\n\\[p(\\mu | X) \\propto p(X | \\mu) \\cdot p(\\mu)\\]\\n<p>Next, we find the HPD interval that contains <i>p</i>% of the posterior density.</p>\",",
+    "answerShort": "The CI is [mean - 1.96*std/√n, mean + 1.96*std/√n]\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:18.695Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_credible_intervals_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "credible_intervals",
+    "title": "Credible Intervals",
+    "problem": "{",
+    "statementHtml": "Find a 95% credible interval for the mean of a normal distribution with known variance <i>\\(\\sigma^2\\)</i> and unknown mean <i>\\(\\mu\\)</i>, given a dataset of size <i>n</i>.\",",
+    "hints": "[ \"Start by finding the posterior distribution of <i>\\(\\mu\\)</i>\", \"Use the fact that the prior is conjugate to the likelihood\", \"The credible interval will be based on the 2.5th and 97.5th percentiles of this distribution\" ],",
+    "solutionHtml": "<p>To find the posterior distribution, we can use Bayes' theorem:</p>\\n\\[ p(\\mu | \\mathbf{x}) = \\frac{p(\\mathbf{x} | \\mu) \\cdot p(\\mu)}{\\int p(\\mathbf{x} | \\mu) \\cdot p(\\mu) d\\mu }.\\]\\n<p>Since the prior is conjugate to the likelihood, we can use a normal distribution with mean <i>\\(0\\)</i> and variance <i>\\(\\frac{1}{k}\\sigma^2\\)</i> as our prior.</p>\\n<p>The posterior distribution will also be normal, with mean:</p>\\n\\[ \\mu_{post} = \\frac{\\sum_{i=1}^{n} x_i}{n} + \\left( \\frac{\\sigma^2}{k} \\right) \\cdot \\frac{1}{\\sigma^2 + \\frac{k}{n}}.\\]\\n<p>The 95% credible interval will be the 2.5th and 97.5th percentiles of this distribution.</p>\",",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:34:40.188Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

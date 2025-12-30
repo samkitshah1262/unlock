@@ -1,0 +1,137 @@
+[
+  {
+    "id": "stat_prb_conjugate_priors_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian model with a conjugate prior distribution for the parameter <i>p</i>. Suppose we have <i>n</i> independent Bernoulli trials with success probability <i>p</i>, and <i>k</i> of them are successes. Find the posterior distribution of <i>p</i>.</p>",
+    "hints": [
+      "<p>The prior distribution is beta distributed.</p>",
+      "<p>Use Bayes' theorem to update the prior with the likelihood.</p>",
+      "<p>Compare the shape of the prior and posterior distributions.</p>"
+    ],
+    "solutionHtml": "<p>To find the posterior distribution, we apply Bayes' theorem:</p><p>\\[ p(p|k,n) = \\frac{p(k+1|n+1)p(p)}{\\int_0^1 p(k+1|n+1)p(p) dp} \\]</p><p>Since the prior is beta distributed, we have</p><p>\\[ p(p) = Beta(a,b) = \\frac{1}{B(a,b)}p^a(1-p)^b \\]</p><p>The likelihood is the product of <i>n</i> independent Bernoulli trials:</p><p>\\[ L(k|n,p) = \\prod_{i=1}^n p^{k_i}(1-p)^{n-k_i} \\]</p><p>Substituting and simplifying, we get the posterior distribution:</p><p>\\[ p(p|k,n) = Beta(a+k,b+n-k) \\]</p>\",",
+    "answerShort": "<i>Beta(a+k,b+n-k)</i>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:03.940Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": {
+      "statementHtml": "Consider a Bayesian model where we have observed <i>n</i> successes and <i>m</i> failures in <i>N</i>=<i>n</i>+<i>m</i> total trials, with a prior distribution on the success probability <i>p</i>. Find the conjugate prior distribution for the binomial model.",
+      "hints": [
+        "Recall that the beta distribution is conjugate to the binomial distribution.",
+        "Think about how the prior mean and variance affect the posterior distribution.",
+        "Use the fact that the beta distribution has a closed-form expression."
+      ],
+      "solutionHtml": "<p>To find the conjugate prior, we need to determine the parameters of the beta distribution. The prior mean is <i>p</i>, and the prior variance can be calculated as <i>pv(1-p)</i>. We can then use these values to update the posterior distribution using Bayes' theorem.</p>",
+      "answerShort": "The conjugate prior is a Beta distribution with parameters (<i>n+α</i>, <i>m+β</i>)."
+    },
+    "commonMistakes": [
+      "Forgetting that the beta distribution has a closed-form expression.",
+      "Not considering the effect of the prior mean and variance on the posterior distribution."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:20.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "Consider a Bayesian model where we have a prior distribution <i>P(θ)</i> and an observation <i>y</i>. Find the conjugate prior distribution <i>P(θ|y)</i> for the parameters of a Beta-Binomial, Normal-Normal, or Gamma-Poisson family.",
+    "hints": [
+      "Think about what happens to the prior when we observe more data.",
+      "Recall that conjugacy means the posterior is from the same family as the prior.",
+      "Consider how the observation affects the shape of the prior distribution."
+    ],
+    "solutionHtml": "\\[P(θ|y) = \\frac{P(y|θ)P(θ)}{\\int P(y|θ)P(θ)dθ}\\] for each family. For Beta-Binomial, <i>P(θ)</i> is a beta distribution and <i>P(y|θ)</i> is a binomial distribution. For Normal-Normal, <i>P(θ)</i> is a normal distribution and <i>P(y|θ)</i> is another normal distribution. For Gamma-Poisson, <i>P(θ)</i> is a gamma distribution and <i>P(y|θ)</i> is a Poisson distribution.\",",
+    "answerShort": "The conjugate prior distributions are Beta-Binomial: beta, Normal-Normal: normal, and Gamma-Poisson: gamma.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:40.233Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian model where we have a binomial distribution with <i>n</i> trials and <i>k</i> successes. We want to find the conjugate prior for this model.</p>",
+      "hints": [
+        "Start by thinking about what kind of distribution would make sense as a prior.",
+        "Recall that the binomial distribution is related to the beta distribution.",
+        "Think about how you can use the gamma function to help with the conjugate prior."
+      ],
+      "solutionHtml": "<p>To find the conjugate prior, we need to find the distribution that has the same form as the posterior. In this case, the posterior is a binomial distribution.</p><p>We know that the beta distribution is the conjugate prior for the binomial distribution. Therefore, our conjugate prior is a beta distribution with parameters <i>a</i> and <i>b</i>.</p>",
+      "answerShort": "The conjugate prior is a beta distribution."
+    },
+    "commonMistakes": [
+      "Forgetting that the beta distribution is the conjugate prior for the binomial distribution.",
+      "Not considering the relationship between the binomial distribution and the beta distribution."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:23:55.986Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_conjugate_priors_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "bayesian_statistics",
+    "topic": "conjugate_priors",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian model with a binomial likelihood and a conjugate prior distribution. What is the posterior distribution?</p>",
+    "hints": [
+      "Start by identifying the conjugate prior for this problem.",
+      "Think about how the prior affects the posterior.",
+      "Use the Bayes' theorem formula to find the posterior."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the fact that the beta distribution is a conjugate prior for binomial likelihoods. The posterior distribution will also be a beta distribution.</p><p>We can write down the Bayes' theorem formula:</p>\\[\\frac{\\text{Likelihood} \\times \\text{Prior}}{\\text{Evidence}}\\]<p>Substituting in our distributions, we get:</p>\\[\\frac{(n+1) \\cdot B(\\alpha_0, \\beta_0)}{\\int_{0}^{1} (x^{n} \\cdot (1-x)^{m}) \\cdot B(\\alpha_0, \\beta_0) dx}\\]<p>After simplifying and rearranging, we find that the posterior distribution is:</p>\\[B(\\alpha_0+n, \\beta_0+m)\\]",
+    "answerShort": "Beta distribution with updated parameters\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T23:24:13.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

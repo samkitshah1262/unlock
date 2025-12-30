@@ -1,0 +1,534 @@
+[
+  {
+    "id": "prob_con_pdf_definition_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "subtitle": "The core of continuous random variables",
+    "contentHtml": "<p>A probability density function (PDF) is a fundamental concept in continuous random variables. It describes the likelihood of a value occurring within a given interval.</p><p>The PDF, denoted by <i>f(x)</i>, satisfies two essential properties:</p><ul><li>It's non-negative: <i>f(x) ≥ 0</i> for all <i>x</i>.</li><li>The area under the curve is equal to 1: <i>∫[−∞, ∞] f(x) dx = 1</i>.</li></ul>",
+    "formula": "{",
+    "latex": "\\(f(x) \\geq 0\\) for all \\(x\\)\",",
+    "name": "",
+    "variants": "[] },",
+    "intuition": "Think of the PDF as a probability mass function, but instead of being discrete, it's continuous. This allows us to model real-world phenomena with greater precision.",
+    "realWorldApplications": [
+      "In machine learning, PDFs are used in Bayesian inference and Gaussian mixture models."
+    ],
+    "commonMistakes": [
+      "Don't confuse the PDF with the cumulative distribution function (CDF), which describes the probability of a value occurring up to a certain point."
+    ],
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:33:14.073Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_pdf_definition_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p><p>Given a random variable X with PDF f(x), the probability that X falls within a specific interval [a, b] is given by the integral ∫<sub>a</sub><sup>b</sup>f(x) dx.</p>",
+    "formula": "{",
+    "latex": "\\(f(x) \\geq 0\\) for all \\(x \\in \\mathbb{R}\\) and \\(\\int_{-\\infty}^{\\infty} f(x) dx = 1\\)\",",
+    "name": "PDF Properties\" },",
+    "whyMatters": "<p>The PDF provides a way to describe the likelihood of different outcomes for continuous random variables, which is essential in many real-world applications, including machine learning and artificial intelligence.</p>",
+    "intuition": "<p>Think of the PDF as a 'density map' that shows how likely it is for X to take on different values. The integral of the PDF over an interval gives you the probability that X falls within that interval.</p>",
+    "commonMistakes": [
+      "Assuming P(X=x) > 0",
+      "Forgetting that P(X=x)=0"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:33:34.773Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_pdf_definition_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>A probability density function (PDF) is a fundamental concept in continuous random variables.</p><p>Given a random variable X, its PDF f(x) represents the relative frequency of values near x.</p>",
+    "formula": "{",
+    "latex": "\\(f(x)\\) is a non-negative function such that \\(\\int_{-\\infty}^{\\infty} f(x) dx = 1\\)\",",
+    "name": "PDF Definition\" },",
+    "whyItMatters": "<p>The PDF is crucial in probability theory as it allows us to calculate probabilities and expected values.</p>",
+    "geometricIntuition": "",
+    "mlRelevance": "core",
+    "commonMistakes": [
+      "Thinking a PDF can be negative or have infinite area"
+    ],
+    "realWorldApplications": [
+      "Anomaly detection in financial transactions using Gaussian distributions"
+    ],
+    "difficulty": 2,
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:33:50.942Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) is a fundamental concept in continuous random variables.</p><p>Given a random variable X with cumulative distribution function F(x), the PDF f(x) represents the relative frequency of X taking on values near x.</p>",
+    "formula": "{",
+    "latex": "\\(f_X(x) = \\frac{d}{dx}F_X(x)\\)\",",
+    "name": "Probability Density Function\" },",
+    "intuition": "The PDF is the derivative of the CDF, making it a measure of how likely X is to take on values near x.",
+    "estimatedMinutes": 2,
+    "tags": [
+      "probability",
+      "continuous random variables"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:04.223Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p><p>It describes the likelihood of X taking on any given value within its support.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x \\in [a, b]\\]",
+      "name": "Uniform Distribution"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random variable X representing the height of a person in inches. Assuming the heights are uniformly distributed between 60 and 72 inches.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Determine the support",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{72-60} = \\frac{1}{12}\\]",
+          "explanation": "The support is the range of possible values."
+        }
+      ],
+      "finalAnswer": "The PDF is f_X(x) = 1/12 for x in [60, 72]"
+    },
+    "intuition": "The PDF gives us a sense of how likely we are to observe any given value of X.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:24.189Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) is a fundamental concept in continuous random variables.</p><p>Given a continuous random variable X with cumulative distribution function F(x), the PDF f(x) is defined as:</p>\\(f(x) = \\frac{d}{dx}F(x)\\)<p>This formula represents the rate of change of the probability mass at x. The integral of the PDF over its support equals 1.</p>\",",
+    "formula": "{",
+    "latex": "\\(f(x) = \\frac{d}{dx}F(x)\\)\",",
+    "name": "Probability Density Function\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the probability density function of a standard normal distribution.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Use the cumulative distribution function\", \"mathHtml\": \"\\(F(x) = \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^x e^{-t^2/2}dt\\)\", \"explanation\": \"The standard normal distribution is a special case of the normal distribution with mean 0 and variance 1.\"}, {\"stepNumber\": 2, \"description\": \"Differentiate the cumulative distribution function\", \"mathHtml\": \"\\(f(x) = \\frac{d}{dx}\\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^x e^{-t^2/2}dt\\)\", \"explanation\": \"Apply the fundamental theorem of calculus to find the derivative.\"} ],",
+    "finalAnswer": "\\(f(x) = \\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}\\)\" },",
+    "intuition": "The PDF represents the likelihood of a value x occurring in a continuous random variable.",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:34:49.912Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_pdf_definition_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p><p>It represents the relative likelihood of X taking on different values within its support.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } a \\leq x \\leq b\\]",
+      "name": "Uniform Distribution"
+    },
+    "intuition": "The PDF gives us the probability of finding X in any particular interval. For continuous variables, this is essential for modeling real-world phenomena.",
+    "realWorldApplications": [
+      "In machine learning, the PDF is used to model complex distributions and make predictions."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:35:03.582Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pdf_definition_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "problem": "{",
+    "statementHtml": "Let X be a continuous random variable with probability density function (PDF) f(x). Prove that P(X=x)=0.",
+    "hints": [
+      "Consider the definition of a PDF and its properties.",
+      "Think about what it means for a continuous random variable to take on a specific value.",
+      "Use the fundamental theorem of calculus to relate the PDF to the cumulative distribution function (CDF)."
+    ],
+    "solutionHtml": "<p>To prove that P(X=x)=0, we can start by recalling the definition of a probability density function:</p>\\n\\(f(x) \\geq 0 \\quad \\forall x \\in \\mathbb{R}\\)\\n<p>This means that for any value x, the PDF f(x) is non-negative.</p>\\n<p>Next, we can use the fundamental theorem of calculus to relate the PDF to the CDF:</p>\\n\\[\\int_{-\\infty}^{\\infty} f(x) dx = 1\\]\\n<p>This implies that the area under the curve of the PDF is equal to 1.</p>\\n<p>Now, let's consider what it means for a continuous random variable X to take on a specific value x:</p>\\n\\[P(X=x) = \\int_{x-\\epsilon}^{x+\\epsilon} f(t) dt\\]\\n<p>This is the probability that X falls within a small interval centered at x.</p>\\n<p>Since the PDF is non-negative, we know that:</p>\\n\\[0 \\leq P(X=x) = \\int_{x-\\epsilon}^{x+\\epsilon} f(t) dt \\leq \\int_{-\\infty}^{\\infty} f(t) dt = 1\\]\\n<p>This implies that P(X=x)=0, since the probability of X taking on a specific value is bounded above by 1.</p>\",",
+    "answerShort": "P(X=x)=0\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:35:34.069Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pdf_definition_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with probability density function (PDF) f(x). Prove that P(X=x)=0.</p>",
+    "hints": [
+      "Think about what it means for a continuous random variable to take on a specific value.",
+      "Consider the definition of the PDF and how it relates to the probability mass function.",
+      "Use the fundamental theorem of calculus to connect the PDF to the cumulative distribution function."
+    ],
+    "solutionHtml": "<p>To prove that P(X=x)=0, we can use the definition of the PDF:</p>\\n\\[f(x) = \\frac{dF(x)}{dx}\\]\\n<p>where F(x) is the cumulative distribution function. Since X is continuous, F(x) is a continuous function.</p>\\n<p>Now, let's evaluate P(X=x)=\\[\\int_{-\\infty}^x f(t) dt.\\]We can apply the fundamental theorem of calculus:</p>\\n\\[P(X=x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_{-\\infty}^{x+h} f(t) dt.\\]\\n<p>As h approaches 0, the integral becomes a Dirac delta function centered at x. Since the PDF is continuous and nonzero at x, this integral evaluates to 0.</p>\\n<p>This shows that P(X=x)=0 for any value of x.</p>\",",
+    "answerShort": "P(X=x) = 0\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:35:58.644Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pdf_definition_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with probability density function (PDF) f(x). Show that P(X=x)=0.</p>",
+    "hints": [
+      "<p>The key is to recognize that the PDF integrates to 1.</p>",
+      "<p>Use the definition of the PDF and the fact that it's zero at x.</p>",
+      "<p>Integrate both sides from -∞ to ∞.</p>"
+    ],
+    "solutionHtml": "<p>To show P(X=x)=0, we start by recognizing that the PDF integrates to 1:</p>\\n\\[ \\int_{-\\infty}^{\\infty} f(x) dx = 1 \\]\\n<p>Now, let's integrate both sides from -∞ to ∞:</p>\\n\\[ \\int_{-\\infty}^{\\infty} P(X=x) dx = P(X=x) \\int_{-\\infty}^{\\infty} 1 dx \\]\\n<p>The integral of 1 is just the width of the interval, which is ∞. So:</p>\\n\\[ P(X=x) \\int_{-\\infty}^{\\infty} 1 dx = P(X=x) (\\infty) \\]\\n<p>Since P(X=x) is a probability, it must be between 0 and 1. Therefore:</p>\\n\\[ P(X=x) (\\infty) \\leq 1 \\]\\n<p>This implies that P(X=x)=0.</p>\",",
+    "answerShort": "P(X=x)=0\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:36:23.171Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_pdf_definition_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a continuous random variable with probability density function (PDF) f(x). Show that P(X=x)=0.</p>",
+    "hints": [
+      "Think about what it means for a continuous random variable to take on a specific value.",
+      "Consider the definition of a PDF and how it relates to the probability of an event.",
+      "Recall that the total area under the curve of a PDF is 1."
+    ],
+    "solutionHtml": "<p>To show P(X=x)=0, we can start by considering the definition of a continuous random variable's PDF:</p>\\n\\[f(x) \\geq 0\\]\\n<p>Since f(x) is non-negative and integrates to 1, we know that</p>\\n\\[P(a \\leq X \\leq b) = \\int_a^b f(x) dx\\]\\n<p>Now, let's consider the probability of X taking on a specific value x:</p>\\n\\[P(X=x) = \\lim_{h \\rightarrow 0} P(x-h \\leq X \\leq x+h)\\]\\n<p>We can rewrite this using our definition of a PDF:</p>\\n\\[P(X=x) = \\lim_{h \\rightarrow 0} \\int_{x-h}^{x+h} f(t) dt\\]\\n<p>As h approaches 0, the integral becomes</p>\\n\\[P(X=x) = \\lim_{h \\rightarrow 0} f(x) \\cdot h\\]\\n<p>This expression is equal to 0 because f(x) is non-negative and h is approaching 0.</p>\",",
+    "answerShort": "P(X=x)=0\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:36:48.532Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is characterized by its probability density function (PDF). The PDF represents the relative likelihood of observing each possible value.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\frac{1}{\\sigma \\sqrt(2\\pi)} e^{-(x-\\mu)^2/2\\sigma^2}\\]",
+      "name": "Normal Distribution PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a continuous random variable X with mean μ = 0 and standard deviation σ = 1. What is the probability that X takes on exactly the value x?</p>",
+      "hints": [
+        "Hint: Recall that P(X=x) = 0 for continuous variables"
+      ],
+      "solutionHtml": "<p>We know that P(X=x) = 0, but why is this the case? It's because the PDF f(x) is a continuous function and there are no atoms at x.</p>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider a random variable X that follows a standard normal distribution. What is P(X=1)?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize that X has a continuous distribution",
+          "mathHtml": "\\[\\]",
+          "explanation": "This means we can't pinpoint a specific value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Recall the PDF of the standard normal distribution",
+          "mathHtml": "\\[f(x) = \\frac{1}{\\sqrt(2\\pi)} e^{-(x-0)^2/2}\\]",
+          "explanation": "The PDF is continuous and has no atoms."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Conclude that P(X=1) = 0",
+          "mathHtml": "\\[\\]",
+          "explanation": "Since the PDF has no atom at x=1, the probability of observing exactly this value is zero."
+        }
+      ],
+      "finalAnswer": "P(X=1) = 0"
+    },
+    "intuition": "The key insight is that continuous random variables have no atoms, which means we can't pinpoint a specific value. This is why P(X=x) = 0.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:37:21.376Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>The probability density function (PDF) of a continuous random variable X is a fundamental concept in probability theory.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x\\in [a, b]\\]",
+      "name": "Uniform Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Let X be a continuous random variable with PDF f_X(x). Show that P(X=x) = 0.</p>",
+      "hints": [
+        "Hint: Consider the definition of probability"
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>We know that P(X=x) is the area under the curve f_X(x) at x.</li><li>Since f_X(x) is continuous, it has no spikes or jumps at x.</li><li>This means the area under the curve at x is 0, so P(X=x) = 0.</li></ul>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose X follows a uniform distribution on [0,1]. Find P(X=0.5).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Recognize the problem",
+          "mathHtml": "\\[P(X=0.5) = ?\\]",
+          "explanation": "We need to find the probability of a specific value."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Use the definition of uniform distribution",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{b-a} \\quad \\text{for } x\\in [a, b]\\]",
+          "explanation": "The PDF is a constant function."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Evaluate the probability",
+          "mathHtml": "\\[P(X=0.5) = f_X(0.5) \\cdot (1-0) = \\frac{1}{1-0} \\cdot 0 = 0\\]",
+          "explanation": "The probability is simply the value of the PDF at x=0.5."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Conclude that P(X=0.5) = 0",
+          "mathHtml": "\\[P(X=0.5) = 0\\]",
+          "explanation": "Since the probability is 0, we can conclude that P(X=x) = 0 for any x."
+        }
+      ],
+      "finalAnswer": "P(X=0.5) = 0"
+    },
+    "intuition": "The PDF represents the relative likelihood of different values of X. The paradox arises because our intuition suggests that there should be some probability associated with a specific value, but this is not the case.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:37:58.752Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is described by its probability density function (PDF). The PDF represents the likelihood of a value occurring.</p>",
+    "formula": {
+      "latex": "\\[f_X(x) = \\frac{1}{\\sigma \\sqrt(2\\pi)} e^{-(x-\\mu)^2/(2\\sigma^2)}\\]",
+      "name": "Normal Distribution PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider a random variable X following a normal distribution with mean μ = 3 and standard deviation σ = 1. Find P(X=4).</p>",
+      "hints": [
+        "Hint: The probability is zero"
+      ],
+      "solutionHtml": "<p>To find the probability, we need to evaluate the PDF at x = 4:</p><p>\\[f_X(4) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(4-3)^2/(2\\cdot 1^2)}\\]</p>",
+      "answerShort": "P(X=4)=0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find P(X=x) for a random variable X following a normal distribution with mean μ = 3 and standard deviation σ = 1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the given parameters",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(x-3)^2/(2\\cdot 1^2)}\\]",
+          "explanation": "We're using the formula for a normal distribution PDF"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the PDF at x",
+          "mathHtml": "\\[f_X(x) = \\frac{1}{1 \\sqrt(2\\pi)} e^{-(x-3)^2/(2\\cdot 1^2)}\\]",
+          "explanation": "We're evaluating the probability density function at the given value of x"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Realize that P(X=x) = 0",
+          "mathHtml": "",
+          "explanation": "Since a continuous random variable can only take on values within its support, the probability of exactly equaling a specific value is zero"
+        }
+      ],
+      "finalAnswer": "P(X=x)=0"
+    },
+    "intuition": "The PDF represents the likelihood of a value occurring. For a continuous random variable, P(X=x) = 0 because it's impossible to exactly equal a specific value.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:38:34.721Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_pdf_definition_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "continuous_random_variables",
+    "topic": "pdf_definition",
+    "title": "Probability Density Function",
+    "contentHtml": "<p>In probability theory, a continuous random variable is described by its probability density function (PDF). The PDF represents the likelihood of a value occurring.</p>",
+    "formula": {
+      "latex": "\\[f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-(x-\\mu)^2/2\\sigma^2}\\]",
+      "name": "Normal Distribution"
+    },
+    "problem": {
+      "statementHtml": "<p>Suppose we have a continuous random variable X with PDF f(x). What is the probability that X takes on exactly x?</p>",
+      "hints": [
+        "Hint: Think about the area under the curve"
+      ],
+      "solutionHtml": "<p>We know that P(X=x) = 0, but why?</p><ul><li>What we're doing: We're examining the probability of a specific value.</li><li>MATH: \\[P(X=x) = \\int_{-\\infty}^{x} f(t) dt + \\int_x^{\\infty} f(t) dt = 0 + 0 = 0\\]</li><li>Why: The probability of a specific value is always zero because the area under the curve at that point is zero.</li></ul>",
+      "answerShort": "P(X=x) = 0"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a continuous random variable X with PDF f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-(x-0)^2}.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Examine the probability of X taking on exactly x.",
+          "mathHtml": "\\[P(X=x) = \\int_{-\\infty}^{x} f(t) dt + \\int_x^{\\infty} f(t) dt\\]",
+          "explanation": "We're examining the area under the curve at point x."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Evaluate the integrals.",
+          "mathHtml": "\\[P(X=x) = 0 + 0 = 0\\]",
+          "explanation": "The area under the curve is zero, so the probability is also zero."
+        }
+      ],
+      "finalAnswer": "P(X=x) = 0"
+    },
+    "intuition": "Understanding why P(X=x) = 0 helps us appreciate the nature of continuous random variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T23:39:08.262Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

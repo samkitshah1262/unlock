@@ -1,0 +1,103 @@
+[
+  {
+    "id": "stat_prb_power_analysis_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the power of a test given an effect size and sample size.</p>",
+    "hints": [
+      "Start by recalling the formula for power.",
+      "Think about how the effect size affects the power.",
+      "Use the sample size to determine the number of observations needed."
+    ],
+    "solutionHtml": "<p>To calculate the power, we need to use the following formula:</p>\\(\\text{Power} = 1 - \\Phi\\left(-|z|\\right)\\)<p>where \\(z\\) is the standardized effect size.</p><p>We can then plug in our values and solve for Power.</p>\",",
+    "answerShort": "The power of the test is...\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:02:51.759Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_power_analysis_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the sample size required to achieve a power of 0.8 with an effect size of 0.5 and alpha = 0.05.</p>",
+    "hints": [
+      "Start by recalling the formula for power calculation.",
+      "Think about how increasing the sample size affects the power.",
+      "Consider the relationship between the effect size and the sample size."
+    ],
+    "solutionHtml": "<p>To calculate the sample size, we need to use the inverse of the cumulative distribution function (CDF) of the non-central t-distribution.</p>\\n<p>Let's denote the desired power as <i>P</i>, the effect size as <i>d</i>, and the alpha level as <i>&alpha;</i>. We can write:</p>\\n\\[P = 1 - \\int_{-\\infty}^{t^*} f(t; \\nu, \\sigma) dt\\]\\n<p>where <i>t^*</i> is the critical value for a one-tailed test.</p>\\n<p>Solving for <i>n</i>, we get:</p>\\n\\[n = \\frac{(z_{1-\\alpha} + z_P)^2}{d^2}\\]\\n<p>Plugging in the values, we get:</p>\\n\\[n = \\frac{(z_{0.95} + z_{0.8})^2}{0.5^2} = 96.15\\approx 97\\]</p>\",",
+    "answerShort": "The required sample size is approximately 97.\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:03:13.288Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_power_analysis_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "title": "Power Analysis in Hypothesis Testing",
+    "problem": "{",
+    "statementHtml": "Suppose we want to test a new medication's effectiveness using a sample size of <i>n</i>. Assuming an effect size of δ and significance level α, calculate the power of the test.",
+    "hints": [
+      "Start by recalling the formula for power.",
+      "Think about how the sample size affects the power.",
+      "Don't forget to consider the type I error rate."
+    ],
+    "solutionHtml": "\\[P(\\text{Type I Error}) = 1 - P(\\text{Reject H}_0 | \\text{H}_0 \\text{ true})\\] <p>Given α, δ, and n, calculate the power as:</p> \\(P(\\text{Power}) = 1 - P(\\text{Type I Error})\\)<br><br>\\[P(\\text{Power}) = 1 - \\Phi\\left(-z_{1-\\alpha} + z_{1-P(\\text{Power})}\\right)\\] <p>where Φ is the cumulative distribution function of the standard normal distribution.</p>\",",
+    "answerShort": "The power calculation depends on α, δ, and n.\" },",
+    "commonMistakes": [
+      "Forgetting to consider the type I error rate",
+      "Incorrectly assuming a specific distribution for the test statistic"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:03:32.007Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_power_analysis_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "hypothesis_testing",
+    "topic": "power_analysis",
+    "problem": "{",
+    "statementHtml": "<p>Calculate the power of a test with a given effect size and sample size.</p>",
+    "hints": "[ \"<p>Start by recalling the formula for power.</p>\\(\\text{Power} = 1 - \\beta\\)\", \"<p>Think about how to relate the effect size to the null hypothesis.</p>\", \"<p>Use the fact that the test statistic is a function of the sample mean and standard deviation.</p>\" ],",
+    "solutionHtml": "<p>To calculate the power, we need to specify the alternative hypothesis. Let's assume it's one-sided: \\(\\mu > 0\\).</p>\\n<p>We can use the formula:</p>\\n\\n<p>\\(1 - \\beta = P(Z > Z_{\\alpha} + \\frac{\\delta}{\\sigma/\\sqrt{n}})\\)</p>\\n<p>where \\(Z\\) is the standard normal random variable, \\(Z_{\\alpha}\\) is the critical value for a one-sided test at level \\(\\alpha\\), \\(\\delta\\) is the effect size, and \\(\\sigma\\) is the population standard deviation.</p>\\n<p>Solve for \\(\\beta\\) to find the power.</p>\",",
+    "answerShort": "The answer\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T22:03:49.531Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

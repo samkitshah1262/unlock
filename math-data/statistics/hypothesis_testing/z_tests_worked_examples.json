@@ -1,0 +1,174 @@
+[
+  {
+    "id": "stat_wex_z_tests_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "z_tests",
+    "title": "Z-Test Example: One-Sample Problem",
+    "contentHtml": "<p>In this example, we'll walk through a one-sample Z-test problem step-by-step.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Is the average height of students in a statistics class greater than 5'8\"? We have a sample mean height of 5.85 with a standard deviation of 0.15 and a sample size of 30.</p>\",",
+    "hints": [
+      "Check the assumptions",
+      "Use the correct test statistic"
+    ],
+    "solutionHtml": "<p>We'll go through each step to find the answer:</p><ul><li>Step 1: State the null and alternative hypotheses</li><li>Step 2: Determine the test statistic</li><li>Step 3: Find the critical value or p-value</li><li>Step 4: Compare the result to the significance level</li></ul>",
+    "answerShort": "Reject the null hypothesis\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>We want to test if the average height of students is greater than 5'8\".</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\\(\\mu \\leq 68 \\) vs. \\(\\mu > 68 \\)\", \"explanation\": \"We're testing if the average height is greater than 5'8\"}, {\"stepNumber\": 2, \"description\": \"Determine the test statistic\", \"mathHtml\": \"\\(z = (\\bar{x} - \\mu) / (\\sigma / \\sqrt{n})\\)\", \"explanation\": \"The Z-statistic measures how many standard deviations our sample mean is from the population mean\"}, {\"stepNumber\": 3, \"description\": \"Find the critical value or p-value\", \"mathHtml\": \"\\(z = (5.85 - 68) / (0.15 / \\sqrt{30})\\)\", \"explanation\": \"We'll calculate the Z-statistic and look up the corresponding p-value\"}, {\"stepNumber\": 4, \"description\": \"Compare the result to the significance level\", \"mathHtml\": \"\\(p < 0.05\\)\", \"explanation\": \"If our calculated p-value is less than 0.05, we reject the null hypothesis\"} ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "The Z-test helps us determine if a sample mean is significantly different from a known population mean.",
+    "visualDescription": "A diagram showing the standard normal distribution and the calculated Z-statistic would be helpful in visualizing the results",
+    "commonMistakes": [
+      "Forgetting to check assumptions",
+      "Using the wrong test statistic"
+    ],
+    "realWorldApplications": [
+      "Comparing the effectiveness of different treatments in a medical study"
+    ],
+    "tags": [
+      "Z-test",
+      "one-sample problem"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:57:46.423Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_z_tests_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "z_tests",
+    "title": "Z-Test Example: One-Sample Proportion",
+    "contentHtml": "<p>In this example, we'll apply a one-sample proportion Z-test to determine if the sample proportion of students who prefer coffee over tea is significantly different from the known population proportion.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Suppose we have a random sample of 100 students and 60 of them prefer coffee over tea. The known population proportion is 0.55. Is the sample proportion statistically significant?</p>",
+    "hints": [
+      "Check the assumptions",
+      "Use the correct test"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's solve this problem step-by-step.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\\(H_0: p = 0.55,\\) \\(H_a: p < 0.55\\)\", \"explanation\": \"We're testing if the sample proportion is less than the known population proportion.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the sample proportion\", \"mathHtml\": \"\\(p = \\frac{60}{100} = 0.6\\)\", \"explanation\": \"This is our best estimate of the true population proportion.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the standard error\", \"mathHtml\": \"\\(\\text{SE}(p) = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{0.6(1-0.6)}{100}}\\approx 0.0485\\)\", \"explanation\": \"This measures the variability of our sample proportion.\"}, {\"stepNumber\": 4, \"description\": \"Calculate the Z-score\", \"mathHtml\": \"\\(Z = \\frac{p - H_0}{\\text{SE}(p)} = \\frac{0.6-0.55}{0.0485}\\approx 2.04\\)\", \"explanation\": \"This measures how many standard errors our sample proportion is away from the known population proportion.\"}, {\"stepNumber\": 5, \"description\": \"Determine the p-value\", \"mathHtml\": \"\\(p = \\Phi(-2.04) \\approx 0.0214\\)\", \"explanation\": \"This is the probability of observing a Z-score at least as extreme as ours assuming the null hypothesis is true.\"}, {\"stepNumber\": 6, \"description\": \"Make a decision\", \"mathHtml\": \"\", \"explanation\": \"Since our p-value is less than the significance level (usually 0.05), we reject the null hypothesis and conclude that the sample proportion is statistically significant.\"} ],",
+    "finalAnswer": "Reject H_0\" },",
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to check assumptions",
+      "Using the wrong test"
+    ],
+    "realWorldApplications": [
+      "Analyzing survey results in marketing or social sciences"
+    ],
+    "tags": [
+      "hypothesis testing",
+      "proportion"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:58:20.787Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_z_tests_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "z_tests",
+    "title": "Z-Test: One-Sample Proportion",
+    "contentHtml": "<p>In this example, we'll apply a one-sample proportion Z-test to determine if the observed proportion of students who prefer coffee over tea is significantly different from the expected proportion.</p>",
+    "problem": "{",
+    "statementHtml": "A survey of 100 students shows that 60 students prefer coffee over tea. Is this proportion significantly different from the expected proportion of 0.5?",
+    "hints": [
+      "Check your assumptions",
+      "Consider the sample size"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+    "answerShort": "No\" },",
+    "workedExample": "{",
+    "problemHtml": "",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"State the null and alternative hypotheses\", \"mathHtml\": \"\\(H_0: p = 0.5\\), \\(H_a: p < 0.5\\)\", \"explanation\": \"We're testing if the observed proportion is less than the expected proportion.\" }, {\"stepNumber\": 2, \"description\": \"Calculate the sample proportion\", \"mathHtml\": \"\\(p = \\frac{60}{100} = 0.6\\)\", \"explanation\": \"This gives us an estimate of the true proportion.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the standard error\", \"mathHtml\": \"\\(SE = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{0.6(1-0.6)}{100}}\\approx 0.0485\\)\", \"explanation\": \"This measures the variability of our sample proportion.\" }, {\"stepNumber\": 4, \"description\": \"Calculate the Z-score\", \"mathHtml\": \"\\(Z = \\frac{\\bar{x}-\\mu}{SE} = \\frac{0.6-0.5}{0.0485}\\approx -1.64\\)\", \"explanation\": \"This measures how many standard errors our sample proportion is away from the expected proportion.\" }, {\"stepNumber\": 5, \"description\": \"Look up the Z-score in a table or use software to find the p-value\", \"mathHtml\": \"\", \"explanation\": \"We'll assume the p-value is less than 0.05.\" } ],",
+    "finalAnswer": "Reject the null hypothesis\" },",
+    "intuition": "The key insight here is that we're using a Z-test to compare our sample proportion to the expected proportion, and the p-value tells us the probability of observing this or more extreme results assuming the null hypothesis is true.",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:58:50.321Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_z_tests_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "hypothesis_testing",
+    "topic": "z_tests",
+    "title": "Z-Test Example: One-Sample Proportion",
+    "problem": {
+      "statementHtml": "<p>Is there a significant difference in the proportion of students who prefer coffee over tea between two universities?</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>A survey at University A shows that 60% of students prefer coffee, while a separate survey at University B shows that 55% of students prefer tea. Is there a significant difference in the proportion of students who prefer coffee over tea between these two universities?</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "State the null and alternative hypotheses",
+          "mathHtml": "\\[H_0: p = 0.575, H_a: p < 0.575\\]",
+          "explanation": "We're testing whether the proportion of students who prefer coffee is less than 57.5% at University B."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the sample proportions and standard errors",
+          "mathHtml": "\\[p_A = 0.6, p_B = 0.55, \\sigma_A = \\sqrt{\\frac{p_A(1-p_A)}{n_A}}, \\sigma_B = \\sqrt{\\frac{p_B(1-p_B)}{n_B}}\\]",
+          "explanation": "We calculate the sample proportions and standard errors for each university."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the Z-statistic",
+          "mathHtml": "\\[Z = \\frac{(p_A - p_B) - (0.575 - 0.55)}{\\sqrt{\\sigma_A^2 + \\sigma_B^2}}\\]",
+          "explanation": "We calculate the Z-statistic by subtracting the null proportion from the sample proportions and dividing by the standard error."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Determine the p-value",
+          "mathHtml": "\\[p = \\Phi(Z)\\]",
+          "explanation": "We calculate the p-value using the Z-statistic and a standard normal distribution."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T10:59:17.226Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

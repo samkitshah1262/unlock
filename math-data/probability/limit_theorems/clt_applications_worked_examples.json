@@ -1,0 +1,243 @@
+[
+  {
+    "id": "prob_wex_clt_applications_008",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "title": "CLT Applications: Confidence Intervals and Normal Approximation",
+    "contentHtml": "<p>In this worked example, we'll apply the Central Limit Theorem (CLT) to construct a confidence interval for a population proportion.</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{a} \\cdot \\mathbf{b} = \\sum_{i=1}^n a_i b_i\\]",
+      "name": "Dot Product"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 500 is drawn from a population with a known proportion p. Assuming the CLT applies, construct a 95% confidence interval for p.</p>",
+      "hints": [
+        "Check the sample size",
+        "Use the standard error"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>A random sample of size 500 is drawn from a population with a known proportion p. Assuming the CLT applies, construct a 95% confidence interval for p.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample proportion",
+          "mathHtml": "\\[\\hat{p} = \\frac{x}{n}\\]",
+          "explanation": "We use the sample proportion as our point estimate."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]",
+          "explanation": "The standard error is crucial for constructing the confidence interval."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Determine the critical value",
+          "mathHtml": "\\[z = \\Phi^{-1}(0.975)\\approx 1.96\\]",
+          "explanation": "We use the standard normal distribution to find the critical value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Construct the confidence interval",
+          "mathHtml": "\\[CI = (\\hat{p} - z \\cdot SE, \\hat{p} + z \\cdot SE)\\]",
+          "explanation": "The confidence interval is constructed by adding and subtracting the critical value multiplied by the standard error from the sample proportion."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting to account for the sample size"
+    ],
+    "realWorldApplications": [
+      "Constructing confidence intervals in A/B testing"
+    ],
+    "tags": [
+      "CLT",
+      "Confidence Intervals",
+      "Normal Approximation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:58:41.095Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_applications_009",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "title": "CLT Applications: Confidence Intervals and Normal Approximation",
+    "problem": {
+      "statementHtml": "Suppose we want to estimate the proportion of students who prefer coffee over tea. We have a random sample of size <i>n</i> from the population, with <i>x</i> students preferring coffee. Construct a 95% confidence interval for the true proportion.",
+      "hints": [
+        "Hint: Use the CLT",
+        "Hint: Consider the standard error"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "Suppose we have <i>n</i> = 100 and <i>x</i> = 60. Find a 95% confidence interval for the true proportion.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample proportion",
+          "mathHtml": "\\[ \\hat{p} = x/n = 0.6 \\]",
+          "explanation": "We're using the sample proportion as our point estimate."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[ SE = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} = 0.04 \\]",
+          "explanation": "The standard error is crucial for our confidence interval."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Standardize the sample proportion",
+          "mathHtml": "\\[ Z = (\\hat{p} - p) / SE \\]",
+          "explanation": "We're using the standardized sample proportion to find the critical value."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the critical value and construct the interval",
+          "mathHtml": "\\[ CI = \\hat{p} \\pm Z \\cdot SE \\approx 0.6 \\pm 1.96 \\cdot 0.04 \\approx (0.52, 0.68) \\]",
+          "explanation": "The critical value from the standard normal distribution gives us our interval bounds."
+        }
+      ],
+      "finalAnswer": "(0.52, 0.68)"
+    },
+    "intuition": "The CLT allows us to approximate the binomial distribution with a normal distribution, making it possible to construct confidence intervals.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:59:11.955Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_applications_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "title": "CLT Applications: Confidence Intervals and Normal Approximation",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to construct confidence intervals for a binomial proportion.</p>",
+    "formula": {
+      "latex": "\\[\\mathbb{P}(X \\leq x) = \\Phi \\left( \\frac{x - n p}{\\sqrt{n p q}} \\right) + \\Phi \\left( \\frac{x - (n+1)p}{\\sqrt{(n+1)p q}} \\right),\\]",
+      "name": "Binomial proportion confidence interval"
+    },
+    "problem": {
+      "statementHtml": "<p>A random sample of size 100 is drawn from a population with a known probability of success p = 0.5. Construct a 95% confidence interval for the true proportion.</p>",
+      "hints": [
+        "Hint: Use the CLT to approximate the distribution of the sample mean.",
+        "Hint: Calculate the z-score for the desired confidence level."
+      ],
+      "solutionHtml": "<p>We'll use the CLT to construct a confidence interval. First, we calculate the sample proportion:</p><p>x̄ = 0.52</p>",
+      "answerShort": "The answer will be provided in the worked example."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we observe 53 successes out of 100 trials.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the sample proportion",
+          "mathHtml": "\\[x̄ = \\frac{53}{100} = 0.52\\]",
+          "explanation": "We're using the sample proportion as our estimate of the true population proportion."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Determine the desired confidence level",
+          "mathHtml": "\\[1 - \\alpha = 0.95\\]",
+          "explanation": "We want a 95% confidence interval."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the standard error",
+          "mathHtml": "\\[SE = \\sqrt{\\frac{x̄(1-x̄)}{n}} = \\sqrt{\\frac{(0.52)(0.48)}{100}} = 0.05\\]",
+          "explanation": "The standard error is the standard deviation of the sample proportion."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the z-score",
+          "mathHtml": "\\[z = \\frac{x̄ - p}{SE} = \\frac{0.52-0.5}{0.05} = 2.4\\]",
+          "explanation": "The z-score tells us how many standard errors our sample proportion is away from the true population proportion."
+        }
+      ],
+      "finalAnswer": "The 95% confidence interval for the true proportion is approximately (0.46, 0.58)."
+    },
+    "intuition": "The CLT allows us to approximate the distribution of the sample mean by a normal distribution, which enables us to construct confidence intervals.",
+    "visualDescription": "A diagram showing the construction of the confidence interval would be helpful for visual learners.",
+    "commonMistakes": [
+      "Forgetting to adjust the standard error for the continuity correction."
+    ],
+    "realWorldApplications": [
+      "Estimating the probability of a customer purchasing a product in an e-commerce setting."
+    ],
+    "tags": [
+      "CLT",
+      "confidence intervals",
+      "normal approximation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:59:57.807Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_clt_applications_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "limit_theorems",
+    "topic": "clt_applications",
+    "title": "CLT Applications: Confidence Intervals and Normal Approximation",
+    "contentHtml": "<p>In this example, we'll demonstrate how to apply the Central Limit Theorem (CLT) to construct confidence intervals for a binomial proportion.</p>",
+    "formula": "{",
+    "latex": "\\(p \\sim N\\left(\\frac{1}{2}, \\frac{1}{4n}\\right)\\)\",",
+    "name": "Binomial Proportion Approximation\" },",
+    "problem": "{",
+    "statementHtml": "<p>A random sample of size 100 is drawn from a population with a known proportion of 0.5. Construct a 95% confidence interval for the true proportion using the CLT.</p>",
+    "hints": [
+      "Hint: Use the normal approximation to binomial distribution"
+    ],
+    "solutionHtml": "<p>We'll use the CLT to approximate the sample proportion's distribution and then construct the confidence interval.</p>",
+    "answerShort": "The answer\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>A random sample of size 100 is drawn from a population with a known proportion of 0.5. Construct a 95% confidence interval for the true proportion using the CLT.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the sample proportion\", \"mathHtml\": \"\\(p = \\frac{53}{100}\\)\", \"explanation\": \"We calculate the sample proportion by dividing the number of successes (53) by the total sample size.\"}, {\"stepNumber\": 2, \"description\": \"Standardize the sample proportion\", \"mathHtml\": \"\\(z = \\frac{p - 0.5}{\\sqrt{\\frac{1}{4n}}}\\)\", \"explanation\": \"We standardize the sample proportion by subtracting the known population proportion and dividing by the standard error.\"}, {\"stepNumber\": 3, \"description\": \"Find the critical value\", \"mathHtml\": \"\\(z_{0.975} = 1.96\\)\", \"explanation\": \"We find the critical value from a standard normal distribution table or calculator.\"}, {\"stepNumber\": 4\", \"description\": \"Construct the confidence interval\", \"mathHtml\": \"\\[p \\pm z_{0.975} \\sqrt{\\frac{1}{4n}}\\]\", \"explanation\": \"We construct the confidence interval by adding and subtracting the critical value multiplied by the standard error from the sample proportion.\"} ],",
+    "finalAnswer": "The 95% confidence interval is [0.33, 0.67]\" },",
+    "intuition": "The CLT allows us to approximate the distribution of the sample proportion with a normal distribution, which enables us to construct confidence intervals.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:00:34.435Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

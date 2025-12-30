@@ -1,0 +1,474 @@
+[
+  {
+    "id": "stat_con_sufficient_statistics_001",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>A sufficient statistic is a minimal summary of all the information in a dataset that can be used to make inferences about the population.</p><p>This concept matters because it allows us to reduce the dimensionality of our data, making it easier to work with and analyze.</p>",
+    "formula": {
+      "latex": "\\[T(x) = \\sum_{i=1}^n g(X_i)\\]",
+      "name": "Factorization Theorem"
+    },
+    "intuition": "Think of a sufficient statistic as a condensed version of your data that still captures all the important information.",
+    "visualDescription": "A diagram showing how a dataset is reduced to a single summary statistic, with arrows representing the flow of information.",
+    "commonMistakes": [
+      "Thinking that a sufficient statistic must be a single number",
+      "Assuming that a sufficient statistic is always unique"
+    ],
+    "realWorldApplications": [
+      "In machine learning, we often use sufficient statistics as features in our models, which can improve their performance and interpretability."
+    ],
+    "tags": [
+      "statistics",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:55:20.923Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_sufficient_statistics_002",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>A sufficient statistic is a minimal set of statistics that captures all the information about the population parameters from a given dataset.</p><p>Think of it like taking a snapshot of your room: you can capture everything in one picture, but if someone asks you to describe every single object, you'd need many more snapshots. In this case, the sufficient statistic is the single 'snapshot' that contains all the essential information about the population parameters.</p>",
+    "formula": {
+      "latex": "\\(T(X) = \\sum_{i=1}^n x_i\\)",
+      "name": "Sufficient Statistic"
+    },
+    "intuition": "The key insight is that a sufficient statistic provides a compact representation of the information in the dataset, making it easier to work with and analyze.",
+    "realWorldApplications": [
+      "In machine learning, sufficient statistics can be used as features for classification or regression tasks."
+    ],
+    "commonMistakes": [
+      "Don't confuse sufficiency with completeness; a complete statistic is not necessarily sufficient."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:55:35.488Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_con_sufficient_statistics_003",
+    "subject": "statistics",
+    "type": "concept",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>A sufficient statistic is a minimal summary of all the information in a dataset that can be used to make inference about population parameters.</p><p>Think of it as a 'data snapshot' that captures everything relevant, without any redundant or unnecessary details.</p>",
+    "formula": {
+      "latex": "\\[T(X) = \\sum_{i=1}^n X_i\\]",
+      "name": "Factorization Theorem"
+    },
+    "intuition": "Sufficient statistics help us avoid overfitting by focusing on the most important features of the data.",
+    "realWorldApplications": [
+      "In machine learning, sufficient statistics can be used to reduce dimensionality and improve model performance."
+    ],
+    "commonMistakes": [
+      "Failing to recognize that a statistic is not minimal"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:55:47.745Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_sufficient_statistics_004",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>A sufficient statistic is a minimal summary of all the information in a sample that can be used to make inferences about the population.</p>",
+    "formula": {
+      "latex": "\\[T(X) = \\sum_{i=1}^n X_i\\]",
+      "name": "Sufficient Statistic"
+    },
+    "theorem": {
+      "statement": "\\[P(T(x) = t | x) = P(T(x) = t) for all x, t.\\]"
+    },
+    "intuition": "A sufficient statistic is a way to summarize the data in a sample that contains all the information needed to make inferences about the population.",
+    "realWorldApplications": [
+      "In machine learning, sufficient statistics are used in Bayesian inference and maximum likelihood estimation."
+    ],
+    "tags": [
+      "Sufficient Statistics",
+      "Point Estimation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:00.998Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_thm_sufficient_statistics_005",
+    "subject": "statistics",
+    "type": "theorem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics Theorem",
+    "contentHtml": "<p>A sufficient statistic is a minimal statistic that preserves all information about the parameters of interest.</p>",
+    "formula": "{",
+    "latex": "\\\\[ T \\\\mathbf{x} = \\\\sum_{i=1}^n x_i \\]\",",
+    "name": "Minimal Statistic\" },",
+    "theorem": "{",
+    "statement": "\\[ \\text{Sufficient Statistics Theorem: } T(\\mathbf{x}) \\independent \\theta | T(\\mathbf{x}) = t \\]",
+    "proofSketch": "The proof involves showing that the conditional distribution of the sufficient statistic given the parameter is independent of the parameter.\" },",
+    "intuition": "Sufficient statistics are important in statistical inference because they allow us to make conclusions about the parameters without having to consider all possible values of the data.",
+    "realWorldApplications": [
+      "In machine learning, sufficient statistics can be used to reduce the dimensionality of large datasets and improve model performance."
+    ],
+    "tags": [
+      "Point Estimation",
+      "Sufficient Statistics"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:15.630Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_006",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "problem": "{",
+    "statementHtml": "Let X be a random variable with probability density function (PDF) f(x). Find the minimal sufficient statistic T(X) for the parameter θ.",
+    "hints": [
+      "Start by considering the factorization theorem: f(x|θ) = g(t|x,θ)h(x), where t is some function of x.",
+      "Think about what information from X would be necessary to uniquely determine the value of θ.",
+      "Use the concept of minimal sufficiency to find the simplest possible sufficient statistic."
+    ],
+    "solutionHtml": "\\[T(X) = \\sum_{i=1}^n X_i\\] is a sufficient statistic for θ. To see why, note that the factorization theorem implies f(x|θ) = g(t|x,θ)h(x), where t = T(X). Since θ only appears in the denominator of h(x), it follows that the minimal sufficient statistic must be T(X).\",",
+    "answerShort": "\\[T(X) = \\sum_{i=1}^n X_i\\]\" },",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:31.956Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_007",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable with probability density function (PDF) f(x). Given i.i.d. samples x1, ..., xn from X, find the minimal sufficient statistic T(x).</p>",
+    "hints": [
+      "Consider the factorization theorem.",
+      "Think about what information is preserved when we condition on T(x).",
+      "Use the concept of minimal sufficiency to justify your answer."
+    ],
+    "solutionHtml": "<p>To apply the factorization theorem, we need to find a statistic T(x) that preserves all the information in f(x).</p><p>We can write the joint PDF as:</p>\\[f(x1, ..., xn) = \\prod_{i=1}^n f(xi | x1, ..., xi-1).\\]<p>Now, consider the conditional PDF:</p>\\[f(x1, ..., xn | T(x)) = \\frac{f(x1, ..., xn)}{\\int f(x1, ..., xn) dx}.\\]<p>The factorization theorem states that we can write this as:</p>\\[f(x1, ..., xn | T(x)) = g(T(x)) \\* h(x - E[T(x)]).\\]<p>This shows that the information in f(x) is preserved when we condition on T(x). Therefore, T(x) is a minimal sufficient statistic.</p>\",",
+    "answerShort": "T(x) = (x1 + ... + xn, n)\" },",
+    "commonMistakes": [
+      "Forgetting to apply the factorization theorem.",
+      "Not considering the concept of minimal sufficiency."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:56:52.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "problem": {
+      "statementHtml": "<p>Let X be a random variable with probability distribution P(x). Prove that if T(X) is a sufficient statistic for θ, then there exists a function g such that T(X) = g(Y), where Y is another random variable.</p>",
+      "hints": [
+        "<p>If you're stuck, try thinking about the definition of sufficiency and what it means for T(X) to be sufficient.</p>",
+        "<p>Consider the factorization theorem and how it relates to this problem.</p>",
+        "<p>Think about the minimal sufficiency condition and how it affects the solution.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we can use the factorization theorem. Let's assume that T(X) = g(Y), where Y is another random variable. Then, by the definition of sufficiency, P(X|θ) = P(X|T(X)).</p><p>We can now apply Bayes' rule to get:</p><p>P(θ|X) = P(θ|T(X))P(T(X)|X)/P(T(X)).</p><p>Since T(X) is sufficient, the right-hand side only depends on T(X). This means that we can write:</p><p>P(θ|X) = h(T(X)), where h is some function.</p>",
+      "answerShort": "<p>The answer is yes, there exists a function g such that T(X) = g(Y).</p>"
+    },
+    "commonMistakes": [
+      "<p>Students often forget to apply the factorization theorem correctly.</p>",
+      "<p>They may also struggle with the minimal sufficiency condition and how it affects the solution.</p>"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:57:13.059Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_sufficient_statistics_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable with probability distribution P(x). Show that Y = ∑xP(x) is a sufficient statistic for θ.</p>",
+    "hints": [
+      "Start by recognizing that Y is a function of X.",
+      "Use the factorization theorem to relate the joint density of X and Y to the marginal density of X.",
+      "Conclude that Y contains all the information about θ that X does."
+    ],
+    "solutionHtml": "<p>To show that Y is sufficient, we need to prove that P(x|y) = P(x) for all x and y.</p><p>Using the factorization theorem, we can write:</p>\\[\\frac{P(x,y)}{\\int_x P(x) dx} = \\frac{P(x)P(y|x)}{\\int_x P(x) dx}\\]\\[= \\frac{P(x)P(y|\\sum_x P(x)x)}{\\int_x P(x) dx}\\]\\[= \\frac{P(x)P(y|Y)}{\\int_x P(x) dx}\\]\\[= P(x)\\]\\[= P(x)\\]</p><p>This shows that Y contains all the information about θ that X does, making it a sufficient statistic.</p>\",",
+    "answerShort": "Y is a sufficient statistic for θ.\" },",
+    "commonMistakes": [
+      "Forgetting to use the factorization theorem.",
+      "Not recognizing that Y is a function of X."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:57:31.482Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sufficient_statistics_010",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>Sufficient statistics are a fundamental concept in statistical inference.</p>",
+    "formula": {
+      "latex": "\\[T = \\sum_{i=1}^n X_i\\]",
+      "name": "T-statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a random sample X_1, ..., X_n from a population with density f(x | θ), find the minimal sufficient statistic T.</p>",
+      "hints": [
+        "Hint: Use factorization theorem"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll use the factorization theorem. First, we need to find the minimal sufficient statistic.</p>",
+      "answerShort": "T"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random sample X_1, ..., X_n from a population with density f(x | θ) = \\frac{1}{σ}\\sqrt(\\frac{-2}{π})e^{-(x-θ)^2/(2σ^2)}.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the sufficient statistics",
+          "mathHtml": "\\[T = \\sum_{i=1}^n X_i\\]",
+          "explanation": "We're looking for a statistic that preserves all the information about θ."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Factorize the likelihood function",
+          "mathHtml": "\\[f(x_1, ..., x_n | θ) = \\frac{1}{σ^n}\\sqrt(\\frac{-n}{π})e^{-(Σx_i-θ)^2/(2σ^2)}\\prod_{i=1}^n e^{-(x_i-θ)^2/(2σ^2)}\\]",
+          "explanation": "We're using the factorization theorem to find the minimal sufficient statistic."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Recognize the minimal sufficient statistic",
+          "mathHtml": "\\[T = \\sum_{i=1}^n X_i\\]",
+          "explanation": "The likelihood function only depends on T, so T is the minimal sufficient statistic."
+        }
+      ],
+      "finalAnswer": "T"
+    },
+    "intuition": "Sufficient statistics are important because they allow us to make inferences about θ without having to know the entire distribution of X.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:57:59.240Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sufficient_statistics_011",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics: Factorization Theorem",
+    "contentHtml": "<p>In statistical inference, a sufficient statistic is a summary of the data that captures all the information about the population parameter.</p>",
+    "formula": "{",
+    "latex": "\\(T(X) \\independent X | S(X)\\)\",",
+    "name": "Factorization Theorem\" },",
+    "problem": "{",
+    "statementHtml": "<p>Given a random sample \\(X_1, ..., X_n\\) from a distribution with density \\(f(x|\\theta)\\), find the sufficient statistic for estimating \\(\\theta\\).</p>\",",
+    "hints": [
+      "Hint: Consider the likelihood function"
+    ],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample \\(X_1, ..., X_n\\) from a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Find the sufficient statistic for estimating \\(\\mu\\).</p>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Write down the likelihood function\", \"mathHtml\": \"\\(L(\\theta|x_1,...,x_n) = \\prod_{i=1}^n f(x_i|\\mu)\\)\", \"explanation\": \"We want to find the statistic that summarizes all the information about \\(\\mu\\).\"}, {\"stepNumber\": 2, \"description\": \"Take the logarithm of the likelihood function\", \"mathHtml\": \"\\(l(\\theta|x_1,...,x_n) = \\sum_{i=1}^n \\log f(x_i|\\mu)\\)\", \"explanation\": \"This helps us identify the sufficient statistic.\"}, {\"stepNumber\": 3, \"description\": \"Find the partial derivative of the log-likelihood function with respect to \\(\\mu\\)\", \"mathHtml\": \"\\(l'(\\theta|x_1,...,x_n) = \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}\\)\", \"explanation\": \"This gives us the score function.\"}, {\"stepNumber\": 4, \"description\": \"Set the score function equal to zero and solve for \\(\\mu\\)\", \"mathHtml\": \"\\(0 = \\sum_{i=1}^n \\frac{x_i-\\bar{x}}{\\sigma^2}\\) \\(\\Rightarrow\\) \\(\\hat{\\mu} = \\bar{x}\\)\", \"explanation\": \"This is the maximum likelihood estimator.\"}, {\"stepNumber\": 5, \"description\": \"Show that the sufficient statistic is minimal\", \"mathHtml\": \"\", \"explanation\": \"We can show that any other statistic that summarizes the information about \\(\\mu\\) must be a function of the sample mean.\"} ],",
+    "finalAnswer": "\\(\\bar{x}\\)\" },",
+    "intuition": "The factorization theorem states that a sufficient statistic is minimal, meaning it cannot be reduced further without losing information.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:58:31.855Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sufficient_statistics_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics",
+    "contentHtml": "<p>In statistical inference, a sufficient statistic is a statistic that contains all the information present in the original dataset about the population parameter being estimated.</p>",
+    "formula": "{",
+    "latex": "\\\\[ T(X) = \\\\sum_{i=1}^n X_i \\]\",",
+    "name": "Sufficient Statistic\" },",
+    "problem": "{",
+    "statementHtml": "<p>Let X be a random variable with probability density function f(x, θ). Show that the statistic T(X) = ∫ x f(x, θ) dx is sufficient for estimating θ.</p>",
+    "hints": [
+      "Hint: Use the factorization theorem",
+      "Hint: Consider the joint distribution of X and T(X)"
+    ],
+    "solutionHtml": "<p>The solution involves applying the factorization theorem to the joint distribution of X and T(X).</p>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a random sample X_1, …, X_n from a normal distribution N(θ, σ^2). Find a sufficient statistic for estimating θ.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the likelihood function\", \"mathHtml\": \"\\\\[ L(x; θ) = \\\\prod_{i=1}^n \\\\frac{1}{\\\\sqrt{2πσ}} e^{-(x_i - θ)^2/(2σ^2)} \\]\", \"explanation\": \"The likelihood function is a key component in the factorization theorem.\" }, {\"stepNumber\": 2, \"description\": \"Apply the factorization theorem\", \"mathHtml\": \"\\\\[ L(x; θ) = g(T(X); θ) h(x) \\\\]\" , \"explanation\": \"The factorization theorem helps us identify the sufficient statistic T(X).\" }, {\"stepNumber\": 3, \"description\": \"Identify the sufficient statistic\", \"mathHtml\": \"\\\\[ T(X) = \\\\bar{X} \\]\", \"explanation\": \"The sample mean is a sufficient statistic for estimating θ.\" } ],",
+    "finalAnswer": "The answer is the sample mean.\" },",
+    "intuition": "A sufficient statistic contains all the information about the population parameter being estimated, making it an efficient estimator.",
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:58:58.062Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_sufficient_statistics_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "point_estimation",
+    "topic": "sufficient_statistics",
+    "title": "Sufficient Statistics: Factorization Theorem",
+    "contentHtml": "<p>In statistics, a sufficient statistic is a minimal set of statistics that captures all the information present in the sample.</p>",
+    "formula": {
+      "latex": "\\[T(x) = \\sum_{i=1}^n w_i x_i\\]",
+      "name": "Sufficient Statistic"
+    },
+    "problem": {
+      "statementHtml": "<p>Let X be a random variable with probability density function (PDF) f(x). Find the sufficient statistic T(X) for estimating the parameter θ.</p>",
+      "hints": [
+        "Hint: Use the factorization theorem"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a random sample X_1, ..., X_n from a normal distribution N(θ, σ^2). Find the sufficient statistic for estimating θ.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the likelihood function",
+          "mathHtml": "\\[L(\\theta | x) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2πσ}} e^{-(x_i - θ)^2/2σ^2}\\]",
+          "explanation": "The likelihood function is a product of normal densities."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Factorize the likelihood function",
+          "mathHtml": "\\[L(\\theta | x) = \\frac{1}{(2πσ)^{n/2}} e^{-(\\sum_{i=1}^n (x_i - θ)^2)/2σ^2}\\]",
+          "explanation": "We can factorize the likelihood function by recognizing the sum of squared terms."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Identify the sufficient statistic",
+          "mathHtml": "\\[T(x) = \\sum_{i=1}^n x_i\\]",
+          "explanation": "The sufficient statistic is the sample mean, which captures all the information present in the sample."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify that T(x) is minimal",
+          "mathHtml": "\\[∂T/∂x_i = 0\\]",
+          "explanation": "We can verify that the sample mean is minimal by taking its derivative and setting it to zero."
+        }
+      ],
+      "finalAnswer": "The sufficient statistic for estimating θ is T(x) = \\sum_{i=1}^n x_i"
+    },
+    "intuition": "A sufficient statistic provides a concise summary of the data, allowing us to make inferences about the population parameter.",
+    "visualDescription": "A diagram showing the factorization theorem and the identification of the sufficient statistic would be helpful.",
+    "commonMistakes": [
+      "Mistaking the sample mean for the population mean"
+    ],
+    "realWorldApplications": [
+      "In machine learning, sufficient statistics can be used to reduce the dimensionality of data and improve model performance."
+    ],
+    "tags": [
+      "statistics",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T09:59:31.861Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

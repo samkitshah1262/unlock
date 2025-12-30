@@ -1,0 +1,479 @@
+[
+  {
+    "id": "prob_con_graphical_models_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Probabilistic Graphical Models",
+    "subtitle": "A fundamental concept in Bayesian networks and machine learning",
+    "contentHtml": "<p>Probabilistic graphical models (PGMs) are a powerful tool for representing complex probabilistic relationships between variables.</p><p>In this context, 'graphical' refers to the use of directed acyclic graphs (DAGs) to encode conditional dependencies between random variables.</p>",
+    "formula": {
+      "latex": "\\[P(X|Y) = \\frac{P(Y|X) P(X)}{P(Y)}\\]",
+      "name": "Bayes' theorem"
+    },
+    "intuition": "PGMs provide a compact and interpretable way to model complex probabilistic relationships, making them essential in many machine learning applications.",
+    "visualDescription": "A DAG with nodes representing random variables and directed edges indicating conditional dependencies",
+    "commonMistakes": [
+      "Confusing PGMs with Bayesian networks",
+      "Ignoring the importance of conditional independence"
+    ],
+    "realWorldApplications": [
+      "Bayesian inference in natural language processing",
+      "Structural learning in computer vision"
+    ],
+    "tags": [
+      "PGMs",
+      "Bayesian networks",
+      "Machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:59:36.352Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_graphical_models_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Probabilistic Graphical Models",
+    "contentHtml": "<p>Probabilistic graphical models (PGMs) are a powerful tool for representing complex probability distributions in machine learning and artificial intelligence. They consist of nodes and edges that represent variables and their conditional dependencies.</p><p>In this concept, we'll explore the basics of PGMs, including Bayesian networks and factor graphs, as well as the concept of d-separation.</p>",
+    "formula": {
+      "latex": "\\[P(X | Y) = \\frac{P(Y | X) P(X)}{P(Y)}\\]",
+      "name": "Bayes' theorem"
+    },
+    "intuition": "PGMs provide a compact and interpretable way to represent complex probability distributions, making them essential in many machine learning applications.",
+    "visualDescription": "A diagram showing a Bayesian network with nodes representing variables and edges representing conditional dependencies",
+    "commonMistakes": [
+      "Confusing PGMs with traditional graphical models"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks for natural language processing",
+      "Factor graphs for computer vision"
+    ],
+    "tags": [
+      "probabilistic graphical models",
+      "PGMs",
+      "machine learning"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:59:54.488Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_graphical_models_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Probabilistic Graphical Models",
+    "contentHtml": "<p>Probabilistic graphical models (PGMs) are a powerful tool in machine learning to represent complex probability distributions. They consist of nodes and edges that encode conditional dependencies between variables.</p><p>In PGMs, each node represents a random variable, and the edges represent probabilistic relationships between these variables.</p>",
+    "formula": {
+      "latex": "\\[P(X|Y) = \\frac{P(Y|X)P(X)}{P(Y)}\\]",
+      "name": "Bayes' theorem"
+    },
+    "intuition": "PGMs allow us to compactly represent complex probability distributions by capturing conditional dependencies between variables.",
+    "visualDescription": "A diagram showing nodes and edges representing probabilistic relationships between random variables",
+    "commonMistakes": [
+      "Not considering the direction of edges",
+      "Ignoring edge weights"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks for decision-making",
+      "Factor graphs for computer vision"
+    ],
+    "tags": [
+      "machine learning",
+      "probability theory"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:00:11.236Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_graphical_models_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Hammersley-Clifford Theorem",
+    "contentHtml": "<p>The Hammersley-Clifford theorem is a fundamental result in probabilistic graphical models, providing a condition for d-separation in Bayesian networks.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{X} \\perp \\! \\! \\! \\mathbf{Y} | \\mathbf{Z} \\]",
+      "name": "d-separation"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{If } \\mathcal{C}(\\mathbf{X}, \\mathbf{Y}) = \\emptyset, \\text{ then } \\mathbf{X} \\perp \\! \\! \\! \\mathbf{Y} | \\mathbf{Z}. \\]"
+    },
+    "intuition": "D-separation is a property of Bayesian networks that ensures the absence of causal relationships between variables. The Hammersley-Clifford theorem provides a condition for when d-separation holds, allowing us to identify conditional independence relationships in complex graphical models.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:00:29.969Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_graphical_models_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "The Hammersley-Clifford Theorem",
+    "contentHtml": "<p>The Hammersley-Clifford theorem is a fundamental result in probabilistic graphical models, providing a necessary and sufficient condition for d-separation.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{X} \\perp \\mathbf{Y} | \\mathbf{Z} \\quad \\Leftrightarrow \\quad \\nabla_\\mathbf{Z} (P(\\mathbf{x}, \\mathbf{y})) = 0 \\]",
+      "name": "D-separation"
+    },
+    "theorem": {
+      "statement": "\\[ \\forall \\mathbf{x}\\in \\mathcal{X}, \\mathbf{y}\\in \\mathcal{Y}, \\mathbf{z}\\in \\mathcal{Z}: P(\\mathbf{x}, \\mathbf{y}) = P(\\mathbf{x}|\\mathbf{z})P(\\mathbf{y}|\\mathbf{z}) \\]",
+      "proofSketch": "The proof involves showing that the theorem holds for all possible distributions and then using a series of algebraic manipulations to arrive at the desired result."
+    },
+    "intuition": "D-separation is a crucial concept in probabilistic graphical models, allowing us to identify conditional independence relationships between variables. The Hammersley-Clifford theorem provides a powerful tool for verifying these relationships.",
+    "realWorldApplications": [
+      "Bayesian networks are widely used in AI and machine learning applications, such as natural language processing and computer vision."
+    ],
+    "tags": [
+      "Probabilistic Graphical Models",
+      "D-separation"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:00:53.765Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": {
+      "statementHtml": "<p>Consider a Bayesian network with nodes A and B, where <i>A</i> has parents <i>C</i> and <i>D</i>, and <i>B</i> has parent <i>E</i>. Is there d-separation between <i>A</i> and <i>B</i>?</p>",
+      "hints": [
+        "<p>If A is conditionally independent of B given E, then...</p>",
+        "<p>Think about the Markov blanket for each node.</p>",
+        "<p>Use the definition of d-separation to simplify the problem.</p>"
+      ],
+      "solutionHtml": "<p>To determine if there's d-separation between <i>A</i> and <i>B</i>, we need to check if all paths from <i>A</i> to <i>B</i> are blocked by the Markov blanket. Since <i>E</i> is a parent of both <i>A</i> and <i>B</i>, it's part of their respective Markov blankets. Therefore, there's no path from <i>A</i> to <i>B</i> that's not blocked by the Markov blanket.</p>",
+      "answerShort": "<i>true</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the Markov blanket",
+      "Not recognizing the importance of conditional independence"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:01:14.804Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": {
+      "statementHtml": "<p>Given a Bayesian network with nodes A, B, and C, determine if there exists a path from node A to node C that does not pass through node B.</p>",
+      "hints": [
+        "Consider the structure of the Bayesian network.",
+        "Think about what it means for a path to not pass through node B.",
+        "Use d-separation to your advantage."
+      ],
+      "solutionHtml": "<p>To solve this problem, we can start by identifying all possible paths from A to C. Since there is no edge directly connecting A and C, the only path must go through some intermediate node.</p><p>Now, let's consider what it means for a path not to pass through B. This means that either:</p><ul><li>A has an edge to some other node X, which then has an edge to C;</li><li>A has an edge to B, but there is no edge from B to C.</li></p><p>In the first case, we can use d-separation to conclude that A and C are conditionally independent given X. This means that there is a path from A to C that does not pass through B.</p><p>In the second case, we can similarly use d-separation to conclude that A and C are conditionally independent given some other node Y. Again, this implies the existence of a path from A to C that does not pass through B.</p>",
+      "answerShort": "Yes, there exists a path from A to C that does not pass through B."
+    },
+    "commonMistakes": [
+      "Failing to consider all possible paths from A to C.",
+      "Not recognizing the implications of d-separation."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:01:39.244Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian network with nodes A, B, and C, where A is the parent of both B and C. If we know that P(A) = 0.5 and P(B|A) = 0.7, what can be inferred about P(C)?</p>",
+    "hints": [
+      "<p>Think about the structure of the Bayesian network.</p>",
+      "<p>Use Bayes' theorem to relate P(C) to P(A) and P(B|A).</p>",
+      "<p>Consider the given probabilities and the conditional independence relationships.</p>"
+    ],
+    "solutionHtml": "<p>To solve this problem, we can start by using Bayes' theorem:</p>\\n\\[P(C|A) = \\frac{P(C,A)}{P(A)}\\]\\n<p>Since A is the parent of both B and C, we know that P(C|A) = P(C,B|A). We can then use the given probability to write:</p>\\n\\[P(C|A) = \\frac{P(C,B|A)}{P(A)} = \\frac{(0.7)(0.5)}{0.5} = 0.7\\]\\n<p>This implies that P(C) is equal to...</p>\",",
+    "answerShort": "<p>P(C) = 0.7</p>\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:01.971Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Given a Bayesian network with variables X and Y, determine if there is a path from X to Y that does not involve any observed variables.</p>",
+    "hints": [
+      "Consider the d-separation criterion.",
+      "Think about the conditional independence between X and Y given all observed variables.",
+      "Use the factor graph representation to help you visualize the problem."
+    ],
+    "solutionHtml": "<p>To solve this, we can start by drawing the factor graph for the Bayesian network. Let's assume that there are no observed variables in the path from X to Y.</p><p>Next, we apply the d-separation criterion:</p>\\[\\text{d-separation}(X,Y) = \\text{no observed variables on the path}\\]\\[= \\text{no edge between }X\\text{ and any observed variable}\\]\\[= \\text{no edge between }Y\\text{ and any observed variable}\\]\"\\[= X \\perp Y | \\text{observed variables} = 0\\]\"<p>This means that there is no path from X to Y that does not involve any observed variables.</p>\",",
+    "answerShort": "No, there is no such path.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:22.858Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_graphical_models_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "problem": "{",
+    "statementHtml": "<p>Consider a Bayesian network with variables X, Y, and Z. If P(X|Y) = 0.8, P(Y) = 0.5, and P(Z|X) = 0.3, what is the probability of Z given that Y has occurred?</p>",
+    "hints": [
+      "<p>Start by using Bayes' theorem to find P(Z|Y).</p>",
+      "<p>Then, use the chain rule to factorize P(Z|Y) into a product of conditional probabilities.</p>",
+      "<p>Finally, substitute in the given values and simplify.</p>"
+    ],
+    "solutionHtml": "<p>To apply Bayes' theorem, we need P(Y). We are given P(Y) = 0.5, so:</p>\\n\\[P(Z|Y) = \\frac{P(Z \\cap Y)}{P(Y)} = \\frac{(0.8)(0.3)}{0.5} = 0.48.\\]\\n<p>Now we use the chain rule to factorize P(Z|Y):</p>\\n\\[P(Z|Y) = P(Z|X)P(X|Y).\\]\\n<p>We are given P(Z|X) = 0.3 and P(X|Y) = 0.8, so:</p>\\n\\[P(Z|Y) = (0.3)(0.8) = 0.24.\\]\\n<p>The final answer is:</p>\\n\\[P(Z|Y) = \\boxed{0.24}.</p>\",",
+    "answerShort": "0.24\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:02:47.949Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple Bayesian network.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a Bayesian network with variables A, B, and C:</p><ul><li>A → B</li><li>B → C</li></ul><p>Solve for P(C|A).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find the conditional probability table (CPT) for each node.\", \"mathHtml\": \"\\[P(B|A) = \\frac{1}{2}\\]\", \"explanation\": \"We need to find the CPTs to apply Bayes' theorem.\"}, {\"stepNumber\": 2, \"description\": \"Apply Bayes' theorem to find P(C|A).\", \"mathHtml\": \"\\[P(C|A) = \\frac{P(B|A) \\cdot P(C|B)}{P(B|A)}\\]\", \"explanation\": \"We'll use the CPTs and Bayes' theorem to solve for P(C|A)\"}, {\"stepNumber\": 3, \"description\": \"Substitute the given values.\", \"mathHtml\": \"\\[P(C|A) = \\frac{\\frac{1}{2} \\cdot \\frac{3}{4}}{\\frac{1}{2}}\\]\", \"explanation\": \"Now we substitute the CPTs and simplify.\"}, {\"stepNumber\": 4, \"description\": \"Simplify the expression.\", \"mathHtml\": \"\\[P(C|A) = \\frac{3}{4}\\]\", \"explanation\": \"We've simplified the expression to find P(C|A)\"}, {\"stepNumber\": 5, \"description\": \"Check our answer.\", \"mathHtml\": \"\", \"explanation\": \"Let's check our answer by plugging in values and verifying it makes sense.\"} ],",
+    "finalAnswer": "\\[P(C|A) = \\frac{3}{4}\\]\" },",
+    "intuition": "Bayesian networks provide a powerful way to reason about conditional probabilities. By applying Bayes' theorem, we can solve complex problems step-by-step.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:03:18.646Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this example, we'll work through a simple Bayesian network to demonstrate how to solve it step-by-step.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given the following Bayesian network:</p><ul><li>P(A) = 0.5</li><li>P(B|A) = 0.7</li><li>P(C|B) = 0.9</li></ul>",
+    "hints": [
+      "Hint: Start by finding P(A)"
+    ],
+    "solutionHtml": "<p>We'll solve this problem step-by-step:</p><ol><li>Find P(A): \\(\\frac{1}{2}\\)</li><li>Find P(B|A): \\(\\frac{7}{10}\\)</li><li>Find P(C|B): \\(\\frac{9}{10}\\)</li><li>Use the chain rule to find P(C): \\(P(C) = \\sum_{a} P(A=a) P(C|B=1) P(B=1|A=a)\\)</li></ol>\",",
+    "answerShort": "P(C) = 0.735\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the following Bayesian network:</p><ul><li>P(A) = 0.5</li><li>P(B|A) = 0.7</li><li>P(C|B) = 0.9</li></ul>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Find P(A)\", \"mathHtml\": \"\\(P(A) = \\frac{1}{2}\\)\", \"explanation\": \"We start by finding the probability of A.\"}, {\"stepNumber\": 2, \"description\": \"Find P(B|A)\", \"mathHtml\": \"\\(P(B|A) = \\frac{7}{10}\\)\", \"explanation\": \"Next, we find the conditional probability of B given A.\"}, {\"stepNumber\": 3, \"description\": \"Find P(C|B)\", \"mathHtml\": \"\\(P(C|B) = \\frac{9}{10}\\)\", \"explanation\": \"Then, we find the conditional probability of C given B.\"}, {\"stepNumber\": 4, \"description\": \"Use the chain rule to find P(C)\", \"mathHtml\": \"\\(P(C) = \\sum_{a} P(A=a) P(C|B=1) P(B=1|A=a)\\)\", \"explanation\": \"Finally, we use the chain rule to find the probability of C.\"} ],",
+    "finalAnswer": "P(C) = 0.735\" },",
+    "intuition": "The key insight here is that Bayesian networks allow us to model complex probabilistic relationships between variables.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:03:56.117Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "problem": "{",
+    "statementHtml": "<p>Solve the following Bayesian network:</p><img src=\"bayesian_network.png\"/>",
+    "hints": [
+      "Consider the conditional probability of each node"
+    ],
+    "solutionHtml": "<p>Step 1: Find the root node in the graph.</p>\\[ P(X) = \\prod_{i} P(X_i | parent(X_i)) \\]<p>Why: We start with the nodes that have no incoming edges, as they must be conditioned on their parents.</p><p>Step 2: Update the probability of each node given its parents.</p>\\[ P(X_i | parent(X_i)) = \\frac{P(parent(X_i) | X_i) P(X_i)}{\\sum_{X_i} P(parent(X_i) | X_i) P(X_i)} \\]<p>Why: We update each node's probability by considering the conditional probability of its parents.</p><p>Step 3: Repeat Step 2 until all nodes have been updated.</p>\",",
+    "answerShort": "P(X) = ...",
+    "steps": "[ {",
+    "stepNumber": 3,
+    "description": "Repeat Step 2 until all nodes have been updated.",
+    "mathHtml": "\\[ ... \\]",
+    "explanation": "We update each node's probability by considering the conditional probability of its parents.\" }, {",
+    "workedExample": "{",
+    "problemHtml": "<p>Given the Bayesian network:</p><img src=\"bayesian_network.png\"/>",
+    "finalAnswer": "...",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:04:53.250Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>In this worked example, we'll walk through solving a simple Bayesian network.</p>",
+    "problem": {
+      "statementHtml": "<p>Given a Bayesian network with variables A, B, and C:</p><ul><li>A → B</li><li>B → C</li></ul><p>Find P(C|A).</p>",
+      "hints": [
+        "Hint: Start by finding P(B|A)",
+        "Hint: Use the chain rule"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p>",
+      "answerShort": "P(C|A) = 0.5"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Step 1: Find P(B|A)</p><ul><li>We know A → B, so P(B|A) = 0.7</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the conditional probability of B given A",
+          "mathHtml": "\\[P(B|A) = 0.7 \\]",
+          "explanation": "We use the directionality of the Bayesian network to find this probability"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(C|B)",
+          "mathHtml": "\\[P(C|B) = 0.5 \\]",
+          "explanation": "Again, we use the directionality of the Bayesian network to find this probability"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Bayes' theorem",
+          "mathHtml": "\\[P(C|A) = P(B|A) P(C|B) / P(B) \\]",
+          "explanation": "We use Bayes' theorem to update our knowledge of C given A"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find P(B)",
+          "mathHtml": "\\[P(B) = P(A) P(B|A) + P(\\neg A) P(B|\\neg A) \\]",
+          "explanation": "We use the total probability theorem to find this probability"
+        }
+      ],
+      "finalAnswer": "P(C|A) = 0.5"
+    },
+    "intuition": "Bayesian networks are powerful tools for modeling complex relationships between variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:05:25.059Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_graphical_models_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "ml_probability",
+    "topic": "graphical_models",
+    "title": "Solving Bayesian Networks",
+    "contentHtml": "<p>Bayesian networks are a powerful tool in probabilistic graphical models.</p>",
+    "workedExample": "{",
+    "problemHtml": "<p>Given a Bayesian network with variables A, B, and C, determine the probability P(A|B).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the relevant nodes\", \"mathHtml\": \"\\(A, B\\)\", \"explanation\": \"We only need to consider the nodes involved in the conditional probability\"}, {\"stepNumber\": 2, \"description\": \"Apply Bayes' theorem\", \"mathHtml\": \"\\[P(A|B) = \\frac{P(B|A) P(A)}{P(B)}\\]\", \"explanation\": \"We're using Bayes' theorem to update the prior probability of A given B\"}, {\"stepNumber\": 3, \"description\": \"Simplify the expression\", \"mathHtml\": \"\\[P(A|B) = \\frac{P(B|A) P(A)}{\\sum_{a} P(B|a) P(a)}\\]\", \"explanation\": \"We're simplifying the expression by combining like terms\"}, {\"stepNumber\": 4, \"description\": \"Evaluate the probability\", \"mathHtml\": \"\\[P(A|B) = \\frac{0.7 \\cdot 0.5}{0.8}\\] (assuming specific values)\", \"explanation\": \"We're plugging in specific values to get a numerical answer\"} ],",
+    "finalAnswer": "P(A|B) = 1.75\" },",
+    "intuition": "Bayesian networks provide a powerful framework for modeling complex probabilistic relationships.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:05:49.498Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

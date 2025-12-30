@@ -1,0 +1,112 @@
+[
+  {
+    "id": "la_prb_diagonalization_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": "{",
+    "statementHtml": "Diagonalize the matrix A = \\( \\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix} \\) and compute Aⁿ, where n is a positive integer.\",",
+    "hints": [
+      "Check if A has distinct eigenvalues",
+      "Use the eigenvectors to construct the diagonal matrix D",
+      "Raise D to the power of n"
+    ],
+    "solutionHtml": "<p>Step 1: Find the eigenvalues and eigenvectors of A.</p><p>\\( \\lambda_1 = 4, \\mathbf{v}_1 = \\( \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\) </p><p>and</p><p>\\( \\lambda_2 = 1, \\mathbf{v}_2 = \\( \\begin{bmatrix} 1 \\\\ -3/4 \\end{bmatrix} \\) </p><p>Step 2: Construct the diagonal matrix D.</p><p>\\[ D = \\( \\begin{bmatrix} 4 & 0 \\\\ 0 & 1 \\end{bmatrix} \\) </p><p>Step 3: Compute Aⁿ.</p><p>\\( Aⁿ = Dⁿ = \\( \\begin{bmatrix} 4^n & 0 \\\\ 0 & 1^n \\end{bmatrix} \\) </p>\",",
+    "answerShort": "Aⁿ = \\( \\begin{bmatrix} 4^n & 0 \\\\ 0 & 1^n \\end{bmatrix} \\)\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:00.723Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": {
+      "statementHtml": "<p>Given a square matrix A, find when possible P⁻¹AP = D, where P is an orthogonal matrix and D is a diagonal matrix.</p>",
+      "hints": [
+        "Check if the matrix has distinct eigenvalues.",
+        "If not, try to find similar matrices.",
+        "Diagonalization only works for matrices with distinct eigenvalues."
+      ],
+      "solutionHtml": "<p>Let A be an n x n square matrix. We want to diagonalize it by finding a matrix P such that P⁻¹AP = D, where D is a diagonal matrix.</p><p>We know that the eigenvectors of A are the columns of P, and the eigenvalues are the entries on the main diagonal of D.</p><p>Since we're looking for distinct eigenvalues, we can assume that the eigenvectors are orthogonal. This means that P is an orthogonal matrix.</p>",
+      "answerShort": "When possible."
+    },
+    "commonMistakes": [
+      "Assuming A has multiple eigenvalues with the same value."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:17.677Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_012",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": {
+      "statementHtml": "<p>Diagonalize a matrix A and compute its powers.</p>",
+      "hints": [
+        "Check if A is diagonal.",
+        "If not, find the eigenvalues and eigenvectors of A.",
+        "Use these to construct the diagonal matrix D."
+      ],
+      "solutionHtml": "<p>To diagonalize A, we need to find its eigenvalues λ and eigenvectors v. Then, P⁻¹AP = D, where P is the matrix whose columns are the eigenvectors. To compute powers of A, we can use this formula: Aⁿ = PDⁿP⁻¹.</p>",
+      "answerShort": "The diagonalized form."
+    },
+    "commonMistakes": [
+      "Forgetting to normalize the eigenvectors.",
+      "Not checking if the matrix is already diagonal."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:30.433Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_diagonalization_013",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "eigentheory",
+    "topic": "diagonalization",
+    "problem": "{",
+    "statementHtml": "Diagonalize the matrix A = \\[\\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix}\\] and compute <code>P⁻¹AP</code>.\",",
+    "hints": [
+      "Notice that A has a repeated eigenvalue. What does this tell you about diagonalization?",
+      "Use the eigenvectors to find P, then check if P⁻¹AP = D",
+      "Don't forget to normalize the eigenvectors!"
+    ],
+    "solutionHtml": "<p>Step 1: Find the eigenvalues and eigenvectors of A.</p><p>\\[\\lambda_1 = 4,\\ \\mathbf{v}_1 = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix},\\ \\lambda_2 = 1,\\ \\mathbf{v}_2 = \\begin{bmatrix} 1 \\\\ -3/4 \\end{bmatrix}\\]</p><p>Step 2: Normalize the eigenvectors.</p><p>\\[\\mathbf{u}_1 = (1/\\sqrt{1})\\mathbf{v}_1,\\ \\mathbf{u}_2 = (1/\\sqrt{13})\\mathbf{v}_2\\]</p><p>Step 3: Form the diagonal matrix D.</p><p>\\[D = \\begin{bmatrix} 4 & 0 \\\\ 0 & 1 \\end{bmatrix}\\]</p><p>Step 4: Compute P⁻¹AP.</p><p>\\[P⁻¹AP = \\begin{bmatrix} 1/√13 & 0 \\\\ 0 & 1/\\sqrt{13} \\end{bmatrix}\\begin{bmatrix} 1 & 0 \\\\ 3 & 4 \\end{bmatrix}\\begin{bmatrix} √13/1 & 0 \\\\ 0 & √13/4 \\end{bmatrix} = D</p>\",",
+    "answerShort": "D\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T12:37:56.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

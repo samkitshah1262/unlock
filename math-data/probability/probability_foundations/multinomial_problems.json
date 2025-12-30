@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_multinomial_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of objects with k types and n total objects, find the number of ways to partition them into groups of sizes m1, m2, ..., mk.</p>",
+    "hints": [
+      "<p>Think about the order in which you can place the object types.</p>",
+      "<p>Use the multinomial coefficient formula to count the number of ways.</p>",
+      "<p>Consider a specific example with k = 3 and n = 6.</p>"
+    ],
+    "solutionHtml": "<p>To partition the objects, we need to decide which type each object belongs to. There are mk choices for the first object, mk-1 for the second, ..., and 1 choice for the last object. By the multinomial theorem,\\[ \\frac{n!}{m1! m2! ... mk!} = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i=1}^{k} {m_i \\choose \\sigma(i)}.\\]The sum is over all permutations σ of the k types. The term sgn(σ) accounts for the fact that some permutations are equivalent due to reordering.</p>\",",
+    "answerShort": "\\[\\frac{n!}{m1! m2! ... mk!}\\]\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:50:47.900Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multinomial_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of objects and a partitioning scheme, find the number of ways to arrange these objects according to the multinomial theorem.</p>",
+    "hints": [
+      "Consider the number of ways to choose each object's position in the partition.",
+      "Think about the order in which you place the objects.",
+      "Use the concept of permutations and combinations."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the multinomial theorem. Let's denote the number of objects as $n$ and the number of partitions as $k$. We want to find the number of ways to arrange these objects in the given partitioning scheme.</p><p>We can use the formula:</p>\\[\\binom{n+k-1}{k-1} = \\frac{(n+k-1)!}{(k-1)!(n-1)!}\\] <p>This formula represents the number of ways to arrange $n$ objects in $k$ partitions.</p>\",",
+    "answerShort": "The answer is given by the multinomial coefficient.\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:51:05.917Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multinomial_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of <i>n</i> distinct objects and a partitioning into <i>k</i> non-empty sets, find the number of ways to arrange these objects such that each set contains exactly one object.</p>",
+    "hints": [
+      "Start by considering a single set. How many arrangements are possible within this set?",
+      "Think about how you can combine multiple sets to get the total number of arrangements.",
+      "Use the concept of multinomial coefficients to solve the problem."
+    ],
+    "solutionHtml": "<p>To find the number of ways to arrange the objects, we use the multinomial coefficient formula:</p>\\(\\binom{n}{k} = \\frac{n!}{k_1!k_2!\\cdots k_m!}\\)<p>where <i>n</i> is the total number of objects, and <i>k_i</i> are the sizes of each set.</p>\",",
+    "answerShort": "The answer is \\(\\binom{n}{k}\\)\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:51:23.728Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

@@ -1,0 +1,148 @@
+[
+  {
+    "id": "stat_wex_statistical_tests_ml_012",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: McNemar's Test",
+    "contentHtml": "<p>In machine learning, we often evaluate the performance of classifiers on paired data (e.g., same dataset with different preprocessing methods). The paired t-test is a statistical test to determine if there's a significant difference between the two classifiers.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have two image classification models, A and B. We want to compare their performance on the same set of images.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct predictions for each model\", \"mathHtml\": \"\\(\\sum_{i=1}^n y_i = \\sum_{i=1}^n a_i + \\sum_{i=1}^n b_i\\)\", \"explanation\": \"We count the number of correct predictions for both models.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of disagreements between the two models\", \"mathHtml\": \"\\(\\Delta = \\sum_{i=1}^n |a_i - b_i|\\)\", \"explanation\": \"We calculate the number of instances where the two models disagree.\"}, {\"stepNumber\": 3, \"description\": \"Use McNemar's test to determine if there's a significant difference between the two classifiers\", \"mathHtml\": \"\\(\\chi^2 = \\frac{(\\Delta - n)^2}{n}\\)\", \"explanation\": \"We use McNemar's test to determine if the number of disagreements is significantly different from what we'd expect by chance.\"}, {\"stepNumber\": 4, \"description\": \"Compare the p-value to a significance level (e.g., 0.05)\", \"mathHtml\": \"\\(p = P(\\chi^2 > \\chi^2_0)\\)\", \"explanation\": \"We compare the p-value to our chosen significance level to determine if we reject the null hypothesis.\"}, {\"stepNumber\": 5, \"description\": \"Interpret the results\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below our significance level, we conclude that there's a significant difference between the two classifiers.\"} ],",
+    "finalAnswer": "Reject the null hypothesis if the p-value is below the chosen significance level\" },",
+    "intuition": "McNemar's test helps us determine if there's a statistically significant difference between the performance of two classifiers on paired data.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:18:20.287Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_013",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: A Step-by-Step Guide",
+    "problem": "{",
+    "statementHtml": "<p>Given a classifier model with true labels and predicted labels, how do we determine if there's a significant difference between the two?</p>",
+    "hints": [],
+    "solutionHtml": "<p>To solve this problem, follow these steps:</p>",
+    "answerShort": "The p-value indicates significance.\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a classifier model that predicts whether an email is spam or not. We collect true labels and predicted labels for 100 emails.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Calculate the number of correct predictions\", \"mathHtml\": \"\\\\[\\\\text{Correct} = \\\\sum_{i=1}^{n} I(y_i = y^{\\prime}_i)\\\\]\", \"explanation\": \"We count the number of emails where our predicted label matches the true label.\"}, {\"stepNumber\": 2, \"description\": \"Calculate the number of incorrect predictions\", \"mathHtml\": \"\\\\[\\\\text{Incorrect} = \\\\sum_{i=1}^{n} I(y_i \\neq y^{\\prime}_i)\\\\]\", \"explanation\": \"We count the number of emails where our predicted label does not match the true label.\"}, {\"stepNumber\": 3, \"description\": \"Calculate the McNemar statistic\", \"mathHtml\": \"\\\\[\\\\text{McNemar} = \\\\frac{(\\\\text{Incorrect})^2}{(\\\\text{Correct})(n-\\\\text{Correct})}\\\\]\", \"explanation\": \"We use this formula to calculate a statistic that measures the difference between our predicted labels and true labels.\"}, {\"stepNumber\": 4, \"description\": \"Compare the McNemar statistic to a critical value\", \"mathHtml\": \"\\\\[p = \\\\frac{1}{2} \\cdot (1 + \\\\text{erf}(\\\\sqrt{\\\\text{McNemar}}/\\\\sqrt{(n-1)/12})\\\\]\", \"explanation\": \"We compare our calculated statistic to a critical value, which depends on the sample size and significance level.\"}, {\"stepNumber\": 5, \"description\": \"Determine if the p-value is below a certain threshold\", \"mathHtml\": \"\", \"explanation\": \"If the p-value is below our chosen significance level (e.g., 0.05), we reject the null hypothesis that there's no difference between our predicted labels and true labels.\"} ],",
+    "finalAnswer": "The p-value indicates whether there's a significant difference between our predicted labels and true labels.\" },",
+    "intuition": "The paired t-test helps us determine if our classifier is making accurate predictions by comparing the number of correct and incorrect predictions.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:18:52.535Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_014",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "title": "Paired t-test for Classifiers: A Worked Example",
+    "contentHtml": "<p>In this example, we'll apply the paired t-test to evaluate the performance of a classifier.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a dataset of labeled images and want to compare the accuracy of two different classifiers: <i>Classifier A</i> and <i>Classifier B</i>. We'll use the paired t-test to determine if there's a statistically significant difference in their performance.",
+    "steps": "[ {",
+    "stepNumber": 4,
+    "description": "Determine the p-value",
+    "mathHtml": "\\[ p = P(|t| > |t_{obs}|) \\]\",",
+    "explanation": "The p-value represents the probability of observing our observed mean difference (or more extreme) assuming there's no real difference between the classifiers.\" } ],",
+    "finalAnswer": "If the p-value is below a certain significance level (e.g., 0.05), we reject the null hypothesis that both classifiers have equal accuracy, and conclude that there's a statistically significant difference in their performance.\" },",
+    "intuition": "The paired t-test helps us determine if the observed difference between two classifier accuracies is due to chance or if it's a real difference.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:19:25.641Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_wex_statistical_tests_ml_015",
+    "subject": "statistics",
+    "type": "worked_example",
+    "chapter": "ml_statistics",
+    "topic": "statistical_tests_ml",
+    "problem": {
+      "statementHtml": "<p>Given two binary classifiers A and B, we want to test whether they are equivalent or not.</p>",
+      "hints": [],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>We have a dataset of labeled examples where each example is classified by both classifier A and B. The goal is to determine if the two classifiers are equivalent.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Calculate the number of correct classifications for both classifiers.",
+          "mathHtml": "\\[n_{AA} + n_{BB} = \\sum_{i=1}^N I(y_i=A) + \\sum_{i=1}^N I(y_i=B)\\]",
+          "explanation": "This is the total number of correctly classified examples."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the number of misclassifications for both classifiers.",
+          "mathHtml": "\\[n_{AB} + n_{BA} = \\sum_{i=1}^N I(y_i=A, y_p=B) + \\sum_{i=1}^N I(y_i=B, y_p=A)\\]",
+          "explanation": "This is the total number of misclassified examples."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Calculate the McNemar statistic.",
+          "mathHtml": "\\[T = \\frac{(n_{AB} + n_{BA}) - (n_{AA} + n_{BB})}{\\sqrt{n_{AA} + n_{BB}}}\\]",
+          "explanation": "This is a measure of the difference between the two classifiers."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Calculate the p-value.",
+          "mathHtml": "\\[p = \\int_0^T \\frac{1}{2}\\left(1 + erf\\left(\\frac{T - t}{\\sqrt{2}}\\right)\\right) dt\\]",
+          "explanation": "This is the probability that we would observe a McNemar statistic at least as extreme as the one we observed, assuming that the two classifiers are equivalent."
+        },
+        {
+          "stepNumber": 5,
+          "description": "Reject the null hypothesis if the p-value is below a certain significance level.",
+          "mathHtml": "",
+          "explanation": "If the p-value is below our chosen significance level, we reject the null hypothesis and conclude that the two classifiers are not equivalent."
+        }
+      ],
+      "finalAnswer": ""
+    },
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "Comparing the performance of different machine learning models"
+    ],
+    "tags": [
+      "McNemar test",
+      "classifier comparison"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:19:56.764Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

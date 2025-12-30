@@ -1,0 +1,564 @@
+[
+  {
+    "id": "prob_con_conditional_distributions_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge about a random variable Y given new information X. This is crucial in machine learning and artificial intelligence, where we often need to refine our predictions based on additional data.</p><p>Intuitively, the conditional distribution P(Y|X) represents the updated probability of Y given that X has occurred. For example, if we're trying to predict a user's favorite movie genre based on their previous ratings, the conditional distribution would give us the updated probabilities for each genre given the new rating.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional Distribution Formula"
+    },
+    "intuition": "The key insight is that conditional distributions allow us to update our knowledge about Y based on new information X. This is a fundamental concept in Bayesian inference and decision-making.",
+    "realWorldApplications": [
+      "Bayesian classification",
+      "Anomaly detection"
+    ],
+    "commonMistakes": [
+      "Confusing the conditional distribution with the joint distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:50:56.524Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_conditional_distributions_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>When we're given data about one random variable and want to make inferences about another related variable, we use conditional distributions.</p><p>A conditional distribution P(Y|X) specifies the probability of Y given that X has occurred.</p>",
+    "formula": "{",
+    "latex": "\\(P(Y|X) = \\frac{P(X,Y)}{P(X)}\\)\",",
+    "name": "Conditional Probability Formula\" },",
+    "intuition": "Think of it like updating your beliefs about Y based on new information X. This is the core idea behind Bayesian inference and many machine learning algorithms.",
+    "realWorldApplications": [
+      "Bayesian networks in computer vision",
+      "Inference engines in natural language processing"
+    ],
+    "commonMistakes": [
+      "Forgetting that P(Y|X) is not just a rescaled version of P(Y)",
+      "Not considering the prior distribution P(X)"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:51:12.000Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_conditional_distributions_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge about a random variable Y given new information X. This is crucial in many real-world applications, especially in machine learning and artificial intelligence.</p><p>Given a joint distribution P(X,Y), the conditional distribution P(Y|X) represents the updated probability of Y given the value of X.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional Distribution Formula"
+    },
+    "intuition": "Think of it like updating your beliefs about someone's height (Y) after seeing their shoe size (X). The conditional distribution P(Y|X) gives you the updated probability of heights given the shoe size.",
+    "realWorldApplications": [
+      "Bayesian inference in machine learning"
+    ],
+    "commonMistakes": [
+      "Forgetting to normalize the conditional distribution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:51:28.334Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_conditional_distributions_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>The conditional distribution P(Y|X) of a random variable Y given another random variable X is a fundamental concept in probability theory.</p><p>It represents the updated probability distribution of Y after observing the value of X.</p>",
+    "formula": {
+      "latex": "\\[P(Y | X) = \\frac{P(X, Y)}{P(X)}\\]",
+      "name": "Bayes' formula"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin flip with probability of heads P(heads) = 0.5 and a sensor that detects the outcome with some error rate.</p><p>We observe the sensor output X, which can be either 'heads' or 'tails'.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the probability of each possible outcome",
+          "mathHtml": "\\[P(X = \\text{heads}) = P(heads) * (1 - \\epsilon)\\]",
+          "explanation": "We use the prior probability of heads and adjust for the error rate"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Calculate the joint probability",
+          "mathHtml": "\\[P(X = \\text{heads}, Y = \\text{heads}) = P(heads) * (1 - \\epsilon)\\]",
+          "explanation": "The sensor is more likely to detect heads if they actually are heads"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Update the probability using Bayes' formula",
+          "mathHtml": "\\[P(Y = \\text{heads} | X = \\text{heads}) = \\frac{P(X = \\text{heads}, Y = \\text{heads})}{P(X = \\text{heads})}\\]",
+          "explanation": "We update the probability of heads given the sensor output"
+        }
+      ],
+      "finalAnswer": "The updated probability P(Y = \\text{heads} | X = \\text{heads})"
+    },
+    "intuition": "Conditional distributions allow us to update our beliefs about Y based on new information X, which is crucial in many machine learning and AI applications.",
+    "realWorldApplications": [
+      "Bayesian inference in image classification"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:52:00.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_conditional_distributions_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>The conditional distribution P(Y|X) represents our updated understanding of Y given some information X.</p><p>This is a fundamental concept in Bayesian inference and machine learning.</p>",
+    "formula": {
+      "latex": "\\[P(Y | X) = \\frac{P(X, Y)}{P(X)}\\]",
+      "name": "Bayes' rule for conditional distributions"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a coin with an unknown bias. We flip the coin 10 times and get 7 heads.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Update our prior distribution of the coin's bias",
+          "mathHtml": "\\[P(b | H_1, \\dots, H_{10}) = \\frac{P(H_1, \\dots, H_{10} | b)}{P(H_1, \\dots, H_{10})}\\]",
+          "explanation": "We use Bayes' rule to update our prior distribution of the coin's bias given the observed data."
+        }
+      ],
+      "finalAnswer": "The updated distribution"
+    },
+    "intuition": "Conditional distributions allow us to refine our understanding of Y based on new information X.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:52:20.654Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_conditional_distributions_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>The conditional distribution P(Y|X) represents the probability of Y given X.</p><p>This is a fundamental concept in Bayesian inference and machine learning.</p>",
+    "formula": {
+      "latex": "\\[P(Y \\vert X) = \\frac{P(X, Y)}{P(X)}\\]",
+      "name": "Conditional Probability Formula"
+    },
+    "intuition": "Think of it like updating your probability of Y given new information X. This formula helps you do that.",
+    "visualDescription": "A diagram showing the conditional distribution as a shaded area within the joint distribution",
+    "realWorldApplications": [
+      "Bayesian classification in machine learning"
+    ],
+    "tags": [
+      "conditional probability",
+      "Bayes' theorem"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:52:34.473Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_conditional_distributions_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>The conditional distribution P(Y|X) represents the probability of Y given X.</p><p>It's a fundamental concept in Bayesian inference and machine learning.</p>",
+    "formula": "{",
+    "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]\",",
+    "name": "Conditional Probability Formula",
+    "variants": "[] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have a dataset of students' grades and their corresponding hours studied.</p><p>We want to find the probability that a student with X hours studied will get a grade Y.</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the joint distribution P(X,Y)",
+        "mathHtml": "\\[P(X,Y) = \\frac{\\# of students with X hours and grade Y}{\\# of total students}\\]",
+        "explanation": "This represents the probability of both events occurring together"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Find the marginal distribution P(X)",
+        "mathHtml": "\\[P(X) = \\sum_{Y} P(X,Y)\\]",
+        "explanation": "This gives us the probability of a student having X hours studied, regardless of their grade"
+      }
+    ],
+    "finalAnswer": "The conditional distribution P(Y|X) is then calculated as the joint distribution divided by the marginal distribution\" },",
+    "intuition": "Conditional distributions help us update our beliefs about Y based on new information X.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:52:56.789Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": {
+      "statementHtml": "Given a joint distribution <i>P(X,Y)</i>, find the conditional probability density function (PDF) <i>P(Y|X)</i>.",
+      "hints": [
+        "Start by recalling the definition of conditional probability: <i>P(A|B) = P(A ∩ B) / P(B)</i>",
+        "Recognize that <i>P(Y|X)</i> is a function of <i>X</i>, so you'll need to marginalize out <i>X</i> in the joint distribution",
+        "Use the chain rule to reorganize the terms"
+      ],
+      "solutionHtml": "To find <i>P(Y|X)</i>, we can use Bayes' theorem: \\[ P(Y|X) = \\frac{P(X,Y)}{P(X)} \\] First, marginalize out <i>X</i> in the joint distribution: \\[ P(X,Y) = \\int P(X,Y|x) dx \\] Then, substitute this expression into Bayes' theorem: \\[ P(Y|X) = \\frac{\\int P(X,Y|x) dx}{P(X)} \\] Finally, recognize that <i>P(X)</i> is a normalization constant, so we can drop it.",
+      "answerShort": "The conditional PDF is <i>P(Y|X) = \\frac{\\int P(X,Y|x) dx}{P(X)}</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to marginalize out <i>X</i> in the joint distribution",
+      "Not recognizing that <i>P(X)</i> is a normalization constant"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:53:20.854Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be random variables with joint PDF f(x,y). Define P(Y|X) as the conditional distribution of Y given X. Show that P(Y|X) is a valid probability density function (PDF).</p>",
+    "hints": [
+      "<p>Start by recalling the definition of conditional probability.</p>",
+      "<p>Use the fact that f(x,y) is a joint PDF to relate it to the marginal distributions.</p>",
+      "<p>Apply Bayes' theorem to update P(Y|X) given some new information.</p>"
+    ],
+    "solutionHtml": "<p>To show that P(Y|X) is a valid PDF, we need to verify two conditions: non-negativity and normalization.</p><p>\\[P(Y|X) \\geq 0\\] is trivially true since f(x,y) ≥ 0 for all x, y.</p><p>To show normalization, we integrate P(Y|X) over the support of X:</p><p>\\[\\int_{-\\infty}^{\\infty} P(Y|X) dx = \\int_{-\\infty}^{\\infty} f(x,y) dx / f_X(x) = 1\\]</p>\",",
+    "answerShort": "P(Y|X) is a valid PDF\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:53:42.319Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": "{",
+    "statementHtml": "<p>Given a joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and a conditional event <i>E</i> = {<i>x</i> | <i>x</i> ∈ ℝ}, find the conditional PDF <i>P</i>(<i>Y</i>|<i>E</i>).",
+    "hints": [
+      "Recall that the joint PDF factors into a product of marginal and conditional PDFs.",
+      "Use the definition of conditional probability to relate the joint PDF to the desired conditional PDF.",
+      "Apply Bayes' theorem for updating probabilities given new information."
+    ],
+    "solutionHtml": "<p>To find the conditional PDF, we can use Bayes' theorem:</p>\\[\\frac{P(Y|E) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>First, we need to compute the numerator:</p>\\[P(Y|E) = \\frac{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}{\\int_{-\\infty}^{\\infty} P(x|E) dx}\\] <p>Now, we can substitute this expression back into Bayes' theorem:</p>\\[\\frac{P(Y|E) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx} = \\frac{\\left(\\frac{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}{\\int_{-\\infty}^{\\infty} P(x|E) dx}\\right) \\cdot P(E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>Simplifying, we get:</p>\\[P(Y|E) = \\frac{P(Y|x) \\cdot P(x|E)}{\\int_{-\\infty}^{\\infty} P(Y|x) \\cdot P(x|E) dx}\\] <p>This is the desired conditional PDF.</p>\",",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:54:13.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_conditional_distributions_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "problem": {
+      "statementHtml": "Given a joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and a conditional event <i>E</i> = {<i>x</i> | <i>x</i> &isin; [0, 1]}, find the conditional PDF <i>P</i>(<i>Y</i>|<i>E</i>).",
+      "hints": [
+        "Start by recalling Bayes' theorem: <i>P</i>(<i>A</i>|<i>B</i>) = <i>P</i>(<i>A</i>&<i>B</i>) / <i>P</i>(<i>B</i>).",
+        "Identify the event of interest as <i>E</i> = {<i>x</i> | <i>x</i> &isin; [0, 1]}.",
+        "Use the definition of conditional probability to relate <i>P</i>(<i>Y</i>|<i>E</i>) to <i>P</i>(<i>Y</i>, <i>E</i>)."
+      ],
+      "solutionHtml": "To find the conditional PDF, we can apply Bayes' theorem: \\[P(Y|E) = P(E|Y)P(Y) / P(E).\\] Since we are given the joint PDF <i>P</i>(<i>X</i>, <i>Y</i>) and the event <i>E</i>, we can rewrite this as \\[P(Y|E) = P(X &isin; [0, 1]|Y)P(Y) / P(E).\\] Now, we need to find the numerator and denominator. The numerator is simply the probability of the event given <i>Y</i>: \\[P(X &isin; [0, 1]|Y) = \\int_{x=0}^{1} P(X=x|Y) dx.\\] For the denominator, we can use the definition of conditional probability: \\[P(E) = P(X &isin; [0, 1]) = \\int_{x=0}^{1} P(X=x) dx.\\] Finally, we can substitute these expressions into Bayes' theorem to obtain the conditional PDF: \\[P(Y|E) = (\\frac{1}{1})P(Y) / P(E).\\]",
+      "answerShort": "The conditional PDF is <i>P</i>(<i>Y</i>|<i>E</i>) = <i>P</i>(<i>Y</i>) / <i>P</i>(<i>E</i>)."
+    },
+    "commonMistakes": [
+      "Forgetting to apply Bayes' theorem",
+      "Not recognizing the event of interest as {<i>x</i> | <i>x</i> &isin; [0, 1]}"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:54:51.292Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge of a random variable Y given new information about another random variable X.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y) and the conditional probability P(Y|X), find the updated probability P(y|x) for a specific value y.</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use Bayes' theorem:</p><ul><li>What we do: Plug in the given values and simplify</li><math>\\[P(y|x) = \\frac{P(x,y)}{P(x)}\\]</math></li><li>The math: Apply Bayes' theorem to the joint distribution P(X, Y)</li><li>Why: This gives us the updated probability P(Y|X) for a specific value y</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) = [0.3, 0.2; 0.7, 0.8] and the conditional probability P(Y|X) = [0.5, 0.9]. Find the updated probability P(y|x=1) for y=1.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Plug in the given values",
+          "mathHtml": "\\[P(x=1,y=1) = 0.3\\*0.8\\]",
+          "explanation": "We're using the joint distribution to find the probability of X=1 and Y=1"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X=x)",
+          "mathHtml": "\\[P(x=1) = \\sum_y P(x=1,y) = 0.3\\*0.8 + 0.7\\*0.5 = 0.54\\]",
+          "explanation": "We're summing over all possible values of Y to find the probability of X=x"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Apply Bayes' theorem",
+          "mathHtml": "\\[P(y=1|x=1) = \\frac{P(x=1,y=1)}{P(x=1)}\\*\\frac{1}{0.54}\\]",
+          "explanation": "This gives us the updated probability P(Y|X) for a specific value y"
+        }
+      ],
+      "finalAnswer": "The answer is..."
+    },
+    "intuition": "In this example, we're updating our knowledge of Y given new information about X. Bayes' theorem helps us do this by providing a formula to update the probability.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:55:33.613Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to model the relationship between two random variables.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional Probability Formula"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y), find the conditional probability P(Y = y | X = x).</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "",
+      "answerShort": ""
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) where X is the number of hours studied and Y is the score on a test. If P(X = 3, Y = 80) = 0.2 and P(X = 3) = 0.5, find P(Y = 80 | X = 3).</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Write down the Bayes' theorem formula",
+          "mathHtml": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+          "explanation": "We're using Bayes' theorem to update our probability given new information"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X = 3, Y = 80)",
+          "mathHtml": "\\[P(X = 3, Y = 80) = 0.2\\]",
+          "explanation": "This is the joint probability we're given"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find P(X = 3)",
+          "mathHtml": "\\[P(X = 3) = 0.5\\]",
+          "explanation": "This is the marginal probability we need for Bayes' theorem"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Plug in values and simplify",
+          "mathHtml": "\\[P(Y|X) = \\frac{0.2}{0.5} = 0.4\\]",
+          "explanation": "Now we're updating our probability given the new information"
+        }
+      ],
+      "finalAnswer": "P(Y = 80 | X = 3) = 0.4"
+    },
+    "intuition": "Conditional distributions allow us to update our probability based on new information.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:56:07.006Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions: P(Y|X)",
+    "contentHtml": "<p>In probability theory, we often encounter conditional distributions, which describe the probability of an event given that another event has occurred.</p>",
+    "workedExample": "{",
+    "problemHtml": "Suppose we have a random variable X with a uniform distribution on [0,1]. We want to find P(Y=1|X=x), where Y is a binary random variable indicating whether x is greater than or equal to 0.5.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the conditional probability\", \"mathHtml\": \"\\(P(Y=1 | X = x) = \\frac{P(X=x, Y=1)}{P(X=x)}\\)\", \"explanation\": \"We're using the definition of conditional probability.\"}, {\"stepNumber\": 2, \"description\": \"Find the numerator\", \"mathHtml\": \"\\(P(X=x, Y=1) = P(Y=1) \\cdot P(X=x | Y=1)\\)\", \"explanation\": \"We're breaking down the joint event into two parts: the probability of Y=1 and the probability of X=x given Y=1.\"}, {\"stepNumber\": 3, \"description\": \"Find the denominator\", \"mathHtml\": \"\\(P(X=x) = \\int_0^1 P(Y=0 | X=t) dt\\)\", \"explanation\": \"We're integrating over all possible values of X to get the marginal probability.\"}, {\"stepNumber\": 4\", \"description\": \"Substitute and simplify\", \"mathHtml\": \"\\(P(Y=1 | X=x) = \\frac{\\int_0^x P(Y=1) dt}{\\int_0^1 P(Y=0 | X=t) dt}\\)\", \"explanation\": \"We're plugging in the expressions from steps 2 and 3.\"} ],",
+    "finalAnswer": "The final answer is a function of x, which we can evaluate for specific values.\" },",
+    "intuition": "Conditional distributions help us update our beliefs about Y given new information X. This is crucial in many machine learning applications.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:56:36.983Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_conditional_distributions_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "conditional_distributions",
+    "title": "Conditional Distributions",
+    "contentHtml": "<p>In probability theory, conditional distributions allow us to update our knowledge about a random variable given new information.</p>",
+    "formula": {
+      "latex": "\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]",
+      "name": "Conditional PDF"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint distribution P(X, Y), find the conditional distribution P(Y|X).</p>",
+      "hints": [
+        "Hint: Use Bayes' theorem"
+      ],
+      "solutionHtml": "<p>To solve this problem, we can use Bayes' theorem:</p><ul><li>We know that P(Y|X) = \\frac{P(X,Y)}{P(X)}</li><li>Now, we need to find P(X,Y) and P(X)</li></ul>",
+      "answerShort": "The answer is..."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint distribution P(X, Y) = \\frac{1}{4} \\delta(X-0) \\delta(Y-0) + \\frac{1}{2} \\delta(X-1) \\delta(Y-0) + \\frac{1}{8} \\delta(X-1) \\delta(Y-1)</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find P(X,Y)",
+          "mathHtml": "\\[P(X=0,Y=0) = \\frac{1}{4}, P(X=0,Y=1) = 0, P(X=1,Y=0) = \\frac{1}{2}, P(X=1,Y=1) = \\frac{1}{8}\\]",
+          "explanation": "We're finding the probability of each possible combination of X and Y"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find P(X)",
+          "mathHtml": "\\[P(X=0) = \\frac{1}{4} + 0 = \\frac{1}{4}, P(X=1) = \\frac{1}{2} + \\frac{1}{8} = \\frac{3}{4}\\]",
+          "explanation": "We're finding the probability of each possible value of X"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Plug into Bayes' theorem",
+          "mathHtml": "\\[P(Y=0|X=0) = \\frac{P(X=0,Y=0)}{P(X=0)}, P(Y=1|X=0) = 0, P(Y=0|X=1) = \\frac{P(X=1,Y=0)}{P(X=1)}, P(Y=1|X=1) = \\frac{P(X=1,Y=1)}{P(X=1)}\\]",
+          "explanation": "We're plugging the values into Bayes' theorem"
+        },
+        {
+          "stepNumber": 4,
+          "description": "Simplify",
+          "mathHtml": "\\[P(Y=0|X=0) = \\frac{1}{4} / (1/4), P(Y=1|X=0) = 0, P(Y=0|X=1) = (1/2) / (3/4), P(Y=1|X=1) = (1/8) / (3/4)\\]",
+          "explanation": "We're simplifying the expressions"
+        }
+      ],
+      "finalAnswer": "The final answer is..."
+    },
+    "intuition": "Conditional distributions allow us to update our knowledge about Y given new information X.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:57:24.063Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

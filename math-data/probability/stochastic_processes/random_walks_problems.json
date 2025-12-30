@@ -1,0 +1,92 @@
+[
+  {
+    "id": "prob_prb_random_walks_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "A gambler starts with $x$ units of money and repeatedly wins or loses $1 each time, until they either reach $0 (bankruptcy) or $y (riches). What is the probability that they will eventually reach $y$?",
+    "hints": [
+      "Think about the number of ways to get from $x$ to $y$.",
+      "Consider the reflection principle: what happens if we 'reflect' the walk at $0$?",
+      "Use the fact that each step is independent and identically distributed."
+    ],
+    "solutionHtml": "Let's define a random variable $S_n = x + \\sum_{i=1}^n X_i$, where $X_i$ are i.i.d. Bernoulli variables with $P(X_i = 1) = p$. We want to find the probability that $S_n = y$ for some $n$. By the reflection principle, this is equivalent to finding the probability that $-S_{2n} = -y$ for some $n$, which is the same as finding the probability that $S_{2n} = y$. This can be done using the formula for the expected value of a random walk.\",",
+    "answerShort": "The answer depends on the specific values of $x, y, p$, but it's generally a function of these parameters.\" },",
+    "commonMistakes": [
+      "Forgetting to use the reflection principle",
+      "Not considering the boundary cases"
+    ],
+    "realWorldApplications": [
+      "Understanding random walks is crucial in finance and economics for modeling stock prices and portfolio risk."
+    ],
+    "tags": [
+      "random walk",
+      "gambler's ruin",
+      "reflection principle"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:38:54.773Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_random_walks_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "<p>A random walker starts at position 0 and moves either +1 or -1 step at a time with equal probability. What is the expected value of the maximum distance from the origin after <i>n</i> steps?</p>",
+    "hints": [
+      "Think about the gambler's ruin problem.",
+      "Consider the reflection principle.",
+      "Use induction to prove the result for even <i>n</i>, then extend to odd <i>n</i>"
+    ],
+    "solutionHtml": "<p>To solve this, we can use the reflection principle. Let <i>M_n</i> be the maximum distance from the origin after <i>n</i> steps.</p>\\n<p>We have that <i>M_1 = 0</i>, and for <i>n > 1</i>, <i>M_n = \\max\\{M_{n-1} + 1, -M_{n-1} + 1\\}</i>.</p>\\n<p>Now, we can use induction to prove that the expected value of <i>M_n</i> is <i>n/2</i>. For the base case, <i>M_0 = 0</i>, so the expected value is 0.</p>\\n<p>For the inductive step, assume that the expected value of <i>M_{n-1}</i> is <i>(n-1)/2</i>. Then,</p>\\n<p><i>E[M_n] = E[\\max\\{M_{n-1} + 1, -M_{n-1} + 1\\}]</i>.</p>\\n<p>We can use the reflection principle to get that <i>E[M_n] = (1/2)E[M_{n-1} + 1] + (1/2)E[-M_{n-1} + 1]</i>.</p>\\n<p>Using our inductive hypothesis, we get</p>\\n<p><i>E[M_n] = (1/2)((n-1)/2) + (1/2)(-(n-1)/2) + 1</i>.</p>\\n<p>This simplifies to <i>E[M_n] = n/2</i>, as desired.</p>\",",
+    "answerShort": "<i>n/2</i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:39:28.773Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_random_walks_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "stochastic_processes",
+    "topic": "random_walks",
+    "problem": "{",
+    "statementHtml": "A simple random walk starts at position 0 and moves either up or down by 1 unit at each step. What is the probability that it reaches a given target position after <i>n</i> steps?",
+    "hints": [
+      "Consider the probability of reaching the target from the starting point",
+      "Think about the reflection principle"
+    ],
+    "solutionHtml": "To solve this problem, we can use the reflection principle. Let's denote the event 'reaching the target' as <i>T</i>. We want to find P(<i>T</i>).<br><br>By the reflection principle, we have:<br>\\[P(T) = \\frac{1}{2} P(T | \\text{first step up}) + \\frac{1}{2} P(T | \\text{first step down})\\]<br><br>Now, let's consider the first step. If it's up, we're one step away from the target; if it's down, we're two steps away. We can use this to write down the conditional probabilities:<br>\\[P(T | \\text{first step up}) = P(T) = \\frac{1}{2} P(T | \\text{first step down}) + \\frac{1}{2}\\]<br><br>We can continue this process until we reach the target. The probability of reaching the target is then the product of these conditional probabilities.<br><br>For example, if the target is 3 steps away, the probability would be:<br>\\[\\left(\\frac{1}{2} \\cdot \\frac{1}{2}\\right) \\left(\\frac{1}{2} + \\frac{1}{2}\\right) = \\frac{1}{4}\\]<br><br>The final answer is then the sum of these probabilities for all possible paths to the target.\",",
+    "answerShort": "The probability is given by the product of conditional probabilities.\" },",
+    "commonMistakes": [
+      "Forgetting to use the reflection principle",
+      "Not considering the correct conditional probabilities"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T02:39:57.707Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

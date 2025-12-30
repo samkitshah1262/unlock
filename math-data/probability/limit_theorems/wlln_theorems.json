@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prob_thm_wlln_004",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental result in probability theory that states that the average of a sequence of independent and identically distributed random variables will converge to their expected value with probability 1 as the number of observations increases.</p>",
+    "formula": {
+      "latex": "\\(X_n \\overset{P}{\\rightarrow} \\mu\\)",
+      "name": "Convergence"
+    },
+    "theorem": {
+      "statement": "\\[\\text{For } X_1, X_2, \\dots, X_n \\text{ independent and identically distributed random variables with mean } \\mu, \\text{ we have that } \\frac{X_1 + \\cdots + X_n}{n} \\overset{P}{\\rightarrow} \\mu.\\]",
+      "proofSketch": "The proof typically involves applying Chebyshev's inequality to show that the average of the random variables is close to their expected value with high probability."
+    },
+    "intuition": "The WLLN provides a guarantee that as we collect more data, our estimate of the population mean will get arbitrarily close to the true value.",
+    "realWorldApplications": [
+      "In machine learning, this theorem has implications for understanding the behavior of algorithms like empirical risk minimization."
+    ],
+    "tags": [
+      "probability",
+      "limit theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:40:44.492Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_wlln_005",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "limit_theorems",
+    "topic": "wlln",
+    "title": "Weak Law of Large Numbers",
+    "contentHtml": "<p>The Weak Law of Large Numbers (WLLN) is a fundamental result in probability theory that states that the average of a large number of independent and identically distributed random variables will converge to their expected value with high probability.</p>",
+    "formula": {
+      "latex": "\\(\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| &lt; \\epsilon) = 1\\)",
+      "name": "WLLN Formula"
+    },
+    "theorem": {
+      "statement": "\\[\\textbf{Theorem: } \\forall \\epsilon &gt; 0, \\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| &lt; \\epsilon) = 1\\]",
+      "proofSketch": "The proof typically involves applying Chebyshev's inequality to the difference between the sample mean and the population mean."
+    },
+    "intuition": "In essence, the WLLN says that as you collect more data, the average of those data points will get closer and closer to the true expected value.",
+    "realWorldApplications": [
+      "The WLLN has significant implications for machine learning, where it is used to justify the use of empirical averages in place of population means."
+    ],
+    "tags": [
+      "Probability Theory",
+      "Limit Theorems"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:41:05.294Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

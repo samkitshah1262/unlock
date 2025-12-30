@@ -1,0 +1,603 @@
+[
+  {
+    "id": "prob_con_joint_pmf_pdf_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>In probability theory, joint distributions describe the behavior of multiple random variables. The joint PMF (probability mass function) and PDF (probability density function) provide a way to quantify the co-occurrence of events.</p><p>Given two discrete random variables X and Y with finite support, the joint PMF is defined as:</p>\\(P(x,y) = P(X=x \\wedge Y=y)\\)<p>The joint PDF for continuous random variables X and Y is defined as:</p>\\[f_{X,Y}(x,y) = f_X(x)f_Y(y)\\] when X and Y are independent, and \\(f_{X,Y}(x,y) = f_X(x|y)\\cdot f_Y(y)\\) otherwise.",
+    "formula": "{",
+    "latex": "\\(P(x,y) = P(X=x \\wedge Y=y)\\)\",",
+    "name": "Joint PMF",
+    "variants": "[] },",
+    "intuition": "Understanding joint distributions is crucial in machine learning, where we often deal with multiple features or variables.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "commonMistakes": [
+      "Confusing independence with conditional independence"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:11.883Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_joint_pmf_pdf_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>In probability theory, joint distributions describe the simultaneous behavior of multiple random variables.</p><p>A joint probability mass function (PMF) assigns a probability to each possible combination of values for all variables. A joint probability density function (PDF) does the same, but for continuous variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X_1, X_2, \\ldots, X_n) = \\sum_{x_1} \\sum_{x_2} \\cdots \\sum_{x_n} p(x_1, x_2, \\ldots, x_n) \\]",
+      "name": "Joint PMF",
+      "variants": [
+        {
+          "latex": "\\[ f(X_1, X_2, \\ldots, X_n) = \\frac{p(x_1, x_2, \\ldots, x_n)}{P(X_1, X_2, \\ldots, X_n)} \\]",
+          "description": "Joint PDF"
+        }
+      ]
+    },
+    "intuition": "Think of a joint distribution as the 'recipe' for generating all possible combinations of values for multiple variables. This concept is crucial in machine learning and AI, where we often work with complex relationships between multiple features.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Generative models"
+    ],
+    "commonMistakes": [
+      "Confusing joint distributions with marginal distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:34.027Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_joint_pmf_pdf_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass and Density Functions",
+    "contentHtml": "<p>When dealing with multiple random variables, we often need to consider their joint behavior. This is where joint probability mass functions (PMFs) and density functions (PDFs) come in.</p><p>A joint PMF defines the probability of each possible combination of values for the variables, while a joint PDF describes the relative frequency of these combinations.</p>",
+    "formula": "{",
+    "latex": "\\(P(X,Y) = \\sum_{x,y} p(x,y)\\)\",",
+    "name": "Joint PMF",
+    "variants": "[ {\"latex\": \"\\(f(x,y) = \\frac{1}{\\sigma^2}\\exp(-((x-\\mu_x)^2 + (y-\\mu_y)^2)/2\\sigma^2)\\)\", \"description\": \"Bivariate normal distribution\"} ] },",
+    "intuition": "Think of a joint PMF as a table that lists the probability of each possible combination of values for two variables. The joint PDF is like a continuous version of this table, giving us the relative frequency of these combinations.",
+    "visualDescription": "A scatter plot showing the relationship between the variables, with contours or heatmap representing the joint density",
+    "commonMistakes": [
+      "Forgetting to normalize the joint PMF",
+      "Not considering the support of the joint PDF"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks in machine learning",
+      "Modeling financial transactions"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:39:55.128Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, joint distributions describe the relationship between multiple random variables.</p><p>A joint probability mass function (PMF) is a function that assigns a probability to each possible combination of values for the variables. A joint probability density function (PDF) is a continuous version of this concept.</p>",
+    "formula": "{",
+    "latex": "\\[P(X, Y) = \\sum_{x,y} p(x, y) \\delta(x-X)\\delta(y-Y)\\]\",",
+    "name": "Joint PMF",
+    "variants": "[ {\"latex\": \"\\[f(x, y) = f_X(x) f_Y(y)\\]\", \"description\": \"Product of marginal PDFs\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two random variables X and Y representing the number of heads and tails in a coin flip. We want to find the probability that both are even.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the joint PMF\", \"mathHtml\": \"\\[P(X=2, Y=2) = p(2, 2)\\]\", \"explanation\": \"We use the definition of a joint PMF to find the probability.\"}, {\"stepNumber\": 2, \"description\": \"Find the marginal probabilities\", \"mathHtml\": \"p_X(2) = \\(\\frac{1}{4}\\), p_Y(2) = \\(\\frac{1}{4}\\)\", \"explanation\": \"We use the definition of a marginal PMF to find the probability.\"}, {\"stepNumber\": 3, \"description\": \"Use the product rule\", \"mathHtml\": \"\\[P(X=2, Y=2) = p_X(2) p_Y(2) = \\(\\frac{1}{16}\\)\\]\", \"explanation\": \"We use the product rule to find the joint probability.\"} ],",
+    "finalAnswer": "\\(\\frac{1}{16}\\)\" },",
+    "intuition": "Joint distributions help us understand how multiple random variables interact and depend on each other.",
+    "realWorldApplications": [
+      "Bayesian networks",
+      "Markov chain Monte Carlo"
+    ],
+    "tags": [
+      "probability theory",
+      "joint distribution",
+      "PMF",
+      "PDF"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:40:28.133Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF)",
+    "contentHtml": "<p>A joint probability mass function (PMF) is a discrete distribution that describes the probability of multiple random variables taking on specific values.</p>",
+    "formula": {
+      "latex": "\\[ P(X=x, Y=y) = p(x,y) \\]",
+      "name": "Joint PMF",
+      "variants": [
+        {
+          "latex": "\\[ P(X=x, Y=y | Z=z) = p(x,y|z) \\]",
+          "description": "Conditional joint PMF"
+        }
+      ]
+    },
+    "intuition": "The joint PMF allows us to describe the probability of two or more random variables being in specific states. This is crucial in many applications, such as modeling user behavior in recommender systems.",
+    "visualDescription": "A simple table showing the possible values and their corresponding probabilities would be a helpful visualization.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:40:43.064Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF) and Density Function (PDF)",
+    "contentHtml": "<p>The joint probability mass function (PMF) and density function (PDF) describe the probability distribution of multiple random variables.</p><ul><li>The PMF is a discrete distribution that assigns probabilities to specific outcomes.</li><li>The PDF is a continuous distribution that assigns densities to intervals.</li></ul>",
+    "formula": "{",
+    "latex": "\\[f(x_1, x_2, \\ldots, x_n) = f(x_1) \\cdot f(x_2 | x_1) \\cdots f(x_n | x_{n-1})\\]\",",
+    "name": "Chain Rule for Joint PMF",
+    "variants": "[ {",
+    "description": "Continuous joint PDF\" } ] },",
+    "intuition": "The joint PMF and PDF allow us to model complex systems with multiple variables. By applying the chain rule, we can efficiently compute probabilities and densities.",
+    "visualDescription": "A diagram showing a tree-like structure representing the conditional dependencies between variables would be helpful for visualization.",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:03.511Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_joint_pmf_pdf_007",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint Probability Mass Function (PMF)",
+    "contentHtml": "<p>The Joint PMF of two discrete random variables X and Y is a function that describes the probability of each possible combination of values for both variables.</p><p>It's defined as:</p>\\(P(x, y) = P(X = x \\wedge Y = y)\\)<p>This concept is crucial in statistics and machine learning, where we often need to model complex relationships between multiple random variables.</p>\",",
+    "formula": "{",
+    "latex": "\\(P(x, y) = P(X = x \\wedge Y = y)\\)\",",
+    "name": "Joint PMF\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two dice rolls: X for the first die and Y for the second. What's the probability of getting a sum of 7?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "List all possible outcomes",
+        "mathHtml": "",
+        "explanation": "We need to consider all possible combinations of X and Y"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Count the favorable outcomes",
+        "mathHtml": "",
+        "explanation": "In this case, we're looking for sums of 7"
+      }
+    ],
+    "finalAnswer": "1/12\" },",
+    "intuition": "The Joint PMF helps us understand the relationship between two random variables and their possible combinations.",
+    "realWorldApplications": [
+      "Modeling game outcomes in AI",
+      "Analyzing sensor readings in IoT"
+    ],
+    "tags": [
+      "probability",
+      "statistics",
+      "machine learning"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:27.159Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "Let X and Y be discrete random variables with joint PMF p(x,y). Find the probability P(X=1,Y=3) given that p(1,1)=0.4, p(1,2)=0.3, p(1,3)=0.2, p(2,1)=0.1, and all other values are zero.",
+      "hints": [
+        "Start by identifying the possible values of X and Y",
+        "Use the definition of joint PMF to find P(X=1,Y=3)",
+        "Check if there's a shortcut using the given information"
+      ],
+      "solutionHtml": "To solve this problem, we first identify the possible values of X and Y: X can take on values 1 or 2, while Y can take on values 1, 2, or 3. Since p(1,1)=0.4, p(1,2)=0.3, and p(1,3)=0.2, we know that P(X=1,Y=3) = p(1,3) = 0.2.",
+      "answerShort": "P(X=1,Y=3) = 0.2"
+    },
+    "commonMistakes": [
+      "Forgetting to consider all possible values of X and Y",
+      "Not using the given information efficiently"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:41:47.659Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "Let <i>X</i> and <i>Y</i> be discrete random variables with joint PMF <i>P(x,y)</i>. Define the marginal PMFs as <i>P_X(x) = Σ_y P(x,y)</i> and <i>P_Y(y) = Σ_x P(x,y)</i>. Prove that <i>P_X(x)</i> and <i>P_Y(y)</i> are indeed probability distributions.",
+      "hints": [
+        "Start by considering the properties of a joint PMF. What does it mean for <i>P(x,y)</i> to be non-negative?",
+        "Think about how you can use the definition of marginalization to relate <i>P_X(x)</i> and <i>P_Y(y)</i> to <i>P(x,y)</i>",
+        "Use the fact that a probability distribution must have total mass 1 to conclude"
+      ],
+      "solutionHtml": "<p>To prove that <i>P_X(x)</i> is a probability distribution, we need to show it is non-negative and has total mass 1.</p><p>The first condition follows directly from the definition of a joint PMF: for any <i>x</i>, <i>P_X(x) = Σ_y P(x,y) ≥ 0</i>.</p><p>For the second condition, we have:</p><p><i>P_X(x) = Σ_y P(x,y)</i> ≤ Σ_x Σ_y P(x,y) = 1</i>,</p><p>since <i>P(x,y)</i> is a joint PMF.</p>",
+      "answerShort": "The marginal PMFs are probability distributions."
+    },
+    "commonMistakes": [
+      "Forgetting to consider the non-negativity condition",
+      "Not recognizing that the total mass of a marginal PMF must be 1"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:42:13.232Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": "{",
+    "statementHtml": "<p>Consider a discrete random variable X with values in {0, 1} and a continuous random variable Y with density f(y). Define their joint probability mass function (PMF) and probability density function (PDF).</p>",
+    "hints": [
+      "Start by thinking about the PMF: what are its key properties?",
+      "Consider how the PMF relates to the marginal distributions of X and Y.",
+      "For the PDF, think about how it can be used to compute expectations"
+    ],
+    "solutionHtml": "<p>To define the joint PMF, we need to specify P(X=x, Y=y) for each possible combination of x and y. Since X is discrete, this boils down to a table of values.</p><p>For example:</p><p>\\[P(X=0, Y=0) = 0.3,\\]</p><p>\\[P(X=0, Y=1) = 0.2,\\]</p><p>\\[P(X=1, Y=0) = 0.4,\\]</p><p>\\[P(X=1, Y=1) = 0.1.\\]</p>\",",
+    "answerShort": "The joint PMF is defined by the table of values.\" },",
+    "commonMistakes": [
+      "Forgetting to consider all possible combinations of x and y",
+      "Not recognizing that X is discrete"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:42:34.364Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_joint_pmf_pdf_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "problem": {
+      "statementHtml": "<p>Let X and Y be discrete random variables with joint PMF <i>P(x,y)</i>. Define the marginal PMFs as <i>P_X(x) = ∑_y P(x,y)</i> and <i>P_Y(y) = ∑_x P(x,y)</i>. Prove that the product of these marginal PMFs equals the original joint PMF.</p>",
+      "hints": [
+        "<p>Start by considering a specific value x.</p>",
+        "<p>Use the definition of marginalization to write down an expression for <i>P_X(x)</i>.</p>",
+        "<p>Now, multiply this expression with <i>P_Y(y)</i> and sum over y. Compare this with the original joint PMF.</p>"
+      ],
+      "solutionHtml": "<p>To prove the equality, we can fix a value x and consider the marginal PMF <i>P_X(x)</i>. By definition, this is given by <i>P_X(x) = ∑_y P(x,y)</i>.</p><p>Now, multiplying this with the marginal PMF <i>P_Y(y)</i>, we get:</p><p><i>P_X(x)P_Y(y) = (∑_z P(x,z)) (∑_w P(w,y))</i></p><p>Simplifying the right-hand side, we obtain:</p><p><i>P_X(x)P_Y(y) = ∑_(z,w) P(x,z)P(w,y)</i></p><p>This is exactly the original joint PMF <i>P(x,y)</i>. The equality follows by summing over all possible values of x and y.</p>",
+      "answerShort": "<i>P_X(x)P_Y(y) = P(x,y)</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to fix a value for x (or y)",
+      "Not simplifying the right-hand side correctly"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:43:01.424Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_joint_pmf_pdf_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, joint distributions describe the relationship between multiple random variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X,Y) = \\sum_{x,y} p(x,y) \\]",
+      "name": "Joint Probability Mass Function (PMF)",
+      "variants": [
+        {
+          "latex": "\\[ f_X(x) = \\frac{1}{P(X)} \\sum_y p(x,y) \\]",
+          "description": "Marginal PMF"
+        }
+      ]
+    },
+    "problem": {
+      "statementHtml": "<p>Let X and Y be discrete random variables with joint PMF p(x,y). Find the marginal PMF f_X(x).</p>",
+      "hints": [
+        "Hint: Use the definition of a marginal distribution"
+      ],
+      "solutionHtml": "<p>To find the marginal PMF, we sum over all possible values of Y:</p><ul><li>\\[ f_X(x) = \\sum_y p(x,y) \\]</li></ul>",
+      "answerShort": "f_X(x)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose X and Y have joint PMF:</p><ul><li>\\[ p(0,0) = 1/4, p(0,1) = 1/2, p(1,0) = 1/8, p(1,1) = 1/8 \\]</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the marginal PMF f_X(x)",
+          "mathHtml": "\\[ f_X(0) = p(0,0) + p(0,1) = 3/4 \\]",
+          "explanation": "We sum over all possible values of Y for each x"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the marginal PMF f_X(x)",
+          "mathHtml": "\\[ f_X(1) = p(1,0) + p(1,1) = 3/8 \\]",
+          "explanation": "We sum over all possible values of Y for each x"
+        }
+      ],
+      "finalAnswer": "f_X(0) = 3/4, f_X(1) = 3/8"
+    },
+    "intuition": "Joint distributions provide a compact way to describe complex relationships between multiple random variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:43:35.146Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_joint_pmf_pdf_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, joint distributions describe the behavior of multiple random variables.</p>",
+    "formula": {
+      "latex": "\\[P(X,Y) = \\sum_{x,y} p(x,y)\\]",
+      "name": "Joint PMF"
+    },
+    "problem": {
+      "statementHtml": "<p>Find the joint PMF and PDF of two random variables X and Y, given their individual PMFs:</p><ul><li>P(X=0) = 0.4</li><li>P(X=1) = 0.6</li><li>P(Y=0|X=0) = 0.7</li><li>P(Y=0|X=1) = 0.3</li></ul>",
+      "hints": [
+        "Think about the conditional PMFs",
+        "Use the definition of joint PMF"
+      ],
+      "solutionHtml": "<p>To find the joint PMF, we need to consider all possible combinations of X and Y:</p><ol><li>We know P(X=0) = 0.4, so the probability mass is split between (X=0, Y=0) and (X=0, Y=1). Let's assume P(Y=0|X=0) = 0.7, then P(Y=0, X=0) = 0.4 * 0.7 = 0.28.</li><li>Similarly, we have P(X=1) = 0.6 and P(Y=0|X=1) = 0.3, so P(Y=0, X=1) = 0.6 * 0.3 = 0.18.</li><li>The remaining probability mass is split between (X=0, Y=1) and (X=1, Y=1). Since P(X=0) = 0.4, the probability of (X=0, Y=1) is 0.4 * 0.3 = 0.12.</li><li>The final piece is (X=1, Y=1), with probability 0.6 * 0.7 = 0.42.</li></ol>",
+      "answerShort": "P(X,Y) = [0.28, 0.18, 0.12, 0.42]"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the joint PDF of X and Y:</p><ul><li>P(X=0) = 0.4</li><li>P(X=1) = 0.6</li><li>P(Y=0|X=0) = 0.7</li><li>P(Y=0|X=1) = 0.3</li></ul>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Find the marginal PMFs",
+          "mathHtml": "\\[P_X(x) = \\sum_y P(X=x,Y=y)\\]",
+          "explanation": "We need to find the probability mass for each value of X."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the conditional PMFs",
+          "mathHtml": "\\[P(Y|X) = \\frac{P(Y,X)}{P_X(X)}\\]",
+          "explanation": "Now we can use Bayes' theorem to find the conditional PMFs."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the joint PDF",
+          "mathHtml": "\\[p(x,y) = \\frac{P(X=x,Y=y)}{P_X(x) P_Y(y)}\\]",
+          "explanation": "Finally, we can use the definition of joint PDF to compute it."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the result",
+          "mathHtml": "\\[\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} p(x,y) dx dy = 1\\]",
+          "explanation": "We should verify that our joint PDF integrates to 1, which is a necessary condition for it to be a valid probability distribution."
+        }
+      ],
+      "finalAnswer": "p(x,y) = [0.28/0.4, 0.18/0.6, 0.12/0.4, 0.42/0.6]"
+    },
+    "intuition": "Joint distributions are essential in machine learning, as they allow us to model complex relationships between multiple variables.",
+    "tags": [
+      "joint distribution",
+      "PMF",
+      "PDF"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:44:33.351Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_joint_pmf_pdf_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, we often encounter joint distributions that describe the behavior of multiple random variables.</p>",
+    "formula": {
+      "latex": "\\[P(X,Y) = P(Y|X)P(X)\\]",
+      "name": "Joint Probability Mass Function (PMF)"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a joint PMF \\(P(X,Y)\\), find the marginal PMFs for \\(X\\) and \\(Y\\).</p>",
+      "hints": [
+        "Hint: Use the definition of marginalization",
+        "Hint: Apply the sum rule"
+      ],
+      "solutionHtml": "<p>To find the marginal PMF for \\(X\\), we sum over all possible values of \\(Y\\):</p><ul><li>Step 1: Fix a value \\(x\\) for \\(X\\)</li><li>Step 2: Sum over all possible values \\(y\\) of \\(Y\\): \\[P_X(x) = \\sum_y P(X=x,Y=y)\\]</li><li>Step 3: Repeat the process to find \\(P_Y(y)\\)</li></ul>",
+      "answerShort": "The marginal PMFs are \\(P_X(x)\\) and \\(P_Y(y)\\)"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have a joint PMF \\[P(X,Y) = \\begin{cases} 0.4 & X=1, Y=1 \\\\ 0.3 & X=1, Y=2 \\\\ 0.2 & X=2, Y=1 \\\\ 0.1 & X=2, Y=2 \\end{cases}\\]</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Fix a value for \\(X\\)",
+          "mathHtml": "\\[P_X(x) = \\sum_y P(X=x,Y=y)\\]",
+          "explanation": "We're summing over all possible values of \\(Y\\) for fixed \\(x\\)"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Sum over all possible values of \\(Y\\)",
+          "mathHtml": "\\[P_X(x) = P(X=x,Y=1) + P(X=x,Y=2)\\]",
+          "explanation": "We're applying the definition of marginalization"
+        },
+        {
+          "stepNumber": 3,
+          "description": "Repeat for \\(Y\\)",
+          "mathHtml": "\\[P_Y(y) = \\sum_x P(X=x,Y=y)\\]",
+          "explanation": "Same process as before"
+        }
+      ],
+      "finalAnswer": "The marginal PMFs are \\(P_X(x)\\) and \\(P_Y(y)\\)"
+    },
+    "intuition": "Joint distributions help us understand the relationships between multiple random variables.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:45:12.297Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_joint_pmf_pdf_015",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "joint_pmf_pdf",
+    "title": "Joint PMF and PDF",
+    "contentHtml": "<p>In probability theory, joint distributions describe the behavior of multiple random variables.</p>",
+    "formula": {
+      "latex": "\\[ P(X,Y) = \\sum_{x,y} p(x,y) \\]",
+      "name": "joint pmf"
+    },
+    "problem": {
+      "statementHtml": "<p>Consider two discrete random variables X and Y with joint PMF:</p><br/>\\[ p(0,0) = 0.1, p(0,1) = 0.2, p(1,0) = 0.3, p(1,1) = 0.4 \\]<br/><p>Find the marginal PMFs of X and Y.</p>",
+      "hints": [
+        "Think about the definition of a marginal distribution"
+      ],
+      "solutionHtml": "<p>Step 1: Find the marginal PMF of X</p><br/>\\[ P_X(x) = \\sum_{y} p(x,y) \\]<br/><p>We sum over all possible values of Y to get:</p><br/>\\[ P_X(0) = 0.1 + 0.2 = 0.3, P_X(1) = 0.3 + 0.4 = 0.7 \\]<br/><p>Step 2: Find the marginal PMF of Y</p><br/>\\[ P_Y(y) = \\sum_{x} p(x,y) \\]<br/><p>We sum over all possible values of X to get:</p><br/>\\[ P_Y(0) = 0.1 + 0.2 = 0.3, P_Y(1) = 0.3 + 0.4 = 0.7 \\]<br/><p>The final answer is the pair of marginal PMFs.</p>",
+      "answerShort": "P_X(0) = 0.3, P_X(1) = 0.7; P_Y(0) = 0.3, P_Y(1) = 0.7"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Consider two continuous random variables X and Y with joint PDF:</p><br/>\\[ f(x,y) = 2xy \\]<br/><p>Find the marginal PDFs of X and Y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Integrate over all possible values of Y",
+          "mathHtml": "\\[ P_X(x) = \\int_{-\\infty}^{\\infty} f(x,y) dy \\]",
+          "explanation": "We integrate the joint PDF with respect to Y to get the marginal PDF of X"
+        },
+        {
+          "stepNumber": 2,
+          "description": "Integrate over all possible values of X",
+          "mathHtml": "\\[ P_Y(y) = \\int_{-\\infty}^{\\infty} f(x,y) dx \\]",
+          "explanation": "We integrate the joint PDF with respect to X to get the marginal PDF of Y"
+        }
+      ],
+      "finalAnswer": "P_X(x) = x^2, P_Y(y) = y^2"
+    },
+    "intuition": "Joint distributions help us understand how multiple random variables interact and behave.",
+    "visualDescription": "A diagram showing the joint distribution as a 2D histogram or contour plot",
+    "commonMistakes": [
+      "Forgetting to normalize the marginal PMFs"
+    ],
+    "realWorldApplications": [
+      "Bayesian networks, probabilistic graphical models"
+    ],
+    "tags": [
+      "probability",
+      "joint distributions"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T00:45:59.709Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

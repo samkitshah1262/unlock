@@ -1,0 +1,120 @@
+[
+  {
+    "id": "stat_prb_shape_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "problem": "{",
+    "statementHtml": "Determine whether the following distribution is symmetric or skewed. If it's skewed, describe its direction and kurtosis.\\n\\n\\[f(x) = \\frac{1}{2}e^{-|x-3|}\\]\",",
+    "hints": [
+      "Check if the distribution has a single mode.",
+      "Look for asymmetry by comparing left and right sides of the peak.",
+      "Kurtosis is related to how 'peaked' or 'flat-topped' the distribution is."
+    ],
+    "solutionHtml": "<p>Step 1: Find the mode.</p>\\n\\[mode = 3\\]\\n<p>Step 2: Check for asymmetry.</p>\\n\\[f(-x) = \\frac{1}{2}e^{x-3}\\] vs \\[f(x) = \\frac{1}{2}e^{-|x-3|}\\]. The distribution is skewed to the right.\\n<p>Step 3: Determine kurtosis.</p>\\n\\[kurtosis > 0\\] because the distribution has a peak.\",",
+    "answerShort": "Skewed to the right, positive kurtosis\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:37:59.207Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_shape_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset with unknown distribution shape, determine whether it is symmetric or asymmetric.</p>",
+    "hints": [
+      "Check if the mean and median are close to each other.",
+      "Look for skewness by examining the data's tail behavior.",
+      "Consider kurtosis as well, especially if the data has heavy tails."
+    ],
+    "solutionHtml": "<p>To determine the shape of the distribution, we can start by calculating the mean and median. If they are close, the distribution is likely symmetric.</p><p>Next, we can calculate the skewness using the third standardized moment:</p>\\[\\text{Skewness} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^3}{\\sigma^3}\\]</p><p>If the skewness is positive, the distribution has a rightward skew, and if it's negative, it has a leftward skew.</p><p>Finally, we can calculate kurtosis using the fourth standardized moment:</p>\\[\\text{Kurtosis} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^4}{\\sigma^4} - 3\\]</p><p>If the kurtosis is greater than 3, the distribution has a heavy tail.</p>\",",
+    "answerShort": "Symmetric or asymmetric\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:38:17.620Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_shape_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "problem": "{",
+    "statementHtml": "<p>Consider a dataset with a skewed distribution. Calculate its skewness and kurtosis.</p>",
+    "hints": [
+      "Start by calculating the mean and median of the dataset.",
+      "Notice that the skewness is related to how far the outliers are from the mean.",
+      "Kurtosis measures the 'tailed-ness' of the distribution."
+    ],
+    "solutionHtml": "<p>To calculate the skewness, use the formula:</p>\\(\\frac{\\text{mean}-\\text{median}}{\\sigma}\\)<p>where σ is the standard deviation.</p><p>For kurtosis, use:</p>\\(3 + \\frac{\\sum_{i=1}^n (x_i - \\mu)^4}{\\sigma^4} - \\frac{(n+1)(n+2)(2n+3)}{6(n-1)}\\)<p>Solve for the given dataset.</p>\",",
+    "answerShort": "The answer is...\" },",
+    "commonMistakes": [
+      "Forgetting to calculate the median",
+      "Using the wrong formula for skewness"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:38:32.430Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_shape_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "descriptive_statistics",
+    "topic": "shape",
+    "problem": {
+      "statementHtml": "<p>Consider a dataset with a skewed distribution. What are some characteristics of its shape that can be used to describe it?</p>",
+      "hints": [
+        "<p>Think about what makes a distribution symmetric.</p>",
+        "<p>What happens when the mean is not at the peak of the distribution?</p>",
+        "<p>How does kurtosis relate to the 'tail' of the distribution?</p>"
+      ],
+      "solutionHtml": "<p>To describe the shape of a skewed distribution, we can consider its skewness and kurtosis.</p><p>Skewness measures how far the distribution deviates from symmetry. A positive skewness indicates that the majority of data points are concentrated on the left side of the mean, while a negative skewness means they're concentrated on the right side.</p><p>Kurtosis measures the 'tailed-ness' of the distribution. A high kurtosis value indicates that the distribution has heavy tails, meaning there's a higher probability of extreme values.</p>",
+      "answerShort": "Skewness and kurtosis"
+    },
+    "commonMistakes": [
+      "Failing to consider both skewness and kurtosis",
+      "Assuming symmetry without checking"
+    ],
+    "realWorldApplications": [
+      "In machine learning, understanding the shape of a distribution is crucial for preprocessing data and selecting appropriate algorithms."
+    ],
+    "tags": [
+      "descriptive statistics",
+      "shape of distributions",
+      "skewness",
+      "kurtosis"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T08:38:50.139Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

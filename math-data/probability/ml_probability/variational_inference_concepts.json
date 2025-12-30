@@ -1,0 +1,94 @@
+[
+  {
+    "id": "prob_con_variational_inference_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex probability distributions using simpler ones.</p><p>The evidence lower bound (ELBO) is a fundamental concept in variational inference. It's a lower bound on the log likelihood of our data given a probabilistic model, and it's used to optimize the parameters of the model.</p>",
+    "formula": {
+      "latex": "\\[ \\text{ELBO} = \\mathbb{E}_{q}\\left[\\log p(x) - KL(q || p)\\right] \\]",
+      "name": "ELBO"
+    },
+    "intuition": "The ELBO is a way to balance the complexity of our model with the simplicity of our approximation. By optimizing the ELBO, we can find a good trade-off between these two.",
+    "realWorldApplications": [
+      "Generative models",
+      "Bayesian neural networks"
+    ],
+    "commonMistakes": [
+      "Failing to understand that ELBO is a lower bound, not an upper bound"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:28:15.135Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_variational_inference_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions by introducing a simpler distribution called the variational distribution.</p><p>The evidence lower bound (ELBO) is a key concept in variational inference. It's a lower bound on the log-likelihood of the data given the model parameters, and it's used to optimize the variational distribution.</p>",
+    "formula": {
+      "latex": "\\[ \\text{ELBO} = \\mathbb{E}_{q}\\left[\\log p(x|z) - \\log q(z|x)\\right] \\]",
+      "name": "ELBO"
+    },
+    "intuition": "The ELBO is a way to balance the complexity of the model with the simplicity of the variational distribution. By optimizing the ELBO, we can find a good trade-off between these two factors.",
+    "realWorldApplications": [
+      "Variational autoencoders in generative modeling"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the ELBO is a lower bound, not an upper bound"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:28:33.788Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_variational_inference_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "ml_probability",
+    "topic": "variational_inference",
+    "title": "Variational Inference: ELBO and Mean-Field Approximation",
+    "contentHtml": "<p>Variational inference is a powerful technique in machine learning that allows us to approximate complex distributions by introducing a simpler distribution called the variational distribution.</p><p>The evidence lower bound (ELBO) is a fundamental concept in variational inference. It provides an upper bound on the log likelihood of the data given the model parameters.</p>",
+    "formula": {
+      "latex": "\\[ ELBO = \\mathbb{E}_{q}\\left[\\log p(x|z) - KL(q||p) \\right] \\]",
+      "name": "ELBO"
+    },
+    "intuition": "The ELBO provides a way to trade off between the complexity of the model and the simplicity of the variational distribution. This trade-off is crucial in many machine learning applications, such as generative models.",
+    "realWorldApplications": [
+      "Generative Adversarial Networks"
+    ],
+    "commonMistakes": [
+      "Failing to recognize that the ELBO is an upper bound on the log likelihood",
+      "Not understanding the importance of the KL divergence term"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 5,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T03:28:51.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

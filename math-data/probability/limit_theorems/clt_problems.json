@@ -1,0 +1,138 @@
+[
+  {
+    "id": "prob_prb_clt_006",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": "{",
+    "statementHtml": "<p>Prove that as <i>n</i> grows to infinity, the average of <i>n</i> independent identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges in distribution to a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>.</p>",
+    "hints": [
+      "<p>The key is to show that the sum of these random variables has a limiting normal distribution.</p>",
+      "<p>Use the fact that the sum of independent random variables is also normally distributed when the number of terms grows large.</p>",
+      "<p>You can apply the Lindeberg-Feller theorem or the Berry-Esseen theorem to prove this result.</p>"
+    ],
+    "solutionHtml": "<p>To prove this, we'll use the Berry-Esessen theorem. First, note that each random variable has mean <i>μ</i> and variance <i>σ<sup>2</sup></i>. Then, let's define <i>Z</i> as the sum of these random variables:</p><p>\\[Z = \\frac{\\sum_{i=1}^n (X_i - μ)}{σ\\sqrt{n}}.\\]</p><p>We can apply the Berry-Esessen theorem to show that <i>Z</i> converges in distribution to a standard normal distribution.</p>\",",
+    "answerShort": "The average of <i>n</i> independent identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges in distribution to a normal distribution with mean <i>μ</i> and variance <i>σ<sup>2</sup></i>\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:50:56.664Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "title": "Central Limit Theorem",
+    "problem": "{",
+    "statementHtml": "<p>Given a sequence of i.i.d. random variables X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>n</sub> with mean μ and variance σ<sup>2</sup>, show that the sample mean \\(\\bar{X}_n = \\frac{1}{n} \\sum_{i=1}^n X_i\\) converges in distribution to a normal random variable with mean μ and variance σ<sup>2</sup>/n as n → ∞.</p>\",",
+    "hints": [
+      "<p>The key is to recognize that the sample mean is a linear combination of independent random variables.</p>",
+      "<p>Use the fact that the sum of independent random variables is also normally distributed if the number of terms grows sufficiently large.</p>",
+      "<p>You can use Chebyshev's inequality or Slutsky's theorem to prove convergence in distribution.</p>"
+    ],
+    "solutionHtml": "<p>To prove this, we'll use a combination of the central limit theorem for sums and the continuous mapping theorem. Let Y<sub>i</sub> = X<sub>i</sub> - μ, so that Y<sub>1</sub>, ..., Y<sub>n</sub> are i.i.d. with mean 0 and variance σ<sup>2</sup>. Then \\(\\bar{Y}_n = \\frac{1}{n} \\sum_{i=1}^n Y_i\\) is a linear combination of independent random variables, so it converges in distribution to a normal random variable by the central limit theorem for sums. Since μ is the mean of X<sub>1</sub>, ..., X<sub>n</sub>, we have that \\(\\bar{X}_n = \\mu + \\frac{1}{n} \\sum_{i=1}^n Y_i\\). By the continuous mapping theorem, this converges in distribution to a normal random variable with mean μ and variance σ<sup>2</sup>/n.</p>\",",
+    "answerShort": "The sample mean converges in distribution to a normal random variable\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:51:29.239Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": {
+      "statementHtml": "<p>Prove that as <i>n</i> grows, the average of <i>n</i> independent and identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges to <i>μ</i>.</p>",
+      "hints": [
+        "<p>Start by considering the sum of the random variables.</p>",
+        "<p>Use the fact that the mean of a sum is equal to the sum of the means.</p>",
+        "<p>Apply Chebyshev's inequality to bound the probability of the average deviating from <i>μ</i>.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we'll use the Lindeberg-Feller CLT. Let <i>Z<sub>i</sub></i> be the <i>i</i>-th random variable.</p><p>We need to show that for any <i>&epsilon;</i> > 0 and <i>&delta;</i> > 0, there exists an integer <i>N</i> such that for all <i>n</i> ≥ <i>N</i>,</p><p><i>P</i>(|<i>Z</i><sub>1</sub> + ... + <i>Z</i><sub><i>n</i></sub>| &gt; <i>&epsilon;</i>) ≤ <i>&delta;</i>.</p>",
+      "answerShort": "<i>N</i> = O(<i>(&sigma;<sup>2</sup> / &epsilon;<sup>2</sup>))</i>"
+    },
+    "commonMistakes": [
+      "Forgetting to apply the CLT to each term in the sum",
+      "Not recognizing that the variance of the average is <i>&sigma;<sup>2</sup></i>/<i>n</i>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:51:55.556Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": "{",
+    "statementHtml": "<p>Prove that as <i>n</i> approaches infinity, the average of <i>n</i> independent and identically distributed random variables with finite mean and variance converges to a normal distribution.</p>",
+    "hints": [
+      "Start by considering the sum of the random variables.",
+      "Use the fact that the variance of the sum is proportional to <i>n</i>.",
+      "Apply the Lindeberg-Feller CLT"
+    ],
+    "solutionHtml": "<p>Let <i>X</i><sub><i>i</i></sub> be the <i>i</i>-th random variable. We have:</p>\\n<p><i>Z</i> = (<i>n</i><sup>-1/2</sup>) \\(\\sum_{i=1}^n X_i\\) converges in distribution to a standard normal.</p>\",",
+    "answerShort": "Converges in distribution\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:52:13.743Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_clt_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "limit_theorems",
+    "topic": "clt",
+    "problem": {
+      "statementHtml": "<p>Prove that as <i>n</i> grows, the average of <i>n</i> independent and identically distributed random variables with mean <i>μ</i> and variance <i>σ<sup>2</sup></i> converges to <i>μ</i>.</p>",
+      "hints": [
+        "<p>The key is to recognize that the sum of these random variables can be viewed as a linear combination of independent standard normal variables.</p>",
+        "<p>Use this insight to apply the Lindeberg-Feller CLT.</p>",
+        "<p>Show that the variance of the average converges to zero.</p>"
+      ],
+      "solutionHtml": "<p>To prove this, we can use the Lindeberg-Feller CLT. First, note that the sum of these random variables is a linear combination of independent standard normal variables:</p>\n\n\\[5pt]\n\\begin{align*} \frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} X_i - nμ \\right) \\\\ &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} X_i - nμ + \\mu \\sum_{i=1}^{n} 1 \\right) \\\\ &= \\frac{1}{\\sqrt{n}} \\left( \\sum_{i=1}^{n} (X_i - μ) + \\mu \\sqrt{n} \\right). \\end{align*}\n\n<p>Now, apply the CLT to this sum:</p>\n\n\\[5pt]\n\\begin{align*} \\frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) &\\xrightarrow{d}\\ N(0, σ^2). \\end{align*}\n\n<p>Finally, note that the average of these random variables is just a scaled version of this sum:</p>\n\n\\[5pt]\n\\begin{align*} \\frac{1}{n} \\sum_{i=1}^{n} (X_i - μ) &= \\frac{1}{n} \\left( \\frac{1}{\\sqrt{n}} \\sum_{i=1}^{n} (X_i - μ) \\right). \\end{align*}\n\n<p>Since the sum converges to a normal distribution, so does the average.</p>",
+      "answerShort": "The average of these random variables converges to <i>μ</i>"
+    },
+    "commonMistakes": [
+      "<p>Failing to recognize that the sum is a linear combination of independent standard normal variables.</p>",
+      "<p>Not applying the CLT correctly.</p>"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:52:52.447Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

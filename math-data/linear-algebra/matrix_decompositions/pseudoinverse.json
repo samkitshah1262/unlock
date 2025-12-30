@@ -1,0 +1,496 @@
+[
+  {
+    "id": "la_con_pseudoinverse_001",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra that helps us solve least squares problems.</p><p>Given a matrix A and a vector b, we want to find the best possible solution x that minimizes the squared error ||Ax - b||^2.</p>",
+    "formula": {
+      "latex": "\\[A^\\dagger = (A^T A)^{-1} A^T \\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "intuition": "The pseudoinverse is like a 'reverse' of the matrix, allowing us to solve for x in the least squares problem.",
+    "realWorldApplications": [
+      "Solving regression problems in machine learning"
+    ],
+    "commonMistakes": [
+      "Thinking the pseudoinverse always exists or is unique"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:53:32.663Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_pseudoinverse_002",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra that helps us solve least squares problems.</p><p>Given a matrix A and a vector b, we want to find the vector x that minimizes the squared error ||Ax - b||^2. The pseudoinverse A+ provides an efficient way to compute this solution.</p>",
+    "formula": "{",
+    "latex": "\\[A^+ = (A^T A)^{-1} A^T\\]\",",
+    "name": "Moore-Penrose Pseudoinverse\" },",
+    "intuition": "The pseudoinverse is like a 'best guess' for the inverse of A, even when A is singular or nearly singular.",
+    "realWorldApplications": [
+      "In machine learning, the pseudoinverse is used in regularization techniques to prevent overfitting."
+    ],
+    "commonMistakes": [
+      "Don't confuse the pseudoinverse with the true inverse; they're only equal if A is invertible."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:53:48.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_con_pseudoinverse_003",
+    "subject": "linear_algebra",
+    "type": "concept",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a powerful tool in linear algebra that allows us to solve least squares problems and find the best approximate solution when an exact solution does not exist.</p><p>Given a matrix A, we can decompose it into its singular value decomposition (SVD), which consists of three matrices: U, Σ, and V. The Moore-Penrose pseudoinverse is then defined as Σ^+V^T, where Σ^+ is the pseudoinverse of Σ.</p>",
+    "formula": {
+      "latex": "\\[A^{\\dagger} = \\sigma^+ V^T\\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "intuition": "The Moore-Penrose pseudoinverse is like a 'best guess' solution when an exact solution doesn't exist. It's based on the SVD decomposition, which helps us understand the structure of the matrix and find the most accurate approximate solution.",
+    "realWorldApplications": [
+      "Solving ill-posed problems in computer vision",
+      "Finding the best approximate solution for linear regression"
+    ],
+    "commonMistakes": [
+      "Thinking the pseudoinverse is only used for solving systems of equations",
+      "Not understanding that it's an approximation, not an exact solution"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:54:06.042Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_pseudoinverse_004",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra and machine learning.</p><p>Given an m x n matrix A, the pseudoinverse A+ is defined as the matrix that minimizes the least squares problem:</p><p>\\[\\min_{X} ||AX - B||^2\\]</p>\",",
+    "formula": "{",
+    "latex": "\\[A^+ = (A^T A)^{-1} A^T,\\]",
+    "name": "Moore-Penrose Pseudoinverse\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the pseudoinverse of a matrix A.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the transpose of A\", \"mathHtml\": \"\\[A^T = \\cdots\\]\", \"explanation\": \"This is necessary for the SVD decomposition.\"}, {\"stepNumber\": 2, \"description\": \"Compute the product AA^T\", \"mathHtml\": \"\\[(AA^T) = \\cdots\\]\", \"explanation\": \"This helps us find the orthonormal basis.\"}, {\"stepNumber\": 3, \"description\": \"Find the inverse of AA^T and multiply by A^T\", \"mathHtml\": \"\\[(AA^T)^{-1}A^T = \\cdots\\]\", \"explanation\": \"This gives us the pseudoinverse.\"} ],",
+    "finalAnswer": "The final answer is...\" },",
+    "intuition": "The Moore-Penrose pseudoinverse helps us solve least squares problems by finding the matrix that minimizes the error.",
+    "realWorldApplications": [
+      "Solving regression problems in machine learning"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:54:29.740Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_pseudoinverse_005",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a powerful tool in linear algebra, used to solve least squares problems and find the best approximate solution when an inverse does not exist.</p>",
+    "formula": "{",
+    "latex": "\\[A^{\\dagger} = (A^T A)^{-1} A^T\\]\",",
+    "name": "Moore-Penrose Pseudoinverse\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the best approximate solution to the system of equations:</p><ul><li>\\(x + 2y = 3\\)</li><li>\\(3x + y = 4\\)</li></ul>\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the matrix A\", \"mathHtml\": \"\\(A = \\begin{bmatrix}1 & 2 \\\\ 3 & 1\\end{bmatrix}\\)\"}, {\"stepNumber\": 2, \"description\": \"Compute the Moore-Penrose pseudoinverse\", \"mathHtml\": \"\\(A^{\\dagger} = (A^T A)^{-1} A^T\\)\"}, {\"stepNumber\": 3, \"description\": \"Use the pseudoinverse to find the solution\", \"mathHtml\": \"\\(x \\approx 0.5, y \\approx 1.25\\)\"} ],",
+    "finalAnswer": "The approximate solution is \\(x = 0.5, y = 1.25\\)\" },",
+    "intuition": "The Moore-Penrose pseudoinverse provides a way to find the best approximate solution when an inverse does not exist, making it a crucial tool in many machine learning and AI applications.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:54:52.320Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_for_pseudoinverse_006",
+    "subject": "linear_algebra",
+    "type": "formula",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a powerful tool in linear algebra, allowing us to solve least squares problems and find the closest solution when an exact inverse does not exist.</p>",
+    "formula": "{",
+    "latex": "\\[A^+ = (A^T A)^{-1} A^T\\]\",",
+    "name": "Moore-Penrose Pseudoinverse\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the pseudoinverse of matrix A:</p>\\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\]\",",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the transpose of A\", \"mathHtml\": \"\\[A^T = \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]\", \"explanation\": \"We need to compute the transpose for the formula\"}, {\"stepNumber\": 2, \"description\": \"Compute AA^T\", \"mathHtml\": \"\\[AA^T = \\begin{bmatrix}7 & 10 \\\\ 10 & 17\\end{bmatrix}\\]\", \"explanation\": \"This is a crucial step in finding the pseudoinverse\"}, {\"stepNumber\": 3, \"description\": \"Compute (AA^T)^{-1}\", \"mathHtml\": \"\\[\\left(\\begin{bmatrix}7 & 10 \\\\ 10 & 17\\end{bmatrix}\\right)^{-1} = \\frac{1}{5} \\begin{bmatrix}4 & -2 \\\\ -2 & 3\\end{bmatrix}\\]\", \"explanation\": \"Now we can find the inverse of AA^T\"}, {\"stepNumber\": 4, \"description\": \"Compute A^T\", \"mathHtml\": \"\\[A^T = \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix}\\]\", \"explanation\": \"We need to compute the transpose again for the formula\"}, {\"stepNumber\": 5, \"description\": \"Compute A^+ using the formula\", \"mathHtml\": \"\\[A^+ = \\left(\\begin{bmatrix}7 & 10 \\\\ 10 & 17\\end{bmatrix}\\right)^{-1} \\begin{bmatrix}1 & 3 \\\\ 2 & 4\\end{bmatrix} = \\frac{1}{5} \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}\\]\", \"explanation\": \"Now we can find the pseudoinverse using the formula\"} ],",
+    "finalAnswer": "\\[\\frac{1}{5} \\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}\\]\" },",
+    "intuition": "<p>The Moore-Penrose pseudoinverse is a way to find the closest solution when an exact inverse does not exist. It's like finding the best approximation of the original matrix.</p>",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:55:28.776Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_pseudoinverse_007",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra that extends the idea of matrix inversion to singular matrices.</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^+ = (\\mathbf{A}^T \\mathbf{A})^+ \\mathbf{A}^T \\]",
+      "name": "Moore-Penrose Pseudoinverse Formula"
+    },
+    "theorem": {
+      "statement": "\\[ \\text{For a matrix } \\mathbf{A}, \\text{ the Moore-Penrose pseudoinverse } \\mathbf{A}^+ \\text{ satisfies: } \\mathbf{AA}^+\\mathbf{A} = \\mathbf{A}. \\]"
+    },
+    "intuition": "The Moore-Penrose pseudoinverse is a way to find the 'best' approximate inverse of a matrix, even if it's singular. This is crucial in many applications, such as least squares regression and neural networks.",
+    "realWorldApplications": [
+      "Least Squares Regression",
+      "Neural Networks"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decompositions",
+      "Singular Value Decomposition"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:55:46.590Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_thm_pseudoinverse_008",
+    "subject": "linear_algebra",
+    "type": "theorem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse",
+    "contentHtml": "<p>The Moore-Penrose pseudoinverse is a fundamental concept in linear algebra and machine learning.</p><p>Given a matrix A, it provides the best possible approximation of its inverse under certain conditions.</p>",
+    "formula": {
+      "latex": "\\[A^+ = (A^T A)^{-1} A^T\\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "theorem": {
+      "statement": "\\[\\text{If } AA^T \\neq 0, \\text{ then } A^+ = (A^T A)^{-1} A^T\\]",
+      "proofSketch": "Proof involves showing that the pseudoinverse satisfies the desired properties and is unique."
+    },
+    "intuition": "The Moore-Penrose pseudoinverse provides a way to solve least squares problems, which are crucial in many machine learning applications.",
+    "realWorldApplications": [
+      "Solving regression problems",
+      "Computing principal components"
+    ],
+    "tags": [
+      "Linear Algebra",
+      "Matrix Decompositions",
+      "Moore-Penrose Pseudoinverse"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:02.899Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pseudoinverse_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "Find the Moore-Penrose pseudoinverse of a matrix A using Singular Value Decomposition (SVD).",
+    "hints": [
+      "Start by decomposing A into UΣV^T.",
+      "Use the fact that Σ is diagonal to simplify the calculation.",
+      "The pseudoinverse will be VΣ^(-1)U^T."
+    ],
+    "solutionHtml": " To find the Moore-Penrose pseudoinverse of A, we first decompose it into UΣV^T using SVD: \\\\[ \\begin{align*} A &= U\\Sigma V^T. \\end{align*} \\\\] Then, since Σ is diagonal, we can simplify the calculation as follows:  \\\\[ \\begin{align*} (\\Sigma^(-1)U^T)^{-1} &= (V^T)^{-1}\\Sigma^(-1)U^T \\\\ &= V\\Sigma^(-1)U^T. \\end{align*} \\\\]  The Moore-Penrose pseudoinverse is therefore given by \\\\[ \\begin{align*} A^{\\dagger} &= V\\Sigma^(-1)U^T. \\end{align*} \\\\] \",",
+    "answerShort": "VΣ^(-1)U^T\" },",
+    "commonMistakes": [
+      "Forgetting to square the singular values",
+      "Not accounting for the diagonal structure of Σ"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:22.954Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pseudoinverse_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "Find the Moore-Penrose pseudoinverse of matrix A using SVD decomposition.",
+    "hints": [
+      "Start by computing the SVD of A.",
+      "Use the singular values to determine the condition number.",
+      "The pseudoinverse will be a combination of the left and right singular vectors."
+    ],
+    "solutionHtml": " To find the Moore-Penrose pseudoinverse, we first compute the SVD decomposition of matrix A: \\[A = U \\Sigma V^T\\]. Then, we use the singular values to determine the condition number. Finally, we construct the pseudoinverse as \\[\\Sigma^{\\dagger} V^T,\\] where \\(\\Sigma^{\\dagger}\\) is the diagonal matrix with entries 1/σ_i for i = 1, ..., k and 0 otherwise. \",",
+    "answerShort": "The Moore-Penrose pseudoinverse of A is Σ^{\\dagger} V^T.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:38.705Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_pseudoinverse_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "problem": "{",
+    "statementHtml": "<p>Find the Moore-Penrose pseudoinverse of a matrix <i>A</i>, given its SVD decomposition.</p>",
+    "hints": [
+      "Recall that the pseudoinverse is used to solve least squares problems.",
+      "Think about how the SVD can help you find the inverse (or pseudo-inverse) of a matrix.",
+      "Use the formula for the Moore-Penrose pseudoinverse in terms of the SVD factors."
+    ],
+    "solutionHtml": "<p>To find the Moore-Penrose pseudoinverse, we use the SVD decomposition: <i>A</i> = <i>UΣV<sup>T</sup></i>. Then, we can write:</p><p>\\[\\hat{A}^+</p> = Σ<sup>-1</sup>V<sup>T</sup>(VV<sup>T</sup>)<sup>-1</sup>U<sup>T</sup>\\]</p>\",",
+    "answerShort": "The Moore-Penrose pseudoinverse is Σ<sup>-1</sup>V<sup>T</sup>(VV<sup>T</sup>)<sup>-1</sup>U<sup>T</sup>\" },",
+    "commonMistakes": [
+      "Forgetting to use the SVD decomposition",
+      "Not accounting for the possibility of singular values"
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:56:57.495Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_pseudoinverse_012",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to find the Moore-Penrose pseudoinverse of a matrix using Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix \\mathbf{A} and a vector \\mathbf{b}, find the least squares solution to \\mathbf{Ax} = \\mathbf{b}</p>",
+      "hints": [
+        "Hint: Use SVD to decompose \\mathbf{A}"
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll first compute the SVD of \\mathbf{A}: \\[ \\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T \\].</p><ul><li>Compute the pseudoinverse of \\mathbf{A} using the formula: \\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]</li></ul>",
+      "answerShort": "The Moore-Penrose pseudoinverse is \\mathbf{A}^\\dagger"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Suppose we have the matrix \\[ \\mathbf{A} = \\begin{bmatrix} 1 &amp; 2 \\\\ 3 &amp; 4 \\end{bmatrix} \\] and the vector \\[ \\mathbf{b} = \\begin{bmatrix} 5 \\\\ 6 \\end{bmatrix} \\]. Find the least squares solution to \\mathbf{Ax} = \\mathbf{b}</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of \\mathbf{A}",
+          "mathHtml": "\\[ \\mathbf{A} = \\mathbf{U}\\Sigma\\mathbf{V}^T \\]",
+          "explanation": "This step is crucial for finding the Moore-Penrose pseudoinverse."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Compute the pseudoinverse of \\mathbf{A}",
+          "mathHtml": "\\[ \\mathbf{A}^\\dagger = \\mathbf{V}\\Sigma^\\dagger \\mathbf{U}^T \\]",
+          "explanation": "Now we can use the formula to compute the Moore-Penrose pseudoinverse."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Find the least squares solution",
+          "mathHtml": "\\[ \\mathbf{x} = \\mathbf{A}^\\dagger \\mathbf{b} \\]",
+          "explanation": "Finally, we can use the Moore-Penrose pseudoinverse to find the least squares solution."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Verify the result",
+          "mathHtml": "\\[ \\mathbf{Ax} = \\mathbf{A}\\mathbf{A}^\\dagger \\mathbf{b} \\approx \\mathbf{b} \\]",
+          "explanation": "We should get a good approximation of the original vector \\mathbf{b}. "
+        }
+      ],
+      "finalAnswer": "The least squares solution is \\mathbf{x}"
+    },
+    "intuition": "The Moore-Penrose pseudoinverse helps us find the best possible solution to an underdetermined system, which is crucial in many machine learning applications.",
+    "realWorldApplications": [
+      "Linear regression with regularization"
+    ],
+    "tags": [
+      "Moore-Penrose Pseudoinverse",
+      "Singular Value Decomposition",
+      "Least Squares"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:57:46.777Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_pseudoinverse_013",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll demonstrate how to solve a least squares problem using the Moore-Penrose pseudoinverse.</p>",
+    "problem": "{",
+    "statementHtml": "<p>Given an overdetermined system of linear equations <code>Ax = b</code>, find the minimum norm solution <code>x</code>.</p>",
+    "hints": [
+      "Hint: Use SVD to decompose A"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll first compute the SVD of A:</p><ul><li>We'll then use the right singular vectors to form the pseudoinverse.</li></ul>",
+    "answerShort": "The minimum norm solution is given by <code>x = V Σ+ U^T b</code>\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let's consider a simple example:</p><p><code>A = [[2, 1], [1, 3]] and <code>b = [4, 5]^T</code>.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Compute the SVD of A\", \"mathHtml\": \"\\[A = U \\Sigma V^T\\]\", \"explanation\": \"We'll use the SVD to decompose A into its left and right singular vectors.\" }, {\"stepNumber\": 2, \"description\": \"Form the pseudoinverse using the right singular vectors\", \"mathHtml\": \"\\[V Σ+ U^T = (V \\Sigma^+ V^T)U^T\\]\", \"explanation\": \"The pseudoinverse is given by the product of the right singular vectors and their corresponding singular values.\" }, {\"stepNumber\": 3, \"description\": \"Compute the minimum norm solution\", \"mathHtml\": \"\\[x = V Σ+ U^T b\\]\", \"explanation\": \"We'll use the pseudoinverse to find the minimum norm solution that satisfies the original system of equations.\" }, {\"stepNumber\": 4, \"description\": \"Verify the solution\", \"mathHtml\": \"\", \"explanation\": \"We can verify our solution by plugging it back into the original system of equations.\" } ],",
+    "finalAnswer": "The minimum norm solution is <code>x = [1.5, 0.25]^T</code>\" },",
+    "intuition": "The Moore-Penrose pseudoinverse provides a way to solve overdetermined systems by finding the minimum norm solution that satisfies the original system of equations.",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:58:20.060Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_wex_pseudoinverse_014",
+    "subject": "linear_algebra",
+    "type": "worked_example",
+    "chapter": "matrix_decompositions",
+    "topic": "pseudoinverse",
+    "title": "Moore-Penrose Pseudoinverse via SVD",
+    "contentHtml": "<p>In this worked example, we'll explore how to compute the Moore-Penrose pseudoinverse using Singular Value Decomposition (SVD).</p>",
+    "formula": {
+      "latex": "\\[\\mathbf{A}^+ = \\mathbf{V}\\mathbf{Σ}^\\dagger\\mathbf{U}^T\\]",
+      "name": "Moore-Penrose Pseudoinverse"
+    },
+    "problem": {
+      "statementHtml": "<p>Given a matrix A, compute its Moore-Penrose pseudoinverse using SVD.</p>",
+      "hints": [
+        "Hint: Start by computing the SVD of A."
+      ],
+      "solutionHtml": "<p>To solve this problem, we'll follow these steps:</p><ul><li>Compute the SVD of A: \\[\\mathbf{A} = \\mathbf{U}\\mathbf{Σ}\\mathbf{V}^T\\]</li><li>Find the pseudoinverse of Σ: \\[\\mathbf{Σ}^\\dagger = \\frac{1}{σ_1} \\begin{bmatrix} σ_1 & 0 & 0 \\\\ 0 & σ_2 & 0 \\\\ 0 & 0 & σ_3 \\end{bmatrix}\\]</li><li>Compute the pseudoinverse of A: \\[\\mathbf{A}^+ = \\mathbf{V}\\mathbf{Σ}^\\dagger\\mathbf{U}^T\\]</li></ul>",
+      "answerShort": "The Moore-Penrose pseudoinverse is computed."
+    },
+    "workedExample": {
+      "problemHtml": "<p>Compute the Moore-Penrose pseudoinverse of \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\].</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Compute the SVD of A",
+          "mathHtml": "\\[\\mathbf{A} = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\]",
+          "explanation": "We start by computing the SVD of A."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the pseudoinverse of Σ",
+          "mathHtml": "\\[\\mathbf{Σ}^\\dagger = \\frac{1}{σ_1} \\begin{bmatrix} σ_1 & 0 & 0 \\\\ 0 & σ_2 & 0 \\\\ 0 & 0 & σ_3 \\end{bmatrix}\\]",
+          "explanation": "We find the pseudoinverse of Σ by taking the reciprocal of each singular value."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Compute the pseudoinverse of A",
+          "mathHtml": "\\[\\mathbf{A}^+ = \\begin{bmatrix} v_1 & v_2 \\\\ u_1 & u_2 \\end{bmatrix}\\]",
+          "explanation": "Finally, we compute the pseudoinverse of A by multiplying the right singular vectors with the reciprocal of each singular value."
+        }
+      ],
+      "finalAnswer": "The Moore-Penrose pseudoinverse is computed."
+    },
+    "intuition": "The key insight is that the SVD provides a way to decompose a matrix into its most important directions, allowing us to compute the pseudoinverse efficiently.",
+    "visualDescription": "A diagram showing the SVD decomposition of A would be helpful in visualizing the process.",
+    "commonMistakes": [
+      "Mistake: Forgetting to take the reciprocal of each singular value."
+    ],
+    "realWorldApplications": [
+      "Application: Regularization techniques in machine learning, such as L1 and L2 regularization."
+    ],
+    "tags": [
+      "Moore-Penrose Pseudoinverse",
+      "SVD"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T13:59:06.518Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

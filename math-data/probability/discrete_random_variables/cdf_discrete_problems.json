@@ -1,0 +1,77 @@
+[
+  {
+    "id": "prob_prb_cdf_discrete_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": "{",
+    "statementHtml": "<p>Find the cumulative distribution function (CDF) of a discrete random variable X.</p>",
+    "hints": [
+      "Think about how the CDF is related to the probability mass function (PMF).",
+      "Consider what happens as the upper bound approaches infinity.",
+      "Use the definition of the CDF and the PMF to write an equation."
+    ],
+    "solutionHtml": "<p>To find the CDF, we sum up the probabilities of all values less than or equal to x:</p>\\n\\ \\[ F(x) = \\sum_{i=0}^{x} P(X=i) \\]\\n\\ <p>We can rewrite this as:</p>\\n\\ \\[ F(x) = 1 - \\sum_{i=x+1}^{\\infty} P(X=i) \\]\\n\\ <p>This is because the CDF sums up all probabilities less than or equal to x, so we subtract the sum of all probabilities greater than x.</p>\",",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:40:59.666Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_discrete_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": "{",
+    "statementHtml": "<p>Find the cumulative distribution function (CDF) of a discrete random variable X.</p>",
+    "hints": [
+      "Think about how the CDF accumulates probabilities.",
+      "Consider a simple example to get started.",
+      "Use the definition of the CDF to write an equation."
+    ],
+    "solutionHtml": "<p>To find the CDF, F(x), we sum up the probabilities of all values less than or equal to x:</p>\\n\\[F(x) = \\sum_{k=0}^{x} P(X=k)\\]\\n<p>For a discrete random variable X with PMF p(k), this becomes:</p>\\n\\[F(x) = \\sum_{k=0}^{x} p(k)\\]\\n<p>In Python, you can implement the CDF as follows:</p>\\n``python\\nimport numpy as np\\ndef cdf(pmf, x):\\n    return np.sum(pmf[:x+1])\\n``\",",
+    "answerShort": "F(x) = \\sum_{k=0}^{x} p(k)\" },",
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:41:18.388Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_cdf_discrete_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "discrete_random_variables",
+    "topic": "cdf_discrete",
+    "problem": {
+      "statementHtml": "Find the cumulative distribution function (CDF) of a discrete random variable X with probability mass function (PMF) <i>P</i>(x) = <i>p</i><sub>x</sub>.",
+      "hints": [
+        "Start by recalling that the CDF is defined as F(x) = P(X &le; x).",
+        "Think about how you can use the PMF to find the probability of X taking on values less than or equal to a given value x.",
+        "You may need to consider multiple cases depending on whether x is an integer or not."
+      ],
+      "solutionHtml": "<p>To find the CDF, we sum up the probabilities of all possible values of X that are less than or equal to x:</p><p>F(x) = ∑<sub>x' ≤ x</sub> P(X = x') = ∑<sub>x' ≤ x</sub> p<sub>x'</sub>.</p>",
+      "answerShort": "F(x)"
+    },
+    "difficulty": 2,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T22:41:34.838Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

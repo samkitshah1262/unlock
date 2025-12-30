@@ -1,0 +1,474 @@
+[
+  {
+    "id": "prob_con_functions_multiple_rv_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to work with multiple random variables (RVs). One crucial concept is understanding how to combine these RVs using various operations like sum, difference, and product.</p><p>These operations are essential when dealing with independent RVs. We'll explore the properties of these combinations and see how they apply to real-world scenarios, especially in machine learning and artificial intelligence (ML/AI).</p>",
+    "formula": {
+      "latex": "\\(X + Y = \\sum_{i=1}^n X_i + \\sum_{j=1}^m Y_j\\)",
+      "name": "Sum of Independent RVs",
+      "variants": [
+        {
+          "latex": "\\(X - Y = \\sum_{i=1}^n X_i - \\sum_{j=1}^m Y_j\\)",
+          "description": "Difference of independent RVs"
+        },
+        {
+          "latex": "\\(XY = \\prod_{i=1}^n X_i \\prod_{j=1}^m Y_j\\)",
+          "description": "Product of independent RVs"
+        }
+      ]
+    },
+    "intuition": "Combining multiple RVs allows us to model complex phenomena and make predictions. In ML/AI, this concept is crucial for tasks like data preprocessing, feature engineering, and anomaly detection.",
+    "realWorldApplications": [
+      "Data Preprocessing in Natural Language Processing"
+    ],
+    "commonMistakes": [
+      "Failing to account for correlations between RVs",
+      "Incorrectly assuming independence when it's not the case"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:29:44.588Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_functions_multiple_rv_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple Random Variables",
+    "contentHtml": "<p>When dealing with multiple random variables (RVs), it's essential to understand how to combine them using functions like sum, difference, and product.</p><p>These operations are crucial in probability theory as they allow us to model complex systems and make predictions about their behavior.</p>",
+    "formula": {
+      "latex": "\\(X + Y = \\sum_{i=1}^n X_i\\)",
+      "name": "Sum of Independent RVs",
+      "variants": [
+        {
+          "latex": "\\(X - Y = \\sum_{i=1}^n (X_i - Y_i)\\)",
+          "description": "Difference of Independent RVs"
+        },
+        {
+          "latex": "\\(XY = \\prod_{i=1}^n X_iY_i\\)",
+          "description": "Product of Independent RVs"
+        }
+      ]
+    },
+    "intuition": "Think of independent RVs as separate dice rolls. When you combine them using functions like sum or product, you're effectively rolling the dice multiple times and adding up or multiplying the results.",
+    "realWorldApplications": [
+      "In machine learning, we often encounter scenarios where we need to combine features from different sources (e.g., text data and image data) to make predictions."
+    ],
+    "commonMistakes": [
+      "Forgetting that independence is crucial for these operations"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:30:05.086Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_functions_multiple_rv_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to work with multiple random variables (RVs). One crucial concept is that of functions of multiple RVs.</p><p>Given two independent RVs X and Y, we can define various operations such as sum, difference, or product. These operations are essential in many applications, including machine learning and artificial intelligence.</p>",
+    "formula": "{",
+    "latex": "\\(X+Y\\), \\((X-Y)\\), \\(XY\\)\",",
+    "name": "Operations on Independent RVs\" },",
+    "intuition": "Think of two independent dice rolls. The sum of the rolls represents a new random variable, which is also independent from the original variables.",
+    "realWorldApplications": [
+      "In machine learning, we often encounter features that are combinations of multiple input variables."
+    ],
+    "commonMistakes": [
+      "Forgetting to account for independence when combining RVs"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:30:21.942Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_functions_multiple_rv_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to find the distribution of a function of multiple random variables (RVs). This card focuses on the sum, difference, and product of independent RVs.</p>",
+    "formula": "{",
+    "latex": "\\[ X + Y = \\sum_{i=1}^{\\infty} P(X=i)Y\\]\",",
+    "name": "Sum of Independent RVs\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two independent random variables, X and Y, with discrete distributions. Find the distribution of their sum.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the probability mass functions (PMFs) for X and Y.\", \"mathHtml\": \"\\(P_X(x)\\) and \\(P_Y(y)\\)\", \"explanation\": \"We need to specify the PMFs of each RV.\"}, {\"stepNumber\": 2, \"description\": \"Find the PMF of their sum by summing over all possible values.\", \"mathHtml\": \"\\[ P_{X+Y}(k) = \\sum_{i=1}^{\\infty} P_X(i)P_Y(k-i)\\]\", \"explanation\": \"We use the convolution formula to find the PMF of the sum.\"} ],",
+    "finalAnswer": "The distribution of their sum is found by convolving the two distributions.\" },",
+    "intuition": "Understanding how to combine independent RVs is crucial in many applications, including machine learning and artificial intelligence.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:30:45.913Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_functions_multiple_rv_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In probability theory, we often encounter random variables (RVs) that are functions of multiple independent RVs. This card explores the sum, difference, and product of such RVs.</p>",
+    "formula": "{",
+    "latex": "\\[X = aY + bZ\\]\",",
+    "name": "Sum of Independent RVs",
+    "variants": "[ {\"latex\": \"\\[X - Y = (a-b)Z\\]\", \"description\": \"Difference of independent RVs\"}, {\"latex\": \"\\[XY = abYZ\\]\", \"description\": \"Product of independent RVs\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two independent normal random variables X and Y with means μ1 and μ2, respectively. Find the distribution of Z = X + 2Y.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize that Z is a sum of independent RVs\", \"mathHtml\": \"\\[Z = X + 2Y\\]\", \"explanation\": \"We can apply the formula for the sum of independent RVs.\"} ],",
+    "finalAnswer": "The distribution of Z is also normal with mean μ1 + 2μ2 and variance σ1^2 + 4σ2^2.\" },",
+    "intuition": "When dealing with functions of multiple independent RVs, it's crucial to recognize the underlying structure. By applying the correct formula, we can efficiently calculate the distribution of the resulting RV.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:31:09.257Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_functions_multiple_rv_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs",
+    "contentHtml": "<p>In probability theory, we often need to work with functions of multiple random variables (RVs). This formula allows us to combine these RVs in various ways.</p>",
+    "formula": "{",
+    "latex": "\\(X_1 + X_2 = \\sum_{i=1}^n X_i\\)",
+    "name": "Sum of Independent RVs",
+    "variants": "[ {\"latex\": \"\\\\(X_1 \\cdot X_2 = \\\\prod_{i=1}^n X_i\\\\)\", \"description\": \"Product of independent RVs\"}, {\"latex\": \"\\\\(X_1 - X_2 = \\\\sum_{i=1}^n (X_i - E[X_i])\\\\)\", \"description\": \"Difference of two RVs\"} ] },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have two independent random variables, X and Y, with mean 0. What is the expected value of their sum?</p>",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Define the RVs",
+        "mathHtml": "\\(X = \\dots\\), \\(Y = \\dots\\)"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Use the formula for the sum of independent RVs",
+        "mathHtml": "\\(X + Y = \\sum_{i=1}^n X_i\\)"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Apply the expected value operator",
+        "mathHtml": "\\(E[X+Y] = E[\\sum_{i=1}^n X_i]\\)"
+      }
+    ],
+    "finalAnswer": "The expected value of their sum is 0\" },",
+    "intuition": "This formula allows us to combine independent RVs in various ways, making it a powerful tool for modeling complex systems.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:31:36.304Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_functions_multiple_rv_007",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to work with functions of multiple random variables (RVs). This theorem provides a powerful tool for doing so.</p>",
+    "formula": {
+      "latex": "\\[f(X_1, X_2) = \\sum_{i=1}^n f_i(x_{i,1}, x_{i,2})\\]",
+      "name": "Sum of Independent RVs"
+    },
+    "theorem": {
+      "statement": "\\[f(X_1, X_2) = \\sum_{i=1}^n f_i(X_{1,i}, X_{2,i})\\] where {X_{1,i}, X_{2,i}} are independent RVs",
+      "proofSketch": "The proof involves showing that the expected value of the function is equal to the sum of the expected values of each component function."
+    },
+    "intuition": "This theorem allows us to decompose a complex function into simpler components, making it easier to work with and analyze.",
+    "realWorldApplications": [
+      "In machine learning, this theorem has applications in modeling complex systems and combining multiple features."
+    ],
+    "tags": [
+      "joint distributions",
+      "independent RVs"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:31:55.914Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_thm_functions_multiple_rv_008",
+    "subject": "probability",
+    "type": "theorem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Sum and Difference of Independent RVs",
+    "contentHtml": "<p>The sum and difference of independent random variables (RVs) is a fundamental concept in probability theory.</p>",
+    "formula": "{",
+    "latex": "\\[ X + Y = \\sum_{i=1}^n x_i + \\sum_{j=1}^m y_j \\]",
+    "name": "\" },",
+    "theorem": "{",
+    "statement": "\\\\[ P(X+Y \\leq z) = \\\\int_{-\\\\infty}^{z} f_X(x) f_Y(z-x) dx \\\\]\",",
+    "proofSketch": "The proof involves applying the definition of a joint distribution and integrating out the variables.\" },",
+    "intuition": "Intuitively, when we sum or difference independent RVs, each term is drawn from its respective distribution. The resulting distribution is a convolution of the individual distributions.",
+    "realWorldApplications": [
+      "In machine learning, this concept is used in modeling complex systems where multiple components interact."
+    ],
+    "tags": [
+      "joint distributions",
+      "independent RVs"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:32:12.998Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_functions_multiple_rv_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be independent random variables with distributions F<sub>X</sub>(x) and F<sub>Y</sub>(y), respectively. Find the distribution of Z = X + Y.</p>",
+    "hints": [
+      "Think about the CDF of a sum of two RVs.",
+      "Use the fact that X and Y are independent to simplify your answer.",
+      "Recall the definition of convolution."
+    ],
+    "solutionHtml": "<p>To find the distribution of Z, we can use the convolution formula:</p>\\n\\[F_Z(z) = \\int_{-\\infty}^{\\infty} F_X(x) F_Y(z-x) dx.\\]\\n<p>Since X and Y are independent, their distributions are separable. We can rewrite the integral as:</p>\\n\\[\\int_{-\\infty}^{\\infty} F_X(x) F_Y(z-x) dx = \\left(\\int_{-\\infty}^{\\infty} F_X(x) dx\\right) \\cdot F_Y(z).\\]\\n<p>This is the CDF of Z, which implies that Z has a distribution.</p>\",",
+    "answerShort": "Z ∼ F_Z(z)\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:32:33.600Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_functions_multiple_rv_010",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "<p>Find the sum and difference of two independent random variables X and Y.</p>",
+    "hints": [
+      "Start by recalling the definition of independence.",
+      "Think about how to apply this concept to find the desired sums and differences."
+    ],
+    "solutionHtml": "<p>To find the sum, we use the fact that the distribution of X+Y is the convolution of the distributions of X and Y:</p>\\[\\sum_{k} P(X=k)P(Y=k)\\]<p>Since X and Y are independent, this simplifies to:</p>\\[\\sum_{k} P(X=k) \\cdot 1 = P(X=x)</p><p>To find the difference, we can use a similar approach:</p>\\[X-Y = (X-E[X]) + (-Y+E[Y])\\]<p>Again, since X and Y are independent, this simplifies to:</p>\\[\\sum_{k} P(X=k) \\cdot 1 - \\sum_{l} P(Y=l) \\cdot 1</p><p>The final answer is the sum of two distributions.</p>\",",
+    "answerShort": "The sum and difference are both distributed as X\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:32:53.879Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_functions_multiple_rv_011",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "problem": "{",
+    "statementHtml": "Let X and Y be independent random variables with probability distributions P(X) and P(Y). Find the distribution of Z = X + Y.",
+    "hints": [
+      "Start by recalling the definition of a convolution.",
+      "Think about how the sum of two independent RVs can be viewed as the combination of two separate events.",
+      "Use the fact that the probability density function (PDF) of the sum is the integral of the product of the PDFs with respect to the difference."
+    ],
+    "solutionHtml": " The distribution of Z = X + Y is given by P(Z = z) = \\(\\int_{-\\infty}^{\\infty} P(X = x)P(Y = z-x) dx\\). This is because the sum of two independent RVs can be viewed as the combination of two separate events, where one event occurs when X takes on a particular value and the other event occurs when Y takes on a particular value. The probability of this combined event is then given by the product of the probabilities of each individual event.  For example, if we have two independent RVs X and Y with PDFs P(X) = 1/2 \\(\\delta(x-1)\\) + 1/2 \\(\\delta(x+1)\\) and P(Y) = 1/3 \\(\\delta(y-1)\\) + 2/3 \\(\\delta(y+1)\\), then the distribution of Z = X + Y is given by:  P(Z = z) = \\(\\int_{-\\infty}^{\\infty} (1/2) \\delta(x-1) (1/3) \\delta(z-x-1) dx\\) + \\(\\int_{-\\infty}^{\\infty} (1/2) \\delta(x+1) (2/3) \\delta(z-x+1) dx\\)  Evaluating this integral, we get:  P(Z = z) = 1/6 \\(\\delta(z-0)\\) + 1/3 \\(\\delta(z-2)\\) + 1/3 \\(\\delta(z+2)\\) \",",
+    "answerShort": "The distribution of Z = X + Y is given by the convolution of P(X) and P(Y).\" },",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:33:27.114Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_functions_multiple_rv_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In probability theory, we often encounter situations where we need to compute functions of multiple random variables (RVs). This card will guide you through the process of summing, differencing, and multiplying independent RVs.</p>",
+    "formula": "{",
+    "latex": "\\(X_1 + X_2 = \\sum_{i=1}^n X_i\\)",
+    "name": "Sum of Independent RVs",
+    "variants": "[ {\"latex\": \"\\\\(X_1 - X_2 = \\\\sum_{i=1}^n (a_i X_i)\\\\)\", \"description\": \"Difference of Independent RVs\"}, {\"latex\": \"\\\\(X_1 \\cdot X_2 = \\\\prod_{i=1}^n X_i\\\\)\", \"description\": \"Product of Independent RVs\"} ] },",
+    "problem": "{",
+    "statementHtml": "<p>Let X and Y be independent standard normal random variables. Compute the distribution of Z = X + Y.</p>",
+    "hints": [
+      "Hint: Use convolution theorem"
+    ],
+    "solutionHtml": "<p>We can use the convolution theorem to compute the distribution of Z:</p><ul><li>Compute the characteristic function of X and Y separately</li><li>Convolve the two characteristic functions using the formula \\\\(\\\\phi_Z(t) = \\\\phi_X(t) \\* \\\\phi_Y(t)\\\\)</li><li>Take the inverse Fourier transform to get the PDF of Z</li></ul>\",",
+    "answerShort": "Z ~ N(0, 2)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Let X and Y be independent exponential random variables with rate parameter λ. Compute the distribution of T = X + Y.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Define the characteristic function of X\", \"mathHtml\": \"\\\\(\\\\phi_X(t) = \\\\int_{0}^∞ e^{itx} \\\\lambda e^{-λx} dx\\\\)\", \"explanation\": \"We use the definition of the exponential distribution and the characteristic function formula\"}, {\"stepNumber\": 2, \"description\": \"Define the characteristic function of Y\", \"mathHtml\": \"\\\\(\\\\phi_Y(t) = \\\\int_{0}^∞ e^{ity} \\\\lambda e^{-λy} dy\\\\)\", \"explanation\": \"We use the definition of the exponential distribution and the characteristic function formula again\"}, {\"stepNumber\": 3, \"description\": \"Convolve the two characteristic functions\", \"mathHtml\": \"\\\\(\\\\phi_T(t) = \\\\int_{0}^∞ e^{itx} \\\\lambda e^{-λx} dx \\* \\\\int_{0}^∞ e^{ity} \\\\lambda e^{-λy} dy\\\\)\", \"explanation\": \"We use the convolution theorem to combine the two characteristic functions\"}, {\"stepNumber\": 4, \"description\": \"Take the inverse Fourier transform\", \"mathHtml\": \"\\\\(f_T(t) = \\\\frac{1}{2π} \\\\int_{-∞}^∞ e^{-itx} \\\\phi_T(t) dt\\\\)\", \"explanation\": \"We use the inverse Fourier transform formula to get the PDF of T\"} ],",
+    "finalAnswer": "T ~ Exp(2λ)\" },",
+    "intuition": "The key insight is that we can break down complex distributions into simpler components and then combine them using convolution.",
+    "visualDescription": "A diagram showing the convolution process would be helpful to illustrate the steps.",
+    "commonMistakes": [
+      "Forgetting to normalize the PDF after convolution"
+    ],
+    "realWorldApplications": [
+      "Convolution is used in signal processing, image filtering, and audio processing."
+    ],
+    "tags": [
+      "convolution",
+      "independent RVs"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:34:17.574Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_functions_multiple_rv_013",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the sum, difference, or product of independent random variables (RVs).</p>",
+    "workedExample": "{",
+    "problemHtml": "Find the sum <i>Z = X + Y</i> where <i>X ∼ N(0, 1)</i> and <i>Y ∼ N(0, 2)</i>.",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Recognize that <i>Z</i> is a linear combination of independent normals.\", \"mathHtml\": \"\\[ Z = X + Y \\]\", \"explanation\": \"This allows us to apply the properties of normal distributions.\"}, {\"stepNumber\": 2, \"description\": \"Find the mean and variance of <i>Z</i>\", \"mathHtml\": \"\\[ E[Z] = E[X] + E[Y] = 0 + 0 = 0 \\]\\[ Var(Z) = Var(X) + Var(Y) = 1 + 2 = 3 \\]\", \"explanation\": \"The mean is the sum of means, and the variance is the sum of variances.\"}, {\"stepNumber\": 3, \"description\": \"Standardize <i>Z</i>\", \"mathHtml\": \"\\[ Z' = \\frac{Z - E[Z]}{\\sqrt{Var(Z)}} = \\frac{X + Y}{\\sqrt{3}} \\]\", \"explanation\": \"This puts the distribution of <i>Z</i> on a common scale.\"}, {\"stepNumber\": 4, \"description\": \"Verify that <i>Z'</i> ∼ N(0, 1)\", \"mathHtml\": \"\\[ Z' \\sim N(0, 1) \\]\", \"explanation\": \"The standardized variable has mean 0 and variance 1, characteristic of a standard normal distribution.\"}, {\"stepNumber\": 5, \"description\": \"Find the final answer\", \"mathHtml\": \"\", \"explanation\": \"We've successfully found the sum of independent normals.\"} ],",
+    "finalAnswer": "Z ∼ N(0, 3)\" },",
+    "intuition": "When working with functions of multiple RVs, it's essential to recognize whether they're linear combinations or not. This can greatly simplify the calculation and provide valuable insights.",
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:34:50.127Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_functions_multiple_rv_014",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "joint_distributions",
+    "topic": "functions_multiple_rv",
+    "title": "Functions of Multiple RVs: Sum, Difference, and Product",
+    "contentHtml": "<p>In this worked example, we'll explore how to find the sum, difference, or product of multiple independent random variables (RVs).</p>",
+    "problem": {
+      "statementHtml": "<p>Suppose we have two independent RVs X and Y with distributions P(X) = N(0, 1) and P(Y) = N(0, 2). Find the distribution of Z = X + Y.</p>",
+      "hints": [
+        "Hint: Use the convolution formula",
+        "Hint: Recall the properties of normal distributions"
+      ],
+      "solutionHtml": "<p>To find the distribution of Z, we'll use the convolution formula:</p><ul><li>We convolve the two distributions P(X) and P(Y) to get P(Z).</li></ul>"
+    },
+    "workedExample": {
+      "problemHtml": "<p>Find the distribution of W = X - Y.</p>",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Define the RVs",
+          "mathHtml": "\\[W = X - Y\\]",
+          "explanation": "We're defining a new RV W as the difference between X and Y."
+        },
+        {
+          "stepNumber": 2,
+          "description": "Find the distribution of X-Y",
+          "mathHtml": "\\[P(W) = P(X-Y) = \\int_{-\\infty}^{\\infty} P(X-Y|x)P(x) dx\\]",
+          "explanation": "We're using the definition of a conditional probability to find the distribution of W."
+        },
+        {
+          "stepNumber": 3,
+          "description": "Simplify the expression",
+          "mathHtml": "\\[P(W) = \\int_{-\\infty}^{\\infty} P(X-Y|x)P(x) dx = \\int_{-\\infty}^{\\infty} N(0, 1) * N(0, 2) dx\\]",
+          "explanation": "We're simplifying the expression by recognizing that X and Y are independent."
+        },
+        {
+          "stepNumber": 4,
+          "description": "Find the distribution of W",
+          "mathHtml": "\\[P(W) = \\int_{-\\infty}^{\\infty} N(0, 1) * N(0, 2) dx = N(0, 3)\\]",
+          "explanation": "We're finding the final distribution of W by convolving the two normal distributions."
+        }
+      ],
+      "finalAnswer": "The distribution of W is N(0, 3)"
+    },
+    "intuition": "When dealing with multiple independent RVs, we can find the distribution of a new RV by convolving the individual distributions.",
+    "estimatedMinutes": 2,
+    "difficulty": 3,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-27T01:35:27.204Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

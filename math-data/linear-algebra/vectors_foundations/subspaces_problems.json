@@ -1,0 +1,87 @@
+[
+  {
+    "id": "la_prb_subspaces_006",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "problem": {
+      "statementHtml": "<p>Let V be a vector space and S ⊆ V. Prove that S is a subspace if and only if:</p><ul><li>S is closed under addition (i.e., for any u, v ∈ S, u + v ∈ S)</li><li>S is closed under scalar multiplication (i.e., for any u ∈ S and any scalar c, cu ∈ S)</li></ul>",
+      "hints": [
+        "<p>If S is a subspace, then it must be closed under addition.</p>",
+        "<p>Conversely, if S is not closed under addition, then it cannot be a subspace.</p>",
+        "<p>Use the definition of scalar multiplication to prove that S is closed under scalar multiplication.</p>"
+      ],
+      "solutionHtml": "<p>To prove the 'only if' direction, assume that S is a subspace. We need to show that S is closed under addition and scalar multiplication.</p><p>Closed under addition: Let u, v ∈ S. Then, since S is a subspace, u + v ∈ V. Since S is closed under addition, u + v ∈ S.</p><p>Closed under scalar multiplication: Let u ∈ S and c be any scalar. Then, cu ∈ V (since V is a vector space). Since S is closed under scalar multiplication, cu ∈ S.</p>",
+      "answerShort": "S is a subspace if and only if it is closed under addition and scalar multiplication."
+    },
+    "commonMistakes": [
+      "Failing to consider the 'only if' direction",
+      "Assuming that S being a subspace implies it is always non-trivial"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:37:03.028Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_subspaces_007",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "problem": "{",
+    "statementHtml": "<p>Find the subspace <i>S</i> of \\(\\mathbb{R}^3\\) spanned by vectors \\(\\mathbf{v}_1 = (1, 2, 0)\\) and \\(\\mathbf{v}_2 = (0, 1, 3)\\).</p>\",",
+    "hints": [
+      "<p>Start by writing the given vectors as a matrix.</p>",
+      "<p>Use the subspace test to determine if the spanned space is indeed a subspace.</p>",
+      "<p>Check that the zero vector is not in the span.</p>"
+    ],
+    "solutionHtml": "<p>To find the subspace <i>S</i>, first write the given vectors as a matrix:</p>\\n<p>\\[\\begin{bmatrix}1 & 0\\\\2 & 1\\\\0 & 3\\end{bmatrix}\\]</p>\\n<p>Next, use the subspace test to determine if the spanned space is indeed a subspace. Since the only possible linear combination of \\(\\mathbf{v}_1\\) and \\(\\mathbf{v}_2\\) that equals the zero vector is \\((0, 0, 0)\\), we can conclude that <i>S</i> is a subspace.</p>\\n<p>Finally, check that the zero vector is not in the span:</p>\\n<p>\\[\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}\\] is not a linear combination of \\(\\mathbf{v}_1\\) and \\(\\mathbf{v}_2\\), so <i>S</i> is indeed a subspace.</p>\",",
+    "answerShort": "<i>S</i> = Span{\\(\\mathbf{v}_1, \\mathbf{v}_2\\)}\" },",
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:37:28.024Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_subspaces_008",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "vectors_foundations",
+    "topic": "subspaces",
+    "problem": {
+      "statementHtml": "<p>Let V be a vector space over R and let W ⊆ V. Prove that W is a subspace if and only if:</p><ul><li>W is closed under addition.</li><li>W is closed under scalar multiplication.</li></ul>",
+      "hints": [
+        "Start by assuming W is a subspace.",
+        "Use the definition of a subspace to prove that W is closed under addition.",
+        "Now, use the fact that W is closed under addition and scalar multiplication to show that W is indeed a subspace."
+      ],
+      "solutionHtml": "<p>To prove that W is a subspace, we need to show that it satisfies two conditions: closure under addition and closure under scalar multiplication.</p><ol><li>Closure under addition:</li><ul><li>Let u, v ∈ W. Then, since W is closed under addition, u + v ∈ W.</li></ul><li>Closure under scalar multiplication:</li><ul><li>Let c ∈ R and u ∈ W. Then, since W is closed under scalar multiplication, cu ∈ W.</li></ul>",
+      "answerShort": "W is a subspace if it is closed under addition and scalar multiplication."
+    },
+    "commonMistakes": [
+      "Forgetting that the zero vector must be in W.",
+      "Assuming that W being a subspace implies it contains all vectors in V."
+    ],
+    "difficulty": 2,
+    "mlRelevance": "important",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T09:37:46.517Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

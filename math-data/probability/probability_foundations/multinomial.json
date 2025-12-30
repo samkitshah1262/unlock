@@ -1,0 +1,362 @@
+[
+  {
+    "id": "prob_con_multinomial_001",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients: Partitioning Objects",
+    "contentHtml": "<p>When dealing with multiple categories or outcomes, it's essential to understand how to partition objects and calculate the corresponding probabilities. This concept is crucial in probability theory and has numerous applications in machine learning and artificial intelligence.</p><p>The multinomial coefficient represents the number of ways to arrange objects into distinct categories. It's a fundamental idea that helps us count the possible outcomes when dealing with multiple events or features.</p>",
+    "formula": {
+      "latex": "\\binom{n+k-1}{k} = \\frac{(n+k-1)!}{(k)!(n-1)!}",
+      "name": "Multinomial Coefficient",
+      "variants": []
+    },
+    "intuition": "Think of it like arranging objects into labeled bins. The multinomial coefficient tells us how many ways we can distribute the objects across these bins.",
+    "realWorldApplications": [
+      "In natural language processing, multinomial coefficients are used to model the probability distribution of words in a document."
+    ],
+    "tags": [
+      "probability",
+      "combinatorics"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:49:04.696Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multinomial_002",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients: Partitioning Objects",
+    "contentHtml": "<p>In probability theory, multinomial coefficients are used to count the number of ways to partition objects into distinct categories.</p><p>Given a set of <i>n</i> objects and <i>k</i> categories, we can calculate the number of ways to assign each object to exactly one category using multinomial coefficients.</p>",
+    "formula": {
+      "latex": "\\binom{n+k-1}{k-1}",
+      "name": "Multinomial Coefficient",
+      "variants": [
+        {
+          "latex": "\\frac{(n+k-1)!}{(k-1)!(n-1)!}",
+          "description": "Factorial representation"
+        }
+      ]
+    },
+    "intuition": "Think of it like counting the number of ways to distribute <i>n</i> distinct objects into <i>k</i> labeled boxes. The multinomial coefficient gives us the number of possible assignments.",
+    "realWorldApplications": [
+      "In machine learning, multinomial coefficients are used in topic modeling and document clustering."
+    ],
+    "commonMistakes": [
+      "Don't confuse this with binomial coefficients, which count the number of ways to choose items from two categories."
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:49:23.442Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_con_multinomial_003",
+    "subject": "probability",
+    "type": "concept",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients: Partitioning Objects",
+    "contentHtml": "<p>In probability theory, multinomial coefficients arise when partitioning a set of objects into distinct categories or classes.</p><p>Given a finite set of objects and a partitioning scheme, the multinomial coefficient counts the number of ways to distribute these objects among the categories while respecting the partitioning constraints.</p>",
+    "formula": {
+      "latex": "\\binom{n}{k_1,k_2,...,k_m} = \\frac{n!}{k_1! k_2! ... k_m!}",
+      "name": "Multinomial Coefficient",
+      "variants": []
+    },
+    "intuition": "Think of it like organizing a set of colored balls into different bins. The multinomial coefficient tells you how many ways you can do this, given the number of balls and bins.",
+    "realWorldApplications": [
+      "In natural language processing, multinomial coefficients are used in topic modeling to partition documents into topics"
+    ],
+    "commonMistakes": [
+      "Don't confuse multinomial coefficients with binomial coefficients; they have different meanings and applications"
+    ],
+    "estimatedMinutes": 2,
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:49:41.121Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multinomial_004",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients",
+    "contentHtml": "<p>The multinomial coefficient is a fundamental concept in probability theory that helps us count the number of ways to partition objects into distinct categories.</p>",
+    "formula": "{",
+    "latex": "\\[ {n \\choose k_1, k_2, ..., k_m} = \\frac{n!}{k_1! \\cdot k_2! \\cdots k_m!} \\]\" },",
+    "intuition": "Think of it like counting the number of ways to distribute a set of objects into different bins. The multinomial coefficient gives us the total count, taking into account the order in which we place each object.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:49:54.512Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multinomial_005",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients",
+    "contentHtml": "<p>The multinomial coefficient is a fundamental concept in probability theory that helps us count the number of ways to partition objects into distinct categories.</p>",
+    "formula": "{",
+    "latex": "\\[ {n \\choose k_1, k_2, ..., k_m} = \\frac{n!}{k_1! k_2! ... k_m!} \\]\",",
+    "name": "Multinomial Coefficient",
+    "variants": "[] },",
+    "intuition": "<p>Think of it like this: you have n objects and you want to put them into m categories. The multinomial coefficient gives us the number of ways we can do this, taking into account the number of objects in each category.</p>",
+    "visualDescription": "",
+    "commonMistakes": [
+      "Forgetting that k_i! is included in the denominator"
+    ],
+    "realWorldApplications": [
+      "In natural language processing, multinomial coefficients are used to model the probability distribution of words in a document."
+    ],
+    "tags": [
+      "probability",
+      "combinatorics"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:50:11.527Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_for_multinomial_006",
+    "subject": "probability",
+    "type": "formula",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients",
+    "contentHtml": "<p>When counting the number of ways to partition objects into distinct categories, we often encounter multinomial coefficients.</p>",
+    "formula": "{",
+    "latex": "\\[ {n \\choose k_1, k_2, ..., k_m} = \\frac{n!}{k_1! \\cdot k_2! \\cdots k_m!} \\]\" },",
+    "intuition": "Multinomial coefficients help us count the number of ways to distribute objects into distinct categories. This is useful in many real-world applications, such as counting the number of possible outcomes in a multi-choice question.",
+    "realWorldApplications": [
+      "Counting possible permutations in natural language processing"
+    ],
+    "tags": [
+      "probability",
+      "combinatorics"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:50:25.693Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multinomial_007",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of objects with k types and n total objects, find the number of ways to partition them into groups of sizes m1, m2, ..., mk.</p>",
+    "hints": [
+      "<p>Think about the order in which you can place the object types.</p>",
+      "<p>Use the multinomial coefficient formula to count the number of ways.</p>",
+      "<p>Consider a specific example with k = 3 and n = 6.</p>"
+    ],
+    "solutionHtml": "<p>To partition the objects, we need to decide which type each object belongs to. There are mk choices for the first object, mk-1 for the second, ..., and 1 choice for the last object. By the multinomial theorem,\\[ \\frac{n!}{m1! m2! ... mk!} = \\sum_{\\sigma} \\text{sgn}(\\sigma) \\prod_{i=1}^{k} {m_i \\choose \\sigma(i)}.\\]The sum is over all permutations σ of the k types. The term sgn(σ) accounts for the fact that some permutations are equivalent due to reordering.</p>\",",
+    "answerShort": "\\[\\frac{n!}{m1! m2! ... mk!}\\]\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:50:47.900Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multinomial_008",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of objects and a partitioning scheme, find the number of ways to arrange these objects according to the multinomial theorem.</p>",
+    "hints": [
+      "Consider the number of ways to choose each object's position in the partition.",
+      "Think about the order in which you place the objects.",
+      "Use the concept of permutations and combinations."
+    ],
+    "solutionHtml": "<p>To solve this problem, we can use the multinomial theorem. Let's denote the number of objects as $n$ and the number of partitions as $k$. We want to find the number of ways to arrange these objects in the given partitioning scheme.</p><p>We can use the formula:</p>\\[\\binom{n+k-1}{k-1} = \\frac{(n+k-1)!}{(k-1)!(n-1)!}\\] <p>This formula represents the number of ways to arrange $n$ objects in $k$ partitions.</p>\",",
+    "answerShort": "The answer is given by the multinomial coefficient.\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:51:05.917Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_prb_multinomial_009",
+    "subject": "probability",
+    "type": "problem",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of <i>n</i> distinct objects and a partitioning into <i>k</i> non-empty sets, find the number of ways to arrange these objects such that each set contains exactly one object.</p>",
+    "hints": [
+      "Start by considering a single set. How many arrangements are possible within this set?",
+      "Think about how you can combine multiple sets to get the total number of arrangements.",
+      "Use the concept of multinomial coefficients to solve the problem."
+    ],
+    "solutionHtml": "<p>To find the number of ways to arrange the objects, we use the multinomial coefficient formula:</p>\\(\\binom{n}{k} = \\frac{n!}{k_1!k_2!\\cdots k_m!}\\)<p>where <i>n</i> is the total number of objects, and <i>k_i</i> are the sizes of each set.</p>\",",
+    "answerShort": "The answer is \\(\\binom{n}{k}\\)\" },",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:51:23.728Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multinomial_010",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients: A Step-by-Step Guide",
+    "contentHtml": "<p>In probability theory, multinomial coefficients are used to partition objects into different categories.</p>",
+    "formula": "{",
+    "latex": "\\\\[ {n \\choose k_1, k_2, ..., k_m} = \\\\frac{n!}{k_1! k_2! ... k_m!} \\\\]\",",
+    "name": "Multinomial Coefficient\" },",
+    "problem": "{",
+    "statementHtml": "<p>Find the multinomial coefficient for 5 objects partitioned into 3 categories: 2 objects in category A, 2 objects in category B, and 1 object in category C.</p>",
+    "hints": [
+      "Hint: Use the formula above"
+    ],
+    "solutionHtml": "<p>To solve this problem, we'll use the multinomial coefficient formula:</p><ul><li>First, identify the number of objects (n) and the categories (k_1, k_2, ..., k_m): n = 5, k_1 = 2, k_2 = 2, k_3 = 1</li><li>Next, calculate each factor in the formula:</li><ul><li>n! = 5!</li><li>k_1! = 2!</li><li>k_2! = 2!</li><li>k_3! = 1!</li></ul><li>Finally, divide the product of these factors by the product of each category's factorial:</li><p>\\\\( {5 \\choose 2, 2, 1} = \\\\frac{5!}{2! 2! 1!} \\\\)</p>\",",
+    "answerShort": "10\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Find the multinomial coefficient for 8 objects partitioned into 4 categories: 3 objects in category A, 2 objects in category B, 2 objects in category C, and 1 object in category D.</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Identify the number of objects (n) and the categories (k_1, k_2, ..., k_m):\", \"mathHtml\": \"\\\\( n = 8 \\\\)\", \"explanation\": \"This is the starting point for our calculation.\" }, {\"stepNumber\": 2, \"description\": \"Calculate each factor in the formula:\", \"mathHtml\": \"\\\\( n! = 8!, k_1! = 3!, k_2! = 2!, k_3! = 2!, k_4! = 1! \\\\)\", \"explanation\": \"We're breaking down the number of objects and each category's size into their factorial forms.\" }, {\"stepNumber\": 3, \"description\": \"Divide the product of these factors by the product of each category's factorial:\", \"mathHtml\": \"\\\\( {8 \\choose 3, 2, 2, 1} = \\\\frac{8!}{3! 2! 2! 1!} \\\\)\", \"explanation\": \"This is where we apply the multinomial coefficient formula.\" }, {\"stepNumber\": 4, \"description\": \"Simplify and calculate the final answer:\", \"mathHtml\": \"\\\\( {8 \\choose 3, 2, 2, 1} = 56 \\\\)\", \"explanation\": \"The calculation involves dividing the product of the factorials by the product of each category's factorial.\" } ],",
+    "finalAnswer": "56\" },",
+    "intuition": "Multinomial coefficients help us count the number of ways to partition objects into different categories.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:52:10.855Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multinomial_011",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients: Partitioning Objects",
+    "problem": "{",
+    "statementHtml": "Find the number of ways to partition <i>n</i> objects into <i>k</i> distinct categories.",
+    "hints": [
+      "Think about permutations and combinations"
+    ],
+    "solutionHtml": "<p>Solution:</p><ul><li>We can treat this as a permutation problem, where we have <i>n</i> objects and <i>k</i> categories.</li><li>The number of ways to partition the objects is then given by the multinomial coefficient: \\(\\binom{n+k-1}{k-1}\\).</li></ul>\",",
+    "answerShort": "The answer is \\(\\binom{n+k-1}{k-1}\\)\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have <i>5</i> books and want to categorize them into <i>3</i> genres (fiction, non-fiction, and biography).</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Choose the first book's genre\", \"mathHtml\": \"\\(\\binom{2}{1}\\)\", \"explanation\": \"We have two options for the first book's genre.\"}, {\"stepNumber\": 2, \"description\": \"Choose the second book's genre\", \"mathHtml\": \"\\(\\binom{1}{1}\\)\", \"explanation\": \"Now we only have one option left for each of the remaining books.\"}, {\"stepNumber\": 3, \"description\": \"Continue this process until all books are categorized\", \"mathHtml\": \"\", \"explanation\": \"The total number of ways to partition the books is then given by the product of the multinomial coefficients at each step.\"} ],",
+    "finalAnswer": "\\(\\binom{5+3-1}{3-1} = \\binom{7}{2}\\)\" },",
+    "intuition": "The key insight here is that we can treat this problem as a recursive permutation problem, where we have <i>n</i> objects and <i>k</i> categories.",
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:52:40.158Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "prob_wex_multinomial_012",
+    "subject": "probability",
+    "type": "worked_example",
+    "chapter": "probability_foundations",
+    "topic": "multinomial",
+    "title": "Multinomial Coefficients",
+    "contentHtml": "<p>In probability theory, multinomial coefficients are used to partition objects into multiple categories.</p>",
+    "formula": "{",
+    "latex": "\\\\[ {n \\choose k_1, k_2, ..., k_m} = \\\\frac{n!}{k_1! k_2! ... k_m!} \\\\]\",",
+    "name": "Multinomial Coefficient",
+    "variants": "[] },",
+    "problem": "{",
+    "statementHtml": "<p>Find the number of ways to partition 5 objects into 3 categories: A, B, and C.</p>",
+    "hints": [],
+    "solutionHtml": "",
+    "answerShort": "\" },",
+    "workedExample": "{",
+    "problemHtml": "<p>Suppose we have 10 balls, 4 red, 3 blue, and 3 green. How many ways can we partition these balls into categories R, B, and G?</p>",
+    "steps": "[ {\"stepNumber\": 1, \"description\": \"Count the total number of objects\", \"mathHtml\": \"\\\\[ n = 10 \\\\]\", \"explanation\": \"We need to count the total number of objects.\" }, {\"stepNumber\": 2, \"description\": \"Determine the number of objects in each category\", \"mathHtml\": \"\\\\[ k_1 = 4, k_2 = 3, k_3 = 3 \\\\]\", \"explanation\": \"We know the number of red, blue, and green balls.\" }, {\"stepNumber\": 3, \"description\": \"Calculate the multinomial coefficient\", \"mathHtml\": \"\\\\[ {10 \\choose 4, 3, 3} = \\\\frac{10!}{4! 3! 3!} \\\\]\", \"explanation\": \"We use the formula for the multinomial coefficient.\" }, {\"stepNumber\": 4, \"description\": \"Evaluate the expression\", \"mathHtml\": \"\\\\[ {10 \\choose 4, 3, 3} = 210 \\\\]\", \"explanation\": \"We simplify the expression to find the answer.\" } ],",
+    "finalAnswer": "The number of ways is 210.\" },",
+    "intuition": "",
+    "visualDescription": "",
+    "commonMistakes": [],
+    "realWorldApplications": [
+      "In machine learning, multinomial coefficients are used in topic modeling and text classification"
+    ],
+    "tags": [
+      "probability",
+      "combinatorics"
+    ],
+    "difficulty": 2,
+    "mlRelevance": "useful",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T21:53:13.175Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

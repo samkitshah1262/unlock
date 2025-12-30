@@ -1,0 +1,164 @@
+[
+  {
+    "id": "stat_prb_model_evaluation_008",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "title": "Model Evaluation Metrics",
+    "problem": "{",
+    "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, AUC-ROC, and calibration metrics.</p>",
+    "hints": [
+      "Start by calculating the true positives (TP) and false positives (FP).",
+      "Use these values to calculate precision.",
+      "Recall is related to precision, but consider a different scenario."
+    ],
+    "solutionHtml": "<p>Let's say we have a model that predicts whether a customer will churn or not. We have the following data:</p><ul><li>TP: 80 (correctly predicted churn)</li><li>FP: 20 (incorrectly predicted no churn)</li></ul><p>We can calculate accuracy as:</p>\\(\\frac{\\text{TP} + \\text{TN}}{\\text{TP} + \\text{FP} + \\text{TN} + \\text{FN}}\\)<p>where TN and FN are the number of true negatives and false negatives, respectively.</p><p>Next, we can calculate precision as:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FP}}\\)<p>Recall is then calculated as:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FN}}\\)<p>F1 score is the harmonic mean of precision and recall.</p><p>AUC-ROC measures the model's ability to distinguish between classes. Calibration measures how well the model's predictions align with the true labels.</p>\",",
+    "answerShort": "The answer\" },",
+    "commonMistakes": [
+      "Forgetting to consider TN and FN",
+      "Not understanding the difference between precision and recall"
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:25.118Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_009",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, and F1-score.</p>",
+      "hints": [
+        "Start by calculating true positives (TP) and false negatives (FN).",
+        "Use these values to compute precision.",
+        "Recall is the ratio of TP to the sum of TP and FN."
+      ],
+      "solutionHtml": "<p>To calculate accuracy, count the number of correct predictions out of total predictions.</p><p>For precision, divide TP by the sum of TP and FP (false positives).</p><p>Recall is already calculated in Hint 2. F1-score is the harmonic mean of precision and recall.</p>",
+      "answerShort": "Accuracy: ..., Precision: ..., Recall: ..., F1-score: ..."
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:36.852Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_010",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": "{",
+    "statementHtml": "<p>Evaluate the performance of a binary classification model using accuracy and precision.</p>",
+    "hints": [
+      "<p>Start by calculating the number of true positives (TP) and false positives (FP).</p>",
+      "<p>Then, use these values to calculate accuracy and precision.</p>",
+      "<p>Don't forget to consider the denominator for both metrics!</p>"
+    ],
+    "solutionHtml": "<p>To calculate accuracy, divide the sum of TP and true negatives (TN) by the total number of samples:</p>\\(\\frac{\\text{TP} + \\text{TN}}{\\text{Total Samples}}\\)<p>For precision, divide TP by the sum of TP and FP:</p>\\(\\frac{\\text{TP}}{\\text{TP} + \\text{FP}}\\)<p>Finally, plug in your values to get the desired metrics.</p>\",",
+    "answerShort": "Accuracy: 0.8, Precision: 0.9\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:10:52.957Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_011",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, and AUC-ROC.</p>",
+      "hints": [
+        "Start by calculating the true positives (TP) and false negatives (FN).",
+        "Use these values to compute precision and recall.",
+        "For F1 score, consider the harmonic mean of precision and recall."
+      ],
+      "solutionHtml": "<p>Solution:</p><ul><li>Calculate TP = 10, FN = 5.</li><li>Compute precision as TP / (TP + FP) = 0.833.</li><li>Calculate recall as TP / (TP + FN) = 0.667.</li><li>F1 score: harmonic mean of precision and recall = 0.75.</li></ul>",
+      "answerShort": "F1 score: 0.75"
+    },
+    "commonMistakes": [
+      "Forgetting to consider the class imbalance in the dataset.",
+      "Not normalizing the data before training the model."
+    ],
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:07.381Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_012",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": "{",
+    "statementHtml": "Evaluate a binary classification model using accuracy, precision, recall, F1 score, and AUC-ROC. Given a test set with 1000 samples, calculate these metrics for a model that correctly classifies 850 samples.",
+    "hints": [
+      "Start by calculating the number of true positives (TP) and false positives (FP).",
+      "Use the TP and FP values to compute precision.",
+      "Recall is the ratio of TP to the sum of TP and FN."
+    ],
+    "solutionHtml": "To calculate accuracy, we need the number of true negatives (TN) and false negatives (FN), which can be found by subtracting TP and FP from the total test set size. Accuracy is then calculated as (TP + TN) / 1000.\\n\\nFor precision, we divide TP by (TP + FP). For recall, we divide TP by (TP + FN).\\n\\nF1 score is the harmonic mean of precision and recall. AUC-ROC is calculated using the true positive rate and false positive rate at different thresholds.\\n\\nHere are the calculations:\\nAccuracy: (850) / 1000 = 0.85\\nPrecision: TP / (TP + FP) = 850 / 150 = 0.567\\nRecall: TP / (TP + FN) = 850 / 900 = 0.944\\nF1 score: sqrt(2 \\* precision \\* recall) / (precision + recall) = 0.75\\nAUC-ROC: calculated using the true positive rate and false positive rate at different thresholds.\",",
+    "answerShort": "Accuracy: 0.85, Precision: 0.567, Recall: 0.944, F1 score: 0.75, AUC-ROC: [calculated value]\" },",
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:30.522Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "stat_prb_model_evaluation_013",
+    "subject": "statistics",
+    "type": "problem",
+    "chapter": "ml_statistics",
+    "topic": "model_evaluation",
+    "problem": {
+      "statementHtml": "<p>Evaluate a binary classification model using accuracy, precision, recall, F1 score, AUC-ROC, and calibration metrics.</p>",
+      "hints": [
+        "<p>Start by calculating the number of true positives (TP) and false negatives (FN).</p>",
+        "<p>Use these values to compute precision as TP/(TP+FP), where FP is the number of false positives.</p>",
+        "<p>Recall is then calculated as TP/(TP+FN). F1 score is the harmonic mean of precision and recall.</p>"
+      ],
+      "solutionHtml": "<p>Solution goes here...</p>",
+      "answerShort": "Answer: ... (to be filled in)"
+    },
+    "difficulty": 3,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-28T00:11:41.589Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]

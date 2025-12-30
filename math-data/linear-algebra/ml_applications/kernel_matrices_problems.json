@@ -1,0 +1,79 @@
+[
+  {
+    "id": "la_prb_kernel_matrices_009",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "kernel_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Given a dataset X and a kernel function k(x, y), construct the Gram matrix K.</p>",
+    "hints": [
+      "Think about how you would compute the dot product of two vectors.",
+      "Recall that the kernel trick is used to transform non-linearly separable data into a higher-dimensional space where it becomes linearly separable.",
+      "The Gram matrix K is symmetric and positive semi-definite."
+    ],
+    "solutionHtml": "<p>To construct the Gram matrix K, we compute the dot product of each pair of vectors in X using the kernel function k(x, y):</p>\\n\\ \\[K_{ij} = k(X_i, X_j)\\]\\n\\ <p>This results in a symmetric and positive semi-definite matrix K.</p>\",",
+    "answerShort": "The Gram matrix K is constructed by computing the dot product of each pair of vectors using the kernel function.\" },",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:34:43.930Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_kernel_matrices_010",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "kernel_matrices",
+    "problem": "{",
+    "statementHtml": "Given a set of training data points \\(\\mathbf{x}_1, ..., \\mathbf{x}_n\\), and a kernel function \\(k:\\mathcal{X}\\times\\mathcal{X} \\to \\mathbb{R}\\), construct the Gram matrix \\(\\mathbf{K}\\) as \\(\\mathbf{K}_{ij} = k(\\mathbf{x}_i, \\mathbf{x}_j)\\).\",",
+    "hints": [
+      "Think about how you would compute the dot product between two data points.",
+      "The kernel function is used to transform the input space into a higher-dimensional feature space.",
+      "The Gram matrix is symmetric and positive semi-definite."
+    ],
+    "solutionHtml": "To construct the Gram matrix, we iterate through each pair of training data points \\((\\mathbf{x}_i, \\mathbf{x}_j)\\) and compute the kernel function value \\(k(\\mathbf{x}_i, \\mathbf{x}_j)\\). This gives us a symmetric matrix \\(\\mathbf{K}\\) with entries \\(\\mathbf{K}_{ij} = k(\\mathbf{x}_i, \\mathbf{x}_j)\\).\\r\\n\\r\\nThe resulting Gram matrix is positive semi-definite because the kernel function is positive definite.\",",
+    "answerShort": "The Gram matrix is constructed by computing the kernel function values between each pair of training data points.\" },",
+    "commonMistakes": [
+      "Forgetting to make sure the kernel function is positive definite."
+    ],
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:35:05.535Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  },
+  {
+    "id": "la_prb_kernel_matrices_011",
+    "subject": "linear_algebra",
+    "type": "problem",
+    "chapter": "ml_applications",
+    "topic": "kernel_matrices",
+    "problem": "{",
+    "statementHtml": "<p>Given a set of training data points <code>\\{x_1, x_2, ..., x_n\\}</code>, construct a positive semi-definite kernel matrix <code>K</code> using the Gaussian radial basis function (RBF) kernel.</p>\",",
+    "hints": [
+      "Consider the similarity between two points <code>x_i</code> and <code>x_j</code> in terms of their Euclidean distance.",
+      "The RBF kernel is a popular choice for many machine learning algorithms, including support vector machines (SVMs) and Gaussian processes.",
+      "You can start by computing the pairwise distances between all data points."
+    ],
+    "solutionHtml": "<p>To construct the kernel matrix <code>K</code>, we need to compute the similarity between each pair of training data points. For the RBF kernel, this similarity is given by:</p>\\n\\(k(x_i, x_j) = \\exp\\left(-\\frac{\\|x_i - x_j\\|^2}{2\\sigma^2}\\right)\\)\\n<p>where <code>\\sigma</code> is a hyperparameter that controls the width of the Gaussian function.</p>\\n<p>We can then construct the kernel matrix <code>K</code> by computing the similarity between each pair of data points:</p>\\n\\[K_{ij} = k(x_i, x_j) = \\exp\\left(-\\frac{\\|x_i - x_j\\|^2}{2\\sigma^2}\\right)\\]\\n<p>The resulting kernel matrix <code>K</code> is positive semi-definite, which is essential for many machine learning algorithms.</p>\",",
+    "difficulty": 4,
+    "mlRelevance": "core",
+    "prerequisites": [],
+    "relatedCards": [],
+    "nextCards": [],
+    "generatedAt": "2025-12-26T14:35:29.107Z",
+    "generatedBy": "llama3:latest",
+    "reviewed": false,
+    "version": 1
+  }
+]
