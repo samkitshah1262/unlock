@@ -21,5 +21,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2140/problem/C"
+  "url": "https://codeforces.com/contest/2140/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Note that if Bob chooses two indices $$$l,r$$$ on his turn, then Alice can also choose the same indices $$$l,r$$$ on her next turn and this will increase the value of $$$f(a)$$$ ultimately.</p><p>So, it remains optimal for Bob to end the game on his first turn.</p><p>Now there are two possibilities: Alice can end the game on her first turn, and Alice can choose two indices and Bob ends the game.</p><p>For the first case, finding $$$f(a)$$$ is trivial.</p><p>Thus, we are left to find the maximum value of $$$f(a)$$$ that Alice can attain on her first turn by choosing two indices. There are only two types of swaps between even index values and odd index values:</p><ul> <li> We swap even with even index or odd with odd index. In this case, only cost increases by absolute difference in index. </li><li> We swap even with odd or vice versa. In this case, the total change is $$$| i-j | + 2\\cdot(a_i-a_j)$$$ where $$$i \\bmod 2=0$$$ and $$$j \\bmod 2=1$$$. This can be solved by maintain prefix minimum over odd and even indexes. </li></ul><p>Time Complexity: $$$O(n)$$$</p></div></div></div></div>"
 }

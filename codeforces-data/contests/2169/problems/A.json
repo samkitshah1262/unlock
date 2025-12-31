@@ -20,5 +20,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2169/problem/A"
+  "url": "https://codeforces.com/contest/2169/problem/A",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>It is never optimal for Bob to choose $$$b = a$$$. So, either $$$b &lt; a$$$, or $$$b &gt; a$$$.</p><p>Among all possible $$$b &lt; a$$$, we can show that it is always correct to choose $$$b = a - 1$$$: for every integer $$$v_i &lt; a$$$, $$$a - 1$$$ will be closer to $$$v_i$$$ than $$$a$$$; and for every integer $$$v_i \\ge a$$$, $$$a$$$ will always be closer than any $$$b &lt; a$$$. So, if we use $$$b = a - 1$$$, the number of points Bob gets will be equal to the number of marbles having $$$v_i &lt; a$$$; and if we use any $$$b &lt; a - 1$$$, the answer won't become better.</p><p>Similarly, if $$$b &gt; a$$$, it is always optimal to choose $$$b = a + 1$$$, and the number of points will be equal to the number of marbles having $$$v_i &gt; a$$$.</p><p>So, it is enough to check only $$$b = a-1$$$ and $$$b = a+1$$$. For both of these values of $$$b$$$, the number of points Bob gets can be calculated easily.</p></div></div></div></div>"
 }

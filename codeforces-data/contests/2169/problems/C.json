@@ -22,5 +22,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2169/problem/C"
+  "url": "https://codeforces.com/contest/2169/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Let's define $$$S_i$$$ as the sum of the first $$$i$$$ elements in array $$$a$$$. When we perform an operation on the range $$$[l, r]$$$, the total sum changes by $$$(l + r)(r - l + 1) - (S_r - S_{l-1})$$$. This expression can be simplified to $$$f(r) - f(l-1)$$$, where $$$f(x) = x^2 + x - S_x$$$.</p><p>So, we can iterate through the values of $$$r$$$, keeping track of the minimum value of $$$f(l)$$$ we've encountered so far (let's call it $$$mn$$$). Then we can update the answer with $$$S_n + f(r) - mn$$$.</p><p>There is also another solution: if you replace every element on segment $$$[l, r]$$$ with $$$(l + r)$$$, the sum on the segment becomes equal to the $$$2l + 2(l+1) + \\dots + 2r$$$ (because $$$(l + r)(r - l + 1)$$$ can be treated as the sum of the arithmetic progression from $$$2l$$$ to $$$2r$$$ with step $$$2$$$). So, you can treat the operation as replacing $$$a_i$$$ with $$$2i$$$. </p><p>You can use this to form another array $$$b$$$, where $$$b_i = 2i - a_i$$$, and find the subsegment with maximum sum in it. And to solve this problem, you can use either Kadane's algorithm or prefix sums.</p></div></div></div></div>"
 }

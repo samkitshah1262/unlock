@@ -1,12 +1,13 @@
 // Codeforces Problem Card - iOS Glassmorphism Style with Full Content
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
   useWindowDimensions,
+  TouchableOpacity,
 } from 'react-native'
 import RenderHtml from 'react-native-render-html'
 import type { ProblemCard as ProblemCardType } from '../types/codeforces'
@@ -18,8 +19,10 @@ interface Props {
 
 export default function ProblemCard({ problem }: Props) {
   const { width } = useWindowDimensions()
+  const [showSolution, setShowSolution] = useState(false)
   const difficultyColor = getDifficultyColor(problem.rating)
   const difficultyLabel = getDifficultyLabel(problem.rating)
+  const hasTutorial = !!problem.tutorialHtml
 
   const htmlTagStyles = {
     p: {
@@ -169,6 +172,36 @@ export default function ProblemCard({ problem }: Props) {
               baseStyle={baseStyles}
               ignoredDomTags={['center', 'script', 'style', 'math']}
             />
+          </>
+        )}
+
+        {/* Tutorial/Solution Section */}
+        {hasTutorial && (
+          <>
+            <View style={styles.divider} />
+            <TouchableOpacity 
+              style={styles.solutionToggle}
+              onPress={() => setShowSolution(!showSolution)}
+            >
+              <Text style={styles.solutionToggleText}>
+                {showSolution ? 'Hide Solution' : 'Show Solution'}
+              </Text>
+              <Text style={styles.solutionToggleArrow}>
+                {showSolution ? '^' : 'v'}
+              </Text>
+            </TouchableOpacity>
+            
+            {showSolution && (
+              <View style={styles.solutionContent}>
+                <RenderHtml
+                  contentWidth={width - 80}
+                  source={{ html: problem.tutorialHtml! }}
+                  tagsStyles={htmlTagStyles}
+                  baseStyle={baseStyles}
+                  ignoredDomTags={['center', 'script', 'style', 'math', 'img']}
+                />
+              </View>
+            )}
           </>
         )}
 
@@ -331,5 +364,34 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#22D3EE',
     lineHeight: 20,
+  },
+  solutionToggle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(99, 102, 241, 0.15)',
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    marginVertical: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(99, 102, 241, 0.3)',
+  },
+  solutionToggleText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#818CF8',
+    marginRight: 8,
+  },
+  solutionToggleArrow: {
+    fontSize: 14,
+    color: '#818CF8',
+    fontWeight: '700',
+  },
+  solutionContent: {
+    marginTop: 16,
+    paddingTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(99, 102, 241, 0.2)',
   },
 })

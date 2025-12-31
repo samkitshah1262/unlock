@@ -21,5 +21,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2147/problem/H"
+  "url": "https://codeforces.com/contest/2147/problem/H",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Check if the answer is $$$1$$$ using Gomory-Hu tree to compute the maximum flow between all pairs of vertices. If not, it is always possible to use $$$2$$$ colors by partitioning the vertices into two induced subgraphs so that each vertex is incident to an even number of edges with odd capacities. This will satisfy the condition since all the cuts will be even (and, in particular, the minimum cut between any two vertices will have an even value). </p><p>In order to find the partition, first discard all the even edges. Find a vertex with odd degree, add an edge between each pair of its neighbors, remove the vertex, and recursively solve the problem for the remaining graph. Then add the vertex back and delete the additional edges; the edge can be colored in one of the two colors so that the parity condition remains satisfied.</p></div></div></div></div>"
 }

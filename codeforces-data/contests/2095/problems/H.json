@@ -23,5 +23,6 @@
   "images": [
     "images/H_1.png"
   ],
-  "url": "https://codeforces.com/contest/2095/problem/H"
+  "url": "https://codeforces.com/contest/2095/problem/H",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>The problem has an image with some words and asks you print them. However, the words are blurry. How can you read them?</p><p>You should first think about how the image must have been blurred in the first place. The answer is <a href=\"https://en.wikipedia.org/wiki/Gaussian_blur\">Gaussian Blur</a>, which is one of the most used methods of blurring. The important fact is, contrary to what people might assume, it is reversible! (This is why you should not simply blur important information before posting it online.)</p><p>One good method of reversing Gaussian Blur with possible noise is <a href=\"https://en.wikipedia.org/wiki/Wiener_deconvolution\">Wiener Deconvolution</a>. There are multiple implementations online that you can find (but I suggest using Python). However, just having the algorithm is not enough as you need to find the kernel size and the sigma value. Luckily, you do not necessarily need the exact values as the image gets clearer the closer you get and you do not need to perfectly reverse it to be able to read the words. You can also simply brute force the values and see which ones look the best. </p><p>Either way, the kernel size used to blur the image is $$$(25, 25)$$$ and the sigma value is $$$7$$$.</p></div></div></div></div>"
 }

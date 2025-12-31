@@ -20,5 +20,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2075/problem/B"
+  "url": "https://codeforces.com/contest/2075/problem/B",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Since the cost depends on the first $$$k$$$ painted elements and the last one, it cannot exceed the sum of $$$(k+1)$$$ maximum elements of the array. In fact, in most cases, you can get exactly that cost.</p><p>Let $$$k \\ge 2$$$ and the positions of the $$$(k+1)$$$ maxima are $$$p_1, p_2, \\dots, p_k, p_{k+1}$$$. In this case, you can initially color the elements $$$p_1, p_3, \\dots, p_k, p_{k + 1}$$$, then all except $$$p_2$$$, and then color the element $$$p_2$$$ last. So the cost is exactly the sum of $$$(k+1)$$$ maxima. This works because the element we want to color last is between two elements we choose initially.</p><p>However, if $$$k=1$$$, then whatever element we choose and how we color the remaining elements, the first or the last element of the array will be the last to be colored. Therefore, in this case, you can consider two options (and pick the one with the maximum cost): the element among the first $$$(n-1)$$$ positions is painted first, and the $$$n$$$-th element is painted last; or the element among the last $$$(n-1)$$$ positions is painted first, and the $$$1$$$-st element is painted last.</p></div></div></div></div>"
 }

@@ -21,5 +21,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2093/problem/E"
+  "url": "https://codeforces.com/contest/2093/problem/E",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>To solve the problem, we use binary search on the answer.</p><p>To do this, we need to learn how to check for a given $$$x$$$ whether there exists a partition that allows achieving an answer of at least $$$x$$$. To do this, we will collect the segments one by one, that is, first we will find the minimal valid first segment, then the second, and so on. Since the segments must be non-overlapping and must give the entire array in union, it means that in a correct partition there must exist a segment containing the first element; also, the MEX of this segment must be at least $$$x$$$, which means it needs to be increased until the MEX becomes greater than or equal to $$$x$$$. As soon as this happens, it makes no sense to further increase the segment, so we move on to the next element and begin to select the next segment.</p><p>To maintain MEX on a segment, we can use a counting array and a variable in which we store the current MEX. When a new number is added to the segment, we run a while loop, and while there is a number in the segment equal to the current MEX, we increase MEX by one. This works amortized in the number of elements in the segment, since MEX on the segment cannot be greater than the length of the segment.</p><p>Asymptotic of the solution: $$$O(n\\cdot log(n))$$$.</p></div></div></div></div>"
 }

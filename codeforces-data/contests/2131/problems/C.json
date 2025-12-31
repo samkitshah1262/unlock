@@ -20,5 +20,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2131/problem/C"
+  "url": "https://codeforces.com/contest/2131/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Key observation: </p><p>We can only change an element $$$x$$$ to $$$y$$$ if and only if $$$x\\equiv y \\pmod k$$$ or $$$x + y\\equiv 0 \\pmod k$$$.</p><p>Proof: </p><p>Step 1: If $$$x\\equiv y \\pmod k$$$, assume that $$$x &lt; y$$$, we can do the following operations: add $$$x$$$ to $$$k$$$ for $$$\\frac{y-x}{k}$$$ times. Vice versa.</p><p>Step 2: If $$$x + y\\equiv 0 \\pmod k$$$, we can make $$$x$$$ become $$$x\\bmod k$$$ with some operations, then make $$$x\\bmod k$$$ become $$$z=(k-x) \\% k$$$, and now we can see $$$z\\equiv y \\pmod k$$$, repeat the operations in step 1 to make $$$z$$$ to $$$y$$$.</p><p>So, for every element $$$x$$$ in multiset $$$S$$$ and $$$T$$$, we make it become as small as possible, which is equal to $$$min(x\\% k, (k - x \\% k) \\% k)$$$. Then check $$$S$$$ and $$$T$$$ if they are equal.</p></div></div></div></div>"
 }

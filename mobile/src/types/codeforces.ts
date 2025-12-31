@@ -22,6 +22,8 @@ export interface ProblemCard {
   outputSpecHtml: string
   noteHtml?: string
   samples: Sample[]
+  // Tutorial/Editorial (solution explanation)
+  tutorialHtml?: string
 }
 
 // Difficulty color mapping based on Codeforces rating

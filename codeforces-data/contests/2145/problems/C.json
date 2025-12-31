@@ -21,5 +21,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2145/problem/C"
+  "url": "https://codeforces.com/contest/2145/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Let's construct the following array from the given string: replace the letter 'a' with $$$1$$$ and the letter 'b' with $$$-1$$$. Then we can say that the number of letters 'a' and 'b' is the same if the sum of the array is equal to $$$0$$$.</p><p>Calculate the current sum of the array $$$s$$$. To make the sum equal to $$$0$$$, you have to remove a segment with sum $$$s$$$.</p><p>Thus, the problem reduces to finding the shortest segment with sum $$$s$$$. This classic problem can be solved using prefix sums. Iterate over the right border of the segment and for each of them find the shortest segment with sum $$$s$$$ that ends there. So, we need to find the largest $$$l$$$ such that $$$l \\le r$$$ and $$$\\mathit{pref}_{r+1} - \\mathit{pref}_l = s$$$. That is, $$$\\mathit{pref}_l = \\mathit{pref}_{r+1} - s$$$. If we go from left to right, we can maintain the largest position for each prefix sum value.</p><p>This can be stored in a structure like a map or in an array, if you notice that prefix sums can take values from $$$-n$$$ to $$$n$$$. So, we can allocate an array of size $$$2n + 1$$$ and record information about the prefix sum $$$x$$$ at position $$$x + n$$$ to avoid negative indices.</p><p>Overall complexity: $$$O(n)$$$ or $$$O(n \\log n)$$$ per test case.</p></div></div></div></div>"
 }

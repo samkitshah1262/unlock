@@ -21,5 +21,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2075/problem/C"
+  "url": "https://codeforces.com/contest/2075/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Consider a general form of a fence: the planks from $$$1$$$ to $$$k$$$ are painted in one color, and the planks from $$$k + 1$$$ to $$$n$$$ are painted in another color.</p><p>Let's iterate over the value of $$$k$$$. It is then easy to determine which colors are suitable for the first half and which are suitable for the second half. Any color with $$$a_i \\ge k$$$ will work for the first half, while for the second half, the colors must satisfy $$$a_i \\ge n - k$$$. If we sort the values of $$$a_i$$$ in non-decreasing order, we can find the number of available colors using binary search. In C++, we can use lower_bound, and in Python, we can use bisect.bisect_left.</p><p>Let there be $$$x$$$ candidates for the first half and $$$y$$$ candidates for the second half. We would like the number of ways to choose two colors to be equal to $$$x \\cdot y$$$. However, we have accidentally counted cases where we chose the same color for both halves of the fence. The number of such cases is $$$\\min(x, y)$$$, as that color must be sufficient for both halves. Therefore, the contribution of $$$k$$$ to the answer is $$$x \\cdot y - \\min(x, y)$$$.</p><p>Sum up the answers for all $$$k$$$ to obtain the final answer to the problem.</p><p>Overall complexity: $$$O((n + m) \\log m)$$$ for each test case.</p></div></div></div></div>"
 }

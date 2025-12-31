@@ -20,5 +20,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2093/problem/B"
+  "url": "https://codeforces.com/contest/2093/problem/B",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>We will prove that the minimum possible cost of the resulting number is always equal to $$$1$$$. Consider an arbitrary positive number $$$n = \\overline{a_1a_2\\ldots a_k}$$$, where $$$a_i$$$ are its digits in order. We evaluate the cost of this number as $$$cost(n) = \\frac{\\overline{a_1a_2\\ldots a_k}}{a_1+a_2+\\ldots+a_k} = \\frac{a_1 \\cdot 10^{k - 1} + a_2\\cdot 10^{k - 2} + \\ldots + a_k}{a_1+a_2+\\ldots+a_k} \\geq \\frac{a_1+a_2+\\ldots+a_k}{a_1+a_2+\\ldots+a_k} = 1$$$. We also note that if any of the digits $$$a_1, a_2, \\ldots, a_{k - 1}$$$ are not equal to zero, then the inequality will be strict. Thus, a cost of $$$1$$$ can always be achieved by leaving exactly one non-zero digit and several leading zeros before it.</p><p>Therefore, our task reduces to leaving some non-zero digit and as many leading zeros as possible before it. To do this, we will keep the rightmost non-zero digit in the number, all the zeros to its left, and remove the other digits.</p></div></div></div></div>"
 }

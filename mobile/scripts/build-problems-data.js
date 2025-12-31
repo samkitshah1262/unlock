@@ -128,7 +128,7 @@ async function buildProblemsData() {
       try {
         const problemData = JSON.parse(fs.readFileSync(problemPath, 'utf8'))
         
-        problems.push({
+        const problem = {
           id: `${contest.id}-${problemMeta.index}`,
           contestId: contest.id,
           index: problemMeta.index,
@@ -144,7 +144,14 @@ async function buildProblemsData() {
           outputSpecHtml: cleanHtml(problemData.outputSpecHtml),
           noteHtml: cleanHtml(problemData.noteHtml),
           samples: formatSamples(problemData.samples),
-        })
+        }
+        
+        // Add tutorial if available
+        if (problemData.tutorialHtml) {
+          problem.tutorialHtml = cleanHtml(problemData.tutorialHtml)
+        }
+        
+        problems.push(problem)
         
         processedCount++
       } catch (err) {

@@ -23,5 +23,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2074/problem/C"
+  "url": "https://codeforces.com/contest/2074/problem/C",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Let us interpret the triangle inequality in terms of bitmasking. Then, we get the following. (One is omitted as it is implied in the constraints.)</p><ul> <li> $$$x+y&gt;x \\oplus y$$$, $$$(x \\oplus y)+2(x \\,\\&amp;\\, y)&gt; x \\oplus y$$$, $$$x\\,\\&amp;\\,y&gt;0$$$; </li><li> $$$y+(x \\oplus y)&gt;x$$$, $$$y+(x + y) - 2(x\\,\\&amp;\\,y)&gt; x$$$, $$$y &gt; x\\,\\&amp;\\,y$$$. </li></ul><p>In other words, $$$y$$$ satisfies the following conditions.</p><ul> <li> $$$y$$$ contains at least one bit turned on in $$$x$$$; </li><li> $$$y$$$ contains at least one bit <span class=\"tex-font-style-bf\">not</span> turned on in $$$x$$$. </li></ul><p>The smallest values of $$$y$$$ that satisfy this have exactly two bits turned on; one in $$$x$$$ and one not in it. Therefore, if one such value exists, then a smallest one can be found in $$$\\mathcal{O}(\\log ^2 x)$$$ time by simply bruteforcing all integers with two bits turned on. If any one of them is less than $$$x$$$, then it satisfies all conditions.</p><p>The problem has been solved in $$$\\mathcal{O}(\\log ^2 x)$$$ per test case. While there exist ways to solve it in $$$\\mathcal{O}(\\log x)$$$ per test case, they were not required.</p></div></div></div></div>"
 }

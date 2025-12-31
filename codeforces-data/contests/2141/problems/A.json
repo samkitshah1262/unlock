@@ -20,5 +20,6 @@
     }
   ],
   "images": [],
-  "url": "https://codeforces.com/contest/2141/problem/A"
+  "url": "https://codeforces.com/contest/2141/problem/A",
+  "tutorialHtml": "<div><div class=\"ttypography\"><div class=\"problem-statement\"><div><p>Observe that if there exists a model $$$j$$$ such that $$$j &lt; i$$$ and $$$a_j &lt; a_i$$$, no one will order the $$$i$$$-th model. Therefore, to solve the problem, we can iterate through the array, maintaining the minimum value on the prefix. If the next element is less than the minimum, then this model will be ordered. Otherwise, it must be included in the answer.</p><p>There is a more beautiful way to solve this problem, though it was not required. You can form an array of minimums on all prefixes of the given array (to do this, the function <span class=\"tex-font-style-tt\">runningReduce</span> can help; it also allows to make an array of prefix sums or most other functions on prefix). Then, a model can be ordered if and only if it is the minimum on its prefix; you can use <span class=\"tex-font-style-tt\">filter</span> to find those which are not minimums on the corresponding prefixes.</p></div></div></div></div>"
 }
