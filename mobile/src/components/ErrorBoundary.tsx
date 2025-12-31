@@ -47,8 +47,7 @@ export default class ErrorBoundary extends Component<Props, State> {
       return (
         <SafeAreaView style={styles.container}>
           <View style={styles.content}>
-            <Text style={styles.emoji}>😵</Text>
-            <Text style={styles.title}>Oops! Something went wrong</Text>
+            <Text style={styles.title}>Something went wrong</Text>
             <Text style={styles.message}>
               We're sorry, but something unexpected happened.
             </Text>
@@ -84,10 +83,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
-  },
-  emoji: {
-    fontSize: 64,
-    marginBottom: 24,
   },
   title: {
     fontSize: 24,

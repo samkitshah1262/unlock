@@ -11,7 +11,6 @@ import {
 interface EmptyStateProps {
   title: string
   message: string
-  emoji?: string
   actionLabel?: string
   onAction?: () => void
 }
@@ -19,13 +18,11 @@ interface EmptyStateProps {
 export default function EmptyState({
   title,
   message,
-  emoji = '📭',
   actionLabel,
   onAction,
 }: EmptyStateProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.emoji}>{emoji}</Text>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.message}>{message}</Text>
       
@@ -42,7 +39,6 @@ export default function EmptyState({
 export function NoContentEmpty({ onShuffle }: { onShuffle: () => void }) {
   return (
     <EmptyState
-      emoji="🔍"
       title="No content found"
       message="We couldn't find any learning content. Try shuffling to discover something new!"
       actionLabel="Shuffle"
@@ -54,9 +50,8 @@ export function NoContentEmpty({ onShuffle }: { onShuffle: () => void }) {
 export function NoHistoryEmpty() {
   return (
     <EmptyState
-      emoji="🗺️"
       title="Your journey begins here"
-      message="Swipe left to explore related topics. Your learning path will appear here."
+      message="Swipe right to explore related topics. Your learning path will appear here."
     />
   )
 }
@@ -64,7 +59,6 @@ export function NoHistoryEmpty() {
 export function NoRelatedEmpty({ onShuffle }: { onShuffle: () => void }) {
   return (
     <EmptyState
-      emoji="🎯"
       title="End of the path"
       message="You've explored all connected topics! Try shuffling to discover something new."
       actionLabel="Shuffle"
@@ -76,7 +70,6 @@ export function NoRelatedEmpty({ onShuffle }: { onShuffle: () => void }) {
 export function OfflineEmpty({ onRetry }: { onRetry: () => void }) {
   return (
     <EmptyState
-      emoji="📡"
       title="You're offline"
       message="Check your internet connection and try again."
       actionLabel="Retry"
@@ -91,10 +84,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 32,
-  },
-  emoji: {
-    fontSize: 64,
-    marginBottom: 24,
   },
   title: {
     fontSize: 22,
@@ -123,4 +112,3 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 })
-

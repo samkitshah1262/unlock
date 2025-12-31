@@ -22,8 +22,9 @@ import AIPrimerCard from './src/components/AIPrimerCard'
 import GraphOverlay from './src/components/GraphOverlay'
 import { getRandomProblems } from './src/services/problems'
 import { fetchMathCards } from './src/services/math'
-import { loadAllCards as loadAIPrimers, loadGraph } from './src/services/ai-primers'
+import { loadAllCards as loadAIPrimers, loadGraph as loadLocalGraph } from './src/services/ai-primers'
 import { cacheContent, getCachedContent, cacheJourney } from './src/services/cache'
+import { fetchRandomCards, fetchGraph, hasContent as hasSupabaseContent } from './src/services/supabase-content'
 import type { ProblemCard as ProblemCardType } from './src/types/codeforces'
 import type { MathCard as MathCardType } from './src/types/math'
 import type { AIPrimerCard as AIPrimerCardType } from './src/types/ai-primers'
@@ -89,25 +90,43 @@ function AppContent() {
       // Try to load from cache first for instant display
       const cached = await getCachedContent()
       
-      let problems, mathCards, aiCards, graph
+      let problems: any[] = []
+      let mathCards: any[] = []
+      let aiCards: any[] = []
+      let graph: any = null
       
       if (cached) {
         // Use cached content for instant load
-        problems = cached.problems
-        mathCards = cached.mathCards
-        aiCards = cached.aiCards
+        problems = cached.problems || []
+        mathCards = cached.mathCards || []
+        aiCards = cached.aiCards || []
         graph = cached.graph
-      } else {
-        // Load fresh content
+      }
+      
+      // Check if Supabase has content (prefer remote)
+      const hasRemote = await hasSupabaseContent()
+      
+      if (hasRemote) {
+        // Fetch from Supabase
+        const remoteContent = await fetchRandomCards(200)
+        problems = remoteContent.problems
+        mathCards = remoteContent.mathCards
+        aiCards = remoteContent.aiCards
+        graph = await fetchGraph()
+        
+        // Cache for offline use
+        await cacheContent({ problems, mathCards, aiCards, graph })
+      } else if (!cached) {
+        // Fallback to bundled content if no cache and no Supabase
         const results = await Promise.all([
           Promise.resolve(getRandomProblems(100)),
           fetchMathCards(),
           loadAIPrimers(),
-          loadGraph()
+          loadLocalGraph()
         ])
-        problems = results[0]
-        mathCards = results[1]
-        aiCards = results[2]
+        problems = results[0] || []
+        mathCards = results[1] || []
+        aiCards = results[2] || []
         graph = results[3]
         
         // Cache for offline use
@@ -116,9 +135,9 @@ function AppContent() {
       
       // Convert to unified format (filter out any null/undefined)
       const allItems: ContentItem[] = [
-        ...(problems || []).filter((p: any) => p && p.id).map((p: any) => ({ type: 'codeforces' as const, data: p })),
-        ...(mathCards || []).filter((m: any) => m && m.id).map((m: any) => ({ type: 'math' as const, data: m })),
-        ...(aiCards || []).filter((a: any) => a && a.id).map((a: any) => ({ type: 'ai_primers' as const, data: a }))
+        ...problems.filter((p: any) => p && p.id).map((p: any) => ({ type: 'codeforces' as const, data: p })),
+        ...mathCards.filter((m: any) => m && m.id).map((m: any) => ({ type: 'math' as const, data: m })),
+        ...aiCards.filter((a: any) => a && a.id).map((a: any) => ({ type: 'ai_primers' as const, data: a }))
       ]
       
       // Shuffle
@@ -376,21 +395,21 @@ function AppContent() {
           return
         }
         
-        if (gesture.dx < -SWIPE_THRESHOLD) {
-          // Swipe LEFT (finger moves left) - go to RELATED (explore deeper)
+        if (gesture.dx > SWIPE_THRESHOLD) {
+          // Swipe RIGHT (finger moves right) - go to RELATED (explore deeper)
           const related = findRelatedCard(card)
           if (related) {
-            navigateToCardRef.current(related, 'left')
+            navigateToCardRef.current(related, 'right')
           } else {
             Animated.spring(translateX, { toValue: 0, useNativeDriver: true }).start()
             Animated.timing(opacity, { toValue: 1, duration: 100, useNativeDriver: true }).start()
           }
-        } else if (gesture.dx > SWIPE_THRESHOLD) {
-          // Swipe RIGHT (finger moves right) - go BACK in history
+        } else if (gesture.dx < -SWIPE_THRESHOLD) {
+          // Swipe LEFT (finger moves left) - go BACK in history
           const prev = goBack()
           if (prev) {
             setJourney(j => ({ ...j, path: j.path.slice(0, -1) }))
-            navigateToCardRef.current(prev, 'right')
+            navigateToCardRef.current(prev, 'left')
           } else {
             Animated.spring(translateX, { toValue: 0, useNativeDriver: true }).start()
             Animated.timing(opacity, { toValue: 1, duration: 100, useNativeDriver: true }).start()
@@ -443,13 +462,13 @@ function AppContent() {
   }
 
   // Get domain info
-  const getDomainInfo = (): { icon: string; name: string } => {
-    if (!currentCard) return { icon: '📚', name: 'Loading' }
+  const getDomainInfo = (): { name: string } => {
+    if (!currentCard) return { name: 'Loading' }
     
     const domainMap = {
-      codeforces: { icon: '💻', name: 'Codeforces' },
-      math: { icon: '🧮', name: 'Math' },
-      ai_primers: { icon: '🤖', name: 'AI' }
+      codeforces: { name: 'Codeforces' },
+      math: { name: 'Math' },
+      ai_primers: { name: 'AI' }
     }
     return domainMap[currentCard.type]
   }
@@ -461,7 +480,6 @@ function AppContent() {
         <StatusBar style="light" />
         <View style={styles.header}>
           <View style={styles.headerLeft}>
-            <Text style={styles.logo}>🔓</Text>
             <Text style={styles.appName}>Unlock</Text>
           </View>
         </View>
@@ -477,7 +495,6 @@ function AppContent() {
         <StatusBar style="light" />
         <View style={styles.header}>
           <View style={styles.headerLeft}>
-            <Text style={styles.logo}>🔓</Text>
             <Text style={styles.appName}>Unlock</Text>
           </View>
         </View>
@@ -496,11 +513,9 @@ function AppContent() {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerLeft}>
-          <Text style={styles.logo}>🔓</Text>
           <Text style={styles.appName}>Unlock</Text>
         </View>
         <TouchableOpacity style={styles.shuffleButton} onPress={handleShuffle}>
-          <Text style={styles.shuffleIcon}>🎲</Text>
           <Text style={styles.shuffleText}>Shuffle</Text>
         </TouchableOpacity>
       </View>
@@ -509,14 +524,13 @@ function AppContent() {
       <View style={styles.navHints}>
         <View style={styles.hintLeft}>
           <Text style={styles.hintArrow}>←</Text>
-          <Text style={styles.hintText}>Explore</Text>
+          <Text style={styles.hintText}>Back</Text>
         </View>
         <View style={[styles.domainBadge, { backgroundColor: accentColor + '30' }]}>
-          <Text style={styles.domainIcon}>{domainInfo.icon}</Text>
           <Text style={[styles.domainText, { color: accentColor }]}>{domainInfo.name}</Text>
         </View>
         <View style={styles.hintRight}>
-          <Text style={styles.hintText}>Back</Text>
+          <Text style={styles.hintText}>Explore</Text>
           <Text style={styles.hintArrow}>→</Text>
         </View>
       </View>
@@ -643,9 +657,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
   },
-  logo: {
-    fontSize: 26,
-  },
   appName: {
     fontSize: 20,
     fontWeight: '700',
@@ -660,9 +671,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 20,
     gap: 6,
-  },
-  shuffleIcon: {
-    fontSize: 16,
   },
   shuffleText: {
     fontSize: 13,
@@ -702,9 +710,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 20,
     gap: 6,
-  },
-  domainIcon: {
-    fontSize: 14,
   },
   domainText: {
     fontSize: 13,
